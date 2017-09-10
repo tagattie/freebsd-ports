@@ -10,6 +10,7 @@ MAINTAINER=	tagattie@yandex.com
 COMMENT=	Trigger notifications when a process completes
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		go
 USE_GITHUB=	yes
