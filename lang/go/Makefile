@@ -44,6 +44,7 @@ GOARCH=386
 GOARCH=amd64
 .elif ${ARCH} == "armv6"
 GOARCH=arm
+GO_ENV=	GOARM=7 CGO_ENABLED=1
 .else
 IGNORE=		unknown arch ${ARCH}
 .endif
@@ -63,7 +64,7 @@ do-build:
 		GOROOT=${WRKSRC} GOROOT_FINAL=${PREFIX}/go \
 		GOROOT_BOOTSTRAP=${LOCALBASE}/go14 \
 		GOBIN= GOARCH=${GOARCH} GOOS=${OPSYS:tl} \
-		GO386=${GO386} \
+		GO386=${GO386} ${GO_ENV} \
 		${SH} make.bash
 
 do-install:
