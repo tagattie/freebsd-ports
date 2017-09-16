@@ -63,6 +63,7 @@
     SUBDIR += R-cran-tibble
     SUBDIR += R-cran-tidyr
     SUBDIR += R-cran-tidyselect
+    SUBDIR += R-cran-withr
     SUBDIR += SpecTcl
     SUBDIR += aap
     SUBDIR += aarch64-binutils
@@ -254,7 +255,6 @@
     SUBDIR += calibrator
     SUBDIR += capstone3
     SUBDIR += capstone4
-    SUBDIR += cargo
     SUBDIR += cask
     SUBDIR += catch
     SUBDIR += cbrowser
@@ -322,7 +322,6 @@
     SUBDIR += cmake-doc
     SUBDIR += cmake-fedora
     SUBDIR += cmake-gui
-    SUBDIR += cmake-modules
     SUBDIR += cmake-modules-webos
     SUBDIR += cmph
     SUBDIR += cmunge
@@ -410,8 +409,8 @@
     SUBDIR += cxref
     SUBDIR += cxxtest
     SUBDIR += cxxtools
-    SUBDIR += d-scanner
     SUBDIR += d-feet
+    SUBDIR += d-scanner
     SUBDIR += darts
     SUBDIR += dash.el
     SUBDIR += datadraw
@@ -514,6 +513,7 @@
     SUBDIR += elixir-exjsx
     SUBDIR += elixir-exprotobuf
     SUBDIR += elixir-exrm
+    SUBDIR += elixir-gen_stage
     SUBDIR += elixir-gen_state_machine
     SUBDIR += elixir-gettext
     SUBDIR += elixir-hex
@@ -1086,9 +1086,9 @@
     SUBDIR += hs-mueval
     SUBDIR += hs-murmur-hash
     SUBDIR += hs-mutable-containers
-    SUBDIR += hs-newtype-generics
     SUBDIR += hs-ncurses
     SUBDIR += hs-newtype
+    SUBDIR += hs-newtype-generics
     SUBDIR += hs-old-locale
     SUBDIR += hs-old-time
     SUBDIR += hs-optparse-applicative
@@ -1189,8 +1189,8 @@
     SUBDIR += idutils
     SUBDIR += imake
     SUBDIR += include-what-you-use
-    SUBDIR += inilib
     SUBDIR += inifiled
+    SUBDIR += inilib
     SUBDIR += iniparser
     SUBDIR += initutil
     SUBDIR += injeqt
@@ -1574,6 +1574,7 @@
     SUBDIR += libxalloc
     SUBDIR += libxo
     SUBDIR += libxs
+    SUBDIR += libzim
     SUBDIR += libzookeeper
     SUBDIR += libzrtpcpp
     SUBDIR += libzvbi
@@ -1623,6 +1624,7 @@
     SUBDIR += llvm38
     SUBDIR += llvm39
     SUBDIR += llvm40
+    SUBDIR += llvm50
     SUBDIR += lm4tools
     SUBDIR += lmdbg
     SUBDIR += lndir
@@ -1678,8 +1680,8 @@
     SUBDIR += marisa-trie
     SUBDIR += mate-common
     SUBDIR += matreshka
-    SUBDIR += maven-wrapper
     SUBDIR += maven
+    SUBDIR += maven-wrapper
     SUBDIR += maven3
     SUBDIR += maven31
     SUBDIR += maven33
@@ -1725,8 +1727,8 @@
     SUBDIR += mpatrol
     SUBDIR += mph
     SUBDIR += mq4cpp
-    SUBDIR += msgpack-d
     SUBDIR += msgpack
+    SUBDIR += msgpack-d
     SUBDIR += msgpuck
     SUBDIR += msp430-debug-stack
     SUBDIR += mspdebug
@@ -4229,8 +4231,8 @@
     SUBDIR += py-asyncio
     SUBDIR += py-atomiclong
     SUBDIR += py-atomicwrites
-    SUBDIR += py-attrs
     SUBDIR += py-atpublic
+    SUBDIR += py-attrs
     SUBDIR += py-automaton
     SUBDIR += py-avro
     SUBDIR += py-babel
@@ -4921,8 +4923,8 @@
     SUBDIR += py-vcrpy
     SUBDIR += py-vcversioner
     SUBDIR += py-venusian
-    SUBDIR += py-versiontools
     SUBDIR += py-verboselogs
+    SUBDIR += py-versiontools
     SUBDIR += py-virtualenv
     SUBDIR += py-virtualenv-clone
     SUBDIR += py-virtualenvwrapper
@@ -5206,7 +5208,6 @@
     SUBDIR += qtscriptgenerator
     SUBDIR += quickcheck++
     SUBDIR += quilt
-    SUBDIR += R-cran-withr
     SUBDIR += racer
     SUBDIR += radare2
     SUBDIR += ragel
