@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gcc
-PORTVERSION=	7.2.1.s20170907
-PORTREVISION=	1
+PORTVERSION=	7.2.1.s20171005
 CATEGORIES=	lang
 MASTER_SITES=	GCC/snapshots/${DIST_VERSION}
 PKGNAMESUFFIX=	${SUFFIX}-devel
@@ -26,6 +25,8 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/as:devel/binutils
 .if defined(MAINTAINER_MODE)
 BUILD_DEPENDS+=	runtest:misc/dejagnu
 .endif
+
+CONFLICTS=	gcc7-7.*
 
 CPE_VENDOR=	gnu
 CPE_VERSION=	${GCC_VERSION}
@@ -58,7 +59,7 @@ CONFIGURE_ARGS+=	--disable-multilib
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "amd64"
+.if ${ARCH} == amd64
 CONFIGURE_TARGET=	x86_64-portbld-${OPSYS:tl}${OSREL}
 .endif
 
@@ -67,7 +68,7 @@ CONFIGURE_ENV+=	UNAME_m="powerpc64"
 USE_GCC=	yes
 .endif
 
-.if ${ARCH} == "armv6"
+.if ${ARCH} == armv6
 . if ${COMPILER_TYPE} == clang
 .  if empty(PORT_OPTIONS:MBOOTSTRAP)
 MAKE_ARGS+=CXXFLAGS+=-fbracket-depth=512
@@ -112,7 +113,7 @@ INFO=		gcc${SUFFIX}/cpp \
 		gcc${SUFFIX}/gccint \
 		gcc${SUFFIX}/gfortran \
 		gcc${SUFFIX}/libgomp
-.if ${ARCH} == "amd64" || ${ARCH} == "i386"
+.if ${ARCH} == amd64 || ${ARCH} == i386
 INFO+=		gcc${SUFFIX}/libquadmath \
 		gcc${SUFFIX}/libitm
 .endif

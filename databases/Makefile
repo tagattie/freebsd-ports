@@ -196,6 +196,7 @@
     SUBDIR += mongodb34
     SUBDIR += mongodb34-rocks
     SUBDIR += mongodb34-tools
+    SUBDIR += mroonga
     SUBDIR += mrtg-mysql-load
     SUBDIR += mtools-mongodb
     SUBDIR += mtop
@@ -596,6 +597,7 @@
     SUBDIR += pgpool-II-35
     SUBDIR += pgpool-II-36
     SUBDIR += pgreplay
+    SUBDIR += pgroonga
     SUBDIR += pgrouting
     SUBDIR += pgsphere
     SUBDIR += pgtcl
@@ -658,6 +660,7 @@
     SUBDIR += phppgadmin
     SUBDIR += pldebugger
     SUBDIR += plpgsql_check
+    SUBDIR += pointcloud
     SUBDIR += postgis-jdbc
     SUBDIR += postgis20
     SUBDIR += postgis21

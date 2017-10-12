@@ -4,6 +4,7 @@
 PORTNAME=	gitlab
 PORTVERSION=	9.3.11
 DISTVERSIONPREFIX=	v
+PORTREVISION=	2
 CATEGORIES=	www devel
 
 MAINTAINER=	tz@FreeBSD.org
@@ -206,14 +207,18 @@ NO_ARCH=	yes
 NO_BUILD=	yes
 
 post-patch-MYSQL-on:
-	${ECHO} "gem 'mysql2', '>= 0.3.16', group: :mysql" >> ${WRKSRC}/Gemfile
-	${ECHO} "gem 'peek-mysql2', '~> 1.1.0', group: :mysql" >> ${WRKSRC}/Gemfile
-	${CP} ${WRKSRC}/config/database.yml.mysql ${WRKSRC}/config/database.yml.sample
+	@${CP} ${WRKSRC}/config/database.yml.mysql ${WRKSRC}/config/database.yml.sample
+
+post-patch-MYSQL-off:
+	@${REINPLACE_CMD} -e "/gem 'mysql2'/d" ${WRKSRC}/Gemfile
+	@${REINPLACE_CMD} -e "/gem 'peek-mysql2'/d" ${WRKSRC}/Gemfile
 
 post-patch-PGSQL-on:
-	${ECHO} "gem 'pg', '>= 0.18.2', group: :postgres" >> ${WRKSRC}/Gemfile
-	${ECHO} "gem 'peek-pg', '~> 1.3.0', group: :postgres" >> ${WRKSRC}/Gemfile
-	${CP} ${WRKSRC}/config/database.yml.postgresql ${WRKSRC}/config/database.yml.sample
+	@${CP} ${WRKSRC}/config/database.yml.postgresql ${WRKSRC}/config/database.yml.sample
+
+post-patch-PGSQL-off:
+	@${REINPLACE_CMD} -e "/gem 'pg'/d" ${WRKSRC}/Gemfile
+	@${REINPLACE_CMD} -e "/gem 'peek-pg'/d" ${WRKSRC}/Gemfile
 
 do-install:
 	${FIND} ${WRKSRC} -name '*.orig' -delete

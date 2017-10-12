@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	cmake
-DISTVERSION=	3.9.2
+# Remember to update devel/cmake-doc and devel/cmake-gui as well.
+DISTVERSION=	3.9.3
 CATEGORIES=	devel
 MASTER_SITES=	https://www.cmake.org/files/v${PORTVERSION:R}/
 
@@ -23,7 +24,7 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 OPTIONS_DEFINE=	DOCS MANPAGES
 OPTIONS_DEFAULT=MANPAGES
 OPTIONS_SUB=	yes
-USES=		execinfo libarchive ncurses
+USES=		libarchive ncurses
 HAS_CONFIGURE=	yes
 
 LIB_DEPENDS=	libcurl.so:ftp/curl \

@@ -213,6 +213,8 @@
     SUBDIR += lsw
     SUBDIR += luit
     SUBDIR += lumina
+    SUBDIR += lumina-core
+    SUBDIR += lumina-coreutils
     SUBDIR += lupe
     SUBDIR += lxde-meta
     SUBDIR += lxhotkey
@@ -329,6 +331,7 @@
     SUBDIR += trapproto
     SUBDIR += trayer
     SUBDIR += tycoon
+    SUBDIR += urxvt-font-size
     SUBDIR += urxvt-perls
     SUBDIR += vdesk
     SUBDIR += videoproto
