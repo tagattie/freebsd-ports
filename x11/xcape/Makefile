@@ -15,6 +15,7 @@ USE_GITHUB=		yes
 GH_ACCOUNT=		alols
 GH_TAGNAME=		6ded5b453b50642197044a170402664cbf6d2c96
 
+USES=		pkgconfig
 USE_XORG=		x11 xtst
 
 PLIST_FILES=	bin/xcape man/man1/xcape.1.gz
