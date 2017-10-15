@@ -15,6 +15,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	alols
 GH_TAGNAME=	6ded5b453b50642197044a170402664cbf6d2c96
 
+BUILD_DEPENDS+=	pkg-config:devel/pkgconf
 USES=		pkgconfig
 USE_XORG=	x11 xtst
 
