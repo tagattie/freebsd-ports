@@ -9,10 +9,10 @@ CATEGORIES=	deskutils
 MAINTAINER=	tagattie@yandex.com
 COMMENT=	Trigger notifications when a process completes
 
-RUN_DEPENDS=	notify-send:devel/libnotify
-
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+RUN_DEPENDS=	notify-send:devel/libnotify
 
 USES=		go
 USE_GITHUB=	yes
