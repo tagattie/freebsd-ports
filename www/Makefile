@@ -1370,6 +1370,7 @@
     SUBDIR += p5-WebService-Linode
     SUBDIR += p5-WebService-MoviePosterDB
     SUBDIR += p5-WebService-MusicBrainz
+    SUBDIR += p5-WebService-MusicBrainz0
     SUBDIR += p5-WebService-NoPaste
     SUBDIR += p5-WebService-Pushover
     SUBDIR += p5-WebService-Rakuten
@@ -1812,6 +1813,7 @@
     SUBDIR += py-recaptcha
     SUBDIR += py-requestbuilder
     SUBDIR += py-requests
+    SUBDIR += py-requests-cache
     SUBDIR += py-requests-file
     SUBDIR += py-requests-futures
     SUBDIR += py-requests-mock

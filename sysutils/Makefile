@@ -350,6 +350,7 @@
     SUBDIR += fusefs-curlftpfs
     SUBDIR += fusefs-encfs
     SUBDIR += fusefs-exfat
+    SUBDIR += fusefs-ext2
     SUBDIR += fusefs-ext4fuse
     SUBDIR += fusefs-funionfs
     SUBDIR += fusefs-fusepak
@@ -627,6 +628,7 @@
     SUBDIR += minimunin
     SUBDIR += minirsyslogd
     SUBDIR += mixer
+    SUBDIR += mkdesktop
     SUBDIR += mkfile
     SUBDIR += mkfwimage
     SUBDIR += mkntpwd
@@ -1101,6 +1103,7 @@
     SUBDIR += sloth
     SUBDIR += slst
     SUBDIR += slurm-wlm
+    SUBDIR += smart
     SUBDIR += smartmontools
     SUBDIR += smenu
     SUBDIR += smp_utils
