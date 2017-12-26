@@ -427,6 +427,7 @@
     SUBDIR += nss_compat_ossl
     SUBDIR += nyx
     SUBDIR += oath-toolkit
+    SUBDIR += obfs4proxy-tor
     SUBDIR += obfsclient
     SUBDIR += obfsproxy
     SUBDIR += ocaml-cryptgps
@@ -1173,6 +1174,7 @@
     SUBDIR += snortreport
     SUBDIR += snortsam
     SUBDIR += snortsnarf
+    SUBDIR += snuffleupagus
     SUBDIR += softether
     SUBDIR += softether-devel
     SUBDIR += softhsm
