@@ -421,6 +421,7 @@
     SUBDIR += minissdpd
     SUBDIR += miniupnpc
     SUBDIR += miniupnpd
+    SUBDIR += mioswitch
     SUBDIR += miredo
     SUBDIR += miruo
     SUBDIR += mlvpn
