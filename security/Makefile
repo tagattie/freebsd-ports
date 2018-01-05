@@ -182,7 +182,6 @@
     SUBDIR += gnomint
     SUBDIR += gnupg
     SUBDIR += gnupg1
-    SUBDIR += gnupg20
     SUBDIR += gnutls
     SUBDIR += go-cve-dictionary
     SUBDIR += go.crypto
@@ -1225,6 +1224,7 @@
     SUBDIR += tinc
     SUBDIR += tinc-devel
     SUBDIR += tinyca
+    SUBDIR += titan
     SUBDIR += titus
     SUBDIR += tls-check
     SUBDIR += tlswrap

@@ -566,8 +566,6 @@
     SUBDIR += npm-node4
     SUBDIR += npm-node6
     SUBDIR += npm-node8
-    SUBDIR += npm2
-    SUBDIR += npm3
     SUBDIR += npm4
     SUBDIR += nspluginwrapper
     SUBDIR += nuvolaplayer-8tracks
@@ -1608,6 +1606,7 @@
     SUBDIR += py-django-mezzanine-filebrowser
     SUBDIR += py-django-mezzanine-grappelli
     SUBDIR += py-django-mptt
+    SUBDIR += py-django-netfields
     SUBDIR += py-django-openid-auth
     SUBDIR += py-django-otp
     SUBDIR += py-django-otp-yubikey
@@ -1683,7 +1682,7 @@
     SUBDIR += py-flask-uploads
     SUBDIR += py-flask-wtf
     SUBDIR += py-flexget
-    SUBDIR += py-flup
+    SUBDIR += py-flup6
     SUBDIR += py-formalchemy
     SUBDIR += py-formencode
     SUBDIR += py-frappe-bench
@@ -1718,6 +1717,7 @@
     SUBDIR += py-jsonfield
     SUBDIR += py-jswebkit
     SUBDIR += py-kallithea
+    SUBDIR += py-lesscpy
     SUBDIR += py-libsass
     SUBDIR += py-mechanize
     SUBDIR += py-meld
@@ -2060,6 +2060,7 @@
     SUBDIR += rubygem-jsobfu
     SUBDIR += rubygem-json-jwt
     SUBDIR += rubygem-jwt
+    SUBDIR += rubygem-jwt1
     SUBDIR += rubygem-kaminari
     SUBDIR += rubygem-kaminari-actionview
     SUBDIR += rubygem-kaminari-actionview-rails5
