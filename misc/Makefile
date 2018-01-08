@@ -38,8 +38,8 @@
     SUBDIR += chmlib
     SUBDIR += chord2html
     SUBDIR += cinnamon-translations
-    SUBDIR += clex
     SUBDIR += cldr-emoji-annotation
+    SUBDIR += clex
     SUBDIR += cloc
     SUBDIR += clpbar
     SUBDIR += cmatrix
@@ -465,6 +465,7 @@
     SUBDIR += tempcontrol
     SUBDIR += termatrix
     SUBDIR += teseq
+    SUBDIR += thefuck
     SUBDIR += timediff
     SUBDIR += tkcron
     SUBDIR += tkinfo
