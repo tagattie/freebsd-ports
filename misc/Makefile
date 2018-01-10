@@ -249,8 +249,10 @@
     SUBDIR += libeatmydata
     SUBDIR += libisocodes
     SUBDIR += libkdeedu
+    SUBDIR += liblxi
     SUBDIR += libmetalink
     SUBDIR += libpostal
+    SUBDIR += libpredict
     SUBDIR += libpri
     SUBDIR += libsupertone
     SUBDIR += libutf
@@ -262,6 +264,7 @@
     SUBDIR += loop
     SUBDIR += lv
     SUBDIR += lxde-common
+    SUBDIR += lxi-tools
     SUBDIR += magicpoint
     SUBDIR += man.el
     SUBDIR += mbuffer
