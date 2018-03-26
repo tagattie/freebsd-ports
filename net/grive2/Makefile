@@ -4,7 +4,7 @@
 PORTNAME=	grive2
 PORTVERSION=	0.5.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	net
 
 MAINTAINER=	cpm@FreeBSD.org
@@ -22,7 +22,7 @@ LIB_DEPENDS=	libboost_filesystem.so:devel/boost-libs \
 
 CONFLICTS_INSTALL=	grive-[0-9]*
 
-USES=		cmake pkgconfig localbase
+USES=		cmake localbase pkgconfig
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	vitalif

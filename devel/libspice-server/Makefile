@@ -3,18 +3,18 @@
 
 PORTNAME=	libspice-server
 DISTVERSION=	0.14.0
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	https://www.spice-space.org/download/releases/
 DISTNAME=	spice-${PORTVERSION}
 
-MAINTAINER=	olevole@olevole.ru
+MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Implements the server side of the SPICE protocol
 
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libopus.so:audio/opus
 BUILD_DEPENDS=	spice-protocol>=0.12.10:devel/spice-protocol
-RUN_DEPENDS=	spice-protocol>=0.12.10:devel/spice-protocol
 
 OPTIONS_DEFINE=		GSTREAMER LZ4 SASL STATISTICS
 OPTIONS_DEFAULT=	GSTREAMER LZ4 SASL
@@ -33,8 +33,8 @@ SASL_LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2
 
 STATISTICS_CONFIGURE_ENABLE=	statistics
 
-USES=		gmake jpeg libtool localbase:ldflag pkgconfig \
-		ssl tar:bzip2
+USES=		autoreconf gmake jpeg libtool localbase:ldflag pkgconfig \
+		python ssl tar:bzip2
 
 USE_GNOME=	glib20
 USE_XORG=	pixman
@@ -49,7 +49,8 @@ CONFIGURE_ARGS+=--disable-celt051 \
 SPICE_SSL_CFLAGS=	-I${OPENSSLINC}
 SPICE_SSL_LIBS=	-L${OPENSSLLIB} -lcrypto -lssl
 CONFIGURE_ENV+=	SSL_CFLAGS="${SPICE_SSL_CFLAGS}" SSL_LIBS="${SPICE_SSL_LIBS}" \
-		OPENSSL_CFLAGS="${SPICE_SSL_CFLAGS}" OPENSSL_LIBS="${SPICE_SSL_LIBS}"
+		OPENSSL_CFLAGS="${SPICE_SSL_CFLAGS}" OPENSSL_LIBS="${SPICE_SSL_LIBS}" \
+		PYTHON=${PYTHON_CMD}
 
 INSTALL_TARGET=	install-strip
 

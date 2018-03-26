@@ -1,18 +1,22 @@
-# Created by: Fernando Apesteguia <fernando.apesteguia@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	openvsp
 PORTVERSION=	3.15.0
 DISTVERSIONPREFIX=	${GH_PROJECT}_
+PORTREVISION=	1
 CATEGORIES=	cad
 
-MAINTAINER=	fernando.apesteguia@gmail.com
+MAINTAINER=	fernape@FreeBSD.org
 COMMENT=	Create a 3D model of an aircraft defined by engineering parameters
 
 LICENSE=	NOSA13
 LICENSE_NAME=	NASA Open Source Agreement version 1.3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+
+BROKEN_aarch64=		fails to compile: invokes x86 asm
+BROKEN_armv6=		fails to compile: invokes x86 asm
+BROKEN_armv7=		fails to compile: invokes x86 asm
 
 LIB_DEPENDS=	libdrm.so:graphics/libdrm \
 		libpng.so:graphics/png \
@@ -25,10 +29,6 @@ LIB_DEPENDS=	libdrm.so:graphics/libdrm \
 BUILD_DEPENDS=	${LOCALBASE}/lib/libopenNURBS.a:graphics/opennurbs \
 		${LOCALBASE}/include/glm/glm.hpp:math/glm \
 		${LOCALBASE}/libdata/pkgconfig/pthread-stubs.pc:devel/libpthread-stubs
-
-BROKEN_aarch64=		fails to compile: invokes x86 asm
-BROKEN_armv6=		fails to compile: invokes x86 asm
-BROKEN_armv7=		fails to compile: invokes x86 asm
 
 CMAKE_SOURCE_PATH=	${WRKSRC}/SuperProject
 CMAKE_INSTALL_PREFIX=	${STAGEDIR}${PREFIX}
