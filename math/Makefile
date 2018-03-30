@@ -183,12 +183,14 @@
     SUBDIR += fftw3-quad
     SUBDIR += fityk
     SUBDIR += flann
+    SUBDIR += flint2
     SUBDIR += form
     SUBDIR += fpc-fftw
     SUBDIR += fpc-gmp
     SUBDIR += fpc-numlib
     SUBDIR += freemat
     SUBDIR += fxt
+    SUBDIR += g2o
     SUBDIR += galculator
     SUBDIR += gambit
     SUBDIR += gap
@@ -620,6 +622,7 @@
     SUBDIR += pspp
     SUBDIR += pure-mpfr
     SUBDIR += pure-rational
+    SUBDIR += py-Diofant
     SUBDIR += py-PyWavelets
     SUBDIR += py-altgraph
     SUBDIR += py-apgl
@@ -674,6 +677,7 @@
     SUBDIR += py-seaborn
     SUBDIR += py-statsmodels
     SUBDIR += py-svgmath
+    SUBDIR += py-symcxx
     SUBDIR += py-symeig
     SUBDIR += py-sympy
     SUBDIR += py-theano

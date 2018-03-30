@@ -870,7 +870,6 @@
     SUBDIR += gtkparasite
     SUBDIR += gtranslator
     SUBDIR += guichan
-    SUBDIR += guikachu
     SUBDIR += guile-lib
     SUBDIR += gumbo
     SUBDIR += gvfs
@@ -4363,6 +4362,8 @@
     SUBDIR += py-construct
     SUBDIR += py-construct28
     SUBDIR += py-contextlib2
+    SUBDIR += py-coreapi
+    SUBDIR += py-coreschema
     SUBDIR += py-country
     SUBDIR += py-cov-core
     SUBDIR += py-coverage
@@ -4452,6 +4453,7 @@
     SUBDIR += py-flake8-polyfill
     SUBDIR += py-flake8-quotes
     SUBDIR += py-flask-babel
+    SUBDIR += py-flex
     SUBDIR += py-flexmock
     SUBDIR += py-fluent-logger
     SUBDIR += py-flufl.i18n
@@ -4517,6 +4519,7 @@
     SUBDIR += py-imgkit
     SUBDIR += py-incremental
     SUBDIR += py-inflect
+    SUBDIR += py-inflection
     SUBDIR += py-iniparse
     SUBDIR += py-initgroups
     SUBDIR += py-instant
@@ -4534,6 +4537,7 @@
     SUBDIR += py-isodate
     SUBDIR += py-isort
     SUBDIR += py-iterpipes
+    SUBDIR += py-itypes
     SUBDIR += py-jaraco.classes
     SUBDIR += py-jaraco.functools
     SUBDIR += py-jaraco.itertools
@@ -4660,6 +4664,7 @@
     SUBDIR += py-omnijson
     SUBDIR += py-omniorb
     SUBDIR += py-omniorb-3
+    SUBDIR += py-openapi-codec
     SUBDIR += py-opendht
     SUBDIR += py-openstacksdk
     SUBDIR += py-opster
@@ -4941,7 +4946,9 @@
     SUBDIR += py-stdnum
     SUBDIR += py-stevedore
     SUBDIR += py-stopit
+    SUBDIR += py-strategies
     SUBDIR += py-streamparse
+    SUBDIR += py-strict-rfc3339
     SUBDIR += py-structlog
     SUBDIR += py-stsci.distutils
     SUBDIR += py-subprocess32
@@ -4950,6 +4957,7 @@
     SUBDIR += py-sure
     SUBDIR += py-sysctl
     SUBDIR += py-sysv_ipc
+    SUBDIR += py-swagger-spec-validator
     SUBDIR += py-tables
     SUBDIR += py-tabulate
     SUBDIR += py-tapi
@@ -4975,6 +4983,7 @@
     SUBDIR += py-tinyarray
     SUBDIR += py-tinyrpc
     SUBDIR += py-tipper
+    SUBDIR += py-toolz
     SUBDIR += py-tooz
     SUBDIR += py-toposort
     SUBDIR += py-total-ordering
@@ -5500,6 +5509,7 @@
     SUBDIR += rubygem-gobject-introspection
     SUBDIR += rubygem-google-api-client
     SUBDIR += rubygem-google-protobuf
+    SUBDIR += rubygem-google-protobuf351
     SUBDIR += rubygem-googleapis-common-protos-types
     SUBDIR += rubygem-graf
     SUBDIR += rubygem-grape
@@ -6114,6 +6124,7 @@
     SUBDIR += websvn
     SUBDIR += wininfo
     SUBDIR += wizardkit
+    SUBDIR += woff2
     SUBDIR += wxGlade
     SUBDIR += wxformbuilder
     SUBDIR += xa65
