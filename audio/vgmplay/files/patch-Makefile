@@ -1,11 +1,12 @@
---- Makefile.orig	2019-01-08 13:08:12 UTC
+--- Makefile.orig	2019-01-08 22:30:38 UTC
 +++ Makefile
-@@ -58,12 +58,12 @@ endif
+@@ -58,12 +58,14 @@ endif
  
  
  
--CC = gcc
-+CC = cc
++ifndef CC
+ CC = gcc
++endif
  ifndef PREFIX
  PREFIX = /usr/local
  #PREFIX = $(HOME)/.local
@@ -15,7 +16,7 @@
  
  # -- VGMPlay specific Compile Flags --
  MAINFLAGS := -DCONSOLE_MODE -DADDITIONAL_FORMATS -DSET_CONSOLE_TITLE
-@@ -272,13 +272,13 @@ clean:
+@@ -272,13 +274,13 @@ clean:
  
  # Thanks to ZekeSulastin and nextvolume for the install and uninstall routines.
  install:	vgmplay
