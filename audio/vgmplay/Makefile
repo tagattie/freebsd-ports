@@ -3,7 +3,7 @@
 PORTNAME=	vgmplay
 PORTVERSION=	0.40.9
 CATEGORIES=	audio
-MASTER_SITES=	https://github.com/vgmrips/vgmplay/releases/download/${PORTVERSION}/
+MASTER_SITES=	https://github.com/vgmrips/${PORTNAME}/releases/download/${PORTVERSION}/
 DISTNAME=	${PORTNAME:S/vgmp/VGMP/}_${PORTVERSION:S/.//:S/./-/}_src
 
 MAINTAINER=	tagattie@yandex.com
@@ -14,7 +14,6 @@ LICENSE=	GPLv2
 USES=		7z dos2unix gmake
 
 NO_WRKSUBDIR=	yes
-EXTRACT_WRKDIR=	${WRKSRC}
 
 OPTIONS_RADIO=	AUDIO
 OPTIONS_RADIO_AUDIO=	OSS LIBAO
@@ -26,5 +25,7 @@ OSS_MAKE_ENV+=	USE_LIBAO=0
 
 LIBAO_MAKE_ENV+=	USE_LIBAO=1
 LIBAO_RUN_DEPENDS=	libao.so:audio/libao
+LIBAO_CFLAGS+=		-I${LOCALBASE}/include
+LIBAO_LDFLAGS+=		-L${LOCALBASE}/lib
 
 .include <bsd.port.mk>
