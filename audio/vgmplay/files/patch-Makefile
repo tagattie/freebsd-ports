@@ -1,0 +1,36 @@
+--- Makefile.orig	2019-01-08 13:08:12 UTC
++++ Makefile
+@@ -58,12 +58,12 @@ endif
+ 
+ 
+ 
+-CC = gcc
++CC = cc
+ ifndef PREFIX
+ PREFIX = /usr/local
+ #PREFIX = $(HOME)/.local
+ endif
+-MANPREFIX = $(PREFIX)/share/man
++MANPREFIX = $(PREFIX)/man
+ 
+ # -- VGMPlay specific Compile Flags --
+ MAINFLAGS := -DCONSOLE_MODE -DADDITIONAL_FORMATS -DSET_CONSOLE_TITLE
+@@ -272,13 +272,13 @@ clean:
+ 
+ # Thanks to ZekeSulastin and nextvolume for the install and uninstall routines.
+ install:	vgmplay
+-	install -m 755 vgmplay $(DESTDIR)$(PREFIX)/bin/vgmplay
+-	install -m 755 vgm2pcm $(DESTDIR)$(PREFIX)/bin/vgm2pcm
+-	install -m 755 vgm2wav $(DESTDIR)$(PREFIX)/bin/vgm2wav
++	install -m 755 -s vgmplay $(DESTDIR)$(PREFIX)/bin/vgmplay
++	install -m 755 -s vgm2pcm $(DESTDIR)$(PREFIX)/bin/vgm2pcm
++	install -m 755 -s vgm2wav $(DESTDIR)$(PREFIX)/bin/vgm2wav
+ 	mkdir -m 755 -p $(DESTDIR)$(MANPREFIX)/man1
+-	install -m 644 vgmplay.1 $(DESTDIR)$(MANPREFIX)/man1/vgmplay.1
++	install -m 444 vgmplay.1 $(DESTDIR)$(MANPREFIX)/man1/vgmplay.1
+ 	mkdir -m 755 -p $(DESTDIR)$(PREFIX)/share/vgmplay
+-	install -m 644 VGMPlay.ini $(DESTDIR)$(PREFIX)/share/vgmplay/vgmplay.ini
++	install -m 644 VGMPlay.ini $(DESTDIR)$(PREFIX)/share/vgmplay/vgmplay.ini.sample
+ 
+ # install ROMs
+ rom_install:
