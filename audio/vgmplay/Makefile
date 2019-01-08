@@ -28,4 +28,9 @@ LIBAO_RUN_DEPENDS=	libao.so:audio/libao
 LIBAO_CFLAGS+=		-I${LOCALBASE}/include
 LIBAO_LDFLAGS+=		-L${LOCALBASE}/lib
 
+MAKE_ENV+=	PREFIX=${LOCALBASE}
+
+post-patch:
+	${REINPLACE_CMD} -e 's/@//' ${WRKSRC}/Makefile
+
 .include <bsd.port.mk>
