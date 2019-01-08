@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME?=	wireshark
-PORTVERSION=	2.4.5
-PORTREVISION?=	0
+PORTVERSION=	2.6.5
+PORTREVISION?=	2
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.wireshark.org/download/src/ \
 		http://ftp.uni-kl.de/pub/wireshark/src/ \
@@ -27,12 +27,16 @@ DATADIR_NAME=	wireshark
 DATADIR=	${PREFIX}/share/${DATADIR_NAME}
 
 GNU_CONFIGURE=	yes
-USES=		alias cpe gettext-runtime gmake libtool pathfix perl5 \
-		pkgconfig python:build ssl tar:xz
+USES=		alias cpe compiler:c++11-lang gettext-runtime gmake \
+		libtool localbase pathfix \
+		perl5 pkgconfig python:build ssl tar:xz
 USE_PERL5=	build
 USE_GNOME=	glib20 libxml2
 CONFIGURE_ARGS+=	--program-transform-name="" \
-			--with-ssl=${OPENSSLBASE}
+			--with-ssl=${OPENSSLBASE} \
+			--with-lz4 \
+			--with-nghttp2 \
+			--with-snappy
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 
@@ -43,18 +47,17 @@ LIB_DEPENDS+=	libgpg-error.so:security/libgpg-error \
 		libsnappy.so:archivers/snappy
 
 CFLAGS+=	-funit-at-a-time
-LIBS+=		-L${LOCALBASE}/lib
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
 .for x in capinfos editcap mergecap rawshark text2pcap dftest randpkt \
-    reordercap captype randpktdump udpdump sharkd
+    reordercap captype randpktdump udpdump sharkd dumpcap
 .if defined(LITE)
 PKGNAMESUFFIX=		-lite
 PLIST_SUB+=		${x:tu}="@comment $x not installed" \
 			${x:tu}_LIB="@comment $x not installed " \
 			${x:tu}_MAN="@comment $x not installed "
 CONFIGURE_ARGS+=	--enable-$x=no
-OPTIONS_EXCLUDE+=	RTP SNMP GEOIP LUA CARES ANDROIDDUMP
+OPTIONS_EXCLUDE+=	RTP SNMP GEOIP LUA CARES ANDROIDDUMP SSHDUMP
 .else
 PLIST_SUB+=		${x:tu}=bin/$x \
 			${x:tu}_MAN="" \
@@ -62,7 +65,7 @@ PLIST_SUB+=		${x:tu}=bin/$x \
 .endif
 .endfor
 
-OPTIONS_DEFINE=		RTP SNMP IPV6 GEOIP LUA DECRYPT ANDROIDDUMP CARES
+OPTIONS_DEFINE=		RTP SNMP GEOIP LUA DECRYPT ANDROIDDUMP CARES SSHDUMP CISCODUMP
 
 OPTIONS_RADIO=		GUI
 OPTIONS_SINGLE=		KERBEROS
@@ -81,10 +84,13 @@ KRB_BASE_DESC=		Kerberos support via base system
 KRB_HEIMDAL_DESC=	Kerberos support via security/heimdal
 KRB_MIT_DESC=		Kerberos support via security/krb5
 KRB_NONE_DESC=		Disable Kerberos support
+SSHDUMP_DESC=		Build sshdump extcap tool
+CISCODUMP_DESC=		Build ciscodump extcap tool
 
 GTK2_USE=	GNOME=gtk20,cairo
 GTK3_USE=	GNOME=gtk30,cairo
-QT5_USE=	qt5=core,gui,widgets,printsupport,buildtools_build,linguisttools_build
+QT5_USES=		qt:5
+QT5_USE=	qt=core,gui,widgets,printsupport,buildtools_build,linguisttools_build
 
 LUA_USES=		lua:5[1-2]
 KRB_BASE_USES=		gssapi
@@ -99,11 +105,11 @@ CARES_LIB_DEPENDS=	libcares.so:dns/c-ares
 GEOIP_LIB_DEPENDS=	libGeoIP.so:net/GeoIP
 DECRYPT_LIB_DEPENDS=	libgnutls.so:security/gnutls \
 			libgcrypt.so:security/libgcrypt
-
-IPV6_CONFIGURE_ENABLE=	ipv6
+SSHDUMP_LIB_DEPENDS=	libssh.so:security/libssh
+CISCODUMP_LIB_DEPENDS=	libssh.so:security/libssh
 
 KRB_NONE_CONFIGURE_ON=	--without-krb5
-KRB_NONE_CONFIGURE_OFF=	--with-krb5
+KRB_NONE_CONFIGURE_OFF=	--with-krb5 --with-krb5-crypto-openssl
 KRB_NONE_CONFIGURE_ENV_OFF=	KRB5_CONFIG=${KRB5CONFIG}
 
 GTK2_CONFIGURE_ON=	--with-gtk=2 --with-qt=no
@@ -114,9 +120,13 @@ RTP_CONFIGURE_WITH=	portaudio spandsp
 SNMP_CONFIGURE_WITH=	libsmi
 CARES_CONFIGURE_WITH=	c-ares
 GEOIP_CONFIGURE_WITH=	geoip
-DECRYPT_CONFIGURE_WITH=	gnutls gcrypt
+DECRYPT_CONFIGURE_WITH=	gnutls
 ANDROIDDUMP_CONFIGURE_ON=--enable-androiddump=yes
 ANDROIDDUMP_CONFIGURE_OFF=--enable-androiddump=no
+SSHDUMP_CONFIGURE_ON=--enable-sshdump=yes
+SSHDUMP_CONFIGURE_OFF=--enable-sshdump=no
+CISCODUMP_CONFIGURE_ON=--enable-sshdump=yes
+CISCODUMP_CONFIGURE_OFF=--enable-sshdump=no
 
 LUA_CPPFLAGS=		-I${LUA_INCDIR}
 
@@ -132,9 +142,15 @@ GTK3_PLIST_SUB=		GUI_GTK=""
 OPTIONS_SUB=		yes
 
 .if defined(LITE)
-CONFIGURE_ARGS+=--enable-androiddump=no
+CONFIGURE_ARGS+=--enable-androiddump=no \
+		--enable-sshdump=no \
+		--enable-ciscodump=no
 PLIST_SUB+=	ANDROIDDUMP_LIB="@comment " \
-		ANDROIDDUMP_MAN="@comment "
+		ANDROIDDUMP_MAN="@comment " \
+		SSHDUMP_LIB="@comment " \
+		SSHDUMP_MAN="@comment " \
+		CISCODUMP_LIB="@comment " \
+		CISCODUMP_MAN="@comment "
 .endif
 
 .include <bsd.port.options.mk>
@@ -156,6 +172,20 @@ PLIST_SUB+=	ANDROIDDUMP_LIB="" \
 .else
 PLIST_SUB+=	ANDROIDDUMP_LIB="@comment " \
 		ANDROIDDUMP_MAN="@comment "
+.endif
+.if ${PORT_OPTIONS:MSSHDUMP}
+PLIST_SUB+=	SSHDUMP_LIB="" \
+		SSHDUMP_MAN=""
+.else
+PLIST_SUB+=	SSHDUMP_LIB="@comment " \
+		SSHDUMP_MAN="@comment "
+.endif
+.if ${PORT_OPTIONS:MCISCODUMP}
+PLIST_SUB+=	CISCODUMP_LIB="" \
+		CISCODUMP_MAN=""
+.else
+PLIST_SUB+=	CISCODUMP_LIB="@comment " \
+		CISCODUMP_MAN="@comment "
 .endif
 .endif
 

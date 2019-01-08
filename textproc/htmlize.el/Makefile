@@ -3,7 +3,7 @@
 
 PORTNAME=	htmlize.el
 PORTVERSION=	1.39
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	textproc elisp
 MASTER_SITES=	http://fly.srk.fer.hr/~hniksic/emacs/
 PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}.cgi
 EXTRACT_SUFX=
 DIST_SUBDIR=	repacked
 
-MAINTAINER=	dryice@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Emacs major mode to create HTML files from Emacs buffers (in colour!)
 
 USES=		emacs

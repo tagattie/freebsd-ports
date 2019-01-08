@@ -9,7 +9,6 @@
     SUBDIR += boinc-astropulse
     SUBDIR += boinc-setiathome
     SUBDIR += celestia
-    SUBDIR += celestia-gnome
     SUBDIR += celestia-gtk
     SUBDIR += cfitsio
     SUBDIR += fowsr
@@ -29,14 +28,14 @@
     SUBDIR += gpxloggerd
     SUBDIR += jday
     SUBDIR += josm
-    SUBDIR += kstars-kde4
+    SUBDIR += kstars
     SUBDIR += libgal
-    SUBDIR += libkgeomap-kde4
+    SUBDIR += libkgeomap
     SUBDIR += libnova
     SUBDIR += libosmium
     SUBDIR += libosmpbf
     SUBDIR += luna
-    SUBDIR += marble-kde4
+    SUBDIR += marble
     SUBDIR += match
     SUBDIR += merkaartor
     SUBDIR += mkgmap
@@ -45,6 +44,7 @@
     SUBDIR += nightfall
     SUBDIR += opencpn
     SUBDIR += openuniverse
+    SUBDIR += oskar
     SUBDIR += osmosis
     SUBDIR += p5-Astro
     SUBDIR += p5-Astro-ADS
@@ -74,7 +74,6 @@
     SUBDIR += p5-Misc-Quality
     SUBDIR += p5-Starlink-AST
     SUBDIR += p5-Weather-Underground
-    SUBDIR += p5-ZConf-Weather
     SUBDIR += phoon
     SUBDIR += planets
     SUBDIR += pp3
@@ -84,8 +83,12 @@
     SUBDIR += py-astLib
     SUBDIR += py-astropy
     SUBDIR += py-horoscopegenerator
+    SUBDIR += py-metar
+    SUBDIR += py-metpy
     SUBDIR += py-pymetar
+    SUBDIR += py-pysofa
     SUBDIR += py-pywapi
+    SUBDIR += py-spacetrack
     SUBDIR += pyephem
     SUBDIR += pyweather
     SUBDIR += qlandkartegt
@@ -97,6 +100,7 @@
     SUBDIR += saoimage
     SUBDIR += sextractor
     SUBDIR += siril
+    SUBDIR += sofa
     SUBDIR += sscalc
     SUBDIR += stardates
     SUBDIR += starplot

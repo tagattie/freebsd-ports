@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	pianobar
-PORTVERSION=	2017.08.30
+PORTVERSION=	2018.06.22
 CATEGORIES=	audio
 MASTER_SITES=	https://6xq.net/${PORTNAME}/
 
-MAINTAINER=	jhixson@gmail.com
+MAINTAINER=	jhixson@FreeBSD.org
 COMMENT=	Command-line Pandora online radio player
 
 LICENSE=	MIT

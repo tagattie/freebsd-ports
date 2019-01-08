@@ -3,7 +3,7 @@
 
 PORTNAME=	turpial
 PORTVERSION=	3.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net-im python
 MASTER_SITES=	http://files.turpial.org.ve/sources/stable/
 
@@ -12,11 +12,14 @@ COMMENT=	Twitter client written in Python
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Babel>=1.3:devel/py-babel@${FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}notify>=0.1.1:devel/py-notify@${FLAVOR} \
-	${PYTHON_PKGNAMEPREFIX}setproctitle>=1.1.7:devel/py-setproctitle@${FLAVOR} \
-	${PYTHON_PKGNAMEPREFIX}Jinja2>=2.7.1:devel/py-Jinja2@${FLAVOR} \
-	${PYTHON_PKGNAMEPREFIX}libturpial>=1.7.0:net-im/py-libturpial@${FLAVOR}
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Babel>=1.3:devel/py-babel@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}notify>=0.1.1:devel/py-notify@${PY_FLAVOR} \
+	${PYTHON_PKGNAMEPREFIX}setproctitle>=1.1.7:devel/py-setproctitle@${PY_FLAVOR} \
+	${PYTHON_PKGNAMEPREFIX}Jinja2>=2.7.1:devel/py-Jinja2@${PY_FLAVOR} \
+	${PYTHON_PKGNAMEPREFIX}libturpial>=1.7.0:net-im/py-libturpial@${PY_FLAVOR}
 
 USES=		pyqt:4 python:2.7
 USE_PYQT=	core_run gui_run network_run phonon_run webkit_run

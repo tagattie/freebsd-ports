@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	rocksdb
-PORTVERSION=	5.11.3
+PORTVERSION=	5.17.2
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	databases
 
@@ -17,6 +18,7 @@ LICENSE_FILE_GPLv2=	${WRKSRC}/COPYING
 BROKEN_DragonFly=	does not build on DragonFly BSD using GCC with -Werror
 BROKEN_armv6?=		does not build: db/c.cc:2281:44: implicit conversion loses integer precision: 'uint64_t' (aka 'unsigned long long') to 'size_t' (aka 'unsigned int')
 BROKEN_armv7?=		does not build: /nxb-bin/usr/bin/ld: undefined reference to symbol `__gnu_Unwind_Find_exidx@@FBSD_1.4' (try adding -lc) #'`
+BROKEN_powerpc64=	does not build: util/crc32c.cc:435:22: 'arch_ppc_probe' was not declared in this scope
 
 BUILD_DEPENDS=	bash:shells/bash
 LIB_DEPENDS=	libgflags.so:devel/gflags \
@@ -25,6 +27,7 @@ LIB_DEPENDS=	libgflags.so:devel/gflags \
 OPTIONS_DEFINE=	DEBUG LZ4 ZSTD
 OPTIONS_DEFAULT=LZ4
 
+USES=		compiler:c++11-lib gmake localbase:ldflags shebangfix
 ALL_TARGET=	shared_lib static_lib all
 CFLAGS+=	-DOS_FREEBSD
 CONFIGURE_ARGS=	make_config.mk
@@ -34,7 +37,6 @@ HAS_CONFIGURE=	yes
 MAKE_ENV=	CXX=${CXX} INSTALL_PATH=${STAGEDIR}${PREFIX}
 USE_CXXSTD=	c++11
 USE_LDCONFIG=	yes
-USES=		compiler:c++11-lib gmake localbase:ldflags shebangfix
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION} SHLIB_MAJOR=${PORTVERSION:R:R} SHLIB_MINOR=${PORTVERSION:R:E}
 PORTDATA=	make_config.mk
@@ -67,12 +69,8 @@ PLIST_SUB+=	LITE=${PKGNAMESUFFIX}
 
 .include <bsd.port.pre.mk>
 
-.if ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} >= 36
+.if ${CHOSEN_COMPILER_TYPE} == clang
 CXXFLAGS+=	-Wno-inconsistent-missing-override
-.endif
-
-.if ${COMPILER_TYPE} == gcc && ${COMPILER_VERSION} < 60
-CFLAGS+=	-D_GLIBCXX_USE_C99
 .endif
 
 post-patch:

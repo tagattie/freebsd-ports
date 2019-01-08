@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	ffmpeg
-PORTVERSION=	3.4.2
+PORTVERSION=	4.1
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio ipv6 net
 MASTER_SITES=	https://ffmpeg.org/releases/
@@ -17,6 +18,7 @@ BUILD_DEPENDS=	nasm:devel/nasm \
 		${LOCALBASE}/bin/as:devel/binutils
 
 HAS_CONFIGURE=	yes
+CONFIGURE_LOG=	ffbuild/config.log
 USES=		compiler:c11 cpe gmake localbase:ldflags perl5 \
 		pkgconfig shebangfix tar:xz
 USE_LDCONFIG=	yes
@@ -24,58 +26,94 @@ USE_PERL5=	build
 SHEBANG_FILES=	doc/texi2pod.pl
 NOPRECIOUSMAKEVARS=	yes # ARCH
 
-PORTSCOUT=	limit:^3\.
+PORTSCOUT=	limit:^4\.
 
-OPTIONS_DEFINE=	ALSA AMR_NB AMR_WB ASS BS2B CACA CDIO CELT CHROMAPRINT DC1394 \
-		DEBUG DOCS DRM FDK_AAC FFSERVER FLITE FONTCONFIG \
-		FREETYPE FREI0R FRIBIDI GME GSM ICONV ILBC JACK KVAZAAR LADSPA \
-		LAME LIBBLURAY LIBRSVG2 LIBXML2 MODPLUG MYSOFA OPENAL OPENCL OPENCV OPENGL \
-		OPENH264 OPENJPEG OPTIMIZED_CFLAGS OPUS PULSEAUDIO \
-		RUBBERBAND RTCPU SDL SMB SNAPPY SNDIO SOXR SPEEX SSH \
-		TESSERACT THEORA TWOLAME V4L VAAPI VDPAU VIDSTAB VORBIS \
-		VO_AMRWBENC VPX WAVPACK WEBP X264 X265 XCB XVID \
+OPTIONS_DEFINE=	ALSA AMR_NB AMR_WB AOM ASS BEIGNET BS2B CACA CDIO CELT CHROMAPRINT CODEC2 DAV1D DAVS2 DC1394 \
+		DEBUG DOCS DRM FDK_AAC FLITE FONTCONFIG \
+		FREETYPE FREI0R FRIBIDI GME GSM ICONV ILBC JACK KLVANC KVAZAAR LADSPA \
+		LAME LENSFUN LIBBLURAY LIBRSVG2 LIBXML2 LV2 MODPLUG MYSOFA OPENAL OPENCL OPENCV OPENGL \
+		OPENH264 OPENJPEG OPENMPT OPTIMIZED_CFLAGS OPUS PULSEAUDIO \
+		RUBBERBAND RTCPU SDL SMB SNAPPY SNDIO SOXR SPEEX SRT SSH TENSORFLOW \
+		TESSERACT THEORA TWOLAME V4L VAAPI VAPOURSYNTH VDPAU VIDSTAB VORBIS \
+		VO_AMRWBENC VPX WAVPACK WEBP X264 X265 XAVS2 XCB XVID \
 		XVIDEO ZIMG ZMQ ZVBI
 
-OPTIONS_DEFAULT=	FFSERVER FONTCONFIG FREETYPE FREI0R GMP GNUTLS ICONV \
+OPTIONS_DEFAULT=	FONTCONFIG FREETYPE FREI0R GMP GNUTLS ICONV \
 			OPENCV OPTIMIZED_CFLAGS OPUS RTCPU THEORA V4L VAAPI VDPAU \
-			VORBIS VPX X264 X265 XVID
+			VORBIS VPX X264 X265 XCB XVID
+
+.if !exists(${.CURDIR:H:H}/multimedia/davs2)
+# https://git.ffmpeg.org/gitweb/ffmpeg.git/commitdiff/5985a1bf7233
+OPTIONS_EXCLUDE+=	DAVS2
+.endif
+
+.if !exists(${.CURDIR:H:H}/multimedia/xavs2)
+# https://git.ffmpeg.org/gitweb/ffmpeg.git/commitdiff/85a921f4618
+OPTIONS_EXCLUDE+=	XAVS2
+.endif
+
+.if !exists(${.CURDIR:H:H}/multimedia/klvanc)
+# https://git.ffmpeg.org/gitweb/ffmpeg.git/commitdiff/8732dfa9954
+OPTIONS_EXCLUDE+=	KLVANC
+.endif
+
+.if !exists(${.CURDIR:H:H}/net/srt)
+# https://git.ffmpeg.org/gitweb/ffmpeg.git/commitdiff/a2fc8dbae853
+OPTIONS_EXCLUDE+=	SRT
+.endif
+
+.if !exists(${.CURDIR:H:H}/science/tensorflow)
+# https://git.ffmpeg.org/gitweb/ffmpeg.git/commitdiff/d8c0bbb0aa4
+OPTIONS_EXCLUDE+=	TENSORFLOW
+.endif
 
 OPTIONS_RADIO=	RTMP SSL
 OPTIONS_RADIO_RTMP=	GCRYPT GMP LIBRTMP
-OPTIONS_RADIO_SSL=	GNUTLS OPENSSL
+OPTIONS_RADIO_SSL=	GNUTLS MBEDTLS OPENSSL
 OPTIONS_GROUP=	LICENSE
 OPTIONS_GROUP_LICENSE=	GPL3 NONFREE
 
-OPTIONS_DEFINE_amd64=	MMX SSE
+OPTIONS_DEFINE_amd64=	BEIGNET MMX SSE
 OPTIONS_DEFINE_armv6=	VFP NEON
-OPTIONS_DEFINE_i386=	MMX SSE
+OPTIONS_DEFINE_i386=	BEIGNET MMX SSE
 OPTIONS_DEFAULT_amd64=	MMX SSE
 OPTIONS_DEFAULT_i386=	MMX SSE
 
 ASS_DESC=	Subtitles rendering via libass
+AOM_DESC=	AV1 video encoding/decoding via libaom
+BEIGNET_DESC=	DRM/VAAPI to OpenCL mapping for i965 + Beignet
 BS2B_DESC=	Bauer Stereophonic-to-Binaural filter
 CHROMAPRINT_DESC=	Audio fingerprinting with chromaprint
+CODEC2_DESC=	Codec 2 audio encoding/decoding via libcodec2
+DAV1D_DESC=	AV1 video decoding via libdav1d
+DAVS2_DESC=	AVS2 decoding via libdavs2
 DC1394_DESC=	IIDC-1394 grabbing using libdc1394
 DRM_DESC=	KMS grabbing using libdrm
 FDK_AAC_DESC=	AAC audio encoding via Fraunhofer FDK
-FFSERVER_DESC=	Build and install ffserver
 FLITE_DESC=	Voice synthesis support via libflite
 GME_DESC=	Game Music Emu demuxer
 GPL3_DESC=	Allow (L)GPL version 3 code(cs)
 ILBC_DESC=	Internet Low Bit Rate codec
+KLVANC_DESC=	Kernel Labs VANC processing
 KVAZAAR_DESC=	H.265 video codec support via Kvazaar
 LICENSE_DESC=	Licensing options
+LV2_DESC=	LV2 audio filtering
 MYSOFA_DESC=	SOFAlizer binaural filter
 NEON_DESC=	Media Processing Engine instructions
 NONFREE_DESC=	Allow use of nonfree code
+OPENMPT_DESC=	Decoding tracked files via libopenmpt
 OPENH264_DESC=	H.264 video codec support via OpenH264
 RUBBERBAND_DESC=Time-stretching and pitch-shifting with librubberband
 RTCPU_DESC=	Detect CPU capabilities at runtime
 RTMP_DESC=	RTMP(T)E protocol support
+SRT_DESC=	Haivision SRT protocol via libsrt
 LIBRTMP_DESC=	${RTMP_DESC} via librtmp
+TENSORFLOW_DESC=TensorFlow as a DNN module backend for DNN based filters like sr
 TESSERACT_DESC=	Optical Character Recognition via Tesseract
+VAPOURSYNTH_DESC=	VapourSynth demuxer
 VFP_DESC=	Vector Floating Point instructions
 VIDSTAB_DESC=	Video stabilization filter
+XAVS2_DESC=	AVS2 encoding via libxavs2
 XCB_DESC=	X11 grabbing using XCB
 ZIMG_DESC=	"z" library video scaling filter
 ZMQ_DESC=	Message passing via libzmq${ZMQ_VERSION}
@@ -97,9 +135,17 @@ AMR_WB_LIB_DEPENDS=	libopencore-amrwb.so:audio/opencore-amr
 AMR_WB_CONFIGURE_ENABLE=	libopencore-amrwb
 AMR_WB_IMPLIES=		GPL3
 
+# aom
+AOM_LIB_DEPENDS=	libaom.so:multimedia/aom
+AOM_CONFIGURE_ENABLE=	libaom
+
 # ass
 ASS_LIB_DEPENDS=	libass.so:multimedia/libass
 ASS_CONFIGURE_ENABLE=	libass
+
+# beignet
+BEIGNET_BUILD_DEPENDS=	${LOCALBASE}/include/CL/cl_intel.h:lang/beignet
+BEIGNET_IMPLIES=	DRM OPENCL VAAPI
 
 # bs2b
 BS2B_LIB_DEPENDS=	libbs2b.so:audio/libbs2b
@@ -122,6 +168,18 @@ CHROMAPRINT_BROKEN=		Dependency loop
 CHROMAPRINT_LIB_DEPENDS=	libchromaprint.so:audio/chromaprint
 CHROMAPRINT_CONFIGURE_ENABLE=	chromaprint
 
+# codec2
+CODEC2_LIB_DEPENDS=	libcodec2.so:audio/codec2
+CODEC2_CONFIGURE_ENABLE=	libcodec2
+
+# dav1d
+DAV1D_LIB_DEPENDS=	libdav1d.so:multimedia/dav1d
+DAV1D_CONFIGURE_ENABLE=	libdav1d
+
+# davs2
+DAVS2_LIB_DEPENDS=	libdavs2.so:multimedia/davs2
+DAVS2_CONFIGURE_ENABLE=	libdavs2
+
 # dc1394
 DC1394_LIB_DEPENDS=	libdc1394.so:multimedia/libdc1394
 DC1394_CONFIGURE_ENABLE=	libdc1394
@@ -142,10 +200,6 @@ DRM_CONFIGURE_ENABLE=	libdrm
 FDK_AAC_LIB_DEPENDS=	libfdk-aac.so:audio/fdk-aac
 FDK_AAC_CONFIGURE_ENABLE=	libfdk-aac
 FDK_AAC_IMPLIES=	NONFREE
-
-# ffserver
-FFSERVER_CONFIGURE_ENABLE=	ffserver
-FFSERVER_VARS=		USE_RC_SUBR+=ffserver
 
 # flite
 FLITE_LIB_DEPENDS=	libflite.so:audio/flite
@@ -198,7 +252,11 @@ ILBC_CONFIGURE_ENABLE=	libilbc
 
 # jack
 JACK_LIB_DEPENDS=	libjack.so:audio/jack
-JACK_CONFIGURE_ENABLE=	jack
+JACK_CONFIGURE_ENABLE=	libjack
+
+# klvanc
+KLVANC_LIB_DEPENDS=	libklvanc.so:multimedia/libklvanc
+KLVANC_CONFIGURE_ENABLE=	libklvanc
 
 # kvazaar
 KVAZAAR_LIB_DEPENDS=	libkvazaar.so:multimedia/kvazaar
@@ -213,6 +271,10 @@ LADSPA_CONFIGURE_ENABLE=	ladspa
 LAME_LIB_DEPENDS=	libmp3lame.so:audio/lame
 LAME_CONFIGURE_ENABLE=	libmp3lame
 
+# lensfun
+LENSFUN_LIB_DEPENDS=	liblensfun.so:graphics/lensfun
+LENSFUN_CONFIGURE_ENABLE=	liblensfun
+
 # libbluray
 LIBBLURAY_LIB_DEPENDS=	libbluray.so:multimedia/libbluray
 LIBBLURAY_CONFIGURE_ENABLE=	libbluray
@@ -225,12 +287,21 @@ LIBRSVG2_CONFIGURE_ENABLE=	librsvg
 LIBXML2_LIB_DEPENDS=	libxml2.so:textproc/libxml2
 LIBXML2_CONFIGURE_ENABLE=	libxml2
 
+# lv2
+LV2_BUILD_DEPENDS=	lv2>0:audio/lv2
+LV2_LIB_DEPENDS=	liblilv-0.so:audio/lilv
+LV2_CONFIGURE_ENABLE=	lv2
+
 # libv4l
 V4L_BUILD_DEPENDS=	v4l_compat>0:multimedia/v4l_compat
 V4L_LIB_DEPENDS=	libv4l2.so:multimedia/libv4l
 V4L_CONFIGURE_ENABLE=	libv4l2
 V4L_CONFIGURE_OFF=		--disable-indev=v4l2 \
 				--disable-outdev=v4l2
+
+# mbedtls
+MBEDTLS_LIB_DEPENDS=	libmbedtls.so:security/mbedtls
+MBEDTLS_CONFIGURE_ENABLE=	mbedtls
 
 # mmx support
 MMX_CONFIGURE_ENABLE=	mmx
@@ -268,9 +339,13 @@ OPENH264_CONFIGURE_ENABLE=	libopenh264
 OPENJPEG_LIB_DEPENDS=	libopenjp2.so:graphics/openjpeg
 OPENJPEG_CONFIGURE_ENABLE=	libopenjpeg
 
-# openssl
+# openmpt
+OPENMPT_LIB_DEPENDS=	libopenmpt.so:audio/libopenmpt
+OPENMPT_CONFIGURE_ENABLE=	libopenmpt
+
+# openssl/libtls
 OPENSSL_USES=		ssl
-OPENSSL_CONFIGURE_ENABLE=	openssl
+OPENSSL_CONFIGURE_ENABLE=	${"${SSL_DEFAULT:Mlibressl*}"!="":?libtls:openssl}
 OPENSSL_IMPLIES=	NONFREE
 
 # optimizations
@@ -328,6 +403,14 @@ SSE_IMPLIES=		MMX
 SSH_LIB_DEPENDS=	libssh.so:security/libssh
 SSH_CONFIGURE_ENABLE=	libssh
 
+# srt
+SRT_LIB_DEPENDS=	libsrt.so:net/srt
+SRT_CONFIGURE_ENABLE=	libsrt
+
+# tensorflow
+TENSORFLOW_LIB_DEPENDS=	libtensorflow.so:science/tensorflow
+TENSORFLOW_CONFIGURE_ENABLE=	libtensorflow
+
 # tesseract
 TESSERACT_LIB_DEPENDS=	libtesseract.so:graphics/tesseract
 TESSERACT_CONFIGURE_ENABLE=	libtesseract
@@ -343,6 +426,10 @@ TWOLAME_CONFIGURE_ENABLE=	libtwolame
 # vaapi
 VAAPI_LIB_DEPENDS=	libva.so:multimedia/libva
 VAAPI_CONFIGURE_ENABLE=	vaapi
+
+# vapoursynth
+VAPOURSYNTH_LIB_DEPENDS=	libvapoursynth-script.so:multimedia/vapoursynth
+VAPOURSYNTH_CONFIGURE_ENABLE=	vapoursynth
 
 # vdpau
 VDPAU_LIB_DEPENDS=	libvdpau.so:multimedia/libvdpau
@@ -388,6 +475,10 @@ X264_CONFIGURE_ENABLE=	libx264
 X265_LIB_DEPENDS=	libx265.so:multimedia/x265
 X265_CONFIGURE_ENABLE=	libx265
 
+# xavs2
+XAVS2_LIB_DEPENDS=	libxavs2.so:multimedia/xavs2
+XAVS2_CONFIGURE_ENABLE=	libxavs2
+
 # xcb
 XCB_USE=		XORG=xcb
 XCB_CONFIGURE_ENABLE=	libxcb
@@ -426,8 +517,6 @@ INSTALL_TARGET=	install-progs install-doc install-data \
 		install-libs install-headers install-examples
 
 DATADIR=	${PREFIX}/share/${PORTNAME}${PKGNAMESUFFIX}
-
-DATADIR=	${PREFIX}/share/${PORTNAME}${PKGNAMESUFFIX}
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${PKGNAMESUFFIX}
 CONFIGURE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
 MAKE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin V=1
@@ -462,8 +551,6 @@ CONFIGURE_ARGS+=${CONFIGURE_ARGS_${OPSYS}_${OSREL:R}_${ARCH}}
 
 post-patch:
 # {C,LD}FLAGS safeness
-	@${REINPLACE_CMD} -e 's|/etc/ffserver.conf|${PREFIX}/etc/ffserver.conf|' \
-		${WRKSRC}/fftools/ffserver.c
 	@${REINPLACE_CMD} -E \
 		-e 's|require_pkg_config opencv|require_pkg_config opencv-core|g' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
@@ -473,9 +560,5 @@ post-install:
 		"${DOC_FILES}" ${STAGEDIR}${DOCSDIR})
 	(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} \
 		"${DOC_DOCFILES}" ${STAGEDIR}${DOCSDIR})
-
-post-install-FFSERVER-on:
-	${INSTALL_DATA} ${WRKSRC}/doc/ffserver.conf \
-		${STAGEDIR}${PREFIX}/etc/ffserver.conf.sample
 
 .include <bsd.port.mk>

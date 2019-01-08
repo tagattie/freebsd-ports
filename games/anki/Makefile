@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	anki
-DISTVERSION=	2.0.51
+DISTVERSION=	2.0.52
+PORTREVISION=	1
 CATEGORIES=	games python
 MASTER_SITES=	https://apps.ankiweb.net/downloads/current/
 DISTNAME=	anki-${PORTVERSION}-source
@@ -14,6 +15,9 @@ COMMENT=	Flashcard trainer with spaced repetition
 LICENSE=	AGPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 RUN_DEPENDS=	lame:audio/lame \
 		mplayer:multimedia/mplayer \
 		${PYTHON_PKGNAMEPREFIX}pyaudio>0:audio/py-pyaudio@${PY_FLAVOR} \
@@ -23,10 +27,10 @@ RUN_DEPENDS=	lame:audio/lame \
 		${PYTHON_PKGNAMEPREFIX}httplib2>0:www/py-httplib2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}send2trash>0:deskutils/py-send2trash@${PY_FLAVOR}
 
-USES=		desktop-file-utils pyqt:4 python:2.7 shared-mime-info shebangfix tar:tgz
+USES=		desktop-file-utils pyqt:4 python:2.7 qt:4 shared-mime-info shebangfix tar:tgz
 SHEBANG_FILES=	tools/build_ui.sh tools/tests.sh anki/anki runanki
 USE_PYQT=	network_run webkit_run
-USE_QT4=	network_run webkit_run
+USE_QT=		network_run webkit_run
 NO_ARCH=	yes
 
 OPTIONS_DEFINE=	NLS

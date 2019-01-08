@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	darktable
-PORTVERSION=	2.4.2
+PORTVERSION=	2.4.4
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/darktable-org/${PORTNAME}/releases/download/release-${PORTVERSION:C/\.rc/rc/}/
 
@@ -27,7 +28,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 ONLY_FOR_ARCHS=		amd64
 ONLY_FOR_ARCHS_REASON=	uses SSE instructions and 64-bit address space
 
-USES=		cmake:outsource compiler:c++11-lib desktop-file-utils	\
+USES=		cmake compiler:c++11-lib desktop-file-utils	\
 		jpeg pkgconfig sqlite tar:xz
 USE_GL=		glu
 USE_GNOME=	cairo gtk30 intltool librsvg2 libxml2
@@ -81,8 +82,8 @@ NLS_USES_OFF=		gettext-runtime
 NLS_CMAKE_OFF=		-DUSE_NLS:BOOL=OFF
 NLS_LDFLAGS=		-L${LOCALBASE}/lib -lintl
 
-OPENEXR_LIB_DEPENDS=	libIlmImf.so:graphics/OpenEXR \
-			libIlmThread-2_2.so:graphics/ilmbase
+OPENEXR_LIB_DEPENDS=	libIlmImf.so:graphics/openexr \
+			libIlmThread.so:graphics/ilmbase
 OPENEXR_CMAKE_OFF=	-DUSE_OPENEXR:BOOL=OFF
 
 OPENJPEG_LIB_DEPENDS=	libopenjp2.so:graphics/openjpeg
@@ -97,20 +98,13 @@ WEBP_CMAKE_OFF=		-DUSE_WEBP:BOOL=OFF
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == amd64 && ${CHOSEN_COMPILER_TYPE} == clang
-# Enable OpenMP support with Clang 5.0.
-LLVM_VER=	50
+# Enable OpenMP support with Clang 6.0.
+LLVM_VER=	60
 BUILD_DEPENDS+=	clang${LLVM_VER}:devel/llvm${LLVM_VER}
 
 CPP=		clang-cpp${LLVM_VER}
 CC=		clang${LLVM_VER}
 CXX=		clang++${LLVM_VER}
-
-# FIXME: At least in 3.7.0 and 3.7.1, Clang doesn't find libomp.so
-# itself. Furthermore, there may be a regression in 3.7.1 because we now
-# need to explicitly link to libm.so as well. This remains true with
-# Clang 3.9.1.
-OPENMP_FLAGS=	-L${LOCALBASE}/llvm${LLVM_VER}/lib -lm -lomp
-LDFLAGS+=	${OPENMP_FLAGS}
 
 # Depend on devel/openmp instead of the full LLVM at runtime. Required
 # for a consistent libomp experience.

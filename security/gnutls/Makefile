@@ -1,7 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	gnutls
-PORTVERSION=	3.5.18
+PORTVERSION=	3.6.5
+PORTREVISION=	1
 CATEGORIES=	security net
 MASTER_SITES=	GNUPG/gnutls/v${PORTVERSION:R}
 
@@ -20,7 +21,7 @@ LIB_DEPENDS=	libgmp.so:math/gmp \
 BUILD_DEPENDS+=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 RUN_DEPENDS+=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 
-USES=		cpe gmake iconv libtool localbase makeinfo \
+USES=		compiler:c11 cpe gmake iconv libtool localbase makeinfo \
 		pathfix pkgconfig tar:xz
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

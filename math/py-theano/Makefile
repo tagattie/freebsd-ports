@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	theano
-DISTVERSION=	1.0.1
+DISTVERSION=	1.0.3
 CATEGORIES=	math python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,7 +15,7 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	${PYNUMPY} \
-		${PYTHON_PKGNAMEPREFIX}scipy>=0.8.0:science/py-scipy@${FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}scipy>=0.8.0:science/py-scipy@${PY_FLAVOR}
 
 USES=		compiler:openmp python
 USE_PYTHON=	concurrent distutils autoplist

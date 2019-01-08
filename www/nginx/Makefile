@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	nginx
-PORTVERSION=	1.12.2
-PORTREVISION?=	11
+PORTVERSION=	1.14.2
+PORTREVISION?=	3
 PORTEPOCH=	2
 CATEGORIES=	www
 MASTER_SITES=	http://nginx.org/download/ \
-		LOCAL/osa
+		LOCAL/joneum
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER?=	joneum@FreeBSD.org
@@ -15,9 +15,12 @@ COMMENT?=	Robust and small WWW server
 
 LICENSE=	BSD2CLAUSE
 
+BROKEN_mips=	error ngx_spinlock() or ngx_atomic_cmp_set() are not defined
+BROKEN_mips64=	error ngx_spinlock() or ngx_atomic_cmp_set() are not defined
+
 CONFLICTS_INSTALL=	nginx-devel
 
-PORTSCOUT=	limit:^1\.12\.[0-9]*
+PORTSCOUT=	limit:^1\.14\.[0-9]*
 
 USES=		cpe
 
@@ -55,6 +58,7 @@ CONFIGURE_ARGS+=--prefix=${ETCDIR} \
 		--pid-path=${NGINX_RUNDIR}/nginx.pid \
 		--error-log-path=${NGINX_ERRORLOG} \
 		--user=${WWWOWN} --group=${WWWGRP}
+ALL_TARGET=
 
 PLIST_SUB+=	NGINX_TMPDIR=${NGINX_TMPDIR} NGINX_LOGDIR=${NGINX_LOGDIR} WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
 
@@ -71,7 +75,7 @@ OPTIONS_GROUP_HTTPGRP=	GOOGLE_PERFTOOLS HTTP HTTP_ADDITION HTTP_AUTH_REQ \
 	HTTP_REWRITE HTTP_SECURE_LINK HTTP_SLICE HTTP_SSL HTTP_STATUS HTTP_SUB \
 	HTTP_XSLT HTTPV2 STREAM STREAM_SSL STREAM_SSL_PREREAD
 # External modules (arrayvar MUST appear after devel_kit for build-dep)
-OPTIONS_GROUP_HTTPGRP+=	AJP  AWS_AUTH BROTLI CACHE_PURGE CLOJURE CT DEVEL_KIT \
+OPTIONS_GROUP_HTTPGRP+=	AJP AWS_AUTH BROTLI CACHE_PURGE CLOJURE CT DEVEL_KIT \
 	ARRAYVAR DRIZZLE DYNAMIC_UPSTREAM ECHO ENCRYPTSESSION FASTDFS FORMINPUT \
 	GRIDFS HEADERS_MORE HTTP_ACCEPT_LANGUAGE HTTP_AUTH_DIGEST HTTP_AUTH_KRB5 \
 	HTTP_AUTH_LDAP HTTP_AUTH_PAM HTTP_DAV_EXT HTTP_EVAL HTTP_FANCYINDEX \
@@ -81,15 +85,22 @@ OPTIONS_GROUP_HTTPGRP+=	AJP  AWS_AUTH BROTLI CACHE_PURGE CLOJURE CT DEVEL_KIT \
 	HTTP_UPSTREAM_CHECK HTTP_UPSTREAM_FAIR HTTP_UPSTREAM_STICKY \
 	HTTP_VIDEO_THUMBEXTRACTOR HTTP_ZIP ICONV LET LUA MEMC MODSECURITY \
 	MODSECURITY3 NAXSI NJS PASSENGER POSTGRES RDS_CSV RDS_JSON REDIS2 RTMP \
-	SET_MISC SFLOW SHIBBOLETH SLOWFS_CACHE SMALL_LIGHT SRCACHE XSS
+	SET_MISC SFLOW SHIBBOLETH SLOWFS_CACHE SMALL_LIGHT SRCACHE VOD VTS XSS
 OPTIONS_GROUP_MAILGRP=	MAIL MAIL_IMAP MAIL_POP3 MAIL_SMTP MAIL_SSL
 OPTIONS_DEFINE=	DEBUG DEBUGLOG DSO FILE_AIO IPV6 THREADS WWW
-OPTIONS_DEFAULT?=DSO FILE_AIO HTTP HTTP_ADDITION HTTP_AUTH_REQ HTTP_CACHE \
+OPTIONS_DEFAULT?=	DSO FILE_AIO HTTP HTTP_ADDITION HTTP_AUTH_REQ HTTP_CACHE \
 		HTTP_DAV HTTP_FLV HTTP_GZIP_STATIC HTTP_GUNZIP_FILTER \
 		HTTP_MP4 HTTP_RANDOM_INDEX HTTP_REALIP HTTP_SECURE_LINK \
 		HTTP_SLICE HTTP_REWRITE HTTP_SSL HTTP_STATUS HTTP_SUB \
 		HTTPV2 MAIL MAIL_SSL STREAM STREAM_SSL STREAM_SSL_PREREAD \
 		THREADS WWW
+
+OPTIONS_RADIO+=		GSSAPI
+OPTIONS_RADIO_GSSAPI=	GSSAPI_BASE GSSAPI_HEIMDAL GSSAPI_MIT
+GSSAPI_BASE_USES=	gssapi
+GSSAPI_HEIMDAL_USES=	gssapi:heimdal,flags
+GSSAPI_MIT_USES=	gssapi:mit
+
 OPTIONS_SUB=	yes
 
 .include "Makefile.options.desc"
@@ -101,6 +112,10 @@ ${opt}_IMPLIES=	MAIL
 .for opt in ${OPTIONS_GROUP_HTTPGRP:NHTTP} WWW
 ${opt}_IMPLIES=	HTTP
 .endfor
+
+GSSAPI_BASE_IMPLIES=	HTTP_AUTH_KRB5
+GSSAPI_HEIMDAL_IMPLIES=	HTTP_AUTH_KRB5
+GSSAPI_MIT_IMPLIES=	HTTP_AUTH_KRB5
 
 # If the target is makesum, make sure that every distfile is fetched.
 .if ${.TARGETS:Mmakesum}
@@ -131,7 +146,7 @@ HTTP_CONFIGURE_OFF=		--without-http
 HTTP_ADDITION_CONFIGURE_ON=	--with-http_addition_module
 HTTP_AUTH_REQ_CONFIGURE_ON=	--with-http_auth_request_module
 HTTP_CACHE_CONFIGURE_OFF=	--without-http-cache
-HTTP_DAV_CONFIGURE_ARGS=	--with-http_dav_module
+HTTP_DAV_CONFIGURE_ON=		--with-http_dav_module
 HTTP_FLV_CONFIGURE_ON=		--with-http_flv_module
 HTTP_GEOIP_LIB_DEPENDS=		libGeoIP.so:net/GeoIP
 HTTP_GEOIP_VARS=		DSO_BASEMODS+=http_geoip_module
@@ -139,7 +154,7 @@ HTTP_GZIP_STATIC_CONFIGURE_ON=	--with-http_gzip_static_module
 HTTP_GUNZIP_FILTER_CONFIGURE_ON=--with-http_gunzip_module
 HTTP_IMAGE_FILTER_LIB_DEPENDS=	libgd.so:graphics/gd
 HTTP_IMAGE_FILTER_VARS=		DSO_BASEMODS+=http_image_filter_module
-HTTP_MP4_CONFIGURE_ARGS=	--with-http_mp4_module
+HTTP_MP4_CONFIGURE_ON=		--with-http_mp4_module
 HTTP_PERL_CATEGORIES=		perl5
 HTTP_PERL_USES=			perl5
 HTTP_PERL_VARS=			DSO_BASEMODS+=http_perl_module
@@ -151,6 +166,7 @@ HTTP_REWRITE_CONFIGURE_OFF=	--without-http_rewrite_module
 HTTP_SECURE_LINK_CONFIGURE_ON=	--with-http_secure_link_module
 HTTP_SLICE_CONFIGURE_ON=	--with-http_slice_module
 HTTP_SSL_CONFIGURE_ON=		--with-http_ssl_module
+HTTP_SSL_USE=				openssl_rpath
 HTTP_SSL_USES=			ssl
 HTTP_STATUS_CONFIGURE_ON=	--with-http_stub_status_module
 HTTP_SUB_CONFIGURE_ON=		--with-http_sub_module
@@ -167,7 +183,7 @@ MAIL_SSL_CONFIGURE_ON=		--with-mail_ssl_module
 STREAM_VARS=			DSO_BASEMODS+=stream
 STREAM_SSL_IMPLIES=		HTTP_SSL
 STREAM_SSL_CONFIGURE_ON=	--with-stream_ssl_module
-STREAM_SSL_PREREAD_OFF=		--without-stream_ssl_preread_module
+STREAM_SSL_PREREAD_CONFIGURE_ON=	--with-stream_ssl_preread_module
 
 ### External modules
 .include "Makefile.extmod"
@@ -185,6 +201,12 @@ _addextmod=	add-module
 CONFIGURE_ARGS+=	--with-${mod}${_addbasemod}
 .endfor
 
+# Some modules depend on other being there before, for example, devel_kit needs
+# to be there before a few other.
+.for mod in ${FIRST_DSO_EXTMODS}
+CONFIGURE_ARGS+=	--${_addextmod}=${WRKSRC_${mod}}${${mod:tu}_SUBDIR}
+.endfor
+
 .for mod in ${DSO_EXTMODS}
 CONFIGURE_ARGS+=	--${_addextmod}=${WRKSRC_${mod}}${${mod:tu}_SUBDIR}
 .endfor
@@ -196,10 +218,6 @@ CONFIGURE_ARGS+=	--${_addextmod}=${WRKDIR}/${moddir}
 .if empty(PORT_OPTIONS:MHTTP) && empty(PORT_OPTIONS:MMAIL)
 IGNORE=		requires at least HTTP or MAIL to \
 		be defined.  Please do 'make config' again
-.endif
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1100085 && ${SSL_DEFAULT} == base && ${PORT_OPTIONS:MCT}
-IGNORE=		CT option requires OpenSSL 1.0.2, add DEFAULT_VERSIONS+=ssl=openssl to /etc/make.conf
 .endif
 
 .if !${PORT_OPTIONS:MHTTP_REWRITE} && !defined(USE_HTTP_REWRITE)
@@ -287,6 +305,11 @@ post-patch-SFLOW-on:
 		's!%%PREFIX%%!${LOCALBASE}!g' \
 		${WRKSRC_sflow}/ngx_http_sflow_config.h
 
+post-patch-VOD-on:
+	@${REINPLACE_CMD} \
+	's!%%PREFIX%%!${LOCALBASE}!g' \
+	${WRKSRC_vod}/config
+
 pre-configure-MODSECURITY-on:
 	( cd ${WRKSRC_MODSECURITY} && \
 		CC="${CC}" ${CONFIGURE_CMD} --enable-standalone-module \
@@ -296,9 +319,6 @@ pre-configure-MODSECURITY-on:
 
 pre-configure-SMALL_LIGHT-on:
 	( cd ${WRKSRC_small_light} && ./setup )
-
-do-build:
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD}
 
 do-install:
 	${MKDIR} ${STAGEDIR}${ETCDIR}

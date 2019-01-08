@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	qalculate
-PORTVERSION=	2.2.1
+PORTVERSION=	2.6.1
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/v${PORTVERSION}/
 DISTNAME=	${GH_PROJECT}-${PORTVERSION}
@@ -12,8 +13,6 @@ COMMENT=	Multi-purpose desktop calculator (GTK+3 frontend)
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
-
-BROKEN_powerpc64=	fails to compile:  main.cc: undefined reference to Calculator::temporaryCategory[abi:cxx11]()
 
 LIB_DEPENDS=	libqalculate.so:math/libqalculate
 RUN_DEPENDS=	gnuplot:math/gnuplot

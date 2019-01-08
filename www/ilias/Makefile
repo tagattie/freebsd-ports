@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ilias
-PORTVERSION=	5.3.2
+PORTVERSION=	5.3.11
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 
@@ -11,7 +11,7 @@ COMMENT=	Powerful, dynamic, PHP and MySQL based e-learning platform
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	convert:graphics/ImageMagick \
+RUN_DEPENDS=	convert:graphics/ImageMagick6 \
 		zip:archivers/zip \
 		${UNZIP_CMD}:archivers/unzip \
 		${LOCALBASE}/share/pear/PEAR.php:devel/pear@${PHP_FLAVOR} \
@@ -47,7 +47,11 @@ EXTRA_FILES=	%%WWWDIR%%/Modules/Chatroom/chat/node_modules/.bin/_mocha \
 		%%WWWDIR%%/Modules/Chatroom/chat/node_modules/mocha/node_modules/.bin/jade \
 		%%WWWDIR%%/Modules/Chatroom/chat/node_modules/mocha/node_modules/.bin/mkdirp \
 		%%WWWDIR%%/Modules/Chatroom/chat/node_modules/mocha/node_modules/.bin/supports-color \
-		%%WWWDIR%%/Modules/Chatroom/chat/node_modules/supertest/node_modules/superagent/node_modules/.bin/mime
+		%%WWWDIR%%/Modules/Chatroom/chat/node_modules/supertest/node_modules/superagent/node_modules/.bin/mime \
+		%%WWWDIR%%/libs/composer/vendor/bin/export-plural-rules \
+		%%WWWDIR%%/libs/composer/vendor/bin/export-plural-rules.php \
+		%%WWWDIR%%/libs/composer/vendor/simplesamlphp/simplesamlphp/locales/no
+
 pre-install:
 	@${ECHO_CMD} "@owner ${WWWOWN}" >> ${PLIST}
 	@${ECHO_CMD} "@group ${WWWGRP}" >> ${PLIST}

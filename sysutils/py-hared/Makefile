@@ -19,8 +19,6 @@ ETCDIR=		${PREFIX}/etc
 
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}paho-mqtt>0:net/py-paho-mqtt@${PY_FLAVOR}
 
-PLIST_FILES+=	"@sample %%ETCDIR%%/hared.ini.sample"
-
 pre-install:
 	${INSTALL_DATA} ${FILESDIR}/hared.conf ${STAGEDIR}${ETCDIR}/hared.ini.sample
 

@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cliapp
-PORTVERSION=	1.20160724
-PORTREVISION=	1
+PORTVERSION=	1.20180812.1
 CATEGORIES=	devel
 MASTER_SITES=	http://git.liw.fi/cgi-bin/cgit/cgit.cgi/cliapp/snapshot/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,8 +12,8 @@ COMMENT=	Python framework for command line utilities
 LICENSE=	GPLv2
 LICENSE_FILES=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}yaml>0:devel/py-yaml@${FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}yaml>0:devel/py-yaml@${FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}yaml>0:devel/py-yaml@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}yaml>0:devel/py-yaml@${PY_FLAVOR}
 
 USES=		python:2.7
 NO_ARCH=	yes

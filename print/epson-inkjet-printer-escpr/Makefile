@@ -1,10 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	epson-inkjet-printer-escpr
-PORTVERSION=	1.6.19
+PORTVERSION=	1.6.33
 DISTVERSIONSUFFIX=	-1lsb3.2
 CATEGORIES=	print
-MASTER_SITES=	https://download3.ebz.epson.net/dsc/f/03/00/07/07/57/91f8069e80d17a5dade2f18eda1ade2d49297840/
+MASTER_SITES=	https://download3.ebz.epson.net/dsc/f/03/00/08/70/14/e33b7a89e843b3ac97dcab773f03fbac7769f147/
 
 MAINTAINER=	tatsuki_makino@hotmail.com
 COMMENT=	Epson Inkjet Printer Driver (ESC/P-R) for Linux
@@ -18,6 +18,7 @@ USES=		autoreconf dos2unix gmake libtool
 USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--enable-lsb
 INSTALL_TARGET=	install-strip
 SUB_FILES=	pkg-message
 PORTDOCS=	AUTHORS COPYING NEWS README README.ja

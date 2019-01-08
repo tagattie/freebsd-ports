@@ -3,7 +3,7 @@
 
 PORTNAME=	flim
 PORTVERSION=	1.14.9
-PORTREVISION=	17
+PORTREVISION=	20
 PORTEPOCH=	1
 CATEGORIES=	editors elisp
 MASTER_SITES=	http://git.chise.org/elisp/dist/${PORTNAME}/${PORTNAME}-${DISTVERSION:R}/
@@ -26,7 +26,8 @@ NO_ARCH=	yes
 ALL_TARGET=	elc
 
 MAKE_ARGS+=	PREFIX="${STAGEDIR}${PREFIX}" \
-		LISPDIR="${STAGEDIR}${PREFIX}/${EMACS_SITE_LISPDIR}"
+		LISPDIR="${STAGEDIR}${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}" \
+		VERSION_SPECIFIC_LISPDIR="${STAGEDIR}${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}"
 
 INFO=		mime-en mime-ja
 
@@ -42,7 +43,7 @@ post-build:
 post-install:
 	@(cd ${WRKSRC} ; \
 	for i in mime-en.info mime-ja.info; do \
-		${INSTALL_DATA} ${WRKSRC}/$${i} ${STAGEDIR}${PREFIX}/info ; \
+		${INSTALL_DATA} ${WRKSRC}/$${i} ${STAGEDIR}${PREFIX}/${INFO_PATH} ; \
 	done)
 
 post-install-DOCS-on:

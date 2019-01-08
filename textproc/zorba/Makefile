@@ -3,7 +3,7 @@
 
 PORTNAME=	zorba
 PORTVERSION=	2.7.0
-PORTREVISION=	19
+PORTREVISION=	24
 CATEGORIES=	textproc java
 MASTER_SITES=	https://launchpadlibrarian.net/119058962/
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}
@@ -37,10 +37,11 @@ JAVA_CMAKE_BOOL=	WITH_JAVA
 CONFLICTS=	xqilla-[0-9]*
 CONFLICTS_BUILD=	bison
 
-USES=		cmake:outsource compiler:c++11-lib libedit
+USES=		cmake compiler:c++11-lib libedit
 USE_GNOME=	libxml2 libxslt
 USE_LDCONFIG=	yes
 USE_CXXSTD=	c++11
+CXXFLAGS+=	-DU_USING_ICU_NAMESPACE=1
 CXXFLAGS+=	-I${LOCALBASE}/include -O1 # compiler hangs with -O2 on CURRENT
 LDFLAGS+=	-L${LOCALBASE}/lib
 CMAKE_ARGS=	-DCMAKE_REQUIRED_FLAGS:STRING="-I${LOCALBASE}/include -L${LOCALBASE}/lib" \

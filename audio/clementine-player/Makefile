@@ -2,10 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	clementine
-PORTVERSION=	1.3.1
-PORTREVISION=	17
+DISTVERSION=	1.3.1.g20190103
 CATEGORIES=	audio
 PKGNAMESUFFIX=	-player
+
+MASTER_SITES=	GH
 
 MAINTAINER=	sbruno@FreeBSD.org
 COMMENT=	Cross-platform music player based on Amarok 1.4
@@ -17,42 +18,45 @@ BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:devel/boost-libs
 LIB_DEPENDS=	libtag.so:audio/taglib \
 		libchromaprint.so:audio/chromaprint \
 		libprotobuf.so:devel/protobuf \
-		libqca.so:devel/qca \
-		libqjson.so:devel/qjson \
+		libqca-qt5.so:devel/qca@qt5 \
+		libqjson-qt5.so:devel/qjson@qt5 \
 		libfftw3.so:math/fftw3 \
-		libechonest.so:audio/libechonest \
+		libechonest5.so:audio/libechonest \
 		libcryptopp.so:security/cryptopp
 
 BROKEN_powerpc64=	fails to compile: tagreader.cpp: undefined reference to TagLib::String::String
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	${PORTNAME}${PKGNAMESUFFIX}
-GH_PROJECT=	Clementine
+GH_TUPLE=       clementine-player:Clementine:4ff370c
 
 USES=		cmake \
 		compiler:c++11-lib \
 		desktop-file-utils \
 		gettext-tools \
 		pkgconfig \
-		sqlite
+		qt:5 \
+		sqlite \
+		gl
 
-USE_GL=		glew
+USE_CXXSTD=	c++11
 
-CONFLICTS_BUILD=	qt-3.*
-USE_QT4=	corelib \
+USE_GL=		gl glew glu
+USE_XORG=	x11
+
+USE_QT=		buildtools \
+		concurrent \
+		core \
 		dbus \
 		gui \
 		imageformats \
-		qmake_build \
 		linguist_build \
-		moc_build \
 		network \
 		opengl \
-		qtestlib \
-		rcc_build \
+		qmake_build \
+		testlib \
 		sql \
-		uic_build \
-		webkit \
+		widgets \
+		x11extras \
 		xml
 
 USE_GSTREAMER1=	cdparanoia \
@@ -63,6 +67,7 @@ USE_GSTREAMER1=	cdparanoia \
 		lame \
 		mpg123 \
 		neon \
+		opus \
 		shout2 \
 		soup \
 		taglib \
@@ -77,17 +82,9 @@ CFLAGS+=	-Wno-inconsistent-missing-override \
 
 CMAKE_ARGS+=	-DCMAKE_LIBRARY_PATH:PATH="${LOCALBASE}/lib:${PREFIX}/lib" \
 		-DENABLE_DBUS=ON \
-		-DENABLE_SPOTIFY_BLOB=OFF \
-		-DCRYPTOPP_LIBS=${LOCALBASE}/lib/libcryptopp.so \
-		-DCRYPTOPP_INCLUDEDIR=${LOCALBASE}/include/cryptopp \
-		-DCRYPTOPP_LIBDIR=${LOCALBASE}/lib \
-		-DCRYPTOPP_LDFLAGS=-lcryptopp \
-		-DCRYPTOPP_LIBRARIES=cryptopp \
-		-DCRYPTOPP_LIBRARY_DIRS=${LOCALBASE}/lib \
-		-DCRYPTOPP_cryptopp_INCLUDEDIR=${LOCALBASE}/include/cryptopp \
-		-DCRYPTOPP_cryptopp_LIBDIR=${LOCALBASE}/lib \
-		-DCRYPTOPP_FOUND=1
+		-DENABLE_SPOTIFY_BLOB=OFF
 
+OPTIONS_SUB=		yes
 OPTIONS_DEFINE=		AMAZON \
 			AUDIOCD \
 			BOX \
@@ -105,7 +102,6 @@ OPTIONS_DEFINE=		AMAZON \
 			VISUALISATION \
 			WIIMOTEDEV
 
-OPTIONS_SUB=		yes
 
 AMAZON_DESC=		Amazon Drive support
 AUDIOCD_DESC=		Devices: Audio CD support
@@ -160,6 +156,7 @@ DROPBOX_BUILD_DEPENDS=	sparsehash>=2.0.2:devel/sparsehash
 DROPBOX_CMAKE_ON=	-DENABLE_DROPBOX=ON
 DROPBOX_CMAKE_OFF=	-DENABLE_DROPBOX=OFF
 
+GIO_USES=		gnome
 GIO_USE=		GNOME=glib20
 GIO_CMAKE_ON=		-DENABLE_GIO=ON
 GIO_CMAKE_OFF=		-DENABLE_GIO=OFF
@@ -170,11 +167,12 @@ GOOGLE_DRIVE_CMAKE_OFF=	-DENABLE_GOOGLE_DRIVE=OFF
 
 GPOD_LIB_DEPENDS=	libgpod.so:audio/libgpod \
 			libplist.so:devel/libplist \
-			libusbmuxd.so:comms/libusbmuxd
+			libusbmuxd.so:comms/libusbmuxd \
+			libimobiledevice.so:comms/libimobiledevice
 GPOD_CMAKE_ON=		-DENABLE_LIBGPOD=ON
 GPOD_CMAKE_OFF=		-DENABLE_LIBGPOD=OFF
 
-LASTFM_LIB_DEPENDS=	liblastfm.so:audio/liblastfm
+LASTFM_LIB_DEPENDS=	liblastfm5.so:audio/liblastfm-qt5
 LASTFM_CMAKE_ON=	-DENABLE_LIBLASTFM=ON
 LASTFM_CMAKE_OFF=	-DENABLE_LIBLASTFM=OFF
 

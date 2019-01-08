@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	haproxy
-PORTVERSION=	1.7.10
+DISTVERSION=	1.8.16
 CATEGORIES=	net www
-MASTER_SITES=	http://www.haproxy.org/download/1.7/src/
-DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
+MASTER_SITES=	http://www.haproxy.org/download/1.8/src/
 
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Reliable, high performance TCP/HTTP load balancer
@@ -13,7 +12,7 @@ COMMENT=	Reliable, high performance TCP/HTTP load balancer
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
 
-CONFLICTS_INSTALL=	haproxy-devel-[0-9]*
+CONFLICTS_INSTALL=	haproxy-devel-[0-9]* haproxy17-[0-9]*
 
 USES=		cpe gmake
 USE_RC_SUBR=	haproxy
@@ -45,10 +44,6 @@ LUA_MAKE_ARGS=		USE_LUA=1 LUA_INC=${LUA_INCDIR} LUA_LIB=${LUA_LIBDIR} LUA_LIB_NA
 
 .if ${ARCH} == "amd64" || ${ARCH} == "i386"
 MAKE_ARGS+=     USE_REGPARM=1
-.endif
-
-.if ${PORT_OPTIONS:MOPENSSL} && ${SSL_DEFAULT:Mopenssl-devel}
-BROKEN=         Does not build with openssl-devel
 .endif
 
 post-build:

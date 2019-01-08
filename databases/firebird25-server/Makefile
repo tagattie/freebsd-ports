@@ -1,16 +1,15 @@
-# Created by: Alonso Cárdenas Márquez <acm@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	firebird
-PORTVERSION=	2.5.6
-PORTREVISION=	4
+PORTVERSION=	2.5.8
+PORTREVISION=	2
 CATEGORIES?=	databases
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION:S/.0//}-Release/
+MASTER_SITES=	https://github.com/FirebirdSQL/${PORTNAME}/releases/download/R2_5_8/
 PKGNAMESUFFIX?=	${PORTVERSION:R:S/.//}-server
-DISTNAME=	${PORTNAME:S/f/F/}-${PORTVERSION}.27020-0
+DISTNAME=	${PORTNAME:S/f/F/}-${PORTVERSION}.27089-0
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	acm@FreeBSD.org
 COMMENT?=	Firebird-2 relational database (server)
 
 LICENSE=	IDPL IPL
@@ -45,6 +44,7 @@ CONFIGURE_ARGS=	--with-system-icu \
 CONFIGURE_ENV+=	PTHREAD_LIBS="-lpthread" \
 		ac_cv_header_atomic_ops_h="no" \
 		ac_cv_lib_atomic_ops_main="no"
+CPPFLAGS+=	-DU_NOEXCEPT= # For USE_CXXSTD=gnu++98
 
 LOCALSTATEDIR=	/var/db/firebird
 CONFDIR=	etc/firebird

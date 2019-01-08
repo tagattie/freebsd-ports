@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	container-diff
-PORTVERSION=	0.8.0
+PORTVERSION=	0.14.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
@@ -12,12 +12,13 @@ COMMENT=	Diff your Docker containers
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-GO_PKGNAME=	github.com/${GH_ACCOUNT}/${GH_PROJECT}
 USES=		go
+
+GO_PKGNAME=	github.com/${GH_ACCOUNT}/${GH_PROJECT}
 
 PLIST_FILES=	bin/container-diff
 
-GH_ACCOUNT=	GoogleCloudPlatform
+GH_ACCOUNT=	GoogleContainerTools
 USE_GITHUB=	yes
 
 do-install:

@@ -6,7 +6,7 @@ PORTVERSION=	2.00
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mission and Objective based 2D Platform Game
 
 LICENSE=	GPLv2+ CC-BY-3.0 CC-BY-SA-3.0
@@ -15,7 +15,6 @@ LICENSE_FILE_GPLv2+ =	${WRKSRC}/doc/license
 
 USES=		gmake pkgconfig
 USE_SDL=	image2 mixer2 net2 sdl2 ttf2
-WITH_ZLIB=	yes
 
 INSTALLS_ICONS=	yes
 
@@ -30,7 +29,6 @@ post-patch:
 	@${REINPLACE_CMD} \
 		-e 's|%%LOCALBASE%%|${LOCALBASE}|' \
 			${WRKSRC}/Makefile
-	${CHMOD} 664 ${WRKSRC}/icons/*
 
 post-patch-DOCS-off:
 	@${REINPLACE_CMD} \
@@ -43,8 +41,8 @@ post-patch-NLS-off:
 		${WRKSRC}/Makefile
 
 post-install:
-	${LN} -sf ${PREFIX}/share/icons/hicolor/48x48/apps/${PORTNAME}.png \
+	@${LN} -sf ../icons/hicolor/48x48/apps/${PORTNAME}.png \
 		${STAGEDIR}${PREFIX}/share/pixmaps/
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

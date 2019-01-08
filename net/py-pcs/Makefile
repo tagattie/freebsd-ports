@@ -14,6 +14,10 @@ COMMENT=	Protocol Construction Set
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
+BROKEN=		fails to build with cython 0.28
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2018-12-19
+
 PORTDOCS=	pcs.pdf
 PORTEXAMPLES=	*
 

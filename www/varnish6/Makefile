@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	varnish
-PORTVERSION=	6.0.0
+PORTVERSION=	6.1.1
 DISTVERSIONPREFIX=	varnish-
 PORTREVISION=	0
 CATEGORIES=	www
@@ -11,8 +11,10 @@ MAINTAINER=	feld@FreeBSD.org
 COMMENT=	High-performance HTTP accelerator
 
 LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	rst2man:textproc/py-docutils
+BUILD_DEPENDS=	rst2man:textproc/py-docutils \
+		${PYTHON_PKGNAMEPREFIX}sphinx>0:textproc/py-sphinx@${PY_FLAVOR}
 LIB_DEPENDS=	libpcre.so:devel/pcre
 
 CONFLICTS=	varnish-2.* varnish-3.* varnish4-4.* varnish5-5.*
@@ -26,6 +28,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=${PREFIX} --without-dot
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
+TEST_TARGET=	check
+TEST_ARGS=	TESTS_PARALLELISM=1
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	varnishcache
@@ -40,12 +44,16 @@ BAD_TESTS+=	r00832
 EXTRA_PATCHES+=	${FILESDIR}/no-inet6.patch
 .endif
 
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.pre.mk>
+
 post-patch:
 .if defined(BAD_TESTS)
 	${RM} ${BAD_TESTS:C|.+|${WRKSRC}/bin/varnishtest/tests/\0.vtc|}
 .endif
+.if ${ARCH:Mmips*} || ${ARCH:Mpowerpc*} || ${ARCH} == sparc64
+	${REINPLACE_CMD} -e '/-Wno-unknown-warning-option -Wno-implicit-fallthrough/d' ${WRKSRC}/configure.ac
+.endif
 
-regression-test check test: build
-	${MAKE_CMD} TESTS_PARALLELISM=1 -C ${WRKSRC} check
-
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

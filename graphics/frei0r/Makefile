@@ -15,7 +15,7 @@ COMMENT?=	Minimalistic plugin API for video effects
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
-USES=	cmake:outsource pkgconfig
+USES=	cmake pkgconfig
 
 .if defined(BUILDING_FREI0R_OPENCV) && defined(BUILDING_FREI0R_GAVL)
 IGNORE=		cannot build OpenCV and gavl plugins simultaneously
@@ -29,11 +29,11 @@ USES+=	localbase
 .endif
 
 .if defined(BUILDING_FREI0R_OPENCV)
-PORTREVISION=	0
+PORTREVISION=	1
 COMMENT=	Frei0r OpenCV plugins
 PKGNAMESUFFIX=	-plugins-opencv
 LIB_DEPENDS+=	libopencv_core.so:graphics/opencv-core \
-		libopencv_legacy.so:graphics/opencv
+		libopencv_video.so:graphics/opencv
 FREI0R_PLUGINS=	facebl0r facedetect
 
 CMAKE_ARGS+=	-DWITHOUT_OPENCV:BOOL=OFF \

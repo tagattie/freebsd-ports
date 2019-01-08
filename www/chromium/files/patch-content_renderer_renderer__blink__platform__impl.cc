@@ -1,6 +1,6 @@
---- content/renderer/renderer_blink_platform_impl.cc.orig	2017-12-15 02:04:18.000000000 +0100
-+++ content/renderer/renderer_blink_platform_impl.cc	2017-12-31 05:15:48.537395000 +0100
-@@ -124,7 +124,7 @@
+--- content/renderer/renderer_blink_platform_impl.cc.orig	2018-12-03 21:16:57.000000000 +0100
++++ content/renderer/renderer_blink_platform_impl.cc	2018-12-13 21:57:40.197655000 +0100
+@@ -119,7 +119,7 @@
  
  #if defined(OS_POSIX)
  #include "base/file_descriptor_posix.h"
@@ -9,34 +9,34 @@
  #include <map>
  #include <string>
  
-@@ -225,7 +225,7 @@
-   scoped_refptr<mojom::ThreadSafeFileUtilitiesHostPtr> file_utilities_host_;
- };
+@@ -197,7 +197,7 @@
+ 
+ //------------------------------------------------------------------------------
  
 -#if !defined(OS_ANDROID) && !defined(OS_WIN) && !defined(OS_FUCHSIA)
 +#if !defined(OS_ANDROID) && !defined(OS_WIN) && !defined(OS_FUCHSIA) && !defined(OS_BSD)
  class RendererBlinkPlatformImpl::SandboxSupport
      : public blink::WebSandboxSupport {
   public:
-@@ -267,7 +267,7 @@
-       default_task_runner_(renderer_scheduler->DefaultTaskRunner()),
-       web_scrollbar_behavior_(new WebScrollbarBehaviorImpl),
-       renderer_scheduler_(renderer_scheduler) {
+@@ -268,7 +268,7 @@
+     connector_ = service_manager::Connector::Create(&request);
+   }
+ 
 -#if !defined(OS_ANDROID) && !defined(OS_WIN) && !defined(OS_FUCHSIA)
 +#if !defined(OS_ANDROID) && !defined(OS_WIN) && !defined(OS_FUCHSIA) && !defined(OS_BSD)
    if (g_sandbox_enabled && sandboxEnabled()) {
-     sandbox_support_.reset(new RendererBlinkPlatformImpl::SandboxSupport);
-   } else {
-@@ -316,7 +316,7 @@
+ #if defined(OS_MACOSX)
+     sandbox_support_.reset(new RendererBlinkPlatformImpl::SandboxSupport());
+@@ -297,7 +297,7 @@
  }
  
  void RendererBlinkPlatformImpl::Shutdown() {
 -#if !defined(OS_ANDROID) && !defined(OS_WIN) && !defined(OS_FUCHSIA)
 +#if !defined(OS_ANDROID) && !defined(OS_WIN) && !defined(OS_FUCHSIA) && !defined(OS_BSD)
-   // SandboxSupport contains a map of WebFallbackFont objects, which hold
+   // SandboxSupport contains a map of OutOfProcessFont objects, which hold
    // WebStrings and WebVectors, which become invalidated when blink is shut
    // down. Hence, we need to clear that map now, just before blink::shutdown()
-@@ -417,7 +417,7 @@
+@@ -391,7 +391,7 @@
  }
  
  blink::WebSandboxSupport* RendererBlinkPlatformImpl::GetSandboxSupport() {
@@ -45,12 +45,12 @@
    // These platforms do not require sandbox support.
    return NULL;
  #else
-@@ -610,7 +610,7 @@
-   return FontLoader::CGFontRefFromBuffer(font_data, font_data_size, out);
+@@ -591,7 +591,7 @@
+   return content::LoadFont(src_font, out, font_id);
  }
  
--#elif defined(OS_POSIX) && !defined(OS_ANDROID) && !defined(OS_FUCHSIA)
-+#elif defined(OS_POSIX) && !defined(OS_ANDROID) && !defined(OS_FUCHSIA) && !defined(OS_BSD)
+-#elif defined(OS_POSIX) && !defined(OS_ANDROID)
++#elif defined(OS_POSIX) && !defined(OS_ANDROID) && !defined(OS_BSD)
  
  void RendererBlinkPlatformImpl::SandboxSupport::GetFallbackFontForCharacter(
      blink::WebUChar32 character,

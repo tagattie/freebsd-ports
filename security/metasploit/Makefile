@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	metasploit
-PORTVERSION=	4.16.45
+PORTVERSION=	4.17.32
 CATEGORIES=	security
 
 MAINTAINER=	tanawts@gmail.com
@@ -17,7 +17,9 @@ RUN_DEPENDS=	nmap:security/nmap \
 		rubygem-actionpack4>=4.2.6:www/rubygem-actionpack4 \
 		rubygem-backports>=0:devel/rubygem-backports \
 		rubygem-bcrypt>=0:security/rubygem-bcrypt \
+		rubygem-bcrypt_pbkdf>=0:security/rubygem-bcrypt_pbkdf \
 		rubygem-bundler>=0:sysutils/rubygem-bundler \
+		rubygem-ed25519>=0:security/rubygem-ed25519 \
 		rubygem-jsobfu>=0:www/rubygem-jsobfu \
 		rubygem-json>=0:devel/rubygem-json \
 		rubygem-metasm>=0:devel/rubygem-metasm \
@@ -26,15 +28,15 @@ RUN_DEPENDS=	nmap:security/nmap \
 		rubygem-metasploit-credential>=0:security/rubygem-metasploit-credential \
 		rubygem-metasploit_data_models>=0:security/rubygem-metasploit_data_models \
 		rubygem-metasploit-model>=0:security/rubygem-metasploit-model \
-		rubygem-metasploit-payloads>=1.3.31:security/rubygem-metasploit-payloads \
-		rubygem-metasploit_payloads-mettle>=0.3.7:security/rubygem-metasploit_payloads-mettle \
+		rubygem-metasploit-payloads>=1.3.56:security/rubygem-metasploit-payloads \
+		rubygem-metasploit_payloads-mettle>=0.5.0:security/rubygem-metasploit_payloads-mettle \
 		rubygem-msgpack1>=0:devel/rubygem-msgpack1 \
 		rubygem-network_interface>=0:net/rubygem-network_interface \
 		rubygem-rubyntlm>=0:net/rubygem-rubyntlm \
 		rubygem-nokogiri>=0:textproc/rubygem-nokogiri \
 		rubygem-packetfu>=0:net/rubygem-packetfu \
 		rubygem-pcaprub>=0:net/rubygem-pcaprub \
-		rubygem-pg>=0:databases/rubygem-pg \
+		rubygem-pg0>=0:databases/rubygem-pg0 \
 		rubygem-railties4>=4.2.6:www/rubygem-railties4 \
 		rubygem-recog>=0:security/rubygem-recog \
 		rubygem-openssl-ccm>=0:security/rubygem-openssl-ccm \
@@ -77,7 +79,8 @@ RUN_DEPENDS=	nmap:security/nmap \
 		rubygem-nessus_rest>=0:security/rubygem-nessus_rest \
 		rubygem-nexpose>=0:security/rubygem-nexpose \
 		rubygem-xdr>=0:converters/rubygem-xdr \
-		rubygem-faker>=0:devel/rubygem-faker
+		rubygem-faker>=0:devel/rubygem-faker \
+		rubygem-concurrent-ruby>=0:devel/rubygem-concurrent-ruby
 
 SCRIPTS=	msfconsole msfd msfrpc msfrpcd msfvenom
 
@@ -89,13 +92,14 @@ NO_ARCH=	yes
 NO_ARCH_IGNORE=	template_x64_bsd.bin template_x86_bsd.bin CVE-2013-2171.bin
 STRIP=
 
-USES=		python:env shebangfix
+USES=		python shebangfix
 USE_RUBY=	yes
 SHEBANG_FILES=	data/exploits/CVE-2017-17562/build.sh \
 		data/exploits/CVE-2017-17562/install-deps.sh \
 		data/exploits/CVE-2017-7494/build.sh \
 		data/exploits/CVE-2017-7494/install-deps.sh \
 		docker/entrypoint.sh \
+		external/source/exploits/CVE-2016-4655/ssh_build.sh \
 		external/source/shellcode/windows/build.sh \
 		external/source/msfJavaToolkit/compile.sh \
 		external/source/msfJavaToolkit/testKeytool.rb \
@@ -105,11 +109,16 @@ SHEBANG_FILES=	data/exploits/CVE-2017-17562/build.sh \
 		docker/bin/msfconsole \
 		modules/auxiliary/dos/http/slowloris.py \
 		modules/auxiliary/dos/tcp/claymore_dos.py \
+		modules/auxiliary/gather/office365userenum.py \
+		modules/auxiliary/scanner/smb/impacket/dcomexec.py \
+		modules/auxiliary/scanner/smb/impacket/secretsdump.py \
+		modules/auxiliary/scanner/smb/impacket/wmiexec.py \
 		modules/auxiliary/scanner/ssl/bleichenbacher_oracle.py \
 		modules/auxiliary/scanner/wproxy/att_open_proxy.py \
-		tools/hardware/killerbee_msfrelay \
 		tools/dev/import-dev-keys.sh \
-		tools/dev/sign-dev-keys.sh
+		tools/dev/sign-dev-keys.sh \
+		tools/hardware/killerbee_msfrelay.py \
+		tools/modules/aws-aggregator-userdata.sh
 
 .include <bsd.port.pre.mk>
 
@@ -119,11 +128,10 @@ RUN_DEPENDS+=	rubygem-xmlrpc>=0:net/rubygem-xmlrpc
 
 post-patch:
 	${REINPLACE_CMD} 's,git ls-files,find . ! -type d | sed "s|^./||", ; \
-		/bcrypt_pbkdf/d ; \
-		/rbnacl/d ; \
 		/rb-readline/d' \
 		${WRKSRC}/metasploit-framework.gemspec
-	${REINPLACE_CMD} "/pg/s|, '0.20.0'||" ${WRKSRC}/metasploit-framework.gemspec
+	${REINPLACE_CMD} "/pg/s|, '0.20.0'||; \
+		/concurrent-ruby/s|,'1.0.5'||" ${WRKSRC}/metasploit-framework.gemspec
 .if ${RUBY_VER} < 2.4
 	${REINPLACE_CMD} '/xmlrpc/d' ${WRKSRC}/metasploit-framework.gemspec
 .endif

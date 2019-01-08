@@ -55,10 +55,9 @@
     SUBDIR += ibus-chewing
     SUBDIR += ibus-libpinyin
     SUBDIR += ibus-pinyin
+    SUBDIR += ibus-table-chinese
     SUBDIR += jis2gb
     SUBDIR += kcfonts
-    SUBDIR += kde4-l10n-zh_CN
-    SUBDIR += kde4-l10n-zh_TW
     SUBDIR += libcangjie
     SUBDIR += libchewing
     SUBDIR += libpinyin
@@ -100,21 +99,17 @@
     SUBDIR += qt4-codecs-tw
     SUBDIR += qterm
     SUBDIR += reciteword
-    SUBDIR += scim-array
     SUBDIR += scim-fcitx
     SUBDIR += scim-pinyin
     SUBDIR += scim-tables
     SUBDIR += sunpinyin
-    SUBDIR += telnet
     SUBDIR += tin
     SUBDIR += tintin++
     SUBDIR += ttf2pt1
     SUBDIR += ttfm
-    SUBDIR += unrar
     SUBDIR += ve
     SUBDIR += wenju
     SUBDIR += wordpress-zh_CN
     SUBDIR += wordpress-zh_TW
-    SUBDIR += xpdf
 
 .include <bsd.port.subdir.mk>

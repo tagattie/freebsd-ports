@@ -2,8 +2,10 @@
 # $FreeBSD$
 
 PKGNAMESUFFIX=	-${FLAVOR:U:S/_/-/}
-CATEGORIES=	devel python
 DISTNAME=	${PORTNAME}-nolang-${DISTVERSION}
+CATEGORIES=	devel python
+
+BROKEN_powerpc64=	fails to link: libstdc++.so.6: version GLIBCXX_3.4.14 required by /usr/local/lib/qt4/libqscintilla2_qt4.so.13 not found
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/PyQt${PYQTVER}/QtGui.so:x11-toolkits/py-qt${PYQTVER}-gui@${PY_FLAVOR} \
 		${PYTHON_SITELIBDIR}/PyQt${PYQTVER}/Qsci.so:devel/py-qt${PYQTVER}-qscintilla2@${PY_FLAVOR}
@@ -27,13 +29,15 @@ PORTDATA=	*
 PORTDOCS=	*
 PORTEXAMPLES=	*
 
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
 .include "${.CURDIR}/bsd.eric6.mk"
 .include <bsd.port.options.mk>
 
 PY_FLAVORS=	py${PYTHON_DEFAULT:S/.//} py${PYTHON2_DEFAULT:S/.//} py${PYTHON3_DEFAULT:S/.//}
 .for flavor in ${PY_FLAVORS}
 .  if empty(FLAVORS:Mqt4_${flavor})
-FLAVORS:=	${FLAVORS} qt4_${flavor} qt5_${flavor}
+FLAVORS:=	${FLAVORS} qt5_${flavor} qt4_${flavor}
 .  endif
 .endfor
 .if empty(FLAVOR)

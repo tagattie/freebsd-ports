@@ -4,19 +4,20 @@ PORTNAME=	swift
 PORTVERSION=	3.1.1
 DISTVERSIONPREFIX=	swift-
 DISTVERSIONSUFFIX=	-RELEASE
-PORTREVISION=	4
+PORTREVISION=	9
 CATEGORIES=	lang
 
-MAINTAINER=	swills@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Swift programing language
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/swift/LICENSE.txt
 
+BROKEN=		fails to build
+
 BUILD_DEPENDS=	cmake:devel/cmake \
 		bash:shells/bash \
 		swig3.0:devel/swig30 \
-		sphinx-build:textproc/py-sphinx \
 		binutils>=2.25.1:devel/binutils
 LIB_DEPENDS=	libicudata.so:devel/icu \
 		libuuid.so:misc/e2fsprogs-libuuid \
@@ -44,11 +45,12 @@ USES=		autoreconf:build compiler:c++14-lang libtool localbase:ldflags iconv libe
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 ONLY_FOR_ARCHS=	amd64
-BROKEN_FreeBSD_10=	Builds but does not work
 CONFLICTS_BUILD=	googletest
 LDFLAGS+=	-lobjc
 
 OPTIONS_DEFINE=	DOCS
+DOCS_BUILD_DEPENDS=	sphinx-build:textproc/py-sphinx
+DOCS_CMAKE_BOOL=	SWIFT_INCLUDE_DOCS
 
 PORTDOCS=	*
 

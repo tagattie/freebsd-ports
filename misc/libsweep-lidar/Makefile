@@ -11,7 +11,9 @@ COMMENT=		Low-level Scanse Sweep LiDAR library
 LICENSE=		MIT
 LICENSE_FILE=		${WRKSRC}/LICENSE
 
-USES=			cmake:outsource
+BROKEN_powerpc64=	fails to compile: unrecognized command line option "-Weverything"
+
+USES=			cmake
 USE_GITHUB=		yes
 GH_ACCOUNT=		scanse
 GH_PROJECT=		sweep-sdk

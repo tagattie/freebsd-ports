@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	kbfs
-PORTVERSION=	1.0.44
+PORTVERSION=	2.11.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	security
 
@@ -11,11 +11,14 @@ COMMENT=	Keybase Filesystem (KBFS)
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-GO_PKGNAME=	github.com/${GH_ACCOUNT}/${GH_PROJECT}
-GO_TARGET=	-tags production ${GO_PKGNAME}/kbfsfuse ${GO_PKGNAME}/kbfstool
+PORTSCOUT=	skipv:initial-git-on-android
+
 USES=		go
 
-PLIST_FILES=	bin/kbfsfuse bin/kbfstool
+GO_PKGNAME=	github.com/${GH_ACCOUNT}/${GH_PROJECT}
+GO_TARGET=	-tags production ${GO_PKGNAME}/kbfsfuse ${GO_PKGNAME}/kbfsgit/git-remote-keybase ${GO_PKGNAME}/kbfstool
+
+PLIST_FILES=	bin/git-remote-keybase bin/kbfsfuse bin/kbfstool
 
 GH_ACCOUNT=	keybase
 USE_GITHUB=	yes

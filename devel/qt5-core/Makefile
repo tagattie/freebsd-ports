@@ -2,7 +2,6 @@
 
 PORTNAME=	core
 DISTVERSION=	${QT5_VERSION}
-PORTREVISION=	1
 CATEGORIES=	devel
 PKGNAMEPREFIX=	qt5-
 
@@ -12,9 +11,9 @@ COMMENT=	Qt core non-graphical module
 LIB_DEPENDS=	libicui18n.so:devel/icu \
 		libpcre2-posix.so:devel/pcre2
 
+USES=		compiler:c++11-lang gnome qmake:no_env qt-dist:5,base
 USE_GNOME=	glib20
-USE_QT5=	qmake_build buildtools_build
-QT_DIST=	base
+USE_QT=		qmake_build buildtools_build
 HAS_CONFIGURE=	yes
 # Disable (almost) everything to install minimal qconfig.h.
 # -no-feature-* adds QT_NO_* (for features which have no switch or
@@ -24,7 +23,7 @@ CONFIGURE_ARGS=	-no-accessibility -no-gif -no-libpng -no-libjpeg \
 		-no-iconv -no-dbus -no-opengl \
 		-no-egl -no-evdev \
 		-no-fontconfig -no-freetype -no-gtk -no-harfbuzz \
-		-no-libudev -no-xcb -no-xinput2 -no-xkb -no-xcb-xlib \
+		-no-libudev -no-xcb -no-xkb -no-xcb-xlib \
 		-no-xkbcommon -no-libinput
 USE_LDCONFIG=	${PREFIX}/${QT_LIBDIR_REL}
 
@@ -34,16 +33,18 @@ INSTALL_WRKSRC=	${BUILD_WRKSRC}
 QT_DEFINES=	GLIB
 QT_CONFIG=	glib icu
 
+MORE_WRKSRCS=	src/tools/bootstrap src/tools/qfloat16-tables src/corelib src/tools/qlalr
+
 .include <bsd.port.pre.mk>
 
 post-configure:
-.for d in src/tools/bootstrap src/tools/qfloat16-tables src/corelib
+.for d in ${MORE_WRKSRCS}
 	${MKDIR} ${WRKSRC}/${d}
 	cd ${WRKSRC}/${d} && ${SETENV} ${QMAKE_ENV} ${_QMAKE} ${QMAKE_ARGS} ${WRKSRC}/${d}
 .endfor
 
 pre-build:
-.for d in src/tools/bootstrap src/tools/qfloat16-tables src/corelib
+.for d in ${MORE_WRKSRCS}
 	${MKDIR} ${WRKSRC}/${d}
 	cd ${WRKSRC}/${d} && \
 		${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} \
@@ -54,6 +55,10 @@ post-install:
 # Allow qconfig.h to be customized by single ports.
 	${AWK} 'BEGIN{print "#include <QtCore/qconfig-modules.h>"}{print}' \
 		${STAGEDIR}${PREFIX}/${QT_INCDIR_REL}/QtCore/qconfig.h > ${WRKDIR}/qconfig.h
+# Manually install qlalr
+	cd ${WRKSRC}/src/tools/qlalr && \
+		${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} \
+		${MAKE_ARGS} ${INSTALL_TARGET}
 # Cleanup qconfig.h and remove stray '#define QT_NO_FOO'
 	${REINPLACE_CMD} "/#define QT_NO_/d" ${WRKDIR}/qconfig.h
 	${MV} ${WRKDIR}/qconfig.h ${STAGEDIR}${PREFIX}/${QT_INCDIR_REL}/QtCore/qconfig.h

@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	libopenraw
-PORTVERSION=	0.1.2
+PORTVERSION=	0.1.3
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	http://libopenraw.freedesktop.org/download/
 

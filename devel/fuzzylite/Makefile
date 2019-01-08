@@ -11,7 +11,9 @@ COMMENT=	Fuzzy logic control library in C++
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake:outsource compiler
+BROKEN_powerpc64=	fails to compile: unrecognized command line option "-Wno-type-limits"
+
+USES=		cmake compiler
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 

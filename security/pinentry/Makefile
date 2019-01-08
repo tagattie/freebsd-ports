@@ -3,7 +3,7 @@
 
 PORTNAME=	pinentry
 PORTVERSION=	1.1.0
-PORTREVISION?=	0
+PORTREVISION?=	3
 CATEGORIES=	security
 MASTER_SITES=	GNUPG/pinentry
 
@@ -63,6 +63,11 @@ PINENTRY_BIN=	${PINENTRY_${gui}}
 . endif
 .endfor
 
+.if ${PORT_OPTIONS:MQT4}
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+.endif
+
 do-install:
 	${LN} -sf ${PINENTRY_BIN} ${STAGEDIR}${PREFIX}/bin/pinentry
 	${INSTALL_DATA} ${WRKSRC}/doc/pinentry.info ${STAGEDIR}${PREFIX}/${INFO_PATH}
@@ -94,14 +99,14 @@ CONFIGURE_ARGS+=--disable-pinentry-gnome3
 .endif
 
 .if ${PINENTRY_GUI} == "qt4"
-USES+=		compiler:c++11-lib
-USE_QT4=	corelib gui moc_build
+USES+=		compiler:c++11-lib qt:4
+USE_QT=		corelib gui moc_build
 PLIST_FILES=	bin/pinentry-qt4
 CONFIGURE_ARGS+=--disable-pinentry-qt5 \
 		--program-suffix=4
 .elif ${PINENTRY_GUI} == "qt5"
-USES+=		compiler:c++11-lib
-USE_QT5=	core gui widgets buildtools_build
+USES+=		compiler:c++11-lib qt:5
+USE_QT=		core gui widgets buildtools_build
 PLIST_FILES=	bin/pinentry-qt5
 CONFIGURE_ARGS+=--enable-pinentry-qt5 \
 		--program-suffix=5
@@ -139,7 +144,7 @@ CONFIGURE_ARGS+=--disable-pinentry-tty
 
 post-install:
 	${RM} ${STAGEDIR}${PREFIX}/bin/pinentry \
-		${STAGEDIR}${PREFIX}/info/pinentry.info
+		${STAGEDIR}${PREFIX}/share/info/pinentry.info
 
 .endif # !defined(PINENTRY_GUI)
 

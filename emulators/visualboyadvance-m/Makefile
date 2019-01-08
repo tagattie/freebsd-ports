@@ -3,7 +3,7 @@
 
 PORTNAME=	visualboyadvance-m
 PORTVERSION=	2.0.0b2
-PORTREVISION=	4
+PORTREVISION=	6
 CATEGORIES=	emulators
 
 MAINTAINER=	root@cooltrainer.org
@@ -13,6 +13,7 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libpng.so:graphics/png
 
+BROKEN=			fails to build
 BROKEN_aarch64=		fails to build: regparm is not valid on this platform
 BROKEN_armv6=		fails to build: regparm is not valid on this platform
 BROKEN_armv7=		fails to build: regparm is not valid on this platform
@@ -40,7 +41,7 @@ DOS2UNIX_REGEX=	.*\.(c|cpp|h|ypp)
 USE_XORG=	x11 xext
 USE_GL=		gl glu
 USE_SDL=	sdl
-USES=		cmake dos2unix pkgconfig
+USES=		cmake:insource dos2unix pkgconfig
 INSTALLS_ICONS=	yes
 CMAKE_ARGS=	-DVERSION:STRING="${PORTVERSION}" \
 		-DSYSCONFDIR:STRING="${PREFIX}/etc"  \

@@ -1,7 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	gzdoom
-PORTVERSION=	3.3.0
+PORTVERSION=	3.3.2
+PORTREVISION=	1
 DISTVERSIONPREFIX=	g
 CATEGORIES=	games
 
@@ -23,7 +24,7 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 
 DATADIR=	${DMDIR}/${PORTNAME}
 
-USES=		cmake:outsource	gettext jpeg openal pkgconfig
+USES=		cmake	gettext jpeg openal pkgconfig
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	coelckers
@@ -40,12 +41,6 @@ PLIST_FILES=	bin/${PORTNAME} \
 		${DATADIR}/${PORTNAME}.pk3 \
 		share/pixmaps/${PORTNAME}.xpm
 
-.include <bsd.port.pre.mk>
-
-.if ${OPSYS} == "FreeBSD" && ${OSVERSION} < 1004000
-BROKEN=		Fails to link due to lack of thread_local
-.endif
-
 .include "${.CURDIR}/../doom-data/Makefile.include"
 
 do-install:
@@ -54,4 +49,4 @@ do-install:
 	${INSTALL_DATA} ${CONFIGURE_WRKSRC}/${PORTNAME}.pk3 ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${FILESDIR}/${PORTNAME}.xpm ${STAGEDIR}${PREFIX}/share/pixmaps
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

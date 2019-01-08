@@ -2,44 +2,39 @@
 # $FreeBSD$
 
 PORTNAME=	firefox
-DISTVERSION=	59.0.2
-PORTREVISION=	1
+DISTVERSION=	64.0
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	www ipv6
-MASTER_SITES=	https://hg.mozilla.org/releases/mozilla-release/archive/
-DISTNAME=	${MASTER_SITES:M*hg*:S,/archive/,,:T}-239e434d6d2b8e1e2b697c3416d1e96d48fe98e5
-DISTFILES=	${DISTNAME:C/.*-//}${EXTRACT_SUFX}
-DIST_SUBDIR=	firefox
+MASTER_SITES=	MOZILLA/${PORTNAME}/releases/${DISTVERSION}/source \
+		MOZILLA/${PORTNAME}/candidates/${DISTVERSION}-candidates/build3/source
+DISTFILES=	${DISTNAME}.source${EXTRACT_SUFX}
 
 MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Web browser based on the browser portion of Mozilla
 
-BUILD_DEPENDS=	nspr>=4.18:devel/nspr \
-		nss>=3.35:security/nss \
+BUILD_DEPENDS=	nspr>=4.19:devel/nspr \
+		nss>=3.40.1:security/nss \
 		icu>=59.1,1:devel/icu \
 		libevent>=2.1.8:devel/libevent \
-		harfbuzz>=1.7.4:print/harfbuzz \
-		graphite2>=1.3.10:graphics/graphite2 \
+		harfbuzz>=1.9.0:print/harfbuzz \
+		graphite2>=1.3.12:graphics/graphite2 \
 		png>=1.6.34:graphics/png \
-		libvorbis>=1.3.5,3:audio/libvorbis \
+		libvorbis>=1.3.6,3:audio/libvorbis \
 		libvpx>=1.5.0:multimedia/libvpx \
-		sqlite3>=3.21.0:databases/sqlite3 \
+		sqlite3>=3.25.1:databases/sqlite3 \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR} \
 		v4l_compat>0:multimedia/v4l_compat \
 		autoconf-2.13:devel/autoconf213 \
 		yasm:devel/yasm \
 		zip:archivers/zip
-#		soundtouch>=1.9.0:audio/soundtouch \
-
-LIB_DEPENDS=	libv4l2.so:multimedia/libv4l
 
 USE_GECKO=	gecko
 CONFLICTS_INSTALL=	firefox-esr
 MOZ_PKGCONFIG_FILES=	# empty
-USE_MOZILLA=	-cairo -soundtouch
+USE_MOZILLA=	-hunspell
 
-USE_GL=		gl
-USES=		tar:bz2
+USES=		tar:xz
 
 FIREFOX_ICON=		${MOZILLA}.png
 FIREFOX_ICON_SRC=	${PREFIX}/lib/${MOZILLA}/browser/chrome/icons/default/default48.png
@@ -47,7 +42,7 @@ FIREFOX_DESKTOP=	${MOZSRC}/taskcluster/docker/${MOZILLA}-snap/${MOZILLA}.desktop
 MOZ_OPTIONS=	--enable-application=browser \
 		--enable-official-branding
 
-OPTIONS_EXCLUDE=	BUNDLED_CAIRO
+OPTIONS_EXCLUDE=	DTRACE
 
 .include "${.CURDIR}/../../www/firefox/Makefile.options"
 

@@ -10,6 +10,8 @@ MASTER_SITES=	SF \
 MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	NNTP package for offline news caching and reading
 
+LICENSE=	GPLv2+
+
 LIB_DEPENDS=	libpcre.so:devel/pcre
 
 USES=		tar:xz
@@ -29,7 +31,7 @@ LEAFNODE_SPOOLDIR?=/var/spool/news
 LEAFNODE_SPOOLDIR?=${LOCALBASE}/var/spool/leafnode
 .endif
 LEAFNODE_SPOOLDIR?=/var/spool/leafnode
-PLIST_SUB=	SPOOLDIR=${LEAFNODE_SPOOLDIR} REALPREFIX=${PREFIX}
+PLIST_SUB+=	SPOOLDIR=${LEAFNODE_SPOOLDIR} REALPREFIX=${PREFIX}
 
 CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc/leafnode \
 		--with-spooldir=${LEAFNODE_SPOOLDIR} --with-ipv6 \

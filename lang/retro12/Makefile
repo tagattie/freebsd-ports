@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	retro12
-DISTVERSION=	2018.1
+DISTVERSION=	2018.8
 CATEGORIES=	lang
 MASTER_SITES=	https://forthworks.com/retro/r/
 DISTNAME=	${PORTNAME:tu}-${DISTVERSION}
@@ -12,18 +12,35 @@ COMMENT=	Clean, elegant, and pragmatic dialect of Forth
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
+USES=	ncurses shebangfix
+
+SHEBANG_FILES=	example/Atua*
+SHEBANG_LANG=	rre
+
+# Conflicting files: bin/listener bin/repl bin/ri
+CONFLICTS_INSTALL=	audio/listener mail/nmh japanese/mh lang/ruby
+
+MAKE_ENV=	DATADIR=${DATADIR} \
+		DESTDIR=${DESTDIR} \
+		DOCSDIR=${DOCSDIR} \
+		EXAMPLESDIR=${EXAMPLESDIR} \
+		PREFIX=${PREFIX}
+
 PLIST_FILES=	bin/embedimage \
 		bin/extend \
+		bin/injectimage-js \
 		bin/listener \
 		bin/muri \
 		bin/repl \
+		bin/ri \
 		bin/rre \
 		bin/unu
-PORTDATA=	glossary.forth \
-		ngaImage \
-		words.tsv
 
-OPTIONS_DEFINE=	DOCS EXAMPLES
+PORTDATA=	RETRO12.html \
+		glossary.forth \
+		ngaImage \
+		tests \
+		words.tsv
 
 PORTDOCS=	doc \
 		literate \
@@ -32,21 +49,9 @@ PORTDOCS=	doc \
 
 PORTEXAMPLES=	example
 
-do-build:
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ./build.sh
+INSTALL_TARGET=	install-strip
+TEST_TARGET=	test
 
-do-install:
-.for f in embedimage extend muri repl rre unu
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/${f} ${STAGEDIR}${PREFIX}/bin/${f}
-.endfor
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/listener ${STAGEDIR}${PREFIX}/bin/listener
-	cd ${WRKSRC} && \
-		${COPYTREE_SHARE} "${PORTDATA}" ${STAGEDIR}${DATADIR}
-
-do-install-DOCS-on:
-	cd ${WRKSRC} &&	${COPYTREE_SHARE} "${PORTDOCS}" ${STAGEDIR}${DOCSDIR}
-
-do-install-EXAMPLES-on:
-	cd ${WRKSRC} &&	${COPYTREE_SHARE} "${PORTEXAMPLES}" ${STAGEDIR}${EXAMPLESDIR}
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 .include <bsd.port.mk>

@@ -2,7 +2,8 @@
 
 PORTNAME=	qtpass
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.2.1
+DISTVERSION=	1.2.3
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	brouwer@annejan.com
@@ -13,16 +14,15 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	pass:sysutils/password-store
 
-USES=		qmake:outsource
+USES=		compiler:c++11-lang gl qmake:outsource qt:5
 USE_GITHUB=	yes
 GH_ACCOUNT=	IJhack
 GH_PROJECT=	QtPass
-USE_QT5=	core gui network testlib widgets buildtools_build linguisttools_build
+USE_QT=		core gui network testlib widgets buildtools_build linguisttools_build
 USE_GL=		gl
 
 PLIST_FILES=	bin/qtpass \
-		share/pixmaps/qtpass.png \
-		${QT_TESTDIR}/qtpass/util/tst_util
+		share/pixmaps/qtpass.png
 
 # Create a desktop entry for the port.
 DESKTOP_ENTRIES=	"QtPass" "" \

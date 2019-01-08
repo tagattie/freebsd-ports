@@ -4,6 +4,7 @@
 PORTNAME=	seqan-apps
 DISTVERSIONPREFIX=	seqan-v
 DISTVERSION=	2.4.0
+PORTREVISION=	5
 CATEGORIES=	biology
 
 MAINTAINER=	h2+fbsdports@fsfe.org
@@ -14,7 +15,7 @@ LICENSE_COMB=	multi
 
 BUILD_DEPENDS=	boost-libs>0:devel/boost-libs
 
-USES=		cmake:outsource compiler:openmp # once #199603 is resolved, add c++14-lang
+USES=		cmake compiler:openmp # once #199603 is resolved, add c++14-lang
 USE_GITHUB=	yes
 GH_ACCOUNT=	seqan
 GH_PROJECT=	seqan
@@ -35,6 +36,10 @@ NATIVE_CMAKE_ON=	-DSEQAN_ARCH_NATIVE:BOOL=TRUE
 PLIST_SUB+=	RM_I386="@comment "
 .else
 PLIST_SUB+=	RM_I386=""
+.endif
+
+.if ${ARCH:Mmips*} || ${ARCH:Mpowerpc*} || ${ARCH} == sparc64
+USE_GCC=	yes
 .endif
 
 .include <bsd.port.post.mk>

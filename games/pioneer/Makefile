@@ -3,6 +3,7 @@
 
 PORTNAME=	pioneer
 DISTVERSION=	0.0.${GH_TAGNAME}
+PORTREVISION=	2
 CATEGORIES=	games
 
 MAINTAINER=	lightside@gmx.com

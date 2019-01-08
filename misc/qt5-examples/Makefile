@@ -1,13 +1,12 @@
-# Created by: Marie Loise Nolden <nolden@kde.org>
+# Created by: Marie Loise Nolden <loise@kde.org>
 # $FreeBSD$
 
 PORTNAME=	examples
 DISTVERSION=	${QT5_VERSION}
-PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	QT/official_releases/qt/${QT5_VERSION:R}/${QT5_VERSION}/single
 PKGNAMEPREFIX=	qt5-
-DISTNAME=	qt-everywhere-opensource-src-${QT5_VERSION}
+DISTNAME=	qt-everywhere-src-${QT5_VERSION}
 DIST_SUBDIR=	KDE/Qt/${QT5_VERSION}
 
 MAINTAINER=	kde@FreeBSD.org
@@ -16,8 +15,8 @@ COMMENT=	Qt 5 examples sourcecode
 NO_ARCH=	yes
 NO_BUILD=	yes
 
-USES=		tar:xz
-USE_QT5=	#
+USES=		qt:5 tar:xz
+USE_QT=		#
 
 DESCR=		${.CURDIR:H:H}/devel/qt5/pkg-descr
 DISTINFO_FILE=	${.CURDIR}/distinfo

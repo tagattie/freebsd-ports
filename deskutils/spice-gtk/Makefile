@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	spice-gtk
-PORTVERSION=	0.34
+PORTVERSION=	0.35
 CATEGORIES?=	deskutils gnome
 MASTER_SITES=	http://www.spice-space.org/download/gtk/
 
@@ -11,11 +11,14 @@ COMMENT=	Gtk client and libraries for SPICE remote desktop servers
 
 LICENSE=	GPLv2
 
+NOT_FOR_ARCHS=		powerpc powerpc64 powerpcspe sparc64
+NOT_FOR_ARCHS_REASON=	server only supports little-endian
+
 LIB_DEPENDS=	libepoxy.so:graphics/libepoxy \
 		libopus.so:audio/opus
-BUILD_DEPENDS=	spice-protocol>=0.12.10:devel/spice-protocol \
+BUILD_DEPENDS=	spice-protocol>=0.12.14:devel/spice-protocol \
 		${PYTHON_PKGNAMEPREFIX}pyparsing>=2.0.1:devel/py-pyparsing@${PY_FLAVOR}
-RUN_DEPENDS=	spice-protocol>=0.12.10:devel/spice-protocol
+RUN_DEPENDS=	spice-protocol>=0.12.14:devel/spice-protocol
 
 USES=		autoreconf cpe gettext-tools gmake jpeg libtool pkgconfig tar:bzip2 \
 		python ssl localbase:ldflags

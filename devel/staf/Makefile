@@ -2,20 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	staf
-PORTVERSION=	3.4.23
-PORTREVISION=	3
+PORTVERSION=	3.4.26
+PORTREVISION=	1
 CATEGORIES=	devel net
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/V${PORTVERSION}
 DISTNAME=	STAF${PORTVERSION:S/.//g}-src
 
-MAINTAINER=	kozlov.sergey.404@gmail.com
+MAINTAINER=	skozlov@FreeBSD.org
 COMMENT=	Software Testing Automation Framework
 
 LICENSE=	EPL
 LICENSE_FILE=	${WRKSRC}/LICENSE.htm
-
-BROKEN_SSL=	openssl-devel
-BROKEN_SSL_REASON_openssl-devel=	variable has incomplete type 'EVP_MD_CTX' (aka 'evp_md_ctx_st')
 
 WRKSRC=		${WRKDIR}/src
 WRKSRC_SUBDIR=	${PORTNAME}
@@ -87,6 +84,7 @@ MAKE_JOBS_UNSAFE=	yes
 USES=		gmake
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	stafproc
+USE_CXXSTD=	gnu++98
 SUB_LIST+=	STAF_VAR_DIR=${STAF_VAR_DIR}
 PLIST_SUB+=	STAF_VAR_DIR=${STAF_VAR_DIR}
 
@@ -151,8 +149,8 @@ do-install:
 .for bin in ${STAF_BIN_FILES}
 	${INSTALL_PROGRAM} ${INSTALL_WRKSRC}/bin/${bin} ${STAGEDIR}${PREFIX}/bin/
 .endfor
-	${LN} -s ${PREFIX}/bin/STAF ${STAGEDIR}${PREFIX}/bin/staf
-	${LN} -s ${PREFIX}/bin/FmtLog ${STAGEDIR}${PREFIX}/bin/fmtlog
+	${RLN} ${STAGEDIR}${PREFIX}/bin/STAF ${STAGEDIR}${PREFIX}/bin/staf
+	${RLN} ${STAGEDIR}${PREFIX}/bin/FmtLog ${STAGEDIR}${PREFIX}/bin/fmtlog
 .for lib in ${STAF_LIB_FILES}
 	${INSTALL_LIB} ${INSTALL_WRKSRC}/lib/${lib} ${STAGEDIR}${PREFIX}/lib/
 .endfor

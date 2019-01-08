@@ -28,6 +28,7 @@
     SUBDIR += himenobench
     SUBDIR += hpl
     SUBDIR += hs-criterion
+    SUBDIR += hs-criterion-measurement
     SUBDIR += httperf
     SUBDIR += imb
     SUBDIR += interbench
@@ -36,7 +37,9 @@
     SUBDIR += iozone21
     SUBDIR += iperf
     SUBDIR += iperf3
+    SUBDIR += libcelero
     SUBDIR += libmicro
+    SUBDIR += linux-vdbench
     SUBDIR += lmbench
     SUBDIR += lzbench
     SUBDIR += mdtest
@@ -44,7 +47,6 @@
     SUBDIR += netio
     SUBDIR += netperf
     SUBDIR += netperfmeter
-    SUBDIR += netpipe
     SUBDIR += nosqlbench
     SUBDIR += nqueens
     SUBDIR += nttcp
@@ -52,10 +54,12 @@
     SUBDIR += octave-forge-benchmark
     SUBDIR += p5-Benchmark-Forking
     SUBDIR += p5-Benchmark-Stopwatch
+    SUBDIR += p5-Dumbbench
     SUBDIR += pathchirp
     SUBDIR += pathload
     SUBDIR += pathrate
     SUBDIR += pear-Benchmark
+    SUBDIR += perftest
     SUBDIR += phoronix-test-suite
     SUBDIR += pipebench
     SUBDIR += polygraph
@@ -88,6 +92,7 @@
     SUBDIR += typometer
     SUBDIR += ubench
     SUBDIR += unixbench
+    SUBDIR += uperf
     SUBDIR += vegeta
     SUBDIR += webbench
     SUBDIR += wrk

@@ -4,6 +4,7 @@
     COMMENT = CAD tools
 
     SUBDIR += NASTRAN-95
+    SUBDIR += abc
     SUBDIR += admesh
     SUBDIR += adms
     SUBDIR += alliance
@@ -17,7 +18,6 @@
     SUBDIR += calculix-ccx
     SUBDIR += cascade
     SUBDIR += chipvault
-    SUBDIR += cider
     SUBDIR += cura-engine
     SUBDIR += dinotrace
     SUBDIR += dxf2fig
@@ -35,7 +35,6 @@
     SUBDIR += gerbv
     SUBDIR += ghdl
     SUBDIR += gmsh
-    SUBDIR += gmsh-occ
     SUBDIR += gnucap
     SUBDIR += gplcver
     SUBDIR += gspiceui
@@ -44,16 +43,24 @@
     SUBDIR += irsim
     SUBDIR += iverilog
     SUBDIR += jspice3
+    SUBDIR += k40-whisperer
     SUBDIR += kicad
     SUBDIR += kicad-devel
-    SUBDIR += kicad-library
-    SUBDIR += kicad-library-devel
+    SUBDIR += kicad-library-footprints
+    SUBDIR += kicad-library-footprints-devel
+    SUBDIR += kicad-library-packages3d
+    SUBDIR += kicad-library-packages3d-devel
+    SUBDIR += kicad-library-symbols
+    SUBDIR += kicad-library-symbols-devel
+    SUBDIR += kicad-library-templates
+    SUBDIR += kicad-library-templates-devel
     SUBDIR += klayout
     SUBDIR += layouteditor
     SUBDIR += ldraw
     SUBDIR += leocad
     SUBDIR += libopencad
     SUBDIR += librecad
+    SUBDIR += libredwg
     SUBDIR += linux-eagle5
     SUBDIR += linuxcnc-devel
     SUBDIR += logisim
@@ -64,6 +71,7 @@
     SUBDIR += ngspice_rework
     SUBDIR += opencascade
     SUBDIR += openscad
+    SUBDIR += openscad-devel
     SUBDIR += openvsp
     SUBDIR += p5-GDS2
     SUBDIR += p5-Verilog-Perl
@@ -82,7 +90,6 @@
     SUBDIR += qucs
     SUBDIR += repsnapper
     SUBDIR += rubygem-gdsii
-    SUBDIR += sceptre
     SUBDIR += scotch
     SUBDIR += solvespace
     SUBDIR += sp2sp

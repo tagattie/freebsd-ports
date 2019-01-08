@@ -11,7 +11,7 @@ MASTER_SITES=	http://www.centerim.org/download/releases/ \
 MAINTAINER=	frank@altpeter.de
 COMMENT=	Text mode menu- and window-driven IM interface
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libassuan.so:security/libassuan \
@@ -19,6 +19,7 @@ LIB_DEPENDS=	libassuan.so:security/libassuan \
 		libgpg-error.so:security/libgpg-error
 
 USES=		iconv gmake ncurses pkgconfig python shebangfix ssl
+USE_CXXSTD=	gnu++98
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 CXXFLAGS+=	-I${LOCALBASE}/include
@@ -26,10 +27,11 @@ CONFIGURE_ARGS=	--with-ssl --with-openssl
 CONFLICTS=	centericq-[0-9]* centerim-devel-[0-9]*
 
 SHEBANG_FILES=	misc/CenterIMLog2HTML.py misc/cimformathistory misc/cimextracthistory.pl
+SHEBANG_LANG=	gawk
 gawk_OLD_CMD=	/bin/gawk
 gawk_CMD=	/usr/bin/awk
 
-OPTIONS_DEFINE=	NLS MULTIBYTE FRIBIDI MSN YAHOO IRC JABBER GPGME RSS LJ GG
+OPTIONS_DEFINE=	NLS MULTIBYTE FRIBIDI MSN YAHOO IRC JABBER GPGME RSS LJ GG DOCS
 
 FRIBIDI_DESC=	Fribidi Support
 MSN_DESC=	MSN Protocol
@@ -68,6 +70,6 @@ post-patch:
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	@(cd ${WRKSRC} ; ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}/)
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}/
 
 .include <bsd.port.mk>

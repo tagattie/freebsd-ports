@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	mysql
-PORTVERSION=	0.1.4
-PORTREVISION=	1
+PORTVERSION=	0.1.5
+PORTREVISION=	2
 CATEGORIES=	databases haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -11,7 +11,7 @@ COMMENT=	Low-level MySQL client library
 
 LICENSE=	BSD3CLAUSE
 
-USE_MYSQL=	yes
+USES=		mysql ssl
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

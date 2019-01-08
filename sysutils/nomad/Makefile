@@ -2,10 +2,10 @@
 
 PORTNAME=	nomad
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.7.1
+DISTVERSION=	0.8.6
 CATEGORIES=	sysutils
 
-MAINTAINER=	jhixson@gmail.com
+MAINTAINER=	jhixson@FreeBSD.org
 COMMENT=	Cluster manager and scheduler
 
 LICENSE=	MPL20
@@ -18,12 +18,17 @@ BUILD_DEPENDS=	go:lang/go
 
 USES=		compiler
 USE_GITHUB=	yes
-GH_ACCOUNT=	hashicorp
+GH_ACCOUNT=	hashicorp golang:sys
+GH_PROJECT=	sys:sys
+GH_TAGNAME=	fa43e7bc11b:sys
 GH_SUBDIR=	src/github.com/hashicorp/nomad
 USE_RC_SUBR=	nomad
 
 USERS=		nomad
 GROUPS=		nomad
+
+post-patch:
+	${MV} ${WRKSRC_sys}/cpu ${WRKSRC}/vendor/golang.org/x/sys
 
 do-build:
 	@cd ${WRKSRC}/src/github.com/hashicorp/nomad && \

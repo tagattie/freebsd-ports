@@ -1,30 +1,30 @@
-* Boilerplate for SSL_CTX_set1_groups() used in qsslcontext_openssl.cpp
-*
-* check macro is defined instead of version, LibreSSL < 2.5 doesn't have SSL_CTRL_GET_SERVER_TMP_KEY
-*
---- src/network/ssl/qsslsocket_openssl_symbols_p.h.orig	2017-11-16 05:15:28 UTC
+Define maximum TLS version as 1.2 so as to not hit any possibly
+unsupported TLS 1.3 symbols.
+
+Also do not define SSL_CONF_CTX symbols absent from LibreSSL.
+
+--- src/network/ssl/qsslsocket_openssl_symbols_p.h.orig	2018-12-03 11:15:26 UTC
 +++ src/network/ssl/qsslsocket_openssl_symbols_p.h
-@@ -228,7 +228,7 @@ int q_BIO_read(BIO *a, void *b, int c);
- Q_AUTOTEST_EXPORT BIO_METHOD *q_BIO_s_mem();
- Q_AUTOTEST_EXPORT int q_BIO_write(BIO *a, const void *b, int c);
- int q_BN_num_bits(const BIGNUM *a);
--#if OPENSSL_VERSION_NUMBER >= 0x10100000L
-+#if !defined(BN_is_word)
- int q_BN_is_word(BIGNUM *a, BN_ULONG w);
- #else
- // BN_is_word is implemented purely as a
-@@ -511,11 +511,12 @@ void q_EC_KEY_free(EC_KEY *ecdh);
- size_t q_EC_get_builtin_curves(EC_builtin_curve *r, size_t nitems);
- #if OPENSSL_VERSION_NUMBER >= 0x10002000L
- int q_EC_curve_nist2nid(const char *name);
-+int q_SSL_CTX_set1_groups(SSL_CTX *a, int *b, int c);
- #endif // OPENSSL_VERSION_NUMBER >= 0x10002000L
- #endif // OPENSSL_NO_EC
--#if OPENSSL_VERSION_NUMBER >= 0x10002000L
-+#if defined(SSL_CTRL_GET_SERVER_TMP_KEY)
- #define q_SSL_get_server_tmp_key(ssl, key) q_SSL_ctrl((ssl), SSL_CTRL_GET_SERVER_TMP_KEY, 0, (char *)key)
--#endif // OPENSSL_VERSION_NUMBER >= 0x10002000L
-+#endif // defined(SSL_CTRL_GET_SERVER_TMP_KEY)
+@@ -74,6 +74,13 @@
  
- // PKCS#12 support
- int q_PKCS12_parse(PKCS12 *p12, const char *pass, EVP_PKEY **pkey, X509 **cert, STACK_OF(X509) **ca);
+ QT_BEGIN_NAMESPACE
+ 
++#if defined(LIBRESSL_VERSION_NUMBER) && LIBRESSL_VERSION_NUMBER >= 0x20700000L
++# define TLS1_2_VERSION 0x0303
++# define TLS_MAX_VERSION TLS1_2_VERSION
++# define TLS_ANY_VERSION 0x10000
++#endif
++
++
+ #define DUMMYARG
+ 
+ #if !defined QT_LINKED_OPENSSL
+@@ -359,7 +366,7 @@ int q_SSL_CTX_use_PrivateKey(SSL_CTX *a, EVP_PKEY *b);
+ int q_SSL_CTX_use_RSAPrivateKey(SSL_CTX *a, RSA *b);
+ int q_SSL_CTX_use_PrivateKey_file(SSL_CTX *a, const char *b, int c);
+ X509_STORE *q_SSL_CTX_get_cert_store(const SSL_CTX *a);
+-#if OPENSSL_VERSION_NUMBER >= 0x10002000L
++#if OPENSSL_VERSION_NUMBER >= 0x10002000L && !defined(LIBRESSL_VERSION_NUMBER)
+ SSL_CONF_CTX *q_SSL_CONF_CTX_new();
+ void q_SSL_CONF_CTX_free(SSL_CONF_CTX *a);
+ void q_SSL_CONF_CTX_set_ssl_ctx(SSL_CONF_CTX *a, SSL_CTX *b);

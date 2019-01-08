@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	language-c
-PORTVERSION=	0.7.1
+PORTVERSION=	0.8.2
 PORTREVISION=	1
 CATEGORIES=	devel haskell
 

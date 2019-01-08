@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pmacct
-DISTVERSION=	1.6.2
+DISTVERSION=	1.7.0
 PORTREVISION=	0
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.pmacct.net/
@@ -13,7 +13,6 @@ COMMENT=	Accounting and aggregation tool for IPv4 and IPv6 traffic
 LICENSE=	GPLv2
 
 BROKEN_aarch64=		fails to build: undefined reference to sbrk
-BROKEN_powerpc64=	fails to build: cc: Internal error: Segmentation fault (program ld)
 
 USE_RC_SUBR=	pmacctd nfacctd sfacctd
 SUB_FILES=	pkg-message
@@ -22,7 +21,7 @@ CPPFLAGS+=	"-I${LOCALBASE}/include"
 LDFLAGS+=	"-L${LOCALBASE}/lib"
 
 OPTIONS_DEFINE=	MYSQL PGSQL SQLITE3 THREADS LAYER2 IPV6 DEBUG \
-		DOCS PLABEL RABBITMQ KAFKA JANSSON AVRO
+		DOCS PLABEL RABBITMQ KAFKA JANSSON AVRO EXAMPLES
 OPTIONS_DEFAULT=MMAP LAYER2 THREADS SHARED
 
 AVRO_DESC=	Enable avro support

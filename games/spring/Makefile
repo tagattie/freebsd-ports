@@ -3,7 +3,7 @@
 
 PORTNAME=	spring
 PORTVERSION=	98.0
-PORTREVISION=	10
+PORTREVISION=	16
 CATEGORIES=	games
 MASTER_SITES=	SF/springrts/springrts/${PORTNAME}-${PORTVERSION} \
 		http://springrts.com/dl/
@@ -30,9 +30,10 @@ USE_SDL=	sdl2
 USE_GL=		gl glu glew
 USE_XORG=	x11 xcursor
 USE_LDCONFIG=	yes
+LLD_UNSAFE=	yes
 DOS2UNIX_GLOB=	*.h *.hpp *.cpp
 
-USES=		cmake compiler:c++11-lib dos2unix openal:al tar:lzma
+USES=		cmake:insource compiler:c++11-lib dos2unix openal:al tar:lzma
 USES+=		desktop-file-utils shared-mime-info
 CMAKE_ARGS=	-DDATADIR:STRING="share/${PORTNAME}" \
 		-DAI_TYPES:STRING="NATIVE" \

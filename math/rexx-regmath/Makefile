@@ -14,6 +14,10 @@ COMMENT=	Two mathematics libraries for Rexx
 
 LICENSE=	MPL10
 
+BROKEN_mips=		fails to compile: unrecognized command line option "-Wno-incompatible-pointer-types"
+BROKEN_mips64=		fails to compile: unrecognized command line option "-Wno-incompatible-pointer-types"
+BROKEN_powerpc64=	fails to compile: unrecognized command line option "-Wno-incompatible-pointer-types"
+
 BUILD_DEPENDS=	${LOCALBASE}/include/rexxsaa.h:lang/rexx-regina
 
 USES=		zip
@@ -22,6 +26,7 @@ CFLAGS+=	-Wno-incompatible-pointer-types
 
 WRKSRC=		${WRKDIR}/math
 USE_LDCONFIG=	yes
+LLD_UNSAFE=	yes
 MAKEFILE=	Makefile.bsd
 
 PLIST_FILES=	lib/librexxmath.so lib/librxmath.so man/man1/regmath.1.gz

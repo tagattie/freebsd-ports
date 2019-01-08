@@ -13,14 +13,17 @@ COMMENT=	Installer/updater for rpm
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Abandoned upstream, does not work with python3
+EXPIRATION_DATE=	2019-02-06
+
 BUILD_DEPENDS=	bash:shells/bash \
 		intltool-update:textproc/intltool
 RUN_DEPENDS=	bash:shells/bash \
 		${PYTHON_SITELIBDIR}/rpm/__init__.py:archivers/rpm4 \
-		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${FLAVOR} \
-		${PYTHON_SITELIBDIR}/sqlitecachec.py:devel/py-yum-metadata-parser@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}iniparse>0:devel/py-iniparse@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}urlgrabber>0:www/py-urlgrabber@${FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR} \
+		${PYTHON_SITELIBDIR}/sqlitecachec.py:devel/py-yum-metadata-parser@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}iniparse>0:devel/py-iniparse@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}urlgrabber>0:www/py-urlgrabber@${PY_FLAVOR}
 
 ONLY_FOR_ARCHS=		aarch64 amd64 armv6 armv7 i386
 ONLY_FOR_ARCHS_REASON=	linux is not available for ${ARCH}

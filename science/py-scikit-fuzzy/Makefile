@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	scikit-fuzzy
-PORTVERSION=	0.3.1
+DISTVERSION=	0.4.0
 PORTREVISION=	1
 CATEGORIES=	science python
 MASTER_SITES=	CHEESESHOP
@@ -15,8 +15,8 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	${PYNUMPY} \
-		${PYTHON_PKGNAMEPREFIX}networkx>=1.9.0:math/py-networkx@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}scipy>=0.9.0:science/py-scipy@${FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}networkx>=1.9.0:math/py-networkx@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}scipy>=0.9.0:science/py-scipy@${PY_FLAVOR}
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 USES=		python:2.7

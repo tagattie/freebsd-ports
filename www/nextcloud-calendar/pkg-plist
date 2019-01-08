@@ -15,7 +15,6 @@
 %%WWWDIR%%/css/public/vendor.css
 %%WWWDIR%%/css/public/vendor.min.css
 %%WWWDIR%%/css/public/vendor.min.css.map
-%%WWWDIR%%/http/streamresponse.php
 %%WWWDIR%%/img/calendar.png
 %%WWWDIR%%/img/calendar.svg
 %%WWWDIR%%/img/color_picker.svg
@@ -40,7 +39,7 @@
 %%WWWDIR%%/js/public/vendor.js
 %%WWWDIR%%/js/public/vendor.min.js
 %%WWWDIR%%/js/public/vendor.min.js.map
-%%WWWDIR%%/l10n/.tx/config
+%%WWWDIR%%/l10n/.gitkeep
 %%WWWDIR%%/l10n/af.js
 %%WWWDIR%%/l10n/af.json
 %%WWWDIR%%/l10n/ar.js

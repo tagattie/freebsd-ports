@@ -1,12 +1,15 @@
 # $FreeBSD$
 
 PORTNAME=	contrib
-DISTVERSION=	git.2017-10-05
+DISTVERSION=	git.2018-11-20
+PORTREVISION=	1
 CATEGORIES=	sysutils
 PKGNAMEPREFIX=	munin-
 
 MAINTAINER=	mat@FreeBSD.org
 COMMENT=	Contributed plugins and other for munin
+
+LICENSE=	GPLv2
 
 RUN_DEPENDS=	munin-node>=0:sysutils/munin-node
 
@@ -18,7 +21,8 @@ zsh_CMD=	${LOCALBASE}/bin/zsh
 python3_CMD=	${LOCALBASE}/bin/python${PYTHON3_DEFAULT}
 USE_GITHUB=	yes
 GH_ACCOUNT=	munin-monitoring
-GH_TAGNAME=	1bba76b
+GH_TAGNAME=	e48f0a3b
+GH_TUPLE=	shuque:bind9stats:a920ded:bind9stats
 
 NO_BUILD=	yes
 NO_ARCH=	yes
@@ -29,6 +33,9 @@ BINMODE=	755
 SUB_FILES=	pkg-message
 
 EXAMPLES_DIRS=	plugins samples templates tools
+
+post-extract:
+	@${MV} ${WRKSRC_bind9stats}/bind9stats.py ${WRKSRC}/plugins/bind9stats
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR} ${STAGEDIR}${EXAMPLESDIR}

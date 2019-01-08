@@ -3,7 +3,7 @@
 
 PORTNAME=	codeblocks
 PORTVERSION=	17.12
-PORTREVISION=	1
+PORTREVISION=	5
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/Sources/${PORTVERSION}
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -21,8 +21,9 @@ LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libhunspell-1.6.so:textproc/hunspell \
 		libtinyxml.so:textproc/tinyxml
 
-USES=		tar:xz autoreconf compiler desktop-file-utils fam:gamin localbase \
-		gettext-runtime libtool pathfix pkgconfig shared-mime-info
+USES=		autoreconf compiler:c++11-lang desktop-file-utils \
+		fam:gamin gettext-runtime libtool localbase \
+		pathfix pkgconfig shared-mime-info tar:xz
 USE_WX=		2.8
 USE_GNOME=	gtk20 cairo
 USE_XORG=	x11

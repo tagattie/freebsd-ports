@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	FluidPlug
-PORTVERSION=	g20161020
+PORTVERSION=	g20181209
 CATEGORIES=	audio
 PKGNAMESUFFIX=	-lv2
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
@@ -11,11 +11,6 @@ COMMENT=	SoundFonts as LV2 plugins via FluidSynth
 
 LICENSE=	LGPL20
 
-BROKEN_aarch64=		fails to compile: unknown FP unit 'sse'
-BROKEN_armv6=		fails to compile: unknown FP unit 'sse'
-BROKEN_armv7=		fails to compile: unknown FP unit 'sse'
-BROKEN_mips64=		fails to compile: unknown FP unit 'sse'
-
 BUILD_DEPENDS=	7z:archivers/p7zip \
 		lv2>0:audio/lv2
 LIB_DEPENDS=	libfluidsynth.so:audio/fluidsynth
@@ -23,9 +18,16 @@ LIB_DEPENDS=	libfluidsynth.so:audio/fluidsynth
 USES=		gmake pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	falkTX
-GH_TAGNAME=	889b256
+GH_TAGNAME=	8457f10
 
 SOUNDFONT_DIR=	${PREFIX}/share/sounds/sf2
+
+OPTIONS_DEFINE_amd64=	SSE
+OPTIONS_DEFINE_i386=	SSE
+OPTIONS_DEFAULT_amd64=	SSE
+OPTIONS_DEFAULT_i386=	SSE
+
+SSE_MAKE_ARGS=	PORT_SIMD_FLAGS="-msse -msse2 -mfpmath=sse"
 
 post-patch:
 	@${REINPLACE_CMD} -e ' \

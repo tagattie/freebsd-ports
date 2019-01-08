@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	opendht
-DISTVERSION=	1.6.1
+DISTVERSION=	1.8.0
+PORTREVISION=	1
 CATEGORIES=	devel net
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -11,19 +12,20 @@ COMMENT=	Lightweight Distributed Hash Table implementation
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_FreeBSD_10=	Missing __cxa_thread_atexit
-
 LIB_DEPENDS=	libargon2.so:security/libargon2 \
+		libjsoncpp.so:devel/jsoncpp \
 		libmsgpackc.so:devel/msgpack \
 		libnettle.so:security/nettle \
 		libgnutls.so:security/gnutls
 
-USES=		cmake:outsource compiler:c++11-lib pathfix pkgconfig readline:port
+USES=		cmake compiler:c++11-lib pathfix pkgconfig readline:port
 USE_GITHUB=	yes
 GH_ACCOUNT=	savoirfairelinux
 USE_LDCONFIG=	yes
 
 CMAKE_OFF=	OPENDHT_STATIC
+
+PLIST_SUB=	SHL3=${PORTVERSION} SHL1=${PORTVERSION:R:R}
 
 OPTIONS_DEFINE=	PROXY_SERVER PROXY_CLIENT PUSH_NOTIFICATIONS DOCS
 

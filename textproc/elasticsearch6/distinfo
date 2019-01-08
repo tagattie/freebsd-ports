@@ -1,3 +1,3 @@
-TIMESTAMP = 1519482605
-SHA256 (elasticsearch-6.2.2.tar.gz) = b26e3546784b39ce3eacc10411e68ada427c5764bcda3064e9bb284eca907983
-SIZE (elasticsearch-6.2.2.tar.gz) = 29049540
+TIMESTAMP = 1541260799
+SHA256 (elasticsearch-6.4.2.tar.gz) = 32a9c0305faed1cbd4e22c85a8c333ca2b6704f1d0006e92709fada10cec3f45
+SIZE (elasticsearch-6.4.2.tar.gz) = 97914519

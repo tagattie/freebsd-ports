@@ -1,6 +1,6 @@
---- services/device/hid/hid_connection_freebsd.h.orig	2018-03-04 05:38:54.423072000 +0100
-+++ services/device/hid/hid_connection_freebsd.h	2018-03-04 08:36:02.866858000 +0100
-@@ -0,0 +1,76 @@
+--- services/device/hid/hid_connection_freebsd.h.orig	2018-12-27 21:14:54.190483000 +0100
++++ services/device/hid/hid_connection_freebsd.h	2018-12-28 15:27:41.475526000 +0100
+@@ -0,0 +1,70 @@
 +// Copyright (c) 2014 The Chromium Authors. All rights reserved.
 +// Use of this source code is governed by a BSD-style license that can be
 +// found in the LICENSE file.
@@ -11,10 +11,10 @@
 +#include <stddef.h>
 +#include <stdint.h>
 +
-+#include <queue>
-+
 +#include "base/files/scoped_file.h"
 +#include "base/macros.h"
++#include "base/memory/ptr_util.h"
++#include "base/memory/ref_counted_memory.h"
 +#include "base/memory/weak_ptr.h"
 +#include "base/sequence_checker.h"
 +#include "services/device/hid/hid_connection.h"
@@ -44,17 +44,14 @@
 +
 +  // HidConnection implementation.
 +  void PlatformClose() override;
-+  void PlatformRead(ReadCallback callback) override;
-+  void PlatformWrite(scoped_refptr<net::IOBuffer> buffer,
-+                     size_t size,
++  void PlatformWrite(scoped_refptr<base::RefCountedBytes> buffer,
 +                     WriteCallback callback) override;
 +  void PlatformGetFeatureReport(uint8_t report_id,
 +                                ReadCallback callback) override;
-+  void PlatformSendFeatureReport(scoped_refptr<net::IOBuffer> buffer,
-+                                 size_t size,
++  void PlatformSendFeatureReport(scoped_refptr<base::RefCountedBytes> buffer,
 +                                 WriteCallback callback) override;
-+  void ProcessInputReport(scoped_refptr<net::IOBuffer> buffer, size_t size);
-+  void ProcessReadQueue();
++  void ProcessInputReport(scoped_refptr<base::RefCountedBytes> buffer,
++                          size_t size);
 +
 +  // |helper_| lives on the sequence to which |blocking_task_runner_| posts
 +  // tasks so all calls must be posted there including this object's
@@ -62,9 +59,6 @@
 +  std::unique_ptr<BlockingTaskHelper> helper_;
 +
 +  const scoped_refptr<base::SequencedTaskRunner> blocking_task_runner_;
-+
-+  std::queue<PendingHidReport> pending_reports_;
-+  std::queue<PendingHidRead> pending_reads_;
 +  const scoped_refptr<base::SequencedTaskRunner> task_runner_;
 +
 +  SEQUENCE_CHECKER(sequence_checker_);

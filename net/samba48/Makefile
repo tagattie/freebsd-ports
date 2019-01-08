@@ -13,16 +13,20 @@ COMMENT=			Free SMB/CIFS and AD/DC server and client for Unix
 
 LICENSE=			GPLv3
 
+BROKEN_powerpc64=		fails to compile: auth.idl:107: Unable to determine origin of type struct cli_credentials
 IGNORE_NONTHREAD_PYTHON=	needs port lang/python${PYTHON_SUFFIX} to be build with THREADS support
 
 CONFLICTS_INSTALL?=		samba4-4.0.* samba4[1-79]-4.* p5-Parse-Pidl-4.*
 
 EXTRA_PATCHES+=			${PATCHDIR}/0001-Zfs-provision-1.patch:-p1
 EXTRA_PATCHES+=			${PATCHDIR}/0001-Freenas-master-mdns-fixes-22.patch:-p1
+EXTRA_PATCHES+=			${PATCHDIR}/0001-audit.patch:-p1
+EXTRA_PATCHES+=			${PATCHDIR}/0001-bug-13175.patch:-p1
+EXTRA_PATCHES+=			${PATCHDIR}/0001-bug-228462.patch:-p1
 
 SAMBA4_BASENAME=		samba
 SAMBA4_PORTNAME=		${SAMBA4_BASENAME}4
-SAMBA4_VERSION=			4.8.0
+SAMBA4_VERSION=			4.8.7
 SAMBA4_DISTNAME=		${SAMBA4_BASENAME}-${SAMBA4_VERSION:S|.p|pre|:S|.r|rc|:S|.t|tp|:S|.a|alpha|}
 
 WRKSRC?=			${WRKDIR}/${DISTNAME}
@@ -86,17 +90,22 @@ OPTIONS_SUB=			yes
 OPTIONS_DEFINE=			AD_DC ADS DEBUG DOCS FAM LDAP \
 				QUOTAS SYSLOG UTMP PROFILE
 # Make those default options
-OPTIONS_DEFAULT:=		${OPTIONS_DEFINE}
+OPTIONS_DEFAULT:=		${OPTIONS_DEFINE} GSSAPI_BUILTIN
 # This shouldn't be default in the release
 OPTIONS_DEFINE+=		DEVELOPER MANDOC
 
 OPTIONS_DEFINE_amd64=		AESNI
 OPTIONS_DEFAULT_amd64=		AESNI
 
-OPTIONS_DEFINE+=		CUPS GPGME NTVFS SPOTLIGHT
+OPTIONS_DEFINE+=		CLUSTER CUPS GPGME NTVFS SPOTLIGHT
+#OPTIONS_DEFINE+=		MEMORY_DEBUG
+
+OPTIONS_SINGLE=			GSSAPI
+# GSSAPI_HEIMDAL
+OPTIONS_SINGLE_GSSAPI=		GSSAPI_BUILTIN GSSAPI_MIT
 
 OPTIONS_RADIO=			DNS ZEROCONF
-OPTIONS_RADIO_DNS=		NSUPDATE BIND99 BIND910 BIND911
+OPTIONS_RADIO_DNS=		NSUPDATE BIND911
 OPTIONS_RADIO_ZEROCONF=		MDNSRESPONDER AVAHI
 ##############################################################################
 AD_DC_DESC=			Active Directory Domain Controller
@@ -111,20 +120,23 @@ LDAP_DESC=			LDAP client
 LIBZFS_DESC=			LibZFS
 SPOTLIGHT_DESC=			Spotlight
 MANDOC_DESC=			Build manpages from DOCBOOK templates
+MEMORY_DEBUG_DESC=		Debug memory allocation
 NTVFS_DESC=			Build *DEPRECATED* NTVFS file server
 PICKY_DEVELOPER_DESC=		Treat compiler warnings as errors(implies DEVELOPER)
 PROFILE_DESC=			Profiling data
 QUOTAS_DESC=			Disk quota
 UTMP_DESC=			UTMP accounting
 
-BIND99_DESC=			Use Bind 9.9 as AD DC DNS server frontend
-BIND910_DESC=			Use Bind 9.10 as AD DC DNS server frontend
+GSSAPI_BUILTIN_DESC=		GSSAPI support via bundled Heimdal
+
 BIND911_DESC=			Use Bind 9.11 as AD DC DNS server frontend
 NSUPDATE_DESC=			Use samba NSUPDATE utility for AD DC
 ##############################################################################
-PLIST_SUB+=			CLUSTER="@comment "
-SUB_LIST+=			CLUSTER="@comment "
-# XXX: Unconditional dependencies which can't be switched off(if present in the system)
+# XXX: Unconditional dependencies which can't be switched off(if present in
+# the system)
+# Readline(sponsored by Python)
+# XXX: USES=readline pollutes CPPFLAGS, so we explicitly put dependency
+LIB_DEPENDS+=			libreadline.so.7:devel/readline
 # popt
 LIB_DEPENDS+=			libpopt.so:devel/popt
 # inotify
@@ -144,14 +156,14 @@ SAMBA4_BUNDLED_LIBS+=		!libarchive
 BUILD_DEPENDS+=			libarchive>=3.1.2:archivers/libarchive
 RUN_DEPENDS+=			libarchive>=3.1.2:archivers/libarchive
 ### Bundled libraries
-#SAMBA4_BUNDLED_CMOCKA=		yes
-#SAMBA4_BUNDLED_TALLOC=		yes
-#SAMBA4_BUNDLED_TEVENT=		yes
-#SAMBA4_BUNDLED_TDB=		yes
-#SAMBA4_BUNDLED_LDB=		yes
+SAMBA4_BUNDLED_CMOCKA?=		no
+SAMBA4_BUNDLED_TALLOC?=		no
+SAMBA4_BUNDLED_TEVENT?=		no
+SAMBA4_BUNDLED_TDB?=		no
+SAMBA4_BUNDLED_LDB?=		yes
 SAMBA4_LDB=			13
 # cmocka
-.if defined(SAMBA4_BUNDLED_CMOCKA)
+.if defined(SAMBA4_BUNDLED_CMOCKA) && ${SAMBA4_BUNDLED_CMOCKA} == yes
 SAMBA4_BUNDLED_LIBS+=		cmocka
 CONFLICTS+=			cmocka-1.*
 PLIST_SUB+=			SAMBA4_BUNDLED_CMOCKA=""
@@ -164,33 +176,33 @@ PLIST_SUB+=			SAMBA4_BUNDLED_CMOCKA="@comment "
 SUB_LIST+=			SAMBA4_BUNDLED_CMOCKA="@comment "
 .endif
 # talloc
-.if defined(SAMBA4_BUNDLED_TALLOC)
+.if defined(SAMBA4_BUNDLED_TALLOC) && ${SAMBA4_BUNDLED_TALLOC} == yes
 SAMBA4_BUNDLED_LIBS+=		talloc
 CONFLICTS+=			talloc-2.*
 PLIST_SUB+=			SAMBA4_BUNDLED_TALLOC=""
 SUB_LIST+=			SAMBA4_BUNDLED_TALLOC=""
 .else
 SAMBA4_BUNDLED_LIBS+=		!talloc
-BUILD_DEPENDS+=			talloc>=2.1.11:devel/talloc
-RUN_DEPENDS+=			talloc>=2.1.11:devel/talloc
+BUILD_DEPENDS+=			talloc>=2.1.14:devel/talloc
+RUN_DEPENDS+=			talloc>=2.1.14:devel/talloc
 PLIST_SUB+=			SAMBA4_BUNDLED_TALLOC="@comment "
 SUB_LIST+=			SAMBA4_BUNDLED_TALLOC="@comment "
 .endif
 # tevent
-.if defined(SAMBA4_BUNDLED_TEVENT)
+.if defined(SAMBA4_BUNDLED_TEVENT) && ${SAMBA4_BUNDLED_TEVENT} == yes
 SAMBA4_BUNDLED_LIBS+=		tevent
 CONFLICTS+=			tevent-0.*
 PLIST_SUB+=			SAMBA4_BUNDLED_TEVENT=""
 SUB_LIST+=			SAMBA4_BUNDLED_TEVENT=""
 .else
 SAMBA4_BUNDLED_LIBS+=		!tevent
-BUILD_DEPENDS+=			tevent>=0.9.36:devel/tevent
-RUN_DEPENDS+=			tevent>=0.9.36:devel/tevent
+BUILD_DEPENDS+=			tevent>=0.9.37:devel/tevent
+RUN_DEPENDS+=			tevent>=0.9.37:devel/tevent
 PLIST_SUB+=			SAMBA4_BUNDLED_TEVENT="@comment "
 SUB_LIST+=			SAMBA4_BUNDLED_TEVENT="@comment "
 .endif
 # tdb
-.if defined(SAMBA4_BUNDLED_TDB)
+.if defined(SAMBA4_BUNDLED_TDB) && ${SAMBA4_BUNDLED_TDB} == yes
 SAMBA4_BUNDLED_LIBS+=		tdb
 CONFLICTS+=			tdb-1.*
 PLIST_SUB+=			SAMBA4_BUNDLED_TDB=""
@@ -203,7 +215,7 @@ PLIST_SUB+=			SAMBA4_BUNDLED_TDB="@comment "
 SUB_LIST+=			SAMBA4_BUNDLED_TDB="@comment "
 .endif
 # ldb
-.if defined(SAMBA4_BUNDLED_LDB) || !defined(SAMBA4_LDB)
+.if (defined(SAMBA4_BUNDLED_LDB) && ${SAMBA4_BUNDLED_LDB} == yes) || !defined(SAMBA4_LDB)
 SAMBA4_BUNDLED_LDB=		yes
 SAMBA4_BUNDLED_LIBS+=		ldb
 CONFLICTS+=			ldb-1.* ldb1[23]-1.*
@@ -211,8 +223,8 @@ PLIST_SUB+=			SAMBA4_BUNDLED_LDB=""
 SUB_LIST+=			SAMBA4_BUNDLED_LDB=""
 .else
 .       if ${SAMBA4_LDB} == 13
-BUILD_DEPENDS+=			ldb13>=1.3.2:databases/ldb13
-RUN_DEPENDS+=			ldb13>=1.3.2:databases/ldb13
+BUILD_DEPENDS+=			ldb13>=1.3.6:databases/ldb13
+RUN_DEPENDS+=			ldb13>=1.3.6:databases/ldb13
 .       elif ${SAMBA4_LDB} == 12
 BUILD_DEPENDS+=			ldb12>=1.2.3:databases/ldb12
 RUN_DEPENDS+=			ldb12>=1.2.3:databases/ldb12
@@ -225,7 +237,9 @@ PLIST_SUB+=			SAMBA4_BUNDLED_LDB="@comment "
 SUB_LIST+=			SAMBA4_BUNDLED_LDB="@comment "
 .endif
 
-.if defined(SAMBA4_BUNDLED_TALLOC) || defined(SAMBA4_BUNDLED_TEVENT) || defined(SAMBA4_BUNDLED_TDB)
+.if (defined(SAMBA4_BUNDLED_TALLOC)  && ${SAMBA4_BUNDLED_TEVENT} == yes) \
+	|| (defined(SAMBA4_BUNDLED_TDB) && ${SAMBA4_BUNDLED_TDB} == yes) \
+	|| (defined(SAMBA4_BUNDLED_TEVENT) && ${SAMBA4_BUNDLED_TEVENT} == yes)
 SAMBA4_BUNDLED_LIBS+=		replace
 .endif
 # Don't use external libcom_err
@@ -256,10 +270,7 @@ CONFIGURE_ARGS+=		\
 				--with-sendfile-support \
 				--disable-ctdb-tests \
 				${ICONV_CONFIGURE_BASE}
-
 ##############################################################################
-BIND99_RUN_DEPENDS=		bind99>=9.9.0.0:dns/bind99
-BIND910_RUN_DEPENDS=		bind910>=9.10.0.0:dns/bind910
 BIND911_RUN_DEPENDS=		bind911>=9.11.0.0:dns/bind911
 NSUPDATE_RUN_DEPENDS=		samba-nsupdate:dns/samba-nsupdate
 
@@ -272,6 +283,10 @@ MDNSRESPONDER_LIB_DEPENDS=	libdns_sd.so:net/mDNSResponder
 DEBUG_CONFIGURE_ON=		--verbose --enable-debug
 DEBUG_MAKE_ARGS=		--verbose
 DEBUG_FLAGS=			-g -ggdb3 -O0
+
+MEMORY_DEBUG_IMPLIES=		DEBUG
+MEMORY_DEBUG_CONFIGURE_ENV=	ADDITIONAL_CFLAGS="-DENABLE_JEMALLOC `pkg-config --cflags jemalloc`" ADDITIONAL_LDFLAGS="`pkg-config --libs jemalloc`"
+MEMORY_DEBUG_LIB_DEPENDS=	libjemalloc.so.2:devel/jemalloc
 # https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=194046
 GDB_CMD?=			${LOCALBASE}/bin/gdb
 # https://bugzilla.samba.org/show_bug.cgi?id=8969
@@ -328,6 +343,11 @@ LDAP_CONFIGURE_ON=		--with-openldap=${LOCALBASE}
 LDAP_USE=			OPENLDAP=yes
 LDAP_VARS=			SAMBA4_MODULES+=idmap_ldap
 
+GSSAPI_MIT_CONFIGURE_ON=	--with-system-mitkrb5 ${GSSAPIBASEDIR} \
+				--with-system-mitkdc=${GSSAPIBASEDIR}/sbin/krb5kdc \
+				--with-experimental-mit-ad-dc
+GSSAPI_MIT_USES=		gssapi:mit
+
 LIBZFS_CONFIGURE_WITH=		libzfs
 LIBZFS_VARS=			SAMBA4_MODULES+=vfs_zfs_space
 
@@ -365,7 +385,7 @@ SAMBA4_MODULES+=		idmap_ad idmap_rfc2307 nss-info_template nss-info_rfc2307 nss-
 .if ${PORT_OPTIONS:MDEVELOPER}
 SAMBA4_MODULES+=		auth_skel pdb_test gpext_security gpext_registry gpext_scripts perfcount_test \
 				vfs_fake_dfq vfs_skel_opaque vfs_skel_transparent vfs_shadow_copy_test vfs_fake_acls \
-				vfs_nfs4acl_xattr vfs_error_inject
+				vfs_nfs4acl_xattr vfs_error_inject vfs_delay_inject
 .endif
 
 .if defined(WANT_EXP_MODULES) && !empty(WANT_EXP_MODULES)
@@ -415,10 +435,10 @@ BUILD_DEPENDS+=			${PYTHON_PKGNAMEPREFIX}iso8601>=0.1.11:devel/py-iso8601@${PY_F
 RUN_DEPENDS+=			${PYTHON_PKGNAMEPREFIX}iso8601>=0.1.11:devel/py-iso8601@${PY_FLAVOR}
 # XXX: This is a gross hack to make port use both Python 2.7+ and 3.3+
 # This is not officially supported, use at your own risk
-.if defined(WITH_SAMBA4_PYTHON3) && ${WITH_SAMBA4_PYTHON3:Mpython3\.[0-9]}
-SAMBA4_PYTHON3=			${WITH_SAMBA4_PYTHON3}
-SAMBA4_PYTHON3_VERSION:=	${SAMBA4_PYTHON3:S/^python//}
-SAMBA4_PYTHON3_VER:=		${SAMBA4_PYTHON3_VERSION:C/\.//}
+.if defined(WITH_SAMBA4_PYTHON3) && ${WITH_SAMBA4_PYTHON3:M3\.[0-9]}
+SAMBA4_PYTHON3_VERSION=		${WITH_SAMBA4_PYTHON3}
+SAMBA4_PYTHON3=			python${SAMBA4_PYTHON3_VERSION}
+SAMBA4_PYTHON3_VER=		${SAMBA4_PYTHON3_VERSION:C/\.//}
 .if !exists(${PORTSDIR}/lang/python${SAMBA4_PYTHON3_VER})
 .error				unsupported or unknown Python version ${SAMBA4_PYTHON3_VERSION}
 .endif
@@ -453,11 +473,19 @@ SUB_LIST+=			SAMBA4_PYTHON3="@comment "
 
 .if !defined(SAMBA4_SUBPORT)
 # Require llvm 4.0 and AMD64
-.if ${PORT_OPTIONS:MAESNI} && ${ARCH} == "amd64" && ${OSVERSION} >= 1100511
+.if ${PORT_OPTIONS:MAESNI} && ${ARCH} == "amd64"
 CONFIGURE_ARGS+=		--accel-aes=intelaesni
 PLIST_FILES+=			lib/samba4/private/libaesni-intel-samba4.so
 .else
 CONFIGURE_ARGS+=		--accel-aes=none
+.endif
+
+.if ${PORT_OPTIONS:MGSSAPI_MIT}
+PLIST_FILES+=			lib/shared-modules/krb5/winbind_krb5_localauth.so \
+				man/man8/winbind_krb5_localauth.8.gz
+.       if ${PORT_OPTIONS:MAD_DC}
+PLIST_FILES+=			lib/samba4/krb5/plugins/kdb/samba.so
+.       endif
 .endif
 # for libexecinfo: (so that __builtin_frame_address() finds the top of the stack)
 CFLAGS_amd64+=			-fno-omit-frame-pointer
@@ -508,6 +536,12 @@ post-patch:
 
 # Use threading (or multiprocessing) but not thread (renamed in python 3+).
 pre-configure:
+.if ! ${PORT_OPTIONS:MAD_DC} && ${PORT_OPTIONS:MNTVFS}
+				@${ECHO_CMD}; \
+				${ECHO_MSG} "===>  NTVFS option requires AD_DC to be set"; \
+				${ECHO_CMD}; \
+				${FALSE}
+.endif
 				@if ! ${PYTHON_CMD} -c "import multiprocessing;" 2>/dev/null; then \
 					${ECHO_CMD}; \
 					${ECHO_MSG} "===>  ${PKGNAME} "${IGNORE_NONTHREAD_PYTHON:Q}.; \
@@ -559,6 +593,10 @@ post-install-rm-junk:
 .for f in vfs_aio_linux.8 vfs_btrfs.8 vfs_ceph.8 vfs_gpfs.8
 				${RM} ${STAGEDIR}${PREFIX}/man/man8/${f}
 .endfor
+.if defined(NO_PYTHON)
+				${RM} -r ${STAGEDIR}${PYTHON_SITELIBDIR}/samba/third_party/dns \
+					 ${STAGEDIR}${PYTHON_SITELIBDIR}/samba/third_party/iso8601
+.endif
 
 post-install: post-install-rm-junk
 				${LN} -sf smb.conf.5.gz ${STAGEDIR}${PREFIX}/man/man5/smb4.conf.5.gz

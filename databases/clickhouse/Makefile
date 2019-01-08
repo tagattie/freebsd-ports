@@ -2,18 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	clickhouse
-PORTVERSION=	1.1.54362
+PORTVERSION=	18.14.18
 DISTVERSIONPREFIX=	v
 DISTVERSIONSUFFIX=	-stable
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases
 
 MAINTAINER=	proler@gmail.com
-COMMENT=	ClickHouse is an column-oriented database management system
+COMMENT=	ClickHouse is a column-oriented database management system
 
 LICENSE=	APACHE20
 
-BROKEN_FreeBSD_10=	Builds but does not work
 ONLY_FOR_ARCHS=	amd64
 ONLY_FOR_ARCHS_REASON=	"Only supported on amd64"
 
@@ -31,19 +30,18 @@ LIB_DEPENDS=	libtcmalloc.so:devel/google-perftools \
 		libzstd.so:archivers/zstd \
 		liblz4.so:archivers/liblz4 \
 		libPocoNet.so:devel/poco \
-		libcpuid.so:sysutils/libcpuid \
 		libunwind.so:devel/libunwind \
 		librdkafka.so:net/librdkafka \
+		libcpuid.so:sysutils/libcpuid \
 		libgtest.so:devel/googletest
 
-USES=		compiler:c++14-lang cmake iconv mysql python ssl readline shebangfix
+USES=		compiler:c++14-lang cmake:insource iconv mysql ssl readline shebangfix
 USE_LDCONFIG=	yes
+
 CMAKE_ARGS=	-DUNBUNDLED=1 \
 		-DUSE_STATIC_LIBRARIES=0 \
 		-DNO_WERROR=1 \
-		-DENABLE_TESTS=0 \
-		-DCXX11_ABI= \
-		-DCOMPILER_FLAGS="-DLZ4_DISABLE_DEPRECATE_WARNINGS=1"
+		-DENABLE_TESTS=0
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	yandex
@@ -60,16 +58,31 @@ GROUPS=		clickhouse
 SOVERSION=	${PORTVERSION}
 PLIST_SUB=	SOVERSION=${SOVERSION}
 
-.include <bsd.port.pre.mk>
+OPTIONS_DEFINE=		TEST
+OPTIONS_DEFAULT=	TEST
+OPTIONS_SUB=	yes
+TEST_DESC=	Install script clickhouse-test and test queries data
+TEST_USES=	python perl5
+TEST_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>=0:devel/py-lxml@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}termcolor>=0:devel/py-termcolor@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests@${PY_FLAVOR} \
+		curl:ftp/curl \
+		bash:shells/bash \
+		expect:lang/expect \
+		sudo:security/sudo
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1200000
-BUILD_DEPENDS+=	clang50:devel/llvm50
-CC=		clang50
-CXX=		clang++50
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1200057
+SUB_LIST+=	LEGACY_LIMITS="@comment " MODERN_LIMITS=""
+.else
+SUB_LIST+=	LEGACY_LIMITS="" MODERN_LIMITS="@comment "
 .endif
 
+.include <bsd.port.pre.mk>
+
 post-patch:
-	@${REINPLACE_CMD} -e 's|/var/lib/clickhouse|/var/db/clickhouse|;s|/var/log/clickhouse-server|/var/log/clickhouse|;s|/etc/clickhouse-server|${PREFIX}/etc/clickhouse-server|' ${WRKSRC}/dbms/src/Server/config.xml
+	@${REINPLACE_CMD} -e 's|/var/lib/clickhouse|/var/db/clickhouse|;s|/var/log/clickhouse-server|/var/log/clickhouse|;s|/etc/clickhouse-server|${PREFIX}/etc/clickhouse-server|' ${WRKSRC}/dbms/programs/server/config.xml
 
 post-install:
 	@${RM} ${STAGEDIR}${PREFIX}/bin/clickhouse-compressor
@@ -78,7 +91,7 @@ post-install:
 	@${RM} -r ${STAGEDIR}${PREFIX}/include/gtest
 	@${RM} ${STAGEDIR}${PREFIX}/lib/libgtest*
 
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/share/clickhouse-test/external_dictionaries/dictionary_library/lib*.so
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/share/clickhouse-test/external_dictionaries/dictionary_library/*.so
 
 	${INSTALL_DATA} ${STAGEDIR}${PREFIX}/etc/clickhouse-client/config.xml \
 		${STAGEDIR}${PREFIX}/etc/clickhouse-client/config.xml.sample

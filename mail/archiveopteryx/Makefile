@@ -3,7 +3,7 @@
 
 PORTNAME=	archiveopteryx
 PORTVERSION=	3.2.0
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	mail
 MASTER_SITES=	http://archiveopteryx.org/download/
 
@@ -11,10 +11,6 @@ MAINTAINER=	feld@FreeBSD.org
 COMMENT=	Advanced PostgreSQL-based IMAP/POP server
 
 LICENSE=	MIT
-
-BROKEN_armv6=		fails to build: core/md5.cpp:55:5: 'register' storage class specifier is deprecated and incompatible with C++17
-BROKEN_armv7=		fails to build: core/md5.cpp:55:5: 'register' storage class specifier is deprecated and incompatible with C++17
-BROKEN_powerpc64=	fails to build: /bin/sh: clang: not found
 
 BUILD_DEPENDS=	jam:devel/jam
 
@@ -36,11 +32,15 @@ PLIST_SUB+=	GROUPS="${GROUPS}"
 JAM?=		${LOCALBASE}/bin/jam
 JAMARG+=	-dx
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.pre.mk>
 
-# force Clang when on FreeBSD
+# force Clang when on FreeBSD with clang in base
 .if ${OPSYS} == FreeBSD
+.if ! ${ARCH:Mmips*} && ! ${ARCH:Mpowerpc*} && ! ${ARCH} == sparc64
 JAMARG+=	"-sCLANG=1"
+.endif
 .endif
 
 post-patch:

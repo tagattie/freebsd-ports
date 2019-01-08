@@ -108,7 +108,6 @@
     SUBDIR += gd
     SUBDIR += gedy
     SUBDIR += gimp-help
-    SUBDIR += gjiten
     SUBDIR += groff
     SUBDIR += gskk
     SUBDIR += gsuica
@@ -127,8 +126,6 @@
     SUBDIR += jed
     SUBDIR += jishyo
     SUBDIR += jls
-    SUBDIR += jmode
-    SUBDIR += jmode-skk
     SUBDIR += jpilot
     SUBDIR += jstrings
     SUBDIR += jvim3
@@ -139,10 +136,9 @@
     SUBDIR += kbanner
     SUBDIR += kcc
     SUBDIR += kcode
-    SUBDIR += kde4-l10n
     SUBDIR += kdrill
     SUBDIR += kinput2
-    SUBDIR += kiten-kde4
+    SUBDIR += kiten
     SUBDIR += kon2-14dot
     SUBDIR += kon2-16dot
     SUBDIR += kpcal
@@ -219,8 +215,6 @@
     SUBDIR += p5-WWW-MobileCarrierJP
     SUBDIR += p5-nkf
     SUBDIR += pejv-fpw
-    SUBDIR += php5-mecab
-    SUBDIR += php_doc
     SUBDIR += plain2
     SUBDIR += plan
     SUBDIR += prn
@@ -263,7 +257,6 @@
     SUBDIR += skkserv
     SUBDIR += slimeforest
     SUBDIR += slrn
-    SUBDIR += spamassassin
     SUBDIR += srd-fpw-package
     SUBDIR += suicavalue
     SUBDIR += t2ps
@@ -292,7 +285,6 @@
     SUBDIR += wordpress
     SUBDIR += wwasw-fpw
     SUBDIR += xdtp
-    SUBDIR += xgate
     SUBDIR += xpdf
     SUBDIR += xshodou
     SUBDIR += xtr

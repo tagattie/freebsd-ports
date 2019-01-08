@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	d-scanner
-PORTVERSION=	0.4.2
+PORTVERSION=	0.5.11
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
@@ -13,16 +13,19 @@ LICENSE=	BSL
 
 BUILD_DEPENDS=	ldmd2:lang/ldc \
 		dub:devel/dub \
+		rdmd:lang/dlang-tools \
 		${LOCALBASE}/lib/d/libemsi_containers.a:devel/containers \
 		${LOCALBASE}/lib/d/libdsymbol.a:devel/dsymbol \
 		${LOCALBASE}/lib/d/libinifiled.a:devel/inifiled \
 		${LOCALBASE}/lib/d/libddoc.a:devel/libddoc \
-		${LOCALBASE}/lib/d/libdparse.a:devel/libdparse
+		${LOCALBASE}/lib/d/libdparse.a:devel/libdparse \
+		${LOCALBASE}/lib/d/libmir-core.a:devel/mir-core \
+		${LOCALBASE}/lib/d/libstdx-allocator.a:devel/stdx-allocator \
+		rdmd:lang/dlang-tools
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	dlang-community
 GH_PROJECT=	D-Scanner
-GH_TAGNAME=	d610df2
 
 PLIST_FILES=	bin/dscanner
 DUB_CMD=	${LOCALBASE}/bin/dub build --build=release

@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	convertall
-PORTVERSION=	0.7.3
+PORTVERSION=	0.7.5
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}
 
@@ -21,13 +22,6 @@ CONFIGURE_ARGS=	-p ${PREFIX} -d ${DOCSDIR} -i ${DATADIR}/icons -b ${STAGEDIR}
 NO_ARCH=	yes
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/ConvertAll
-
-DESKTOP_ENTRIES="ConvertAll" \
-		"Unit Converter" \
-		"${DATADIR}/icons/${PORTNAME}.svg" \
-		"${PORTNAME}" \
-		"Qt;Utility;Calculator;" \
-		false
 
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes

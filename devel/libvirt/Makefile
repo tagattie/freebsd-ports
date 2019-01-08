@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	libvirt
-PORTVERSION=	4.1.0
-PORTREVISION=	2
+PORTVERSION=	4.10.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://libvirt.org/sources/ \
 		ftp://libvirt.org/libvirt/
@@ -53,7 +53,7 @@ GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
 
 NLS_USES=	gettext
 NLS_CONFIGURE_ENABLE=	nls
-NLS_CONFIGURE_ON=	--with-libintl-prefix=${LOCALBASE}
+NLS_CFLAGS=	-I${LOCALBASE}/include
 
 NSS_CONFIGURE_WITH=	nss-plugin
 
@@ -65,7 +65,7 @@ SASL_LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2
 
 XEN_CONFIGURE_WITH=	libxl
 XEN_CFLAGS=	-I${LOCALBASE}/include
-XEN_LIB_DEPENDS=	libxenlight.so:sysutils/xen-tools
+XEN_LIB_DEPENDS=	libxenlight.so:sysutils/xen-tools47
 
 LIBSSH_CONFIGURE_WITH=	libssh
 LIBSSH_LIB_DEPENDS=	libssh.so:security/libssh
@@ -98,15 +98,15 @@ PORTSCOUT=	limit:\d+\.\d+\.\d+$$
 
 LDFLAGS+=	-L${LOCALBASE}/lib -fstack-protector
 
-USES=		charsetfix cpe gettext-runtime gmake libtool pathfix \
-		perl5 python:2.7,build pkgconfig shebangfix tar:xz
+USES=		charsetfix compiler:c++0x cpe gettext-runtime gmake libtool pathfix \
+		perl5 python:build pkgconfig shebangfix tar:xz
 USE_RC_SUBR=	libvirtd virtlogd
 CPE_VENDOR=	redhat
 USE_PERL5=	build
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
-SHLIB_VER=	0.4001.0
+SHLIB_VER=	0.4010.0
 PLIST_SUB+=	PORTVERSION="-${PORTVERSION}" \
 		SHLIB_VER=${SHLIB_VER}
 PORTDOCS=	*
@@ -119,7 +119,7 @@ SUB_LIST+=	PORTVERSION="-${PORTVERSION}"
 
 .if ${PORT_OPTIONS:MQEMU} || ${PORT_OPTIONS:MNSS}
 LIB_DEPENDS+=		libyajl.so:devel/yajl
-CONFIGURE_ARGS+=	--with-yajl=${LOCALBASE}
+CONFIGURE_ARGS+=	--with-yajl
 .else
 CONFIGURE_ARGS+=	--without-yajl
 .endif
