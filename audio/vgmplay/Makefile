@@ -31,6 +31,8 @@ LIBAO_LDFLAGS+=	-L${LOCALBASE}/lib
 
 MAKE_ENV+=	PREFIX=${LOCALBASE}
 
+PLIST_FILES=	bin/vgmplay bin/vgm2pcm bin/vgm2wav man/man1/vgmplay.1.gz ${EXAMPLESDIR}/vgmplay.ini
+
 post-patch:
 	${REINPLACE_CMD} -e 's/@//' ${WRKSRC}/Makefile
 	${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|; s|/usr/share/vgmplay|${EXAMPLESDIR}|; s|VGMPlay|vgmplay|g;' ${WRKSRC}/vgmplay.1

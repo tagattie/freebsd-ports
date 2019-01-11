@@ -1,5 +1,0 @@
-bin/vgm2pcm
-bin/vgm2wav
-bin/vgmplay
-man/man1/vgmplay.1.gz
-share/examples/vgmplay/vgmplay.ini
