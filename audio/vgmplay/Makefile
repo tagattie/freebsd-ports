@@ -35,4 +35,12 @@ post-patch:
 	${REINPLACE_CMD} -e 's/@//' ${WRKSRC}/Makefile
 	${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|; s|/usr/share/vgmplay|${EXAMPLESDIR}|; s|VGMPlay|vgmplay|g;' ${WRKSRC}/vgmplay.1
 
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/vgmplay ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/vgm2pcm ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/vgm2wav ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/vgmplay.1 ${STAGEDIR}${PREFIX}/man/man1
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/VGMPlay.ini ${STAGEDIR}${EXAMPLESDIR}/vgmplay.ini
+
 .include <bsd.port.mk>
