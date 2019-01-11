@@ -33,6 +33,6 @@ MAKE_ENV+=	PREFIX=${LOCALBASE}
 
 post-patch:
 	${REINPLACE_CMD} -e 's/@//' ${WRKSRC}/Makefile
-	${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|; s|/usr/share|${LOCALBASE}/share|; s|VGMPlay|vgmplay|g;' ${WRKSRC}/vgmplay.1
+	${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|; s|/usr/share|${LOCALBASE}/share/examples|; s|VGMPlay|vgmplay|g;' ${WRKSRC}/vgmplay.1
 
 .include <bsd.port.mk>

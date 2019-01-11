@@ -2,4 +2,4 @@ bin/vgm2pcm
 bin/vgm2wav
 bin/vgmplay
 man/man1/vgmplay.1.gz
-@sample share/vgmplay/vgmplay.ini.sample
+share/examples/vgmplay/vgmplay.ini

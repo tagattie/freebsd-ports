@@ -1,4 +1,4 @@
---- Makefile.orig	2019-01-08 22:30:38 UTC
+--- Makefile.orig	2019-01-11 04:46:15 UTC
 +++ Makefile
 @@ -58,12 +58,14 @@ endif
  
@@ -28,10 +28,11 @@
 +	install -m 755 -s vgm2wav $(DESTDIR)$(PREFIX)/bin/vgm2wav
  	mkdir -m 755 -p $(DESTDIR)$(MANPREFIX)/man1
 -	install -m 644 vgmplay.1 $(DESTDIR)$(MANPREFIX)/man1/vgmplay.1
-+	install -m 444 vgmplay.1 $(DESTDIR)$(MANPREFIX)/man1/vgmplay.1
- 	mkdir -m 755 -p $(DESTDIR)$(PREFIX)/share/vgmplay
+-	mkdir -m 755 -p $(DESTDIR)$(PREFIX)/share/vgmplay
 -	install -m 644 VGMPlay.ini $(DESTDIR)$(PREFIX)/share/vgmplay/vgmplay.ini
-+	install -m 644 VGMPlay.ini $(DESTDIR)$(PREFIX)/share/vgmplay/vgmplay.ini.sample
++	install -m 444 vgmplay.1 $(DESTDIR)$(MANPREFIX)/man1/vgmplay.1
++	mkdir -m 755 -p $(DESTDIR)$(PREFIX)/share/examples/vgmplay
++	install -m 644 VGMPlay.ini $(DESTDIR)$(PREFIX)/share/examples/vgmplay/vgmplay.ini
  
  # install ROMs
  rom_install:
