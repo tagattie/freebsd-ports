@@ -3,6 +3,7 @@
 PORTNAME=	scrcpy
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.5
+DISTVERSIONSUFFIX=	-fixversion
 CATEGORIES=	comms net
 MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${PORTNAME}/releases/download/${GH_TAGNAME}/:jar
 DISTFILES=	${PORTNAME}-server-${DISTVERSIONPREFIX}${DISTVERSION}.jar:jar
@@ -25,7 +26,6 @@ USE_SDL=	sdl2
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Genymobile
-GH_TAGNAME=	${DISTVERSIONPREFIX}${DISTVERSION}-fixversion
 
 MESON_ARGS=	-Dbuild_server=false
 
