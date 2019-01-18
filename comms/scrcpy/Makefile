@@ -15,8 +15,8 @@ COMMENT=	Display and control your Android device
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libavformat.so:multimedia/ffmpeg \
-		libavcodec.so:multimedia/ffmpeg \
+LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
+		libavformat.so:multimedia/ffmpeg \
 		libavutil.so:multimedia/ffmpeg
 RUN_DEPENDS=	adb:devel/android-tools-adb
 
