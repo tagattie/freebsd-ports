@@ -21,7 +21,6 @@ LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 RUN_DEPENDS=	adb:devel/android-tools-adb
 
 USES=		meson pkgconfig
-
 USE_SDL=	sdl2
 
 USE_GITHUB=	yes
