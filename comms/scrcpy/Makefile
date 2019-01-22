@@ -28,6 +28,10 @@ GH_ACCOUNT=	Genymobile
 
 MESON_ARGS=	-Dbuild_server=false
 
+OPTIONS_DEFINE=	DOCS
+
+PORTDOCS=	README.md FAQ.md
+
 DIST_JARFILE=	${PORTNAME}-server-${DISTVERSIONPREFIX}${DISTVERSION}.jar
 INSTALL_JARFILE=	${DIST_JARFILE:C/(server).*/\1/}.jar
 PLIST_FILES=	bin/scrcpy ${DATADIR}/${INSTALL_JARFILE}
@@ -38,5 +42,11 @@ post-extract:
 post-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/${INSTALL_JARFILE} ${STAGEDIR}${DATADIR}
+
+post-install-DOCS-on:
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+.for doc in ${PORTDOCS}
+	${INSTALL_MAN} ${WRKSRC}/${doc} ${STAGEDIR}${DOCSDIR}
+.endfor
 
 .include <bsd.port.mk>
