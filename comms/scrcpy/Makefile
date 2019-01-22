@@ -2,8 +2,7 @@
 
 PORTNAME=	scrcpy
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.5
-DISTVERSIONSUFFIX=	-fixversion
+DISTVERSION=	1.6
 CATEGORIES=	comms net
 MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/${GH_TAGNAME}/:jar
 DISTFILES=	${DIST_JARFILE}:jar
