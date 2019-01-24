@@ -215,8 +215,8 @@
     SUBDIR += binutils
     SUBDIR += bison
     SUBDIR += blame
-    SUBDIR += bloaty
     SUBDIR += blitz
+    SUBDIR += bloaty
     SUBDIR += bmake
     SUBDIR += bmkdep
     SUBDIR += bnf
@@ -744,8 +744,8 @@
     SUBDIR += geany-plugin-treebrowser
     SUBDIR += geany-plugin-updatechecker
     SUBDIR += geany-plugin-utilslib
-    SUBDIR += geany-plugin-vimode
     SUBDIR += geany-plugin-vc
+    SUBDIR += geany-plugin-vimode
     SUBDIR += geany-plugin-webhelper
     SUBDIR += geany-plugin-workbench
     SUBDIR += geany-plugin-xmlsnippets
@@ -780,6 +780,7 @@
     SUBDIR += git-lite
     SUBDIR += git-merge-changelog
     SUBDIR += git-modes
+    SUBDIR += git-remote-hg
     SUBDIR += git-review
     SUBDIR += git-subversion
     SUBDIR += git-town
@@ -4283,6 +4284,7 @@
     SUBDIR += py-XStatic-tv4
     SUBDIR += py-ZopeUndo
     SUBDIR += py-adb
+    SUBDIR += py-aenum
     SUBDIR += py-aioice
     SUBDIR += py-aiorpcX
     SUBDIR += py-aiortc
@@ -4451,6 +4453,7 @@
     SUBDIR += py-datrie
     SUBDIR += py-dbus
     SUBDIR += py-ddt
+    SUBDIR += py-ddtrace
     SUBDIR += py-debtcollector
     SUBDIR += py-decorator
     SUBDIR += py-decoratortools
@@ -4553,6 +4556,7 @@
     SUBDIR += py-gdbgui
     SUBDIR += py-gearman
     SUBDIR += py-generate
+    SUBDIR += py-genty
     SUBDIR += py-geojson
     SUBDIR += py-geotypes
     SUBDIR += py-gevent
@@ -4635,6 +4639,7 @@
     SUBDIR += py-json-py
     SUBDIR += py-json-sempai
     SUBDIR += py-json_tricks
+    SUBDIR += py-jsonform
     SUBDIR += py-jsonlib
     SUBDIR += py-jsonlib2
     SUBDIR += py-jsonlines
@@ -4736,6 +4741,7 @@
     SUBDIR += py-ncurses
     SUBDIR += py-nose
     SUBDIR += py-nose-cov
+    SUBDIR += py-nose-timer
     SUBDIR += py-nose2
     SUBDIR += py-noseofyeti
     SUBDIR += py-notifier
@@ -4754,6 +4760,7 @@
     SUBDIR += py-openapi-codec
     SUBDIR += py-opendht
     SUBDIR += py-openstacksdk
+    SUBDIR += py-opentracing
     SUBDIR += py-opster
     SUBDIR += py-optik
     SUBDIR += py-option_merge
@@ -5140,6 +5147,7 @@
     SUBDIR += py-typechecks
     SUBDIR += py-typed-ast
     SUBDIR += py-typing
+    SUBDIR += py-typing-extensions
     SUBDIR += py-tzlocal
     SUBDIR += py-u-msgpack-python
     SUBDIR += py-ua_parser
@@ -5404,6 +5412,7 @@
     SUBDIR += readline
     SUBDIR += rebar
     SUBDIR += rebar3
+    SUBDIR += redo
     SUBDIR += regexx
     SUBDIR += regexxer
     SUBDIR += relx
@@ -5561,6 +5570,7 @@
     SUBDIR += rubygem-daemon_controller
     SUBDIR += rubygem-daemons
     SUBDIR += rubygem-ddplugin
+    SUBDIR += rubygem-ddtrace
     SUBDIR += rubygem-debug_inspector
     SUBDIR += rubygem-debugger-linecache
     SUBDIR += rubygem-debugger-ruby_core_source
@@ -5581,6 +5591,7 @@
     SUBDIR += rubygem-devise
     SUBDIR += rubygem-devise-rails5
     SUBDIR += rubygem-devise-rails50
+    SUBDIR += rubygem-dig_rb
     SUBDIR += rubygem-directory_watcher
     SUBDIR += rubygem-ditz
     SUBDIR += rubygem-diva
@@ -5672,12 +5683,12 @@
     SUBDIR += rubygem-googleapis-common-protos-types
     SUBDIR += rubygem-graf
     SUBDIR += rubygem-grape
-    SUBDIR += rubygem-grape11
     SUBDIR += rubygem-grape-entity
     SUBDIR += rubygem-grape-path-helpers
     SUBDIR += rubygem-grape-route-helpers
     SUBDIR += rubygem-grape-swagger
     SUBDIR += rubygem-grape0
+    SUBDIR += rubygem-grape11
     SUBDIR += rubygem-grape_logging
     SUBDIR += rubygem-graphiql-rails
     SUBDIR += rubygem-graphql
@@ -5726,10 +5737,10 @@
     SUBDIR += rubygem-jquery-ui-themes
     SUBDIR += rubygem-jruby-jars
     SUBDIR += rubygem-json
+    SUBDIR += rubygem-json-schema
     SUBDIR += rubygem-json1
     SUBDIR += rubygem-json_pure
     SUBDIR += rubygem-json_pure1
-    SUBDIR += rubygem-json-schema
     SUBDIR += rubygem-jsonapi-renderer
     SUBDIR += rubygem-kafo
     SUBDIR += rubygem-kafo_parsers
@@ -5822,6 +5833,7 @@
     SUBDIR += rubygem-omniauth_crowd22
     SUBDIR += rubygem-open3_backport
     SUBDIR += rubygem-open4
+    SUBDIR += rubygem-opentracing
     SUBDIR += rubygem-opt_parse_validator
     SUBDIR += rubygem-optimist
     SUBDIR += rubygem-orm_adapter
@@ -5839,11 +5851,11 @@
     SUBDIR += rubygem-pathutil
     SUBDIR += rubygem-pdk
     SUBDIR += rubygem-peek
-    SUBDIR += rubygem-peek-rails50
     SUBDIR += rubygem-peek-gc-rails50
     SUBDIR += rubygem-peek-host
     SUBDIR += rubygem-peek-performance_bar
     SUBDIR += rubygem-peek-rails4
+    SUBDIR += rubygem-peek-rails50
     SUBDIR += rubygem-peek-rblineprof-rails50
     SUBDIR += rubygem-peek-redis-rails50
     SUBDIR += rubygem-pkg-config
@@ -6023,6 +6035,7 @@
     SUBDIR += rubygem-strings
     SUBDIR += rubygem-strings-ansi
     SUBDIR += rubygem-strong_migrations
+    SUBDIR += rubygem-strptime
     SUBDIR += rubygem-structured_warnings
     SUBDIR += rubygem-stud
     SUBDIR += rubygem-subexec

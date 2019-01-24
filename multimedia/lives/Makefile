@@ -3,6 +3,7 @@
 
 PORTNAME=	lives
 PORTVERSION=	2.10.2
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://lives-video.com/releases/
 DISTNAME=	LiVES-${PORTVERSION}
@@ -12,6 +13,8 @@ COMMENT=	Video editing system
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+BROKEN=		fails to patch
 
 BUILD_DEPENDS=	${LOCALBASE}/include/linux/input.h:devel/evdev-proto \
 		${LOCALBASE}/bin/analyseplugin:audio/ladspa

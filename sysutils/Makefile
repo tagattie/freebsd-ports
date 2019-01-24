@@ -623,6 +623,7 @@
     SUBDIR += lsof
     SUBDIR += lsop
     SUBDIR += lsyncd
+    SUBDIR += ltfs
     SUBDIR += ltrace
     SUBDIR += lttng-tools
     SUBDIR += lttng-ust
@@ -1071,13 +1072,13 @@
     SUBDIR += rubygem-capistrano-ext
     SUBDIR += rubygem-capistrano-harrow
     SUBDIR += rubygem-chef
-    SUBDIR += rubygem-chef12
     SUBDIR += rubygem-chef-api
     SUBDIR += rubygem-chef-config
     SUBDIR += rubygem-chef-config12
     SUBDIR += rubygem-chef-dk
     SUBDIR += rubygem-chef-zero
     SUBDIR += rubygem-chef-zero5
+    SUBDIR += rubygem-chef12
     SUBDIR += rubygem-facter
     SUBDIR += rubygem-fluent-mixin-plaintextformatter
     SUBDIR += rubygem-fluent-plugin-config-expander
@@ -1334,9 +1335,9 @@
     SUBDIR += u-boot-pinebook
     SUBDIR += u-boot-riotboard
     SUBDIR += u-boot-rpi
+    SUBDIR += u-boot-rpi-0-w
     SUBDIR += u-boot-rpi2
     SUBDIR += u-boot-rpi3
-    SUBDIR += u-boot-rpi-0-w
     SUBDIR += u-boot-sinovoip-bpi-m3
     SUBDIR += u-boot-sopine
     SUBDIR += u-boot-tools
