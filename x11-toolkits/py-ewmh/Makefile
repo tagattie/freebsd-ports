@@ -7,7 +7,7 @@ MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	tagattie@yandex.com
-COMMENT=	EWMH (Extended Window Manager Hints) implementation for python
+COMMENT=	Python implementation of Extended Window Manager Hints, based on Xlib
 
 LICENSE=	LGPL3+
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
