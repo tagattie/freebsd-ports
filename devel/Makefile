@@ -4496,6 +4496,7 @@
     SUBDIR += py-epsilon
     SUBDIR += py-evdev
     SUBDIR += py-eventlib
+    SUBDIR += py-ewmh
     SUBDIR += py-exam
     SUBDIR += py-expiringdict
     SUBDIR += py-extras
