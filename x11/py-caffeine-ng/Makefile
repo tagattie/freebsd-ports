@@ -32,6 +32,8 @@ USES=		desktop-file-utils gettext-tools gnome python:3.3+
 USE_GNOME=	gdkpixbuf2 gtk30 pygobject3
 USE_PYTHON=	autoplist distutils
 
+NO_ARCH=	yes
+
 GLIB_SCHEMAS=	net.launchpad.caffeine.gschema.xml
 INSTALLS_ICONS=	yes
 
