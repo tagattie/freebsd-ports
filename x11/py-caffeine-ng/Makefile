@@ -35,10 +35,11 @@ USE_PYTHON=	autoplist distutils
 GLIB_SCHEMAS=	net.launchpad.caffeine.gschema.xml
 INSTALLS_ICONS=	yes
 
+REINPLACE_ARGS=	-i ""
+
 post-patch:
 	${REINPLACE_CMD} -e 's|/usr|${LOCALBASE}|g; s|/etc|${LOCALBASE}/etc|g' \
 		${WRKSRC}/setup.py \
-		${WRKSRC}/share/applications/caffeine.desktop \
-		${WRKSRC}/share/applications/caffeine-preferences.desktop
+		${WRKSRC}/share/applications/*.desktop
 
 .include <bsd.port.mk>
