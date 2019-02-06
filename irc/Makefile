@@ -8,6 +8,7 @@
     SUBDIR += bip
     SUBDIR += bitchx
     SUBDIR += bitlbee
+    SUBDIR += bitlbee-discord
     SUBDIR += bitlbee-facebook
     SUBDIR += bitlbee-steam
     SUBDIR += bnc
@@ -46,7 +47,6 @@
     SUBDIR += ircd-ru
     SUBDIR += ircproxy
     SUBDIR += ircservices
-    SUBDIR += iroffer
     SUBDIR += iroffer-dinoex
     SUBDIR += iroffer-lamm
     SUBDIR += irssi
