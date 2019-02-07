@@ -21,6 +21,9 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}docopt>=0.6.2:devel/py-docopt@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}setproctitle>=1.1.10:devel/py-setproctitle@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0.29.0:devel/py-wheel@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dbus>0:devel/py-dbus@${PY_FLAVOR}
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tox>0:devel/py-tox@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}flake8>0:devel/py-flake8@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}flake8-import-order>0:devel/py-flake8-import-order@${PY_FLAVOR}
 
 USES=		desktop-file-utils gettext-tools gnome python:3.3+
 USE_GNOME=	gdkpixbuf2 gtk30 pygobject3
@@ -37,5 +40,8 @@ post-patch:
 	${REINPLACE_CMD} -e 's|/usr|${LOCALBASE}|g; s|/etc|${LOCALBASE}/etc|g' \
 		${WRKSRC}/setup.py \
 		${WRKSRC}/share/applications/*.desktop
+
+do-test:
+	cd ${TEST_WRKSRC} && ${SETENV} ${TEST_ENV} ${PYTHON_CMD} -m tox
 
 .include <bsd.port.mk>
