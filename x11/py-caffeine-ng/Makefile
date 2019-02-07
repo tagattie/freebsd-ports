@@ -36,12 +36,22 @@ NO_ARCH=	yes
 GLIB_SCHEMAS=	net.launchpad.caffeine.gschema.xml
 INSTALLS_ICONS=	yes
 
+OPTIONS_DEFINE=	DOCS
+
+PORTDOCS=	README.rst
+
 REINPLACE_ARGS=	-i ""
 
 post-patch:
 	${REINPLACE_CMD} -e 's|/usr|${LOCALBASE}|g; s|/etc|${LOCALBASE}/etc|g' \
 		${WRKSRC}/setup.py \
 		${WRKSRC}/share/applications/*.desktop
+
+post-install-DOCS-on:
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+.for doc in ${PORTDOCS}
+	${INSTALL_MAN} ${WRKSRC}/${doc} ${STAGEDIR}${DOCSDIR}
+.endfor
 
 do-test:
 	cd ${TEST_WRKSRC} && ${SETENV} ${TEST_ENV} ${PYTHON_CMD} -m tox
