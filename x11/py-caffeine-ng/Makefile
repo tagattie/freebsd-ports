@@ -9,8 +9,10 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	tagattie@yandex.com
 COMMENT=	Tray bar app to temporarily inhibit screensaver and sleep mode
 
-LICENSE=	GPLv3+
-LICENSE_FILE=	${WRKSRC}/LICENCE
+LICENSE=	GPLv3+ LGPL3+
+LICENSE_COMB=	multi
+LICENSE_FILE_GPLv3+ =	${WRKSRC}/LICENCE
+LICENSE_FILE_LGPL3+ =	${WRKSRC}/LGPL
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>0:devel/py-setuptools_scm@${PY_FLAVOR}
 LIB_DEPENDS=	libappindicator3.so:devel/libappindicator \
