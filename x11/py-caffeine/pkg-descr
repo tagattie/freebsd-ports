@@ -1,0 +1,5 @@
+Caffeine is a small daemon that prevents the desktop from becoming
+idle (and hence the screen saver and/or blanker from activating) when
+the active window is full-screen.
+
+WWW: https://launchpad.net/caffeine/
