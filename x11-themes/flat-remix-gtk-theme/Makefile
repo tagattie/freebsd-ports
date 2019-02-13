@@ -23,7 +23,7 @@ GH_ACCOUNT=	daniruiz
 NO_ARCH=	yes
 NO_BUILD=	yes
 
-REINPLACE_ARGS= -i ""
+REINPLACE_ARGS=	-i ""
 
 post-patch:
 	${REINPLACE_CMD} -e 's/^MetacityTheme=Flat-Remix/MetacityTheme=Flat-Remix-GTK/; \
