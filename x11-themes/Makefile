@@ -33,6 +33,8 @@
     SUBDIR += cursor-polar-theme
     SUBDIR += e16-themes
     SUBDIR += emerald-themes
+    SUBDIR += flat-remix-gtk-theme
+    SUBDIR += flat-remix-icon-theme
     SUBDIR += fluxbox-tenr-styles-pack
     SUBDIR += freebsd-8k-wallpapers
     SUBDIR += freebsd-8k-wallpapers-kde
@@ -122,6 +124,7 @@
     SUBDIR += mate-icon-theme
     SUBDIR += mate-icon-theme-faenza
     SUBDIR += mate-themes
+    SUBDIR += materia-gtk-theme
     SUBDIR += metacity-aluminumalloy-cryogenic-theme
     SUBDIR += metacity-aluminumalloy-smog-theme
     SUBDIR += metacity-aluminumalloy-toxic-theme
@@ -139,6 +142,7 @@
     SUBDIR += numix-theme
     SUBDIR += openbox-arc-theme
     SUBDIR += openbox-themes
+    SUBDIR += papirus-icon-theme
     SUBDIR += plank-theme-moka
     SUBDIR += plasma5-breeze
     SUBDIR += plasma5-breeze-gtk
