@@ -1225,7 +1225,6 @@
     SUBDIR += sectok
     SUBDIR += secure_delete
     SUBDIR += setaudit
-    SUBDIR += sguil
     SUBDIR += sha
     SUBDIR += sha1collisiondetection
     SUBDIR += sha2wordlist
@@ -1308,7 +1307,6 @@
     SUBDIR += titus
     SUBDIR += tls-check
     SUBDIR += tlswrap
-    SUBDIR += tmux-cssh
     SUBDIR += tor
     SUBDIR += tor-devel
     SUBDIR += tpm-tools

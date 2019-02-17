@@ -197,7 +197,6 @@
     SUBDIR += go-amqp
     SUBDIR += go-bapu
     SUBDIR += go-cs
-    SUBDIR += go-geoip
     SUBDIR += go-httppath
     SUBDIR += go-httptreemux
     SUBDIR += go-nats
@@ -603,7 +602,6 @@
     SUBDIR += p5-File-Rsync
     SUBDIR += p5-File-RsyncP
     SUBDIR += p5-Frontier-RPC
-    SUBDIR += p5-Geo-IP
     SUBDIR += p5-Geo-IP-PurePerl
     SUBDIR += p5-Geo-IPfree
     SUBDIR += p5-GeoIP2
@@ -963,14 +961,12 @@
     SUBDIR += pear-XML_RPC
     SUBDIR += pear-XML_RPC2
     SUBDIR += pecl-amqp
-    SUBDIR += pecl-geoip
     SUBDIR += pecl-oauth2
     SUBDIR += pecl-radius
     SUBDIR += pecl-rdkafka
     SUBDIR += pecl-smbclient
     SUBDIR += pecl-yaz
     SUBDIR += pecl-zmq
-    SUBDIR += pen
     SUBDIR += pfinger
     SUBDIR += phamm
     SUBDIR += php71-ldap
@@ -1017,7 +1013,6 @@
     SUBDIR += pwhois
     SUBDIR += pxe
     SUBDIR += pxe-pdhcp
-    SUBDIR += py-GeoIP
     SUBDIR += py-GeoIP2
     SUBDIR += py-aiohttp-socks
     SUBDIR += py-amqp
@@ -1261,7 +1256,6 @@
     SUBDIR += rubygem-fog-voxel
     SUBDIR += rubygem-fog-vsphere
     SUBDIR += rubygem-fog-xenserver
-    SUBDIR += rubygem-geoip
     SUBDIR += rubygem-gitaly
     SUBDIR += rubygem-gitaly-proto
     SUBDIR += rubygem-gitlab_omniauth-ldap
@@ -1405,7 +1399,6 @@
     SUBDIR += ssvnc
     SUBDIR += stone
     SUBDIR += stund
-    SUBDIR += subnetcalc
     SUBDIR += suckblow
     SUBDIR += sup
     SUBDIR += svnup

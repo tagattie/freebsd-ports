@@ -1008,6 +1008,7 @@
     SUBDIR += py-azure-cli-servicefabric
     SUBDIR += py-azure-cli-signalr
     SUBDIR += py-azure-cli-sql
+    SUBDIR += py-azure-cli-sqlvm
     SUBDIR += py-azure-cli-storage
     SUBDIR += py-azure-cli-telemetry
     SUBDIR += py-azure-cli-vm
@@ -1507,6 +1508,7 @@
     SUBDIR += xfce4-diskperf-plugin
     SUBDIR += xfce4-fsguard-plugin
     SUBDIR += xfce4-genmon-plugin
+    SUBDIR += xfce4-kbdleds-plugin
     SUBDIR += xfce4-mount-plugin
     SUBDIR += xfce4-netload-plugin
     SUBDIR += xfce4-power-manager
