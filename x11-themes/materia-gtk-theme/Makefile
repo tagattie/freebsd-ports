@@ -16,8 +16,7 @@ BUILD_DEPENDS=	bash:shells/bash \
 RUN_DEPENDS=	gtk-murrine-engine>0:x11-themes/gtk-murrine-engine \
 		gnome-themes-extra>0:x11-themes/gnome-themes-extra
 
-USES=		gnome shebangfix
-USE_GNOME=	gtk30
+USES=		shebangfix
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	nana-4
