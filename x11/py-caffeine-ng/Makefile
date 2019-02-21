@@ -42,10 +42,18 @@ PORTDOCS=	README.rst
 
 REINPLACE_ARGS=	-i ""
 
+SCHEMASDIR=	share/glib-2.0/schemas
+
 post-patch:
 	${REINPLACE_CMD} -e 's|/usr|${LOCALBASE}|g; s|/etc|${LOCALBASE}/etc|g' \
 		${WRKSRC}/setup.py \
 		${WRKSRC}/share/applications/*.desktop
+
+post-install:
+	${MKDIR} ${STAGEDIR}${PREFIX}/${SCHEMASDIR}
+.for schema in ${GLIB_SCHEMAS}
+	${INSTALL_DATA} ${WRKSRC}/${SCHEMASDIR}/${schema} ${STAGEDIR}${PREFIX}/${SCHEMASDIR}
+.endfor
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
