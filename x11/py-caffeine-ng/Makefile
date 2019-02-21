@@ -28,8 +28,8 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tox>0:devel/py-tox@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}flake8-import-order>0:devel/py-flake8-import-order@${PY_FLAVOR}
 
 USES=		desktop-file-utils gettext-tools gnome python:3.3+
-USE_GNOME=	gdkpixbuf2 gtk30 intltool pygobject3
-USE_PYTHON=	autoplist distutils
+USE_GNOME=	gdkpixbuf2 gtk30 pygobject3
+USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
 
