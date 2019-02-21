@@ -17,7 +17,6 @@ share/themes/Materia-compact/cinnamon/assets/toggle-on.svg
 share/themes/Materia-compact/cinnamon/assets/trash-icon.png
 share/themes/Materia-compact/cinnamon/cinnamon.css
 share/themes/Materia-compact/cinnamon/thumbnail.png
-share/themes/Materia-compact/gnome-shell/README.md
 share/themes/Materia-compact/gnome-shell/assets/calendar-arrow-left.svg
 share/themes/Materia-compact/gnome-shell/assets/calendar-arrow-right.svg
 share/themes/Materia-compact/gnome-shell/assets/checkbox-off.svg
@@ -539,7 +538,6 @@ share/themes/Materia-dark-compact/cinnamon/assets/toggle-on.svg
 share/themes/Materia-dark-compact/cinnamon/assets/trash-icon.png
 share/themes/Materia-dark-compact/cinnamon/cinnamon.css
 share/themes/Materia-dark-compact/cinnamon/thumbnail.png
-share/themes/Materia-dark-compact/gnome-shell/README.md
 share/themes/Materia-dark-compact/gnome-shell/assets/calendar-arrow-left.svg
 share/themes/Materia-dark-compact/gnome-shell/assets/calendar-arrow-right.svg
 share/themes/Materia-dark-compact/gnome-shell/assets/checkbox-off.svg
@@ -1060,7 +1058,6 @@ share/themes/Materia-dark/cinnamon/assets/toggle-on.svg
 share/themes/Materia-dark/cinnamon/assets/trash-icon.png
 share/themes/Materia-dark/cinnamon/cinnamon.css
 share/themes/Materia-dark/cinnamon/thumbnail.png
-share/themes/Materia-dark/gnome-shell/README.md
 share/themes/Materia-dark/gnome-shell/assets/calendar-arrow-left.svg
 share/themes/Materia-dark/gnome-shell/assets/calendar-arrow-right.svg
 share/themes/Materia-dark/gnome-shell/assets/checkbox-off.svg
@@ -1581,7 +1578,6 @@ share/themes/Materia-light-compact/cinnamon/assets/toggle-on.svg
 share/themes/Materia-light-compact/cinnamon/assets/trash-icon.png
 share/themes/Materia-light-compact/cinnamon/cinnamon.css
 share/themes/Materia-light-compact/cinnamon/thumbnail.png
-share/themes/Materia-light-compact/gnome-shell/README.md
 share/themes/Materia-light-compact/gnome-shell/assets/calendar-arrow-left.svg
 share/themes/Materia-light-compact/gnome-shell/assets/calendar-arrow-right.svg
 share/themes/Materia-light-compact/gnome-shell/assets/checkbox-off.svg
@@ -2103,7 +2099,6 @@ share/themes/Materia-light/cinnamon/assets/toggle-on.svg
 share/themes/Materia-light/cinnamon/assets/trash-icon.png
 share/themes/Materia-light/cinnamon/cinnamon.css
 share/themes/Materia-light/cinnamon/thumbnail.png
-share/themes/Materia-light/gnome-shell/README.md
 share/themes/Materia-light/gnome-shell/assets/calendar-arrow-left.svg
 share/themes/Materia-light/gnome-shell/assets/calendar-arrow-right.svg
 share/themes/Materia-light/gnome-shell/assets/checkbox-off.svg
@@ -2625,7 +2620,6 @@ share/themes/Materia/cinnamon/assets/toggle-on.svg
 share/themes/Materia/cinnamon/assets/trash-icon.png
 share/themes/Materia/cinnamon/cinnamon.css
 share/themes/Materia/cinnamon/thumbnail.png
-share/themes/Materia/gnome-shell/README.md
 share/themes/Materia/gnome-shell/assets/calendar-arrow-left.svg
 share/themes/Materia/gnome-shell/assets/calendar-arrow-right.svg
 share/themes/Materia/gnome-shell/assets/checkbox-off.svg

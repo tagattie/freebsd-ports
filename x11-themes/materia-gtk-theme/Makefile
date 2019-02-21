@@ -36,6 +36,7 @@ do-install:
 
 post-install:
 	${RM} ${STAGEDIR}${PREFIX}/share/themes/*/COPYING
+	${RM} ${STAGEDIR}${PREFIX}/share/themes/*/gnome-shell/README.md
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
