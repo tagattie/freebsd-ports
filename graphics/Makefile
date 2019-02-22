@@ -548,6 +548,10 @@
     SUBDIR += luxrender14
     SUBDIR += lximage-qt
     SUBDIR += lximageqt-l10n
+    SUBDIR += magnum
+    SUBDIR += magnum-examples
+    SUBDIR += magnum-extras
+    SUBDIR += magnum-plugins
     SUBDIR += mahotas
     SUBDIR += maim
     SUBDIR += makehuman
@@ -591,6 +595,7 @@
     SUBDIR += ocrad
     SUBDIR += ocre
     SUBDIR += ogre3d
+    SUBDIR += oidn
     SUBDIR += okular
     SUBDIR += open3d
     SUBDIR += opencollada

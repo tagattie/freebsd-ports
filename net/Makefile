@@ -6,7 +6,6 @@
     SUBDIR += 3proxy
     SUBDIR += 44bsd-rdist
     SUBDIR += 6tunnel
-    SUBDIR += GeoIP
     SUBDIR += R-cran-twitteR
     SUBDIR += Sockets
     SUBDIR += activemq
@@ -418,6 +417,7 @@
     SUBDIR += libtnl
     SUBDIR += libtrace
     SUBDIR += libunp
+    SUBDIR += libusipp
     SUBDIR += libutp
     SUBDIR += libvncserver
     SUBDIR += libwebsockets
@@ -749,6 +749,7 @@
     SUBDIR += p5-Net-Patricia
     SUBDIR += p5-Net-Pcap
     SUBDIR += p5-Net-PcapUtils
+    SUBDIR += p5-Net-Ping
     SUBDIR += p5-Net-Ping-External
     SUBDIR += p5-Net-Proxy
     SUBDIR += p5-Net-PubSubHubbub-Publisher
