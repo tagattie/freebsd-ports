@@ -20,4 +20,12 @@ NO_BUILD=	yes
 
 INSTALLS_ICONS=	yes
 
+OPTIONS_DEFINE=	DOCS
+
+PORTDOCS=	README.md
+
+post-install-DOCS-on:
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_MAN} ${PORTDOCS:S/^/${WRKSRC}\//} ${STAGEDIR}${DOCSDIR}
+
 .include <bsd.port.mk>
