@@ -11,8 +11,7 @@ COMMENT=	Material Design theme for GNOME/GTK+ based desktop environments
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	bash:shells/bash \
-		gnome-shell:x11/gnome-shell
+BUILD_DEPENDS=	bash:shells/bash
 RUN_DEPENDS=	gtk-murrine-engine>0:x11-themes/gtk-murrine-engine \
 		gnome-themes-extra>0:x11-themes/gnome-themes-extra
 
@@ -24,23 +23,44 @@ GH_PROJECT=	materia-theme
 
 SHEBANG_FILES=	install.sh
 
-OPTIONS_DEFINE=	DOCS
-
 NO_ARCH=	yes
-NO_BUILD=	yes
 
-PORTDOCS=	README.md README-gnome-shell.md
+PORTDOCS=	README.md
+
+OPTIONS_DEFINE=	DOCS GNOMESHELL
+OPTIONS_DEFAULT=	GNOMESHELL
+OPTIONS_SUB=	yes
+
+GNOMESHELL_DESC=	Add Gnome-Shell theme version
+GNOMESHELL_BUILD_DEPENDS=	gnome-shell:x11/gnome-shell
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MGNOMESHELL}
+PORTDOCS+=	src/gnome-shell/README.md
+.endif
+
+do-build:
+	${MKDIR} ${WRKDIR}/build
+	${WRKSRC}/install.sh --dest ${WRKDIR}/build
+
+post-build:
+	${RM} ${WRKDIR}/build/*/COPYING
+	${RM} ${WRKDIR}/build/*/gnome-shell/README.md
+
+post-build-GNOMESHELL-off:
+	${RM} -R ${WRKDIR}/build/*/gnome-shell
 
 do-install:
-	${WRKSRC}/install.sh --dest ${STAGEDIR}${PREFIX}/share/themes
-
-post-install:
-	${RM} ${STAGEDIR}${PREFIX}/share/themes/*/COPYING
-	${RM} ${STAGEDIR}${PREFIX}/share/themes/*/gnome-shell/README.md
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/themes
+	(cd ${WRKDIR}/build && \
+		${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/share/themes)
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/src/gnome-shell/README.md ${STAGEDIR}${DOCSDIR}/README-gnome-shell.md
+.for d in ${PORTDOCS}
+	(cd ${WRKSRC} && \
+		${COPYTREE_SHARE} ${d} ${STAGEDIR}${DOCSDIR})
+.endfor
 
 .include <bsd.port.mk>
