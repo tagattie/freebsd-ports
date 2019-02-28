@@ -1698,9 +1698,9 @@
     SUBDIR += scim-openvanilla
     SUBDIR += scim-table-imengine
     SUBDIR += scr2txt
-    SUBDIR += scrollkeeper
     SUBDIR += scss
     SUBDIR += scws
+    SUBDIR += sd
     SUBDIR += sdcv
     SUBDIR += sdf
     SUBDIR += sdif
