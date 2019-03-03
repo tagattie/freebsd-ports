@@ -969,6 +969,7 @@
     SUBDIR += pecl-smbclient
     SUBDIR += pecl-yaz
     SUBDIR += pecl-zmq
+    SUBDIR += pen
     SUBDIR += pfinger
     SUBDIR += phamm
     SUBDIR += php71-ldap
