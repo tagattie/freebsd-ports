@@ -21,46 +21,39 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	nana-4
 GH_PROJECT=	materia-theme
 
-SHEBANG_FILES=	install.sh
-
 NO_ARCH=	yes
+NO_BUILD=	yes
 
-PORTDOCS=	README.md
+PORTDOCS=	COPYING README.md
+SHEBANG_FILES=	install.sh
 
 OPTIONS_DEFINE=	DOCS GNOMESHELL
 OPTIONS_DEFAULT=	GNOMESHELL
 OPTIONS_SUB=	yes
 
-GNOMESHELL_DESC=	Add Gnome-Shell theme version
+# the install script needs gnome-shell to determine its
+# version, but not all gtk themes users are Gnome users,
+# and keeping gnome-shell as standard build time dependency
+# would force non-Gnome users to build 110+ gnome ports just
+# to get the theme.
+GNOMESHELL_DESC=		Add Gnome-Shell theme version
 GNOMESHELL_BUILD_DEPENDS=	gnome-shell:x11/gnome-shell
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MGNOMESHELL}
-PORTDOCS+=	src/gnome-shell/README.md
-.endif
-
-do-build:
-	${MKDIR} ${WRKDIR}/build
-	${WRKSRC}/install.sh --dest ${WRKDIR}/build
-
-post-build:
-	${RM} ${WRKDIR}/build/*/COPYING
-	${RM} ${WRKDIR}/build/*/gnome-shell/README.md
-
-post-build-GNOMESHELL-off:
-	${RM} -R ${WRKDIR}/build/*/gnome-shell
+GNOMESHELL_PORTDOCS=		gnome-shell.README.md
 
 do-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/share/themes
-	(cd ${WRKDIR}/build && \
-		${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/share/themes)
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/themes
+	${WRKSRC}/install.sh --dest ${STAGEDIR}${PREFIX}/share/themes
+	@${MV} ${WRKSRC}/src/gnome-shell/README.md \
+		${WRKSRC}/gnome-shell.README.md
+	@${RM} ${STAGEDIR}${PREFIX}/share/themes/*/COPYING
+	@${RM} ${STAGEDIR}${PREFIX}/share/themes/*/gnome-shell/README.md
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for d in ${PORTDOCS}
 	(cd ${WRKSRC} && \
-		${COPYTREE_SHARE} ${d} ${STAGEDIR}${DOCSDIR})
-.endfor
+		${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
+
+post-install-GNOMESHELL-off:
+	@${RM} -R ${STAGEDIR}${PREFIX}/share/themes/*/gnome-shell
 
 .include <bsd.port.mk>

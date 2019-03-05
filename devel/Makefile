@@ -375,7 +375,6 @@
     SUBDIR += cpputest
     SUBDIR += cproto
     SUBDIR += cpu_features
-    SUBDIR += cpuflags
     SUBDIR += cquery
     SUBDIR += cram
     SUBDIR += creduce
@@ -2824,6 +2823,7 @@
     SUBDIR += p5-JSON-Schema
     SUBDIR += p5-Java
     SUBDIR += p5-Jonk
+    SUBDIR += p5-Keyword-Pluggable
     SUBDIR += p5-LV
     SUBDIR += p5-Lexical-Alias
     SUBDIR += p5-Lexical-Import
@@ -4475,6 +4475,7 @@
     SUBDIR += py-click-log
     SUBDIR += py-click-plugins
     SUBDIR += py-click-threading
+    SUBDIR += py-click6
     SUBDIR += py-cliff
     SUBDIR += py-cligj
     SUBDIR += py-clint
@@ -6066,7 +6067,6 @@
     SUBDIR += rubygem-rubyinlineaccel
     SUBDIR += rubygem-rubytree
     SUBDIR += rubygem-rufus-scheduler
-    SUBDIR += rubygem-rufus-scheduler342
     SUBDIR += rubygem-rugged
     SUBDIR += rubygem-runt
     SUBDIR += rubygem-ruport
@@ -6393,7 +6393,6 @@
     SUBDIR += truc
     SUBDIR += ua_parser-core
     SUBDIR += uatraits
-    SUBDIR += uboot-mkimage
     SUBDIR += uclcmd
     SUBDIR += ucommon
     SUBDIR += ucpp

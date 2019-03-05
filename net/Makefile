@@ -1505,7 +1505,6 @@
     SUBDIR += wireguard-go
     SUBDIR += wireshark
     SUBDIR += wireshark-lite
-    SUBDIR += wireshark-qt5
     SUBDIR += wizd
     SUBDIR += wlan2eth
     SUBDIR += wmnd
