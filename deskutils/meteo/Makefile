@@ -18,8 +18,8 @@ LIB_DEPENDS=	libsoup-2.4.so:devel/libsoup \
 		libwebkit2gtk-4.0.so:www/webkit2-gtk3 \
 		libappindicator3.so:devel/libappindicator
 
-USES=		desktop-file-utils gettext gnome meson python:3.5+,build \
-		shebangfix
+USES=		desktop-file-utils gettext gnome meson pkgconfig \
+		python:3.5+,build shebangfix
 
 USE_GITLAB=	yes
 GL_ACCOUNT=	bitseater
