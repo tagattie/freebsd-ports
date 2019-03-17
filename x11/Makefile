@@ -10,7 +10,6 @@
     SUBDIR += alacritty
     SUBDIR += alltray
     SUBDIR += alttab
-    SUBDIR += altyo
     SUBDIR += aminal
     SUBDIR += antimicro
     SUBDIR += appres
@@ -22,6 +21,7 @@
     SUBDIR += bbdock
     SUBDIR += bbrun
     SUBDIR += beforelight
+    SUBDIR += bemenu
     SUBDIR += bgrot
     SUBDIR += bgs
     SUBDIR += bitmap
@@ -132,7 +132,6 @@
     SUBDIR += kf5-kwindowsystem
     SUBDIR += kf5-plasma-framework
     SUBDIR += konsole
-    SUBDIR += leechcraft
     SUBDIR += lemonbar
     SUBDIR += libICE
     SUBDIR += libSM
@@ -249,7 +248,6 @@
     SUBDIR += p5-X11-XCB
     SUBDIR += p5-X11-Xlib
     SUBDIR += p5-XTerm-Conf
-    SUBDIR += pantheon-terminal
     SUBDIR += pcdm
     SUBDIR += perwindowlayoutd
     SUBDIR += pipeglade
@@ -269,19 +267,14 @@
     SUBDIR += py-caffeine
     SUBDIR += py-caffeine-ng
     SUBDIR += py-pyvirtualdisplay
-    SUBDIR += py-qt4-opengl
     SUBDIR += py-qt5-opengl
     SUBDIR += py-xcffib
     SUBDIR += py-xdot
     SUBDIR += py-xdot06
-    SUBDIR += qimageblitz
-    SUBDIR += qt4-graphicssystems-opengl
-    SUBDIR += qt4-inputmethods
     SUBDIR += qt5-qev
     SUBDIR += qt5-x11extras
     SUBDIR += qterminal
     SUBDIR += qterminal-l10n
-    SUBDIR += qxkb
     SUBDIR += radare-cutter
     SUBDIR += rendercheck
     SUBDIR += rgb
@@ -386,7 +379,6 @@
     SUBDIR += xcbautolock
     SUBDIR += xclip
     SUBDIR += xclipboard
-    SUBDIR += xcm
     SUBDIR += xcmd
     SUBDIR += xcmsdb
     SUBDIR += xcoloredit

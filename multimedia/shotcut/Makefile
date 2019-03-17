@@ -19,7 +19,7 @@ RUN_DEPENDS=	ffmpeg:multimedia/ffmpeg \
 USE_GITHUB=	yes
 GH_ACCOUNT=	mltframework
 # Needed to be able to correctly check for updates in-app.
-FULLVERSION=	19.01.27
+FULLVERSION=	19.02.28
 
 USES=		pkgconfig qmake qt:5 sdl
 USE_QT=		buildtools_build concurrent_build core declarative \
