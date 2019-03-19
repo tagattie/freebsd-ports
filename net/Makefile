@@ -546,6 +546,7 @@
     SUBDIR += ocserv
     SUBDIR += olsrd
     SUBDIR += omnitty
+    SUBDIR += onedrive
     SUBDIR += onenetd
     SUBDIR += onioncat
     SUBDIR += opal
