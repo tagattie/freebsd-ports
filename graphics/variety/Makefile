@@ -12,8 +12,7 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}python-distutils-extra>=2.38:devel/py-python-distutils-extra@${PY_FLAVOR}
-LIB_DEPENDS=	libappindicator3.so:devel/libappindicator \
-		libgexiv2.so:graphics/gexiv2 \
+LIB_DEPENDS=	libgexiv2.so:graphics/gexiv2 \
 		libnotify.so:devel/libnotify
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beautifulsoup>=4.3.2:www/py-beautifulsoup@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}cairo>=1.10.0:graphics/py-cairo@${PY_FLAVOR} \
@@ -25,18 +24,18 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beautifulsoup>=4.3.2:www/py-beautifulsoup@${
 		${PYTHON_PKGNAMEPREFIX}requests>0:www/py-requests@${PY_FLAVOR} \
 		ImageMagick6>=6.9.0.4,1:graphics/ImageMagick6 \
 		bash>=4.3.33:shells/bash \
-		ca_root_nss>=3.17.4:security/ca_root_nss
+		ca_root_nss>=3.17.4:security/ca_root_nss \
+		coreutils>=8.23:sysutils/coreutils \
+		yelp>=3.14.1:x11/yelp
 
 USES=		desktop-file-utils gettext-tools gnome python:3.5+ shebangfix
+USE_GNOME=	gdkpixbuf2 gtk30 intltool pygobject3:run
+USE_PYTHON=	distutils
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	varietywalls
 
-USE_GNOME=	gdkpixbuf2 gtk30 intltool pygobject3:run
-USE_PYTHON=	autoplist distutils
-
 SHEBANG_FILES=	bin/variety data/scripts/*
-
 INSTALLS_ICONS=	yes
 
 post-patch:
