@@ -97,14 +97,17 @@ CARGO_CRATES=	aho-corasick-0.6.9 \
 		winapi-x86_64-pc-windows-gnu-0.4.0
 CARGO_USE_GITHUB=	yes
 
-OPTIONS_DEFINE=	DOCS OPENMP # FFMPEG
 # gifski offers built-in video decoding option. But it requires ffmpeg 3.x and
 # can't compile with ffmpeg 4.x. So FFMPEG option is currently disabled.
+OPTIONS_DEFINE=	DOCS LIBGIFSKI OPENMP # FFMPEG
 OPTIONS_DEFAULT=	OPENMP # FFMPEG
 
 # FFMPEG_DESC=	Enable built-in video decoding
 # FFMPEG_LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg
 # FFMPEG_VARS=	CARGO_FEATURES+=video
+
+LIBGIFSKI_DESC=	Install gifski header and library
+LIBGIFSKI_PLIST_FILES=	include/gifski.h lib/libgifski.a lib/libgifski.so
 
 OPENMP_DESC=	Enable OpenMP (parallel processing)
 OPENMP_USES=	compiler:openmp
@@ -122,5 +125,10 @@ post-install-DOCS-on:
 .for doc in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${doc} ${STAGEDIR}${DOCSDIR}
 .endfor
+
+post-install-LIBGIFSKI-on:
+	${INSTALL_DATA} ${WRKSRC}/gifski.h ${STAGEDIR}${PREFIX}/include
+	${INSTALL_DATA} ${WRKDIR}/target/release/libgifski.a ${STAGEDIR}${PREFIX}/lib
+	${INSTALL_LIB} ${WRKDIR}/target/release/libgifski.so ${STAGEDIR}${PREFIX}/lib
 
 .include <bsd.port.mk>
