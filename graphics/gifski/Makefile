@@ -97,8 +97,9 @@ CARGO_CRATES=	aho-corasick-0.6.9 \
 		winapi-x86_64-pc-windows-gnu-0.4.0
 CARGO_USE_GITHUB=	yes
 
-# Can't compile built-in video decoding with FFMpeg
 OPTIONS_DEFINE=	DOCS OPENMP # FFMPEG
+# gifski offers built-in video decoding option. But it requires ffmpeg 3.x and
+# can't compile with ffmpeg 4.x. So FFMPEG option is currently disabled.
 OPTIONS_DEFAULT=	OPENMP # FFMPEG
 
 # FFMPEG_DESC=	Enable built-in video decoding
