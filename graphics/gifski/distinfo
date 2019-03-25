@@ -1,4 +1,4 @@
-TIMESTAMP = 1550405641
+TIMESTAMP = 1553509828
 SHA256 (rust/crates/aho-corasick-0.6.9.tar.gz) = 1e9a933f4e58658d7b12defcf96dc5c720f20832deebe3e0a19efd3b6aaeeb9e
 SIZE (rust/crates/aho-corasick-0.6.9.tar.gz) = 25979
 SHA256 (rust/crates/ansi_term-0.11.0.tar.gz) = ee49baf6cb617b853aa8d93bf420db2383fab46d314482ca2803b40d5fde979b
@@ -153,8 +153,8 @@ SHA256 (rust/crates/winapi-i686-pc-windows-gnu-0.4.0.tar.gz) = ac3b87c63620426dd
 SIZE (rust/crates/winapi-i686-pc-windows-gnu-0.4.0.tar.gz) = 2918815
 SHA256 (rust/crates/winapi-x86_64-pc-windows-gnu-0.4.0.tar.gz) = 712e227841d057c1ee1cd2fb22fa7e5a5461ae8e48fa2ca79ec42cfc1931183f
 SIZE (rust/crates/winapi-x86_64-pc-windows-gnu-0.4.0.tar.gz) = 2947998
-SHA256 (ImageOptim-gifski-0.8.7.g20190112-eb97793_GH0.tar.gz) = 109f923391ab7ec4f14fbcd41971e7f97f7c5c2b1f4efc8cf27f3fd352852d9c
-SIZE (ImageOptim-gifski-0.8.7.g20190112-eb97793_GH0.tar.gz) = 35808
+SHA256 (ImageOptim-gifski-0.8.7_GH0.tar.gz) = e8d8d2fdb816953315989b3ecf39ac88f33b8c49aa7c79a0df8f53b4032755ab
+SIZE (ImageOptim-gifski-0.8.7_GH0.tar.gz) = 35806
 SHA256 (kornelski-rust-ffmpeg-0eea6d01eab7baf35b44573b163524fb323fd9c3_GH0.tar.gz) = da76d02caad0287c052cf5a8b589345ffbe823bb3bc3445d9b92763efbcaf5e1
 SIZE (kornelski-rust-ffmpeg-0eea6d01eab7baf35b44573b163524fb323fd9c3_GH0.tar.gz) = 68961
 SHA256 (meh-rust-ffmpeg-sys-2937563482b8d3be302ee39c0fbb024e5408b085_GH0.tar.gz) = 5a42a91b9140c77243511c911c64cdeac259708259dc126333374c334d491e07

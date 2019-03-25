@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gifski
-PORTVERSION=	0.8.7.g20190112
+DISTVERSION=	0.8.7
 CATEGORIES=	graphics
 
 MAINTAINER=	tagattie@yandex.com
@@ -14,7 +14,6 @@ USES=		cargo
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	ImageOptim
-GH_TAGNAME=	eb97793
 GH_TUPLE=	kornelski:rust-ffmpeg:0eea6d01eab7baf35b44573b163524fb323fd9c3:ffmpeg \
 		meh:rust-ffmpeg-sys:2937563482b8d3be302ee39c0fbb024e5408b085:ffmpegsys
 
