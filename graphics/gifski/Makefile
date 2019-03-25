@@ -96,9 +96,6 @@ CARGO_CRATES=	aho-corasick-0.6.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-x86_64-pc-windows-gnu-0.4.0
 CARGO_USE_GITHUB=	yes
-CARGO_GH_CARGOTOML=	${CARGO_CARGOTOML} \
-			${WRKSRC_ffmpeg}/Cargo.toml \
-			${WRKSRC_ffmpegsys}/Cargo.toml
 
 # Can't compile built-in video decoding with FFMpeg
 OPTIONS_DEFINE=	DOCS OPENMP # FFMPEG
