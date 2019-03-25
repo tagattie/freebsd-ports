@@ -122,9 +122,7 @@ post-install:
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for doc in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${doc} ${STAGEDIR}${DOCSDIR}
-.endfor
+	${INSTALL_DATA} ${PORTDOCS:S/^/${WRKSRC}\//} ${STAGEDIR}${DOCSDIR}
 
 post-install-LIBGIFSKI-on:
 	${INSTALL_DATA} ${WRKSRC}/gifski.h ${STAGEDIR}${PREFIX}/include
