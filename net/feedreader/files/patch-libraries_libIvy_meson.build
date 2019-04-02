@@ -1,0 +1,10 @@
+--- libraries/libIvy/meson.build.orig	2019-03-05 10:10:49 UTC
++++ libraries/libIvy/meson.build
+@@ -9,6 +9,7 @@ ivy_lib = static_library(
+   ],
+   dependencies: [
+     gee,
++    libexecinfo,
+     linux,
+     posix,
+   ],

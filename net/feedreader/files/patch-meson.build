@@ -1,0 +1,10 @@
+--- meson.build.orig	2019-03-05 10:09:16 UTC
++++ meson.build
+@@ -59,6 +59,7 @@ sqlite3             = dependency('sqlite3')
+ webkit2gtk          = dependency('webkit2gtk-4.0')
+ webkitextension     = dependency('webkit2gtk-web-extension-4.0')
+ libunity            = dependency('unity', required: false)
++libexecinfo         = c_compiler.find_library('execinfo', required: false)
+ 
+ # Configuration
+ conf = configuration_data()
