@@ -25,14 +25,14 @@ LIB_DEPENDS=	libgumbo.so:devel/gumbo \
 		libsecret-1.so:security/libsecret \
 		libwebkit2gtk-4.0.so:www/webkit2-gtk3
 
-USES=		desktop-file-utils gettext-runtime gnome localbase:ldflags \
-		meson python:3.5+,build shebangfix sqlite
+USES=		desktop-file-utils gettext gnome localbase:ldflags meson \
+		pkgconfig python:3.5+,build shebangfix sqlite
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	jangernert
 GH_PROJECT=	FeedReader
 
-USE_GNOME=	gdkpixbuf2 gtk30 libxml2
+USE_GNOME=	cairo gdkpixbuf2 gtk30 libxml2
 USE_GSTREAMER1=	yes
 
 SHEBANG_FILES=	meson_post_install.py
