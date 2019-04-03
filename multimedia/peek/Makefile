@@ -15,12 +15,12 @@ LIB_DEPENDS=	libkeybinder-3.0.so:x11/keybinder-gtk3
 RUN_DEPENDS=	gsettings-desktop-schemas>0:devel/gsettings-desktop-schemas \
 		ffmpeg:multimedia/ffmpeg
 
-USES=		cmake gettext-tools gnome ninja python:3.5+,build
+USES=		cmake gettext gnome ninja pkgconfig python:3.5+,build
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	phw
 
-USE_GNOME=	glib20 gtk30 libxml2
+USE_GNOME=	cairo glib20 gtk30 libxml2
 
 GLIB_SCHEMAS=	com.uploadedlobster.peek.gschema.xml
 INSTALLS_ICONS=	yes
