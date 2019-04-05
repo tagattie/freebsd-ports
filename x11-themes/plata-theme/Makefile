@@ -62,12 +62,15 @@ XFCE_CONFIGURE_ENABLE=	xfce
 
 PORTDOCS=	README.md README.window-list
 
+post-extract:
+	${CP} ${WRKSRC}/src/shell/sass/gnome-shell/README.window-list ${WRKSRC}
+
 post-patch:
 	(cd ${WRKSRC} && \
 	${FIND} . -type f -iregex '${SHEBANG_REGEX}' \
 		-exec ${SED} -i '' -e "s/sed -i/& ''/g" {} ';')
 	${REINPLACE_CMD} -e 's|/usr|${LOCALBASE}|; s|$${prefix}|${PREFIX}|' \
-		${WRKSRC}/src/shell/sass/gnome-shell/README.window-list
+		${WRKSRC}/README.window-list
 
 post-install:
 	${RM} ${STAGEDIR}${PREFIX}/share/themes/Plata/COPYING
@@ -76,7 +79,6 @@ post-install:
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/src/shell/sass/gnome-shell/README.window-list ${STAGEDIR}${DOCSDIR}
+	${INSTALL_MAN} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
