@@ -490,10 +490,6 @@ share/themes/Plata-Lumine-Compact/index.theme
 %%CINNAMON%%share/themes/Plata-Lumine/cinnamon/assets/checkbox/checkbox-unchecked.svg
 %%CINNAMON%%share/themes/Plata-Lumine/cinnamon/assets/checkbox/radiobutton-checked.svg
 %%CINNAMON%%share/themes/Plata-Lumine/cinnamon/assets/checkbox/radiobutton-unchecked.svg
-%%CINNAMON%%share/themes/Plata-Lumine/cinnamon/assets/menu/menu-hover.svg
-%%CINNAMON%%share/themes/Plata-Lumine/cinnamon/assets/menu/menu-separator.svg
-%%CINNAMON%%share/themes/Plata-Lumine/cinnamon/assets/menu/menu.svg
-%%CINNAMON%%share/themes/Plata-Lumine/cinnamon/assets/menu/submenu.svg
 %%CINNAMON%%share/themes/Plata-Lumine/cinnamon/assets/misc/add-workspace-active.svg
 %%CINNAMON%%share/themes/Plata-Lumine/cinnamon/assets/misc/add-workspace-hover.svg
 %%CINNAMON%%share/themes/Plata-Lumine/cinnamon/assets/misc/add-workspace.svg
@@ -778,7 +774,6 @@ share/themes/Plata-Lumine/index.theme
 %%METACITY%%share/themes/Plata-Lumine/metacity-1/max_button_unmaximize.svg
 %%METACITY%%share/themes/Plata-Lumine/metacity-1/max_button_unmaximize_prelight.svg
 %%METACITY%%share/themes/Plata-Lumine/metacity-1/max_button_unmaximize_pressed.svg
-%%METACITY%%share/themes/Plata-Lumine/metacity-1/metacity-theme-2.xml
 %%METACITY%%share/themes/Plata-Lumine/metacity-1/metacity-theme-3.xml
 %%METACITY%%share/themes/Plata-Lumine/metacity-1/thumbnail.png
 %%OPENBOX%%share/themes/Plata-Lumine/openbox-3/close.xbm
@@ -1094,10 +1089,6 @@ share/themes/Plata-Noir-Compact/index.theme
 %%CINNAMON%%share/themes/Plata-Noir/cinnamon/assets/checkbox/checkbox-unchecked.svg
 %%CINNAMON%%share/themes/Plata-Noir/cinnamon/assets/checkbox/radiobutton-checked.svg
 %%CINNAMON%%share/themes/Plata-Noir/cinnamon/assets/checkbox/radiobutton-unchecked.svg
-%%CINNAMON%%share/themes/Plata-Noir/cinnamon/assets/menu/menu-hover.svg
-%%CINNAMON%%share/themes/Plata-Noir/cinnamon/assets/menu/menu-separator.svg
-%%CINNAMON%%share/themes/Plata-Noir/cinnamon/assets/menu/menu.svg
-%%CINNAMON%%share/themes/Plata-Noir/cinnamon/assets/menu/submenu.svg
 %%CINNAMON%%share/themes/Plata-Noir/cinnamon/assets/misc/add-workspace-active.svg
 %%CINNAMON%%share/themes/Plata-Noir/cinnamon/assets/misc/add-workspace-hover.svg
 %%CINNAMON%%share/themes/Plata-Noir/cinnamon/assets/misc/add-workspace.svg
@@ -1373,7 +1364,6 @@ share/themes/Plata-Noir/index.theme
 %%METACITY%%share/themes/Plata-Noir/metacity-1/max_button_unmaximize.svg
 %%METACITY%%share/themes/Plata-Noir/metacity-1/max_button_unmaximize_prelight.svg
 %%METACITY%%share/themes/Plata-Noir/metacity-1/max_button_unmaximize_pressed.svg
-%%METACITY%%share/themes/Plata-Noir/metacity-1/metacity-theme-2.xml
 %%METACITY%%share/themes/Plata-Noir/metacity-1/metacity-theme-3.xml
 %%METACITY%%share/themes/Plata-Noir/metacity-1/thumbnail.png
 %%OPENBOX%%share/themes/Plata-Noir/openbox-3/close.xbm
@@ -1455,10 +1445,6 @@ share/themes/Plata-Noir/index.theme
 %%CINNAMON%%share/themes/Plata/cinnamon/assets/checkbox/checkbox-unchecked.svg
 %%CINNAMON%%share/themes/Plata/cinnamon/assets/checkbox/radiobutton-checked.svg
 %%CINNAMON%%share/themes/Plata/cinnamon/assets/checkbox/radiobutton-unchecked.svg
-%%CINNAMON%%share/themes/Plata/cinnamon/assets/menu/menu-hover.svg
-%%CINNAMON%%share/themes/Plata/cinnamon/assets/menu/menu-separator.svg
-%%CINNAMON%%share/themes/Plata/cinnamon/assets/menu/menu.svg
-%%CINNAMON%%share/themes/Plata/cinnamon/assets/menu/submenu.svg
 %%CINNAMON%%share/themes/Plata/cinnamon/assets/misc/add-workspace-active.svg
 %%CINNAMON%%share/themes/Plata/cinnamon/assets/misc/add-workspace-hover.svg
 %%CINNAMON%%share/themes/Plata/cinnamon/assets/misc/add-workspace.svg
@@ -1743,7 +1729,6 @@ share/themes/Plata/index.theme
 %%METACITY%%share/themes/Plata/metacity-1/max_button_unmaximize.svg
 %%METACITY%%share/themes/Plata/metacity-1/max_button_unmaximize_prelight.svg
 %%METACITY%%share/themes/Plata/metacity-1/max_button_unmaximize_pressed.svg
-%%METACITY%%share/themes/Plata/metacity-1/metacity-theme-2.xml
 %%METACITY%%share/themes/Plata/metacity-1/metacity-theme-3.xml
 %%METACITY%%share/themes/Plata/metacity-1/thumbnail.png
 %%OPENBOX%%share/themes/Plata/openbox-3/close.xbm
