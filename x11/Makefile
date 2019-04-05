@@ -354,7 +354,6 @@
     SUBDIR += xballoon
     SUBDIR += xbanish
     SUBDIR += xbanner
-    SUBDIR += xbelld
     SUBDIR += xbiff
     SUBDIR += xbindkeys
     SUBDIR += xbitmaps
