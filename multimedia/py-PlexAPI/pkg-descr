@@ -1,0 +1,10 @@
+Unofficial Python bindings for the Plex API. Our goal is to match all
+capabilities of the official Plex Web Client. A few of the many
+features we currently support are:
+
+- Navigate local or remote shared libraries.
+- Perform library actions such as scan, analyze, empty trash.
+- Remote control and play media on connected clients.
+- Listen in on all Plex Server notifications.
+
+WWW: https://github.com/pkkid/python-plexapi
