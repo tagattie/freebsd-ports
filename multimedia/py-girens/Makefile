@@ -24,6 +24,8 @@ GL_COMMIT=	4079a196b7dbf703ee6cc86fb67c2589812673db
 
 USE_GNOME=	gtk30 pygobject3
 
+NO_ARCH=	yes
+
 SHEBANG_FILES=	${WRKSRC}/build-aux/meson/postinstall.py
 
 GLIB_SCHEMAS=	nl.g4d.Girens.gschema.xml
