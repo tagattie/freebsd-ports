@@ -16,4 +16,6 @@ LIB_DEPENDS=	libmpv.so:multimedia/mpv
 USES=		python
 USE_PYTHON=	autoplist distutils
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>
