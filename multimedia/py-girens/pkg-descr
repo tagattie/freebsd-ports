@@ -1,0 +1,10 @@
+Girens is a Plex media player client. You can watch and listen to your
+music, shows and movies with this GTK app.
+
+There are more Plex clients that can be used on Linux. For example the
+Plex website and the Plex media Player. Those Plex clients are lacking
+functions which I like to have. For example: a responsive layout (so
+you can use it on a small screen), function to download media items to
+the device and GTK+ is awesome.
+
+WWW: https://gitlab.gnome.org/tijder/girens
