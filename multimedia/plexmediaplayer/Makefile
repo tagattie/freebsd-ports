@@ -22,8 +22,12 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libmpv.so:multimedia/mpv
 RUN_DEPENDS=	xdg-open:devel/xdg-utils
 
-USES=		cmake desktop-file-utils gnome ninja qt:5
-USE_QT=		core network quickcontrols webchannel webengine x11extras xml
+USES=		cmake desktop-file-utils gl gnome iconv ninja pkgconfig qt:5
+USE_XORG=	ice sm x11 xext xrandr
+USE_GL=		gl
+USE_QT=		buildtools_build core dbus declarative gui location network \
+		qmake_build quickcontrols webchannel webengine widgets \
+		x11extras xml
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	plexinc
