@@ -59,9 +59,6 @@ LIRC_RUN_DEPENDS=	lircd:comms/lirc
 
 INSTALLS_ICONS=	yes
 
-pre-fetch:
-	${RM} ${_DISTDIR}/buildid.cmake
-
 post-extract:
 	${MKDIR} ${BUILD_WRKSRC}/dependencies
 	${CP} ${_DISTDIR}/buildid.cmake ${BUILD_WRKSRC}/dependencies/buildid-${WEB_CLIENT_BUILD_ID}.cmake
@@ -71,5 +68,7 @@ post-extract:
 	${MKDIR} ${BUILD_WRKSRC}/dependencies/universal-web-client-tv/${WEB_CLIENT_BUILD_ID}
 	${MV} ${WRKDIR}/web-client-tv-${TV_VER} ${BUILD_WRKSRC}/dependencies/universal-web-client-tv/${WEB_CLIENT_BUILD_ID}
 	${TOUCH} ${BUILD_WRKSRC}/dependencies/universal-web-client-tv/${WEB_CLIENT_BUILD_ID}/web-client-tv-${TV_VER}/_FINISHED
+	# rename buildid.cmake so that fetch correctly works on next time building
+	${MV} ${_DISTDIR}/buildid.cmake ${_DISTDIR}/buildid-${WEB_CLIENT_BUILD_ID}.cmake
 
 .include <bsd.port.mk>
