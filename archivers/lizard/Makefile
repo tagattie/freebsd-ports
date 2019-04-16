@@ -1,0 +1,21 @@
+# $FreeBSD$
+
+PORTNAME=	lizard
+DISTVERSIONPREFIX=	v
+DISTVERSION=	1.0
+CATEGORIES=	archivers
+
+MAINTAINER=	tagattie@yandex.com
+COMMENT=	Efficient compressor with very fast decompression
+
+LICENSE=	BSD2CLAUSE GPLv2
+LICENSE_COMB=	multi
+LICENSE_FILE_BSD2CLAUSE=	${WRKSRC}/lib/LICENSE
+LICENSE_FILE_GPLv2=	${WRKSRC}/programs/COPYING
+
+USES=		gmake
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	inikep
+
+.include <bsd.port.mk>
