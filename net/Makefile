@@ -171,6 +171,7 @@
     SUBDIR += frr4
     SUBDIR += frr5
     SUBDIR += frr6
+    SUBDIR += frr7
     SUBDIR += fspclient
     SUBDIR += fspd
     SUBDIR += fsplib
@@ -1139,6 +1140,7 @@
     SUBDIR += py-wolframalpha
     SUBDIR += py-wsproto
     SUBDIR += py-xmlrpc
+    SUBDIR += py-zeep
     SUBDIR += py-zeroconf
     SUBDIR += py-zope.proxy
     SUBDIR += py-zsi
@@ -1219,10 +1221,8 @@
     SUBDIR += rubygem-epp-client-secdns
     SUBDIR += rubygem-epp-client-smallregistry
     SUBDIR += rubygem-fog-aliyun
-    SUBDIR += rubygem-fog-aliyun02
     SUBDIR += rubygem-fog-atmos
     SUBDIR += rubygem-fog-aws
-    SUBDIR += rubygem-fog-aws2
     SUBDIR += rubygem-fog-azure
     SUBDIR += rubygem-fog-brightbox
     SUBDIR += rubygem-fog-brightbox0
