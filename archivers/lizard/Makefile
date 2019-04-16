@@ -18,6 +18,8 @@ USES=		gmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	inikep
 
+USE_LDCONFIG=	yes
+
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/lizard \
 		${STAGEDIR}/${PREFIX}/lib/liblizard.so.1.0.0
