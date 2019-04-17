@@ -14,8 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	gtk-murrine-engine>0:x11-themes/gtk-murrine-engine \
 		gnome-themes-extra>0:x11-themes/gnome-themes-extra
 
-USES=		gmake gnome
-USE_GNOME=	gtk30
+USES=		gmake
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	daniruiz
