@@ -22,12 +22,12 @@ GH_ACCOUNT=	daniruiz
 NO_ARCH=	yes
 NO_BUILD=	yes
 
-REINPLACE_ARGS=	-i ""
+REINPLACE_ARGS=	-i ''
 
 post-patch:
-	${REINPLACE_CMD} -e 's/^MetacityTheme=Flat-Remix/MetacityTheme=Flat-Remix-GTK/; \
-			s/^IconTheme=.*/IconTheme=Adwaita/; \
-			s/^CursorTheme=.*/CursorTheme=Adwaita/' \
+	${REINPLACE_CMD} -E 's/^(MetacityTheme=Flat-Remix)/\1-GTK/; \
+			s/^(IconTheme=).*/\1Adwaita/; \
+			s/^(CursorTheme=).*/\1Adwaita/' \
 		${WRKSRC}/*/index.theme
 
 .include <bsd.port.mk>
