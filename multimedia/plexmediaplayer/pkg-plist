@@ -30,8 +30,8 @@ share/icons/hicolor/scalable/apps/plexmediaplayer.svg
 %%DATADIR%%/web-client/desktop/desktop/common/img/vendor-logos/songkick.19411461aa7bffd06675aaa8a3d0a056.svg
 %%DATADIR%%/web-client/desktop/index.html
 %%DATADIR%%/web-client/desktop/js/chunk-0-030a1155e9c9b1b7d8fa-plex-3.83.2-ecd072f.js
-%%DATADIR%%/web-client/desktop/js/main-1-f8817e583d6bc7be0ff1-plex-3.83.2-ecd072f.js
-%%DATADIR%%/web-client/desktop/js/manifest-3-29481c1dd824d38036d1-plex-3.83.2-ecd072f.js
+%%DATADIR%%/web-client/desktop/js/main-1-7e3fff4488c9044fa9a1-plex-3.83.2-ecd072f.js
+%%DATADIR%%/web-client/desktop/js/manifest-3-81d8e9e4012f30cf3f00-plex-3.83.2-ecd072f.js
 %%DATADIR%%/web-client/desktop/js/vendors-2-f9ef83e1784dcb63714b-plex-3.83.2-ecd072f.js
 %%DATADIR%%/web-client/desktop/main.8dbd7f8300c6cb5fc455bfb83d2bb5ab.css
 %%DATADIR%%/web-client/desktop/main.v3.e28470103b2e9348e7abfe623669649b.css
@@ -79,8 +79,8 @@ share/icons/hicolor/scalable/apps/plexmediaplayer.svg
 %%DATADIR%%/web-client/desktop/translations/zh-TW.json
 %%DATADIR%%/web-client/desktop/translations/zh.json
 %%DATADIR%%/web-client/tv/_FINISHED
-%%DATADIR%%/web-client/tv/chunk-1-5c1982e982ef987dfd8b-plex-3.94.0-862bda5.css
-%%DATADIR%%/web-client/tv/chunk-2-8b181c702cb25fbccb2f-plex-3.94.0-862bda5.css
+%%DATADIR%%/web-client/tv/chunk-1-b7f08c51ad72eb0a4799-plex-3.96.0-8a62818.css
+%%DATADIR%%/web-client/tv/chunk-2-9113c11ba4a1ea4fea68-plex-3.96.0-8a62818.css
 %%DATADIR%%/web-client/tv/common/img/plex-pass.e73cc397459c4930e842b86b27d05eb9.svg
 %%DATADIR%%/web-client/tv/common/img/posters/square.2b3b1126b78aa4ebfd5441bb9b9363f2.png
 %%DATADIR%%/web-client/tv/common/img/posters/standard.d81d4316ab6047d517f7c3df39a2fbdd.png
@@ -88,9 +88,9 @@ share/icons/hicolor/scalable/apps/plexmediaplayer.svg
 %%DATADIR%%/web-client/tv/common/img/ratings/rt-certified-fresh-560.473791e4a8e562bf4e88e303479f6673.svg
 %%DATADIR%%/web-client/tv/common/img/ratings/rt-spilt-popcorn-simple-560.9a19d1f519fb092eedab5ed22770289d.svg
 %%DATADIR%%/web-client/tv/index.html
-%%DATADIR%%/web-client/tv/js/chunk-1-5c1982e982ef987dfd8b-plex-3.94.0-862bda5.js
-%%DATADIR%%/web-client/tv/js/chunk-2-8b181c702cb25fbccb2f-plex-3.94.0-862bda5.js
-%%DATADIR%%/web-client/tv/js/runtime-0-687760d6fd7736c3edcf-plex-3.94.0-862bda5.js
+%%DATADIR%%/web-client/tv/js/chunk-1-b7f08c51ad72eb0a4799-plex-3.96.0-8a62818.js
+%%DATADIR%%/web-client/tv/js/chunk-2-9113c11ba4a1ea4fea68-plex-3.96.0-8a62818.js
+%%DATADIR%%/web-client/tv/js/runtime-0-687760d6fd7736c3edcf-plex-3.96.0-8a62818.js
 %%DATADIR%%/web-client/tv/translations/af.json
 %%DATADIR%%/web-client/tv/translations/ar.json
 %%DATADIR%%/web-client/tv/translations/bg.json

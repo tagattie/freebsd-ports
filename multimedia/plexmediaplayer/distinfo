@@ -1,9 +1,9 @@
-TIMESTAMP = 1554974964
-SHA256 (buildid.cmake) = 02aa7773e955b57226d3485080a10c7bf1fce86997d3c452d9391c30c3185ae7
+TIMESTAMP = 1555492251
+SHA256 (buildid.cmake) = 76e2791c3b883a7c913a774d7877f191a02911f773f5aa824b32d631bbe5fc02
 SIZE (buildid.cmake) = 102
-SHA256 (web-client-desktop-3.83.2-ecd072f.tar.xz) = 3d9da749787d752c86dd09a2e1a2362c20a48bbe94b4c1f02a9f659f69409fc9
-SIZE (web-client-desktop-3.83.2-ecd072f.tar.xz) = 5457876
-SHA256 (web-client-tv-3.94.0-862bda5.tar.xz) = a72092b35ba3789d78db716dd410c03fba0580ab6174a77ad5c4e65fad81c021
-SIZE (web-client-tv-3.94.0-862bda5.tar.xz) = 6624432
-SHA256 (plexinc-plex-media-player-v2.31.0.967-a95b6d76_GH0.tar.gz) = 4189a8ee4a289a01db3803203ac6c93bab3911a3cf994e9c314e5b340b3b2ed8
-SIZE (plexinc-plex-media-player-v2.31.0.967-a95b6d76_GH0.tar.gz) = 1755784
+SHA256 (web-client-desktop-3.83.2-ecd072f.tar.xz) = c6ea04c3242f28b284ae7bf992d4fb1018c696b950a1f532d56a5fa60a741a49
+SIZE (web-client-desktop-3.83.2-ecd072f.tar.xz) = 5458848
+SHA256 (web-client-tv-3.96.0-8a62818.tar.xz) = faaa92369ef3b5bb142f1f26d3992f1629fd0010a86ec6a6bd9cd5e8baa1619f
+SIZE (web-client-tv-3.96.0-8a62818.tar.xz) = 6140868
+SHA256 (plexinc-plex-media-player-v2.32.0.973-62b2e27f_GH0.tar.gz) = 93fa5a26ae4e81f3cd3edac61ad8c979d864f76e93ad18a98e342fce87520b0e
+SIZE (plexinc-plex-media-player-v2.32.0.973-62b2e27f_GH0.tar.gz) = 1755823

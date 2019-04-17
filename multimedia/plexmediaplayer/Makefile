@@ -2,8 +2,8 @@
 
 PORTNAME=	plexmediaplayer
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.31.0
-DISTVERSIONSUFFIX=	.967-a95b6d76
+DISTVERSION=	2.32.0
+DISTVERSIONSUFFIX=	.973-62b2e27f
 CATEGORIES=	multimedia
 MASTER_SITES=	https://artifacts.plex.tv/web-client-pmp/${WEB_CLIENT_BUILD_ID}/
 DISTFILES=	buildid.cmake \
@@ -34,10 +34,10 @@ GH_ACCOUNT=	plexinc
 GH_PROJECT=	plex-media-player
 
 # See ${WRKSRC}/CMakeModules/WebClient.cmake for WEB_CLIENT_BUILD_ID
-WEB_CLIENT_BUILD_ID=	113-862bda5ecd072f
+WEB_CLIENT_BUILD_ID=	115-8a62818ecd072f
 # Values for these two variables are found in downloaded buildid.cmake
 DESKTOP_VER=	3.83.2-ecd072f
-TV_VER=		3.94.0-862bda5
+TV_VER=		3.96.0-8a62818
 
 CMAKE_ARGS=	-DQTROOT=${LOCALBASE}
 
