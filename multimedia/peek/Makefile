@@ -1,43 +1,28 @@
 # $FreeBSD$
 
 PORTNAME=	peek
-PORTVERSION=	1.3.1
+DISTVERSION=	1.3.1-103
+DISTVERSIONSUFFIX=	-ga8402bb
 CATEGORIES=	multimedia
 
-MAINTAINER=	tagattie@yandex.com
+MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Simple animated GIF screen recorder with an easy to use interface
 
-LICENSE=	GPLv3+
+LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	valac:lang/vala
 LIB_DEPENDS=	libkeybinder-3.0.so:x11/keybinder-gtk3
-RUN_DEPENDS=	gsettings-desktop-schemas>0:devel/gsettings-desktop-schemas \
-		ffmpeg:multimedia/ffmpeg
+RUN_DEPENDS=	ffmpeg:multimedia/ffmpeg
 
-USES=		cmake gettext gnome ninja pkgconfig python:3.5+,build
-
+USES=		gettext-tools gnome meson pkgconfig python:build
 USE_GITHUB=	yes
 GH_ACCOUNT=	phw
-
-USE_GNOME=	cairo glib20 gtk30 libxml2
-
-GLIB_SCHEMAS=	com.uploadedlobster.peek.gschema.xml
+USE_GNOME=	cairo glib20 gtk30 pango
 INSTALLS_ICONS=	yes
 
-CMAKE_OFF=	GSETTINGS_COMPILE
+BINARY_ALIAS=	python=${PYTHON_CMD} python3=${PYTHON_CMD}
 
-OPTIONS_DEFINE=	GIFSKI GNOMESHELL MANPAGES
-OPTIONS_DEFAULT=	GNOMESHELL MANPAGES
-OPTIONS_SUB=	yes
-
-GIFSKI_DESC=	Use gifski for improved GIF quality
-GIFSKI_RUN_DEPENDS=	gifski:graphics/gifski
-
-GNOMESHELL_DESC=	Use Gnome shell screen recorder (when available)
-GNOMESHELL_CMAKE_OFF=	-DDISABLE_GNOME_SHELL:BOOL=true
-GNOMESHELL_USE=		GSTREAMER1=good,ugly
-
-MANPAGES_BUILD_DEPENDS=	txt2man:textproc/txt2man
+GLIB_SCHEMAS=	com.uploadedlobster.peek.gschema.xml
 
 .include <bsd.port.mk>
