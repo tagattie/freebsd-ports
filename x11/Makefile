@@ -307,6 +307,7 @@
     SUBDIR += sterm
     SUBDIR += stjerm
     SUBDIR += swarp
+    SUBDIR += swaybg
     SUBDIR += swayidle
     SUBDIR += swaylock
     SUBDIR += sxhkd
