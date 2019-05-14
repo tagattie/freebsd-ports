@@ -20,6 +20,8 @@ BUILD_DEPENDS=	gsed:textproc/gsed \
 RUN_DEPENDS=	noto>=1.0.5:x11-fonts/noto \
 		roboto-fonts-ttf>=2.134:x11-fonts/roboto-fonts-ttf
 
+USES=		autoreconf gmake gnome pathfix pkgconfig shebangfix
+
 CHROME_CONFIGURE_ENABLE=	chrome_legacy
 CHROME_DESC=	Support for legacy Chrome(ium) browser (<= R59)
 CINNAMON_CONFIGURE_ENABLE=	cinnamon
@@ -55,7 +57,6 @@ PARALLEL_DESC=	parallel-build support
 
 SHEBANG_REGEX=	'.*\.sh$$'
 
-USES=		autoreconf gmake gnome pathfix pkgconfig shebangfix
 USE_GITHUB=	yes
 USE_GNOME=	gdkpixbuf2 glib20 librsvg2 libxml2
 
