@@ -263,6 +263,7 @@
     SUBDIR += props
     SUBDIR += py-caffeine
     SUBDIR += py-caffeine-ng
+    SUBDIR += py-pyscreenshot
     SUBDIR += py-pyvirtualdisplay
     SUBDIR += py-qt5-opengl
     SUBDIR += py-xcffib
