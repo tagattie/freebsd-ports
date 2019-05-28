@@ -460,6 +460,7 @@
     SUBDIR += nibbleblog
     SUBDIR += node
     SUBDIR += node10
+    SUBDIR += node6
     SUBDIR += node8
     SUBDIR += nostromo
     SUBDIR += novnc
@@ -468,7 +469,6 @@
     SUBDIR += npc
     SUBDIR += npm
     SUBDIR += npm-node10
-    SUBDIR += npm-node6
     SUBDIR += npm-node8
     SUBDIR += nspluginwrapper
     SUBDIR += nuvolaplayer-8tracks
@@ -1483,9 +1483,19 @@
     SUBDIR += py-dj21-djangoql
     SUBDIR += py-dj21-djangorestframework
     SUBDIR += py-dj21-drf-yasg
+    SUBDIR += py-dj22-django-auth-ldap
+    SUBDIR += py-dj22-django-cors-headers
+    SUBDIR += py-dj22-django-debug-toolbar
+    SUBDIR += py-dj22-django-filter
+    SUBDIR += py-dj22-django-js-asset
+    SUBDIR += py-dj22-django-mptt
+    SUBDIR += py-dj22-django-tables2
     SUBDIR += py-dj22-django-taggit
+    SUBDIR += py-dj22-django-taggit-serializer
+    SUBDIR += py-dj22-django-timezone-field
     SUBDIR += py-dj22-django-treebeard
     SUBDIR += py-dj22-djangorestframework
+    SUBDIR += py-dj22-drf-yasg
     SUBDIR += py-django
     SUBDIR += py-django-allauth
     SUBDIR += py-django-annotations
@@ -1987,6 +1997,7 @@
     SUBDIR += rubygem-gollum-grit_adapter10
     SUBDIR += rubygem-gollum-lib
     SUBDIR += rubygem-gollum-rugged_adapter
+    SUBDIR += rubygem-gon-rails5
     SUBDIR += rubygem-gon-rails50
     SUBDIR += rubygem-hackpad-cli
     SUBDIR += rubygem-haml
@@ -2028,6 +2039,7 @@
     SUBDIR += rubygem-jsobfu
     SUBDIR += rubygem-json-jwt
     SUBDIR += rubygem-jwt
+    SUBDIR += rubygem-jwt21
     SUBDIR += rubygem-kaminari
     SUBDIR += rubygem-kaminari-actionview
     SUBDIR += rubygem-kaminari-actionview-rails5
@@ -2172,7 +2184,7 @@
     SUBDIR += rubygem-vegas
     SUBDIR += rubygem-wasabi
     SUBDIR += rubygem-webmock
-    SUBDIR += rubygem-webpack-rails-rails50
+    SUBDIR += rubygem-webpack-rails-rails5
     SUBDIR += rubygem-webrobots
     SUBDIR += rubygem-websocket
     SUBDIR += rubygem-websocket-driver
