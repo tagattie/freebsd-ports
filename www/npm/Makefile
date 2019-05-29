@@ -3,6 +3,7 @@
 
 PORTNAME=	npm
 PORTVERSION=	6.9.0
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	LOCAL/sunpoet
 
@@ -23,7 +24,7 @@ NODE_DESC=	Use Node.js 11.x/12.x (www/node) as backend
 NODE10_DESC=	Use Node.js 10.x (www/node10) as backend
 NODE8_DESC=	Use Node.js 8.x (www/node8) as backend
 
-USES=		cpe python:2.7,run shebangfix tar:xz
+USES=		cpe python:2.7,build,run shebangfix tar:xz
 
 NO_ARCH=	yes
 NO_BUILD=	yes
@@ -53,5 +54,10 @@ post-patch:
 
 do-install:
 	cd ${WRKSRC}/ && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/
+
+post-install:
+	${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py \
+		-f -d ${PREFIX}/lib/node_modules/npm/node_modules/node-gyp/gyp/pylib/gyp \
+		${STAGEDIR}${PREFIX}/lib/node_modules/npm/node_modules/node-gyp/gyp/pylib/gyp
 
 .include <bsd.port.post.mk>
