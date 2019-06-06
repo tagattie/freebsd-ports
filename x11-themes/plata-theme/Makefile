@@ -19,6 +19,7 @@ RUN_DEPENDS=	gtk-murrine-engine>0:x11-themes/gtk-murrine-engine \
 		roboto-fonts-ttf>0:x11-fonts/roboto-fonts-ttf
 
 USES=		autoreconf gmake gnome pkgconfig shebangfix
+USE_GNOME=	gdkpixbuf2 gtk30 libxml2
 
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.com
@@ -36,7 +37,7 @@ CONFIGURE_ARGS=	--disable-gtk_next \
 		--disable-tweetdeck \
 		--disable-airforsteam
 
-USE_GNOME=	gdkpixbuf2 gtk30 libxml2
+PORTDOCS=	README.md README.window-list
 
 OPTIONS_DEFINE=	CINNAMON DOCS GNOME METACITY OPENBOX PARALLEL PLANK XFCE
 OPTIONS_DEFAULT=	CINNAMON GNOME METACITY OPENBOX PARALLEL PLANK XFCE
@@ -57,8 +58,6 @@ PLANK_DESC=	Enale Plank support
 PLANK_CONFIGURE_ENABLE=	plank
 XFCE_DESC=	Enable Xfce support
 XFCE_CONFIGURE_ENABLE=	xfce
-
-PORTDOCS=	README.md README.window-list
 
 post-extract:
 	${CP} ${WRKSRC}/src/shell/sass/gnome-shell/README.window-list ${WRKSRC}
