@@ -3,7 +3,7 @@
 
 PORTNAME=	npm
 PORTVERSION=	6.9.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	LOCAL/sunpoet
 
@@ -57,7 +57,7 @@ do-install:
 
 post-install:
 	${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py \
-		-f -d ${PREFIX}/lib/node_modules/npm/node_modules/node-gyp/gyp/pylib/gyp \
+		-d ${PREFIX}/lib/node_modules/npm/node_modules/node-gyp/gyp/pylib/gyp -f \
 		${STAGEDIR}${PREFIX}/lib/node_modules/npm/node_modules/node-gyp/gyp/pylib/gyp
 
 .include <bsd.port.post.mk>
