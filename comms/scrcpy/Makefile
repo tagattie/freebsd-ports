@@ -23,7 +23,8 @@ USE_SDL=	sdl2
 USE_GITHUB=	yes
 GH_ACCOUNT=	Genymobile
 
-MESON_ARGS=	-Dbuild_server=false
+MESON_ARGS=	-Dbuild_server=false \
+		-Dportable=false
 
 OPTIONS_DEFINE=	DOCS
 
