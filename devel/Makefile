@@ -202,6 +202,7 @@
     SUBDIR += bashdb
     SUBDIR += bats-core
     SUBDIR += bazel
+    SUBDIR += bazel-buildtools
     SUBDIR += bbfreeze
     SUBDIR += bbfreeze-loader
     SUBDIR += bcc
@@ -326,6 +327,7 @@
     SUBDIR += clazy
     SUBDIR += cld2
     SUBDIR += clewn
+    SUBDIR += cli11
     SUBDIR += clig
     SUBDIR += cligen
     SUBDIR += clinfo
