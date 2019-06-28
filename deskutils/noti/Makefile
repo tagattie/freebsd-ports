@@ -24,7 +24,7 @@ PLIST_FILES=	bin/noti man/man1/noti.1.gz man/man5/noti.yaml.5.gz
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKDIR}/bin/noti ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/docs/man/noti.1 ${STAGEDIR}${PREFIX}/man/man1/noti.1
-	${INSTALL_MAN} ${WRKSRC}/docs/man/noti.yaml.5 ${STAGEDIR}${PREFIX}/man/man5/noti.yaml.5
+	${INSTALL_MAN} ${WRKSRC}/docs/man/noti.1 ${STAGEDIR}${MANPREFIX}/man/man1/noti.1
+	${INSTALL_MAN} ${WRKSRC}/docs/man/noti.yaml.5 ${STAGEDIR}${MANPREFIX}/man/man5/noti.yaml.5
 
 .include <bsd.port.mk>
