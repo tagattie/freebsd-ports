@@ -256,6 +256,7 @@
     SUBDIR += htmlpp
     SUBDIR += httest
     SUBDIR += http-analyze
+    SUBDIR += http-parser
     SUBDIR += http_get
     SUBDIR += http_load
     SUBDIR += http_post
@@ -338,6 +339,7 @@
     SUBDIR += mattermost-webapp
     SUBDIR += mediawiki131
     SUBDIR += mediawiki132
+    SUBDIR += mediawiki133
     SUBDIR += mergelog
     SUBDIR += mgstat
     SUBDIR += mhonarc
