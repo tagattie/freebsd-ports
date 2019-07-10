@@ -1470,6 +1470,7 @@
     SUBDIR += py-collective.templateengines
     SUBDIR += py-cookies
     SUBDIR += py-css-parser
+    SUBDIR += py-csscompressor
     SUBDIR += py-cssmin
     SUBDIR += py-cssselect
     SUBDIR += py-cssutils
@@ -1516,6 +1517,7 @@
     SUBDIR += py-django-bitfield
     SUBDIR += py-django-bootstrap-form
     SUBDIR += py-django-bootstrap3
+    SUBDIR += py-django-bootstrap4
     SUBDIR += py-django-braces
     SUBDIR += py-django-bulk-update
     SUBDIR += py-django-cacheops
@@ -2139,6 +2141,7 @@
     SUBDIR += rubygem-redmine_acts_as_taggable_on
     SUBDIR += rubygem-responders
     SUBDIR += rubygem-responders-rails5
+    SUBDIR += rubygem-responders2-rails5
     SUBDIR += rubygem-rest-client
     SUBDIR += rubygem-rfacebook
     SUBDIR += rubygem-rfeedfinder
@@ -2273,7 +2276,6 @@
     SUBDIR += tomcat-native
     SUBDIR += tomcat6
     SUBDIR += tomcat7
-    SUBDIR += tomcat8
     SUBDIR += tomcat85
     SUBDIR += tomcat9
     SUBDIR += tomee
