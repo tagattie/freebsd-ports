@@ -23,7 +23,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	mltframework
 
 # Needed to be able to correctly check for updates in-app.
-FULLVERSION=	19.06.15
+FULLVERSION=	19.07.15
 
 USE_GL+=	gl
 USE_QT=		buildtools_build concurrent_build core declarative \
@@ -58,6 +58,6 @@ pre-build:
 	@${FIND} ${WRKSRC} -name '.depend' -delete
 
 post-build-NLS-on:
-	${LRELEASE} ${WRKSRC}/src/src.pro
+	cd ${BUILD_WRKSRC}/translations && ${LRELEASE} *.ts
 
 .include <bsd.port.mk>
