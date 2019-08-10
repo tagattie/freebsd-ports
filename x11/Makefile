@@ -298,6 +298,7 @@
     SUBDIR += simdock
     SUBDIR += simplestroke
     SUBDIR += sisctrl
+    SUBDIR += slick-greeter
     SUBDIR += slim
     SUBDIR += slock
     SUBDIR += slop
