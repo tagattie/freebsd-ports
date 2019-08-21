@@ -280,6 +280,7 @@
     SUBDIR += capnproto
     SUBDIR += capstone3
     SUBDIR += capstone4
+    SUBDIR += cargo-tree
     SUBDIR += cask
     SUBDIR += catch
     SUBDIR += cbrowser
@@ -670,6 +671,7 @@
     SUBDIR += fortytwo-encore
     SUBDIR += fossil
     SUBDIR += fossology-nomos-standalone
+    SUBDIR += fp16
     SUBDIR += fpc-bfd
     SUBDIR += fpc-dbus
     SUBDIR += fpc-fcl-async
@@ -711,6 +713,7 @@
     SUBDIR += fujaba
     SUBDIR += funnelweb
     SUBDIR += fuzzylite
+    SUBDIR += fxdiv
     SUBDIR += ga
     SUBDIR += gaa
     SUBDIR += gamin
@@ -795,6 +798,7 @@
     SUBDIR += git-bzr-ng
     SUBDIR += git-cinnabar
     SUBDIR += git-codereview
+    SUBDIR += git-cola
     SUBDIR += git-cvs
     SUBDIR += git-extras
     SUBDIR += git-gui
@@ -879,6 +883,7 @@
     SUBDIR += gorm
     SUBDIR += govendor
     SUBDIR += gperf
+    SUBDIR += gperf31
     SUBDIR += gpm
     SUBDIR += gprbuild
     SUBDIR += gputils
@@ -1265,6 +1270,7 @@
     SUBDIR += libltdl
     SUBDIR += liblxqt
     SUBDIR += libmaa
+    SUBDIR += libmal
     SUBDIR += libmatheval
     SUBDIR += libmba
     SUBDIR += libmill
@@ -3463,7 +3469,10 @@
     SUBDIR += p5-Test-YAML-Valid
     SUBDIR += p5-Test-utf8
     SUBDIR += p5-Test2-Harness
+    SUBDIR += p5-Test2-Plugin-DBIProfile
+    SUBDIR += p5-Test2-Plugin-MemUsage
     SUBDIR += p5-Test2-Plugin-NoWarnings
+    SUBDIR += p5-Test2-Plugin-UUID
     SUBDIR += p5-Test2-Suite
     SUBDIR += p5-Test2-Tools-Explain
     SUBDIR += p5-Text-Levenshtein
@@ -3965,6 +3974,7 @@
     SUBDIR += protobuf25
     SUBDIR += protozero
     SUBDIR += pructl
+    SUBDIR += psimd
     SUBDIR += psptoolchain
     SUBDIR += psptoolchain-binutils
     SUBDIR += psptoolchain-gcc-stage1
@@ -3977,6 +3987,7 @@
     SUBDIR += psvn
     SUBDIR += pth
     SUBDIR += pth-hard
+    SUBDIR += pthreadpool
     SUBDIR += pthsem
     SUBDIR += ptlib
     SUBDIR += ptmalloc
@@ -4007,6 +4018,7 @@
     SUBDIR += py-Missing
     SUBDIR += py-MultiMapping
     SUBDIR += py-PEAK-Rules
+    SUBDIR += py-PeachPy
     SUBDIR += py-Persistence
     SUBDIR += py-Pint
     SUBDIR += py-Products.ATContentTypes
@@ -4370,7 +4382,6 @@
     SUBDIR += py-dynrules
     SUBDIR += py-easyprocess
     SUBDIR += py-editdistance
-    SUBDIR += py-efilter
     SUBDIR += py-efl
     SUBDIR += py-eggtestinfo
     SUBDIR += py-ejson
@@ -4646,6 +4657,7 @@
     SUBDIR += py-mx-experimental
     SUBDIR += py-mygpoclient
     SUBDIR += py-mypy
+    SUBDIR += py-mypy-protobuf
     SUBDIR += py-mypy_extensions
     SUBDIR += py-nagioscheck
     SUBDIR += py-naiveBayesClassifier
@@ -4673,6 +4685,7 @@
     SUBDIR += py-oletools
     SUBDIR += py-omnijson
     SUBDIR += py-omniorb
+    SUBDIR += py-opcodes
     SUBDIR += py-openapi-codec
     SUBDIR += py-openapi-spec-validator
     SUBDIR += py-opendht
@@ -4827,6 +4840,7 @@
     SUBDIR += py-pyinstaller
     SUBDIR += py-pyjsparser
     SUBDIR += py-pyke
+    SUBDIR += py-pylama 
     SUBDIR += py-pylibsrtp
     SUBDIR += py-pylru
     SUBDIR += py-pylru-cache
@@ -5394,6 +5408,8 @@
     SUBDIR += rubygem-aspectr
     SUBDIR += rubygem-ast
     SUBDIR += rubygem-astrolabe
+    SUBDIR += rubygem-async
+    SUBDIR += rubygem-async-io
     SUBDIR += rubygem-atomic
     SUBDIR += rubygem-attic
     SUBDIR += rubygem-attr_required
@@ -5472,6 +5488,7 @@
     SUBDIR += rubygem-configatron
     SUBDIR += rubygem-configstruct
     SUBDIR += rubygem-configuration
+    SUBDIR += rubygem-console
     SUBDIR += rubygem-cookbook-omnifetch
     SUBDIR += rubygem-cool.io
     SUBDIR += rubygem-corefines
@@ -5601,6 +5618,7 @@
     SUBDIR += rubygem-glib2
     SUBDIR += rubygem-gobject-introspection
     SUBDIR += rubygem-google-api-client
+    SUBDIR += rubygem-google-gax
     SUBDIR += rubygem-google-protobuf
     SUBDIR += rubygem-google-protobuf371
     SUBDIR += rubygem-googleapis-common-protos
