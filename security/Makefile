@@ -88,7 +88,6 @@
     SUBDIR += clamav
     SUBDIR += clamav-milter
     SUBDIR += clamav-unofficial-sigs
-    SUBDIR += clamcour
     SUBDIR += clamd-stream-client
     SUBDIR += clamfs
     SUBDIR += clamsmtp
@@ -218,7 +217,6 @@
     SUBDIR += hlfl
     SUBDIR += hmap
     SUBDIR += hockeypuck
-    SUBDIR += honeybadger
     SUBDIR += honggfuzz
     SUBDIR += hotssh
     SUBDIR += hpenc
@@ -1085,7 +1083,6 @@
     SUBDIR += rubygem-bcrypt_pbkdf
     SUBDIR += rubygem-devise-two-factor
     SUBDIR += rubygem-devise-two-factor-rails5
-    SUBDIR += rubygem-devise-two-factor30-rails5
     SUBDIR += rubygem-devise-two-factor30-rails52
     SUBDIR += rubygem-devise_pam_authenticatable2
     SUBDIR += rubygem-digest-crc
@@ -1228,6 +1225,7 @@
     SUBDIR += softhsm2
     SUBDIR += sops
     SUBDIR += spass
+    SUBDIR += spass-qt5
     SUBDIR += spike-proxy
     SUBDIR += spybye
     SUBDIR += sqlmap

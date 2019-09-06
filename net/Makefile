@@ -23,6 +23,7 @@
     SUBDIR += apinger
     SUBDIR += appkonference
     SUBDIR += aprsc
+    SUBDIR += aquantia-atlantic-kmod
     SUBDIR += arp-scan
     SUBDIR += arp-sk
     SUBDIR += arpdig
@@ -1000,7 +1001,6 @@
     SUBDIR += prtunnel
     SUBDIR += ptpd2
     SUBDIR += ptunnel
-    SUBDIR += pure-sockets
     SUBDIR += pvm
     SUBDIR += pwhois
     SUBDIR += pxe
@@ -1180,8 +1180,8 @@
     SUBDIR += remmina-plugin-spice
     SUBDIR += remmina-plugin-st
     SUBDIR += remmina-plugin-vnc
-    SUBDIR += remmina-plugin-xdmcp
     SUBDIR += remmina-plugin-www
+    SUBDIR += remmina-plugin-xdmcp
     SUBDIR += remmina-plugins
     SUBDIR += remotebox
     SUBDIR += remotedesk
@@ -1344,8 +1344,8 @@
     SUBDIR += rude
     SUBDIR += ryu
     SUBDIR += s3ql
-    SUBDIR += samba48
     SUBDIR += samba410
+    SUBDIR += samba48
     SUBDIR += samplicator
     SUBDIR += savvycan
     SUBDIR += sbd
@@ -1474,7 +1474,6 @@
     SUBDIR += tsocks
     SUBDIR += tucan
     SUBDIR += turnserver
-    SUBDIR += turses
     SUBDIR += twitux
     SUBDIR += u6rd
     SUBDIR += ucarp
