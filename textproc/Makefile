@@ -1299,6 +1299,7 @@
     SUBDIR += py-markdown-math
     SUBDIR += py-markdown2
     SUBDIR += py-markups
+    SUBDIR += py-misaka
     SUBDIR += py-mistune
     SUBDIR += py-mkdocs
     SUBDIR += py-mkdocs-nature
@@ -1557,11 +1558,14 @@
     SUBDIR += rubygem-jekyll-paginate
     SUBDIR += rubygem-jekyll-redirect-from
     SUBDIR += rubygem-jekyll-sass-converter
+    SUBDIR += rubygem-jekyll-sass-converter1
     SUBDIR += rubygem-jekyll-sitemap
     SUBDIR += rubygem-jemoji
     SUBDIR += rubygem-js_regex
     SUBDIR += rubygem-jsmin
     SUBDIR += rubygem-kramdown
+    SUBDIR += rubygem-kramdown-parser-gfm
+    SUBDIR += rubygem-kramdown1
     SUBDIR += rubygem-kwalify
     SUBDIR += rubygem-libxml-ruby
     SUBDIR += rubygem-linguistics
