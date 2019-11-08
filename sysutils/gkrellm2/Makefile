@@ -3,7 +3,7 @@
 PORTNAME=	gkrellm
 PORTVERSION=	2.3.11
 #PORTREVISION=	0
-CATEGORIES=	sysutils ipv6
+CATEGORIES=	sysutils
 MASTER_SITES=	http://gkrellm.srcbox.net/releases/ \
 		LOCAL/ume
 PKGNAMESUFFIX=	2
@@ -22,6 +22,7 @@ OPTIONS_SUB=		yes
 
 CLIENT_DESC=		GKrellM Client
 CLIENT_CONFLICTS=	gkrellm-[^2].* gkrellm[^2]-[^2].*
+CLIENT_USES=		gnome xorg
 CLIENT_USE=		GNOME=gtk20 XORG=sm,x11
 CLIENT_USE_OFF=		GNOME=glib20
 CLIENT_VARS_OFF=	BUILD_WRKSRC=${WRKSRC}/server \

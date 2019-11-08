@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	vim
-PORTVERSION=	8.1.1954
+PORTVERSION=	8.1.2237
 DISTVERSIONPREFIX=	v
 CATEGORIES=	editors
 
@@ -96,7 +96,7 @@ CONSOLE_VARS=		GUI=no
 GNOME_PLIST_SUB=	GUI="" DESKTOP=""
 GNOME_IMPLIES=		NLS
 GNOME_USE=		GNOME=gdkpixbuf2,libgnomeui XORG=ice,sm,xorgproto,x11,xpm,xt
-GNOME_USES=		desktop-file-utils gnome
+GNOME_USES=		desktop-file-utils gnome xorg
 GNOME_VARS=		GUI=gnome2 INSTALLS_ICONS=yes
 
 GTK2_PLIST_SUB=		GUI="" DESKTOP=""
@@ -119,6 +119,7 @@ MOTIF_VARS=		GUI=motif
 X11_CONFIGURE_WITH=	x
 X11_PLIST_SUB=		GUI="@comment " DESKTOP="@comment "
 X11_USE=		XORG=ice,sm,x11,xt
+X11_USES=		xorg
 X11_VARS=		GUI=no
 
 # LANGUAGE BINDINGS

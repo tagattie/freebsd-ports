@@ -2,6 +2,7 @@
 
 PORTNAME=	erkale
 DISTVERSION=	g20190812
+PORTREVISION=	3
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -10,7 +11,6 @@ COMMENT=	Quantum chemistry program to solve the electronic structure of atoms
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_aarch64=	clang-8: error: no such file or directory: 'NOTFOUND'
 BROKEN_i386=	liberkale_omp.so.0.1.0: undefined reference to `__atomic_compare_exchange'
 
 BUILD_DEPENDS=	armadillo>0:math/armadillo
@@ -45,7 +45,7 @@ CMAKE_OFF=	USE_OPENMP
 .else # parallel
 CMAKE_ON+=	USE_OPENMP
 SUFFIX=		_omp
-LIB_DEPENDS+=	libomp.so:devel/openmp
+LIB_DEPENDS+=	libomp.so:devel/llvm${LLVM_DEFAULT}
 .endif
 
 OPTIONS_SINGLE=		LINALG

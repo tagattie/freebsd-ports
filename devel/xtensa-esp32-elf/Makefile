@@ -38,7 +38,7 @@ COMMENT=	Espressif ESP32 toolchain
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
 
-BROKEN_aarch64=		fails to configure: cannot compute suffix of object files: cannot compile
+BROKEN=		unfetchable
 BROKEN_armv6=		fails to build: failed in step 'Installing pass-2 core C gcc compiler'
 BROKEN_armv7=		fails to build: failed in step 'Installing pass-2 core C gcc compiler'
 

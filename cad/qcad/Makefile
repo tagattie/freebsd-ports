@@ -14,12 +14,16 @@ COMMENT=	Professional CAD system
 
 LICENSE=	GPLv3
 
+.if ${/usr/bin/ld:L:tA} == /usr/bin/ld.lld
+BROKEN_i386=	ld: error: relocation R_386_PC32 cannot be used against symbol ON_GetPointListBoundingBox
+.endif
+
 BUILD_DEPENDS=	bash:shells/bash	\
 		${LOCALBASE}/lib/libopenNURBS.a:graphics/opennurbs
 
 MAKE_JOBS_UNSAFE=yes
 
-USES=		compiler:c++11-lang gmake qmake qt:5
+USES=		compiler:c++11-lang gl gmake qmake qt:5
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 USE_QT=		buildtools qmake_build \
