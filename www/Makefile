@@ -253,6 +253,7 @@
     SUBDIR += httpasyncclient
     SUBDIR += httpclient
     SUBDIR += httpcore
+    SUBDIR += httpdirfs
     SUBDIR += httptunnel
     SUBDIR += httrack
     SUBDIR += hypermail
@@ -1916,6 +1917,7 @@
     SUBDIR += redmine-sidebar_hide
     SUBDIR += redmine-single_auth
     SUBDIR += redmine-wiki_notes
+    SUBDIR += redmine4
     SUBDIR += rejik
     SUBDIR += reportmagic
     SUBDIR += repos-style

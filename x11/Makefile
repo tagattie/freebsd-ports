@@ -218,6 +218,8 @@
     SUBDIR += mate-terminal
     SUBDIR += menu-cache
     SUBDIR += menulibre
+    SUBDIR += mere-about
+    SUBDIR += mere-utils
     SUBDIR += metalock
     SUBDIR += metisse
     SUBDIR += mkcomposecache
