@@ -1448,6 +1448,7 @@
     SUBDIR += py-collective.easytemplate
     SUBDIR += py-collective.templateengines
     SUBDIR += py-cookies
+    SUBDIR += py-crossplane
     SUBDIR += py-css-parser
     SUBDIR += py-csscompressor
     SUBDIR += py-cssmin
@@ -1472,6 +1473,7 @@
     SUBDIR += py-dj22-django-auth-ldap
     SUBDIR += py-dj22-django-cacheops
     SUBDIR += py-dj22-django-cors-headers
+    SUBDIR += py-dj22-django-crispy-forms
     SUBDIR += py-dj22-django-debug-toolbar
     SUBDIR += py-dj22-django-filter
     SUBDIR += py-dj22-django-formset-js-improved
