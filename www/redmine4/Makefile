@@ -3,6 +3,7 @@
 
 PORTNAME=	redmine
 PORTVERSION=	4.0.5
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	https://www.redmine.org/releases/
 PKGNAMESUFFIX=	4
@@ -12,6 +13,8 @@ COMMENT=	Flexible project management web application
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/doc/COPYING
+
+BROKEN=		fails to stage
 
 RUN_DEPENDS=	rubygem-bundler>=1.5.0:sysutils/rubygem-bundler \
 		rubygem-rails52>=5.2.3:www/rubygem-rails52 \
