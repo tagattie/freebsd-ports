@@ -469,6 +469,7 @@
     SUBDIR += mping
     SUBDIR += mptsd
     SUBDIR += mrouted
+    SUBDIR += mrtparse
     SUBDIR += msend
     SUBDIR += mtr
     SUBDIR += mtr-nox11
@@ -1441,6 +1442,7 @@
     SUBDIR += tcpmssd
     SUBDIR += tcpproxy
     SUBDIR += tcpreen
+    SUBDIR += tcprtt
     SUBDIR += tcpsg
     SUBDIR += tcpshow
     SUBDIR += tcpslice
