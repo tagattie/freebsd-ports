@@ -23,6 +23,10 @@ PORTDOCS=	AUTHORS README.md
 
 OPTIONS_DEFINE=	DOCS
 
+post-install:
+	cd ${STAGEDIR}${PREFIX} && \
+		${FIND} share/icons -type f -o -type l >> ${TMPPLIST}
+
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_MAN} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
