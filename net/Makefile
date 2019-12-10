@@ -331,6 +331,7 @@
     SUBDIR += ktnef
     SUBDIR += kube-controller-manager
     SUBDIR += kube-scheduler
+    SUBDIR += kpeoplevcard
     SUBDIR += l2tpd
     SUBDIR += ladvd
     SUBDIR += lambdamoo
@@ -1023,6 +1024,7 @@
     SUBDIR += py-cjdns
     SUBDIR += py-cloudflare-scrape
     SUBDIR += py-cloudflare-scrape-js2py
+    SUBDIR += py-cloudscraper
     SUBDIR += py-coherence
     SUBDIR += py-confluent-kafka
     SUBDIR += py-cymruwhois
@@ -1076,6 +1078,7 @@
     SUBDIR += py-pcapy
     SUBDIR += py-port-for
     SUBDIR += py-portend
+    SUBDIR += py-pyenet
     SUBDIR += py-pygeoip
     SUBDIR += py-pyicap
     SUBDIR += py-pynmsg

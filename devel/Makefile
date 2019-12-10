@@ -864,6 +864,7 @@
     SUBDIR += go-tools
     SUBDIR += gob2
     SUBDIR += gobject-introspection
+    SUBDIR += gocheese
     SUBDIR += godep
     SUBDIR += godot
     SUBDIR += godot-tools
@@ -1011,6 +1012,7 @@
     SUBDIR += iniparser
     SUBDIR += initutil
     SUBDIR += injeqt
+    SUBDIR += intel-graphics-compiler
     SUBDIR += interactive_rebase_tool
     SUBDIR += ioncube
     SUBDIR += ipython
@@ -1664,6 +1666,7 @@
     SUBDIR += open-beagle
     SUBDIR += open-usp-tukubai
     SUBDIR += opencl
+    SUBDIR += opencl-clang
     SUBDIR += opencvs
     SUBDIR += opendht
     SUBDIR += opengrok
@@ -5601,6 +5604,7 @@
     SUBDIR += rubygem-aws-sdk-mediastoredata
     SUBDIR += rubygem-aws-sdk-mediatailor
     SUBDIR += rubygem-aws-sdk-migrationhub
+    SUBDIR += rubygem-aws-sdk-migrationhubconfig
     SUBDIR += rubygem-aws-sdk-mobile
     SUBDIR += rubygem-aws-sdk-mq
     SUBDIR += rubygem-aws-sdk-mturk
@@ -6428,6 +6432,7 @@
     SUBDIR += spdlog
     SUBDIR += spice-protocol
     SUBDIR += spin
+    SUBDIR += spirv-llvm-translator
     SUBDIR += spirv-tools
     SUBDIR += splint
     SUBDIR += spread-sheet-widget
@@ -6488,6 +6493,7 @@
     SUBDIR += tdl
     SUBDIR += template-glib
     SUBDIR += termbox
+    SUBDIR += termcolor
     SUBDIR += terminality
     SUBDIR += tevent
     SUBDIR += tevent1
