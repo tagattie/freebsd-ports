@@ -8,8 +8,8 @@ CATEGORIES=	devel
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Generates Go code from any file
 
-LICENSE=        CC0-1.0
-LICENSE_FILE=   ${WRKSRC}/LICENSE
+LICENSE=	CC0-1.0
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		go
 
