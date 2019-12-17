@@ -828,8 +828,6 @@
     SUBDIR += gitolite2
     SUBDIR += gittrac
     SUBDIR += glade
-    SUBDIR += glade2
-    SUBDIR += glade3
     SUBDIR += glademm
     SUBDIR += glib20
     SUBDIR += glib20-reference
@@ -872,7 +870,6 @@
     SUBDIR += godot2
     SUBDIR += godot2-tools
     SUBDIR += goffice
-    SUBDIR += goffice010
     SUBDIR += gogland-eap
     SUBDIR += gogs
     SUBDIR += golint
@@ -1366,6 +1363,7 @@
     SUBDIR += libstrfunc
     SUBDIR += libstroke
     SUBDIR += libsysctlmibinfo
+    SUBDIR += libsysctlmibinfo2
     SUBDIR += libsysinfo
     SUBDIR += libtai
     SUBDIR += libtap
@@ -4127,6 +4125,7 @@
     SUBDIR += py-anyjson
     SUBDIR += py-apache_conf_parser
     SUBDIR += py-apipkg
+    SUBDIR += py-apispec
     SUBDIR += py-apns2
     SUBDIR += py-appdirs
     SUBDIR += py-application
@@ -4913,6 +4912,7 @@
     SUBDIR += py-pytest-flakes
     SUBDIR += py-pytest-forked
     SUBDIR += py-pytest-helpers-namespace
+    SUBDIR += py-pytest-isort
     SUBDIR += py-pytest-localserver
     SUBDIR += py-pytest-mock
     SUBDIR += py-pytest-pycodestyle
@@ -5546,6 +5546,7 @@
     SUBDIR += rubygem-aws-sdk-eks
     SUBDIR += rubygem-aws-sdk-elasticache
     SUBDIR += rubygem-aws-sdk-elasticbeanstalk
+    SUBDIR += rubygem-aws-sdk-elasticinference
     SUBDIR += rubygem-aws-sdk-elasticloadbalancing
     SUBDIR += rubygem-aws-sdk-elasticloadbalancingv2
     SUBDIR += rubygem-aws-sdk-elasticsearchservice

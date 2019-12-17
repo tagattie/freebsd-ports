@@ -1365,6 +1365,7 @@
     SUBDIR += perlbal
     SUBDIR += pglogd
     SUBDIR += phalcon
+    SUBDIR += phalcon4
     SUBDIR += photo_gallery
     SUBDIR += php71-opcache
     SUBDIR += php71-session
@@ -1396,6 +1397,7 @@
     SUBDIR += pnews
     SUBDIR += podcastamatic
     SUBDIR += polipo
+    SUBDIR += pomerium
     SUBDIR += pound
     SUBDIR += privatebin
     SUBDIR += privoxy
@@ -1478,6 +1480,7 @@
     SUBDIR += py-dj22-django-jquery-js
     SUBDIR += py-dj22-django-js-asset
     SUBDIR += py-dj22-django-jsonfield2
+    SUBDIR += py-dj22-django-model-utils
     SUBDIR += py-dj22-django-mptt
     SUBDIR += py-dj22-django-prometheus
     SUBDIR += py-dj22-django-tables2
@@ -1706,6 +1709,7 @@
     SUBDIR += py-pastedeploy
     SUBDIR += py-pastescript
     SUBDIR += py-path-and-address
+    SUBDIR += py-pecan
     SUBDIR += py-pelican
     SUBDIR += py-planet
     SUBDIR += py-plone.alterego
