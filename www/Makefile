@@ -392,7 +392,6 @@
     SUBDIR += mod_mpm_itk
     SUBDIR += mod_pagespeed
     SUBDIR += mod_perl2
-    SUBDIR += mod_php71
     SUBDIR += mod_php72
     SUBDIR += mod_php73
     SUBDIR += mod_php74
@@ -1367,9 +1366,6 @@
     SUBDIR += phalcon
     SUBDIR += phalcon4
     SUBDIR += photo_gallery
-    SUBDIR += php71-opcache
-    SUBDIR += php71-session
-    SUBDIR += php71-tidy
     SUBDIR += php72-opcache
     SUBDIR += php72-session
     SUBDIR += php72-tidy
@@ -1874,6 +1870,7 @@
     SUBDIR += py-w3lib
     SUBDIR += py-wagtail
     SUBDIR += py-waitress
+    SUBDIR += py-webargs
     SUBDIR += py-webassets
     SUBDIR += py-webhelpers
     SUBDIR += py-webob
