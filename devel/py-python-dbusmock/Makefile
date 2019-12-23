@@ -12,6 +12,8 @@ COMMENT=	Mock D-Bus objects for tests
 LICENSE=	LGPL3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>0:devel/py-dbus@${PY_FLAVOR}
+
 USES=		gnome python
 USE_GNOME=	pygobject3
 USE_PYTHON=	autoplist distutils
