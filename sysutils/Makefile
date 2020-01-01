@@ -87,7 +87,6 @@
     SUBDIR += baloo-widgets
     SUBDIR += bamf
     SUBDIR += bareos-client
-    SUBDIR += bareos-docs
     SUBDIR += bareos-server
     SUBDIR += bareos-traymonitor
     SUBDIR += bareos16-client
@@ -308,7 +307,6 @@
     SUBDIR += etc_os-release
     SUBDIR += etcmerge
     SUBDIR += etcupdate
-    SUBDIR += eventlog
     SUBDIR += evhz
     SUBDIR += evtviewer
     SUBDIR += exa
@@ -595,8 +593,6 @@
     SUBDIR += lineak-xosdplugin
     SUBDIR += lineakd
     SUBDIR += linrename
-    SUBDIR += linux-c6-lttng-ust
-    SUBDIR += linux-c6-userspace-rcu
     SUBDIR += linux-c7-lttng-ust
     SUBDIR += linux-c7-userspace-rcu
     SUBDIR += linux-crashplan
@@ -685,7 +681,6 @@
     SUBDIR += minipro
     SUBDIR += minirsyslogd
     SUBDIR += mixer
-    SUBDIR += mkdesktop
     SUBDIR += mkfile
     SUBDIR += mkfwimage
     SUBDIR += mkntpwd
@@ -1023,6 +1018,11 @@
     SUBDIR += py-supervisor
     SUBDIR += py-tarsnapper
     SUBDIR += py-tmuxp
+    SUBDIR += py-upt
+    SUBDIR += py-upt-cpan
+    SUBDIR += py-upt-freebsd
+    SUBDIR += py-upt-pypi
+    SUBDIR += py-upt-rubygems
     SUBDIR += py-uptime
     SUBDIR += py-zdaemon
     SUBDIR += pydf
@@ -1263,11 +1263,6 @@
     SUBDIR += sysinfo
     SUBDIR += syslinux
     SUBDIR += syslog-ng
-    SUBDIR += syslog-ng311
-    SUBDIR += syslog-ng315
-    SUBDIR += syslog-ng317
-    SUBDIR += syslog-ng318
-    SUBDIR += syslog-ng319
     SUBDIR += syslog-ng320
     SUBDIR += syslog-ng321
     SUBDIR += syslog-ng322

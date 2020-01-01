@@ -148,7 +148,6 @@
     SUBDIR += blas
     SUBDIR += blasfeo
     SUBDIR += blaze
-    SUBDIR += blazeiterative
     SUBDIR += blis
     SUBDIR += blitz++
     SUBDIR += blocksolve95
@@ -719,6 +718,7 @@
     SUBDIR += py-grandalf
     SUBDIR += py-graphillion
     SUBDIR += py-gym
+    SUBDIR += py-hdbscan
     SUBDIR += py-igakit
     SUBDIR += py-igraph
     SUBDIR += py-intspan

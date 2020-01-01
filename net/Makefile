@@ -415,9 +415,6 @@
     SUBDIR += liferea
     SUBDIR += linknx
     SUBDIR += linphone
-    SUBDIR += linux-c6-avahi-libs
-    SUBDIR += linux-c6-openldap
-    SUBDIR += linux-c6-tcp_wrappers-libs
     SUBDIR += linux-c7-avahi-libs
     SUBDIR += linux-c7-openldap
     SUBDIR += linux-c7-tcp_wrappers-libs
@@ -1116,7 +1113,6 @@
     SUBDIR += py-smart_open
     SUBDIR += py-smbpasswd
     SUBDIR += py-soap2py
-    SUBDIR += py-soappy
     SUBDIR += py-socketio-client
     SUBDIR += py-softlayer
     SUBDIR += py-speedtest-cli
@@ -1127,7 +1123,6 @@
     SUBDIR += py-suds-jurko
     SUBDIR += py-terminado
     SUBDIR += py-tofu
-    SUBDIR += py-tweepy
     SUBDIR += py-twitter-tools
     SUBDIR += py-txamqp
     SUBDIR += py-txrestapi
