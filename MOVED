@@ -9972,9 +9972,9 @@ devel/alf||2018-03-02|Has expired: Abandonware, unused in the ports tree
 net/remmina-plugin-gnome|net/remmina-plugin-secret|2018-03-04|Renamed upstream
 databases/php71-memcache|databases/php-memcache@php71|2018-03-08|Merge into a flavorized version
 databases/php72-memcache|databases/php-memcache@php72|2018-03-08|Merge into a flavorized version
-ftp/php71-fastdfs|ftp/php-fastdfs@php71|2018-03-08|Merge into flavorized version
+ftp/php71-fastdfs|ftp/php-fastdfs@php72|2018-03-08|Merge into flavorized version
 ftp/php72-fastdfs|ftp/php-fastdfs@php72|2018-03-08|Merge into flavorized version
-www/unit-php71|www/unit-php@php71|2018-03-08|Merge into flavorized version
+www/unit-php71|www/unit-php@php72|2018-03-08|Merge into flavorized version
 www/unit-php72|www/unit-php@php72|2018-03-08|Merge into flavorized version
 databases/php70-memcached|databases/php-memcached|2018-03-08|Move to flavorized version
 www/openxmldir||2018-03-08|Has expired: Unmaintained, all www files wrongly belongs to www user
@@ -10405,7 +10405,6 @@ games/crafty-open-enormous||2018-08-21|Has expired: Broken for more than 5 month
 games/crafty-open-medium||2018-08-21|Has expired: Broken for more than 5 months
 math/jakarta-commons-math||2018-08-21|Has expired: Broken for more than 5 months
 math/hfst||2018-08-21|Has expired: Broken for more than 5 months
-math/octave-forge-communications||2018-08-21|Has expired: Broken for more than 5 months
 lang/v8-devel||2018-08-21|Has expired: Broken for more than 5 months
 sysutils/rubygem-fluentd010||2018-08-21|Has expired: Broken for more than 5 months
 mail/mutt14-lite||2018-08-21|Remove expired slave port
@@ -12913,7 +12912,6 @@ irc/irssi-otr||2019-09-05|Has expired: Broken for more than 6 months
 mail/p5-Mail-ClamAV||2019-09-05|Has expired: Broken for more than 6 months
 mail/qmail-ldap||2019-09-05|Has expired: Broken for more than 6 months
 math/fityk||2019-09-05|Has expired: Broken for more than 6 months
-math/octave-forge-mechanics||2019-09-05|Has expired: Broken for more than 6 months
 math/octave-forge-parallel||2019-09-05|Has expired: Broken for more than 6 months
 math/octave-forge-strings||2019-09-05|Has expired: Broken for more than 6 months
 math/octave-forge-tisean||2019-09-05|Has expired: Broken for more than 6 months
@@ -13105,7 +13103,6 @@ benchmarks/filebench||2019-10-16|Has expired: Unfetchable, unmaintained
 biology/chemeq||2019-10-16|Has expired: Unfetchable, unmaintained
 biology/linux-foldingathome||2019-10-16|Has expired: Unfetchable, unmaintained
 cad/dxf2fig||2019-10-16|Has expired: Unfetchable, unmaintained
-cad/gerbv||2019-10-16|Has expired: Unfetchable, unmaintained
 comms/gsmlib||2019-10-16|Has expired: Unfetchable, unmaintained
 comms/nokryptia||2019-10-16|Has expired: Unfetchable, unmaintained
 databases/mrtg-mysql-load||2019-10-16|Has expired: Unfetchable, unmaintained
@@ -13670,7 +13667,6 @@ graphics/linux-c6-sdl_image|graphics/linux-c7-sdl_image|2019-12-31|Has expired: 
 graphics/linux-c6-sdl_ttf|graphics/linux-c7-sdl_ttf|2019-12-31|Has expired: Superseded by CentOS 7
 graphics/linux-c6-tiff|graphics/linux-c7-tiff|2019-12-31|Has expired: Superseded by CentOS 7
 lang/linux-c6-tcl85|lang/linux-c7-tcl85|2019-12-31|Has expired: Superseded by CentOS 7
-math/blazeiterative||2019-12-31|Has expired: Depends on expiring devel/openmp
 multimedia/linux-c6-libtheora|multimedia/linux-c7-libtheora|2019-12-31|Has expired: Superseded by CentOS 7
 multimedia/linux-c6-libv4l|multimedia/linux-c7-libv4l|2019-12-31|Has expired: Superseded by CentOS 7
 net/linux-c6-avahi-libs|net/linux-c7-avahi-libs|2019-12-31|Has expired: Superseded by CentOS 7
@@ -13678,9 +13674,6 @@ net/linux-c6-openldap|net/linux-c7-openldap|2019-12-31|Has expired: Superseded b
 net/linux-c6-tcp_wrappers-libs|net/linux-c7-tcp_wrappers-libs|2019-12-31|Has expired: Superseded by CentOS 7
 net/py-soappy|net/py-zeep|2019-12-31|Has expired: Please consider using net/py-zeep as upstream development is stalled  and recommends using another stalled library stud
 print/linux-c6-cups-libs|print/linux-c7-cups-libs|2019-12-31|Has expired: Superseded by CentOS 7
-science/openmx||2019-12-31|Has expired: Depends on expiring devel/openmp
-science/py-PyFR||2019-12-31|Has expired: Depends on expiring devel/openmp
-science/py-phono3py||2019-12-31|Has expired: Depends on expiring devel/openmp
 security/linux-c6-audit-libs||2019-12-31|Has expired: Superseded by CentOS 7
 security/linux-c6-cyrus-sasl2|security/linux-c7-cyrus-sasl2|2019-12-31|Has expired: Superseded by CentOS 7
 security/linux-c6-gnutls|security/linux-c7-gnutls|2019-12-31|Has expired: Superseded by CentOS 7
@@ -13691,7 +13684,6 @@ security/linux-c6-libtasn1|security/linux-c7-libtasn1|2019-12-31|Has expired: Su
 security/linux-c6-nss|security/linux-c7-nss|2019-12-31|Has expired: Superseded by CentOS 7
 security/linux-c6-openssl|emulators/linux_base-c7|2019-12-31|Has expired: Superseded by CentOS 7
 security/linux-c6-pam||2019-12-31|Has expired: Superseded by CentOS 7
-security/openssl||2019-12-31|Has expired: OpenSSL 1.0.2 is End-of-Life 2019-12-31 at which  time this port will update to 1.1.1 branch
 sysutils/eventlog||2019-12-31|Has expired: No longer supported by Balabit
 sysutils/linux-c6-lttng-ust|sysutils/linux-c7-lttng-ust|2019-12-31|Has expired: Superseded by CentOS 7
 sysutils/linux-c6-userspace-rcu|sysutils/linux-c7-userspace-rcu|2019-12-31|Has expired: Superseded by CentOS 7
@@ -13716,3 +13708,18 @@ x11-toolkits/linux-c6-qt47-x11|x11-toolkits/linux-c7-qt-x11|2019-12-31|Has expir
 x11-toolkits/linux-c6-tk85|x11-toolkits/linux-c7-tk85|2019-12-31|Has expired: Superseded by CentOS 7
 lang/gnatdroid-x86||2019-12-31|Has expired: Unfetchable, unmaintained
 net/py-tweepy||2019-12-31|Has expired: Broken for more than 6 months
+archivers/squeeze|archivers/xarchiver|2020-01-01|Removed, dead upstream and depends on expired x11-fm/thunar-vfs
+x11-fm/thunar-vfs||2020-01-01|Has expired: Functionality included in Thunar
+sysutils/ansible1||2020-01-01|Has expired: please upgrade to sysutils/ansible
+sysutils/bsdploy||2020-01-01|Removed, depends on expired sysutils/ansible1
+sysutils/py-ploy_ansible||2020-01-01|Removed, depends on expired sysutils/ansible1
+databases/couchdb|databases/couchdb2|2020-01-01|Has expired: No longer supported upstream, move to databases/couchdb2
+databases/riak||2020-01-01|Has expired: No longer supported upstream, see riak 2.9.0 and newer
+lang/erlang-runtime15|lang/erlang-runtime21|2020-01-01|Has expired: No longer supported upstream, use lang/erlang >= 21
+lang/erlang-runtime16|lang/erlang-runtime21|2020-01-01|Has expired: No longer supported upstream, use lang/erlang >=21
+lang/erlang-runtime17|lang/erlang-runtime21|2020-01-01|Has expired: No longer supported upstream, use lang/erlang >=21
+lang/erlang-runtime18|lang/erlang-runtime21|2020-01-01|Has expired: No longer supported upstream, use lang/erlang >=21
+lang/erlang-runtime19|lang/erlang-runtime21|2020-01-01|Has expired: No longer supported upstream, use lang/erlang >=21
+security/openssl111|security/openssl|2020-01-01|Upgrade security/openssl to 1.1.1 as promised in deprecation message
+devel/gperf31|devel/gperf|2020-01-04|No longer needed as devel/gperf has been updated to 3.1
+devel/yosys|cad/yosys|2020-01-04|Move to a proper category
