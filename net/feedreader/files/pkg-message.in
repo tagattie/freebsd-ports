@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 If you run FeedReader with the Tiny Tiny RSS-backend, please install
 the "api_feedreader"-extension. Running FeedReader with the
 Tiny Tiny RSS-backend and without the extension is NOT supported.
@@ -5,3 +8,6 @@ Tiny Tiny RSS-backend and without the extension is NOT supported.
 The extension files are located in:
 
     %%PREFIX%%/share/feedreader/tt-rss-feedreader-plugin
+EOM
+}
+]

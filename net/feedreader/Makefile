@@ -2,7 +2,7 @@
 
 PORTNAME=	feedreader
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.8.2
+DISTVERSION=	2.10.0
 CATEGORIES=	net
 
 MAINTAINER=	tagattie@yandex.com
@@ -35,7 +35,7 @@ GH_PROJECT=	FeedReader
 USE_GNOME=	cairo gdkpixbuf2 gtk30 libxml2
 USE_GSTREAMER1=	yes
 
-SHEBANG_FILES=	meson_post_install.py
+SHEBANG_FILES=	build-aux/meson_post_install.py
 
 GLIB_SCHEMAS=	org.gnome.feedreader.bazqux.gschema.xml \
 		org.gnome.feedreader.decsync.gschema.xml \
