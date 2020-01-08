@@ -188,7 +188,6 @@
     SUBDIR += glflow
     SUBDIR += glib-networking
     SUBDIR += glusterfs
-    SUBDIR += gnatsd
     SUBDIR += gnet2
     SUBDIR += gnetcat
     SUBDIR += gnome-nettool
@@ -475,6 +474,7 @@
     SUBDIR += nakenchat
     SUBDIR += nanomsg
     SUBDIR += nast
+    SUBDIR += nats-server
     SUBDIR += nats-streaming-server
     SUBDIR += nats-top
     SUBDIR += nbd-server
