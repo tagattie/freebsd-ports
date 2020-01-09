@@ -1077,6 +1077,7 @@
     SUBDIR += py-pynmsg
     SUBDIR += py-pynsq
     SUBDIR += py-pypcap
+    SUBDIR += py-pyroute2
     SUBDIR += py-pysendfile
     SUBDIR += py-pyshark
     SUBDIR += py-pysmb
