@@ -64,7 +64,15 @@ GL_TUPLE=	https://gitlab.howett.net:go:plist:591f970eefbbeb04d7b37f334a0c4c3256e
 
 PLIST_FILES=	bin/${PORTNAME}
 
+PORTDOCS=	readme.md
+
+OPTIONS_DEFINE=	DOCS
+
 pre-build:
-		cd ${WRKSRC} && ${MAKE_CMD} assets
+	cd ${WRKSRC} && ${MAKE_CMD} assets
+
+post-install:
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_MAN} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
