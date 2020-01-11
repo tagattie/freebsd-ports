@@ -8,6 +8,8 @@ CATEGORIES=	devel
 MAINTAINER=	tagattie@yandex.com
 COMMENT=	Generic helper tool to build app in a distributable format
 
+LICENSE=	MIT
+
 BUILD_DEPENDS=	go-bindata:devel/go-bindata
 
 USES=		gmake go:modules
