@@ -1,10 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	app-builder
-PKGNAMESUFFIX=	2
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.6.18
 CATEGORIES=	devel
+PKGNAMESUFFIX=	2
 
 MAINTAINER=	tagattie@yandex.com
 COMMENT=	Generic helper tool to build app in a distributable format
