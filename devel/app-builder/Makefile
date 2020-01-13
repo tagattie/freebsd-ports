@@ -68,6 +68,8 @@ PORTDOCS=	readme.md
 
 OPTIONS_DEFINE=	DOCS
 
+CONFLICTS_INSTALL=	app-builder2
+
 pre-build:
 	cd ${WRKSRC} && ${MAKE_CMD} assets
 
