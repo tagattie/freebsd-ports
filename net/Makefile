@@ -483,6 +483,7 @@
     SUBDIR += ndisc6
     SUBDIR += ndpi
     SUBDIR += ndproxy
+    SUBDIR += neatvnc
     SUBDIR += nepenthes
     SUBDIR += net6
     SUBDIR += netatalk3
@@ -1518,6 +1519,7 @@
     SUBDIR += wackamole
     SUBDIR += wakeonlan
     SUBDIR += waypipe
+    SUBDIR += wayvnc
     SUBDIR += whois
     SUBDIR += widentd
     SUBDIR += wireguard

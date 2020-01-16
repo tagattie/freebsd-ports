@@ -317,6 +317,7 @@
     SUBDIR += check
     SUBDIR += checkbashisms
     SUBDIR += checkheaders
+    SUBDIR += chroma
     SUBDIR += chromium-gn
     SUBDIR += chrpath
     SUBDIR += chruby
@@ -516,6 +517,7 @@
     SUBDIR += dulwich
     SUBDIR += dupl
     SUBDIR += duplo
+    SUBDIR += dwarf2json
     SUBDIR += dwarfdump
     SUBDIR += dxa65
     SUBDIR += dyncall
