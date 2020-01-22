@@ -1201,6 +1201,7 @@
     SUBDIR += rtg
     SUBDIR += rtpbreak
     SUBDIR += rtpproxy
+    SUBDIR += rtptools
     SUBDIR += rubygem-activestorage52
     SUBDIR += rubygem-amazon-ec2
     SUBDIR += rubygem-amq-protocol
@@ -1447,6 +1448,7 @@
     SUBDIR += tcpsplit
     SUBDIR += tcpstat
     SUBDIR += tcptestsuite
+    SUBDIR += tcptrace
     SUBDIR += tcptraceroute
     SUBDIR += tcpview
     SUBDIR += tcpwatch
