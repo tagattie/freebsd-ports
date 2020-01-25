@@ -35,9 +35,7 @@ USE_ELECTRON=	5
 USE_ELECTRON_HELPER=	fetch extract build
 
 PREFETCH_TIMESTAMP=	1579667052
-SYSTEM_ELECTRON_VER=	${ELECTRON_VER}
 PKG_ELECTRON_VER=	5.0.3
-REBUILD_NPM_CONFIG_ENV+=	SASS_FORCE_BUILD=true
 
 do-build:
 	# generate icons without using electron-icon-maker
@@ -51,18 +49,15 @@ do-build:
 	cd ${PKGJSONSDIR} && \
 	for dir in `${FIND} . -type f -name package.json -exec dirname {} ';'`; do \
 		cd ${WRKSRC}/$${dir} && ${SETENV} ${MAKE_ENV} \
-		SASS_FORCE_BUILD=true \
-		npm_config_build_from_source=true \
 		npm_config_runtime=electron \
-		npm_config_target=${SYSTEM_ELECTRON_VER} \
+		npm_config_target=${ELECTRON_VER} \
 		npm_config_nodedir=${LOCALBASE}/share/electron${ELECTRON_VER_MAJOR}/node_headers \
 		${NPM_CMD} rebuild --no-progress; \
 	done
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
-		USE_SYSTEM_APP_BUILDER=true \
 		${NPX_CMD} electron-builder --linux --dir \
 		--config.npmRebuild=false \
-		--config.electronVersion=${SYSTEM_ELECTRON_VER} \
+		--config.electronVersion=${ELECTRON_VER} \
 		--config.electronDist=${LOCALBASE}/share/electron${ELECTRON_VER_MAJOR}
 
 do-install:
