@@ -1,0 +1,13 @@
+bin/pennywise
+share/applications/pennywise.desktop
+share/icons/hicolor/1024x1024/apps/pennywise.png
+share/icons/hicolor/128x128/apps/pennywise.png
+share/icons/hicolor/16x16/apps/pennywise.png
+share/icons/hicolor/24x24/apps/pennywise.png
+share/icons/hicolor/256x256/apps/pennywise.png
+share/icons/hicolor/32x32/apps/pennywise.png
+share/icons/hicolor/48x48/apps/pennywise.png
+share/icons/hicolor/512x512/apps/pennywise.png
+share/icons/hicolor/64x64/apps/pennywise.png
+%%DATADIR%%/resources/app.asar
+%%DATADIR%%/resources/electron.asar

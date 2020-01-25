@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Encoding=UTF-8
+Name=Pennywise
+Comment=Pennywise – Cross-platform application that allows you to open URLs in a floating window that always stays on top.
+Icon=pennywise
+Exec=pennywise %U
+Categories=Network;
+Terminal=false
+StartupWMClass=Pennywise
