@@ -772,6 +772,7 @@
     SUBDIR += py-pymc3
     SUBDIR += py-pyneqsys
     SUBDIR += py-pynleq2
+    SUBDIR += py-pynndescent
     SUBDIR += py-pyodeint
     SUBDIR += py-pyodesys
     SUBDIR += py-pysparse
@@ -795,6 +796,7 @@
     SUBDIR += py-spectral
     SUBDIR += py-spot
     SUBDIR += py-statsmodels
+    SUBDIR += py-statsmodels010
     SUBDIR += py-svgmath
     SUBDIR += py-sym
     SUBDIR += py-symcxx
@@ -869,7 +871,6 @@
     SUBDIR += suitesparse
     SUBDIR += sundials
     SUBDIR += superlu
-    SUBDIR += superlu_mt
     SUBDIR += symmetrica
     SUBDIR += symphony
     SUBDIR += tablix
