@@ -3,7 +3,7 @@
 PORTNAME=	libappindicator
 PORTVERSION=	${MAJOR_VER}.${SNAPSHOT_VER:S/.//g}.${PATCH_VER:S/ubuntu//}
 CATEGORIES=	devel
-MASTER_SITES=	http://archive.ubuntu.com/ubuntu/pool/main/liba/libappindicator/
+MASTER_SITES=	http://archive.ubuntu.com/ubuntu/pool/main/liba/${PORTNAME}/
 DISTNAME=	${PORTNAME}_${MAJOR_VER}+${SNAPSHOT_VER}.orig
 
 PATCH_SITES=	${MASTER_SITES}
