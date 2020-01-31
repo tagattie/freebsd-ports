@@ -16,9 +16,6 @@ COMMENT=	KSNI App Indicator library
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-DEPRECATED=	Old, uses EOLed python27
-EXPIRATION_DATE=	2020-03-02
-
 BUILD_DEPENDS=	gnome-autogen.sh:devel/gnome-common \
 		gtkdocize:textproc/gtk-doc
 LIB_DEPENDS=	libdbusmenu-gtk3.so:devel/libdbusmenu \
