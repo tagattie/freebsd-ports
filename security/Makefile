@@ -258,7 +258,6 @@
     SUBDIR += kpkpass
     SUBDIR += kpmenu
     SUBDIR += krb5
-    SUBDIR += krb5-115
     SUBDIR += krb5-116
     SUBDIR += krb5-117
     SUBDIR += krb5-appl
@@ -996,6 +995,7 @@
     SUBDIR += py-trustme
     SUBDIR += py-tuf
     SUBDIR += py-txtorcon
+    SUBDIR += py-vici
     SUBDIR += py-virustotal-api
     SUBDIR += py-volatility
     SUBDIR += py-volatility3

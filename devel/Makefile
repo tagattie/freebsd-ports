@@ -1422,6 +1422,7 @@
     SUBDIR += llvm
     SUBDIR += llvm-cheri
     SUBDIR += llvm-devel
+    SUBDIR += llvm10
     SUBDIR += llvm60
     SUBDIR += llvm70
     SUBDIR += llvm80
@@ -5002,7 +5003,6 @@
     SUBDIR += py-selectors2
     SUBDIR += py-selectors34
     SUBDIR += py-semantic_version
-    SUBDIR += py-semantic_version26
     SUBDIR += py-semver
     SUBDIR += py-serializable
     SUBDIR += py-serpent
@@ -5169,7 +5169,6 @@
     SUBDIR += py-wsgiutils
     SUBDIR += py-wsme
     SUBDIR += py-xarray
-    SUBDIR += py-xarray011
     SUBDIR += py-xattr
     SUBDIR += py-xcaplib
     SUBDIR += py-xdg
@@ -6574,7 +6573,6 @@
     SUBDIR += sonar-scanner-cli
     SUBDIR += sonarqube
     SUBDIR += sope2
-    SUBDIR += sope3
     SUBDIR += sope4
     SUBDIR += sord
     SUBDIR += sourcenav
