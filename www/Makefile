@@ -42,6 +42,7 @@
     SUBDIR += bareos-webui
     SUBDIR += bareos16-webui
     SUBDIR += bareos17-webui
+    SUBDIR += bareos18-webui
     SUBDIR += bkmrkconv
     SUBDIR += blastbeat
     SUBDIR += bluefish
@@ -77,7 +78,6 @@
     SUBDIR += cl-lml
     SUBDIR += cl-lml-sbcl
     SUBDIR += clearsilver
-    SUBDIR += clearsilver-python
     SUBDIR += cliqz
     SUBDIR += closure-compiler
     SUBDIR += cntlm

@@ -10,6 +10,7 @@
     SUBDIR += adwaita-qt
     SUBDIR += arc-gruvbox-theme
     SUBDIR += audacious-skins
+    SUBDIR += classiclooks
     SUBDIR += claws-mail-themes
     SUBDIR += clearlooks
     SUBDIR += clearlooks-metacity
@@ -157,7 +158,6 @@
     SUBDIR += ubuntulooks
     SUBDIR += wallpapers-freebsd-kde
     SUBDIR += xcursor-themes
-    SUBDIR += xfce-evolution
     SUBDIR += xfce-icons-elementary
 
 .include <bsd.port.subdir.mk>
