@@ -3,6 +3,7 @@
 PORTNAME=	app-builder
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.6.18
+PORTREVISION=	1
 CATEGORIES=	devel
 PKGNAMESUFFIX=	2
 
@@ -12,6 +13,7 @@ COMMENT=	Generic helper tool to build app in a distributable format
 LICENSE=	MIT
 
 BUILD_DEPENDS=	go-bindata:devel/go-bindata
+RUN_DEPENDS=	opj_decompress:graphics/openjpeg
 
 USES=		gmake go:modules
 
