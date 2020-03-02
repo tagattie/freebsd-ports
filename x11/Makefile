@@ -268,7 +268,6 @@
     SUBDIR += py-qt5-opengl
     SUBDIR += py-xcffib
     SUBDIR += py-xdot
-    SUBDIR += py-xdot06
     SUBDIR += qimageblitz
     SUBDIR += qt5-qev
     SUBDIR += qt5-x11extras
@@ -318,7 +317,6 @@
     SUBDIR += tabbed
     SUBDIR += temperature.app
     SUBDIR += terminal.app
-    SUBDIR += terminator
     SUBDIR += terminology
     SUBDIR += thinglaunch
     SUBDIR += thingylaunch
