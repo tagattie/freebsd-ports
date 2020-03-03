@@ -170,6 +170,7 @@
     SUBDIR += fwlogwatch
     SUBDIR += gag
     SUBDIR += gcr
+    SUBDIR += gef
     SUBDIR += git-crypt
     SUBDIR += git-remote-gcrypt
     SUBDIR += git-secret
@@ -573,6 +574,7 @@
     SUBDIR += p5-Crypt-SKey
     SUBDIR += p5-Crypt-SMIME
     SUBDIR += p5-Crypt-SSLeay
+    SUBDIR += p5-Crypt-SSSS
     SUBDIR += p5-Crypt-Salt
     SUBDIR += p5-Crypt-SaltedHash
     SUBDIR += p5-Crypt-Serpent
@@ -962,12 +964,14 @@
     SUBDIR += py-python-registry
     SUBDIR += py-python3-openid
     SUBDIR += py-python3-saml
+    SUBDIR += py-pyvex
     SUBDIR += py-pywinrm
     SUBDIR += py-rekall
     SUBDIR += py-rekall-core
     SUBDIR += py-rekall_lib
     SUBDIR += py-requests-credssp
     SUBDIR += py-requests-kerberos
+    SUBDIR += py-ropper
     SUBDIR += py-rsa
     SUBDIR += py-safe
     SUBDIR += py-scp
