@@ -520,6 +520,7 @@
     SUBDIR += eiffelstudio
     SUBDIR += electron4
     SUBDIR += electron6
+    SUBDIR += electron7
     SUBDIR += elf
     SUBDIR += elfio
     SUBDIR += elfkickers
@@ -6552,6 +6553,7 @@
     SUBDIR += statcvs
     SUBDIR += statik
     SUBDIR += statsvn
+    SUBDIR += stb
     SUBDIR += stdx-allocator
     SUBDIR += stfl
     SUBDIR += stlfilt
