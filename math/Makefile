@@ -27,6 +27,7 @@
     SUBDIR += R-cran-NMF
     SUBDIR += R-cran-RHmm
     SUBDIR += R-cran-RSvgDevice
+    SUBDIR += R-cran-raster
     SUBDIR += R-cran-RcppArmadillo
     SUBDIR += R-cran-RcppEigen
     SUBDIR += R-cran-RcppRoll
@@ -297,6 +298,7 @@
     SUBDIR += gnuplot-lite
     SUBDIR += gnuplot-tex-extras
     SUBDIR += gotoblas
+    SUBDIR += gp2c
     SUBDIR += grace
     SUBDIR += graphthing
     SUBDIR += gretl
@@ -339,6 +341,7 @@
     SUBDIR += lapacke
     SUBDIR += laspack
     SUBDIR += latte-integrale
+    SUBDIR += lcalc
     SUBDIR += ldouble
     SUBDIR += lean
     SUBDIR += lemon
@@ -368,6 +371,7 @@
     SUBDIR += lis
     SUBDIR += lll_spect
     SUBDIR += lp_solve
+    SUBDIR += lrcalc
     SUBDIR += lrng
     SUBDIR += lrslib
     SUBDIR += ltl
@@ -666,6 +670,11 @@
     SUBDIR += p5-bignum
     SUBDIR += pantheon-calculator
     SUBDIR += pari
+    SUBDIR += pari_elldata
+    SUBDIR += pari_galdata
+    SUBDIR += pari_galpol
+    SUBDIR += pari_nftables
+    SUBDIR += pari_seadata
     SUBDIR += parmetis
     SUBDIR += parmgridgen
     SUBDIR += pdal
@@ -683,6 +692,7 @@
     SUBDIR += physcalc
     SUBDIR += picosat
     SUBDIR += piranha
+    SUBDIR += planarity
     SUBDIR += plman
     SUBDIR += ploticus
     SUBDIR += ploticus-nox11
