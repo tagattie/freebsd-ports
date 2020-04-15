@@ -322,6 +322,7 @@
     SUBDIR += gtkam
     SUBDIR += gts
     SUBDIR += guetzli
+    SUBDIR += guile-cairo
     SUBDIR += guilib
     SUBDIR += gwenview
     SUBDIR += hdr_tools
@@ -956,7 +957,6 @@
     SUBDIR += sampleicc
     SUBDIR += sane-backends
     SUBDIR += sane-epkowa
-    SUBDIR += sane-frontends
     SUBDIR += scale2x
     SUBDIR += scantailor
     SUBDIR += scr2png
@@ -1020,6 +1020,7 @@
     SUBDIR += tkpng
     SUBDIR += togl
     SUBDIR += ttygif
+    SUBDIR += ttyplot
     SUBDIR += tumble
     SUBDIR += tweeny
     SUBDIR += ufraw

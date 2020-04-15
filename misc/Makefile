@@ -23,9 +23,9 @@
     SUBDIR += bdelta
     SUBDIR += bestfit
     SUBDIR += bible-kjv
+    SUBDIR += biblesync
     SUBDIR += bibletime
     SUBDIR += biblical-curse
-    SUBDIR += biblesync
     SUBDIR += binclock
     SUBDIR += biosfont-demos
     SUBDIR += birthday
@@ -250,6 +250,7 @@
     SUBDIR += mtx
     SUBDIR += mxnet
     SUBDIR += najitool
+    SUBDIR += ncnn
     SUBDIR += netron
     SUBDIR += nms
     SUBDIR += nn-insight

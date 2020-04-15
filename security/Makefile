@@ -334,7 +334,6 @@
     SUBDIR += logcheck
     SUBDIR += lua-bcrypt
     SUBDIR += luasec
-    SUBDIR += luasec-51
     SUBDIR += lxqt-openssh-askpass
     SUBDIR += lxqt-sudo
     SUBDIR += lynis
@@ -1160,6 +1159,7 @@
     SUBDIR += secpanel
     SUBDIR += sectok
     SUBDIR += secure_delete
+    SUBDIR += sedutil
     SUBDIR += setaudit
     SUBDIR += sha
     SUBDIR += sha1collisiondetection
@@ -1232,6 +1232,7 @@
     SUBDIR += swatchdog
     SUBDIR += switzerland
     SUBDIR += symbion-sslproxy
+    SUBDIR += tailscale
     SUBDIR += tclsasl
     SUBDIR += tcpcrypt
     SUBDIR += teleport
@@ -1274,7 +1275,6 @@
     SUBDIR += vuls
     SUBDIR += vuxml
     SUBDIR += vxquery
-    SUBDIR += w3af
     SUBDIR += wapiti
     SUBDIR += wazuh-agent
     SUBDIR += webfwlog

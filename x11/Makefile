@@ -352,6 +352,7 @@
     SUBDIR += wmutils-core
     SUBDIR += wmutils-opt
     SUBDIR += wmxss
+    SUBDIR += wob
     SUBDIR += wofi
     SUBDIR += workrave
     SUBDIR += wshowkeys

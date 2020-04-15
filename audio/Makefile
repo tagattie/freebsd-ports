@@ -81,6 +81,7 @@
     SUBDIR += chordpack
     SUBDIR += chromaprint
     SUBDIR += clementine-player
+    SUBDIR += cli-visualizer
     SUBDIR += clunk
     SUBDIR += cmp3
     SUBDIR += cmt
@@ -232,6 +233,7 @@
     SUBDIR += gnustep-cdplayer
     SUBDIR += goattracker
     SUBDIR += gogglesmm
+    SUBDIR += gonic
     SUBDIR += goobox
     SUBDIR += gqradio
     SUBDIR += gradio
@@ -460,7 +462,7 @@
     SUBDIR += lollypop
     SUBDIR += lpac
     SUBDIR += lsp-plugins-lv2
-    SUBDIR += lua51-mpd
+    SUBDIR += lua-mpd
     SUBDIR += luppp
     SUBDIR += lv2
     SUBDIR += lv2file
@@ -484,6 +486,7 @@
     SUBDIR += milkytracker
     SUBDIR += mio2jack
     SUBDIR += mixer.app
+    SUBDIR += mixertui
     SUBDIR += mixmos
     SUBDIR += mixxx
     SUBDIR += mixxx21
@@ -612,6 +615,7 @@
     SUBDIR += pear-Text_Spell_Audio
     SUBDIR += penguinsap
     SUBDIR += pianobar
+    SUBDIR += pianobooster
     SUBDIR += pianod2
     SUBDIR += picard
     SUBDIR += picard-plugins
@@ -652,7 +656,6 @@
     SUBDIR += py-music21
     SUBDIR += py-musicbrainzngs
     SUBDIR += py-mutagen
-    SUBDIR += py-ogg
     SUBDIR += py-openal
     SUBDIR += py-opuslib
     SUBDIR += py-py-jack
