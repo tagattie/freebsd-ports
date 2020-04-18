@@ -111,6 +111,7 @@
     SUBDIR += dojo
     SUBDIR += dojo-shrinksafe
     SUBDIR += dokuwiki
+    SUBDIR += dolibarr
     SUBDIR += domoticz
     SUBDIR += drood
     SUBDIR += drraw
@@ -318,6 +319,7 @@
     SUBDIR += lua-resty-core
     SUBDIR += lua-resty-lrucache
     SUBDIR += luakit
+    SUBDIR += luakit-devel
     SUBDIR += lynx
     SUBDIR += lynx-current
     SUBDIR += madsonic
