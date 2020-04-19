@@ -1,22 +1,23 @@
 # $FreeBSD$
 
-PORTNAME=	libevdevPlus
-PORTVERSION=	0.1.1
+PORTNAME=	${GH_PROJECT:tl}
+PORTVERSION=	0.1.4
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
 MAINTAINER=	bapt@FreeBSD.org
-COMMENT=	Easy-to-use event device library in C++
+COMMENT=	Easy-to-use uinput library in C++
 
 LICENSE=	MIT
-LICENSE_FILES=	${WRKSRC}/LICENSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${LOCALBASE}/include/linux/uinput.h:devel/evdev-proto
 
-USES=	cmake localbase
+USES=		cmake localbase
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	YukiWorkshop
+GH_PROJECT=	libuInputPlus
 
 USE_LDCONFIG=	yes
 
