@@ -4,6 +4,7 @@
 PORTNAME=	zetaback
 DISTVERSION=	${ZETABACK_COMMIT_DATE}
 CATEGORIES=	sysutils
+PKGNAMESUFFIX=	-devel
 HASH=		78d1d082
 ZETABACK_COMMIT_DATE=	2020.01.31
 
@@ -20,7 +21,7 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 OPTIONS_DEFINE=	LOCAL BETTER_COMPRESSION
-LOCAL_DESC=	Avoid ssh for localhoost backup
+LOCAL_DESC=	Avoid ssh for localhost backup
 BETTER_COMPRESSION_DESC=	Allow different compressions for snapshots
 
 LOCAL_EXTRA_PATCHES=	${PATCHDIR}/opt-localhost.in
