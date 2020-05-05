@@ -261,6 +261,7 @@
     SUBDIR += fftw3-long
     SUBDIR += fftw3-quad
     SUBDIR += flann
+    SUBDIR += flexfloat
     SUBDIR += flint2
     SUBDIR += flintqs
     SUBDIR += form
@@ -959,5 +960,6 @@
     SUBDIR += z3
     SUBDIR += zegrapher
     SUBDIR += zimpl
+    SUBDIR += zn_poly
 
 .include <bsd.port.subdir.mk>

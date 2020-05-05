@@ -214,6 +214,7 @@
     SUBDIR += paje
     SUBDIR += paraview
     SUBDIR += pcmsolver
+    SUBDIR += plumed
     SUBDIR += pnetcdf
     SUBDIR += pulseview
     SUBDIR += py-DendroPy
@@ -334,6 +335,7 @@
     SUBDIR += vipster
     SUBDIR += vmd
     SUBDIR += voro++
+    SUBDIR += votca
     SUBDIR += wannier90
     SUBDIR += wwplot
     SUBDIR += wxmacmolplt
