@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	activeresource
-PORTVERSION=	5.1.0
+PORTVERSION=	5.1.1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
-PKGNAMESUFFIX=	5
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Coherent wrapper object-relational mapping for REST web services

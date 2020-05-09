@@ -2694,6 +2694,7 @@
     SUBDIR += p5-Method-Alias
     SUBDIR += p5-Method-Signatures
     SUBDIR += p5-Method-Signatures-Simple
+    SUBDIR += p5-Metrics-Any
     SUBDIR += p5-Minilla
     SUBDIR += p5-Minion
     SUBDIR += p5-Mixin-Event-Dispatch
@@ -3365,6 +3366,7 @@
     SUBDIR += p5-Test-Manifest
     SUBDIR += p5-Test-ManyParams
     SUBDIR += p5-Test-Memory-Cycle
+    SUBDIR += p5-Test-Metrics-Any
     SUBDIR += p5-Test-Mini
     SUBDIR += p5-Test-Mini-Unit
     SUBDIR += p5-Test-Mock-Guard
@@ -4280,12 +4282,14 @@
     SUBDIR += py-country
     SUBDIR += py-cov-core
     SUBDIR += py-coverage
+    SUBDIR += py-cppy
     SUBDIR += py-crank
     SUBDIR += py-crashtest
     SUBDIR += py-crc32c
     SUBDIR += py-crcmod
     SUBDIR += py-ctags
     SUBDIR += py-cuisine
+    SUBDIR += py-curio
     SUBDIR += py-cursive
     SUBDIR += py-curtsies
     SUBDIR += py-cxx
@@ -4687,6 +4691,7 @@
     SUBDIR += py-ordereddict
     SUBDIR += py-orderedmultidict
     SUBDIR += py-os-brick
+    SUBDIR += py-os-brick2
     SUBDIR += py-os-client-config
     SUBDIR += py-os-client-config1
     SUBDIR += py-os-service-types
@@ -4708,6 +4713,7 @@
     SUBDIR += py-oslo.i18n
     SUBDIR += py-oslo.limit
     SUBDIR += py-oslo.log
+    SUBDIR += py-oslo.log3
     SUBDIR += py-oslo.messaging
     SUBDIR += py-oslo.messaging10
     SUBDIR += py-oslo.middleware
@@ -4867,6 +4873,7 @@
     SUBDIR += py-pyopencl
     SUBDIR += py-pyparsing
     SUBDIR += py-pyperclip
+    SUBDIR += py-pyperf
     SUBDIR += py-pyplusplus
     SUBDIR += py-pypugjs
     SUBDIR += py-pyqi
@@ -5056,6 +5063,7 @@
     SUBDIR += py-six
     SUBDIR += py-smmap2
     SUBDIR += py-snakeviz
+    SUBDIR += py-sniffio
     SUBDIR += py-sortedcontainers
     SUBDIR += py-sourcemap
     SUBDIR += py-speaklater
