@@ -3,6 +3,7 @@
 PORTNAME=	shotcut
 DISTVERSIONPREFIX=	v
 DISTVERSION=	${FULLVERSION}
+PORTREVISION=	1
 CATEGORIES=	multimedia
 
 MAINTAINER=	ports@FreeBSD.org
@@ -53,10 +54,5 @@ post-patch:
 
 pre-build:
 	@${FIND} ${WRKSRC} -name '.depend' -delete
-
-post-install:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/64x64/apps
-	${INSTALL_DATA} ${WRKSRC}/icons/${PORTNAME}-logo-64.png \
-		${STAGEDIR}${PREFIX}/share/icons/hicolor/64x64/apps/${PORTNAME}.png
 
 .include <bsd.port.mk>
