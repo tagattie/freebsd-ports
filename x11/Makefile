@@ -387,7 +387,6 @@
     SUBDIR += xcmsdb
     SUBDIR += xcoloredit
     SUBDIR += xcolors
-    SUBDIR += xcolorsel
     SUBDIR += xconsole
     SUBDIR += xcursorgen
     SUBDIR += xcut
