@@ -535,7 +535,6 @@
     SUBDIR += open-isns
     SUBDIR += openbgpd
     SUBDIR += openbgpd6
-    SUBDIR += openbsc
     SUBDIR += openggsn
     SUBDIR += openldap24-client
     SUBDIR += openldap24-sasl-client
