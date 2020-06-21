@@ -22,8 +22,11 @@ LIB_DEPENDS=	libdbus-1.so:devel/dbus
 PORTSCOUT=	limitw:1,even
 
 USES=		gettext gnome localbase meson pkgconfig python:3.6+,build tar:xz
+USE_CSTD=	c99
 USE_GNOME=	glib20 libxslt:build
 USE_LDCONFIG=	yes
+USE_BINUTILS=	yes
+LDFLAGS+=	-B${LOCALBASE}/bin
 BINARY_ALIAS=	python3=${PYTHON_VERSION}
 
 MESON_ARGS=	-Dman=true \

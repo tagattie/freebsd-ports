@@ -410,6 +410,7 @@
     SUBDIR += moinmoincli
     SUBDIR += mongoose
     SUBDIR += mongrel2
+    SUBDIR += monolith
     SUBDIR += moodle35
     SUBDIR += moodle37
     SUBDIR += moodle38
@@ -1602,7 +1603,7 @@
     SUBDIR += py-flask-peewee
     SUBDIR += py-flask-principal
     SUBDIR += py-flask-restful
-    SUBDIR += py-flask-restplus
+    SUBDIR += py-flask-restx
     SUBDIR += py-flask-script
     SUBDIR += py-flask-security
     SUBDIR += py-flask-smorest
@@ -1753,6 +1754,7 @@
     SUBDIR += py-tornado6
     SUBDIR += py-trello
     SUBDIR += py-treq
+    SUBDIR += py-tuir
     SUBDIR += py-turbogears2
     SUBDIR += py-tvdb_api
     SUBDIR += py-txrequests
