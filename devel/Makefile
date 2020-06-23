@@ -5026,6 +5026,7 @@
     SUBDIR += py-ruamel.yaml
     SUBDIR += py-ruamel.yaml.clib
     SUBDIR += py-rubymarshal
+    SUBDIR += py-rush
     SUBDIR += py-rx
     SUBDIR += py-rx1
     SUBDIR += py-sanetime
@@ -5866,6 +5867,7 @@
     SUBDIR += rubygem-chef-provisioning
     SUBDIR += rubygem-cheffish
     SUBDIR += rubygem-childprocess
+    SUBDIR += rubygem-childprocess3
     SUBDIR += rubygem-chronic
     SUBDIR += rubygem-chronic_duration
     SUBDIR += rubygem-clamp
