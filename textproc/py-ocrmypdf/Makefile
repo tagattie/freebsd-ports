@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ocrmypdf
-DISTVERSION=	9.8.2
+DISTVERSION=	11.3.1
 CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -9,22 +9,23 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	kai@FreeBSD.org
 COMMENT=	Adds an OCR text layer to scanned PDF files
 
-LICENSE=	GPLv3+
+LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cffi>=1.9.1:devel/py-cffi@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pytest-runner>=0:devel/py-pytest-runner@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}setuptools_scm>=0:devel/py-setuptools_scm@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}setuptools_scm_git_archive>=0:devel/py-setuptools_scm_git_archive@${PY_FLAVOR}
 LIB_DEPENDS=	liblept.so:graphics/leptonica
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cffi>=1.9.1:devel/py-cffi@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}img2pdf>=0.3.0,<0.4:graphics/py-img2pdf@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}coloredlogs>=14.0:devel/py-coloredlogs@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}img2pdf>=0.3.0<0.5:graphics/py-img2pdf@${PY_FLAVOR} \
 		${PY_PILLOW} \
 		${PYTHON_PKGNAMEPREFIX}tqdm>=4:misc/py-tqdm@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}reportlab>=3.3.0:print/py-reportlab@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}chardet>=3.0.4,<4:textproc/py-chardet@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pdfminer.six>=20181108:textproc/py-pdfminer.six@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pikepdf>=1.8.1<2:textproc/py-pikepdf@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pdfminer.six>=20191110<20201019:textproc/py-pdfminer.six@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pikepdf>=1.14.0<3:textproc/py-pikepdf@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pluggy>=0.13.0<1.0:devel/py-pluggy@${PY_FLAVOR} \
 		tesseract:graphics/tesseract
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=4.4.1:devel/py-pytest@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-helpers-namespace>=2019.1.8:devel/py-pytest-helpers-namespace@${PY_FLAVOR} \
@@ -38,16 +39,7 @@ USE_PYTHON=	autoplist concurrent distutils
 SHEBANG_FILES=	src/ocrmypdf/__main__.py \
 		src/ocrmypdf/hocrtransform.py \
 	       	src/ocrmypdf/leptonica.py \
-		src/ocrmypdf/pdfinfo/__init__.py \
-		tests/spoof/gs_feature_elision.py \
-		tests/spoof/gs_pdfa_failure.py \
-		tests/spoof/tesseract_big_image_error.py \
-		tests/spoof/tesseract_cache.py \
-		tests/spoof/tesseract_noop.py \
-		tests/spoof/unpaper_oldversion.py \
-		tests/spoof/gs_render_failure.py \
-		tests/spoof/gs_raster_failure.py \
-		tests/spoof/tesseract_crash.py
+		src/ocrmypdf/pdfinfo/__init__.py
 
 NO_ARCH=	yes
 

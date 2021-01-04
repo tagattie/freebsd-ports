@@ -1,15 +1,17 @@
 # $FreeBSD$
 
 PORTNAME=	xpra
-PORTVERSION=	3.0.9
+PORTVERSION=	4.0.5
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://xpra.org/src/
 
 MAINTAINER=	arrowd@FreeBSD.org
-COMMENT=	Xpra gives you persistent remote applications for X
+COMMENT=	Persistent remote applications for X
 
 LICENSE=	GPLv2
 
+BUILD_DEPENDS=	brotli:archivers/brotli
 LIB_DEPENDS=	libwebp.so:graphics/webp
 RUN_DEPENDS=	${PY_PILLOW} \
 		${PYTHON_PKGNAMEPREFIX}bencode.py>1:converters/py-bencode.py@${PY_FLAVOR} \
@@ -39,12 +41,16 @@ PLIST_SUB+=	PORTVERSION=${PORTVERSION} \
 		PYTHON_SUFFIX=${PYTHON_SUFFIX} \
 		PYTHON_VER=${PYTHON_VER}
 SHEBANG_FILES=	cups/xpraforwarder scripts/auth_dialog scripts/xdg-open \
-		scripts/xpra_udev_product_version
+		scripts/xpra_udev_product_version scripts/gnome-open \
+		scripts/gvfs-open
+SHEBANG_LANG=	sh
+sh_OLD_CMD=	/usr/bin/sh
+sh_CMD=		/bin/sh
 MAKE_ENV=	XPRA_USE_PROCESS_POLLING=1
 
-OPTIONS_DEFINE=		AVCODEC CUPS FFMPEG GSTREAMER HTML5 LIBYUV SWSCALE VPX \
+OPTIONS_DEFINE=		AVAHI AVCODEC CUPS FFMPEG GSTREAMER HTML5 LIBYUV SWSCALE VPX \
 			WEBCAM X264 X265
-OPTIONS_DEFAULT=	AVCODEC CUPS FFMPEG GSTREAMER HTML5 LIBYUV SWSCALE VPX \
+OPTIONS_DEFAULT=	AVAHI AVCODEC CUPS FFMPEG GSTREAMER HTML5 LIBYUV SWSCALE VPX \
 			X264 X265
 OPTIONS_SUB=		yes
 
@@ -60,6 +66,8 @@ WEBCAM_DESC=	Enable webcam forwarding (client only)
 X264_DESC=	Enable X264 encoder
 X265_DESC=	Enable X265 encoder
 
+AVAHI_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}avahi>0:net/py-avahi@${PY_FLAVOR}
+AVAHI_VARS=			XPRA_OPTIONS+=mdns
 AVCODEC_VARS=			XPRA_OPTIONS+=dec_avcodec2
 CUPS_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}pycups>1:print/py-pycups@${PY_FLAVOR}
 CUPS_VARS=			XPRA_OPTIONS+=printing
@@ -86,8 +94,8 @@ X265_VARS=			XPRA_OPTIONS+=enc_x265
 PYDISTUTILS_PKGNAME=	xpra_all
 XPRA_OPTIONS_ALL+=	${XPRA_OPTIONS_DISABLED} csc_libyuv csc_swscale \
 			dec_avcodec2 enc_ffmpeg enc_x264 enc_x265 html5 \
-			printing sound vpx webcam
-XPRA_OPTIONS_DISABLED=	gtk2 mdns minify netdev uinput Xdummy Xdummy_wrapper
+			mdns printing sound vpx webcam
+XPRA_OPTIONS_DISABLED=	minify netdev uinput Xdummy Xdummy_wrapper
 
 .include <bsd.port.options.mk>
 

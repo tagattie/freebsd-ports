@@ -129,10 +129,8 @@ _GSTREAMER_PLUGINS+= \
 		hal \
 		libpng \
 		mad \
-		mm \
 		mp3 \
 		nas \
-		python \
 		schroedinger \
 		spc \
 		sdl \
@@ -160,6 +158,7 @@ _GSTREAMER_PLUGINS+= \
 		libav \
 		libde265 \
 		lv2 \
+		mm \
 		modplug \
 		mpg123 \
 		mplex \
@@ -482,7 +481,7 @@ libde265_IMPL=		bad
 mm_DEPENDS=	multimedia/gstreamermm
 mm_GST_PREFIX=	gstreamer
 mm_GST_SUFX=	# empty
-mm_GST_VERSION=	0.9.4
+mm_GST_VERSION=	1.10.0
 mm_IMPL=	#
 
 mpeg2dec_DEPENDS=	multimedia/gstreamer-plugins-mpeg2dec
@@ -521,17 +520,6 @@ vpx_IMPL=	good
 
 vulkan_DEPENDS=	graphics/gstreamer-plugins-vulkan
 vulkan_IMPL=	bad
-
-# XXX: This is a quick solution for ports with USE_GSTREAMER=python
-#      but without USE_PYTHON.
-PYTHON_PKGNAMEPREFIX?=	py*-
-
-python_DEPENDS=	multimedia/py-gstreamer
-python_NAME=	gstreamer
-python_GST_PREFIX=      ${PYTHON_PKGNAMEPREFIX}
-python_GST_SUFX=        # empty
-python_GST_VERSION=     0.10.4
-python_IMPL=		#
 
 resindvd_DEPENDS=	multimedia/gstreamer-plugins-resindvd
 resindvd_IMPL=		bad

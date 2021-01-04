@@ -9,7 +9,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20source/${PORTVERSION}
 DISTNAME=	${PORTNAME}_source_${PORTVERSION}
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	mmokhi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free 3D real-time customizable strategy game
 
 LIB_DEPENDS=	libxerces-c.so:textproc/xerces-c3 \
@@ -55,7 +55,7 @@ post-patch:
 		-e 's|-llua5.1|-llua-5.1|g' \
 		${WRKSRC}/mk/linux/configure.ac \
 		${WRKSRC}/mk/linux/mk/autoconf/*
-	@${FIND} -E ${WRKDIR} -type f -name '*.bak' -o -name '*.orig' | \
+	@${FIND} ${WRKDIR} -type f -name '*.bak' -o -name '*.orig' | \
 		${XARGS} ${RM}
 
 pre-configure:

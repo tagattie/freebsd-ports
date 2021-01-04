@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	fail2ban
-PORTVERSION=	0.11.1
-PORTREVISION=	1
+PORTVERSION=	0.11.2
 CATEGORIES=	security python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -14,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR}
 
-USES=		python:patch shebangfix
+USES=		python:3.6+,patch shebangfix
 USE_GITHUB=	yes
 USE_PYTHON=	autoplist distutils
 USE_RC_SUBR=	fail2ban
@@ -26,7 +25,8 @@ SHEBANG_LANG=	fail2ban-python
 
 SUB_LIST+=	PYTHON_CMD=${PYTHON_CMD}
 
-PYDISTUTILS_INSTALLARGS+=	--install-data=${ETCDIR} --without-test
+PYDISTUTILS_BUILDARGS+=		--without-tests
+PYDISTUTILS_INSTALLARGS+=	--install-data=${ETCDIR}
 
 PORTDOCS=	README.md DEVELOP
 

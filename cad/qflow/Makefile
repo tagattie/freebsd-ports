@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	qflow
-DISTVERSION=	1.4.83
+DISTVERSION=	1.4.90
 CATEGORIES=	cad
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -14,7 +14,7 @@ APP_DEPENDS=	abc:cad/abc \
 		magic>0:cad/magic \
 		netgen-lvs>0:cad/netgen-lvs \
 		qrouter>0:cad/qrouter \
-		sta:cad/opensta \
+		sta:cad/openroad \
 		yosys>0:cad/yosys
 BUILD_DEPENDS=	${APP_DEPENDS}
 RUN_DEPENDS=	${APP_DEPENDS}

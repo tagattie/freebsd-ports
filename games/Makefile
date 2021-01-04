@@ -14,11 +14,15 @@
     SUBDIR += 7kaa
     SUBDIR += 90secondportraits
     SUBDIR += CaribbeanStud
+    SUBDIR += DDNet
     SUBDIR += HeroesOfMightAndMagic
     SUBDIR += KnightCap
+    SUBDIR += NBlood
+    SUBDIR += OpenDiablo2
     SUBDIR += OpenTomb
     SUBDIR += abbayedesmorts
     SUBDIR += abe
+    SUBDIR += abstreet
     SUBDIR += abuse_sdl
     SUBDIR += ace-of-penguins
     SUBDIR += acm
@@ -54,7 +58,6 @@
     SUBDIR += ascii-invaders
     SUBDIR += asciiquarium
     SUBDIR += assaultcube
-    SUBDIR += asteroid
     SUBDIR += asteroids3d
     SUBDIR += astromenace
     SUBDIR += asylum
@@ -64,6 +67,7 @@
     SUBDIR += atris
     SUBDIR += atris-sounds
     SUBDIR += auralquiz
+    SUBDIR += automuteus
     SUBDIR += avanor
     SUBDIR += avoision
     SUBDIR += avp
@@ -85,6 +89,7 @@
     SUBDIR += biorythm
     SUBDIR += bitefusion
     SUBDIR += black-box
+    SUBDIR += black-hole-solver
     SUBDIR += blackjackclient
     SUBDIR += blackshadeselite
     SUBDIR += blinken
@@ -92,6 +97,7 @@
     SUBDIR += blobby
     SUBDIR += blobwars
     SUBDIR += block
+    SUBDIR += blockattack
     SUBDIR += blockout
     SUBDIR += blockrage
     SUBDIR += blokish
@@ -150,6 +156,7 @@
     SUBDIR += connectagram
     SUBDIR += connectfive
     SUBDIR += construo
+    SUBDIR += coronapoker
     SUBDIR += corsix-th
     SUBDIR += cosmo
     SUBDIR += cosmosmash
@@ -177,13 +184,10 @@
     SUBDIR += d2x
     SUBDIR += dMagnetic
     SUBDIR += dangen
-    SUBDIR += dangerdeep
-    SUBDIR += dangerdeep-data
     SUBDIR += darkplaces
     SUBDIR += defendguin
     SUBDIR += devilutionX
     SUBDIR += dhewm3
-    SUBDIR += diameter
     SUBDIR += diaspora
     SUBDIR += digger-vgl
     SUBDIR += divide-and-succeed
@@ -234,6 +238,7 @@
     SUBDIR += epiphany-game
     SUBDIR += etracer
     SUBDIR += euchre
+    SUBDIR += eureka
     SUBDIR += evilfinder
     SUBDIR += evq3
     SUBDIR += excido
@@ -284,7 +289,6 @@
     SUBDIR += freeminer
     SUBDIR += freeminer-default
     SUBDIR += freeorion
-    SUBDIR += freera
     SUBDIR += freesweep
     SUBDIR += freesynd
     SUBDIR += freetennis
@@ -302,7 +306,6 @@
     SUBDIR += gbrainy
     SUBDIR += gcompris-qt
     SUBDIR += gemdropx
-    SUBDIR += gemrb
     SUBDIR += genact
     SUBDIR += gigalomania
     SUBDIR += gillo
@@ -313,7 +316,6 @@
     SUBDIR += glest-data
     SUBDIR += glightoff
     SUBDIR += glmaze
-    SUBDIR += glob2
     SUBDIR += glsfcave
     SUBDIR += gltron
     SUBDIR += gmastermind
@@ -414,7 +416,6 @@
     SUBDIR += kanagram
     SUBDIR += kapman
     SUBDIR += kartofel
-    SUBDIR += katawa-shoujo
     SUBDIR += katomic
     SUBDIR += kblackbox
     SUBDIR += kblocks
@@ -428,7 +429,6 @@
     SUBDIR += kgoldrunner
     SUBDIR += khangman
     SUBDIR += kigo
-    SUBDIR += kiki
     SUBDIR += killbots
     SUBDIR += kiriki
     SUBDIR += kjumpingcube
@@ -480,6 +480,7 @@
     SUBDIR += libretro-beetle_gba
     SUBDIR += libretro-beetle_lynx
     SUBDIR += libretro-beetle_ngp
+    SUBDIR += libretro-beetle_pce
     SUBDIR += libretro-beetle_pce_fast
     SUBDIR += libretro-beetle_pcfx
     SUBDIR += libretro-beetle_psx
@@ -515,8 +516,10 @@
     SUBDIR += libretro-paralleln64
     SUBDIR += libretro-pcsx_rearmed
     SUBDIR += libretro-picodrive
+    SUBDIR += libretro-play
     SUBDIR += libretro-prboom
     SUBDIR += libretro-prosystem
+    SUBDIR += libretro-px68k
     SUBDIR += libretro-quicknes
     SUBDIR += libretro-scummvm
     SUBDIR += libretro-shaders-glsl
@@ -531,15 +534,13 @@
     SUBDIR += libretro-vbanext
     SUBDIR += libretro-vecx
     SUBDIR += libretro-virtualjaguar
+    SUBDIR += libretro-xrick
     SUBDIR += libretro-yabause
     SUBDIR += libshhcards
     SUBDIR += libtmcg
     SUBDIR += lightsoff
-    SUBDIR += lightyears
     SUBDIR += lincity
     SUBDIR += lincity-ng
-    SUBDIR += linux-darwinia-demo
-    SUBDIR += linux-defcon
     SUBDIR += linux-doom3
     SUBDIR += linux-doom3-demo
     SUBDIR += linux-dwarffortress
@@ -561,7 +562,6 @@
     SUBDIR += linux-unigine-heaven
     SUBDIR += linux-unigine-valley
     SUBDIR += linux-unrealgold
-    SUBDIR += linux-uplink-demo
     SUBDIR += linux-ut
     SUBDIR += linux-ut2003-demo
     SUBDIR += linux-virtual-jay-peak
@@ -570,6 +570,7 @@
     SUBDIR += lm-solve
     SUBDIR += lmarbles
     SUBDIR += lmpc
+    SUBDIR += lolcat
     SUBDIR += lordsawar
     SUBDIR += lpairs
     SUBDIR += lskat
@@ -588,7 +589,6 @@
     SUBDIR += mancala
     SUBDIR += mangband
     SUBDIR += mari0
-    SUBDIR += marsnomercy
     SUBDIR += masterserver
     SUBDIR += maxr
     SUBDIR += meandmyshadow
@@ -628,6 +628,7 @@
     SUBDIR += narcissu2
     SUBDIR += nazghul
     SUBDIR += nehquake
+    SUBDIR += neo-cowsay
     SUBDIR += nethack32
     SUBDIR += nethack33
     SUBDIR += nethack33-nox11
@@ -636,7 +637,6 @@
     SUBDIR += nethack36
     SUBDIR += nethack36-nox11
     SUBDIR += netherearth
-    SUBDIR += netpanzer
     SUBDIR += netradiant
     SUBDIR += netrek-BRMH-bin
     SUBDIR += netrek-client-cow
@@ -679,6 +679,7 @@
     SUBDIR += openbor3979
     SUBDIR += openbor4432
     SUBDIR += openbubbles
+    SUBDIR += openbve
     SUBDIR += opencity
     SUBDIR += openclaw
     SUBDIR += openclonk
@@ -707,7 +708,6 @@
     SUBDIR += orbital_eunuchs_sniper
     SUBDIR += orthorobot
     SUBDIR += osgg
-    SUBDIR += outerspace
     SUBDIR += p5-Acme-GuessNumber
     SUBDIR += p5-Algorithm-Pair-Best2
     SUBDIR += p5-Algorithm-Pair-Swiss
@@ -721,7 +721,6 @@
     SUBDIR += p5-Games-GuessWord
     SUBDIR += p5-Games-Tournament-RoundRobin
     SUBDIR += pachi
-    SUBDIR += pachi-game-engine
     SUBDIR += pacmanarena
     SUBDIR += palapeli
     SUBDIR += palomino
@@ -740,7 +739,6 @@
     SUBDIR += phlipple
     SUBDIR += picmi
     SUBDIR += pinball
-    SUBDIR += pingus
     SUBDIR += pink-pony
     SUBDIR += pioneer
     SUBDIR += pioneers
@@ -770,9 +768,9 @@
     SUBDIR += py-fife
     SUBDIR += py-mnemosyne
     SUBDIR += py-pychess
+    SUBDIR += py-pysol-cards
     SUBDIR += py-sgflib
     SUBDIR += py-sgfsummary
-    SUBDIR += pyfa
     SUBDIR += pysolfc
     SUBDIR += pyspacewar
     SUBDIR += q2p
@@ -824,7 +822,6 @@
     SUBDIR += regoth
     SUBDIR += reminiscence
     SUBDIR += renpy
-    SUBDIR += renpy6
     SUBDIR += rescue
     SUBDIR += residualvm
     SUBDIR += retroarch
@@ -884,6 +881,7 @@
     SUBDIR += sjeng
     SUBDIR += ski
     SUBDIR += sl
+    SUBDIR += slade
     SUBDIR += slashem-tty
     SUBDIR += slump
     SUBDIR += sokoban
@@ -891,7 +889,6 @@
     SUBDIR += solarconquest
     SUBDIR += solarus
     SUBDIR += solarus-quest-editor
-    SUBDIR += solarwolf
     SUBDIR += sopwith
     SUBDIR += spacejunk
     SUBDIR += spacezero
@@ -936,7 +933,6 @@
     SUBDIR += tetzle
     SUBDIR += textmaze
     SUBDIR += thegrind
-    SUBDIR += thudboard
     SUBDIR += tileworld
     SUBDIR += tkmoo
     SUBDIR += tomatoes
@@ -1049,7 +1045,6 @@
     SUBDIR += xdigger
     SUBDIR += xdino
     SUBDIR += xemeraldia
-    SUBDIR += xevil
     SUBDIR += xeyesplus
     SUBDIR += xfireworks
     SUBDIR += xfrisk
@@ -1080,7 +1075,6 @@
     SUBDIR += xmine
     SUBDIR += xminehunter
     SUBDIR += xmines
-    SUBDIR += xminesweep
     SUBDIR += xmlink
     SUBDIR += xmoto
     SUBDIR += xmris

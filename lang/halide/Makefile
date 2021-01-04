@@ -2,19 +2,20 @@
 
 PORTNAME=	halide
 DISTVERSIONPREFIX=	release_
-DISTVERSION=	2019_08_27-2023
-DISTVERSIONSUFFIX=	-g48f9a1c75
-PORTREVISION=	1
+DISTVERSION=	2019_08_27-2654
+DISTVERSIONSUFFIX=	-g664dc4993
 CATEGORIES=	lang
 
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${PORTNAME}/commit/
-PATCHFILES=	49c7ee068327af7e1dc71cdd37afb61f3132097f.patch:-p1 # FreeBSD compatibility patches
+PATCH_SITES=	https://github.com/halide/Halide/commit/
+PATCHFILES=	890a5199ae8ade759de076217670ae980bf44823.patch:-p1
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Halide, a language for fast and portable data-parallel computation
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
+
+BROKEN_riscv64=		fails to build: /usr/include/c++/v1/__config:1141:6: No thread API
 
 BUILD_DEPENDS=	llvm${LLVM_DEFAULT}>0:devel/llvm${LLVM_DEFAULT} # because halide expects LLVMConfig.cmake
 RUN_DEPENDS=	llvm${LLVM_DEFAULT}>0:devel/llvm${LLVM_DEFAULT}
@@ -31,24 +32,17 @@ CPP=		clang-cpp${LLVM_DEFAULT}
 
 CMAKE_ARGS=	-DLLVM_DIR=${LOCALBASE}/llvm${LLVM_DEFAULT}/lib/cmake/llvm
 CMAKE_ON=	LLVM_USE_SHARED_LLVM_LIBRARY HALIDE_SHARED_LIBRARY
-CMAKE_OFF=	WITH_PYTHON_BINDINGS WITH_APPS WITH_TUTORIALS WITH_DOCS # APPS are demos
+CMAKE_OFF=	WITH_PYTHON_BINDINGS WITH_APPS WITH_TUTORIALS WITH_DOCS WITH_TESTS # APPS are demos
 
 OPTIONS_DEFINE=	NATIVE
+OPTIONS_DEFAULT=
 
 NATIVE_DESC=	Build with native optimizations (-march=native)
 
 post-patch-NATIVE-off:
 	@${REINPLACE_CMD} -e 's| -march=native | |' ${WRKSRC}/apps/linear_algebra/Makefile
 
-post-install: # see https://github.com/halide/Halide/issues/4952
-.for f in tools tutorial CODE_OF_CONDUCT.md README.md README_cmake.md README_rungen.md README_webassembly.md
-	@${RM} -r ${STAGEDIR}${PREFIX}/${f}
-.endfor
-	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/cmake
-	@${MV} ${STAGEDIR}${PREFIX}/*.cmake ${STAGEDIR}${PREFIX}/lib/cmake
-	@${MKDIR} ${STAGEDIR}${DATADIR}
-	@${MV} ${STAGEDIR}${PREFIX}/halide_config.make ${STAGEDIR}${DATADIR}
-	@${MV} ${STAGEDIR}${PREFIX}/bin/libHalide.so ${STAGEDIR}${PREFIX}/lib
-	@${RMDIR} ${STAGEDIR}${PREFIX}/bin
+post-install:
+	${RM} -r ${STAGEDIR}${PREFIX}/share
 
 .include <bsd.port.mk>

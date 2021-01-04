@@ -15,14 +15,12 @@
     SUBDIR += asprint
     SUBDIR += auctex
     SUBDIR += bibcursed
-    SUBDIR += biblio-py
     SUBDIR += bibview
     SUBDIR += brlaser
     SUBDIR += c2ps
     SUBDIR += catdvi
     SUBDIR += cdlabelgen
     SUBDIR += cloud-print-connector
-    SUBDIR += cloudprint
     SUBDIR += cups
     SUBDIR += cups-bjnp
     SUBDIR += cups-cloud-print
@@ -57,6 +55,7 @@
     SUBDIR += foomatic-db-engine
     SUBDIR += foomatic-db-hpijs
     SUBDIR += foomatic-filters
+    SUBDIR += fpc-libcups
     SUBDIR += fpdf
     SUBDIR += freetype
     SUBDIR += freetype2
@@ -90,7 +89,6 @@
     SUBDIR += html2ps
     SUBDIR += hyperlatex
     SUBDIR += indexinfo
-    SUBDIR += jabref
     SUBDIR += kde_poster
     SUBDIR += latex-beamer
     SUBDIR += latex-biber
@@ -118,6 +116,7 @@
     SUBDIR += magicfilter
     SUBDIR += makeindex
     SUBDIR += mftrace
+    SUBDIR += miktex
     SUBDIR += min12xxw
     SUBDIR += mp-a4
     SUBDIR += mp-letter
@@ -148,6 +147,7 @@
     SUBDIR += pdf-tools
     SUBDIR += pdf4tcl
     SUBDIR += pdfbox
+    SUBDIR += pdfchain
     SUBDIR += pdflib
     SUBDIR += pdflib-perl
     SUBDIR += pdfstitch
@@ -185,14 +185,11 @@
     SUBDIR += py-psautohint
     SUBDIR += py-pycups
     SUBDIR += py-pycups1
-    SUBDIR += py-pyscript
     SUBDIR += py-python-ly
     SUBDIR += py-qt5-printsupport
     SUBDIR += py-relatorio
     SUBDIR += py-reportlab
     SUBDIR += py-rtf
-    SUBDIR += py-stapler
-    SUBDIR += py-trml2pdf
     SUBDIR += py-ttfautohint-py
     SUBDIR += py-ufolib2
     SUBDIR += py-weasyprint
@@ -212,10 +209,13 @@
     SUBDIR += rubygem-prawn-flexible-table
     SUBDIR += rubygem-prawn-format
     SUBDIR += rubygem-prawn-graph
+    SUBDIR += rubygem-prawn-icon
     SUBDIR += rubygem-prawn-js
     SUBDIR += rubygem-prawn-layout
     SUBDIR += rubygem-prawn-security
     SUBDIR += rubygem-prawn-svg
+    SUBDIR += rubygem-prawn-table
+    SUBDIR += rubygem-prawn-templates
     SUBDIR += rubygem-prawn_shapes
     SUBDIR += rubygem-rbpdf
     SUBDIR += rubygem-rbpdf-font
@@ -255,10 +255,8 @@
     SUBDIR += txtbdf2ps
     SUBDIR += typetools
     SUBDIR += utopia
-    SUBDIR += xfce4-print
     SUBDIR += xmbibtex
     SUBDIR += xpdfopen
-    SUBDIR += xpp
     SUBDIR += xreader
     SUBDIR += xtexsh
     SUBDIR += yatex

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	zim
-DISTVERSION=	0.73.1
+DISTVERSION=	0.73.4
 CATEGORIES=	deskutils python
 MASTER_SITES=	https://www.zim-wiki.org/downloads/
 
@@ -25,13 +25,11 @@ USE_PYTHON=	autoplist distutils noflavors
 INSTALLS_ICONS=	yes
 NO_ARCH=	yes
 
-OPTIONS_DEFINE=		BZR DITAA GIT GNUPLOT GNUR GRAPHVIZ LATEX \
+OPTIONS_DEFINE=		DITAA GIT GNUPLOT GNUR GRAPHVIZ LATEX \
 			MERCURIAL SCROT
 
 DITAA_DESC=		Diagram editor support
 DITAA_RUN_DEPENDS=	ditaa:graphics/ditaa
-BZR_DESC=		Version control for notebooks using bzr
-BZR_RUN_DEPENDS=	bzr:devel/bzr
 GIT_DESC=		Version control for notebooks using git
 GIT_RUN_DEPENDS=	git:devel/git
 GNUPLOT_RUN_DEPENDS=	gnuplot:math/gnuplot
@@ -40,7 +38,7 @@ GNUR_RUN_DEPENDS=	R:math/R
 GRAPHVIZ_RUN_DEPENDS=	fdp:graphics/graphviz
 LATEX_USE=		tex=latex:run
 MERCURIAL_DESC=		Version control for notebooks using hg
-MERCURIAL_RUN_DEPENDS=	hg:devel/mercurial
+MERCURIAL_RUN_DEPENDS=	${PY_MERCURIAL}
 SCROT_DESC=		Screenshot taking and inserting support
 SCROT_RUN_DEPENDS=	scrot:graphics/scrot
 

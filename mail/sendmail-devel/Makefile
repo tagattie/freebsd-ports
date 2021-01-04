@@ -2,6 +2,7 @@
 
 PORTNAME=	sendmail
 PORTVERSION=	8.16.0.50
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.sendmail.org/pub/sendmail/snapshots/
 PKGNAMESUFFIX?=	-devel${PKGNAMESUFFIX2}
@@ -251,9 +252,6 @@ post-install:
 	${RM} ${STAGEDIR}${PREFIX}/man/cat*/*
 # final perm of sendmail is 2555 (see plist), needed for strip cmd
 	${CHMOD} 755 ${STAGEDIR}${PREFIX}/sbin/sendmail
-	${RM} ${STAGEDIR}/etc/mail/submit.cf
-	${RMDIR} ${STAGEDIR}/var/spool/clientmqueue
-
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/vacation
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/rmail
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/*

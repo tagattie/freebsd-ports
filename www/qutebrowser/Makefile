@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	qutebrowser
-DISTVERSION=	1.13.0
+DISTVERSION=	1.14.1
 CATEGORIES=	www
 MASTER_SITES=	CHEESESHOP
 
@@ -14,7 +14,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}attrs>=0:devel/py-attrs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}colorama>=0:devel/py-colorama@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}cssutils>=0:www/py-cssutils@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>=0:devel/py-Jinja2@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}MarkupSafe>=0:textproc/py-MarkupSafe@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}markupsafe>=0:textproc/py-markupsafe@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pygments>=0:textproc/py-pygments@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyPEG2>=0:textproc/py-pyPEG2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}yaml>0:devel/py-yaml@${PY_FLAVOR} \
@@ -28,6 +28,9 @@ USE_PYTHON=	distutils autoplist noflavors
 
 NO_ARCH=	yes
 PLIST_FILES=	share/applications/${PORTNAME}-${PYTHON_VER}.desktop
+
+# Upstream archive contains files with UTF-8 names
+EXTRACT_CMD=	${SETENV} LC_ALL=en_US.UTF-8 /usr/bin/bsdtar
 
 OPTIONS_MULTI=	BACKEND
 OPTIONS_MULTI_BACKEND=	WEBKIT WEBENGINE

@@ -1,9 +1,12 @@
 # $FreeBSD$
 
 PORTNAME=	compute-runtime
-DISTVERSION=	20.25.17111
+DISTVERSION=	20.52.18783
 CATEGORIES=	lang
 PKGNAMEPREFIX=	intel-
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	2a423820aaa4.patch:-p1 # https://github.com/intel/compute-runtime/pull/361
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	OpenCL implementation for Intel HD 5000 (Gen8) or newer
@@ -21,7 +24,7 @@ USES=		cmake compiler:c++14-lang localbase:ldflags pkgconfig
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 GH_ACCOUNT=	intel
-CMAKE_ON=	SKIP_UNIT_TESTS
+CMAKE_ON=	SKIP_UNIT_TESTS SUPPORT_DG1
 CMAKE_ARGS=	-DNEO_OCL_DRIVER_VERSION:STRING="${DISTVERSIONFULL}"
 PLIST_FILES=	bin/ocloc \
 		etc/OpenCL/vendors/intel.icd \
@@ -36,11 +39,11 @@ OPTIONS_DEFINE_amd64=	L0
 OPTIONS_DEFAULT_amd64=	L0
 
 L0_DESC=		oneAPI Level Zero support
-L0_BUILD_DEPENDS=	level-zero>0:devel/level-zero
+L0_BUILD_DEPENDS=	level-zero>=1.0:devel/level-zero
 L0_CMAKE_BOOL=		BUILD_WITH_L0
 L0_CMAKE_ON=		-DNEO_VERSION_BUILD:STRING="0"
-L0_PLIST_FILES=		lib/libze_intel_gpu.so.0.8 \
-			lib/libze_intel_gpu.so.0.8.0
+L0_PLIST_FILES=		lib/libze_intel_gpu.so.1 \
+			lib/libze_intel_gpu.so.1.0.0
 
 VAAPI_BUILD_DEPENDS=	${LOCALBASE}/include/va/va.h:multimedia/libva
 VAAPI_CMAKE_BOOL_OFF=	DISABLE_LIBVA

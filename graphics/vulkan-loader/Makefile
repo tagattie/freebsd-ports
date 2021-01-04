@@ -1,21 +1,18 @@
 # $FreeBSD$
 
 PORTNAME=	vulkan-loader
-DISTVERSIONPREFIX=sdk-
-DISTVERSION=	1.2.135.0
+DISTVERSIONPREFIX=v
+DISTVERSION=	1.2.165
 CATEGORIES=	graphics devel
 
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	8d2d49a9c89d.patch:-p1 # https://github.com/KhronosGroup/Vulkan-Loader/pull/419
-
-MAINTAINER=	greg@unrelenting.technology
+MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Driver loader for the Vulkan graphics API
 
 LICENSE=	APACHE20
 
-BUILD_DEPENDS=	${LOCALBASE}/include/vulkan/vulkan.h:devel/vulkan-headers
+BUILD_DEPENDS=	${LOCALBASE}/include/vulkan/vulkan.h:graphics/vulkan-headers
 
-USES=		cmake compiler:c++11-lib pkgconfig python:3.4+,build
+USES=		cmake compiler:${ARCH:Mi386:C/.+/gcc-/}c++11-lib pkgconfig python:3.4+,build
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
@@ -41,17 +38,8 @@ XCB_LIB_DEPENDS=	libX11-xcb.so:x11/libX11 \
 WAYLAND_CMAKE_BOOL=	BUILD_WSI_WAYLAND_SUPPORT
 WAYLAND_LIB_DEPENDS=	libwayland-egl.so:graphics/wayland
 
-.include <bsd.port.pre.mk>
+post-patch:
+# _XOPEN_SOURCE enforces X/Open-compliance but alloca isn't there
+	@${REINPLACE_CMD} '/_XOPEN_SOURCE/d' ${WRKSRC}/loader/CMakeLists.txt
 
-# XXX Drop after FreeBSD 11.3/12.1 EOL
-.if ${ARCH} == i386 && ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} < 100
-. if ${LLVM_DEFAULT:C/[1-5]./&0/:S,-devel,990,} < 100
-LLVM_DEFAULT=	10
-. endif
-BUILD_DEPENDS+=	clang${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT}
-CC=		clang${LLVM_DEFAULT}
-CXX=		clang++${LLVM_DEFAULT}
-CPP=		clang-cpp${LLVM_DEFAULT}
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

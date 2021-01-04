@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gensim
-DISTVERSION=	3.8.2
-PORTREVISION=	1
+DISTVERSION=	3.8.3
 CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,7 +18,7 @@ RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}six>=1.5.0:devel/py-six@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}smart-open>=1.8.1:net/py-smart-open@${PY_FLAVOR}
 
-USES=		compiler:c++11-lang python:3.5+
+USES=		compiler:c++11-lang python:3.6+
 USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

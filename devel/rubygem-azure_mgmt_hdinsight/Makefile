@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	azure_mgmt_hdinsight
-PORTVERSION=	0.18.0
+PORTVERSION=	0.18.3
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 

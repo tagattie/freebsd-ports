@@ -2,7 +2,7 @@
 
 PORTNAME=	softether
 DISTVERSION=	4.34-9745
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security net-vpn
 MASTER_SITES=	https://www.softether-download.com/files/softether/v${DISTVERSION}-rtm-2020.04.05-tree/Source_Code/
 DISTNAME=	${PORTNAME}-src-v${DISTVERSION}-rtm
@@ -13,8 +13,7 @@ COMMENT=	SoftEther VPN 4 (RTM version)
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-ONLY_FOR_ARCHS=	amd64 i386
-ONLY_FOR_ARCHS_REASON=	Upstream only supports amd64 and i386: https://www.softether.org/3-spec
+ONLY_FOR_ARCHS=	amd64 i386 powerpc64 powerpc64le
 
 USES=		dos2unix gmake iconv:wchar_t localbase:ldflags ncurses \
 		readline ssl

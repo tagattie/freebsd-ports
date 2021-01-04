@@ -3,7 +3,6 @@
 PORTNAME=	shotcut
 DISTVERSIONPREFIX=	v
 DISTVERSION=	${FULLVERSION}
-PORTREVISION=	1
 CATEGORIES=	multimedia
 
 MAINTAINER=	ports@FreeBSD.org
@@ -14,10 +13,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libmlt.so:multimedia/mlt
 RUN_DEPENDS=	ffmpeg:multimedia/ffmpeg \
-		${LOCALBASE}/lib/libjack.so:audio/jack \
-		${LOCALBASE}/lib/libSDL.so:devel/sdl12
+		${LOCALBASE}/lib/libjack.so:audio/jack
 
-USES=		desktop-file-utils gl pkgconfig \
+USES=		compiler:c++11-lang desktop-file-utils gl pkgconfig \
 		qmake qt:5 sdl shared-mime-info \
 		xorg
 
@@ -25,7 +23,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	mltframework
 
 # Needed to be able to correctly check for updates in-app.
-FULLVERSION=	20.04.12
+FULLVERSION=	20.10.31
 
 USE_GL+=	gl
 USE_QT=		buildtools_build concurrent_build core declarative \
@@ -48,9 +46,6 @@ FREI0R_RUN_DEPENDS=	frei0r-plugins>=0:graphics/frei0r-plugins
 LADSPA_RUN_DEPENDS=	swhplugins>=0:audio/swhplugins
 
 WEBVFX_RUN_DEPENDS=	${LOCALBASE}/lib/mlt/libmltwebvfx.so:multimedia/webvfx-qt5
-
-post-patch:
-	@${REINPLACE_CMD} -e 's/"qmelt"/"melt"/' ${WRKSRC}/src/jobs/meltjob.cpp
 
 pre-build:
 	@${FIND} ${WRKSRC} -name '.depend' -delete

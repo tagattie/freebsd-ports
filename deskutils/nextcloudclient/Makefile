@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	nextcloudclient
-PORTVERSION=	2.6.4
-#PORTREVISION=	1
+PORTVERSION=	3.0.3
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	deskutils
 
 MAINTAINER=	mr@FreeBSD.org
@@ -17,8 +17,10 @@ LIB_DEPENDS=	libinotify.so:devel/libinotify \
 
 USES=		cmake:noninja compiler:c++11-lib gmake gnome iconv \
 		localbase:ldflags pkgconfig qt:5 sqlite ssl
-USE_QT=		buildtools_build concurrent core dbus declarative gui linguist_build location network \
-		printsupport qmake_build sql webchannel webengine webkit widgets xml
+USE_QT=		buildtools_build concurrent core dbus declarative graphicaleffects \
+		gui linguist_build location network printsupport qmake_build \
+		quickcontrols2 sql svg webchannel webengine webkit \
+		widgets xml
 CMAKE_ARGS=	-DBUILD_WITH_QT4:BOOL=OFF \
 		-DCMAKE_INSTALL_MANDIR:STRING=man \
 		-DWITH_STACK_PROTECTOR:BOOL=OFF

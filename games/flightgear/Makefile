@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	flightgear
-PORTVERSION=	2020.1.2
+PORTVERSION=	2020.3.4
 CATEGORIES=	games
 MASTER_SITES=	SF/flightgear/release-${PORTVERSION:R}
 
@@ -24,7 +24,8 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 		libexpat.so:textproc/expat2 \
 		libSimGearCore.so:devel/simgear
 BUILD_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:x11-toolkits/plib \
-		${LOCALBASE}/include/linux/input.h:devel/evdev-proto
+		${LOCALBASE}/include/linux/input.h:devel/evdev-proto \
+		${LOCALBASE}/share/flightgear/version:games/flightgear-data
 RUN_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:x11-toolkits/plib \
 		${LOCALBASE}/share/flightgear/version:games/flightgear-data
 
@@ -52,12 +53,6 @@ DBUS_CMAKE_OFF=	-DUSE_DBUS:BOOL=OFF
 QT5_CMAKE_ON=	-DENABLE_QT:BOOL=ON
 QT5_CMAKE_OFF=	-DENABLE_QT:BOOL=OFF
 QT5_USES=	qt:5
-QT5_USE=	QT=core,buildtools,gui,declarative,network,qmake,widgets,svg
-
-post-patch:
-# Avoid conflict with C++20 <version> by adding .txt suffix
-	@${MV} ${WRKSRC}/version ${WRKSRC}/version.txt
-	@${REINPLACE_CMD} -Ei .c++20 '/file|set_prop/s/version[[:>:]]/&.txt/' \
-		${WRKSRC}/CMakeLists.txt
+QT5_USE=	QT=core,buildtools,linguisttools,gui,declarative,network,qmake,widgets,svg
 
 .include <bsd.port.mk>

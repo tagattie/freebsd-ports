@@ -2,19 +2,11 @@
 
 PORTNAME=	intel-media-sdk
 DISTVERSIONPREFIX=	intel-mediasdk-
-DISTVERSION=	20.1.1
-PORTREVISION=	1
+DISTVERSION=	20.5.1
 CATEGORIES=	multimedia
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	713312353ec3.patch:-p1
-PATCHFILES+=	19d11bf1cfd4.patch:-p1
-PATCHFILES+=	186bbd6d0516.patch:-p1
-PATCHFILES+=	c296a283c8ad.patch:-p1
-PATCHFILES+=	b54f2b3239a0.patch:-p1
-PATCHFILES+=	74bc125b7a7d.patch:-p1
-PATCHFILES+=	5ad047a3d857.patch:-p1
-PATCHFILES+=	99712bd1c86e.patch:-p1
+PATCHFILES+=	1658e1c9a34f.patch:-p1 # https://github.com/Intel-Media-SDK/MediaSDK/pull/2537
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Hardware video decoding/encoding/filtering on Intel GPUs
@@ -66,9 +58,6 @@ post-patch:
 		-e '/set( *git_commit/s/"[^"]*"/"${DISTVERSIONFULL}"/' \
 		${WRKSRC}/builder/FindFunctions.cmake \
 		${WRKSRC}/builder/FindGlobals.cmake
-# Don't depend on lang/intel-compute-runtime during build
-	@${REINPLACE_CMD} -e 's,/etc[^[:space:]]*,/,' \
-		${WRKSRC}/builder/FindOpenCL.cmake
 # Don't assume GCC and glibc libraries are available
 	@${REINPLACE_CMD} -e 's/ -lstdc++ -ldl//' \
 		${WRKSRC}/api/mfx_dispatch/linux/pkg-config*.cmake

@@ -3,11 +3,11 @@
 
 PORTNAME=	lttng-tools
 PORTVERSION=	2.9.3
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	sysutils
 MASTER_SITES=	http://lttng.org/files/${PORTNAME}/
 
-MAINTAINER=	mmokhi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Set of tools to control LTTng tracing
 
 LICENSE=		LGPL21 GPLv2
@@ -31,15 +31,9 @@ INSTALL_TARGET=		install-strip
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == powerpc64
-USE_GCC=	yes
-.endif
-
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/man/*.1 ${STAGEDIR}${MANPREFIX}/man/man1/
 	${INSTALL_MAN} ${WRKSRC}/doc/man/*.3 ${STAGEDIR}${MANPREFIX}/man/man3/
 	${INSTALL_MAN} ${WRKSRC}/doc/man/*.8 ${STAGEDIR}${MANPREFIX}/man/man8/
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

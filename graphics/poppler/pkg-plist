@@ -32,6 +32,7 @@ include/poppler/JArithmeticDecoder.h
 include/poppler/JBIG2Stream.h
 %%OPENJPEG%%include/poppler/JPEG2000Stream.h
 %%NO_OPENJPEG%%include/poppler/JPXStream.h
+include/poppler/JSInfo.h
 include/poppler/Lexer.h
 include/poppler/Linearization.h
 include/poppler/Link.h
@@ -136,7 +137,5 @@ lib/libpoppler-cpp.so.0.9.0
 lib/libpoppler.so
 lib/libpoppler.so.%%SHLIB_VER%%
 lib/libpoppler.so.%%SHLIB_VER%%.0.0
-libdata/pkgconfig/poppler-cairo.pc
 libdata/pkgconfig/poppler-cpp.pc
-libdata/pkgconfig/poppler-splash.pc
 libdata/pkgconfig/poppler.pc

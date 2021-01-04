@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gmp
-PORTVERSION=	6.2.0
+PORTVERSION=	6.2.1
 CATEGORIES=	math devel
 MASTER_SITES=	GNU
 
@@ -39,8 +39,10 @@ MAKE_JOBS_UNSAFE=yes
 .if ! ${PORT_OPTIONS:MCPU_OPTS}
 CONFIGURE_ARGS+=--build=${CONFIGURE_TARGET}
 .elif ${ARCH:S/64//} != ${ARCH}
-.if ${ARCH} == powerpc64
+.if ${ARCH:Mpowerpc64*}
 CONFIGURE_ENV+=	ABI="mode64"
+.elif ${ARCH:Mriscv64*}
+CONFIGURE_ENV+=	ABI="standard"
 .else
 CONFIGURE_ENV+=	ABI="64"
 .endif

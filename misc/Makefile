@@ -57,6 +57,7 @@
     SUBDIR += compat7x
     SUBDIR += compat8x
     SUBDIR += compat9x
+    SUBDIR += concourse
     SUBDIR += countrycodes
     SUBDIR += cpuid
     SUBDIR += crosti
@@ -93,6 +94,7 @@
     SUBDIR += exercism
     SUBDIR += explosions
     SUBDIR += ezc3d
+    SUBDIR += far2l
     SUBDIR += felis
     SUBDIR += figlet
     SUBDIR += figlet-fonts
@@ -134,6 +136,7 @@
     SUBDIR += ftdi-eeprom
     SUBDIR += fxload
     SUBDIR += gcstar
+    SUBDIR += gedkeeper
     SUBDIR += geekcode
     SUBDIR += getopt
     SUBDIR += gimp-help-en
@@ -160,14 +163,15 @@
     SUBDIR += grc
     SUBDIR += gwhich
     SUBDIR += hashdb
-    SUBDIR += hb
     SUBDIR += hello
     SUBDIR += help2man
     SUBDIR += heyu2
     SUBDIR += hicolor-icon-theme
     SUBDIR += histring
     SUBDIR += hotkeys
+    SUBDIR += hs-hascard
     SUBDIR += hulgalugha
+    SUBDIR += hxtools
     SUBDIR += ignition-fuel-tools
     SUBDIR += iio-oscilloscope
     SUBDIR += imerge
@@ -204,15 +208,19 @@
     SUBDIR += lesspipe
     SUBDIR += lf
     SUBDIR += libad9361-iio
+    SUBDIR += libcomps
     SUBDIR += libeatmydata
     SUBDIR += libemos
     SUBDIR += libiio
     SUBDIR += libkeduvocdocument
     SUBDIR += liblxi
     SUBDIR += libmetalink
+    SUBDIR += libmodulemd
     SUBDIR += libpostal
     SUBDIR += libpredict
     SUBDIR += libpri
+    SUBDIR += librepo
+    SUBDIR += libsolv
     SUBDIR += libsupertone
     SUBDIR += libsweep-lidar
     SUBDIR += libutf
@@ -241,7 +249,6 @@
     SUBDIR += mnn
     SUBDIR += molequeue
     SUBDIR += morse
-    SUBDIR += mtail
     SUBDIR += mtx
     SUBDIR += mxnet
     SUBDIR += najitool
@@ -347,9 +354,9 @@
     SUBDIR += pecl-timezonedb
     SUBDIR += perkeep
     SUBDIR += pfm
-    SUBDIR += php72-calendar
     SUBDIR += php73-calendar
     SUBDIR += php74-calendar
+    SUBDIR += php80-calendar
     SUBDIR += pinfo
     SUBDIR += pipe
     SUBDIR += pnpids
@@ -389,7 +396,6 @@
     SUBDIR += py-powerline-status
     SUBDIR += py-progressbar
     SUBDIR += py-progressbar2
-    SUBDIR += py-progressbar231
     SUBDIR += py-pyfiglet
     SUBDIR += py-pykml
     SUBDIR += py-pyprind
@@ -399,7 +405,6 @@
     SUBDIR += py-scikit-fusion
     SUBDIR += py-serverfiles
     SUBDIR += py-soapy_power
-    SUBDIR += py-socli
     SUBDIR += py-spdx
     SUBDIR += py-spdx-lookup
     SUBDIR += py-spdx-tools
@@ -410,7 +415,6 @@
     SUBDIR += py-tqdm
     SUBDIR += py-tvm
     SUBDIR += py-xgboost
-    SUBDIR += py-yolk
     SUBDIR += pyobd
     SUBDIR += qbrew
     SUBDIR += qlas
@@ -442,6 +446,7 @@
     SUBDIR += rubygem-rabbit
     SUBDIR += rubygem-vpim
     SUBDIR += rump
+    SUBDIR += ruut
     SUBDIR += sdformat
     SUBDIR += seabios
     SUBDIR += sent
@@ -474,10 +479,13 @@
     SUBDIR += termatrix
     SUBDIR += teseq
     SUBDIR += thefuck
+    SUBDIR += thrill
+    SUBDIR += timezonemap
     SUBDIR += tkcron
     SUBDIR += tkinfo
     SUBDIR += tkregexp
     SUBDIR += tkrunit
+    SUBDIR += tlci
     SUBDIR += toilet
     SUBDIR += translate
     SUBDIR += ttyrec
@@ -516,7 +524,7 @@
     SUBDIR += wmtunlo
     SUBDIR += wmweather+
     SUBDIR += wmwork
-    SUBDIR += wotsap
+    SUBDIR += xd-rust
     SUBDIR += xdelta
     SUBDIR += xdelta3
     SUBDIR += xfce4-appfinder

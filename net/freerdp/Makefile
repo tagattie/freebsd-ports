@@ -2,13 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	freerdp
-DISTVERSION=	2.1.1
-PORTREVISION=	0
+DISTVERSION=	2.2.0
+PORTREVISION=	3
 CATEGORIES=	net comms
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-# FreeBSD doesn't have O_TMPFILE, must use shm_open w/ SHM_ANON instead.
-PATCHFILES=	1b5e234135b0.patch:-p1
+MASTER_SITES=   https://pub.freerdp.com/releases/ \
+		https://github.com/FreeRDP/FreeRDP/releases/download/${DISTVERSION}/
 
 MAINTAINER=	kevans@FreeBSD.org
 COMMENT=	Free implementation of Remote Desktop Protocol
@@ -19,10 +17,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BROKEN_SSL=	libressl-devel
 BROKEN_SSL_REASON_libressl-devel=	fails to compile: no member named 'alert_dispatch' in 'struct ssl3_state_st'
 
-LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib	\
-		libepoll-shim.so:devel/libepoll-shim	\
-		libudev.so:devel/libudev-devd		\
-		libuuid.so:misc/e2fsprogs-libuuid
+LIB_DEPENDS=	libepoll-shim.so:devel/libepoll-shim
 
 USES=		alias cmake compiler:c++11-lib cpe gettext gnome localbase pathfix pkgconfig ssl
 USE_LDCONFIG=	yes
@@ -34,10 +29,6 @@ MAJORVERSION=	${PORTVERSION:R:R}
 
 PLIST_SUB+=	PATCHVERSION="${PATCHVERSION}"
 PLIST_SUB+=	MAJORVERSION="${MAJORVERSION}"
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	FreeRDP
-GH_PROJECT=	${GH_ACCOUNT}
 
 CMAKE_ARGS+=	-DWITH_CHANNELS:BOOL=ON \
 		-DWITH_DIRECTFB:BOOL=OFF \

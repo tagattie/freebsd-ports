@@ -1,9 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	sddm
-PORTVERSION=	0.18.1
+PORTVERSION=	0.19.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	4
 CATEGORIES=	x11
 
 MAINTAINER=	kde@FreeBSD.org
@@ -28,10 +27,10 @@ USE_QT=		core declarative dbus gui network \
 		buildtools_build linguisttools_build qmake_build
 USE_XORG=	xcb
 
+CMAKE_ON=	BUILD_MAN_PAGES
 CMAKE_ARGS=	-DUID_MIN=1000 \
 		-DUID_MAX=65000 \
 		-DCMAKE_INSTALL_SYSCONFDIR:PATH=${LOCALBASE}/etc \
-		-DBUILD_MAN_PAGES=ON \
 		-DRST2MAN_EXECUTABLE=${LOCALBASE}/bin/rst2man.py-${PYTHON_VER}
 
 USE_RC_SUBR=	sddm
@@ -46,7 +45,6 @@ post-patch:
 		-e 's#/usr/share/#${LOCALBASE}/share/#' \
 		${WRKSRC}/data/scripts/Xsession \
 		${WRKSRC}/src/common/Configuration.h
-	@${CP} ${PATCHDIR}/VirtualTerminal_FreeBSD.cpp ${WRKSRC}/src/daemon
 
 post-install:
 # Install xsession.desktop to launch .xinitrc via sddm.

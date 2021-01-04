@@ -1,10 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	cava
-DISTVERSION=	0.7.1
+DISTVERSION=	0.7.3
 CATEGORIES=	audio
 
-MAINTAINER=	tobik@FreeBSD.org
+MAINTAINER=	vendion@gmail.com
 COMMENT=	Console-based Audio Visualizer for MPD, PulseAudio, and sndio
 
 LICENSE=	MIT
@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libfftw3.so:math/fftw3 \
 		libiniparser.so:devel/iniparser
 
-USES=		autoreconf libtool localbase ncurses
+USES=		autoreconf compiler:c11 libtool localbase ncurses
 USE_GITHUB=	yes
 GH_ACCOUNT=	karlstav
 

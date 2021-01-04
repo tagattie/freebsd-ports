@@ -19,18 +19,23 @@
     SUBDIR += belcard
     SUBDIR += bigyear
     SUBDIR += bijiben
+    SUBDIR += birdtray
     SUBDIR += bitcollider
     SUBDIR += cairo-dock
     SUBDIR += cairo-dock-plugins
     SUBDIR += caja-extensions
     SUBDIR += cal
     SUBDIR += calcurse
+    SUBDIR += calendar
+    SUBDIR += calendar-data
     SUBDIR += calibre
     SUBDIR += cartotheque
     SUBDIR += cfiles
     SUBDIR += charmtimetracker
     SUBDIR += chart
     SUBDIR += clipit
+    SUBDIR += clipmenu
+    SUBDIR += clipnotify
     SUBDIR += conkyforecast
     SUBDIR += copyq
     SUBDIR += countdown
@@ -39,8 +44,10 @@
     SUBDIR += dfshow
     SUBDIR += docear
     SUBDIR += dosage
+    SUBDIR += dstask
     SUBDIR += easystroke
     SUBDIR += egroupware
+    SUBDIR += elementary-calendar
     SUBDIR += fasd
     SUBDIR += fbreader
     SUBDIR += fet
@@ -112,6 +119,7 @@
     SUBDIR += howm
     SUBDIR += hs-arbtt
     SUBDIR += ical
+    SUBDIR += itinerary
     SUBDIR += jjclient
     SUBDIR += jlj
     SUBDIR += just
@@ -122,7 +130,6 @@
     SUBDIR += kdeconnect-kde
     SUBDIR += kdepim
     SUBDIR += kdepim-addons
-    SUBDIR += kdepim-apps-libs
     SUBDIR += kdepim-runtime
     SUBDIR += keditbookmarks
     SUBDIR += kfind
@@ -136,9 +143,7 @@
     SUBDIR += kuserfeedback
     SUBDIR += latte-dock
     SUBDIR += libkdepim
-    SUBDIR += ljcharm
     SUBDIR += ljclive
-    SUBDIR += logjam
     SUBDIR += lookbook
     SUBDIR += lumina-archiver
     SUBDIR += lumina-calculator
@@ -150,7 +155,7 @@
     SUBDIR += lumina-screenshot
     SUBDIR += lumina-textedit
     SUBDIR += lxqt-notificationd
-    SUBDIR += mat
+    SUBDIR += mate-indicator-applet
     SUBDIR += mate-notification-daemon
     SUBDIR += mate-utils
     SUBDIR += mbox-importer
@@ -214,6 +219,7 @@
     SUBDIR += shutter
     SUBDIR += simpleagenda
     SUBDIR += sliderule
+    SUBDIR += sowon
     SUBDIR += spice-gtk
     SUBDIR += synapse
     SUBDIR += syncthingtray

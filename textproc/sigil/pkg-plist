@@ -38,6 +38,9 @@ share/pixmaps/sigil.png
 %%DATADIR%%/hunspell_dictionaries/hyph_es.dic
 %%DATADIR%%/hunspell_dictionaries/hyph_fr.dic
 %%DATADIR%%/hunspell_dictionaries/license.txt
+%%DATADIR%%/iconthemes/fluent.rcc
+%%DATADIR%%/iconthemes/main.rcc
+%%DATADIR%%/iconthemes/material.rcc
 %%DATADIR%%/plugin_launchers/python/bookcontainer.py
 %%DATADIR%%/plugin_launchers/python/compatibility_utils.py
 %%DATADIR%%/plugin_launchers/python/epub_utils.py
@@ -48,6 +51,7 @@ share/pixmaps/sigil.png
 %%DATADIR%%/plugin_launchers/python/opf_parser.py
 %%DATADIR%%/plugin_launchers/python/outputcontainer.py
 %%DATADIR%%/plugin_launchers/python/pluginhunspell.py
+%%DATADIR%%/plugin_launchers/python/pluginhunspellml.py
 %%DATADIR%%/plugin_launchers/python/preferences.py
 %%DATADIR%%/plugin_launchers/python/quickparser.py
 %%DATADIR%%/plugin_launchers/python/sigil_bs4/AUTHORS.txt
@@ -263,12 +267,14 @@ share/pixmaps/sigil.png
 %%DATADIR%%/translations/sigil_gl.qm
 %%DATADIR%%/translations/sigil_it.qm
 %%DATADIR%%/translations/sigil_ja.qm
+%%DATADIR%%/translations/sigil_ko.qm
 %%DATADIR%%/translations/sigil_nl.qm
 %%DATADIR%%/translations/sigil_pl.qm
+%%DATADIR%%/translations/sigil_pt_BR.qm
 %%DATADIR%%/translations/sigil_ru.qm
 %%DATADIR%%/translations/sigil_sr.qm
 %%DATADIR%%/translations/sigil_sv.qm
 %%DATADIR%%/translations/sigil_th.qm
 %%DATADIR%%/translations/sigil_uk_UA.qm
-%%DATADIR%%/translations/sigil_zh.qm
+%%DATADIR%%/translations/sigil_zh_CN.qm
 %%DATADIR%%/translations/sigil_zh_TW.qm

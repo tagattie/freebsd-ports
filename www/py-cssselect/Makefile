@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	cssselect
-PORTVERSION=	1.0.3
-PORTREVISION=	1
+PORTVERSION=	1.1.0
+PORTREVISION=	0
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,7 +14,7 @@ COMMENT=	Cssselect parses CSS3 Selectors and translates them to XPath 1.0
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	distutils autoplist
 
 NO_ARCH=	yes

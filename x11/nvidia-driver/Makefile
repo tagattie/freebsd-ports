@@ -11,7 +11,7 @@
 # or `x11/nvidia-driver-304').
 
 PORTNAME=	nvidia-driver
-DISTVERSION?=	440.82
+DISTVERSION?=	440.100
 # Always try to set PORTREVISION as it can be overridden by the slave ports
 PORTREVISION?=	1
 CATEGORIES=	x11
@@ -261,6 +261,8 @@ post-install: .SILENT
 	${MV} -f ${STAGEDIR}${PREFIX}/lib/libEGL.so.1 \
 		${STAGEDIR}${PREFIX}/lib/libEGL-NVIDIA.so.1
 	${RM} ${STAGEDIR}${PREFIX}/lib/libEGL.so
+	${RM} ${STAGEDIR}${PREFIX}/lib/libGLESv1_CM.so
+	${RM} ${STAGEDIR}${PREFIX}/lib/libGLESv1_CM.so.1
 	${LN} -sf libGLESv2-NVIDIA.so.2 \
 		${STAGEDIR}${PREFIX}/lib/libGLESv2-NVIDIA.so
 	${MV} -f ${STAGEDIR}${PREFIX}/lib/libGLESv2.so.2 \

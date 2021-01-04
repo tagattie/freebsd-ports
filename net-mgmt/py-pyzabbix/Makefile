@@ -2,19 +2,19 @@
 # $FreeBSD$
 
 PORTNAME=	pyzabbix
-PORTVERSION=	0.7.5
+PORTVERSION=	0.8.2
 CATEGORIES=	net-mgmt python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	juraj@lutter.sk
+MAINTAINER=	otis@FreeBSD.org
 COMMENT=	Zabbix API Python Library
 
 LICENSE=	LGPL21
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=1.0:www/py-requests@${PY_FLAVOR}
 
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	distutils autoplist
 NO_ARCH=	yes
 

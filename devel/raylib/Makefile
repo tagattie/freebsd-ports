@@ -2,7 +2,8 @@
 
 PORTNAME=	raylib
 DISTVERSION=	3.0.0
-CATEGORIES=	devel
+PORTREVISION=	2
+CATEGORIES=	devel education
 
 MAINTAINER=	freebsd@sysctl.cz
 COMMENT=	Library to learn videogames programming
@@ -23,7 +24,9 @@ USE_XORG=	ice sm x11 xcursor xext xi xinerama xrandr xxf86vm
 CMAKE_ON=	SHARED USE_EXTERNAL_GLFW
 CMAKE_OFF=	BUILD_EXAMPLES BUILD_GAMES STATIC
 
-PLIST_FILES=	include/raylib.h \
+PLIST_FILES=	include/physac.h \
+		include/raylib.h \
+		include/raymath.h \
 		lib/cmake/raylib/raylib-config-version.cmake \
 		lib/cmake/raylib/raylib-config.cmake \
 		lib/libraylib.so \
@@ -31,14 +34,15 @@ PLIST_FILES=	include/raylib.h \
 		lib/libraylib.so.301 \
 		libdata/pkgconfig/raylib.pc
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == powerpc64
-USE_GCC=	any
-.endif
-
 post-extract:
-	# Remove bundled files.
-	@${RM} -r ${WRKSRC}/src/external/glfw ${WRKSRC}/src/external/include ${WRKSRC}/src/rglfw.c
+# Remove bundled files.
+	${RM} -r ${WRKSRC}/src/external/glfw ${WRKSRC}/src/external/include ${WRKSRC}/src/rglfw.c
 
-.include <bsd.port.post.mk>
+post-install:
+# Install all parts for raylib
+	${INSTALL_DATA}	${WRKSRC}/src/raylib.h \
+		${WRKSRC}/src/raymath.h \
+		${WRKSRC}/src/physac.h  \
+		${STAGEDIR}${PREFIX}/include
+
+.include <bsd.port.mk>

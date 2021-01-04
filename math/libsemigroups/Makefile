@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	libsemigroups
-PORTVERSION=	1.1.0
+PORTVERSION=	1.3.4
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	math
 
@@ -16,10 +17,12 @@ LIB_DEPENDS=	libfmt.so:devel/libfmt
 
 USE_GITHUB=	yes
 
-USES=		autoreconf compiler:c++11-lang libtool pkgconfig
+USES=		autoreconf compiler:c++11-lang eigen:3,build \
+		libtool pkgconfig
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-external-fmt=yes
+CONFIGURE_ARGS=	--enable-fmt --with-external-fmt=yes	\
+		--with-external-eigen
 USE_LDCONFIG=	yes
 TEST_TARGET=	check
 
@@ -35,6 +38,8 @@ pre-configure:
 		${WRKSRC}/m4/ax_check_hpcombi.m4
 	${REINPLACE_CMD} -e 's|extern/HPCombi/include|${LOCALBASE}/include/HPCombi|'	\
 		${WRKSRC}/Makefile.am
+	${REINPLACE_CMD} -e 's|HPCombi/include|HPCombi|'	\
+		${WRKSRC}/include/libsemigroups/hpcombi.hpp
 .endif
 	${REINPLACE_CMD} -e 's|fmtinclude_HEADERS|#fmtinclude_HEADERS|'	\
 		${WRKSRC}/Makefile.am

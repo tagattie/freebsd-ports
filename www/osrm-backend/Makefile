@@ -2,8 +2,7 @@
 
 PORTNAME=	osrm-backend
 DISTVERSIONPREFIX=	v
-DISTVERSION=	5.22.0
-PORTREVISION=	8
+DISTVERSION=	5.23.0
 CATEGORIES=	www
 
 MAINTAINER=	freebsd@mosedal.net
@@ -12,7 +11,6 @@ COMMENT=	Open Source Routing Machine (Backend)
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.TXT
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libstxxl.a:devel/stxxl
 LIB_DEPENDS=	libboost_chrono.so:devel/boost-libs \
 		libboost_date_time.so:devel/boost-libs \
 		libboost_filesystem.so:devel/boost-libs \
@@ -29,15 +27,15 @@ LIB_DEPENDS=	libboost_chrono.so:devel/boost-libs \
 USES=		cmake compiler:c++14-lang lua:53
 USE_GITHUB=	yes
 GH_ACCOUNT=	Project-OSRM
-OPTIONS_DEFINE=	DEBUG
 
 USE_RC_SUBR=	osrm
+
+CMAKE_ON=	BUILD_STATIC_LIBS
 
 USERS=		osrm
 GROUPS=		osrm
 
-CMAKE_ON=	BUILD_STATIC_LIBS
-
+OPTIONS_DEFINE=	DEBUG
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 1300084

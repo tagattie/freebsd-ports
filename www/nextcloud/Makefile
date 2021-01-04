@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	nextcloud
-PORTVERSION=	19.0.0
+PORTVERSION=	20.0.4
 PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	https://download.nextcloud.com/server/releases/
@@ -29,7 +29,7 @@ PLIST_SUB=	NEXTCLOUD_USERNAME=${NEXTCLOUD_USERNAME} \
 
 OPTIONS_DEFINE=		EXIF IMAGICK INTL LDAP PCNTL SMB SSL
 OPTIONS_GROUP=		CACHING
-OPTIONS_GROUP_CACHING=	APCU MEMCACHED OPCACHE REDIS
+OPTIONS_GROUP_CACHING=	APCU OPCACHE REDIS
 OPTIONS_MULTI=		DB
 OPTIONS_MULTI_DB=	MYSQL PGSQL SQLITE
 OPTIONS_DEFAULT=	APCU EXIF INTL LDAP MYSQL OPCACHE SSL
@@ -41,11 +41,11 @@ DB_DESC=	Database backend(s)
 EXIF_DESC=	Image rotation support
 IMAGICK_DESC=	Thumbnail support (recommended)
 INTL_DESC=	International character support (recommended)
-MEMCACHED_DESC=	Distributed data caching using Memcached
 OPCACHE_DESC=	Enable OPcode caching (recommended)
 PCNTL_DESC=	Long-running process control (recommended)
 REDIS_DESC=	Distributed data caching using Redis
 
+APCU_RUN_DEPENDS=	${PECL_PKGNAMEPREFIX}APCu>0:devel/pecl-APCu@${PHP_FLAVOR}
 EXIF_USE=	PHP=exif
 IMAGICK_RUN_DEPENDS=	${PECL_PKGNAMEPREFIX}imagick>=2.2.2:graphics/pecl-imagick@${PHP_FLAVOR}
 INTL_USE=	PHP=intl
@@ -58,12 +58,6 @@ REDIS_RUN_DEPENDS=	${PECL_PKGNAMEPREFIX}redis>=2.2.6:databases/pecl-redis@${PHP_
 SMB_RUN_DEPENDS=	${PECL_PKGNAMEPREFIX}smbclient>=0.9.0:net/pecl-smbclient@${PHP_FLAVOR}
 SQLITE_USE=	PHP=pdo_sqlite,sqlite3
 SSL_USE=	PHP=openssl
-
-.include <bsd.port.pre.mk>
-
-.if ${PORT_OPTIONS:MAPCU}
-RUN_DEPENDS+=	${PHPBASE}/lib/php/${PHP_EXT_DIR}/apcu.so:devel/pecl-APCu@${PHP_FLAVOR}
-.endif
 
 post-extract:
 	@${MV} ${WRKSRC}/config/config.sample.php ${WRKSRC}/config/config.documented.php
@@ -82,4 +76,4 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${WWWDIR}/apps
 	@${MKDIR} ${STAGEDIR}/var/log/${PORTNAME}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

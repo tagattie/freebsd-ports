@@ -170,6 +170,26 @@ CMake Error at IGC/CMakeLists.txt:1974 (message):
  
  // Linux, Android
  #define MY_EXTERN_C    extern "C"
+--- IGC/AdaptorOCL/ocl_igc_interface/impl/fcl_ocl_translation_ctx_impl.cpp.orig	2020-11-21 02:52:12 UTC
++++ IGC/AdaptorOCL/ocl_igc_interface/impl/fcl_ocl_translation_ctx_impl.cpp
+@@ -64,7 +64,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ 
+ #include <memory>
+ 
+-#if defined(__linux__)
++#if defined(__unix__)
+ #include <dlfcn.h>
+ #else
+ #include <Windows.h>
+@@ -132,7 +132,7 @@ llvm::Optional<std::vector<char>> readBinaryFile(const
+ #if !defined(WDDM_LINUX) && (!defined(IGC_VC_DISABLED) || !IGC_VC_DISABLED)
+ 
+ static std::string detectCmIncludes(llvm::sys::DynamicLibrary &LibInfo) {
+-#if defined(__linux__)
++#if defined(__unix__)
+ #define GetFunctionNameAsStr(s) ((void)s, #s);
+   const char *SymName = GetFunctionNameAsStr(IntelCMClangFECompile);
+   void *FAddr = LibInfo.getAddressOfSymbol(SymName);
 --- IGC/GenISAIntrinsics/GenIntrinsics.h.orig	2020-02-10 06:06:31 UTC
 +++ IGC/GenISAIntrinsics/GenIntrinsics.h
 @@ -67,7 +67,7 @@ namespace GenISAIntrinsic {
@@ -212,6 +232,26 @@ CMake Error at IGC/CMakeLists.txt:1974 (message):
          if (!FCL_IGC_IS_FLAG_ENABLED(DumpToCurrentDir) && g_shaderOutputFolder == "" && !FCL_IGC_IS_FLAG_ENABLED(DumpToCustomDir))
          {
              bool needMkdir = true;
+--- IGC/VectorCompiler/lib/GenXCodeGen/GenXWrapper.cpp.orig	2020-10-30 09:08:26 UTC
++++ IGC/VectorCompiler/lib/GenXCodeGen/GenXWrapper.cpp
+@@ -24,7 +24,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ 
+ ======================= end_copyright_notice ==================================*/
+ 
+-#if defined(__linux__)
++#if !defined(_WIN32)
+ #include <dlfcn.h>
+ #endif
+ 
+@@ -121,7 +121,7 @@ translateSPIRVToIR(ArrayRef<char> Input, ArrayRef<uint
+           void *ErrUserData);
+ 
+   const std::string SpirvLibPath = findSpirvDLL();
+-#if defined(__linux__)
++#if defined(RTLD_DEEPBIND)
+   // Hack to workaround cmoc crashes during loading of SPIRV library
+   static auto DeepBindHack =
+       dlopen(SpirvLibPath.c_str(), RTLD_NOW | RTLD_DEEPBIND);
 --- IGC/common/LLVMWarningsPop.hpp.orig	2019-11-27 01:05:20 UTC
 +++ IGC/common/LLVMWarningsPop.hpp
 @@ -58,6 +58,6 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
@@ -222,24 +262,17 @@ CMake Error at IGC/CMakeLists.txt:1974 (message):
 +#if defined(__GNUC__)
  #   pragma GCC diagnostic pop
  #endif
---- IGC/common/LLVMWarningsPush.hpp.orig	2019-11-27 01:05:20 UTC
+--- IGC/common/LLVMWarningsPush.hpp.orig	2020-09-16 10:27:28 UTC
 +++ IGC/common/LLVMWarningsPush.hpp
-@@ -55,13 +55,13 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+@@ -55,7 +55,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  #   pragma warning( push )
  #endif
  
 -#if defined(__linux__)
 +#if defined(__GNUC__)
  #   pragma GCC diagnostic push
- #endif
- 
- #include <llvm/Config/llvm-config.h>
- 
--#if defined(__linux__)
-+#if defined(__GNUC__)
- #    if __GNUC__ > 8
- #        pragma GCC diagnostic ignored "-Winit-list-lifetime"
- #    endif
+ #   if __GNUC__ > 8
+ #       pragma GCC diagnostic ignored "-Winit-list-lifetime"
 --- IGC/common/igc_regkeys.hpp.orig	2019-11-27 01:05:20 UTC
 +++ IGC/common/igc_regkeys.hpp
 @@ -39,7 +39,7 @@ typedef char debugString[256];
@@ -260,9 +293,9 @@ CMake Error at IGC/CMakeLists.txt:1974 (message):
  #define LINUX_RELEASE_MODE
  #endif
  
---- visa/BuildCISAIRImpl.cpp.orig	2020-01-09 09:46:51 UTC
+--- visa/BuildCISAIRImpl.cpp.orig	2020-09-16 10:27:28 UTC
 +++ visa/BuildCISAIRImpl.cpp
-@@ -684,7 +684,6 @@ extern void CISA_delete_buffer(YY_BUFFER_STATE buf);
+@@ -576,7 +576,6 @@ extern void CISA_delete_buffer(YY_BUFFER_STATE buf);
  
  int CISA_IR_Builder::ParseVISAText(const std::string& visaHeader, const std::string& visaText, const std::string& visaTextFile)
  {
@@ -270,12 +303,12 @@ CMake Error at IGC/CMakeLists.txt:1974 (message):
      // Direct output of parser to null
  #if defined(_WIN64) || defined(_WIN32)
      CISAout = fopen("nul", "w");
-@@ -746,16 +745,11 @@ int CISA_IR_Builder::ParseVISAText(const std::string& 
+@@ -627,16 +626,11 @@ int CISA_IR_Builder::ParseVISAText(const std::string& 
      }
  
-     return VISA_SUCCESS;
+     return status;
 -#else
--    assert(0 && "Asm parsing not supported on this platform");
+-    assert(0 && "vISA asm parsing not supported on this platform");
 -    return VISA_FAILURE;
 -#endif
  }
@@ -287,7 +320,7 @@ CMake Error at IGC/CMakeLists.txt:1974 (message):
      // Direct output of parser to null
  #if defined(_WIN64) || defined(_WIN32)
      CISAout = fopen("nul", "w");
-@@ -781,10 +775,6 @@ int CISA_IR_Builder::ParseVISAText(const std::string& 
+@@ -662,10 +656,6 @@ int CISA_IR_Builder::ParseVISAText(const std::string& 
          fclose(CISAout);
      }
      return VISA_SUCCESS;

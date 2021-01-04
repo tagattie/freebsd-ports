@@ -2,8 +2,8 @@
 
 PORTNAME=	cage
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.1.1-77
-DISTVERSIONSUFFIX=	-gbd961db
+DISTVERSION=	0.1.2.1
+PORTREVISION=	2
 CATEGORIES=	x11-wm
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
@@ -17,7 +17,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto \
 		wayland-protocols>=1.14:graphics/wayland-protocols \
-		wlroots>=0.9.1:x11-toolkits/wlroots
+		wlroots>=0.11.0:x11-toolkits/wlroots
 LIB_DEPENDS=	libwayland-server.so:graphics/wayland \
 		libwlroots.so:x11-toolkits/wlroots \
 		libxkbcommon.so:x11/libxkbcommon
@@ -35,7 +35,7 @@ MANPAGES_BUILD_DEPENDS=	scdoc>=1.9.2:textproc/scdoc
 MANPAGES_MESON_ENABLED=	man-pages
 MANPAGES_PLIST_FILES=	man/man1/${PORTNAME}.1.gz
 
-SUID_DESC=	setuid bit on "${PORTNAME}" binary (required for DRM session)
+SUID_DESC=	setuid bit on "${PORTNAME}" binary (to claim DRM without seatd/console-kit-daemon)
 SUID_VARS=	MAYBE_SUID="@(,,4755) "
 
 X11_MESON_TRUE=	xwayland

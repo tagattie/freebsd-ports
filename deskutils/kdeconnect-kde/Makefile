@@ -17,7 +17,6 @@ RUN_DEPENDS=	sshpass:security/sshpass \
 		sshfs:sysutils/fusefs-sshfs \
 		kpeoplevcard>0:net/kpeoplevcard
 
-CONFLICTS_INSTALL=	kdeconnect-kde-0.7* kdeconnect-kde-kde4-0.7.*
 
 USES=		cmake compiler:c++11-lang desktop-file-utils gettext kde:5 \
 		pkgconfig qca qt:5 tar:xz xorg
@@ -32,5 +31,7 @@ USE_XORG=	ice sm x11 xext xtst
 USE_LDCONFIG=	${QT_QMLDIR}/org/kde/kdeconnect
 
 OPTIONS_DEFINE=	DOCS
+
+KDE_APPLICATIONS_SHLIB_VER=${KDE_APPLICATIONS_VERSION}
 
 .include <bsd.port.mk>

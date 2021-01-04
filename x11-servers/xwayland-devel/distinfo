@@ -1,7 +1,9 @@
-TIMESTAMP = 1593099139
-SHA256 (freedesktop-xorg-xserver-xorg-server-1.20.0-669-gb67052742_GH0.tar.gz) = dc3f9d66825b2b2cb8717bad7f773190ee20042e379b030bc50d7ee00ce40b64
-SIZE (freedesktop-xorg-xserver-xorg-server-1.20.0-669-gb67052742_GH0.tar.gz) = 5105667
-SHA256 (9e0086f99b39.patch) = f8af32f1aba1062e351fe43722816ba1dda43ae691bed8a0f855b58341ad8f6c
-SIZE (9e0086f99b39.patch) = 10714
-SHA256 (30ea6cb622e9.patch) = 3a99b52b7f7a451daf0620b457aa041a95caddcdcc0ae73d7b8a1b30d19f14b0
-SIZE (30ea6cb622e9.patch) = 17585
+TIMESTAMP = 1608041027
+SHA256 (freedesktop-xorg-xserver-xorg-server-1.20.0-800-ge4a9f0bb4_GH0.tar.gz) = d7a72e3952330df7b84acffcd412c0af3ccd7e3ff1060dfac03de5a994f1bf47
+SIZE (freedesktop-xorg-xserver-xorg-server-1.20.0-800-ge4a9f0bb4_GH0.tar.gz) = 5126623
+SHA256 (231720f8b212.patch) = ed3db053b86e5c7492cefb9dbb3dd373609f9318a5b848382aac59da322188f0
+SIZE (231720f8b212.patch) = 10714
+SHA256 (48a7bfeb4687.patch) = ae284622227b317085360f61553bae7fc21a57f4d2b6d4133a6ead0c93b47cee
+SIZE (48a7bfeb4687.patch) = 17542
+SHA256 (2b3c4983f937.patch) = 9927abf281cff8d44694a883bd60e90337e9d635a3714de1a51f91c4f112c46e
+SIZE (2b3c4983f937.patch) = 2567

@@ -5,6 +5,7 @@
 
     SUBDIR += 44bsd-csh
     SUBDIR += ammonite
+    SUBDIR += anongitssh
     SUBDIR += antibody
     SUBDIR += ast-ksh
     SUBDIR += bash
@@ -28,9 +29,9 @@
     SUBDIR += ksh2020
     SUBDIR += ksh93
     SUBDIR += ksh93-devel
-    SUBDIR += lshell
     SUBDIR += mksh
     SUBDIR += nologinmsg
+    SUBDIR += ohmyzsh
     SUBDIR += oksh
     SUBDIR += p5-Bash-Completion
     SUBDIR += p5-Shell-Perl
@@ -38,13 +39,14 @@
     SUBDIR += p5-Term-ShellUI
     SUBDIR += pdksh
     SUBDIR += pear-PHP_Shell
-    SUBDIR += poshinit
     SUBDIR += psh
     SUBDIR += rc
+    SUBDIR += rubygem-shellwords
     SUBDIR += rush
     SUBDIR += sash
     SUBDIR += scponly
     SUBDIR += starship
+    SUBDIR += switchBashZsh
     SUBDIR += tcsh_nls
     SUBDIR += tcshrc
     SUBDIR += v7sh

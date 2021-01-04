@@ -2,7 +2,7 @@
 
 PORTNAME=		afni
 DISTVERSIONPREFIX=	AFNI_
-DISTVERSION=		20.1.17
+DISTVERSION=		20.3.04
 CATEGORIES=		science biology graphics perl5 python
 
 MAINTAINER=	ports@FreeBSD.org
@@ -26,7 +26,6 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libXm.so:x11-toolkits/open-motif \
 		libnetpbm.so:graphics/netpbm
 # Remote execution of suma.  Also needed for glxinfo.
-LIB_PC_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/dri.pc:graphics/mesa-dri
 RUN_DEPENDS=	endian:sysutils/endian \
 		mpeg_encode:multimedia/mpeg_encode \
 		qhull:math/qhull5 \
@@ -35,9 +34,10 @@ RUN_DEPENDS=	endian:sysutils/endian \
 
 USES=		compiler:openmp gettext gl gmake gnome iconv jpeg:run motif
 USES+=		perl5 python shebangfix tar:xz xorg
-USE_GNOME=	glib20
 USE_GITHUB=	yes
-USE_GL=		gl
+USE_GL=		gl glu
+USE_GNOME=	glib20
+USE_XORG=	x11 xext xi xmu xt
 
 SHEBANG_FILES=	scripts_install/* \
 		python_scripts/afnipy/*.py \
@@ -45,19 +45,14 @@ SHEBANG_FILES=	scripts_install/* \
 		jzosky/*.py \
 		jzosky/lib_RetroTS/*.py \
 		discoraj/ClusterExplorer/*.py \
-		roopchansinghv/PsychoPy-NeuroFeedback-Demo/*.py \
-		roopchansinghv/PsychoPy-NeuroFeedback-Demo/*/*.py \
 		pkundu/*.py \
 		pkundu/meica.libs/*.py \
 		pkundu/meica.libs/*/*.py \
 		pkundu/meica.libs/*/*/*.py
 
-USE_GL=		gl glu
-USE_XORG=	x11 xext xi xmu xt
 MAKE_ENV=	CC="${CC}" R_SHARE_DIR=${LOCALBASE}/lib/R/share
 MAKE_JOBS_UNSAFE=yes
 
-WRKSRC_SUBDIR=	src
 ALL_TARGET=	vastness suma
 
 ###########################################################################
@@ -66,10 +61,12 @@ ALL_TARGET=	vastness suma
 SUB_FILES=	pkg-message afni.cshrc afni.profile
 
 INSTALL_WRKSRC=	${WRKSRC}/BSD
-INSTALL_TMP=	${INSTALL_WRKSRC}-temp
-PRESTAGE=	${WRKSRC}/prestage
+WRKSRC_SUBDIR=	src
 
 OPTIONS_DEFINE=	DOCS
+
+INSTALL_TMP=	${INSTALL_WRKSRC}-temp
+PRESTAGE=	${WRKSRC}/prestage
 
 .include <bsd.port.options.mk>
 
@@ -128,7 +125,7 @@ do-install:
 		${INSTALL_TMP}/*.so \
 		${PRESTAGE}/lib
 	@${MV}	${INSTALL_TMP}/*.h ${PRESTAGE}/include
-	@${MV}	${INSTALL_TMP}/afnipy ${INSTALL_TMP}/afniRTI ${PRESTAGE}/pylib
+	@${MV}	${INSTALL_TMP}/afnipy ${PRESTAGE}/pylib
 	@${CP}	${WRKDIR}/afni-AFNI_${PORTVERSION}/doc/README/* ${PRESTAGE}/doc
 	@for binary in `${FILE} ${INSTALL_TMP}/* | fgrep 'ELF' | ${AWK} -F ':' ' { print $$1 }'` ; do \
 		${MV} $${binary} ${PRESTAGE}/bin ; \

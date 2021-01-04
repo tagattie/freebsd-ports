@@ -1,13 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	yoshimi
-DISTVERSION=	1.7.1
+DISTVERSION=	1.7.3
 CATEGORIES=	audio
 
-PATCH_SITES=	https://github.com/Yoshimi/yoshimi/commit/
-PATCHFILES=	86996cbb235f0fe138ae814a6758c2c8ba1c2a38.patch:-p1
-
-MAINTAINER=	tobik@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sophisticated software synthesizer
 
 LICENSE=	GPLv2+
@@ -26,6 +23,7 @@ USES=		cmake compiler:c++11-lang gnome ncurses pkgconfig readline:port
 USE_GITHUB=	yes
 GH_ACCOUNT=	Yoshimi
 USE_GNOME=	cairo
+INSTALLS_ICONS=	yes
 
 CMAKE_SOURCE_PATH=	${WRKSRC}/src
 LDFLAGS+=		-Wl,--as-needed

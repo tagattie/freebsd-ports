@@ -3,7 +3,7 @@
 
 PORTNAME=	erlang
 DISTVERSIONPREFIX=	OTP-
-DISTVERSION=	23.0.2
+DISTVERSION=	23.2.1
 CATEGORIES=	lang parallel java
 PKGNAMESUFFIX=	-runtime23
 DIST_SUBDIR=	erlang
@@ -19,7 +19,7 @@ USES=		autoreconf:build gmake ncurses perl5
 USE_GITHUB=	nodefault
 GH_ACCOUNT=	erlang:otp,corba
 GH_PROJECT=	otp:otp corba:corba
-GH_TAGNAME=	4.5.2:corba
+GH_TAGNAME=	5.0:corba
 USE_PERL5=	build
 
 DATADIR=        ${PREFIX}/share/${PORTNAME}${PKGNAMESUFFIX}
@@ -35,8 +35,8 @@ ERLANG_LIB=	${PORTNAME}${PORTVERSION:C/\..*//}
 
 OPTIONS_DEFINE=	CORBA DIRTY DTRACE HIPE JAVA KQUEUE NATIVE ODBC OPENSSL SCTP THREADS WX
 OPTIONS_DEFAULT=CORBA DIRTY DTRACE KQUEUE OPENSSL SCTP THREADS
-OPTIONS_EXCLUDE_powerpc64=	HIPE ${OPTIONS_EXCLUDE_${ARCH}_${OSREL:R}}
-OPTIONS_EXCLUDE_powerpc64_13=	DTRACE
+OPTIONS_EXCLUDE_powerpc64=	HIPE
+OPTIONS_EXCLUDE_riscv64=	DTRACE
 
 CORBA_DESC=	Enable Corba support
 DIRTY_DESC=	Enable Dirty schedulers
@@ -113,10 +113,6 @@ post-configure-ODBC-on:
 
 pre-build-NATIVE-on:
 	@cd ${WRKSRC} && ${MAKE_CMD} clean
-
-post-patch-CORBA-on:
-	cd ${WRKSRC_corba} \
-		&& ${PATCH} < ${FILESDIR}/corba-patch-lib_ic_Makefile
 
 post-build-CORBA-on:
 	cd ${WRKSRC_corba} \

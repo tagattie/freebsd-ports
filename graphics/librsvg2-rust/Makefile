@@ -2,13 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	librsvg
-PORTVERSION=	2.48.6
+PORTVERSION=	2.50.2
 CATEGORIES=	graphics gnome
 MASTER_SITES=	GNOME
 PKGNAMESUFFIX=	2-rust
 DIST_SUBDIR=	gnome2
 
-MAINTAINER=	tobik@FreeBSD.org
+MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	Library for parsing and rendering SVG vector-graphic files
 
 LICENSE=	LGPL20
@@ -20,7 +20,7 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libharfbuzz.so:print/harfbuzz \
 		libpng.so:graphics/png
 
-USES=		gettext gmake gnome libtool pkgconfig tar:xz
+USES=		compiler:c11 gettext gmake gnome libtool pkgconfig tar:xz
 USE_GNOME=	cairo gdkpixbuf2 gnomeprefix libxml2 pango introspection:build
 USE_LDCONFIG=	yes
 
@@ -31,9 +31,11 @@ CONFIGURE_ARGS=	--disable-Bsymbolic \
 		--enable-vala
 # Make sure it uses the Rust toolchain from ports.
 CONFIGURE_ENV=	CARGO=${LOCALBASE}/bin/cargo \
-		RUSTC=${LOCALBASE}/bin/rustc
+		RUSTC=${LOCALBASE}/bin/rustc \
+		RUSTFLAGS="${RUSTFLAGS} -C linker=${CC:Q} ${LDFLAGS:C/.+/-C link-arg=&/}"
 MAKE_ENV=	CARGO_BUILD_JOBS=${MAKE_JOBS_NUMBER} \
-		RUSTC=${LOCALBASE}/bin/rustc
+		RUSTC=${LOCALBASE}/bin/rustc \
+		RUSTFLAGS="${RUSTFLAGS} -C linker=${CC:Q} ${LDFLAGS:C/.+/-C link-arg=&/}"
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
 

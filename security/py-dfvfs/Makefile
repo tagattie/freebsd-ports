@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dfvfs
-PORTVERSION=	20200429
+PORTVERSION=	20201219
 CATEGORIES=	security devel python
 MASTER_SITES=	https://github.com/log2timeline/dfvfs/releases/download/${PORTVERSION}/ \
 		LOCAL/antoine
@@ -17,7 +17,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	libbde>=a:devel/libbde \
 		libewf>=0:devel/libewf \
 		libfsapfs>=e:devel/libfsapfs \
+		libfsext>=e:devel/libfsext \
+		libfshfs>=e:devel/libfshfs \
 		libfsntfs>=e:devel/libfsntfs \
+		libfsxfs>=e:devel/libfsxfs \
 		libfvde>=0:sysutils/libfvde \
 		libfwnt>=e:devel/libfwnt \
 		libluksde>=e:devel/libluksde \
@@ -43,6 +46,9 @@ USE_LOCALE=	en_US.UTF-8
 USE_PYTHON=	distutils autoplist concurrent
 
 NO_ARCH=	yes
+
+# Upstream archive contains files with UTF-8 names
+EXTRACT_CMD=	${SETENV} LC_ALL=en_US.UTF-8 /usr/bin/bsdtar
 
 post-patch:
 	${REINPLACE_CMD} "s,share/doc/dfvfs,${DOCSDIR_REL}," ${WRKSRC}/setup.py

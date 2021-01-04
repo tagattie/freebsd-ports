@@ -18,6 +18,9 @@ LICENSE_COMB=	dual
 LICENSE_FILE_BSD2CLAUSE=${WRKSRC}/BSDL
 LICENSE_FILE_RUBY=	${WRKSRC}/COPYING
 
+DEPRECATED=	Use newer version, e.g. lang/ruby27 or above. Ruby 2.5 is in security maintenance phase and planned for EOL on March 31, 2021
+EXPIRATION_DATE=2021-03-31
+
 # Using LIB_DEPENDS finds the libffi from gcc which causes problems
 BUILD_DEPENDS=	libffi>=0:devel/libffi
 LIB_DEPENDS=	libyaml.so:textproc/libyaml
@@ -93,7 +96,7 @@ CONFIGURE_ARGS+=--disable-dtrace
 .endif
 
 # keep in sync with all platforms where libunwind is available
-.if (${ARCH} == amd64 || ${ARCH} == i386)
+.if (${ARCH} == aarch64 || ${ARCH} == amd64 || ${ARCH} == i386 || ${ARCH:Mpowerpc64*})
 LIB_DEPENDS+=	libunwind.so:devel/libunwind
 .endif
 

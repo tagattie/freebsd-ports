@@ -40,7 +40,6 @@ baudline_*		audio/baudline		No redistribution allowed
 BCWipe-*		security/bcwipe		Non-commercial distribution and use only
 bicom*			archivers/bicom		Contact author personally regarding commercial use
 Browser*.tar.gz		net/ldapbrowser		No reply from author regarding redistribution licensing
-bzip-*			archivers/bzip		Some algorithms used may infringe certain US patents.  Opinions differ.  Commercial use could render you liable to unfriendly legal action
 citrix_ica-*		net/citrix_ica		License prohibits redistribution
 arcconf-v*		sysutils/arcconf	May not be redistributed in binary form
 cloudflare-cloudflared*	net/cloudflared		Not sure if we are allowed to redistribute it.
@@ -49,12 +48,9 @@ cos-*			java/cos		Special conditions apply for commercial use
 cosmo/*			games/cosmo		Possible copyright infringement
 CrystalSVGforGnomeIcons* x11-themes/gnome-icons-crystal Themes may contain artwork not done by the author.  Keep FreeBSD safe if theme author violated copyrights.
 cyberbit/*		x11-fonts/cyberbit-ttfonts Not free for commercial use
-darwinia-demo*		games/linux-darwinia-demo	Redistribution is limited, see license
-datamodeler		databases/datamodeler	Packaging prohibited by Oracle license
 dbvis			java/dbvis		Redistribution is not permitted
 dcl-*-C.tar.gz		science/cdcl		No commercial use
 dcl-*.tar.gz		science/dcl		No commercial use
-defcon*			games/linux-defcon	Redistribution is limited, see license
 djbdns*			dns/djbdns		No license -- see http://cr.yp.to/softwarelaw.html
 djbfft-*		math/djbfft		No license -- see http://cr.yp.to/softwarelaw.html
 dlv			lang/dlv		Not sure if we can redistribute it
@@ -123,7 +119,6 @@ komodo-*		editors/komodo-edit	Distribution not permitted
 kzip-*			archivers/kzip		License does not allow redistribution
 l0phtcrack/*		security/l0phtcrack	Parts are under GPL, so binaries should not be distributed.  Contains crypto code from OpenSSL
 ladder.tar		games/ladder		Possible copyright problems
-lame*			audio/lame		patent issues, see http://www.mp3licensing.com/
 lha-1.14i-ac*		archivers/lha-ac	No redistribution allowed
 libaacplus-*		audio/libaacplus	Unclear legal status
 libamrnb/26104-*.zip	audio/libamrnb		unclear legal status, probably need licenses from 3GPP and more
@@ -175,7 +170,6 @@ serialmail-*		mail/serialmail		No license -- see http://cr.yp.to/softwarelaw.htm
 serious.sam*		games/linux-ssamtfe	Redistribution limited
 serious.sam*		games/linux-ssamtse	Redistribution limited
 sharefonts-*		x11-fonts/sharefonts	Shareware: cannot be distributed without prior authorization
-sid-milter-*		mail/sid-milter		May incorporate intellectual property, possible patent issues
 simian-*		devel/simian		Have to agree to license before download
 STonX-*			emulators/stonx		Contains ROM (C) by Atari
 stuffit*		archivers/stuffit	Only unmodified original package can be distributed
@@ -197,7 +191,6 @@ tuc-*			converters/tuc		Author does not allow CD-ROM distribution
 tw_cli-*		sysutils/tw_cli		Redistribution forbidden by license
 ue*dev.zip		editors/uemacs		Resale allowed for media cost only
 unifi-5*/UniFi.unix.zip	net-mgmt/unifi5		Redistribution of bundled firmware images is not permitted
-uplink-demo*		games/linux-uplink-demo	Redistribution is limited, see license
 uzap.tar.gz		editors/uzap		This software may not be used to make a profit in any way.
 vdbench*.zip		benchmarks/linux-vdbench	Redistribution is not permitted
 vdr-markad-*		multimedia/vdr-plugin-markad	Installs station logos

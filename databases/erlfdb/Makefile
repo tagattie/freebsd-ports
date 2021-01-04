@@ -2,7 +2,7 @@
 
 PORTNAME=	erlfdb
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.2.2
+DISTVERSION=	1.2.3
 CATEGORIES=	databases
 
 MAINTAINER=	dch@FreeBSD.org
@@ -18,7 +18,7 @@ GH_ACCOUNT=	apache
 GH_PROJECT=	couchdb-${PORTNAME}
 
 post-install:
-	@${FIND} -E ${STAGEDIR} -type f  -name *.so \
+	@${FIND} ${STAGEDIR} -type f  -name *.so \
 		-exec ${STRIP_CMD} {} +
 
 .include <bsd.port.mk>

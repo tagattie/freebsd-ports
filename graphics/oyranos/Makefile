@@ -2,15 +2,13 @@
 
 PORTNAME=	oyranos
 PORTVERSION=	0.9.6
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	graphics
 
 MAINTAINER=	bsam@FreeBSD.org
 COMMENT=	Colour Management System (CMS)
 
 LICENSE=	BSD3CLAUSE
-
-BROKEN=		Does not build with Qt5-5.14
 
 RUN_DEPENDS=	${LOCALBASE}/share/color/icc/OpenICC/sRGB.icc:graphics/icc-profiles-openicc \
 		${LOCALBASE}/share/color/icc/basICColor/ISOcoated_v2_300_bas.ICC:graphics/icc-profiles-basiccolor \
@@ -20,7 +18,6 @@ LIB_DEPENDS=	libraw.so:graphics/libraw \
 		libpng.so:graphics/png \
 		libcairo.so:graphics/cairo \
 		libyajl.so:devel/yajl \
-		libfltk.so:x11-toolkits/fltk \
 		libcups.so:print/cups \
 		libxdot.so:graphics/graphviz \
 		liblcms.so:graphics/lcms \
@@ -44,9 +41,15 @@ CMAKE_ARGS+=	-DXDG_CONFIG_DIR=${PREFIX}/etc/xdg
 LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}
 MAKE_JOBS_UNSAFE=yes
 
-OPTIONS_DEFINE=	DOXYGEN DOCS
+OPTIONS_DEFINE=	DOCS DOXYGEN FLTK
+OPTIONS_SUB=	yes
+FLTK_DESC=	Build FLTK-based auxiliary programs
+FLTK_BROKEN=	fails to build, see https://github.com/oyranos-cms/oyranos/issues/62
+
 DOXYGEN_IMPLIES=	DOCS
 DOXYGEN_BUILD_DEPENDS=	${LOCALBASE}/bin/doxygen:devel/doxygen
+
+FLTK_LIB_DEPENDS=	libfltk.so:x11-toolkits/fltk
 
 PORTDOCS=	*
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${PORTVERSION}

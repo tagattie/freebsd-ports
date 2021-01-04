@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	ecl
-PORTVERSION=	16.1.3
-PORTREVISION=	2
+PORTVERSION=	20.4.24
+PORTREVISION=	1
 CATEGORIES=	lang lisp
 MASTER_SITES=	https://common-lisp.net/project/ecl/static/files/release/
 
@@ -12,7 +12,6 @@ COMMENT=	ANSI Common Lisp implementation
 
 LICENSE=	LGPL20
 
-BROKEN_aarch64=		fails to compile: error: unknown type name AO_TS_t
 BROKEN_mips=		fails to build: qemu: uncaught target signal 11 (Segmentation fault) - core dumped
 BROKEN_mips64=		fails to build: qemu: uncaught target signal 11 (Segmentation fault) - core dumped
 
@@ -21,7 +20,8 @@ LIB_DEPENDS=	libgmp.so:math/gmp \
 		libgc.so:devel/boehm-gc
 
 MAKE_JOBS_UNSAFE=	yes
-USES=		autoreconf gmake localbase perl5 tar:tgz
+USES=		autoreconf gmake localbase perl5 tar:tgz makeinfo
+USE_CSTD=	c99
 USE_PERL5=	build
 GNU_CONFIGURE=	yes
 AUTORECONF_WRKSRC=	${WRKSRC}/src
@@ -30,6 +30,7 @@ CONFIGURE_ARGS=	--with-system-gmp \
 		--enable-boehm=system \
 		--enable-libatomic=system
 USE_LDCONFIG=	yes
+INFO=		ecl
 
 OPTIONS_DEFINE=	ASDF DFFI SAGE SOCKETS THREADS X11
 OPTIONS_DEFAULT=ASDF DFFI SAGE SOCKETS THREADS
@@ -54,7 +55,6 @@ SAGE_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-src_aclocal.m4 \
 			${PATCHDIR}/extra-patch-src_c_file.d \
 			${PATCHDIR}/extra-patch-src_compile.lsp.in \
 			${PATCHDIR}/extra-patch-src_configure.ac \
-			${PATCHDIR}/extra-patch-src_lsp_format.lsp \
 			${PATCHDIR}/extra-patch-src_Makefile.in
 
 SOCKETS_CONFIGURE_ON=	--with-tcp=yes

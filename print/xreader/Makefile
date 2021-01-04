@@ -2,18 +2,19 @@
 # $FreeBSD$
 
 PORTNAME=	xreader
-PORTVERSION=	2.6.2
+PORTVERSION=	2.6.4
+PORTREVISION=	3
 CATEGORIES=	print
 
 MAINTAINER=	danfe@FreeBSD.org
-COMMENT=	Generic document reader
+COMMENT=	Multi-format document reader
 
 LICENSE=	GPLv2+
 
 PORTSCOUT=	limit:^[0-9.]+$$	# ignore master.mint* tags
 
 BUILD_DEPENDS=	intltool-merge:textproc/intltool
-LIB_DEPENDS=	libxapp.so:x11/xapps
+LIB_DEPENDS=	libxapp.so:x11/xapp
 
 USES=		desktop-file-utils gettext-tools gnome meson pkgconfig xorg
 USE_GITHUB=	yes

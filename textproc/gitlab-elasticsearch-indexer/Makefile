@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gitlab-elasticsearch-indexer
-PORTVERSION=	2.3.0
+PORTVERSION=	2.8.0
 PORTREVISION=	0
 CATEGORIES=	textproc
 
@@ -23,7 +23,7 @@ MAKE_ENV=	GOFLAGS="${GO_BUILDFLAGS}"
 USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 # Find the commit hash here: https://gitlab.com/gitlab-org/gitlab-elasticsearch-indexer/-/tags
-GL_COMMIT=	a9333a2083099b620ec4a6f65b6395626a8d4b25
+GL_COMMIT=	723c949175a3be42c1b5e40db7fbb9f1050c5bb8
 
 # for go dependencies
 USE_GITHUB=	nodefault

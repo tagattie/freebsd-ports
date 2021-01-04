@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	sshfs
-PORTVERSION=	3.7.0
+PORTVERSION=	3.7.1
 DISTVERSIONPREFIX=	${PORTNAME}-
-PORTREVISION=	1
 CATEGORIES=	sysutils
 PKGNAMEPREFIX=	fusefs-
 
@@ -18,12 +17,10 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		compiler:c11 fuse:3 gnome meson pkgconfig
-USE_GNOME=	glib20
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	libfuse
-
 USE_GNOME=	glib20
+
 CFLAGS+=	-DNDEBUG
 
 PLIST_FILES=	bin/sshfs

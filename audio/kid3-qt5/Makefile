@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	kid3
-PORTVERSION=	3.7.1
-PORTREVISION?=	4
+PORTVERSION=	3.8.4
+PORTREVISION?=	0
 CATEGORIES=	audio kde
 MASTER_SITES=	SF
 PKGNAMESUFFIX=	-${SLAVE}
@@ -38,8 +38,9 @@ KID3_APPS+=	QT
 .else
 # KF5
 USES+=		kde:5
-USE_KDE+=	auth codecs config configwidgets coreaddons \
-		widgetsaddons xmlgui doctools_build ecm_build
+USE_KDE+=	auth codecs config configwidgets coreaddons kio \
+		service widgetsaddons xmlgui doctools_build ecm_build
+USE_QT+=	concurrent
 PLIST_SUB+=	KF5="" QT="@comment " QT_SUFX=""
 KID3_APPS+=	KDE
 .endif
@@ -65,6 +66,7 @@ CLI_VARS=		KID3_APPS+=CLI
 
 FLAC_LIB_DEPENDS=	libFLAC.so:audio/flac
 FLAC_CMAKE_BOOL=	WITH_FLAC
+FLAC_IMPLIES=		VORBIS
 
 MP3_LIB_DEPENDS=	libid3.so:audio/id3lib
 MP3_CMAKE_BOOL=		WITH_ID3LIB
@@ -85,12 +87,6 @@ VORBIS_LIB_DEPENDS=	libvorbis.so:audio/libvorbis \
 VORBIS_CMAKE_BOOL=	WITH_VORBIS
 
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MFLAC} || ${PORT_OPTIONS:MVORBIS}
-PLIST_SUB+=	OGGFLAC=""
-.else
-PLIST_SUB+=	OGGFLAC="@comment "
-.endif
 
 pre-test:
 	@${CP} ${WRKSRC}/src/test/*.py ${TEST_WRKSRC}

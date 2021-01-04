@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wordpress
-DISTVERSION=	5.3.3
+DISTVERSION=	5.5.3
 DISTVERSIONSUFFIX=	-ru_RU
 CATEGORIES=	russian www
 MASTER_SITES=	http://ru.wordpress.org/
@@ -13,6 +13,7 @@ COMMENT=	State-of-the-art semantic personal publishing platform
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/license.txt
 
+BROKEN=		unfetchable
 CONFLICTS_INSTALL=	wordpress-[0-9].* de-wordpress-[0-9].* ja-wordpress-[0-9].*
 
 NO_ARCH=	yes

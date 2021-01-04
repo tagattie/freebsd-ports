@@ -1,8 +1,8 @@
---- chrome/test/BUILD.gn.orig	2020-05-13 18:40:25 UTC
+--- chrome/test/BUILD.gn.orig	2020-11-13 06:36:38 UTC
 +++ chrome/test/BUILD.gn
-@@ -6109,7 +6109,7 @@ test("chrome_app_unittests") {
-     "//components/gwp_asan/buildflags",
+@@ -6572,7 +6572,7 @@ test("chrome_app_unittests") {
      "//components/safe_browsing:buildflags",
+     "//pdf:pdf_ppapi",
    ]
 -  if (!is_fuchsia) {
 +  if (!is_fuchsia && !is_bsd) {

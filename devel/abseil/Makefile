@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	abseil
-PORTVERSION=	20200225.2
+PORTVERSION=	20200923.2
+PORTREVISION=	1
 CATEGORIES=	devel
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES=	567bee2f7393.diff:-p1
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Abseil Common Libraries (C++)
@@ -16,12 +15,7 @@ USES=		cmake compiler:c++11-lang
 USE_GITHUB=	yes
 GH_PROJECT=	${PORTNAME}-cpp
 
-CMAKE_ARGS=	-DBUILD_SHARED_LIBS:BOOL=ON
-
-post-install:
-# XXX: should fix CMakeLists.txt instead of removing empty directories
-	${RMDIR} ${STAGEDIR}${PREFIX}/include/absl/copts \
-		${STAGEDIR}${PREFIX}/include/absl/strings/testdata
-	${RM} -r ${STAGEDIR}${PREFIX}/include/absl/time/internal/cctz/testdata
+CMAKE_ARGS=	-DBUILD_SHARED_LIBS:BOOL=ON \
+		-DCMAKE_CXX_STANDARD=17 # force the same highest C++ standard because of ABI differences: see https://github.com/abseil/abseil-cpp/issues/819
 
 .include <bsd.port.mk>

@@ -1,7 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	couchdb3
-DISTVERSION=	3.1.0
+PORTREVISION=	1
+DISTVERSION=	3.1.1
 PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	APACHE/couchdb/source/${DISTVERSION}
@@ -74,7 +75,7 @@ post-patch:
 # https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=238514
 .if ${OPSYS} == FreeBSD && (${OSVERSION} < 1200000 || ${ARCH} == i386)
 	@${REINPLACE_CMD} \
-	    -e 's,\$FLTO_FLAG ,,g' \
+	    -e 's,$$FLTO_FLAG ,,g' \
 	    ${WRKSRC}/src/jiffy/rebar.config
 .endif
 

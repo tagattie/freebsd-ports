@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME?=	mysql
-PORTVERSION=	5.6.48
+PORTVERSION=	5.6.50
 PORTREVISION?=	0
 CATEGORIES=	databases
 MASTER_SITES=	MYSQL/MySQL-5.6
@@ -12,6 +12,8 @@ MAINTAINER=	joneum@FreeBSD.org
 COMMENT?=	Multithreaded SQL database (server)
 
 LICENSE=	GPLv2
+
+BROKEN_armv6=	qemu: uncaught target signal 11 (Segmentation fault) - core dumped
 
 SLAVEDIRS=	databases/mysql56-client
 USES=		bison:build cmake:noninja cpe groff:run libedit localbase \
@@ -85,7 +87,7 @@ CONFLICTS_INSTALL=	mysql5[0-57-9]-server-* \
 
 USE_RC_SUBR=	mysql-server
 
-SUB_FILES=	my.cnf.sample
+SUB_FILES=	my.cnf.sample pkg-message
 
 USERS=		mysql
 GROUPS=		mysql

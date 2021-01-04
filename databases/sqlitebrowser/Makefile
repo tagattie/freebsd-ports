@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sqlitebrowser
-PORTVERSION=	3.11.2
-PORTREVISION=	2
+PORTVERSION=	3.12.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	databases
 
@@ -25,10 +24,12 @@ USE_GITHUB=	yes
 
 INSTALLS_ICONS=	yes
 
+PORTSCOUT=	ignore:continuous
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%DATADIR%%|${DATADIR}|' \
-		${WRKSRC}/src/PreferencesDialog.cpp
-	@${REINPLACE_CMD} -e 's|%%DATADIR%%|${DATADIR}|' \
-		${WRKSRC}/src/Application.cpp
+		${WRKSRC}/src/PreferencesDialog.cpp ${WRKSRC}/src/Application.cpp
+	@${REINPLACE_CMD} -e 's|metainfo|appdata|' \
+		${WRKSRC}/src/src.pro ${WRKSRC}/CMakeLists.txt
 
 .include <bsd.port.mk>

@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Coro
-PORTVERSION=	6.550
+PORTVERSION=	6.570
 PORTEPOCH=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
@@ -26,10 +26,10 @@ RUN_DEPENDS=	p5-AnyEvent>=7:devel/p5-AnyEvent \
 USES=		perl5 shebangfix
 USE_PERL5=	configure
 
-OPTIONS_DEFINE=	DOCS EXAMPLES
-
 SHEBANG_FILES=	Coro/*.pl eg/*
 perl_OLD_CMD=	/.*/bin/perl
+
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Coro/EV/EV.so

@@ -1,3 +1,5 @@
-TIMESTAMP = 1593031017
-SHA256 (tdesktop-2.1.13-full.tar.gz) = d1653a386107836a0808c3d828341ad54aa962f167d8b2e17430d8aedc710357
-SIZE (tdesktop-2.1.13-full.tar.gz) = 36549505
+TIMESTAMP = 1603766669
+SHA256 (tdesktop-2.4.4-full.tar.gz) = 88799708daedaf5c132752259945b4e1b5dcbb62385661e2cca7b8e5d58c9026
+SIZE (tdesktop-2.4.4-full.tar.gz) = 36220573
+SHA256 (desktop-app-tg_owt-c73a471_GH0.tar.gz) = d1886a3ba6966fef257f63a3dd39f53d01ff8db0177fcd6de1b64916cd4076e1
+SIZE (desktop-app-tg_owt-c73a471_GH0.tar.gz) = 18383113

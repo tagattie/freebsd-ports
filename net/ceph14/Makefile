@@ -3,8 +3,8 @@
 
 PORTNAME=	ceph
 DISTVERSIONPREFIX=	v
-DISTVERSION=	14.2.9
-PORTREVISION=	0
+DISTVERSION=	14.2.11
+PORTREVISION=	2
 CATEGORIES=	net
 PKGNAMESUFFIX=	14
 
@@ -15,7 +15,7 @@ LICENSE=	GPLv2 LGPL3
 LICENSE_COMB=	dual
 
 # even though i386 will build, it is not really advised.
-ONLY_FOR_ARCHS=	amd64
+ONLY_FOR_ARCHS=	amd64 powerpc64 powerpc64le
 
 BUILD_DEPENDS=	\
 	bash:shells/bash \
@@ -39,7 +39,8 @@ LIB_DEPENDS=	\
 	liblz4.so:archivers/liblz4 \
 	libplds4.so:devel/nspr \
 	libtcmalloc.so:devel/google-perftools \
-	librabbitmq.so:net/rabbitmq-c
+	librabbitmq.so:net/rabbitmq-c \
+	libfmt.so:devel/libfmt
 RUN_DEPENDS=	\
 	bash:shells/bash \
 	flock:sysutils/flock \
@@ -52,7 +53,6 @@ RUN_DEPENDS=	\
 	${PYTHON_PKGNAMEPREFIX}six>=0:devel/py-six@${PY_FLAVOR} \
 	${PYTHON_PKGNAMEPREFIX}virtualenv>=0:devel/py-virtualenv@${PY_FLAVOR} \
 	${PYTHON_PKGNAMEPREFIX}protobuf>=0:devel/py-protobuf@${PY_FLAVOR} \
-	${PYTHON_PKGNAMEPREFIX}scipy>=0:science/py-scipy@${PY_FLAVOR} \
 	${PYTHON_PKGNAMEPREFIX}bcrypt>=0:security/py-bcrypt@${PY_FLAVOR} \
 	${PYTHON_PKGNAMEPREFIX}openssl>=0:security/py-openssl@${PY_FLAVOR} \
 	${PYTHON_PKGNAMEPREFIX}pyjwt>=0:www/py-pyjwt@${PY_FLAVOR} \
@@ -62,7 +62,7 @@ RUN_DEPENDS=	\
 	${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests@${PY_FLAVOR} \
 	${PYTHON_PKGNAMEPREFIX}routes>=0:www/py-routes@${PY_FLAVOR}
 
-USES=		cmake:noninja dos2unix fuse gettext-runtime gmake ncurses \
+USES=		cmake:noninja compiler:c++17-lang dos2unix fuse gettext-runtime gmake ncurses \
 		pkgconfig python:3.7+ shebangfix ssl
 USE_PYTHON=	cython py3kplist
 USE_OPENLDAP=	yes
@@ -87,11 +87,13 @@ GH_TUPLE+=	ceph:rapidjson:f54b0e4:rapidjson/src/rapidjson
 GH_TUPLE+=	ceph:rocksdb:4c736f1:rocksdb/src/rocksdb
 GH_TUPLE+=	ceph:xxHash:1f40c65:xxHash/src/xxHash
 GH_TUPLE+=	facebook:zstd:f4340f4:zstd/src/zstd
+# GH_TUPLE+=	ceph:seastar:0cf6aa6:seastar/src/seastar
 
 CMAKE_BUILD_TYPE=	Release
 CMAKE_ON=	WITH_SYSTEM_BOOST WITH_BOOST_CONTEXT WITH_FUSE WITH_PYTHON3
 CMAKE_OFF=	WITH_LTTNG WITH_BABELTRACE WITH_KRBD WITH_XFS \
-		WITH_SPDK WITH_RDMA WITH_MGR_DASHBOARD_FRONTEND WITH_PYTHON2
+		WITH_SPDK WITH_RDMA WITH_MGR_DASHBOARD_FRONTEND WITH_PYTHON2 \
+		WITH_RADOSGW_KAFKA_ENDPOINT
 CMAKE_ARGS=	-D MGR_PYTHON_VERSION=${PYTHON_VER} \
 		-D CEPH_MAN_DIR:STRING=man
 
@@ -105,7 +107,17 @@ USE_LDCONFIG=	yes
 USERS=		ceph
 GROUPS=		ceph
 
-PLIST_SUB=	CMAKE_BUILD_TYPE_regex=\bdebug\b
+BINARY_ALIAS=	sphinx-build=sphinx-build-${PYTHON_VER}
+
+# PLIST_SUB=CMAKE_BUILD_TYPE_regex="\bdebug\b"
+
+.include <bsd.port.options.mk>
+
+.if ${ARCH} != amd64
+PLIST_SUB+=	NO_AMD64="@comment "
+.else
+PLIST_SUB+=	NO_AMD64=""
+.endif
 
 pre-configure:
 	[ -e ${WRKSRC}/build ] || ${LN} -s ${CONFIGURE_WRKSRC} ${WRKSRC}/build

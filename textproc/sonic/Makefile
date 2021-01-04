@@ -3,9 +3,10 @@
 PORTNAME=	sonic
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.3.0
+PORTREVISION=	6
 CATEGORIES=	textproc
 
-MAINTAINER=	tobik@FreeBSD.org
+MAINTAINER=	mikael@FreeBSD.org
 COMMENT=	Fast, lightweight, and schema-less search backend
 
 LICENSE=	MPL20

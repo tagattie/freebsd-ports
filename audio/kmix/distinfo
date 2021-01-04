@@ -1,3 +1,3 @@
-TIMESTAMP = 1591712613
-SHA256 (KDE/applications/20.04.2/kmix-20.04.2.tar.xz) = 6cbd745bd3214c7b14ddae13d6d214d866734028192865fda25ebc944e7f75d7
-SIZE (KDE/applications/20.04.2/kmix-20.04.2.tar.xz) = 1007080
+TIMESTAMP = 1607111072
+SHA256 (KDE/release-service/20.12.0/kmix-20.12.0.tar.xz) = 161b743868a4fe3dad42c5a50a9568c61d8e44cf73f1f4f3e53e2de1c8936e72
+SIZE (KDE/release-service/20.12.0/kmix-20.12.0.tar.xz) = 1148624

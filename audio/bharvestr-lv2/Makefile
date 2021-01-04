@@ -2,14 +2,14 @@
 
 PORTNAME=	bharvestr
 DISTVERSIONPREFIX=	v
-DISTVERSION=	g20200413
+DISTVERSION=	g20201225
 CATEGORIES=	audio
 PKGNAMESUFFIX=	-lv2
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Granular synthesizer LV2 plugin
 
-LICENSE=	LGPL3
+LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	lv2>0:audio/lv2
@@ -17,11 +17,11 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
 		libsndfile.so:audio/libsndfile
 
-USES=		gmake gnome pkgconfig xorg
+USES=		compiler:c++11-lang gmake gnome pkgconfig xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	sjaehn
 GH_PROJECT=	BHarvestr
-GH_TAGNAME=	f07ec1e68337960860d06cac7a84a92d456e7f56
+GH_TAGNAME=	7e6a1e7c81d0af61d4fabcd823978d62c8970502
 USE_GNOME=	cairo
 USE_XORG=	x11
 

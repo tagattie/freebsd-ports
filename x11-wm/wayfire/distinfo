@@ -1,5 +1,7 @@
-TIMESTAMP = 1584817827
-SHA256 (WayfireWM-wayfire-0.4.0_GH0.tar.gz) = 9c009c01bccce97149d0695b5429cf44787fdc1423c58425ba8e8de601019e97
-SIZE (WayfireWM-wayfire-0.4.0_GH0.tar.gz) = 265360
-SHA256 (e5b6f1245709.patch) = 2c0f2c892ba299f84b47c64c96b2bb9704448808f6a8e536050cceb606653203
-SIZE (e5b6f1245709.patch) = 1249
+TIMESTAMP = 1604855952
+SHA256 (WayfireWM-wayfire-0.6.0_GH0.tar.gz) = 9c2bf92e6aecc9b800b87e4c086ff7a275393f7315501b8c39196baf9d245b33
+SIZE (WayfireWM-wayfire-0.6.0_GH0.tar.gz) = 325079
+SHA256 (WayfireWM-wf-touch-b1075c5_GH0.tar.gz) = 107fd73280e90c1330adc051b4dada1549a47e221e60d601d23e15b995f8bdc9
+SIZE (WayfireWM-wf-touch-b1075c5_GH0.tar.gz) = 53883
+SHA256 (WayfireWM-wf-utils-f45641b_GH0.tar.gz) = 2f546333d4b1dfa3ed14caee3682dcc4c7e33164cb255991d918f3ace5f51dd7
+SIZE (WayfireWM-wf-utils-f45641b_GH0.tar.gz) = 48453

@@ -2,6 +2,7 @@
 
 PORTNAME=	xiphos
 DISTVERSION=	4.2.1
+PORTREVISION=	1
 CATEGORIES=	misc gnome
 # Don't use USE_GITHUB: the sources downloaded by USE_GITHUB cannot be
 # built as they miss the file ${WRKSRC}/cmake/source_version.txt.
@@ -30,7 +31,7 @@ LIB_DEPENDS=	libbiblesync.so:misc/biblesync \
 		libwebkit2gtk-4.0.so:www/webkit2-gtk3
 
 # gettext is always needed, even if NLS is off
-USES=		cmake gettext gnome pkgconfig
+USES=		cmake compiler:c11 gettext gnome pkgconfig
 USE_GNOME=	cairo gconf2 gtk30 gtkhtml4 intltool libgsf
 INSTALLS_ICONS=	yes
 

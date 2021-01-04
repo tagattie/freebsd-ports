@@ -1,16 +1,17 @@
 # $FreeBSD$
 
 PORTNAME=	kodi
-DISTVERSION=	19.0.a20200530
+DISTVERSION=	19.0.a20200727
+PORTREVISION=	4
 CATEGORIES=	multimedia
 PKGNAMESUFFIX=	-devel
 
-MAINTAINER=	tobik@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Award winning media center application
 
 LICENSE=	GPLv2+
 
-ONLY_FOR_ARCHS=	aarch64 amd64 armv6 armv7 i386
+ONLY_FOR_ARCHS=	aarch64 amd64 armv6 armv7 i386 powerpc64 powerpc64le
 
 BUILD_DEPENDS=	flatbuffers>=0:devel/flatbuffers \
 		rapidjson>=0:devel/rapidjson \
@@ -49,24 +50,22 @@ LIB_DEPENDS=	libass.so:multimedia/libass \
 		libuuid.so:misc/e2fsprogs-libuuid
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR}
 
-# Building libcpluff.a requires autoreconf and gmake.  Using ninja
-# leads to dependency problems where libcpluff.a is not yet finished
-# building when it's required.
-USES=		autoreconf:build cmake:noninja compiler:c++14-lang gettext gl \
-		gmake gnome iconv:wchar_t jpeg libtool pkgconfig python:3.5+ \
-		sqlite ssl
+USES=		cmake compiler:c++14-lang gettext gl gnome iconv:wchar_t jpeg \
+		pkgconfig python:3.5+ sqlite ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	xbmc
 GH_PROJECT=	xbmc
-GH_TAGNAME=	3b954873c3ce93c3ceb176b06388ba9ba4f2d296
+GH_TAGNAME=	19.0a1-Matrix
 USE_GL=		egl gl glu
 USE_GNOME=	libxml2 libxslt
 USE_JAVA=	yes
 JAVA_BUILD=	yes
 USE_LDCONFIG=	yes
 
-CMAKE_ARGS=	-DDVDNAV_LIBRARY="${LOCALBASE}/lib/libdvdnav.so" \
+CMAKE_ARGS=	-DAPP_BUILD_DATE="${DISTVERSION:E:S/^a//}" \
+		-DDVDNAV_LIBRARY="${LOCALBASE}/lib/libdvdnav.so" \
 		-DDVDREAD_LIBRARY="${LOCALBASE}/lib/libdvdread.so" \
+		-DGIT_VERSION="${GH_TAGNAME:C/^(.{12}).*/\1/}" \
 		-DLIBDVD_INCLUDE_DIRS="${LOCALBASE}/include"
 CMAKE_OFF=	ENABLE_ALSA ENABLE_DVDCSS ENABLE_INTERNAL_CROSSGUID \
 		ENABLE_INTERNAL_FFMPEG ENABLE_TESTING

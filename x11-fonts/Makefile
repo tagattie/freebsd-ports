@@ -51,6 +51,7 @@
     SUBDIR += fantasque-sans-mono
     SUBDIR += fanwood
     SUBDIR += farsifonts
+    SUBDIR += fcft
     SUBDIR += fifteen
     SUBDIR += fira
     SUBDIR += firacode
@@ -99,11 +100,12 @@
     SUBDIR += font-winitzki-cyrillic
     SUBDIR += font-xfree86-type1
     SUBDIR += fontconfig
-    SUBDIR += fontconfig-reference
     SUBDIR += fontmatrix
+    SUBDIR += fontobene
     SUBDIR += fontpreview
     SUBDIR += fonts-indic
     SUBDIR += fonttosfnt
+    SUBDIR += fpc-libfontconfig
     SUBDIR += freefont-ttf
     SUBDIR += freefonts
     SUBDIR += fslsfonts
@@ -141,6 +143,7 @@
     SUBDIR += libXfont2
     SUBDIR += libXft
     SUBDIR += liberation-fonts-ttf
+    SUBDIR += libertinus
     SUBDIR += libfontenc
     SUBDIR += linden-hill
     SUBDIR += linux-c7-fontconfig
@@ -167,7 +170,9 @@
     SUBDIR += nexfontsel
     SUBDIR += noto
     SUBDIR += noto-basic
+    SUBDIR += noto-emoji
     SUBDIR += noto-extra
+    SUBDIR += noto-hk
     SUBDIR += noto-jp
     SUBDIR += noto-kr
     SUBDIR += noto-sc
@@ -231,6 +236,7 @@
     SUBDIR += tv-fonts
     SUBDIR += twemoji-color-font-ttf
     SUBDIR += ubuntu-font
+    SUBDIR += urw-core35-fonts
     SUBDIR += urwfonts
     SUBDIR += urwfonts-ttf
     SUBDIR += uw-ttyp0

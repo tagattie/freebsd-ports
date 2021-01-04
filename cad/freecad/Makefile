@@ -1,12 +1,15 @@
 # $FreeBSD$
 
 PORTNAME=	FreeCAD
-DISTVERSION=	0.18.4
-PORTREVISION=	9
+DISTVERSION=	0.18.5
+PORTREVISION=	2
 # use these for bugfixes/snapshots
 # DISTVERSION=	0.18-16093 # git rev-list --count
 # DISTVERSIONSUFFIX=	-g690774c0e
 CATEGORIES=	cad
+
+PATCH_SITES=	https://github.com/FreeCAD/FreeCAD/commit/
+PATCHFILES+=	6eacb17b3e03d20.patch:-p1 # Python 3.8 compat
 
 MAINTAINER=	cmt@FreeBSD.org
 COMMENT=	General purpose 3D CAD modeller
@@ -70,8 +73,6 @@ DESKTOP_ENTRIES=${PORTNAME} "" "${PREFIX}/FreeCAD/data/freecad.svg" \
 		${PORTNAME} "Graphics;Engineering;" false
 
 post-patch:
-	@${REINPLACE_CMD} -e 's,%%LOCALBASE%%,${LOCALBASE},' \
-		${WRKSRC}/src/Gui/CMakeLists.txt
 	@${REINPLACE_CMD} -e '/self\.rev/s/Unknown/${DISTVERSION:C/.*-//}/' \
 		${WRKSRC}/src/Tools/SubWCRev.py
 

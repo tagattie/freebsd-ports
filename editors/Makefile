@@ -10,7 +10,6 @@
     SUBDIR += aewan
     SUBDIR += apel
     SUBDIR += asedit
-    SUBDIR += atom
     SUBDIR += beav
     SUBDIR += biew
     SUBDIR += bitedit
@@ -22,6 +21,7 @@
     SUBDIR += chexedit
     SUBDIR += codelite
     SUBDIR += cooledit
+    SUBDIR += cpeditor
     SUBDIR += cream
     SUBDIR += cudatext
     SUBDIR += deforaos-editor
@@ -63,6 +63,7 @@
     SUBDIR += hexpert
     SUBDIR += hnb
     SUBDIR += hte
+    SUBDIR += imhex
     SUBDIR += impress
     SUBDIR += jed
     SUBDIR += jedit
@@ -73,6 +74,7 @@
     SUBDIR += kak-lsp
     SUBDIR += kakoune
     SUBDIR += kate
+    SUBDIR += kibi
     SUBDIR += kile
     SUBDIR += komodo-edit
     SUBDIR += lazarus
@@ -95,6 +97,7 @@
     SUBDIR += libreoffice-bs
     SUBDIR += libreoffice-ca
     SUBDIR += libreoffice-ca_valencia
+    SUBDIR += libreoffice-ckb
     SUBDIR += libreoffice-cs
     SUBDIR += libreoffice-cy
     SUBDIR += libreoffice-da
@@ -110,6 +113,7 @@
     SUBDIR += libreoffice-eu
     SUBDIR += libreoffice-fa
     SUBDIR += libreoffice-fi
+    SUBDIR += libreoffice-fur
     SUBDIR += libreoffice-fy
     SUBDIR += libreoffice-ga
     SUBDIR += libreoffice-gd
@@ -183,11 +187,12 @@
     SUBDIR += libreoffice-vec
     SUBDIR += libreoffice-xh
     SUBDIR += libreoffice-zu
+    SUBDIR += libreoffice6
     SUBDIR += linux-sublime
     SUBDIR += linux-sublime3
     SUBDIR += madedit
-    SUBDIR += medit
     SUBDIR += mg
+    SUBDIR += mg-static
     SUBDIR += micro
     SUBDIR += mined
     SUBDIR += mle
@@ -199,8 +204,8 @@
     SUBDIR += nedit
     SUBDIR += neovim
     SUBDIR += neovim-qt
-    SUBDIR += nvi-devel
     SUBDIR += nvi-m17n
+    SUBDIR += nvi2
     SUBDIR += o
     SUBDIR += openoffice-4
     SUBDIR += openoffice-devel
@@ -215,6 +220,7 @@
     SUBDIR += poedit
     SUBDIR += psgml
     SUBDIR += puff
+    SUBDIR += py-babi
     SUBDIR += py-editorconfig
     SUBDIR += py-pynvim
     SUBDIR += quilter
@@ -222,6 +228,7 @@
     SUBDIR += scite
     SUBDIR += se
     SUBDIR += semi
+    SUBDIR += setzer
     SUBDIR += shed
     SUBDIR += slime
     SUBDIR += ssed
@@ -234,6 +241,7 @@
     SUBDIR += texmacs
     SUBDIR += texmaker
     SUBDIR += texstudio
+    SUBDIR += textadept
     SUBDIR += texworks
     SUBDIR += the
     SUBDIR += thoteditor

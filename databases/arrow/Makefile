@@ -1,9 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	arrow
-DISTVERSIONPREFIX=	${GH_ACCOUNT}-${PORTNAME}-
-DISTVERSION=	0.17.1
+DISTVERSION=	1.0.1
 CATEGORIES=	databases
+MASTER_SITES=	https://mirrors.advancedhosters.com/apache/${PORTNAME}/${PORTNAME}-${DISTVERSION}/
+DISTNAME=	apache-${PORTNAME}-${DISTVERSION}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Columnar in-memory analytics layer for big data
@@ -11,11 +12,11 @@ COMMENT=	Columnar in-memory analytics layer for big data
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/../LICENSE.txt
 
+BROKEN_riscv64=		fails to compile: /nxb-bin/usr/lib/clang/11.0.0/include/mmintrin.h:33:5: use of undeclared identifier '__builtin_ia32_emms'
+
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs
 
 USES=		cmake compiler:c++11-lang pkgconfig
-USE_GITHUB=	yes
-GH_ACCOUNT=	apache
 USE_LDCONFIG=	yes
 
 WRKSRC_SUBDIR=	cpp
@@ -33,8 +34,6 @@ BROTLI_LIB_DEPENDS=	libbrotlicommon.so:archivers/brotli
 
 BZ2_DESC=		bz2 compression support
 BZ2_CMAKE_BOOL=		ARROW_WITH_BZ2
-
-SNAPPY_CMAKE_BOOL=	ARROW_WITH_BZ2
 
 LZ4_CMAKE_BOOL=		ARROW_WITH_LZ4
 LZ4_LIB_DEPENDS=	liblz4.so:archivers/liblz4

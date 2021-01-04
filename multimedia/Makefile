@@ -10,12 +10,11 @@
     SUBDIR += aegisub
     SUBDIR += aom
     SUBDIR += aravis
+    SUBDIR += arcan
     SUBDIR += assimp
     SUBDIR += atomicparsley
     SUBDIR += audacious
-    SUBDIR += audacious-gtk3
     SUBDIR += audacious-plugins
-    SUBDIR += audacious-plugins-gtk3
     SUBDIR += avidemux
     SUBDIR += avidemux-cli
     SUBDIR += avidemux-plugins
@@ -53,12 +52,12 @@
     SUBDIR += dvd-slideshow
     SUBDIR += dvdauthor
     SUBDIR += dvdid
+    SUBDIR += dvdread
     SUBDIR += dvdrip
     SUBDIR += dvdstyler
     SUBDIR += elementary-videos
     SUBDIR += emby-server
     SUBDIR += emovix
-    SUBDIR += f3d
     SUBDIR += ffaudioconverter
     SUBDIR += ffdec
     SUBDIR += ffmpeg
@@ -70,7 +69,6 @@
     SUBDIR += flvtool++
     SUBDIR += fpc-dts
     SUBDIR += fpc-libvlc
-    SUBDIR += freevo
     SUBDIR += fxtv
     SUBDIR += gaupol
     SUBDIR += gavl
@@ -199,6 +197,7 @@
     SUBDIR += libdvdnav
     SUBDIR += libdvdread
     SUBDIR += libfame
+    SUBDIR += libgav1
     SUBDIR += libhdhomerun
     SUBDIR += libkate
     SUBDIR += libmatroska
@@ -207,6 +206,7 @@
     SUBDIR += libmpeg2
     SUBDIR += libmpeg3
     SUBDIR += libmtp
+    SUBDIR += libndi
     SUBDIR += libopenshot
     SUBDIR += libquicktime
     SUBDIR += libquicktime-lame
@@ -215,6 +215,7 @@
     SUBDIR += libquvi-scripts09
     SUBDIR += libquvi09
     SUBDIR += librav1e
+    SUBDIR += librespot
     SUBDIR += librtmp
     SUBDIR += libtheora
     SUBDIR += libtuner
@@ -238,6 +239,7 @@
     SUBDIR += linux-c7-libv4l
     SUBDIR += linux-tsmuxer
     SUBDIR += linux_dvbwrapper-kmod
+    SUBDIR += livego
     SUBDIR += lives
     SUBDIR += livestreamer
     SUBDIR += lsdvd
@@ -273,6 +275,7 @@
     SUBDIR += mps-youtube
     SUBDIR += mpv
     SUBDIR += mpv-mpris
+    SUBDIR += mpvpaper
     SUBDIR += msdl
     SUBDIR += msopenh264
     SUBDIR += mswebrtc
@@ -304,7 +307,6 @@
     SUBDIR += p5-FFmpeg-Command
     SUBDIR += p5-FLV-Info
     SUBDIR += p5-File-Format-RIFF
-    SUBDIR += p5-GStreamer
     SUBDIR += p5-MP4-Info
     SUBDIR += p5-Net-UPnP
     SUBDIR += p5-Subtitles
@@ -334,18 +336,12 @@
     SUBDIR += py-cec
     SUBDIR += py-enzyme
     SUBDIR += py-ffmpeg-python
-    SUBDIR += py-flvlib
-    SUBDIR += py-gstreamer
     SUBDIR += py-gstreamer1
     SUBDIR += py-guessit
-    SUBDIR += py-kaa-base
-    SUBDIR += py-kaa-imlib2
-    SUBDIR += py-kaa-metadata
     SUBDIR += py-librtmp
     SUBDIR += py-mido
     SUBDIR += py-mlt
     SUBDIR += py-moviepy
-    SUBDIR += py-openlp
     SUBDIR += py-periscope
     SUBDIR += py-pretty_midi
     SUBDIR += py-pymediainfo
@@ -397,7 +393,6 @@
     SUBDIR += svt-av1
     SUBDIR += svt-hevc
     SUBDIR += svt-vp9
-    SUBDIR += swfdec-gnome
     SUBDIR += syncplay
     SUBDIR += szap-s2
     SUBDIR += tautulli
@@ -406,7 +401,6 @@
     SUBDIR += tivodecode
     SUBDIR += totem
     SUBDIR += totem-pl-parser
-    SUBDIR += tovid
     SUBDIR += transcode
     SUBDIR += tstools
     SUBDIR += tvheadend
@@ -448,7 +442,8 @@
     SUBDIR += vlc
     SUBDIR += vmaf
     SUBDIR += vtkmpeg2encode
-    SUBDIR += w_scan
+    SUBDIR += vvdec
+    SUBDIR += w_scan2
     SUBDIR += webcamd
     SUBDIR += webcamoid
     SUBDIR += webvfx-qt5

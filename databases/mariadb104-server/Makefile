@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME?=	mariadb
-PORTVERSION=	10.4.13
-PORTREVISION?=	3
+PORTVERSION=	10.4.17
+PORTREVISION?=	0
 CATEGORIES=	databases
 MASTER_SITES=	http://mirrors.supportex.net/${SITESDIR}/ \
 		http://mirror2.hs-esslingen.de/pub/Mirrors/${SITESDIR}/ \
@@ -20,9 +20,6 @@ COMMENT?=	Multithreaded SQL database (server)
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
-LICENSE_NAME_PerconaFT=	PerconaFT patents license
-LICENSE_FILE_PerconaFT=	${WRKSRC}/storage/tokudb/PerconaFT/PATENTS
-LICENSE_PERMS_PerconaFT=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 BROKEN_i386=	compile error: undeclared identifier 'my_atomic_add32'
 
@@ -42,6 +39,7 @@ MARIADB_USER?=	mysql
 MARIADB_GROUP?=	mysql
 
 MARIADB_RUNDIR?=	/var/run/mysql
+MARIADB_SOCK?=		mysql.sock		
 MARIADB_LOGDIR?=	/var/log/mysql
 
 OPTIONS_SINGLE=		GSSAPI
@@ -93,7 +91,7 @@ CMAKE_ARGS+=	-DINSTALL_DOCDIR="share/doc/mysql" \
 		-DINSTALL_SUPPORTFILESDIR="share/mysql" \
 		-DDEFAULT_SYSCONFDIR="${PREFIX}/etc" \
 		-DDEFAULT_SYSCONF2DIR="${ETCDIR}/conf.d" \
-		-DINSTALL_UNIX_ADDRDIR="${MARIADB_RUNDIR}" \
+		-DINSTALL_UNIX_ADDRDIR="${MARIADB_RUNDIR}/${MARIADB_SOCK}" \
 		-DWITH_SSL="${OPENSSLBASE}" \
 		-DCURSES_CURSES_LIBRARY="/usr/lib/libcurses.so" \
 		-DCURSES_FORM_LIBRARY="/usr/lib/libform.so" \
@@ -122,7 +120,8 @@ GSSAPI_MIT_USES=	gssapi:mit
 GSSAPI_NONE_CMAKE_ON=	-DPLUGIN_AUTH_GSSAPI_CLIENT=OFF
 OPTIONS_SUB=		yes
 SUB_LIST+=		MARIADB_USER="${MARIADB_USER}" \
-			MARIADB_RUNDIR="${MARIADB_RUNDIR}"
+			MARIADB_RUNDIR="${MARIADB_RUNDIR}" \
+			MARIADB_SOCK="${MARIADB_SOCK}"
 PLIST_SUB+=		MARIADB_USER="${MARIADB_USER}" \
 			MARIADB_GROUP="${MARIADB_GROUP}"
 
@@ -139,6 +138,8 @@ PLIST_SUB+=	MARIADB_RUNDIR="${MARIADB_RUNDIR}"
 USES+=		mysql:104m
 USE_LDCONFIG+=	${PREFIX}/lib/mysql/plugin
 USE_RC_SUBR=	mysql-server
+USERS=		${MARIADB_USER}
+GROUPS=		${MARIADB_GROUP}
 CMAKE_ON+=	CMAKE_SKIP_BUILD_RPATH WITH_EMBEDDED_SERVER
 CMAKE_OFF+=	WITH_CLIENT
 SUB_FILES+=	server.cnf.sample
@@ -173,7 +174,6 @@ SNAPPY_CMAKE_OFF=	-DWITH_INNODB_SNAPPY=OFF -DWITH_ROCKSDB_snappy=OFF
 SNAPPY_LIB_DEPENDS=	libsnappy.so:archivers/snappy
 TOKUDB_IMPLIES=		SNAPPY
 TOKUDB_PORTDOCS=	README.md
-TOKUDB_VARS=		LICENSE+=PerconaFT LICENSE_COMB=multi
 WSREP_CMAKE_BOOL=	WITH_WSREP
 WSREP_LIB_DEPENDS=	libgalera.so:databases/galera26
 WSREP_RUN_DEPENDS=	bash:shells/bash \
