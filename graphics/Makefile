@@ -87,6 +87,7 @@
     SUBDIR += cal3d
     SUBDIR += camera
     SUBDIR += camerakit
+    SUBDIR += cbonsai
     SUBDIR += cbviewer
     SUBDIR += cegui
     SUBDIR += cenon
@@ -865,6 +866,7 @@
     SUBDIR += py-pycha
     SUBDIR += py-pycollada
     SUBDIR += py-pydot
+    SUBDIR += py-pydotplus
     SUBDIR += py-pyepsg
     SUBDIR += py-pygal
     SUBDIR += py-pyganim
