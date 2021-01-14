@@ -41,6 +41,7 @@
     SUBDIR += R-cran-ellipsis
     SUBDIR += R-cran-evaluate
     SUBDIR += R-cran-fansi
+    SUBDIR += R-cran-filelock
     SUBDIR += R-cran-foreach
     SUBDIR += R-cran-gbRd
     SUBDIR += R-cran-gbm
@@ -67,6 +68,7 @@
     SUBDIR += R-cran-pillar
     SUBDIR += R-cran-pkgbuild
     SUBDIR += R-cran-pkgconfig
+    SUBDIR += R-cran-pkgload
     SUBDIR += R-cran-pkgmaker
     SUBDIR += R-cran-plogr
     SUBDIR += R-cran-plyr
@@ -367,6 +369,7 @@
     SUBDIR += codesearch-py
     SUBDIR += codeworker
     SUBDIR += collada-dom
+    SUBDIR += color
     SUBDIR += colorgcc
     SUBDIR += colormake
     SUBDIR += commit-patch
@@ -1154,6 +1157,7 @@
     SUBDIR += libdwarf
     SUBDIR += libe
     SUBDIR += libedit
+    SUBDIR += libegit2
     SUBDIR += libeio
     SUBDIR += libelf
     SUBDIR += libepoll-shim
@@ -1478,6 +1482,7 @@
     SUBDIR += m4
     SUBDIR += mage
     SUBDIR += magit
+    SUBDIR += magit-devel
     SUBDIR += magit-popup
     SUBDIR += make++
     SUBDIR += makedepend
@@ -3964,6 +3969,7 @@
     SUBDIR += plasma5-khotkeys
     SUBDIR += plasma5-kwrited
     SUBDIR += plasma5-plasma-sdk
+    SUBDIR += please
     SUBDIR += pmccabe
     SUBDIR += pmd
     SUBDIR += pmdk
@@ -5140,7 +5146,6 @@
     SUBDIR += py-txaio
     SUBDIR += py-typechecks
     SUBDIR += py-typed-ast
-    SUBDIR += py-typing
     SUBDIR += py-typing-extensions
     SUBDIR += py-typing-inspect
     SUBDIR += py-tzlocal
@@ -6851,6 +6856,8 @@
     SUBDIR += tortoisehg
     SUBDIR += tpasm
     SUBDIR += tradcpp
+    SUBDIR += transwarp
+    SUBDIR += transient
     SUBDIR += treepy.el
     SUBDIR += trellis
     SUBDIR += trio
