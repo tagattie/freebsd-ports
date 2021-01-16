@@ -72,6 +72,6 @@ post-patch:
 # replace deprecated inkscape flags
 	@(cd ${WRKSRC} && \
 	${FIND} . -type f -iregex '${SHEBANG_REGEX}' \
-		-exec ${SED} -i '' -e 's|--export-png=|--export-type=png --export-filename=|g' {} ";")
+		-exec ${SED} -i '' -e 's|--export-png=|--export-filename=|g' {} ";")
 
 .include <bsd.port.mk>
