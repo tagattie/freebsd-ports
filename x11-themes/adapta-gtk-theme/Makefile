@@ -14,8 +14,6 @@ LICENSE_COMB=	multi
 LICENSE_FILE_GPLv2=	${WRKSRC}/COPYING
 LICENSE_FILE_CC-BY-SA-4.0=	${WRKSRC}/LICENSE_CC_BY_SA4
 
-BROKEN=		fails to build
-
 BUILD_DEPENDS=	gsed:textproc/gsed \
 		inkscape:graphics/inkscape \
 		bash:shells/bash \
@@ -66,10 +64,14 @@ USE_GNOME=	gdkpixbuf2 glib20 librsvg2 libxml2
 XFCE_CONFIGURE_ENABLE=	xfce
 XFCE_DESC=	Support for XFce Desktop Environment
 
-# use textproc/gsed
 post-patch:
+# use textproc/gsed
 	@(cd ${WRKSRC} && \
 	${FIND} . -type f -iregex '${SHEBANG_REGEX}' \
 		-exec ${SED} -i '' -e 's,sed -i,${LOCALBASE}/bin/g&,g' {} ";")
+# replace deprecated inkscape flags
+	@(cd ${WRKSRC} && \
+	${FIND} . -type f -iregex '${SHEBANG_REGEX}' \
+		-exec ${SED} -i '' -e 's|--export-png=|--export-type=png --export-filename=|g' {} ";")
 
 .include <bsd.port.mk>
