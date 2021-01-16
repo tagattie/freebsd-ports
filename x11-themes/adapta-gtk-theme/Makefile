@@ -46,6 +46,8 @@ MATE_DESC=	Support for Mate Desktop Environment
 MATE_IMPLIES=	METACITY
 METACITY_DESC=	Support for metacity Window Manager
 
+NO_ARCH=	yes
+
 OPENBOX_CONFIGURE_ENABLE=	openbox
 OPENBOX_DESC=	Support for Openbox Desktop Environment
 OPTIONS_DEFAULT=	CHROME CINNAMON GNOMESHELL MATE METACITY OPENBOX PARALLEL XFCE
