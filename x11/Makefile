@@ -315,6 +315,7 @@
     SUBDIR += slop
     SUBDIR += slurp
     SUBDIR += smproxy
+    SUBDIR += sprop
     SUBDIR += squeekboard
     SUBDIR += sselp
     SUBDIR += stalonetray
