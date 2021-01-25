@@ -518,6 +518,7 @@
     SUBDIR += xskyroot
     SUBDIR += xsm
     SUBDIR += xsnow
+    SUBDIR += xssstate
     SUBDIR += xstarroll
     SUBDIR += xstdcmap
     SUBDIR += xstroke
