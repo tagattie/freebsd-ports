@@ -30,9 +30,11 @@ USE_PYTHON=	autoplist distutils
 SHEBANG_FILES=	mailnag mailnag-config
 SHEBANG_GLOB=	*.py
 
-OPTIONS_DEFINE=	DOCS
+NO_ARCH=	yes
 
 PORTDOCS=	AUTHORS NEWS README.md
+
+OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	${REINPLACE_CMD} -e 's|/usr/bin|${PREFIX}/bin|' \
