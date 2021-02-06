@@ -1,5 +1,4 @@
 bin/marker
-share/appdata/com.github.fabiocolacio.marker.appdata.xml
 share/applications/com.github.fabiocolacio.marker.desktop
 %%DATADIR%%/common/scidown.css
 %%DATADIR%%/extensions/libscroll-extension.so
@@ -306,7 +305,6 @@ share/applications/com.github.fabiocolacio.marker.desktop
 %%DATADIR%%/scripts/mathjax/extensions/a11y/invalid_keypress.mp3
 %%DATADIR%%/scripts/mathjax/extensions/a11y/invalid_keypress.ogg
 %%DATADIR%%/scripts/mathjax/extensions/a11y/mathjax-sre.js
-%%DATADIR%%/scripts/mathjax/extensions/a11y/mathmaps/.htaccess
 %%DATADIR%%/scripts/mathjax/extensions/a11y/mathmaps/functions/algebra.js
 %%DATADIR%%/scripts/mathjax/extensions/a11y/mathmaps/functions/elementary.js
 %%DATADIR%%/scripts/mathjax/extensions/a11y/mathmaps/functions/functions_spanish.js
@@ -31158,5 +31156,21 @@ share/applications/com.github.fabiocolacio.marker.desktop
 %%DATADIR%%/styles/screen.css
 %%DATADIR%%/styles/screen_light.css
 %%DATADIR%%/styles/swiss.css
+share/help/C/Marker/complex-data.page
+share/help/C/Marker/figures/icon.png
+share/help/C/Marker/figures/scrot.png
+share/help/C/Marker/figures/scrot1.png
+share/help/C/Marker/figures/scrot2.png
+share/help/C/Marker/figures/sketcher.png
+share/help/C/Marker/index.page
+share/help/C/Marker/introduction.page
+share/help/C/Marker/legal.xml
+share/help/C/Marker/pictures.page
+share/help/C/Marker/settings.page
 share/icons/hicolor/scalable/apps/com.github.fabiocolacio.marker.svg
 share/icons/hicolor/symbolic/apps/com.github.fabiocolacio.marker-symbolic.svg
+share/locale/de/LC_MESSAGES/marker.mo
+share/locale/fr/LC_MESSAGES/marker.mo
+share/locale/nl/LC_MESSAGES/marker.mo
+share/locale/ru/LC_MESSAGES/marker.mo
+share/metainfo/com.github.fabiocolacio.marker.appdata.xml
