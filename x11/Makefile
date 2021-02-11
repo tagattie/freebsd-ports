@@ -90,6 +90,7 @@
     SUBDIR += grabc
     SUBDIR += grim
     SUBDIR += gromit
+    SUBDIR += gromit-mpx
     SUBDIR += gskrab
     SUBDIR += gstreamer1-plugins-x
     SUBDIR += gstreamer1-plugins-ximagesrc
@@ -357,6 +358,7 @@
     SUBDIR += wdisplays
     SUBDIR += wdm
     SUBDIR += wev
+    SUBDIR += wezterm
     SUBDIR += wf-shell
     SUBDIR += wl-clipboard
     SUBDIR += wlogout
