@@ -301,6 +301,7 @@
     SUBDIR += sakura
     SUBDIR += sbxkb
     SUBDIR += screen-message
+    SUBDIR += screengrab
     SUBDIR += screenkey
     SUBDIR += scripts
     SUBDIR += sddm
