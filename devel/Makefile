@@ -4692,6 +4692,8 @@
     SUBDIR += py-opcodes
     SUBDIR += py-openapi-codec
     SUBDIR += py-openapi-spec-validator
+    SUBDIR += py-opencensus
+    SUBDIR += py-opencensus-context
     SUBDIR += py-opendht
     SUBDIR += py-opengrok-tools
     SUBDIR += py-openstacksdk
@@ -5405,7 +5407,6 @@
     SUBDIR += redo
     SUBDIR += regexx
     SUBDIR += regexxer
-    SUBDIR += relx
     SUBDIR += remake
     SUBDIR += remotery
     SUBDIR += replay
@@ -5434,6 +5435,7 @@
     SUBDIR += ros-rospkg
     SUBDIR += ros-urdfdom
     SUBDIR += ros-urdfdom_headers
+    SUBDIR += ros-vcstool
     SUBDIR += ros-vcstools
     SUBDIR += ros-wstool
     SUBDIR += roswell
@@ -6782,7 +6784,6 @@
     SUBDIR += smake
     SUBDIR += smc
     SUBDIR += smv
-    SUBDIR += snorenotify
     SUBDIR += soapui
     SUBDIR += socket_wrapper
     SUBDIR += sonar-scanner-cli
