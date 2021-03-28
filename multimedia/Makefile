@@ -156,6 +156,8 @@
     SUBDIR += kodi-addon-screensaver.matrixtrails
     SUBDIR += kodi-addon-screensaver.stars
     SUBDIR += kodi-addon-visualization.fishbmc
+    SUBDIR += kodi-addon-visualization.shadertoy
+    SUBDIR += kodi-addon-visualization.spectrum
     SUBDIR += kvazaar
     SUBDIR += l-smash
     SUBDIR += libaacs
@@ -194,6 +196,7 @@
     SUBDIR += libquvi09
     SUBDIR += librav1e
     SUBDIR += librespot
+    SUBDIR += librist
     SUBDIR += librtmp
     SUBDIR += libtheora
     SUBDIR += libtuner
