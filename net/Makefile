@@ -398,7 +398,7 @@
     SUBDIR += librespeed-cli
     SUBDIR += librespeed-go
     SUBDIR += librsync
-    SUBDIR += libsignal
+    SUBDIR += libsignal-protocol-c
     SUBDIR += libsrtp2
     SUBDIR += libstorj
     SUBDIR += libtnl
@@ -959,6 +959,7 @@
     SUBDIR += pecl-radius
     SUBDIR += pecl-rdkafka
     SUBDIR += pecl-smbclient
+    SUBDIR += pecl-xmlrpc
     SUBDIR += pecl-zmq
     SUBDIR += pen
     SUBDIR += pfinger
