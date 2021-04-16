@@ -13856,7 +13856,6 @@ net-im/py-jabber||2020-01-27|Has expired: Unmaintained, uses EOLed python27
 net-im/py-jabberbot||2020-01-27|Has expired: Unmaintained, uses EOLed python27
 net-im/py-libturpial||2020-01-27|Has expired: Unmaintained, uses EOLed python27
 net-im/py-xmpppy-irc||2020-01-27|Has expired: Unmaintained, uses EOLed python27
-net-mgmt/pdagent-integrations||2020-01-27|Has expired: Unmaintained, uses EOLed python27
 net-p2p/tribler||2020-01-27|Has expired: Unmaintained, uses EOLed python27
 news/papercut||2020-01-27|Has expired: Unmaintained, uses EOLed python27
 print/pkipplib||2020-01-27|Has expired: Unmaintained, uses EOLed python27
@@ -13915,7 +13914,6 @@ www/ljdump||2020-01-27|Has expired: Unmaintained, uses EOLed python27
 www/monast||2020-01-27|Has expired: Unmaintained, uses EOLed python27
 www/py-django-paging||2020-01-27|Has expired: Unmaintained, uses EOLed python27
 www/py-fcgi||2020-01-27|Has expired: Unmaintained, uses EOLed python27
-www/py-http-parser||2020-01-27|Has expired: Unmaintained, uses EOLed python27
 www/py-meld||2020-01-27|Has expired: Unmaintained, uses EOLed python27
 www/py-mt||2020-01-27|Has expired: Unmaintained, uses EOLed python27
 www/py-rhodecode||2020-01-27|Has expired: Unmaintained, uses EOLed python27
@@ -14427,7 +14425,6 @@ databases/py-cdb||2020-03-20|Has expired: Unmaintained, uses EOLed python27
 devel/py-mwlib||2020-03-20|Has expired: Unmaintained, uses EOLed python27
 graphics/py-soya3d||2020-03-20|Has expired: Unmaintained, uses EOLed python27
 irc/py-supybot||2020-03-20|Has expired: Unmaintained, uses EOLed python27
-net-mgmt/py-pdagent||2020-03-20|Has expired: Unmaintained, uses EOLed python27
 textproc/pychm||2020-03-20|Has expired: Unmaintained, uses EOLed python27
 x11/rxvt|x11/rxvt-unicode|2020-03-20|Has expired: Abandonware: stable release 2.6.4 / November 1, 2001 and no maintainer
 x11-wm/clementine-wm||2020-03-20|Removed, unmaintained and depends on expired x11/rxvt
@@ -16185,13 +16182,13 @@ audio/fplib||2021-03-07|Dead service since 2015
 sysutils/prelink||2021-03-11|Has expired: Have no users in the ports tree
 x11-fonts/vtfontcvt-ng||2021-03-12|no longer useful on any supported releases; use vtfontcvt(8) instead
 biology/py-fastTSNE|math/py-openTSNE|2021-03-13|project renamed/reimplemented under a different name
+misc/py-XlsxWriter|textproc/py-xlsxwriter|2021-03-13|Remove duplicate
 emulators/open-vm-tools-nox11|emulators/open-vm-tools@nox11|2021-03-17|Moved to a flavored, generic, version
 math/s2geometry|graphics/s2|2021-03-22|Remove duplicate port
 net-p2p/sonarr-devel|net-p2p/sonarr|2021-03-23|Removed, use net-p2p/sonarr instead
 www/py-django-jsonfield||2021-03-24|Removed: This port will be deleted in the future, please switch to use www/py-jsonfield or www/py-jsonfield2
 devel/hs-c2hs||2021-03-27|Has expired: Was used as BUILD_DEPENDS, not useful on its own
 x11-toolkits/tile||2021-03-27|Has expired: The Tile widget set is part of Tk 8.5 and above, see TIP 248
-security/apg||2021-03-28|Has expired: Abandonware. Please try security/makepasswd or security/rndpassw instead
 lang/Gofer||2021-03-28|Has expired: Old, unmaintained language
 net/libsignal|net/libsignal-protocol-c|2021-03-30|Rename to match upstream naming
 databases/redis4|databases/redis|2021-04-06|Has expired: End of life, please use modern version
@@ -16284,3 +16281,7 @@ dns/credns||2021-04-12|Broken 12+, unmaintained upstream
 www/youtube_dlc|www/yt-dlp|2021-04-12|Upstream have made a complete transition to new project name
 security/netpgp||2021-04-12|Broken 12+, unmaintained upstream
 net/freenet6||2021-04-12|Broken 12+, service discontinued
+devel/sd-mux|devel/sd-mux-ctrl|2021-04-13|Renamed to match upstream naming
+sysutils/sd-mux-ctrl|devel/sd-mux-ctrl|2021-04-13|Remove duplicate port
+net/traefik2|net/traefik|2021-04-14|Superseded by net/traefik update
+net-mgmt/pdagent-integrations|net-mgmt/py-pdagent-integrations|2021-04-15|Restored and renamed

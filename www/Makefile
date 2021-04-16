@@ -1451,11 +1451,14 @@
     SUBDIR += py-dj31-djangorestframework
     SUBDIR += py-dj31-drf-yasg
     SUBDIR += py-django
+    SUBDIR += py-django-advanced-filters
+    SUBDIR += py-django-admin-rangefilter
     SUBDIR += py-django-allauth
     SUBDIR += py-django-annoying
     SUBDIR += py-django-appconf
     SUBDIR += py-django-assets
     SUBDIR += py-django-auth-ldap
+    SUBDIR += py-django-autocomplete-light
     SUBDIR += py-django-babel
     SUBDIR += py-django-bakery
     SUBDIR += py-django-bitfield
@@ -1635,6 +1638,7 @@
     SUBDIR += py-html5-parser
     SUBDIR += py-html5lib
     SUBDIR += py-httmock
+    SUBDIR += py-http-parser
     SUBDIR += py-httpbin
     SUBDIR += py-httpcore
     SUBDIR += py-httpie
