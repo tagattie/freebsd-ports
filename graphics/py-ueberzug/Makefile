@@ -16,6 +16,7 @@ RUN_DEPENDS=	${PY_PILLOW} \
 		${PYTHON_PKGNAMEPREFIX}xlib>=0:x11-toolkits/py-xlib@${PY_FLAVOR}
 
 USES=		localbase python:3.6+ shebangfix xorg
+USE_CSTD=	c99
 USE_GITHUB=	yes
 GH_ACCOUNT=	seebye
 USE_PYTHON=	autoplist concurrent distutils
@@ -27,7 +28,7 @@ PORTEXAMPLES=	fzfimg.sh mastodon.sh
 OPTIONS_DEFINE=	EXAMPLES
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/Xshm.so
+	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/Xshm*.so
 
 post-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}

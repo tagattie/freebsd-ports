@@ -537,6 +537,7 @@
     SUBDIR += normalize
     SUBDIR += nosefart
     SUBDIR += noson-app
+    SUBDIR += nyquist
     SUBDIR += oaml
     SUBDIR += ocp
     SUBDIR += ogg2mp3
@@ -807,6 +808,7 @@
     SUBDIR += vimpc
     SUBDIR += virtual_oss
     SUBDIR += virtual_oss_ctl
+    SUBDIR += visp-go
     SUBDIR += vitunes
     SUBDIR += vm-lv2
     SUBDIR += vmpk

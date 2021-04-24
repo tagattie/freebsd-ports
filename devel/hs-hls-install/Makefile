@@ -1,5 +1,6 @@
 PORTNAME=	hls-install
 DISTVERSION=	1.1.0
+PORTREVISION=	1
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -65,6 +66,7 @@ USE_CABAL=	Cabal-3.4.0.0 \
 		vector-binary-instances-0.2.5.2
 
 WRKSRC_SUBDIR=	install
+NOT_FOR_ARCHS=	i386
 
 post-extract:
 	${RM} ${WRKSRC}/cabal.project

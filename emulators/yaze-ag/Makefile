@@ -1,5 +1,3 @@
-# $FreeBSD$
-
 PORTNAME=	yaze-ag
 DISTVERSION=	2.51.0-rc1
 CATEGORIES=	emulators
@@ -13,7 +11,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libreadline.so:devel/readline
 
-USE_CSTD=	c11
+USES=		compiler:c11
 
 MAKEFILE=	Makefile_freebsd
 MAKE_ENV=	BINDIR=${PREFIX}/bin \

@@ -1,5 +1,6 @@
 PORTNAME=	haskell-language-server
 DISTVERSION=	1.1.0
+PORTREVISION=	1
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -213,6 +214,7 @@ SKIP_CABAL_PLIST=	yes
 EXECUTABLES=		${PORTNAME} \
 			${PORTNAME}-wrapper
 
+NOT_FOR_ARCHS=		i386
 PLIST_FILES=		bin/${PORTNAME} \
 			bin/${PORTNAME}-8.10.4 \
 			bin/${PORTNAME}-wrapper

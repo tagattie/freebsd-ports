@@ -129,6 +129,7 @@
     SUBDIR += freebsd-doc-zh_tw
     SUBDIR += freebsd-release-manifests
     SUBDIR += freeguide
+    SUBDIR += frugally-deep
     SUBDIR += ftdi-eeprom
     SUBDIR += fxload
     SUBDIR += gcstar
@@ -539,6 +540,7 @@
     SUBDIR += xiphos
     SUBDIR += xless
     SUBDIR += xosd
+    SUBDIR += xplr
     SUBDIR += xtail
     SUBDIR += xtar
     SUBDIR += ytree
