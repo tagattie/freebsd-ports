@@ -180,6 +180,7 @@
     SUBDIR += glflow
     SUBDIR += glib-networking
     SUBDIR += glusterfs
+    SUBDIR += gmid
     SUBDIR += gnet2
     SUBDIR += gnetcat
     SUBDIR += gnome-nettool
@@ -356,7 +357,6 @@
     SUBDIR += libgweather
     SUBDIR += libilbc
     SUBDIR += libiscsi
-    SUBDIR += libjson-rpc-cpp
     SUBDIR += libkgapi
     SUBDIR += libksieve
     SUBDIR += libkvkontakte

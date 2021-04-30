@@ -230,6 +230,7 @@
     SUBDIR += gladtex
     SUBDIR += gmetadom
     SUBDIR += gnugrep
+    SUBDIR += go-md2man
     SUBDIR += goldendict
     SUBDIR += google-ctemplate
     SUBDIR += google-translate-cli
@@ -934,6 +935,7 @@
     SUBDIR += p5-Text-Table-Paragraph
     SUBDIR += p5-Text-Table-Sprintf
     SUBDIR += p5-Text-Table-TSV
+    SUBDIR += p5-Text-Table-TickitWidget
     SUBDIR += p5-Text-Table-Tiny
     SUBDIR += p5-Text-Table-TinyBorderStyle
     SUBDIR += p5-Text-Table-TinyColor
@@ -1398,6 +1400,7 @@
     SUBDIR += py-rich
     SUBDIR += py-rnc2rng
     SUBDIR += py-rss2gen
+    SUBDIR += py-rst2ansi
     SUBDIR += py-rst2html5
     SUBDIR += py-scour
     SUBDIR += py-simplebayes

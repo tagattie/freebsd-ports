@@ -258,6 +258,7 @@
     SUBDIR += direnv
     SUBDIR += direvent
     SUBDIR += dirvish
+    SUBDIR += discus
     SUBDIR += diskcheckd
     SUBDIR += diskimage-tools
     SUBDIR += diskonaut
@@ -784,6 +785,7 @@
     SUBDIR += ohmu
     SUBDIR += omnibackup
     SUBDIR += onefetch
+    SUBDIR += opa
     SUBDIR += open
     SUBDIR += opencorsairlink
     SUBDIR += openipmi
@@ -1543,6 +1545,7 @@
     SUBDIR += zap
     SUBDIR += zbackup
     SUBDIR += zeitgeist
+    SUBDIR += zellij
     SUBDIR += zeroer
     SUBDIR += zetaback
     SUBDIR += zetaback-devel
