@@ -1,6 +1,6 @@
 PORTNAME=	love
 PORTVERSION=	0.7.2
-PORTREVISION=	23
+PORTREVISION=	24
 CATEGORIES=	devel games
 MASTER_SITES=	http://cdn.bitbucket.org/rude/love/downloads/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -37,7 +37,7 @@ DOS2UNIX_FILES=	src/modules/graphics/opengl/GLee.h
 
 PLIST_FILES=	bin/love07
 
-DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}07
+DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${PKGNAMESUFFIX}
 PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS

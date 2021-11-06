@@ -1,7 +1,7 @@
 PORTNAME=	bat
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.18.1
-PORTREVISION=	0
+DISTVERSION=	0.18.3
+PORTREVISION=	3
 CATEGORIES=	textproc
 
 MAINTAINER=	pizzamig@FreeBSD.org
@@ -12,8 +12,8 @@ LICENSE=	APACHE20
 LIB_DEPENDS=	libgit2.so:devel/libgit2 \
 		libonig.so:devel/oniguruma
 
-BROKEN_i386=	sys-info dependency crate won't build on FreeBSD
-USES=		cargo
+USES=		cargo cpe
+CPE_VENDOR=	${PORTNAME}_project
 USE_GITHUB=	yes
 GH_ACCOUNT=	sharkdp
 
@@ -23,10 +23,10 @@ PLIST_FILES=	bin/bat \
 
 CARGO_CRATES=	adler-1.0.2 \
 		aho-corasick-0.7.18 \
-		ansi_colours-1.0.2 \
+		ansi_colours-1.0.4 \
 		ansi_term-0.11.0 \
 		ansi_term-0.12.1 \
-		assert_cmd-1.0.3 \
+		assert_cmd-1.0.5 \
 		atty-0.2.14 \
 		autocfg-1.0.1 \
 		base64-0.13.0 \
@@ -35,7 +35,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		bit-vec-0.6.3 \
 		bitflags-1.2.1 \
 		bstr-0.2.16 \
-		bugreport-0.4.0 \
+		bugreport-0.4.1 \
 		byteorder-1.4.3 \
 		cc-1.0.67 \
 		cfg-if-1.0.0 \
@@ -67,9 +67,10 @@ CARGO_CRATES=	adler-1.0.2 \
 		getrandom-0.2.2 \
 		git-version-0.3.4 \
 		git-version-macro-0.3.4 \
-		git2-0.13.19 \
+		git2-0.13.20 \
 		glob-0.3.0 \
-		globset-0.4.6 \
+		globset-0.4.8 \
+		grep-cli-0.1.6 \
 		hashbrown-0.9.1 \
 		hermit-abi-0.1.18 \
 		idna-0.2.3 \
@@ -79,8 +80,8 @@ CARGO_CRATES=	adler-1.0.2 \
 		jobserver-0.1.22 \
 		lazy_static-1.4.0 \
 		lazycell-1.3.0 \
-		libc-0.2.94 \
-		libgit2-sys-0.12.20+1.1.0 \
+		libc-0.2.95 \
+		libgit2-sys-0.12.21+1.1.0 \
 		libz-sys-1.1.3 \
 		line-wrap-0.1.1 \
 		linked-hash-map-0.5.4 \
@@ -88,8 +89,9 @@ CARGO_CRATES=	adler-1.0.2 \
 		log-0.4.14 \
 		matches-0.1.8 \
 		memchr-2.4.0 \
+		memoffset-0.6.4 \
 		miniz_oxide-0.4.4 \
-		nix-0.20.0 \
+		nix-0.21.0 \
 		normalize-line-endings-0.3.0 \
 		num-integer-0.1.44 \
 		num-traits-0.2.14 \
@@ -138,9 +140,9 @@ CARGO_CRATES=	adler-1.0.2 \
 		strsim-0.8.0 \
 		syn-1.0.72 \
 		syntect-4.5.0 \
-		sys-info-0.9.0 \
 		tempfile-3.2.0 \
 		term_size-0.3.2 \
+		termcolor-1.1.2 \
 		terminal_size-0.1.16 \
 		textwrap-0.11.0 \
 		tinyvec-1.2.0 \

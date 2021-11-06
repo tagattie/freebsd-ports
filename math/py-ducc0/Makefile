@@ -1,5 +1,5 @@
 PORTNAME=	ducc0
-DISTVERSION=	0.11.0
+DISTVERSION=	0.21.0
 CATEGORIES=	math
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,6 +11,8 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pybind11>0:devel/py-pybind11@${PY_FLAVOR}
+RUN_DEPENDS=	${PYNUMPY}
+TEST_DEPENDS=	py.test:devel/py-pytest@${PY_FLAVOR}
 
 USES=		python:3.6+
 
@@ -24,10 +26,13 @@ MAKE_ENV=	DUCC0_OPTIMIZATION=none
 CFLAGS+=	-DNO_WARN_X86_INTRINSICS
 USES+=		compiler:gcc-c++11-lib
 .else
-USES+=		compiler:c++17-lang 
+USES+=		compiler:c++17-lang
 .endif
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/ducc0*.so
+
+do-test: install
+	@cd ${WRKSRC} && py.test
 
 .include <bsd.port.mk>

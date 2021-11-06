@@ -1,7 +1,8 @@
 # Created by: TAKATSU Tomonari <tota@FreeBSD.org>
 
 PORTNAME=	stringi
-DISTVERSION=	1.6.2
+DISTVERSION=	1.7.5
+PORTREVISION=	1
 CATEGORIES=	textproc
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 

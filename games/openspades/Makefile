@@ -1,6 +1,6 @@
 PORTNAME=	openspades
 PORTVERSION=	0.1.3
-PORTREVISION=	1
+PORTREVISION=	2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	games
 MASTER_SITES=	https://github.com/yvt/openspades-paks/releases/download/r33/:data
@@ -31,7 +31,6 @@ CMAKE_ARGS=	-DOPENSPADES_RESOURCES=OFF \
 DOS2UNIX_FILES=	Sources/AngelScript/source/as_config.h
 USE_SDL=	sdl2 image2
 USE_GL=		gl glew
-INSTALLS_ICONS=	yes
 
 PORTDOCS=	*
 PORTDATA=	*

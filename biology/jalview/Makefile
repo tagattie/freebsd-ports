@@ -14,7 +14,7 @@ COMMENT=	Viewer and editor for multiple sequence alignments
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	gradle:devel/gradle
+BUILD_DEPENDS=	gradle:devel/gradle6
 
 USE_JAVA=	yes
 JAVA_VERSION=	11
@@ -38,7 +38,7 @@ NO_ARCH=	yes
 
 DEV_UPDATE_MODE=	no
 
-DEPS_CACHE_DIR= ${WRKDIR}
+DEPS_CACHE_DIR=		${WRKDIR}
 
 .if (${DEV_UPDATE_MODE} == "yes")
 post-build:

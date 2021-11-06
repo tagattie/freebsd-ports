@@ -1,7 +1,7 @@
 PORTNAME=	xen
 PKGNAMESUFFIX=	-tools
 PORTVERSION=	4.15.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils emulators
 MASTER_SITES=	http://downloads.xenproject.org/release/xen/${PORTVERSION}/
 
@@ -31,7 +31,7 @@ SPICE_BUILD_DEPENDS=	spice-protocol>=0.12.10:devel/spice-protocol
 SPICE_LIB_DEPENDS=	libspice-server.so:devel/libspice-server
 
 ONLY_FOR_ARCHS=	amd64
-ONLY_FOR_ARCHS_REASON=	"not yet ported to anything other than amd64"
+ONLY_FOR_ARCHS_REASON=	not yet ported to anything other than amd64
 
 USES=		cpe gettext gmake gnome libtool localbase:ldflags perl5 \
 		pkgconfig python:3.6+ shebangfix iconv bison
@@ -46,7 +46,8 @@ BINARY_ALIAS=	python3=${PYTHON_CMD}
 
 CONFIGURE_ARGS+=	--with-system-seabios=${LOCALBASE}/share/seabios/bios.bin \
 			--with-system-ovmf=${LOCALBASE}/share/edk2-xen/XEN_X64_EFI.fd \
-			--mandir=${MANPREFIX}/man
+			--mandir=${MANPREFIX}/man \
+			--disable-golang
 
 SHEBANG_FILES=	tools/misc/xencov_split \
 		tools/python/scripts/convert-legacy-stream \
@@ -62,10 +63,6 @@ DOCS_INSTALL_TARGET=	install-docs
 
 .if ${OPSYS} != FreeBSD
 IGNORE=		only supported on FreeBSD
-.endif
-
-.if ${OSVERSION} < 1200074
-IGNORE=		only supported on FreeBSD 12.0 or newer
 .endif
 
 .if ${PORT_OPTIONS:MSPICE} && ${OSVERSION} < 1300008

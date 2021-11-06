@@ -1,5 +1,5 @@
 PORTNAME=	openzfs
-PORTVERSION=	2021030100
+PORTVERSION=	2021102500
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
@@ -13,7 +13,7 @@ BROKEN_riscv64=	fails to compile: btree_test.c:462:49: result of comparison of c
 
 RUN_DEPENDS=	openzfs-kmod>=0:sysutils/openzfs-kmod
 
-USES+=		autoreconf:build libtool gmake gettext-runtime python:3.3+,build shebangfix
+USES+=		autoreconf:build cpe libtool gmake gettext-runtime python:3.3+,build shebangfix
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} --with-config="user"
@@ -24,13 +24,12 @@ TESTS_DESC=	Install the ZFS Test Suite
 OPTIONS_SUB=	yes
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	openzfs
 GH_PROJECT=	zfs
-GH_TAGNAME=	2e160dee9
+GH_TAGNAME=	14b69c092
 
 .include <bsd.port.pre.mk>
 
-.if (${OSVERSION} < 1200504) || (${OSVERSION} >= 1300000 && ${OSVERSION} < 1300013)
+.if ${OSVERSION} >= 1300000 && ${OSVERSION} < 1300013
 IGNORE=	needs FreeBSD 12/13 with AES-CCM support
 .endif
 
@@ -40,6 +39,7 @@ CONFIGURE_ARGS+=	--enable-debug --enable-debuginfo
 
 .if ${PORT_OPTIONS:MPYTHON}
 CONFIGURE_ARGS+=	--with-python=${PYTHON_VER}
+BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}packaging>0:devel/py-packaging@${PY_FLAVOR}
 BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}cffi>0:devel/py-cffi@${PY_FLAVOR}
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}cffi>0:devel/py-cffi@${PY_FLAVOR}
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}sysctl>0:devel/py-sysctl@${PY_FLAVOR}

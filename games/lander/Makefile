@@ -1,6 +1,6 @@
 PORTNAME=	lander
 PORTVERSION=	0.6.6
-PORTREVISION=	20
+PORTREVISION=	21
 CATEGORIES=	games
 MASTER_SITES=	http://www.nickg.me.uk/files/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -11,7 +11,6 @@ COMMENT=	Lunar Lander clone
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_FreeBSD_11_powerpc64=	fails to configure on powerpc64 elfv1: could not link against boost_filesystem-boost_filesystem
 BROKEN_FreeBSD_12_powerpc64=	fails to configure on powerpc64 elfv1: could not link against boost_filesystem-boost_filesystem
 
 LIB_DEPENDS=	libfreetype.so:print/freetype2 \

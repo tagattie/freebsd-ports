@@ -13,7 +13,6 @@ COMMENT=	Enhanced version of VNC
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENCE.TXT
 
-
 RUN_DEPENDS=	showrgb:x11/rgb \
 		xauth:x11/xauth \
 		xorg-fonts>=7.2:x11-fonts/xorg-fonts
@@ -43,8 +42,8 @@ PREFIX=${TIGHTVNC_BASE}
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == aarch64 || ${ARCH:Mpowerpc64*} || ${ARCH} == riscv64
-USE_GCC=	any
+.if ${ARCH} == aarch64 || ${ARCH:Mpowerpc*} || ${ARCH} == riscv64
+USE_GCC=	yes
 .endif
 
 .if exists(${PREFIX}/share/vnc/classes/index.vnc)

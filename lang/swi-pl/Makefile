@@ -2,7 +2,7 @@
 
 PORTNAME=	swi-pl
 DISTVERSION=	8.2.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	lang
 MASTER_SITES=	http://www.swi-prolog.org/download/stable/src/
 DISTNAME=	swipl-${DISTVERSION}
@@ -24,9 +24,9 @@ USES=		cmake compiler:c11 libarchive libedit pathfix pkgconfig \
 		readline shebangfix ssl xorg
 USE_XORG=	ice sm x11 xext xft xinerama xpm xt
 
-OPTIONS_DEFINE=		DOCS TCMALLOC EXAMPLES XPCE GMP THREADED ODBC
-OPTIONS_DEFAULT=	XPCE TCMALLOC GMP THREADED ODBC
-OPTIONS_SUB=    	yes
+OPTIONS_DEFINE=		DOCS EXAMPLES GMP ODBC TCMALLOC THREADED XPCE
+OPTIONS_DEFAULT=	GMP ODBC TCMALLOC THREADED XPCE
+OPTIONS_SUB=		yes
 
 MAKE_ENV=	XDG_DATA_DIRS=/dummy
 CMAKE_ARGS=	-DSWIPL_PACKAGES_JAVA=OFF -DBUILD_TESTING=OFF
@@ -75,7 +75,7 @@ USE_LDCONFIG=	${PREFIX}/lib/swipl/lib/${ARCH}-${OPSYS:tl}
 
 PLIST_SUB+=	ARCH=${ARCH} OS=${OPSYS:tl}
 
-.if ${ARCH} == "i386" || ${ARCH} == "amd64"
+.if ${ARCH} == aarch64 || ${ARCH} == amd64 || ${ARCH} == armv7 || ${ARCH} == i386 || ${ARCH} == powerpc64 || ${ARCH} == powerpc64le
 LIB_DEPENDS+=	libunwind.so:devel/libunwind
 .endif
 

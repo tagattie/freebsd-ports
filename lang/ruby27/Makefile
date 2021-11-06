@@ -93,7 +93,7 @@ CONFIGURE_ARGS+=--disable-dtrace
 .endif
 
 # keep in sync with all platforms where libunwind is available
-.if (${ARCH} == aarch64 || ${ARCH} == amd64 || ${ARCH} == i386 || ${ARCH:Mpowerpc64*})
+.if ${ARCH} == aarch64 || ${ARCH} == amd64 || ${ARCH} == armv7 || ${ARCH} == i386 || ${ARCH} == powerpc64 || ${ARCH} == powerpc64le
 LIB_DEPENDS+=	libunwind.so:devel/libunwind
 .endif
 
@@ -113,7 +113,7 @@ MAKE_JOBS_UNSAFE=	yes
 .if ${RUBY_VER} == ${RUBY_DEFAULT_VER}
 PLIST_SUB+=	IF_DEFAULT=""
 .else
-PKGNAMESUFFIX=	${RUBY_VER:C/\.//}
+PKGNAMESUFFIX=	${RUBY_SUFFIX}
 PLIST_SUB+=	IF_DEFAULT="@comment "
 .endif
 
@@ -189,7 +189,7 @@ post-install-DEBUG-off:
 # bogus to hack.
 #
 .if defined(STRIP) && ${STRIP} == -s
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${RUBY_NAME}
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/ruby${RUBY_SUFFIX}
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libruby${RUBY_SHLIBVER}.so.${RUBY_SHLIBVER}
 	${FIND} ${STAGEDIR}${RUBY_ARCHLIBDIR} -type f -name '*\.so' -exec ${STRIP_CMD} {} \;
 .endif

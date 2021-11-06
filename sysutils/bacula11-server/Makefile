@@ -1,8 +1,7 @@
 # Created by: Dmitry Sivachenko <demon@FreeBSD.org>
 
 PORTNAME=	bacula
-PORTVERSION=	11.0.2
-PORTREVISION=	1
+PORTVERSION=	11.0.5
 CATEGORIES?=	sysutils
 MASTER_SITES=	SF/bacula/bacula/${PORTVERSION}
 PKGNAMEPREFIX?=	#
@@ -14,7 +13,7 @@ COMMENT?=	Network backup solution (server)
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES+=		libtool readline shebangfix ssl
+USES+=		cpe libtool readline shebangfix ssl
 SHEBANG_FILES=	src/cats/make_catalog_backup.pl.in scripts/baculabackupreport.in
 
 CONFLICTS?=	bacula9-server-* bacula5-server-* bacula-server-*

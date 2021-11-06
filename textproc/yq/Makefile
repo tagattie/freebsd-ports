@@ -1,6 +1,6 @@
 PORTNAME=	yq
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.12.0
+DISTVERSION=	2.12.2
 CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP
 
@@ -22,6 +22,8 @@ USES=		python
 USE_GITHUB=	yes
 GH_ACCOUNT=	kislyuk
 USE_PYTHON=	distutils noflavors autoplist
+
+CONFLICTS_INSTALL=	go-yq
 
 NO_ARCH=	yes
 

@@ -2,16 +2,13 @@
 
 PORTNAME=	openblas
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.3.15
+DISTVERSION=	0.3.18
 PORTEPOCH=	1
 CATEGORIES=	math
 MASTER_SITES=	NL/lapack/timing/:lapack_tmg
 DISTFILES=	large.tgz:lapack_tmg \
 		timing.tgz:lapack_tmg
 DIST_SUBDIR=	openblas
-
-PATCH_SITES=	https://github.com/xianyi/OpenBLAS/commit/
-PATCHFILES=	e1911b2e6056efcafe77beebc80c8e8bb8c8a5a9.patch:-p1
 
 MAINTAINER=	phd_kimberlite@yahoo.co.jp
 COMMENT=	Optimized BLAS library based on GotoBLAS2
@@ -20,8 +17,6 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		compiler:c11 fortran gmake perl5 pkgconfig
-
-CONFLICTS_INSTALL=	cblas lapacke
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	xianyi
@@ -41,6 +36,8 @@ OPTIONS_DEFINE=			DYNAMIC_ARCH INTERFACE64 OPENMP
 OPTIONS_DEFAULT=		OPENMP
 OPTIONS_DEFINE_i386=		AVX AVX2
 OPTIONS_DEFINE_amd64=		AVX AVX2
+OPTIONS_EXCLUDE_armv6=		OPENMP
+OPTIONS_EXCLUDE_armv7=		OPENMP
 OPTIONS_EXCLUDE_powerpc64le=	OPENMP
 OPTIONS_EXCLUDE_powerpc64=	OPENMP
 OPTIONS_EXCLUDE_powerpc=	OPENMP

@@ -13,6 +13,10 @@ COMMENT=	cfengine sample policies for installations and upgrades
 LICENSE=	GPLv3
 
 CPE_VENDOR=	gnu
+CPE_PRODUCT=	cfengine
+
+DEPRECATED=		Expire one year after cfengine 3.18.0 released
+EXPIRATION_DATE=	2022-07-05
 
 CONFLICTS=	cfengine-masterfiles3[0-9]-* cfengine-masterfiles31[013-9]-*
 .if !defined(MASTERDIR)

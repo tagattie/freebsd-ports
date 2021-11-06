@@ -1,7 +1,6 @@
 PORTNAME=	Carla
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.3.0
-PORTREVISION=	1
+DISTVERSION=	2.4.1
 CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -14,8 +13,6 @@ LIB_DEPENDS=	liblo.so:audio/liblo \
 		libsndfile.so:audio/libsndfile
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyliblo>0:audio/py-pyliblo@${PY_FLAVOR}
 
-CONFLICTS_BUILD=	rtaudio-* rtmidi-*
-
 USES=		compiler:c++11-lib desktop-file-utils gl gmake gnome localbase \
 		pkgconfig pyqt:5 python:3.4+ qt:5 shared-mime-info shebangfix \
 		tar:bz2 xorg
@@ -24,6 +21,9 @@ USE_GNOME=	gtk20 gtk30
 USE_QT=		core gui widgets buildtools_build
 USE_GL=		gl
 USE_XORG=	x11
+USE_LDCONFIG=	${PREFIX}/lib/carla
+
+CONFLICTS_BUILD=	rtaudio rtmidi
 
 SHEBANG_FILES=	data/carla-single data/carla-bridge-lv2-modgui source/native-plugins/resources/* source/frontend/*
 
@@ -35,8 +35,6 @@ MAKE_ARGS=	HAVE_QT4=false \
 # Give the Makefile the proper versioned binaries of PyQt
 BINARY_ALIAS=	pyuic5=${LOCALBASE}/bin/pyuic5-${PYTHON_VER} \
 		pyrcc5=${LOCALBASE}/bin/pyrcc5-${PYTHON_VER}
-
-INSTALLS_ICONS=	yes
 
 OPTIONS_DEFINE=		FFMPEG FLUIDSYNTH LINUXSAMPLER
 OPTIONS_DEFAULT=	FFMPEG FLUIDSYNTH JACK LINUXSAMPLER

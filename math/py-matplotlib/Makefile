@@ -18,8 +18,7 @@ BUILD_DEPENDS=	${PYNUMPY} \
 LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libqhull.so:math/qhull \
 		libpng.so:graphics/png \
-		libfontconfig.so:x11-fonts/fontconfig \
-		libtcl86.so:lang/tcl86
+		libfontconfig.so:x11-fonts/fontconfig
 RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}cycler>=0.10:devel/py-cycler@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dateutil>=2.1:devel/py-dateutil@${PY_FLAVOR} \
@@ -34,8 +33,6 @@ RUN_DEPENDS=	${PYNUMPY} \
 
 USES=		compiler:c++11-lib gettext gnome localbase pkgconfig python:3.7+ shebangfix uniquefiles:dirs
 USE_PYTHON=	distutils
-
-LDFLAGS+=	-fuse-ld=lld
 
 PLIST_SUB=	VER=${PORTVERSION}
 PORTEXAMPLES=	*

@@ -39,7 +39,8 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cryptography>=0:security/py-cryptography@${
 		git:devel/git \
 		svn:devel/subversion
 
-USES=		python:3.6+ shebangfix
+USES=		cpe python:3.6+ shebangfix
+CPE_VENDOR=	pypa
 USE_PYTHON=	autoplist concurrent distutils
 
 MAKE_ENV=	PYTHONPATH=${WRKSRC}/src/
@@ -61,7 +62,7 @@ DOCS_VARS=		PYDISTUTILS_BUILD_TARGET=build_sphinx \
 
 .include <bsd.port.pre.mk>
 
-.if ${PYTHON_REL} < 3700 && ${PORT_OPTIONS:MDOCS}
+.if ${PYTHON_REL} < 30700 && ${PORT_OPTIONS:MDOCS}
 BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}future-annotations>=0:devel/py-future-annotations@${PY_FLAVOR}
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-python36
 .endif

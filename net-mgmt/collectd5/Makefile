@@ -2,7 +2,7 @@
 
 PORTNAME=	collectd
 PORTVERSION=	5.12.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://storage.googleapis.com/collectd-tarballs/
 PKGNAMESUFFIX=	5
@@ -13,7 +13,7 @@ COMMENT=	Systems & network statistics collection daemon
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		autoreconf gmake libtool pkgconfig shebangfix tar:bzip2
+USES=		autoreconf cpe gmake libtool pkgconfig shebangfix tar:bzip2
 
 GNU_CONFIGURE=	yes
 

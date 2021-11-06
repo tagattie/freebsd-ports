@@ -3,8 +3,6 @@
     SUBDIR += R-cran-maptools
     SUBDIR += accrete
     SUBDIR += astrometry
-    SUBDIR += boinc-astropulse
-    SUBDIR += boinc-setiathome
     SUBDIR += celestia
     SUBDIR += celestia-gtk
     SUBDIR += cfitsio
@@ -79,14 +77,18 @@
     SUBDIR += pp3
     SUBDIR += ptiger
     SUBDIR += py-astlib
+    SUBDIR += py-astral
     SUBDIR += py-astropy
     SUBDIR += py-astropy-helpers
     SUBDIR += py-ephem
+    SUBDIR += py-extension-helpers
     SUBDIR += py-horoscopegenerator
     SUBDIR += py-indiweb
     SUBDIR += py-jplephem
+    SUBDIR += py-kosmorrolib
     SUBDIR += py-metar
     SUBDIR += py-metpy
+    SUBDIR += py-pyerfa
     SUBDIR += py-pykep
     SUBDIR += py-pymeeus
     SUBDIR += py-pymetar

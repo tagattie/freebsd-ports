@@ -2,7 +2,7 @@
 
 PORTNAME=	diligent
 PORTVERSION=	0.2.7
-PORTREVISION=	8
+PORTREVISION=	9
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net-im
 
@@ -21,11 +21,11 @@ QMAKE_ARGS=	CONFIG+="configure"
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	trueos
-GH_PROJECT=	diligent
+
 PLIST_FILES=	bin/diligent \
 		share/applications/diligent.desktop \
 		share/icons/diligent.png
-SUB_FILES=      diligent.desktop
+SUB_FILES=	diligent.desktop
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/diligent ${STAGEDIR}${PREFIX}/bin

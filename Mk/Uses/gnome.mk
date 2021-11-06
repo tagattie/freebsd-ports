@@ -46,12 +46,6 @@
 #				file and add apropriate @postexec/@postunexec directives for
 #				each .omf file found to track OMF registration database.
 #
-# INSTALLS_ICONS	- If a GTK+ port installs Freedesktop-style icons to
-#				${LOCALBASE}/share/icons, then you should use this
-#				macro. Using this macro ensures that icons are cached
-#				and will display correctly. This macro isn't needed
-#				for QT based applications, which use a different method.
-#
 # MAINTAINER: gnome@FreeBSD.org
 
 .if !defined(_INCLUDE_USES_GNOME_MK)
@@ -85,6 +79,9 @@ _USE_GNOME_ALL+=dconf evolutiondataserver3 gnomecontrolcenter3 gnomedesktop3 \
 		gtksourceview4 libgda5 \
 		libgda5-ui libgnomekbd libwnck3 metacity nautilus3 \
 		pygobject3 vte3
+
+# GNOME 40 components
+_USE_GNOME_ALL+=gtk40 libadwaita
 
 # C++ bindings
 _USE_GNOME_ALL+=atkmm cairomm gconfmm26 glibmm gtkmm24 \
@@ -174,7 +171,6 @@ pangox-compat_USE_GNOME_IMPL=	glib20 pango
 gdkpixbuf2_LIB_DEPENDS=	libgdk_pixbuf-2.0.so:graphics/gdk-pixbuf2
 gdkpixbuf2_USE_GNOME_IMPL=glib20
 
-gtk-update-icon-cache_BUILD_DEPENDS=	gtk-update-icon-cache:graphics/gtk-update-icon-cache
 gtk-update-icon-cache_RUN_DEPENDS=	gtk-update-icon-cache:graphics/gtk-update-icon-cache
 gtk-update-icon-cache_USE_GNOME_IMPL=	atk pango gdkpixbuf2
 
@@ -185,6 +181,10 @@ GTK2_VERSION=		2.10.0
 gtk30_LIB_DEPENDS=	libgtk-3.so:x11-toolkits/gtk30
 gtk30_USE_GNOME_IMPL=	atk pango
 GTK3_VERSION=		3.0.0
+
+gtk40_LIB_DEPENDS=	libgtk-4.so:x11-toolkits/gtk40
+gtk40_USE_GNOME_IMPL=	atk pango
+GTK4_VERSION=		4.0.0
 
 libidl_LIB_DEPENDS=	libIDL-2.so:devel/libIDL
 libidl_USE_GNOME_IMPL=	glib20
@@ -208,7 +208,7 @@ introspection_BUILD_DEPENDS=	g-ir-scanner:devel/gobject-introspection
 introspection_LIB_DEPENDS=	libgirepository-1.0.so:devel/gobject-introspection
 introspection_RUN_DEPENDS=	g-ir-scanner:devel/gobject-introspection
 introspection_USE_GNOME_IMPL=	glib20
-introspection_MAKE_ENV=		GI_SCANNER_DISABLE_CACHE=1 XDG_CACHE_HOME=${WRKDIR}
+introspection_MAKE_ENV=		GI_SCANNER_DISABLE_CACHE=1
 
 gconf2_LIB_DEPENDS=	libgconf-2.so:devel/gconf2
 gconf2_USE_GNOME_IMPL=	orbit2 libxml2 gtk20
@@ -232,6 +232,9 @@ vte_USE_GNOME_IMPL=	gtk20
 
 vte3_LIB_DEPENDS=	libvte-2.91.so:x11-toolkits/vte3
 vte3_USE_GNOME_IMPL=	gtk30
+
+libadwaita_LIB_DEPENDS=		libadwaita-1.so:x11-toolkits/libadwaita
+libadwaita_USE_GNOME_IMPL=	gtk40
 
 # Use librsvg2-rust where lang/rust is available
 .if ${LIBRSVG2_DEFAULT:Mrust}
@@ -308,10 +311,6 @@ gvfs_BUILD_DEPENDS=	gvfs>=0:devel/gvfs
 gvfs_RUN_DEPENDS=	gvfs>=0:devel/gvfs
 gvfs_USE_GNOME_IMPL=	glib20
 
-.if defined(INSTALLS_ICONS)
-USE_GNOME+=	gtk-update-icon-cache
-.endif
-
 # End component definition section
 
 .if defined(USE_GNOME)
@@ -336,7 +335,8 @@ _USE_GNOME+=	${${component}_USE_GNOME_IMPL} ${component}
 # Setup the GTK+ API version for pixbuf loaders, input method modules,
 # and theme engines.
 PLIST_SUB+=			GTK2_VERSION="${GTK2_VERSION}" \
-				GTK3_VERSION="${GTK3_VERSION}"
+				GTK3_VERSION="${GTK3_VERSION}" \
+				GTK4_VERSION="${GTK4_VERSION}"
 
 .if defined(_USE_GNOME) && empty(_USE_GNOME:Mglib20:u) && defined(GLIB_SCHEMAS)
 IGNORE=		GLIB_SCHEMAS is set, but needs USE_GNOME=glib20 to work
@@ -417,7 +417,7 @@ gnome-pre-patch:
 _USES_install+=	690:gnome-post-gconf-schemas
 gnome-post-gconf-schemas:
 	@for i in ${GCONF_SCHEMAS}; do \
-		${ECHO_CMD} "@postunexec env GCONF_CONFIG_SOURCE=xml:${GCONF_CONFIG_OPTIONS}:%D/${GCONF_CONFIG_DIRECTORY} HOME=${WRKDIR} gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/$${i} > /dev/null || /usr/bin/true" \
+		${ECHO_CMD} "@preunexec env GCONF_CONFIG_SOURCE=xml:${GCONF_CONFIG_OPTIONS}:%D/${GCONF_CONFIG_DIRECTORY} HOME=${WRKDIR} gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/$${i} > /dev/null || /usr/bin/true" \
 			>> ${TMPPLIST}; \
 		${ECHO_CMD} "etc/gconf/schemas/$${i}" >> ${TMPPLIST}; \
 		${ECHO_CMD} "@postexec env GCONF_CONFIG_SOURCE=xml:${GCONF_CONFIG_OPTIONS}:%D/${GCONF_CONFIG_DIRECTORY} HOME=${WRKDIR} gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/$${i} > /dev/null || /usr/bin/true" \
@@ -445,25 +445,6 @@ gnome-post-omf:
 		${ECHO_CMD} "@postunexec scrollkeeper-uninstall -q %D/$${i} 2>/dev/null || /usr/bin/true" \
 			>> ${TMPPLIST}; \
 	done
-.endif
-
-.if defined(INSTALLS_ICONS)
-_USES_install+=	690:gnome-post-icons
-gnome-post-icons:
-	@${RM} ${TMPPLIST}.icons1
-	@for i in `${GREP} "^share/icons/.*/" ${TMPPLIST} | ${CUT} -d / -f 1-3 | ${SORT} -u`; do \
-		${ECHO_CMD} "@rmtry $${i}/icon-theme.cache" \
-			>> ${TMPPLIST}.icons1; \
-		${ECHO_CMD} "@postexec ${LOCALBASE}/bin/gtk-update-icon-cache -q -f %D/$${i} 2>/dev/null || /usr/bin/true" \
-			>> ${TMPPLIST}; \
-		${ECHO_CMD} "@postunexec ${LOCALBASE}/bin/gtk-update-icon-cache -q -f %D/$${i} 2>/dev/null || /usr/bin/true" \
-			>> ${TMPPLIST}; \
-	done
-	@if test -f ${TMPPLIST}.icons1; then \
-		${CAT} ${TMPPLIST}.icons1 ${TMPPLIST} > ${TMPPLIST}.icons2; \
-		${RM} ${TMPPLIST}.icons1; \
-		${MV} -f ${TMPPLIST}.icons2 ${TMPPLIST}; \
-	fi
 .endif
 
 .endif

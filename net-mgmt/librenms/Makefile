@@ -1,6 +1,6 @@
 PORTNAME=	librenms
 PORTVERSION=	21.5.1
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	LOCAL/dvl:vendor
@@ -22,14 +22,11 @@ RUN_DEPENDS+=	${LOCALBASE}/share/pear/Net/IPv4.php:net/pear-Net_IPv4@${PHP_FLAVO
 		snmpget:net-mgmt/net-snmp \
 		sudo:security/sudo
 
-USES=		php python shebangfix
-
+USES=		cpe php python shebangfix
 USE_GITHUB=	yes
-GH_ACCOUNT=	librenms
-
 USE_PHP=	ctype curl dom fileinfo filter gd hash json ldap mbstring \
-		mysqli openssl pdo pdo_mysql phar posix session simplexml snmp \
-		sockets tokenizer xml xmlwriter zip
+		mysqli openssl pdo pdo_mysql phar posix session simplexml \
+		snmp sockets tokenizer xml xmlwriter zip
 USE_RC_SUBR=	librenms
 
 SHEBANG_FILES=	../${PORTNAME}-vendor-${PORTVERSION}/swiftmailer/swiftmailer/lib/swiftmailer_generate_mimes_config.php \
@@ -112,10 +109,11 @@ _OTHER_DIRS=		html/js/lang resources/views/overview/custom \
 			vendor/symfony/string/Resources/bin
 
 post-patch:
-	${REINPLACE_CMD}    's|%%PORTVERSION%%|${PORTVERSION}|g'              ${WRKSRC}/includes/common.php
-	${REINPLACE_CMD}    's|%%RELEASE_TIMESTAMP%%|${_RELEASE_TIMESTAMP}|g' ${WRKSRC}/includes/common.php
 	${REINPLACE_CMD}    's|%%LOCALBASE%%|${LOCALBASE}|g'                  ${WRKSRC}/LibreNMS/Util/Version.php
 	${REINPLACE_CMD}    's|%%LOCALBASE%%|${LOCALBASE}|g'                  ${WRKSRC}/LibreNMS/Validations/Php.php
+	${REINPLACE_CMD}    's|%%PORTVERSION%%|${PORTVERSION}|g'              ${WRKSRC}/includes/common.php
+	${REINPLACE_CMD}    's|%%RELEASE_TIMESTAMP%%|${_RELEASE_TIMESTAMP}|g' ${WRKSRC}/includes/common.php
+	${REINPLACE_CMD}    's|%%LOCALBASE%%|${LOCALBASE}|g'                  ${WRKSRC}/includes/html/output/capture.inc.php
 	${REINPLACE_CMD}    's|%%LOCALBASE%%|${LOCALBASE}|g'                  ${WRKSRC}/config.php.default
 	${REINPLACE_CMD}    's|%%LOCALBASE%%|${LOCALBASE}|g'                  ${WRKSRC}/poller-wrapper.py
 	${RM} ${WRKSRC}/LibreNMS/Validations/Updates.php

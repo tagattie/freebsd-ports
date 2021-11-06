@@ -2,7 +2,7 @@
 
 PORTNAME=	gchemutils
 PORTVERSION=	0.14.16
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	science
 MASTER_SITES=	SAVANNAH/${PORTNAME}/${PORTVERSION:R}
 DISTNAME=	gnome-chemistry-utils-${PORTVERSION}
@@ -31,7 +31,6 @@ USE_GL=		gl
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-omf-dir=${PREFIX}/share/omf
-INSTALLS_ICONS=	yes
 INSTALLS_OMF=	yes
 GLIB_SCHEMAS=	org.gnome.gchemutils.crystal.gschema.xml \
 		org.gnome.gchemutils.gschema.xml \

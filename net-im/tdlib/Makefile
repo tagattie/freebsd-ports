@@ -1,7 +1,6 @@
 PORTNAME=	tdlib
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.7.0-747
-DISTVERSIONSUFFIX=	-gb342ec33
+DISTVERSION=	1.7.8 # 1.7.8 is not tagged, just set in CMakeLists.txt
 CATEGORIES=	net-im devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -9,12 +8,13 @@ COMMENT=	Library for building Telegram clients
 
 LICENSE=	BSL
 
-USES=		cmake compiler:c++14-lang gperf ssl
+USES=		cmake:testing compiler:c++14-lang gperf ssl
 
 USE_GITHUB=	yes
 GH_PROJECT=	td
+GH_TAGNAME=	a7dcbe8c18938c67d35dee6da7782851e3b5ec4b
 
-CMAKE_OFF=	FREEBSD_BUILD_TESTING
+CMAKE_OFF=	BUILD_TESTING FREEBSD_BUILD_BENCHMARKS
 
 do-test:
 	@cd ${BUILD_WRKSRC} && \

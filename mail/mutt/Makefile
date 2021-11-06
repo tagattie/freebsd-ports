@@ -1,7 +1,7 @@
 # Created by: Udo Schweigert
 
 PORTNAME=	mutt
-DISTVERSION=	2.0.7
+DISTVERSION=	2.1.3
 CATEGORIES+=	mail
 MASTER_SITES=	ftp://ftp.mutt.org/pub/mutt/ \
 		https://bitbucket.org/mutt/mutt/downloads/ \
@@ -42,8 +42,8 @@ CONFIGURE_ARGS=	--disable-fcntl \
 CONFIGURE_ARGS+=	${MUTT_CONFIGURE_ARGS}
 .endif
 
-CONFLICTS=	ja-mutt-[0-9]* ja-mutt-devel-[0-9]* mutt-1.4* \
-		mutt-devel-lite-[0-9]* mutt-lite-[0-9]* zh-mutt-devel-[0-9]*
+CONFLICTS=	ja-mutt ja-mutt-devel mutt-1.4* \
+		mutt-devel-lite mutt-lite zh-mutt-devel
 
 INFO=		${PORTNAME}
 
@@ -137,12 +137,12 @@ GSSAPI_MIT_CONFIGURE_ON=	${GSSAPI_CONFIGURE_ARGS} \
 GSSAPI_NONE_CONFIGURE_ON=	--without-gss
 
 HCACHE_NONE_CONFIGURE_ON=	--disable-hcache
-HCACHE_NONE_CONFIGURE_OFF=	--enable-hcache \
-				--without-gdbm \
-				--without-qdbm
+HCACHE_NONE_CONFIGURE_OFF=	--enable-hcache
 
 HCACHE_BDB_CONFIGURE_WITH=	bdb=${LOCALBASE}
 HCACHE_BDB_USES=		bdb:42+
+HCACHE_BDB_VARS=		CFLAGS+=-I${BDB_INCLUDE_DIR} \
+				LDFLAGS+=-L${BDB_LIB_DIR}
 
 HCACHE_TOKYOCABINET_CONFIGURE_WITH=	tokyocabinet=${LOCALBASE}
 HCACHE_TOKYOCABINET_LIB_DEPENDS=	libtokyocabinet.so:databases/tokyocabinet
@@ -191,7 +191,7 @@ QUOTE_PATCH_PATCHFILES=	patch-${VVV_PATCH_VERSION}.vvv.initials.xz:vvv \
 .include <bsd.port.options.mk>
 
 VVV_PATCH_VERSION=	1.13.0
-GREETING_PATCH_VERSION=	2.0.6
+GREETING_PATCH_VERSION=	2.1.0
 
 post-install:
 	${INSTALL_MAN} ${FILESDIR}/mailcap.5 ${STAGEDIR}${MANPREFIX}/man/man5
@@ -207,10 +207,6 @@ pre-configure::
 # Install contrib samples to ${EXAMPLESDIR}
 	@${REINPLACE_CMD} -e 's#$$(docdir)/samples#${EXAMPLESDIR}#g' \
 		${WRKSRC}/contrib/Makefile.in
-
-pre-configure-HCACHE_BDB-on:
-	@${REINPLACE_CMD} -E -e 's/BDB_VERSIONS="/&${BDB_LIB_NAME} db${BDB_VER} /' \
-		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 
 # Undo some dist. installed files
 post-stage::

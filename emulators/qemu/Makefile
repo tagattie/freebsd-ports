@@ -2,7 +2,7 @@
 
 PORTNAME=	qemu
 PORTVERSION=	5.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators
 MASTER_SITES=	https://download.qemu.org/
 DIST_SUBDIR=	qemu/${PORTVERSION}
@@ -113,7 +113,6 @@ X11_USES=	sdl
 .if !defined(PKGNAMESUFFIX) || (${PKGNAMESUFFIX} != "-utils" && ${PKGNAMESUFFIX} != "-guest-agent")
 X86_TARGETS_USE_OFF=	XORG=pixman,x11
 X86_TARGETS_USES_OFF=	xorg
-INSTALLS_ICONS=		yes
 X86_TARGETS_CONFIGURE_ON=	--target-list='i386-softmmu i386-bsd-user x86_64-softmmu x86_64-bsd-user'
 .endif
 
@@ -123,7 +122,8 @@ PORTDOCS?=	docs index.html interop/.buildinfo interop/* qemu-ga-ref.html qemu-ga
 
 WITHOUT_CPU_CFLAGS=yes	#to avoid problems with register allocation
 CFLAGS:=	${CFLAGS:C/-fno-tree-vrp//}
-CFLAGS_amd64+=	-fPIC
+CFLAGS_amd64=	-fPIC
+CFLAGS_powerpc=	-D_CALL_SYSV
 CONFIGURE_ARGS?=--localstatedir=/var \
 		--extra-ldflags=-L${LOCALBASE}/lib --disable-libssh \
 		--prefix=${PREFIX} --cc=${CC} --enable-netmap --disable-kvm \
@@ -143,6 +143,7 @@ MAKE_ARGS+=	ARCH=x86_64
 
 .if ${ARCH} == "powerpc"
 MAKE_ARGS+=	ARCH=ppc
+USE_GCC=	yes
 .endif
 
 .if ${ARCH} == "powerpc64"

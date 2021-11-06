@@ -1,9 +1,9 @@
 # Created by: David O'Brien <obrien@FreeBSD.org>
 
 PORTNAME=	zeek
-PORTVERSION=	4.0.1
+PORTVERSION=	4.0.4
 CATEGORIES=	security
-MASTER_SITES=	https://old.zeek.org/downloads/
+MASTER_SITES=	https://download.zeek.org/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	leres@FreeBSD.org
@@ -11,10 +11,9 @@ COMMENT=	System for detecting network intruders in real-time
 
 LICENSE=	BSD3CLAUSE
 
-BROKEN_FreeBSD_11_powerpc64=	Does not build: error: zero-size array 'names'
 BROKEN_FreeBSD_12_powerpc64=	Does not build: error: zero-size array 'names'
 
-USES=		bison cmake compiler:c++11-lang gettext-runtime ninja perl5 \
+USES=		bison cmake compiler:c++11-lang cpe gettext-runtime ninja perl5 \
 		python shebangfix ssl
 USE_LDCONFIG=	yes
 
@@ -45,20 +44,21 @@ CMAKE_ARGS+=	-GNinja \
 ZEEKUSER?=	zeek
 ZEEKGROUP?=	zeek
 PLIST_SUB+=	ARCH=${UNAME_M} \
-		ZEEKUSER=${ZEEKUSER} \
+		LCASE_OPSYS=${OPSYS:tl} \
 		ZEEKGROUP=${ZEEKGROUP} \
-		LCASE_OPSYS=${OPSYS:tl}
+		ZEEKUSER=${ZEEKUSER}
 
 USERS=		${ZEEKUSER}
 GROUPS=		${ZEEKGROUP}
 
-OPTIONS_DEFINE=	BROKER GEOIP2 IPSUMDUMP LBL_CF LBL_HF NETMAP PERFTOOLS ZEEKCTL
+OPTIONS_DEFINE=	BROKER GEOIP2 IPSUMDUMP LBL_CF LBL_HF NETMAP PERFTOOLS \
+		ZEEKCTL ZKG
 
 OPTIONS_SINGLE=			BUILD_TYPE
 OPTIONS_SINGLE_BUILD_TYPE=	DEBUG MINSIZEREL RELEASE RELWITHDEBINFO
 
 OPTIONS_DEFAULT=	BROKER GEOIP2 IPSUMDUMP LBL_CF LBL_HF NETMAP RELEASE \
-			ZEEKCTL
+			ZEEKCTL ZKG
 OPTIONS_SUB=		yes
 
 BROKER_DESC=		Enable the Broker communication library
@@ -73,6 +73,7 @@ PERFTOOLS_DESC=		Use Perftools to improve memory & CPU usage
 RELEASE_DESC=		Optimizations on, debug symbols/flags off
 RELWITHDEBINFO_DESC=	Optimizations/debug symbols on, debug flags off
 ZEEKCTL_DESC=		ZeekControl support (implies BROKER and IPSUMDUMP)
+ZKG_DESC=		Zeek package manager support
 
 ZEEKCTL_IMPLIES=	BROKER IPSUMDUMP
 
@@ -95,6 +96,7 @@ ZEEKCTL_BUILD_DEPENDS=	${LOCALBASE}/bin/bash:shells/bash \
 ZEEKCTL_CMAKE_BOOL=	INSTALL_ZEEKCTL
 ZEEKCTL_RUN_DEPENDS=	${LOCALBASE}/bin/bash:shells/bash \
 			${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR}
+ZKG_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zkg>=2.7.1:security/py-zkg@${PY_FLAVOR} \
 
 .include <bsd.port.options.mk>
 

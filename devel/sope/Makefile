@@ -1,5 +1,5 @@
 PORTNAME=		sope
-PORTVERSION=		5.1.0
+PORTVERSION=		5.2.0
 CATEGORIES=		devel gnustep
 MASTER_SITES=		http://www.sogo.nu/files/downloads/SOGo/Sources/
 DISTNAME=		SOPE-${PORTVERSION}
@@ -31,12 +31,12 @@ USE_GNUSTEP=		base build
 USE_LDCONFIG=		${GNUSTEP_LOCAL_LIBRARIES}
 LLD_UNSAFE=		yes # PR 230608
 
-CONFLICTS=		sope2-[0-9]* sope4-[0-9]*
+CONFLICTS=		sope2 sope4
 
 SUB_LIST+=		GNUSTEP_LOCAL_TOOLS=${GNUSTEP_LOCAL_TOOLS} \
 			GNUSTEP_MAKEFILES=${GNUSTEP_MAKEFILES}
 
-CONFIGURE_ARGS=		--with-gnustep --disable-debug --enable-strip
+CONFIGURE_ARGS=		--with-gnustep --disable-debug --disable-strip
 CONFIGURE_ENV+=		CC="${CC}"
 
 LDAP_USE=		OPENLDAP=client

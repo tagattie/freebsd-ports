@@ -364,11 +364,8 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # USE_OPENLDAP	- If set, this port uses the OpenLDAP libraries.
 #				  Implies: WANT_OPENLDAP_VER?=24
 # WANT_OPENLDAP_VER
-#				- Legal values are: 23, 24
+#				- Legal values are: 24
 #				  If set to an unknown value, the port is marked BROKEN.
-# WANT_OPENLDAP_SASL
-#				- If set, the system should use OpenLDAP libraries
-#				  with SASL support.
 ##
 # USE_JAVA		- If set, this port relies on the Java language.
 #				  Implies inclusion of bsd.java.mk.  (Also see
@@ -503,7 +500,7 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				- Similiar to INSTALL_PROGRAM and INSTALL_DATA commands but
 #				  working on whole trees of directories, takes 3 arguments,
 #				  last one is find(1) arguments and optional.
-#				  Example use: 
+#				  Example use:
 #				  cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${DOCSDIR} "! -name *\.bak"
 #
 #				  Installs all directories and files from ${WRKSRC}/doc
@@ -1000,10 +997,16 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # DISABLE_SIZE	- Do not check the size of a distfile even if the SIZE field
 #				  has been specified in distinfo.  This is useful
 #				  when using an alternate FETCH_CMD.
-#
-# PKG_CREATE_VERBOSE		- If set, pass the -v option to pkg create which
+# PKG_CREATE_VERBOSE
+#				- If set, pass the -v option to pkg create which
 #				  ensures periodic output during packaging and
 #				  will help prevent timeouts by build monitors
+# PKG_COMPRESSION_FORMAT
+#				- the compression format used when creating a package, see
+#				  pkg-create(8) for valid formats
+# PKG_COMPRESSION_LEVEL
+#				- the compression level to use when creating a package, see
+#				  pkg-create(8) for valid values
 #
 # End of the list of all variables that need to be defined in a port.
 # Most port authors should not need to understand anything after this point.
@@ -1174,7 +1177,7 @@ OSVERSION!=	${AWK} '/^\#define[[:blank:]]__FreeBSD_version/ {print $$3}' < ${SRC
 .endif
 _EXPORTED_VARS+=	OSVERSION
 
-.if (${OPSYS} == FreeBSD && (${OSVERSION} < 1104000 || (${OSVERSION} >= 1200000 && ${OSVERSION} < 1202000))) || \
+.if (${OPSYS} == FreeBSD && ${OSVERSION} < 1202000) || \
     (${OPSYS} == DragonFly && ${DFLYVERSION} < 400400)
 _UNSUPPORTED_SYSTEM_MESSAGE=	Ports Collection support for your ${OPSYS} version has ended, and no ports\
 								are guaranteed to build on this system. Please upgrade to a supported release.
@@ -1198,7 +1201,9 @@ _OSVERSION_MAJOR=	${OSVERSION:C/([0-9]?[0-9])([0-9][0-9])[0-9]{3}/\1/}
 # Skip if OSVERSION specified on cmdline for testing. Only works for bmake.
 .if !defined(.MAKEOVERRIDES) || !${.MAKEOVERRIDES:MOSVERSION}
 .if ${_OSVERSION_MAJOR} != ${_OSRELEASE:R}
+.if !defined(I_DONT_CARE_IF_MY_BUILDS_TARGET_THE_WRONG_RELEASE)
 .error UNAME_r (${_OSRELEASE}) and OSVERSION (${OSVERSION}) do not agree on major version number.
+.endif
 .elif ${_OSVERSION_MAJOR} != ${OSREL:R}
 .error OSREL (${OSREL}) and OSVERSION (${OSVERSION}) do not agree on major version number.
 .endif
@@ -1211,6 +1216,14 @@ _OSVERSION_MAJOR=	${OSVERSION:C/([0-9]?[0-9])([0-9][0-9])[0-9]{3}/\1/}
 .if !defined(_PKG_VERSION)
 _PKG_VERSION!=	${PKG_BIN} -v
 .endif
+# XXX hack for smooth transition towards pkg 1.17
+_PKG_BEFORE_PKGEXT!= ${PKG_BIN} version -t ${_PKG_VERSION:C/-.*//g} 1.17.0
+.if ${_PKG_BEFORE_PKGEXT} == "<"
+_PKG_TRANSITIONING_TO_NEW_EXT=	yes
+_EXPORTED_VARS+=	_PKG_TRANSITIONING_TO_NEW_EXT
+WARNING+=	"It is strongly recommended to upgrade to a newer version of pkg first"
+.endif
+# XXX End of hack
 _PKG_STATUS!=	${PKG_BIN} version -t ${_PKG_VERSION:C/-.*//g} ${MINIMAL_PKG_VERSION}
 .if ${_PKG_STATUS} == "<"
 IGNORE=		pkg(8) must be version ${MINIMAL_PKG_VERSION} or greater, but you have ${_PKG_VERSION}. You must upgrade the ${PKG_ORIGIN} port first
@@ -1532,6 +1545,12 @@ ${v}+=	${${FLAVOR}_${v}}
 ${v}=	flavor "${FLAVOR}" ${${FLAVOR}_${v}}
 .endif
 .endfor
+.if defined(FLAVORS_SUB)
+PLIST_SUB+=	${FLAVORS:N${FLAVOR}:@v@${v:tu}="\@comment " NO_${v:tu}=""@}
+PLIST_SUB+=	${FLAVOR:tu}="" NO_${FLAVOR:tu}="@comment "
+SUB_LIST+=	${FLAVORS:N${FLAVOR}:@v@${v:tu}="\@comment " NO_${v:tu}=""@}
+SUB_LIST+=	${FLAVOR:tu}="" NO_${FLAVOR:tu}="@comment "
+.endif
 .endif # defined(${FLAVOR})
 
 
@@ -1610,9 +1629,11 @@ TEST_ENV?=		${MAKE_ENV}
 PKG_ENV+=		PORTSDIR=${PORTSDIR}
 CONFIGURE_ENV+=	XDG_DATA_HOME=${WRKDIR} \
 				XDG_CONFIG_HOME=${WRKDIR} \
+				XDG_CACHE_HOME=${WRKDIR}/.cache \
 				HOME=${WRKDIR}
 MAKE_ENV+=		XDG_DATA_HOME=${WRKDIR} \
 				XDG_CONFIG_HOME=${WRKDIR} \
+				XDG_CACHE_HOME=${WRKDIR}/.cache \
 				HOME=${WRKDIR}
 # Respect TMPDIR passed via make.conf or similar and pass it down
 # to configure and make.
@@ -1786,6 +1807,10 @@ INSTALL_TARGET:=	${INSTALL_TARGET:S/^install-strip$/install/g}
 .endif
 .endif
 
+.if defined(USE_LTO)
+.include "${PORTSDIR}/Mk/bsd.lto.mk"
+.endif
+
 .if !defined(WITHOUT_SSP)
 .include "${PORTSDIR}/Mk/bsd.ssp.mk"
 .endif
@@ -1854,11 +1879,6 @@ PKG_DEPENDS+=	${LOCALBASE}/sbin/pkg:${PKG_ORIGIN}
 .if defined(LLD_UNSAFE) && ${/usr/bin/ld:L:tA} == /usr/bin/ld.lld
 LDFLAGS+=	-fuse-ld=bfd
 BINARY_ALIAS+=	ld=${LD}
-.  if ${ARCH} == powerpc64
-# Base ld.bfd can't do ELFv2 which powerpc64 with Clang in base uses
-USE_BINUTILS=	yes
-LDFLAGS+=		-B${LOCALBASE}/bin
-.  endif
 .  if !defined(USE_BINUTILS)
 .    if exists(/usr/bin/ld.bfd)
 LD=	/usr/bin/ld.bfd
@@ -2227,24 +2247,31 @@ _PKGMESSAGES+=	${PKGMESSAGE}
 
 TMPPLIST?=	${WRKDIR}/.PLIST.mktmp
 
-.if ${WITH_PKG} == devel
-PKG_SUFX?=	.pkg
+# backward compatibility for users
+.if defined(_PKG_TRANSITIONING_TO_NEW_EXT)
 .if defined(PKG_NOCOMPRESS)
-PKG_OLDSUFX?=	.tar
+PKG_SUFX?=	.tar
+.else
+PKG_SUFX?=	.txz
+.endif
+PKG_COMPRESSION_FORMAT?=	${PKG_SUFX:S/.//}
+.else
+.if defined(PKG_SUFX)
+PKG_COMPRESSION_FORMAT?=	${PKG_SUFX:S/.//}
+WARNING+= "PKG_SUFX is defined, it should be replaced with PKG_COMPRESSION_FORMAT"
+.endif
+PKG_SUFX=	.pkg
+.endif
+.if defined(PKG_NOCOMPRESS)
+PKG_COMPRESSION_FORMAT?=	tar
 .else
 #.if ${OSVERSION} > 1400000
-#PKG_OLDSUFX?=	.tzst
+#PKG_COMPRESSION_FORMAT?=	tzst
 #.else
-PKG_OLDSUFX?=	.txz
+PKG_COMPRESSION_FORMAT?=	txz
 #.endif
 .endif
-.else
-.if defined(PKG_NOCOMPRESS)
-PKG_SUFX?=		.tar
-.else
-PKG_SUFX?=		.txz
-.endif
-.endif
+
 # where pkg(8) stores its data
 PKG_DBDIR?=		/var/db/pkg
 
@@ -2634,9 +2661,7 @@ PKGREPOSITORY?=		${PACKAGES}/${PKGREPOSITORYSUBDIR}
 PACKAGES:=	${PACKAGES:S/:/\:/g}
 _HAVE_PACKAGES=	yes
 PKGFILE?=		${PKGREPOSITORY}/${PKGNAME}${PKG_SUFX}
-.if ${WITH_PKG} == devel
-PKGOLDFILE?=		${PKGREPOSITORY}/${PKGNAME}${PKG_OLDSUFX}
-.endif
+PKGOLDFILE?=		${PKGREPOSITORY}/${PKGNAME}.${PKG_COMPRESSION_FORMAT}
 .else
 PKGFILE?=		${.CURDIR}/${PKGNAME}${PKG_SUFX}
 .endif
@@ -2646,9 +2671,10 @@ WRKDIR_PKGFILE=	${WRKDIR}/pkg/${PKGNAME}${PKG_SUFX}
 PKGLATESTREPOSITORY?=	${PACKAGES}/Latest
 PKGBASE?=			${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}
 PKGLATESTFILE=		${PKGLATESTREPOSITORY}/${PKGBASE}${PKG_SUFX}
-.if ${WITH_PKG} == devel
-PKGOLDLATESTFILE=		${PKGLATESTREPOSITORY}/${PKGBASE}${PKG_OLDSUFX}
-.endif
+PKGOLDLATESTFILE=		${PKGLATESTREPOSITORY}/${PKGBASE}.${PKG_COMPRESSION_FORMAT}
+# Temporary workaround to be deleted once every supported version of FreeBSD
+# have a bootstrap which handles the pkg extension.
+PKGOLDSIGFILE=			${PKGLATESTREPOSITORY}/${PKGBASE}.${PKG_COMPRESSION_FORMAT}.sig
 
 CONFIGURE_SCRIPT?=	configure
 CONFIGURE_CMD?=		./${CONFIGURE_SCRIPT}
@@ -3047,7 +3073,7 @@ check-deprecated:
 	@${ECHO_MSG}
 	@${ECHO_MSG} "More information about port maintainership is available at:"
 	@${ECHO_MSG}
-	@${ECHO_MSG} "https://www.freebsd.org/doc/en/articles/contributing/ports-contributing.html#maintain-port"
+	@${ECHO_MSG} "https://docs.freebsd.org/en/articles/contributing/#ports-contributing"
 	@${ECHO_MSG}
 .endif
 .if defined(DEPRECATED)
@@ -3358,7 +3384,7 @@ identify-install-conflicts:
 
 .if !target(check-install-conflicts)
 check-install-conflicts:
-.if ( defined(CONFLICTS) || defined(CONFLICTS_INSTALL) || ( defined(CONFLICTS_BUILD) && defined(DEFER_CONFLICTS_CHECK) ) ) && !defined(DISABLE_CONFLICTS) 
+.if ( defined(CONFLICTS) || defined(CONFLICTS_INSTALL) || ( defined(CONFLICTS_BUILD) && defined(DEFER_CONFLICTS_CHECK) ) ) && !defined(DISABLE_CONFLICTS)
 .if defined(DEFER_CONFLICTS_CHECK)
 	@conflicts_with=$$( \
 	{ ${PKG_QUERY} -g "%n-%v %p %o" ${CONFLICTS:C/.+/'&'/} ${CONFLICTS_BUILD:C/.+/'&'/} ${CONFLICTS_INSTALL:C/.+/'&'/} 2>/dev/null || : ; } \
@@ -3431,7 +3457,7 @@ ${PKGFILE}: ${WRKDIR_PKGFILE} ${PKGREPOSITORY}
 	@${LN} -f ${WRKDIR_PKGFILE} ${PKGFILE} 2>/dev/null \
 			|| ${CP} -f ${WRKDIR_PKGFILE} ${PKGFILE}
 
-.if ${WITH_PKG} == devel
+.if !defined(_PKG_TRANSITIONING_TO_NEW_EXT)
 _EXTRA_PACKAGE_TARGET_DEP+= ${PKGOLDFILE}
 ${PKGOLDFILE}: ${PKGFILE}
 	${INSTALL} -l rs ${PKGFILE} ${PKGOLDFILE}
@@ -3446,11 +3472,17 @@ _EXTRA_PACKAGE_TARGET_DEP+=	${PKGLATESTFILE}
 ${PKGLATESTFILE}: ${PKGFILE} ${PKGLATESTREPOSITORY}
 	${INSTALL} -l rs ${PKGFILE} ${PKGLATESTFILE}
 
-.if ${WITH_PKG} == devel
-_EXTRA_PACKAGE_TARGET_DEP+=	${PKGOLDLATESTFILE}
+.if !defined(_PKG_TRANSITIONING_TO_NEW_EXT)
+_EXTRA_PACKAGE_TARGET_DEP+=	${PKGOLDLATESTFILE} ${PKGOLDSIGFILE}
 
 ${PKGOLDLATESTFILE}: ${PKGOLDFILE} ${PKGLATESTREPOSITORY}
 	${INSTALL} -l rs ${PKGOLDFILE} ${PKGOLDLATESTFILE}
+
+# Temporary workaround to be deleted once every supported version of FreeBSD
+# have a bootstrap which handles the pkg extension.
+
+${PKGOLDSIGFILE}: ${PKGLATESTREPOSITORY}
+	${INSTALL} -l rs pkg.pkg.sig ${PKGOLDSIGFILE}
 .endif
 .  endif
 
@@ -3468,12 +3500,9 @@ _EXTRA_PACKAGE_TARGET_DEP+=	${WRKDIR_PKGFILE}
 # This will be the end of the loop
 
 .if !target(do-package)
-.if ${WITH_PKG} == devel
-.if defined(PKG_NOCOMPRESS)
-PKG_CREATE_ARGS+= -f ${PKG_OLDSUFX:S/.//}
-.endif
-.else
-PKG_CREATE_ARGS+= -f ${PKG_SUFX:S/.//}
+PKG_CREATE_ARGS+= -f ${PKG_COMPRESSION_FORMAT}
+.if defined(PKG_COMPRESSION_LEVEL)
+PKG_CREATE_ARGS+= -l ${PKG_COMPRESSION_LEVEL}
 .endif
 PKG_CREATE_ARGS+=	-r ${STAGEDIR}
 .  if defined(PKG_CREATE_VERBOSE)
@@ -3638,7 +3667,7 @@ security-check: ${TMPPLIST}
 #   4.  startup scripts, in conjunction with 2.
 #   5.  world-writable files/dirs
 #
-#  The ${NONEXISTENT} argument of ${READELF} is there so that there are always
+#  The ${NONEXISTENT} argument of ${READELF} is there so that there are always
 #  at least two file arguments, and forces it to always output the "File: foo"
 #  header lines.
 #
@@ -3950,7 +3979,9 @@ _CHECKSUM_INIT_ENV= \
 # checksum and sizes checks.
 makesum: check-sanity
 	@cd ${.CURDIR} && ${MAKE} fetch NO_CHECKSUM=yes \
-			DISABLE_SIZE=yes DISTFILES="${DISTFILES}"
+			DISABLE_SIZE=yes DISTFILES="${DISTFILES}" \
+			MASTER_SITES="${MASTER_SITES}" \
+			PATCH_SITES="${PATCH_SITES}"
 	@${SETENV} \
 			${_CHECKSUM_INIT_ENV} \
 			dp_CHECKSUM_ALGORITHMS='${CHECKSUM_ALGORITHMS:tu}' \
@@ -4085,6 +4116,7 @@ _FLAVOR_RECURSIVE_SH= \
 	for dir in $${recursive_dirs}; do \
 		unset flavor; \
 		case $${dir} in \
+			*@*/*) ;; \
 			*@*) \
 				flavor=$${dir\#*@}; \
 				dir=$${dir%@*}; \
@@ -4094,7 +4126,7 @@ _FLAVOR_RECURSIVE_SH= \
 		/*) ;; \
 		*) dir=${PORTSDIR}/$$dir ;; \
 		esac; \
-		(cd $$dir; ${SETENV} FLAVOR=$${flavor} ${MAKE} $${recursive_cmd}); \
+		(cd $$dir; ${SETENV} $${flavor:+FLAVOR=$${flavor}} ${MAKE} $${recursive_cmd}); \
 	done
 
 # This script is shared among several dependency list variables.  See file for
@@ -4117,7 +4149,7 @@ MISSING-DEPENDS-LIST=		${DEPENDS-LIST} -m ${_UNIFIED_DEPENDS:Q}
 BUILD-DEPENDS-LIST=			${DEPENDS-LIST} "${PKG_DEPENDS} ${EXTRACT_DEPENDS} ${PATCH_DEPENDS} ${FETCH_DEPENDS} ${BUILD_DEPENDS} ${LIB_DEPENDS}"
 RUN-DEPENDS-LIST=			${DEPENDS-LIST} "${LIB_DEPENDS} ${RUN_DEPENDS}"
 TEST-DEPENDS-LIST=			${DEPENDS-LIST} ${TEST_DEPENDS:Q}
-CLEAN-DEPENDS-LIST=			${DEPENDS-LIST} -wr ${_UNIFIED_DEPENDS:Q} 
+CLEAN-DEPENDS-LIST=			${DEPENDS-LIST} -wr ${_UNIFIED_DEPENDS:Q}
 CLEAN-DEPENDS-LIMITED-LIST=	${DEPENDS-LIST} -w ${_UNIFIED_DEPENDS:Q}
 
 .if !target(clean-depends)
@@ -4729,18 +4761,23 @@ flavors-package-names: .PHONY
 # Fake installation of package so that user can pkg delete it later.
 .if !target(fake-pkg)
 STAGE_ARGS=		-i ${STAGEDIR}
+.if defined(NO_PKG_REGISTER)
+STAGE_ARGS=	-N
+.endif
 
-.if !defined(NO_PKG_REGISTER)
 fake-pkg:
 .if defined(INSTALLS_DEPENDS)
+.if !defined(NO_PKG_REGISTER)
 	@${ECHO_MSG} "===>   Registering installation for ${PKGNAME} as automatic"
+.endif
 	@${SETENV} ${PKG_ENV} FORCE_POST="${_FORCE_POST_PATTERNS}" ${PKG_REGISTER} -d ${STAGE_ARGS} -m ${METADIR} -f ${TMPPLIST}
 .else
+.if !defined(NO_PKG_REGISTER)
 	@${ECHO_MSG} "===>   Registering installation for ${PKGNAME}"
+.endif
 	@${SETENV} ${PKG_ENV} FORCE_POST="${_FORCE_POST_PATTERNS}" ${PKG_REGISTER} ${STAGE_ARGS} -m ${METADIR} -f ${TMPPLIST}
 .endif
 	@${RM} -r ${METADIR}
-.endif
 .endif
 
 # Depend is generally meaningless for arbitrary ports, but if someone wants

@@ -1,16 +1,14 @@
 PORTNAME=	rpcs3
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.0.16-12307 # git rev-list --count HEAD
-DISTVERSIONSUFFIX=	-g9ba3e6d3f
+DISTVERSION=	0.0.19-12987 # git rev-list --count HEAD
+DISTVERSIONSUFFIX=	-g88bb26afb
 CATEGORIES=	emulators
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	PS3 emulator/debugger
 
-LICENSE=	APACHE20 BSD3CLAUSE BSL GPLv2 MIT ZLIB
+LICENSE=	APACHE20 GPLv2 MIT ZLIB
 LICENSE_COMB=	multi
-LICENSE_FILE_BSD3CLAUSE=${WRKSRC_cereal}/LICENSE
-LICENSE_FILE_BSL=	${WRKSRC_span}/LICENSE_1_0.txt
 LICENSE_FILE_MIT=	${WRKSRC_pugixml}/LICENSE.md
 LICENSE_FILE_ZLIB=	${WRKSRC_asmjit}/LICENSE.md
 
@@ -18,30 +16,28 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libpng.so:graphics/png \
 		libavcodec.so:multimedia/ffmpeg
 
+BROKEN_FreeBSD_12=	ld: error: undefined symbol: std::__1::__cxx_atomic_notify_one
 ONLY_FOR_ARCHS=	amd64
 ONLY_FOR_ARCHS_REASON=	requires int128 and SSE2
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	RPCS3
-GH_TUPLE=	RPCS3:hidapi:hidapi-0.8.0-rc1-28-g8961cf8:hidapi/3rdparty/hidapi \
-		RPCS3:llvm-mirror:5836324d6443:llvm/llvm \
+GH_TUPLE=	RPCS3:hidapi:hidapi-0.8.0-rc1-125-g01f601a:hidapi/3rdparty/hidapi/hidapi \
+		RPCS3:llvm-mirror:18f153b33bef:llvm/llvm \
 		Cyan4973:xxHash:v0.8.0:xxHash/3rdparty/xxHash \
-		FNA-XNA:FAudio:21.04:FAudio/3rdparty/FAudio \
 		asmjit:asmjit:723f585:asmjit/3rdparty/asmjit/asmjit \
-		google:flatbuffers:v1.11.0:flatbuffers/3rdparty/flatbuffers \
-		jbeder:yaml-cpp:yaml-cpp-0.6.3-30-g6a211f0:yamlcpp/3rdparty/yaml-cpp \
-		KhronosGroup:SPIRV-Headers:1.5.3.reservations1:spirv_headers/Vulkan/spirv-headers \
-		KhronosGroup:SPIRV-Tools:v2020.4:spirv_tools/Vulkan/spirv-tools \
-		KhronosGroup:glslang:11.4.0:glslang/Vulkan/glslang \
-		tcbrindle:span:9d7559a:span/3rdparty/span \
-		USCiLab:cereal:v1.3.0-5-g60c69df9:cereal/3rdparty/cereal \
-		wolfSSL:wolfssl:v4.5.0-stable-80-g39b544860:wolfssl/3rdparty/wolfssl \
+		google:flatbuffers:v2.0.0:flatbuffers/3rdparty/flatbuffers \
+		jbeder:yaml-cpp:yaml-cpp-0.7.0-1-g0b67821:yamlcpp/3rdparty/yaml-cpp/yaml-cpp \
+		KhronosGroup:SPIRV-Headers:1.5.3.reservations1:spirv_headers/3rdparty/SPIRV/SPIRV-Headers \
+		KhronosGroup:SPIRV-Tools:v2020.4:spirv_tools/3rdparty/SPIRV/SPIRV-Tools \
+		KhronosGroup:glslang:11.6.0:glslang/3rdparty/glslang/glslang \
+		wolfSSL:wolfssl:v4.8.1-stable:wolfssl/3rdparty/wolfssl/wolfssl \
 		zeux:pugixml:v1.11.4:pugixml/3rdparty/pugixml
 
 USES=		cmake compiler:c++17-lang gl iconv:wchar_t localbase:ldflags \
 		openal:soft pkgconfig python:3.4+,build qt:5 xorg
 USE_GL=		gl glew
-USE_QT=		qmake_build buildtools_build core concurrent dbus gui widgets
+USE_QT=		qmake_build buildtools_build core concurrent dbus gui multimedia svg widgets
 USE_XORG=	x11
 CMAKE_ON=	CMAKE_SKIP_RPATH USE_SYSTEM_CURL USE_SYSTEM_FFMPEG USE_SYSTEM_LIBPNG
 CMAKE_OFF=	USE_NATIVE_INSTRUCTIONS USE_PRECOMPILED_HEADERS
@@ -60,9 +56,8 @@ EVDEV_BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto
 EVDEV_LIB_DEPENDS=	libevdev.so:devel/libevdev
 
 FAUDIO_DESC=		FAudio audio support
-FAUDIO_USES=		sdl
-FAUDIO_USE=		SDL=sdl2
-FAUDIO_CMAKE_BOOL=	USE_FAUDIO
+FAUDIO_LIB_DEPENDS=	libFAudio.so:audio/faudio
+FAUDIO_CMAKE_BOOL=	USE_FAUDIO USE_SYSTEM_FAUDIO
 
 PULSEAUDIO_LIB_DEPENDS=	libpulse-simple.so:audio/pulseaudio
 PULSEAUDIO_CMAKE_BOOL=	USE_PULSE
@@ -89,5 +84,13 @@ USES:=		${USES:Ncompiler*}
 CC=		clang${LLVM_DEFAULT}
 CXX=		clang++${LLVM_DEFAULT}
 CPP=		clang-cpp${LLVM_DEFAULT}
+
+# XXX Drop after FreeBSD 12.2 EOL
+.if make(makesum) || (!exists(/usr/include/c++/v1/__bits) && exists(/usr/lib/libc++.so))
+MASTER_SITES+=	https://github.com/llvm/llvm-project/releases/download/llvmorg-${LLVM_VER}/:libcxx
+DISTFILES+=	libcxx-${LLVM_VER}.src.tar.xz:libcxx
+CXXFLAGS+=	-nostdinc++ -D_LIBCPP_HAS_NO_VENDOR_AVAILABILITY_ANNOTATIONS -isystem${WRKDIR}/libcxx-${LLVM_VER}.src/include
+LLVM_VER=	12.0.0
+.endif
 
 .include <bsd.port.post.mk>

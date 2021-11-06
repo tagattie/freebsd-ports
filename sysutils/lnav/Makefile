@@ -1,7 +1,7 @@
 # Created by: Thomas Hurst <tom@hur.st>
 
 PORTNAME=	lnav
-PORTVERSION=	0.9.0
+PORTVERSION=	0.10.1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/tstack/${PORTNAME}/releases/download/v${PORTVERSION}/
 
@@ -9,8 +9,6 @@ MAINTAINER=	tom@hur.st
 COMMENT=	Terminal based log file navigator
 
 LICENSE=	BSD2CLAUSE
-
-BROKEN_i386=	fails to build: error: non-constant-expression cannot be narrowed
 
 LIB_DEPENDS=	libpcrecpp.so:devel/pcre
 

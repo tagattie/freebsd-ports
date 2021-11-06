@@ -2,10 +2,12 @@
 
     SUBDIR += 6cord
     SUBDIR += beebeep
+    SUBDIR += biboumi
     SUBDIR += centerim
     SUBDIR += chatterino2
     SUBDIR += climm
     SUBDIR += coccinella
+    SUBDIR += conduit
     SUBDIR += convey
     SUBDIR += coyim
     SUBDIR += cutegram
@@ -143,6 +145,7 @@
     SUBDIR += scudcloud
     SUBDIR += sendxmpp
     SUBDIR += signal-cli
+    SUBDIR += signald
     SUBDIR += slack-term
     SUBDIR += spectral
     SUBDIR += ssh-chat
@@ -170,7 +173,9 @@
     SUBDIR += tkabber-plugins
     SUBDIR += toot
     SUBDIR += tox
+    SUBDIR += tox_extension_messages
     SUBDIR += toxbot
+    SUBDIR += toxext
     SUBDIR += toxic
     SUBDIR += toxins
     SUBDIR += tut

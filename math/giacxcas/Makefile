@@ -2,7 +2,7 @@
 
 PORTNAME=	giacxcas
 DISTVERSION=	1.6.0-7
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	math
 MASTER_SITES=	http://www-fourier.ujf-grenoble.fr/~parisse/debian/dists/stable/main/source/:giac \
 		http://cocoa.dima.unige.it/cocoalib/tgz/:cocoa \
@@ -21,6 +21,7 @@ LICENSE_NAME_DOC=	French documentation
 LICENSE_TEXT_DOC=	French documentation is for non-commercial use only
 LICENSE_FILE_GPLv3=	${WRKSRC}/COPYING
 LICENSE_PERMS_DOC=	dist-mirror pkg-mirror auto-accept
+LICENSE_DISTFILES_DOC=	giac_${DISTVERSION}${EXTRACT_SUFX}
 
 BUILD_DEPENDS=	bash:shells/bash
 LIB_DEPENDS=	libao.so:audio/libao \
@@ -56,7 +57,6 @@ CONFIGURE_ENV=	ac_cv_lib_X11_main=yes \
 		ac_cv_lib_jpeg_main=yes
 SHEBANG_FILES=	src/pgiac
 INSTALL_TARGET=	install-strip
-INSTALLS_ICONS=	yes
 
 COCOA_LIB_VERSION=	0.99700
 

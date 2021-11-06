@@ -2,8 +2,7 @@
 
 PORTNAME=	googletest
 DISTVERSIONPREFIX=	release-
-DISTVERSION=	1.10.0
-PORTREVISION=	1
+DISTVERSION=	1.11.0
 CATEGORIES=	devel
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -19,9 +18,5 @@ USES=		cmake:testing compiler:c++11-lib python:test
 USE_LDCONFIG=	yes
 CMAKE_ON=	BUILD_SHARED_LIBS
 CMAKE_TESTING_ON=	gtest_build_tests gmock_build_tests
-
-post-install:
-# Drop unused not preprocessed headers
-	${FIND} ${STAGEDIR}${PREFIX} -name '*.pump' -delete
 
 .include <bsd.port.mk>

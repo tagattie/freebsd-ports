@@ -1,10 +1,7 @@
 PORTNAME=	aom
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.1.0
+DISTVERSION=	3.2.0
 CATEGORIES=	multimedia
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	86874609267d.patch:-p1 # https://bugs.chromium.org/p/aomedia/issues/detail?id=3050
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	AV1 reference encoder/decoder
@@ -28,7 +25,7 @@ OPTIONS_DEFINE=	VMAF
 
 VMAF_DESC=		Encoding tuning for VMAF
 VMAF_LIB_DEPENDS=	libvmaf.so:multimedia/vmaf
-VMAF_USES=		localbase:ldflags pkgconfig
+VMAF_USES=		pkgconfig
 VMAF_CMAKE_ON=		-DCONFIG_TUNE_VMAF:STRING=1
 
 post-patch:

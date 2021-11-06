@@ -1,6 +1,7 @@
 PORTNAME=	magia
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.2.0
+PORTREVISION=	1
 CATEGORIES=	emulators
 
 MAINTAINER=	nc@FreeBSD.org
@@ -8,7 +9,6 @@ COMMENT=	GBA emulator written in golang
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
-
 
 LIB_DEPENDS=	libglfw.so:graphics/glfw
 

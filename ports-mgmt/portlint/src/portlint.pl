@@ -14,7 +14,7 @@
 # bsd.port.mk.  There are significant differences in those so non-FreeBSD code
 # was removed.
 #
-# $MCom: portlint/portlint.pl,v 1.528 2021/05/14 16:53:31 jclarke Exp $
+# $MCom$
 #
 
 use strict;
@@ -49,7 +49,7 @@ $portdir = '.';
 # version variables
 my $major = 2;
 my $minor = 19;
-my $micro = 6;
+my $micro = 8;
 
 # default setting - for FreeBSD
 my $portsdir = '/usr/ports';
@@ -593,7 +593,6 @@ sub checkplist {
 	my $owner_seen = 0;
 	my $group_seen = 0;
 	my $found_so = 0;
-	my $found_naked_so = 0;
 
 	# Variables that are allowed to be out-of-sync in the XXXDIR check.
 	# E.g., %%PORTDOCS%%%%RUBY_MODDOCDIR%% will be OK because there is
@@ -809,10 +808,8 @@ sub checkplist {
 			$makevar{USE_LDCONFIG} eq '') {
 			&perror("WARN", $file, $., "installing shared libraries, ".
 				"please define USE_LDCONFIG as appropriate");
-		} elsif ($_ =~ m|lib[^\/]+\.so\.\d+$|) {
+		} elsif ($_ =~ m|lib[^\/]+\.so[.\d]*$|) {
 			$found_so++;
-		} elsif ($_ =~ m|lib[^\/]+\.so$|) {
-			$found_naked_so++;
 		}
 
 		if ($_ =~ m|^share/icons/.*/| &&
@@ -947,14 +944,8 @@ sub checkplist {
 	}
 
 	if ($makevar{USE_LDCONFIG} ne '' && !$found_so) {
-		if ($found_naked_so) {
-			&perror("WARN", $file, -1, "You have defined USE_LDCONFIG, but this ".
-				"port does not install shared objects in the format lib*.so.[0-9] ".
-				"which ldconfig(8) needs to register them in the hints file.");
-		} else {
-			&perror("WARN", $file, -1, "You have defined USE_LDCONFIG, but this ".
-				"port does not install any shared objects.");
-		}
+		&perror("WARN", $file, -1, "You have defined USE_LDCONFIG, but this ".
+			"port does not install any shared objects.");
 	}
 
 	close(IN);
@@ -1925,7 +1916,7 @@ sub checkmakefile {
 	# whole file: BROKEN et al.
 	#
 	my ($var);
-	foreach $var (qw(IGNORE BROKEN COMMENT FORBIDDEN MANUAL_PACKAGE_BUILD NO_CDROM NO_PACKAGE RESTRICTED)) {
+	foreach $var (qw(IGNORE BROKEN(_[\w\d]+)? COMMENT FORBIDDEN MANUAL_PACKAGE_BUILD NO_CDROM NO_PACKAGE RESTRICTED)) {
 		print "OK: checking ${var}.\n" if ($verbose);
 		if ($whole =~ /\n${var}[+?]?=[ \t]+"/) {
 			my $lineno = &linenumber($`);
@@ -1946,8 +1937,8 @@ sub checkmakefile {
 			"with a lowercase letter and end without a period.");
 	}
 
-	if ($whole =~ /\nBROKEN[+?]=[ \t]+[^a-z \t]/ ||
-		$whole =~ /^BROKEN[+?]?=[ \t]+.*\.$/m) {
+	if ($whole =~ /\nBROKEN(_[\w\d]+)?[+?]?=[ \t]+[^a-z \t]/ ||
+		$whole =~ /^BROKEN(_[\w\d]+)?[+?]?=[ \t]+.*\.$/m) {
 		my $lineno = &linenumber($`);
 		&perror("WARN", $file, $lineno, "BROKEN messages should begin ".
 			"with a lowercase letter and end without a period.");
@@ -2232,7 +2223,7 @@ xargs xmkmf
 				&& $lm !~ /^COMMENT(.)?=[^\n]+($i\d*)/m) {
 					&perror("WARN", $file, $lineno, "possible direct use of ".
 						"command \"$sm\" found. Use $autocmdnames{$i} ".
-						"instead and set according USE_AUTOTOOLS=<tool> macro");
+						"instead and set USES=autoreconf and GNU_CONFIGURE=yes");
 			}
 		}
 	}
@@ -2240,6 +2231,14 @@ xargs xmkmf
 	if ($makevar{'USE_AUTOTOOLS'} =~ /\blibtool\b/) {
 		&perror("WARN", $file, -1, "USE_AUTOTOOLS=libtool is deprecated.  ".
 			"Use USES=libtool instead.");
+	}
+
+	if ($makevar{'USE_AUTOTOOLS'} =~ /\blibtoolize\b/) {
+		&perror("WARN", $file, -1, "USE_AUTOTOOLS=libtoolize is deprecated. ".
+			"Use \"USES=autoreconf libtool\" instead.");
+	} elsif ($makevar{'USE_AUTOCONF'}) {
+		&perror("WARN", $file, -1, "USE_AUTOTOOLS is deprecated. ".
+			"Use USES=autoreconf and set GNU_CONFIGURE=yes instead.");
 	}
 
 	#
@@ -2709,7 +2708,7 @@ EOF
 	&checkorder('PORTNAME', $tmp, $file, qw(
 PORTNAME PORTVERSION DISTVERSIONPREFIX DISTVERSION DISTVERSIONSUFFIX
 PORTREVISION PORTEPOCH CATEGORIES MASTER_SITES MASTER_SITE_SUBDIR
-PROJECTHOST PKGNAMEPREFIX PKGNAMESUFFIX DISTNAME EXTRACT_SUFX DISTFILES
+PROJECTHOST PKGNAMEPREFIX PKGNAMESUFFIX DISTNAME EXTRACT_SUFX DISTFILES(_\w+)?
 DIST_SUBDIR EXTRACT_ONLY
 	));
 
@@ -3080,7 +3079,7 @@ DIST_SUBDIR EXTRACT_ONLY
 	push(@varnames, qw(
 PORTNAME PORTVERSION DISTVERSIONPREFIX DISTVERSION DISTVERSIONSUFFIX
 PORTREVISION PORTEPOCH CATEGORIES MASTER_SITES MASTER_SITE_SUBDIR
-PROJECTHOST PKGNAMEPREFIX PKGNAMESUFFIX DISTNAME EXTRACT_SUFX DISTFILES
+PROJECTHOST PKGNAMEPREFIX PKGNAMESUFFIX DISTNAME EXTRACT_SUFX DISTFILES(_\w+)?
 DIST_SUBDIR EXTRACT_ONLY
 	));
 
@@ -3255,7 +3254,7 @@ MAINTAINER COMMENT
 	@linestocheck = qw(
 DEPRECATED EXPIRATION_DATE FORBIDDEN BROKEN(_\w+)? IGNORE(_\w+)?
 ONLY_FOR_ARCHS ONLY_FOR_ARCHS_REASON(_\w+)?
-NOT_FOR_ARCHS NOT_FOR_ARCHS_REASON(_\w+)?
+NOT_FOR_ARCHS NOT_FOR_ARCHS_REASON(_\w+)? LEGAL_TEXT
 	);
 
 	my $brokenpattern = "^(" . join("|", @linestocheck) . ")[?+:]?=";
@@ -3447,15 +3446,6 @@ TEST_DEPENDS FETCH_DEPENDS DEPENDS_TARGET
 			&perror("WARN", $file, -1, "definition of WRKSRC not necessary. ".
 				"WRKSRC is \${WRKDIR} by default.");
 		}
-	}
-
-	# check RESTRICTED/NO_CDROM/NO_PACKAGE
-	print "OK: checking RESTRICTED/NO_CDROM/NO_PACKAGE.\n" if ($verbose);
-	my $lps = $makevar{LICENSE_PERMS} // '';
-	if ($committer && ($tmp =~ /\n(RESTRICTED|NO_CDROM|NO_PACKAGE)[+?]?=/ ||
-		$lps =~ /\bno-\b/)) {
-		&perror("WARN", $file, -1, "Possible restrictive licensing found.  ".
-			"If there are, in fact, limitations to use or distribution, please update ports/LEGAL.");
 	}
 
 	if ($tmp =~ /\nNO_PACKAGE[+?]?=/) {

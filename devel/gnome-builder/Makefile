@@ -1,6 +1,5 @@
 PORTNAME=	gnome-builder
-PORTVERSION=	3.38.1
-PORTREVISION=	1
+PORTVERSION=	3.40.2
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
@@ -33,18 +32,17 @@ PORTDOCS=	*
 
 CONFLICTS_BUILD=	gnome-builder-3.16.*
 
-USES=		compiler:c++11-lang cpe desktop-file-utils gettext gnome \
+USES=		compiler:c++11-lang desktop-file-utils gettext gnome \
 		localbase:lfdlags meson pkgconfig python:3.6+,build tar:xz \
 		shebangfix
 USE_GNOME=	cairo gtksourceview4 introspection libxml2 vte3
 SHEBANG_FILES=	${WRKSRC}/src/plugins/maven/maven_plugin.py \
 		${WRKSRC}/src/plugins/gradle/gradle_plugin.py
 USE_LDCONFIG=	yes
-INSTALLS_ICONS=	yes
-CPE_VENDOR=	gnome
 BINARY_ALIAS=	python3=${PYTHON_VERSION}
 
-MESON_ARGS=	-Dplugin_flatpak=false \
+MESON_ARGS=	-Dplugin_color_picker=false \
+		-Dplugin_flatpak=false \
 		-Dplugin_sysprof=false \
 		-Dplugin_qemu=false \
 		-Dplugin_jhbuild=false \
@@ -61,7 +59,6 @@ GLIB_SCHEMAS=	org.gnome.builder.build.gschema.xml \
 		org.gnome.builder.gnome-code-assistance.gschema.xml \
 		org.gnome.builder.gschema.xml \
 		org.gnome.builder.plugin.gschema.xml \
-		org.gnome.builder.plugins.color_picker_plugin.gschema.xml \
 		org.gnome.builder.plugins.copyright.gschema.xml \
 		org.gnome.builder.plugins.eslint.gschema.xml \
 		org.gnome.builder.plugins.stylelint.gschema.xml \

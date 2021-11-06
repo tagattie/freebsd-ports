@@ -2,6 +2,7 @@
 
 PORTNAME=	fcitx5
 DISTVERSION=	5.0.4
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	https://download.fcitx-im.org/data/:dict
 DISTFILES=	${SPELL_EN_DICT_TAR}:dict
@@ -62,7 +63,6 @@ MAKE_ENV=	FCITX5_DOWNLOAD_DISALLOWED=TRUE
 USE_GL=		egl
 USE_GNOME=	cairo glib20 gdkpixbuf2 pango
 USE_KDE=	ecm
-INSTALLS_ICONS=	yes
 
 USE_LDCONFIG=	yes
 

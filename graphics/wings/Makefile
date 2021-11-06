@@ -2,6 +2,7 @@
 
 PORTNAME=	wings
 PORTVERSION=	2.2.6.1
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 DIST_SUBDIR=	erlang
@@ -13,6 +14,8 @@ LICENSE=	Wings3D
 LICENSE_NAME=	Wings 3D License # similar to TclTk license
 LICENSE_FILE=	${WRKSRC}/license.terms
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+
+BROKEN=		does not build with Erlang 24 (requires erlang-esdl)
 
 BUILD_DEPENDS=	erl:lang/erlang \
 		erlang-esdl>0:devel/erlang-esdl \

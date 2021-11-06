@@ -1,8 +1,8 @@
 # Created by: Steven Kreuzer <skreuzer@FreeBSD.org>
 
 PORTNAME=	gdb
-DISTVERSION=	10.2
-PORTREVISION=	0
+DISTVERSION=	11.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	GNU
 
@@ -15,7 +15,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING3
 # untested on sparc64, might work
 NOT_FOR_ARCHS=	sparc64
 
-LIB_DEPENDS=	libmpfr.so:math/mpfr
+LIB_DEPENDS=	libgmp.so:math/gmp \
+		libmpfr.so:math/mpfr
 TEST_DEPENDS=	runtest:misc/dejagnu
 
 USES=		compiler:c++11-lang cpe gmake libtool makeinfo pkgconfig tar:xz
@@ -34,8 +35,7 @@ CONFIGURE_ARGS=	--program-suffix=${DISTVERSION:S/.//g} \
 		--without-libunwind-ia64 --with-system-zlib
 CONFIGURE_OUTSOURCE=	yes
 CFLAGS:=	${CFLAGS:C/ +$//}	# blanks at EOL creep in sometimes
-CFLAGS+=	-DRL_NO_COMPAT -Wno-unused-function -Wno-unused-variable
-CFLAGS+=	-Wno-unknown-warning-option
+CFLAGS+=	-DRL_NO_COMPAT
 EXCLUDE=	dejagnu expect sim texinfo intl
 EXTRACT_AFTER_ARGS=	${EXCLUDE:S/^/--exclude /}
 LIB_DEPENDS+=	libexpat.so:textproc/expat2
@@ -68,6 +68,7 @@ OPTIONS_SUB=	yes
 
 BUNDLED_READLINE_CONFIGURE_OFF=	--with-system-readline
 DEBUG_CFLAGS=		-g
+DEBUG_VARS=	STRIP=
 GUILE_CONFIGURE_WITH=	guile
 GUILE_LIB_DEPENDS=	libguile-2.2.so:lang/guile2
 NLS_USES=	gettext-runtime
@@ -96,7 +97,7 @@ USE_GITHUB=	nodefault
 
 GH_ACCOUNT=	bsdjhb:libcxx
 GH_PROJECT=	libcxx-gdbpy:libcxx
-GH_TAGNAME=	229610a:libcxx
+GH_TAGNAME=	03d0d9b:libcxx
 
 # Workaround USE_GITHUB preventing the default DISTFILES
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}

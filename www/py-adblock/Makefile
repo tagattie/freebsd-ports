@@ -1,5 +1,6 @@
 PORTNAME=	adblock
-DISTVERSION=	0.4.4
+DISTVERSION=	0.5.0
+PORTREVISION=	8
 CATEGORIES=	www python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -29,10 +30,10 @@ GH_ACCOUNT=	ArniDagur
 GH_PROJECT=	python-adblock
 USE_PYTHON=	autoplist concurrent cython distutils
 
-CARGO_CRATES=	adblock-0.3.10 \
-		addr-0.11.8 \
+CARGO_CRATES=	adblock-0.3.13 \
+		addr-0.14.0 \
 		adler-1.0.2 \
-		aho-corasick-0.7.15 \
+		aho-corasick-0.7.18 \
 		autocfg-1.0.1 \
 		base64-0.13.0 \
 		bitflags-1.2.1 \
@@ -54,7 +55,7 @@ CARGO_CRATES=	adblock-0.3.10 \
 		libc-0.2.93 \
 		lock_api-0.4.3 \
 		matches-0.1.8 \
-		memchr-2.3.4 \
+		memchr-2.4.0 \
 		miniz_oxide-0.4.4 \
 		num-traits-0.2.14 \
 		once_cell-1.7.2 \
@@ -72,8 +73,8 @@ CARGO_CRATES=	adblock-0.3.10 \
 		pyo3-macros-backend-0.13.2 \
 		quote-1.0.9 \
 		redox_syscall-0.2.5 \
-		regex-1.4.5 \
-		regex-syntax-0.6.23 \
+		regex-1.5.4 \
+		regex-syntax-0.6.25 \
 		rmp-0.8.10 \
 		rmp-serde-0.13.7 \
 		scopeguard-1.1.0 \
@@ -98,6 +99,8 @@ CARGO_BUILD=		no
 CARGO_INSTALL=		no
 CARGO_TARGET_DIR=	${WRKSRC}/target
 
+.include <bsd.port.options.mk>
+
 # This is to prevent Mk/Uses/python.mk do-configure target from firing.
 do-configure:
 
@@ -109,6 +112,10 @@ do-build:
 # Due to upstream not supplying a setup.py file or other way to install
 # using pip command for now...
 do-install:
+.if ${ARCH:Mpowerpc64*}
+	@(cd ${INSTALL_WRKSRC}; \
+		${FIND} . -name "*whl" -exec sh -c 'mv {} `echo {} | sed  -E -e "s/powerpc.*/powerpc.whl/"`' \;)
+.endif
 	@(cd ${INSTALL_WRKSRC} ; \
 		${INSTALL_DATA} "target/release/libadblock.so" \
 		"${STAGEDIR}/${PREFIX}/lib" ; \
@@ -126,7 +133,7 @@ post-install:
 # SEE devel/py-maturin/Makefile
 	@${FIND} ${STAGEDIR} \
 		-type f -o -type l | \
-		${SORT} | \
-		${SED} -e 's|${STAGEDIR}||' > ${WRKDIR}/.PLIST.pymodtmp
+		${SORT} | ${SED} -e 's|${STAGEDIR}||' > \
+		${WRKDIR}/.PLIST.pymodtmp
 
 .include <bsd.port.mk>

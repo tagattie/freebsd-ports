@@ -1,7 +1,7 @@
 # Created by: Matthias Andree <mandree@FreeBSD.org>
 
 PORTNAME=		openvpn
-DISTVERSION=		2.5.2
+DISTVERSION=		2.5.4
 PORTREVISION?=		1
 CATEGORIES=		security net net-vpn
 MASTER_SITES=		https://swupdate.openvpn.org/community/releases/ \
@@ -15,7 +15,6 @@ LICENSE=		GPLv2
 LICENSE_FILE=		${WRKSRC}/COPYRIGHT.GPL
 
 USES=			cpe libtool localbase:ldflags pkgconfig shebangfix tar:xz
-IGNORE_SSL=		libressl libressl-devel
 USE_RC_SUBR=		openvpn
 
 SHEBANG_FILES=		sample/sample-scripts/verify-cn \
@@ -27,9 +26,12 @@ CONFIGURE_ARGS+=	--enable-strict
 # set PLUGIN_LIBDIR so that unqualified plugin paths are found:
 CONFIGURE_ENV+=		PLUGINDIR="${PREFIX}/lib/openvpn/plugins"
 
-CONFLICTS_INSTALL?=	openvpn-2.[!5].* openvpn-[!2].* openvpn-beta-[0-9]* openvpn-devel-[0-9]* openvpn-mbedtls-[0-9]*
+CONFLICTS_INSTALL?=	openvpn-2.[!5].* openvpn-devel-[0-9]* openvpn-mbedtls-[0-9]*
 
 SUB_FILES=		pkg-message openvpn-client
+
+USERS=			openvpn
+GROUPS=			openvpn
 
 PORTDOCS=		*
 PORTEXAMPLES=		*
@@ -101,6 +103,13 @@ _tlslibs=libssl libcrypto
 CONFIGURE_ARGS+=	--enable-comp-stub
 .endif
 
+post-patch:
+	${REINPLACE_CMD} -E -i '' -e 's/(user|group) nobody/\1 openvpn/' \
+		-e 's/"nobody"( after init)/"openvpn" \1/' \
+		${WRKSRC}/sample/sample-config-files/*.conf \
+		${WRKSRC}/sample/sample-config-files/xinetd-*-config \
+		${WRKSRC}/doc/man-sections/generic-options.rst
+
 pre-configure:
 .ifdef (LOG_OPENVPN)
 	@${ECHO} "Building with LOG_OPENVPN=${LOG_OPENVPN}"
@@ -111,6 +120,13 @@ pre-configure:
 	@${ECHO} "      LOG_OPENVPN={Valid syslog facility, default LOG_DAEMON}"
 	@${ECHO} "      EXAMPLE:  make LOG_OPENVPN=LOG_LOCAL6"
 	@${ECHO} ""
+.endif
+.if !empty(SSL_DEFAULT:Mlibressl*)
+	@${ECHO} "### --------------------------------------------------------- ###"
+	@${ECHO} "### NOTE that libressl is not primarily supported by OpenVPN  ###"
+	@${ECHO} "### Do not report bugs without fixes/patches unless the issue ###"
+	@${ECHO} "### can be reproduced with a released OpenSSL version.        ###"
+	@${ECHO} "### --------------------------------------------------------- ###"
 .endif
 
 post-configure:
@@ -133,8 +149,6 @@ post-install:
 	@${REINPLACE_CMD} 's|resolvconf -p -a|resolvconf -a|' ${STAGEDIR}${PREFIX}/libexec/openvpn-client.up
 	${INSTALL_SCRIPT} ${WRKDIR}/openvpn-client ${STAGEDIR}${PREFIX}/sbin/openvpn-client
 	${MKDIR} ${STAGEDIR}${PREFIX}/include
-	@: # workaround for 2.5.0 only XXX FIXME remove after 2.5.0
-	${INSTALL_MAN} ${WRKSRC}/doc/openvpn.8 ${STAGEDIR}${MANPREFIX}/man/man8
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/

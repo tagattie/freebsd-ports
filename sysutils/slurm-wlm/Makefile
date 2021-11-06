@@ -1,6 +1,5 @@
 PORTNAME=	slurm
-DISTVERSION=	20.02.1
-PORTREVISION=	6
+DISTVERSION=	20.02.7
 CATEGORIES=	sysutils python
 MASTER_SITES=	https://download.schedmd.com/slurm/
 PKGNAMESUFFIX=	-wlm
@@ -19,8 +18,9 @@ LIB_DEPENDS=	libjson-c.so:devel/json-c \
 		libmunge.so:security/munge \
 		liblz4.so:archivers/liblz4
 
-USES=		compiler:c11 gmake gnome libtool localbase lua pkgconfig \
+USES=		compiler:c11 cpe gmake gnome libtool localbase lua pkgconfig \
 		python:build readline shebangfix ssl tar:bz2
+CPE_VENDOR=	schedmd
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	slurmctld slurmd
 

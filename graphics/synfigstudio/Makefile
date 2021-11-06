@@ -3,10 +3,10 @@
 PORTNAME=	synfigstudio
 PORTVERSION=	1.2.2
 DISTVERSIONPREFIX=v
-PORTREVISION=	12
+PORTREVISION=	17
 CATEGORIES=	graphics multimedia
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Vector-based 2D animation software package
 
 LICENSE=	GPLv2+
@@ -19,14 +19,13 @@ LIB_DEPENDS=	libImath.so:math/Imath \
 		libfftw3.so:math/fftw3 \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
-		libmlt.so:multimedia/mlt \
-		libsynfig.so:devel/synfig
+		libsynfig.so:graphics/synfig
 RUN_DEPENDS=	xdg-open:devel/xdg-utils
 
 PORTSCOUT=	limitw:1,even
 
 USES=		autoreconf compiler:c++11-lang desktop-file-utils \
-		gmake gnome libtool localbase pathfix pkgconfig \
+		gmake gnome libtool localbase mlt:6 pathfix pkgconfig \
 		shared-mime-info
 USE_GITHUB=	yes
 GH_ACCOUNT=	synfig
@@ -39,7 +38,6 @@ BINARY_ALIAS=	sed=${LOCALBASE}/bin/gsed
 CONFIGURE_ARGS=	--disable-update-mimedb
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
-INSTALLS_ICONS=	yes
 
 OPTIONS_DEFINE=	DOCS JACK NLS
 OPTIONS_SUB=	yes

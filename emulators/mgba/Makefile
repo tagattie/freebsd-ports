@@ -1,5 +1,5 @@
 PORTNAME=	mgba
-DISTVERSION=	0.8.4
+DISTVERSION=	0.9.2
 CATEGORIES=	emulators
 
 MAINTAINER=	greg@unrelenting.technology
@@ -68,6 +68,5 @@ MAGICK_CMAKE_BOOL=	USE_MAGICK
 QT5_USES=	desktop-file-utils qt:5
 QT5_USE=	qt=qmake_build,buildtools_build,core,gui,widgets,network,opengl,multimedia
 QT5_CMAKE_BOOL=	BUILD_QT
-QT5_VARS=	installs_icons=yes
 
 .include <bsd.port.mk>

@@ -23,7 +23,7 @@ NO_ARCH=	yes
 PORTSCOUT=	limit:^3\.
 
 OPTIONS_DEFINE=	GRAPHITE INTERPOLATABLE LXML PLOT SYMFONT UFO UNICODE WOFF
-OPTIONS_DEFAULT= LXML UFO UNICODE
+OPTIONS_DEFAULT=LXML UFO UNICODE
 
 GRAPHITE_DESC=	Process graphite type tables in ttLib/tables
 INTERPOLATABLE_DESC=	Interpolatability support
@@ -46,7 +46,7 @@ WOFF_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}brotli>=1.0.1:archivers/py-brotli@${PY_
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MUNICODE}
-.if ${PYTHON_REL} < 3800
+.if ${PYTHON_REL} < 30800
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}unicodedata2>=12.0.0:devel/py-unicodedata2@${PY_FLAVOR}
 .endif
 .endif

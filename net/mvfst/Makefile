@@ -1,5 +1,6 @@
 PORTNAME=	mvfst
-DISTVERSION=	g20210508
+DISTVERSION=	g20210701
+PORTREVISION=	1
 CATEGORIES=	net
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -14,10 +15,11 @@ LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libfolly.so:devel/folly \
 		libglog.so:devel/glog
 
-USES=		cmake compiler:c++17-lang
+USES=		cmake compiler:c++17-lang cpe
+CPE_VENDOR=	facebook
 USE_GITHUB=	yes
 GH_ACCOUNT=	facebookincubator
-GH_TAGNAME=	74f6c7caa771f99df3f1a364c15c411c407252bd
+GH_TAGNAME=	5d78c63965239cf6cfacbdc33f7de9b6e1245a3a
 USE_LDCONFIG=	yes
 
 CMAKE_ON=	BUILD_SHARED_LIBS

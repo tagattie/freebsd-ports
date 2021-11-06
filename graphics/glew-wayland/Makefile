@@ -1,4 +1,4 @@
-PORTREVISION=	0
+PORTREVISION=	2
 PKGNAMESUFFIX=	-wayland
 
 # https://github.com/nigels-com/glew/issues/172

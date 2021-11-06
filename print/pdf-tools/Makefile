@@ -1,8 +1,8 @@
 PORTNAME=	pdf-tools
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.90-41
-DISTVERSIONSUFFIX=	-g2ece508
-PORTREVISION=	15
+DISTVERSION=	0.90-84
+DISTVERSIONSUFFIX=	-g5f77dae
+PORTREVISION=	6
 CATEGORIES=	print elisp
 PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
@@ -12,7 +12,6 @@ COMMENT=	Emacs support library for PDF files
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_FreeBSD_11_powerpc64=	fails to configure on powerpc64 elfv1: cannot find necessary poppler-private header (see README.org)
 BROKEN_FreeBSD_12_powerpc64=	fails to configure on powerpc64 elfv1: cannot find necessary poppler-private header (see README.org)
 
 BUILD_DEPENDS=	cask${EMACS_PKGNAMESUFFIX}>0:devel/cask@${EMACS_FLAVOR} \
@@ -25,7 +24,7 @@ RUN_DEPENDS=	tablist${EMACS_PKGNAMESUFFIX}>=0.70:devel/tablist@${EMACS_FLAVOR}
 
 USES=		autoreconf:build emacs gettext-runtime gmake gnome
 USE_GITHUB=	yes
-GH_ACCOUNT=	politza
+GH_ACCOUNT=	vedang
 USE_GNOME=	cairo glib20
 
 EMACS_FLAVORS_EXCLUDE=	devel_nox nox

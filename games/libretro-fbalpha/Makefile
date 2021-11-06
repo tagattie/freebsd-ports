@@ -1,5 +1,6 @@
 PORTNAME=	libretro-fbalpha
 PORTVERSION=	0.20200504
+PORTREVISION=	1
 CATEGORIES=	games
 
 MAINTAINER=	menelkir@itroll.org
@@ -9,7 +10,7 @@ COMMENT=	Final Burn Alpha port for libretro
 LICENSE=	FBA
 LICENSE_NAME=	FBA
 LICENSE_FILE=	${WRKSRC}/src/license.txt
-LICENSE_PERMS=  dist-mirror pkg-mirror auto-accept
+LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
 USES=		compiler:c++11-lib gmake gl
 USE_LDCONFIG=	yes

@@ -2,7 +2,7 @@
 
 PORTNAME=	trenchbroom
 PORTVERSION=	2.0.0.b
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	games cad
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -21,7 +21,6 @@ USES=		cmake:insource compiler:c++11-lib gl gnome pkgconfig
 USE_GL=		gl glew glu
 USE_WX=		3.0+
 CMAKE_ARGS=	-DAPP_BUILD_CHANNEL:STRING="Beta for ${OPSYS}/${ARCH}"
-INSTALLS_ICONS=	yes
 
 PORTDOCS=	README.md
 
