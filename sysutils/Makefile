@@ -255,6 +255,8 @@
     SUBDIR += desktop-installer
     SUBDIR += detox
     SUBDIR += devcpu-data
+    SUBDIR += devcpu-data-amd
+    SUBDIR += devcpu-data-intel
     SUBDIR += devstat
     SUBDIR += dfc
     SUBDIR += di
@@ -1586,6 +1588,7 @@
     SUBDIR += znapzend
     SUBDIR += zogftw
     SUBDIR += zoxide
+    SUBDIR += zpool-iostat-viz
     SUBDIR += zrep
     SUBDIR += zrepl
     SUBDIR += zsd
