@@ -1,3 +1,115 @@
+  <vuln vid="6916ea94-4628-11ec-bbe2-0800270512f4">
+    <topic>rubygem-date -- Regular Expression Denial of Service Vunlerability of Date Parsing Methods</topic>
+    <affects>
+      <package>
+	<name>rubygem-date</name>
+	<range><lt>3.2.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Stanislav Valkanov reports:</p>
+	<blockquote cite="https://www.ruby-lang.org/en/news/2021/11/15/date-parsing-method-regexp-dos-cve-2021-41817/">
+	  <p>
+	    Date's parsing methods including <code>Date.parse</code>
+	    are using Regexps internally, some of which are vulnerable
+	    against regular expression denial of service. Applications
+	    and libraries that apply such methods to untrusted input
+	    may be affected.
+	  </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-41817</cvename>
+      <url>https://www.ruby-lang.org/en/news/2021/11/15/date-parsing-method-regexp-dos-cve-2021-41817/</url>
+    </references>
+    <dates>
+      <discovery>2021-11-15</discovery>
+      <entry>2021-11-15</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="42a4d82d-4603-11ec-8be6-d4c9ef517024">
+    <topic>Roundcube -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>roundcube</name>
+	<range><lt>1.4.12,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Roundcube project reports:</p>
+	<blockquote cite="https://roundcube.net/news/2021/11/12/security-updates-1.4.12-and-1.3.17-released">
+	  <p>XSS issue in handling attachment filename extension in mimetype mismatch warning</p>
+	  <p>possible SQL injection via some session variables</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://roundcube.net/news/2021/11/12/security-updates-1.4.12-and-1.3.17-released</url>
+    </references>
+    <dates>
+      <discovery>2021-11-12</discovery>
+      <entry>2021-11-15</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="9d7a2b54-4468-11ec-8532-0d24c37c72c8">
+    <topic>mailman -- 2.1.37 fixes XSS via user options, and moderator offline brute-force vuln against list admin password</topic>
+    <affects>
+      <package>
+	<name>mailman</name>
+	<range><lt>2.1.37</lt></range>
+      </package>
+      <package>
+	<name>mailman-exim4</name>
+	<range><lt>2.1.37</lt></range>
+      </package>
+      <package>
+	<name>mailman-exim4-with-htdig</name>
+	<range><lt>2.1.37</lt></range>
+      </package>
+      <package>
+	<name>mailman-postfix</name>
+	<range><lt>2.1.37</lt></range>
+      </package>
+      <package>
+	<name>mailman-postfix-with-htdig</name>
+	<range><lt>2.1.37</lt></range>
+      </package>
+      <package>
+	<name>mailman-with-htdig</name>
+	<range><lt>2.1.37</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Mark Sapiro reports:</p>
+	<blockquote cite="https://bazaar.launchpad.net/~mailman-coders/mailman/2.1/view/1879/NEWS#L8">
+	  <p>A potential XSS attack via the user options page has been reported by
+	    Harsh Jaiswal.  This is fixed.  CVE-2021-43331 (LP: #1949401).</p>
+	  <p>A potential for for a list moderator to carry out an off-line brute force
+	    attack to obtain the list admin password has been reported by Andre
+	    Protas, Richard Cloke and Andy Nuttall of Apple.  This is fixed.
+	    CVE-2021-43332 (LP: #1949403)</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-43331</cvename>
+      <cvename>CVE-2021-43332</cvename>
+      <url>https://bazaar.launchpad.net/~mailman-coders/mailman/2.1/view/1879/NEWS#L8</url>
+      <url>https://bugs.launchpad.net/mailman/+bug/1949401</url>
+      <url>https://bugs.launchpad.net/mailman/+bug/1949403</url>
+    </references>
+    <dates>
+      <discovery>2021-11-01</discovery>
+      <entry>2021-11-13</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="2ccd71bd-426b-11ec-87db-6cc21735f730">
     <topic>PostgreSQL -- Possible man-in-the-middle attacks</topic>
     <affects>
