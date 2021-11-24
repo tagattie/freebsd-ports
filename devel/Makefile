@@ -296,6 +296,7 @@
     SUBDIR += busybee
     SUBDIR += byacc
     SUBDIR += byaccj
+    SUBDIR += bsddialog
     SUBDIR += c2mdoc
     SUBDIR += caf
     SUBDIR += calibrator
@@ -556,7 +557,7 @@
     SUBDIR += efl
     SUBDIR += egypt
     SUBDIR += eiffelstudio
-    SUBDIR += electron12
+    SUBDIR += electron13
     SUBDIR += elf
     SUBDIR += elf-dissector
     SUBDIR += elfcat
@@ -4768,6 +4769,7 @@
     SUBDIR += py-moto
     SUBDIR += py-mox
     SUBDIR += py-mox3
+    SUBDIR += py-mrkd
     SUBDIR += py-msal
     SUBDIR += py-msal-extensions
     SUBDIR += py-msgpack
@@ -5572,6 +5574,7 @@
     SUBDIR += riscv32-unknown-elf-gcc
     SUBDIR += riscv64-gcc
     SUBDIR += riscv64-none-elf-gcc
+    SUBDIR += rkcommon
     SUBDIR += rlog
     SUBDIR += rlwrap
     SUBDIR += robin-map
@@ -6973,6 +6976,7 @@
     SUBDIR += schilybase
     SUBDIR += scons
     SUBDIR += sd-mux-ctrl
+    SUBDIR += sdbus-cpp
     SUBDIR += sdl12
     SUBDIR += sdl12-compat
     SUBDIR += sdl20
