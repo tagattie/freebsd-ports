@@ -1,11 +1,7 @@
 PORTNAME=	river
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.1.0
-PORTREVISION=	1
+DISTVERSION=	0.1.1
 CATEGORIES=	x11-wm
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	0cbe2b9fc34f.patch:-p1 # docs: remove reference to /etc/river/init
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Dynamic tiling Wayland compositor
@@ -13,11 +9,9 @@ COMMENT=	Dynamic tiling Wayland compositor
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN=		fails to build with wlroots 0.15: outdated Zig bindings
-
 BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto \
 		wayland-protocols>0:graphics/wayland-protocols \
-		wlroots>=0.14.0:x11-toolkits/wlroots \
+		wlroots>=0.15.0:x11-toolkits/wlroots \
 		zig>=0.8.0:lang/zig
 LIB_DEPENDS=	libevdev.so:devel/libevdev \
 		libwayland-server.so:graphics/wayland \
@@ -30,9 +24,9 @@ USE_GITHUB=	yes
 USE_XORG=	pixman
 GH_ACCOUNT=	riverwm
 GH_TUPLE=	ifreund:zig-pixman:88520f2:zig_pixman/deps/zig-pixman \
-		ifreund:zig-wayland:a8e1efc:zig_wayland/deps/zig-wayland \
+		ifreund:zig-wayland:38b5de8:zig_wayland/deps/zig-wayland \
 		ifreund:zig-xkbcommon:10cdca6:zig_xkbcommon/deps/zig-xkbcommon \
-		swaywm:zig-wlroots:9bb6b03:zig_wlroots/deps/zig-wlroots
+		swaywm:zig-wlroots:0bb3207:zig_wlroots/deps/zig-wlroots
 MAKE_ENV=	DESTDIR="${STAGEDIR}"
 CONFIGURE_ARGS=	--prefix "${PREFIX}" \
 		${WITH_DEBUG:U-Drelease-fast=true} \
