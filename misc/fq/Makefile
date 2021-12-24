@@ -14,6 +14,7 @@ BROKEN_i386=	does not compile
 USES=		go:modules
 
 GO_MODULE=	github.com/wader/${PORTNAME}
+CGO_ENABLED=	0
 
 PLIST_FILES=	bin/${PORTNAME}
 PORTDOCS=	README.md
