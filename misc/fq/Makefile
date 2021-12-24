@@ -1,0 +1,27 @@
+PORTNAME=	fq
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.0.2
+CATEGORIES=	misc
+
+MAINTAINER=	tagattie@FreeBSD.org
+COMMENT=	jq for binary formats
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+BROKEN_i386=	does not compile
+
+USES=		go:modules
+
+GO_MODULE=	github.com/wader/${PORTNAME}
+
+PLIST_FILES=	bin/${PORTNAME}
+PORTDOCS=	README.md
+
+OPTIONS_DEFINE=	DOCS
+
+post-install-DOCS-on:
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_MAN} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
+
+.include <bsd.port.mk>
