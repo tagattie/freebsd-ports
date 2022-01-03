@@ -81,7 +81,7 @@ AUTHOR: tcberner@FreeBSD.org
   Ports that depend on mlt should now use USES=mlt:<version> to specify
   their dependency.
 
-  At the moment the supported version is 6, but will be extended to also
+  At the moment the supported version is 6, but will be extended to also 
   allow for selection of mlt 7 shortly.
 
 20210604:
@@ -140,8 +140,8 @@ AUTHOR: pauamma@gundo.com
   purpose, such as:
   * course-writing or course-delivery applications,
   * classroom or school management applications (eg, scheduling classes),
-  * applications, utilities, or games primarily or substantially designed
-    to help the user learn a specific topic or study in general, like typing
+  * applications, utilities, or games primarily or substantially designed 
+    to help the user learn a specific topic or study in general, like typing 
     tutors, flashcard applications, or educational games.
 
 20201110:
@@ -232,7 +232,7 @@ AUTHOR: mat@FreeBSD.org
 
   USES=lua sets LUA_FLAVOR that needs to be used on all dependencies of
   flavored lua ports, in a similar way as PHP or Python flavors.
-
+  
 20200115:
 AUTHOR: bapt@FreeBSD.org
 
@@ -244,7 +244,7 @@ AUTHOR: bapt@FreeBSD.org
 
   The ipv6 virtual category is gone, it does not make sense anymore in 2019
   where the norm in applications is to have support both ipv4 and ipv6.
-
+  
 20191001:
 AUTHOR: bapt@FreeBSD.org
 
