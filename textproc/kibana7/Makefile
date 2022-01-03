@@ -14,7 +14,6 @@ COMMENT=	Browser based analytics and search interface to ElasticSearch
 
 LICENSE=	APACHE20
 
-BUILD_DEPENDS=	npm-node16>0:www/npm-node16
 LIB_DEPENDS=	libre2.so:devel/re2 \
 		libuv.so:devel/libuv
 
@@ -24,6 +23,7 @@ CPE_VENDOR=	elastic
 USE_GITHUB=	nodefault
 GH_TUPLE=	nodejs:nan:v${_NODE_NAN_VER}:node_nan \
 		uhop:node-re2:${_NODE_RE2_VER}:node_re2
+USE_NODEJS=	npm
 
 USE_RC_SUBR=	${PORTNAME}
 

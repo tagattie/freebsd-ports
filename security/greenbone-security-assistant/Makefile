@@ -11,7 +11,6 @@ COMMENT=	Libraries module for the GVM solution
 
 LICENSE=	AGPLv3+
 
-BUILD_DEPENDS=	yarn:www/yarn
 LIB_DEPENDS=	libgvm_base.so:security/gvm-libs \
 		libgnutls.so:security/gnutls \
 		libgcrypt.so:security/libgcrypt \
@@ -22,6 +21,7 @@ RUN_DEPENDS=	doxygen>0:devel/doxygen \
 
 USES=		cmake gettext-runtime gnome nodejs:build pkgconfig python
 USE_GNOME=	glib20 libxml2
+USE_NODEJS=	yarn
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	greenbone

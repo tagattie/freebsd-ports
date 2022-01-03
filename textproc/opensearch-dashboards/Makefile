@@ -10,9 +10,8 @@ COMMENT=	Visualization dashboards for OpenSearch
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-BUILD_DEPENDS=	npm-node14>0:www/npm-node14
-
 USES=		nodejs:14,build,run python:build
+USE_NODEJS=	npm
 USE_RC_SUBR=	${PORTNAME}
 
 OPTIONS_DEFINE=	CHROME

@@ -11,11 +11,10 @@ COMMENT=	Naive linter for English prose
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	npm:www/npm
-
 USES=		nodejs:run
 USE_GITHUB=	yes
 GH_ACCOUNT=	btford
+USE_NODEJS=	npm
 
 NO_ARCH=	yes
 NO_BUILD=	yes
