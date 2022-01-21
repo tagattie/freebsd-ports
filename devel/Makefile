@@ -149,6 +149,7 @@
     SUBDIR += allegro5
     SUBDIR += alog
     SUBDIR += aml
+    SUBDIR += ammonite
     SUBDIR += amqp-cpp
     SUBDIR += android-tools-adb
     SUBDIR += android-tools-fastboot
@@ -4766,6 +4767,7 @@
     SUBDIR += py-marshmallow
     SUBDIR += py-marshmallow-enum
     SUBDIR += py-matrix-angular-sdk
+    SUBDIR += py-matrix-common
     SUBDIR += py-maturin
     SUBDIR += py-mccabe
     SUBDIR += py-mdv
