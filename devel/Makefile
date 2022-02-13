@@ -31,6 +31,7 @@
     SUBDIR += R-cran-cliapp
     SUBDIR += R-cran-clipr
     SUBDIR += R-cran-clisymbols
+    SUBDIR += R-cran-collapse
     SUBDIR += R-cran-covr
     SUBDIR += R-cran-cpp11
     SUBDIR += R-cran-crayon
@@ -5164,6 +5165,7 @@
     SUBDIR += py-qutip
     SUBDIR += py-ramlfications
     SUBDIR += py-rapidfuzz
+    SUBDIR += py-rapidfuzz-capi
     SUBDIR += py-ratelimiter
     SUBDIR += py-rauth
     SUBDIR += py-raven
