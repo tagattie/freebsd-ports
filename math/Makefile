@@ -957,7 +957,7 @@
     SUBDIR += qalculate
     SUBDIR += qd
     SUBDIR += qhull
-    SUBDIR += qhull8
+    SUBDIR += qhull7
     SUBDIR += qposases
     SUBDIR += qrupdate
     SUBDIR += qtiplot-doc
@@ -1082,6 +1082,7 @@
     SUBDIR += wxmaxima
     SUBDIR += xblas
     SUBDIR += xfce4-calculator-plugin
+    SUBDIR += xgap
     SUBDIR += xgraph
     SUBDIR += xlapack
     SUBDIR += xldlas
