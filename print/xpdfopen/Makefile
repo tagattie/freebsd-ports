@@ -2,7 +2,7 @@ PORTNAME=	xpdfopen
 PORTVERSION=	0.86
 PORTREVISION=	1
 CATEGORIES=	print
-MASTER_SITES=	ftp://tug.org/historic/systems/texlive/2015/
+MASTER_SITES=	TEX_CTAN/systems/texlive/${TEXLIVE_YEAR}/
 DISTNAME=	texlive-${TEXLIVE_VERSION}-source
 DIST_SUBDIR=	TeX
 
@@ -15,8 +15,6 @@ USE_XORG=	x11 xmu
 
 EXTRACT_FILES=	build-aux utils/xpdfopen
 GNU_CONFIGURE=	yes
-
-CONFLICTS=	texlive-base-*
 
 EXTRACT_AFTER_ARGS=	${EXTRACT_FILES:S,^,${DISTNAME}/,}
 
