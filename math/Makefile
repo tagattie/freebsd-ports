@@ -33,6 +33,7 @@
     SUBDIR += R-cran-SQUAREM
     SUBDIR += R-cran-SparseM
     SUBDIR += R-cran-VGAM
+    SUBDIR += R-cran-XLConnect
     SUBDIR += R-cran-Zelig
     SUBDIR += R-cran-acepack
     SUBDIR += R-cran-alabama
@@ -486,6 +487,7 @@
     SUBDIR += ntl
     SUBDIR += numdiff
     SUBDIR += obake
+    SUBDIR += ocaml-num
     SUBDIR += ocaml-ocamlgraph
     SUBDIR += ocaml-zarith
     SUBDIR += ocamlgsl
@@ -780,7 +782,6 @@
     SUBDIR += ploticus
     SUBDIR += ploticus-nox11
     SUBDIR += plplot
-    SUBDIR += plplot-ada
     SUBDIR += poly2tri
     SUBDIR += polylib
     SUBDIR += polymake
@@ -820,6 +821,7 @@
     SUBDIR += py-claripy
     SUBDIR += py-cma
     SUBDIR += py-cmaes
+    SUBDIR += py-cmyt
     SUBDIR += py-colormath
     SUBDIR += py-cryptominisat
     SUBDIR += py-cvxopt
@@ -835,21 +837,23 @@
     SUBDIR += py-fastdtw
     SUBDIR += py-flax
     SUBDIR += py-fpylll
+    SUBDIR += py-fraction
     SUBDIR += py-fvcore
     SUBDIR += py-gau2grid
     SUBDIR += py-gimmik
     SUBDIR += py-gmpy
     SUBDIR += py-gmpy2
-    SUBDIR += py-gmpy2-devel
     SUBDIR += py-grandalf
     SUBDIR += py-graphillion
     SUBDIR += py-gym
+    SUBDIR += py-gym-notices
     SUBDIR += py-hdbscan
     SUBDIR += py-hdmedians
     SUBDIR += py-heyoka
     SUBDIR += py-iminuit
     SUBDIR += py-intspan
     SUBDIR += py-iohexperimenter
+    SUBDIR += py-ipyopt
     SUBDIR += py-jax
     SUBDIR += py-keras
     SUBDIR += py-keras-applications
@@ -866,6 +870,7 @@
     SUBDIR += py-matplotlib2
     SUBDIR += py-mip
     SUBDIR += py-mixsimulator
+    SUBDIR += py-moarchiving
     SUBDIR += py-mpmath
     SUBDIR += py-munkres
     SUBDIR += py-munkres10
@@ -875,6 +880,7 @@
     SUBDIR += py-numexpr
     SUBDIR += py-numpoly
     SUBDIR += py-numpy
+    SUBDIR += py-numpy-groupies
     SUBDIR += py-numpy-stl
     SUBDIR += py-openTSNE
     SUBDIR += py-opt-einsum
@@ -900,7 +906,6 @@
     SUBDIR += py-pygsl
     SUBDIR += py-pygslodeiv2
     SUBDIR += py-pyhull
-    SUBDIR += py-pyipopt
     SUBDIR += py-pymc3
     SUBDIR += py-pynauty
     SUBDIR += py-pyneqsys
@@ -944,7 +949,6 @@
     SUBDIR += py-statsmodels
     SUBDIR += py-svgmath
     SUBDIR += py-sym
-    SUBDIR += py-symcxx
     SUBDIR += py-sympy
     SUBDIR += py-theano
     SUBDIR += py-topologic
@@ -955,7 +959,8 @@
     SUBDIR += py-yt
     SUBDIR += py-z3-solver
     SUBDIR += pynac
-    SUBDIR += qalculate
+    SUBDIR += qalculate-gtk
+    SUBDIR += qalculate-qt
     SUBDIR += qd
     SUBDIR += qhull
     SUBDIR += qhull7
@@ -993,6 +998,7 @@
     SUBDIR += rumur
     SUBDIR += saga
     SUBDIR += sage
+    SUBDIR += savage
     SUBDIR += sc
     SUBDIR += sc-im
     SUBDIR += scalapack

@@ -3,7 +3,7 @@
 PORTNAME=	lumina-core
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.6.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11
 
 MAINTAINER=	lbartoletti@FreeBSD.org
@@ -14,7 +14,6 @@ LICENSE_FILE=	${WRKSRC}/../../LICENSE
 
 RUN_DEPENDS=	fluxbox>=0:x11-wm/fluxbox \
 		fluxbox-tenr-styles-pack>=0:x11-themes/fluxbox-tenr-styles-pack \
-		xscreensaver>=0:x11/xscreensaver \
 		xbrightness>=0:x11/xbrightness \
 		compton>=0:x11-wm/compton \
 		xrandr>=0:x11/xrandr \
@@ -45,7 +44,8 @@ TRUEOS_DESC=		Use the TrueOS system interface settings.
 
 TRUEOS_QMAKE_ON=	DEFAULT_SETTINGS=TrueOS
 
-MULTIMEDIA_RUN_DEPENDS=	gstreamer1-plugins-core>=0:multimedia/gstreamer1-plugins-core
+MULTIMEDIA_USES=	gstreamer
+MULTIMEDIA_USE=		GSTREAMER=core
 
 NLS_USE=	QT=linguist_build
 NLS_QMAKE_ON=	CONFIG+=WITH_I18N
