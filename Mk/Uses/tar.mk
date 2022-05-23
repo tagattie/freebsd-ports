@@ -12,7 +12,7 @@ _INCLUDE_USES_TAR_MK=	yes
 EXTRACT_SUFX?=	.tar
 .  elif ${tar_ARGS} == Z
 EXTRACT_SUFX?=	.tar.Z
-.  elif ${tar_ARGS} == bz || ${tar_ARGS} == bzip2
+.  elif ${tar_ARGS} == bz2 || ${tar_ARGS} == bzip2
 EXTRACT_SUFX?=	.tar.bz2
 .  elif ${tar_ARGS} == lz
 EXTRACT_SUFX?=	.tar.lz
