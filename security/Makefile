@@ -131,12 +131,7 @@
     SUBDIR += duo
     SUBDIR += duo_openvpn
     SUBDIR += easy-rsa
-    SUBDIR += elixir-comeonin
-    SUBDIR += elixir-comeonin_i18n
-    SUBDIR += elixir-jose
     SUBDIR += enchive
-    SUBDIR += erlang-fast_tls
-    SUBDIR += erlang-jose
     SUBDIR += eschalot
     SUBDIR += esteidfirefoxplugin
     SUBDIR += expiretable
@@ -1252,6 +1247,7 @@
     SUBDIR += uacme
     SUBDIR += ubuntu-keyring
     SUBDIR += unhide
+    SUBDIR += unix-selfauth-helper
     SUBDIR += vanguards-tor
     SUBDIR += vault
     SUBDIR += vaultwarden
