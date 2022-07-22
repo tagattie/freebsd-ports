@@ -1,5 +1,3 @@
-# Created by: Max Khon
-
 PORTNAME=	pgadmin3
 PORTVERSION=	1.22.2
 PORTREVISION=	8
@@ -11,6 +9,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PostgreSQL database design and management system
 
 LICENSE=	PostgreSQL
+
+BROKEN=		does not build: error: too few arguments provided to function-like macro invocation
 
 BUILD_DEPENDS=	sphinx-build:textproc/py-sphinx
 
