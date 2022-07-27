@@ -606,6 +606,7 @@
     SUBDIR += kio-fuse
     SUBDIR += kldfind
     SUBDIR += kldpatch
+    SUBDIR += kopia
     SUBDIR += kops
     SUBDIR += kpmcore
     SUBDIR += krename
@@ -895,6 +896,7 @@
     SUBDIR += p5-Proclet
     SUBDIR += p5-Quota
     SUBDIR += p5-Rex
+    SUBDIR += p5-RundeckAPI
     SUBDIR += p5-Samba-SIDhelper
     SUBDIR += p5-Schedule-At
     SUBDIR += p5-Schedule-Cron

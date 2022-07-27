@@ -794,6 +794,7 @@
     SUBDIR += git-merge-changelog
     SUBDIR += git-modes
     SUBDIR += git-p4
+    SUBDIR += git-prev-next
     SUBDIR += git-review
     SUBDIR += git-subrepo
     SUBDIR += git-svn
@@ -5294,6 +5295,7 @@
     SUBDIR += py-subversion
     SUBDIR += py-sure
     SUBDIR += py-swagger-spec-validator
+    SUBDIR += py-synr
     SUBDIR += py-sysctl
     SUBDIR += py-sysv_ipc
     SUBDIR += py-tables
