@@ -286,12 +286,16 @@
     SUBDIR += py-dlib
     SUBDIR += py-dwave-cloud-client
     SUBDIR += py-dwave-greedy
+    SUBDIR += py-dwave-hybrid
+    SUBDIR += py-dwave-inspector
     SUBDIR += py-dwave-neal
     SUBDIR += py-dwave-networkx
+    SUBDIR += py-dwave-ocean-sdk
     SUBDIR += py-dwave-preprocessing
     SUBDIR += py-dwave-samplers
     SUBDIR += py-dwave-system
     SUBDIR += py-dwave-tabu
+    SUBDIR += py-dwavebinarycsp
     SUBDIR += py-eccodes
     SUBDIR += py-esda
     SUBDIR += py-fresnel
@@ -346,6 +350,7 @@
     SUBDIR += py-pymol
     SUBDIR += py-pyosf
     SUBDIR += py-pyprecice
+    SUBDIR += py-pyqubo
     SUBDIR += py-pysal
     SUBDIR += py-pyscf
     SUBDIR += py-pyteomics
@@ -354,6 +359,7 @@
     SUBDIR += py-qiskit
     SUBDIR += py-qiskit-aer
     SUBDIR += py-qiskit-experiments
+    SUBDIR += py-qiskit-finance
     SUBDIR += py-qiskit-ibm-experiment
     SUBDIR += py-qiskit-ibm-provider
     SUBDIR += py-qiskit-ibmq-provider
