@@ -1,11 +1,12 @@
 PORTNAME=	rpy2
-PORTVERSION=	3.5.4
+PORTVERSION=	3.5.6
 CATEGORIES=	math python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python interface to the R Programming Language
+WWW=		https://rpy2.bitbucket.io/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/gpl-2.0.txt
@@ -23,10 +24,6 @@ USES=		compiler:c11 fortran python:3.7+ readline
 USE_PYTHON=	autoplist concurrent distutils
 
 MAKE_ENV=	RPY2_CFFI_MODE=BOTH
-
-PLIST_FILES=	${PYTHON_SITELIBDIR}/__pycache__/_rinterface_cffi_abi.cpython-${PYTHON_SUFFIX}.opt-1.pyc \
-		${PYTHON_SITELIBDIR}/__pycache__/_rinterface_cffi_abi.cpython-${PYTHON_SUFFIX}.pyc \
-		${PYTHON_SITELIBDIR}/_rinterface_cffi_abi.py
 
 OPTIONS_DEFINE=	NUMPY PANDAS
 OPTIONS_DEFAULT=NUMPY PANDAS

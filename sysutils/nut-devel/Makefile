@@ -1,6 +1,6 @@
 PORTNAME=	nut
 PORTVERSION=	${NUT_COMMIT_DATE}
-PORTREVISION=	3
+PORTREVISION=	1
 CATEGORIES=	sysutils
 PKGNAMESUFFIX=	-devel
 # MASTER_SITES=	http://www.networkupstools.org/source/${PORTVERSION:R}/
@@ -9,6 +9,7 @@ PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Network UPS Tools
+WWW=		https://www.networkupstools.org/
 
 LICENSE=	GPLv2+ GPLv3+ ART10 GPLv1+
 LICENSE_COMB=	multi
@@ -18,8 +19,8 @@ CONFLICTS=	nut-[0-9]*
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	networkupstools
-GH_TAGNAME=	ef842b40c
-NUT_COMMIT_DATE=	2022.08.31
+GH_TAGNAME=	6be2db5f6
+NUT_COMMIT_DATE=	2023.01.02
 
 MAKE_JOBS_UNSAFE=	yes
 USE_GCC=	yes
@@ -112,9 +113,6 @@ PDU_CONFIGURE_WITH=	powerman
 
 MODBUS_LIB_DEPENDS=	libmodbus.so:comms/libmodbus
 MODBUS_CONFIGURE_WITH=	modbus
-
-BASH_BUILD_DEPENDS=	${LOCALBASE}/share/bash-completion/bash_completion.sh:shells/bash-completion
-BASH_RUN_DEPENDS=	${LOCALBASE}/share/bash-completion/bash_completion.sh:shells/bash-completion
 
 AVAHI_BUILD_DEPENDS=	${LOCALBASE}/include/avahi-ui/avahi-ui.h:net/avahi-header
 AVAHI_BUILD_DEPENDS=	avahi-daemon:net/avahi-app

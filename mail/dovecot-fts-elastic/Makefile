@@ -1,11 +1,12 @@
 PORTNAME=	fts-elastic
 PORTVERSION=	1.1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail
 PKGNAMEPREFIX=	dovecot-
 
 MAINTAINER=	bgupta@kde.org
 COMMENT=	Dovecot FTS plugin for using ElasticSearch 6 or 7
+WWW=		https://github.com/filiphanes/fts-elastic
 
 LICENSE=	MIT
 

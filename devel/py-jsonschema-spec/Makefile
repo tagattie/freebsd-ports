@@ -1,11 +1,12 @@
 PORTNAME=	jsonschema-spec
-PORTVERSION=	0.1.1
+PORTVERSION=	0.1.2
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	JSONSchema Spec with object-oriented paths
+WWW=		https://github.com/p1c2u/jsonschema-spec
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

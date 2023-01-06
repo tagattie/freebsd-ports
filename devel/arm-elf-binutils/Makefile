@@ -1,11 +1,12 @@
 PORTNAME=	binutils
-PORTVERSION=	2.37
+PORTVERSION=	2.39
 CATEGORIES=	devel
 MASTER_SITES=	SOURCEWARE/binutils/releases
 PKGNAMEPREFIX=	arm-elf-
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNU binutils for vanilla ARM cross-development
+WWW=		https://www.gnu.org/software/binutils
 
 LICENSE=	GPLv3 LGPL3
 LICENSE_COMB=	multi

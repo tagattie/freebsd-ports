@@ -1,5 +1,5 @@
 PORTNAME=	Rinci
-PORTVERSION=	1.1.102
+PORTVERSION=	1.1.103
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:PERLANCAR
@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Language-neutral metadata for your code entities
+WWW=		https://metacpan.org/release/Rinci
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

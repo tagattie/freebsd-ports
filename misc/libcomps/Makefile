@@ -1,10 +1,10 @@
 PORTNAME=	libcomps
-DISTVERSION=	0.1.17
-PORTREVISION=	2
+DISTVERSION=	0.1.19
 CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Comps XML file manipulation library
+WWW=		https://github.com/rpm-software-management/libcomps
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/../COPYING

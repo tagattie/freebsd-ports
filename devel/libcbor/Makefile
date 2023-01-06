@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	CBOR protocol implementation for C and others
+WWW=		https://github.com/PJK/libcbor
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
@@ -23,5 +24,7 @@ USE_GITHUB=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-flto||; /subdirs(examples)/d' ${WRKSRC}/CMakeLists.txt
+	@${REINPLACE_CMD} -e 's|();|(void);|' ${WRKSRC}/src/cbor/*.h ${WRKSRC}/src/cbor/internal/*.h
+	@${REINPLACE_CMD} -e 's|() {|(void) {|' ${WRKSRC}/src/cbor/*.c ${WRKSRC}/src/cbor/internal/*.c
 
 .include <bsd.port.mk>

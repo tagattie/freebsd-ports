@@ -1,5 +1,5 @@
 PORTNAME=	carddav
-PORTVERSION=	4.4.2
+PORTVERSION=	4.4.4
 DISTVERSIONPREFIX=v
 CATEGORIES=	mail
 MASTER_SITES=	https://github.com/mstilkerich/rcmcarddav/releases/download/${DISTVERSIONFULL}/
@@ -8,10 +8,11 @@ PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Roundcube CardDAV plugin
+WWW=		https://github.com/mstilkerich/rcmcarddav
 
 LICENSE=	GPLv2
 
-IGNORE_WITH_PHP=81 82
+IGNORE_WITH_PHP=82
 
 BUILD_DEPENDS=	roundcube${PHP_PKGNAMESUFFIX}>=1.5:mail/roundcube@${PHP_FLAVOR}
 RUN_DEPENDS=	roundcube${PHP_PKGNAMESUFFIX}>=1.5:mail/roundcube@${PHP_FLAVOR}

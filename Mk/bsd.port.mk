@@ -123,9 +123,13 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #
 # (NOTE: by convention, the MAINTAINER entry (see above) should go here.)
 #
-# These variables are typically set in /etc/make.conf to indicate
-# the user's preferred location to fetch files from.  You should
-# rarely need to set these.
+# COMMENT		- A short description of the package (less than 70 characters)
+# WWW			- URL users can get more information on the provided package
+# 				  was previously part of pkg-descr
+#
+# The following variables are typically set in /etc/make.conf to indicate
+# the user's preferred location to fetch files from.  You should rarely
+# need to set these.
 #
 # MASTER_SITE_BACKUP
 #				- Backup location(s) for distribution files and patch
@@ -335,6 +339,11 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  can be used in Makefiles by port maintainers
 #				  if a port breaks with it (it should be
 #				  extremely rare).
+# PIE_CFLAGS	- Defaults to -fPIE -fPIC. This value
+#				  is added to CFLAGS and the necessary flags
+#				  are added to LDFLAGS. Note that PIE_UNSAFE
+#				  can be used in Makefiles by port maintainers
+#				  if a port breaks with it.
 ##
 # USE_LOCALE	- LANG and LC_ALL are set to the value of this variable in
 #				  CONFIGURE_ENV and MAKE_ENV.  Example: USE_LOCALE=en_US.UTF-8
@@ -1008,7 +1017,7 @@ LC_ALL=		C
 # These need to be absolute since we don't know how deep in the ports
 # tree we are and thus can't go relative.  They can, of course, be overridden
 # by individual Makefiles or local system make configuration.
-_LIST_OF_WITH_FEATURES=	debug lto ssp
+_LIST_OF_WITH_FEATURES=	debug lto ssp pie relro bind_now
 _DEFAULT_WITH_FEATURES=	ssp
 PORTSDIR?=		/usr/ports
 LOCALBASE?=		/usr/local
@@ -1394,10 +1403,6 @@ USE_APACHE:=	${USE_APACHE:S/common/server,/}
 USES+=	apache:${USE_APACHE:C/2([0-9])/2.\1/g}
 .    endif
 
-.    if defined(USE_TEX)
-.include "${PORTSDIR}/Mk/bsd.tex.mk"
-.    endif
-
 .    if defined(USE_GECKO)
 .include "${PORTSDIR}/Mk/bsd.gecko.mk"
 .    endif
@@ -1419,7 +1424,11 @@ USES+=mysql:${USE_MYSQL}
 .    endif
 
 .    if !defined(UID)
+.      if defined(.MAKE.UID)
+UID=	${.MAKE.UID}
+.      else
 UID!=	${ID} -u
+.      endif
 .    endif
 
 DESTDIRNAME?=	DESTDIR
@@ -1768,8 +1777,6 @@ CFLAGS:=	${CFLAGS:C/${_CPUCFLAGS}//}
 .      endif
 .    endfor
 
-# XXX PIE support to be added here
-MAKE_ENV+=	NO_PIE=yes
 # We will control debug files.  Don't let builds that use /usr/share/mk
 # split out debug symbols since the plist won't know to expect it.
 MAKE_ENV+=	MK_DEBUG_FILES=no
@@ -1954,7 +1961,10 @@ ERROR+=	"Unknown USES=${f:C/\:.*//}"
 .    endfor
 
 .    if defined(PORTNAME)
+.      if !defined(PACKAGE_BUILDING) || empty(.TARGETS) || make(all) || \
+	      make(check-sanity) || make(show*-errors) || make(show*-warnings)
 .include "${PORTSDIR}/Mk/bsd.sanity.mk"
+.      endif
 .    endif
 
 .    if defined(USE_LOCALE)
@@ -3563,6 +3573,8 @@ create-users-groups:
 .      endif
 .    endif
 
+_WWW=	${WWW:[1]}
+
 .    if !defined(DISABLE_SECURITY_CHECK)
 .      if !target(security-check)
 security-check: ${TMPPLIST}
@@ -3595,12 +3607,11 @@ security-check: ${TMPPLIST}
 		! ${AWK} -v audit="$${PORTS_AUDIT}" -f ${SCRIPTSDIR}/security-check.awk \
 		  ${WRKDIR}/.PLIST.flattened ${WRKDIR}/.PLIST.readelf ${WRKDIR}/.PLIST.setuid ${WRKDIR}/.PLIST.writable; \
 	then \
-		www_site=$$(cd ${.CURDIR} && ${MAKE} www-site); \
-	    if [ ! -z "$${www_site}" ]; then \
+	    if [ ! -z "${_WWW}" ]; then \
 			${ECHO_MSG}; \
 			${ECHO_MSG} "      For more information, and contact details about the security"; \
 			${ECHO_MSG} "      status of this software, see the following webpage: "; \
-			${ECHO_MSG} "$${www_site}"; \
+			${ECHO_MSG} "${_WWW}"; \
 		fi; \
 	fi
 .      endif
@@ -3655,10 +3666,9 @@ ${stage}-${name}-script:
 
 .    if !target(pretty-print-www-site)
 pretty-print-www-site:
-	@www_site=$$(cd ${.CURDIR} && ${MAKE} www-site); \
-	if [ -n "$${www_site}" ]; then \
+	@if [ -n "${_WWW}" ]; then \
 		${ECHO_MSG} -n " and/or visit the "; \
-		${ECHO_MSG} -n "<a href=\"$${www_site}\">web site</a>"; \
+		${ECHO_MSG} -n "<a href=\"${_WWW}\">web site</a>"; \
 		${ECHO_MSG} " for further information"; \
 	fi
 .    endif
@@ -3857,19 +3867,6 @@ delete-distfiles-list:
 .      endif
 .    endif
 
-# Generates patches.
-
-update-patches:
-	@toedit=`PATCH_WRKSRC=${PATCH_WRKSRC} \
-		PATCHDIR=${PATCHDIR} \
-		PATCH_LIST=${PATCHDIR}/patch-* \
-		DIFF_ARGS=${DIFF_ARGS} \
-		DISTORIG=${DISTORIG} \
-		${SH} ${PORTSDIR}/Tools/scripts/update-patches`; \
-	case $$toedit in "");; \
-	*) ${ECHO_CMD} -n 'edit patches: '; read i; \
-	cd ${PATCHDIR} && $${VISUAL:-$${EDIT:-/usr/bin/vi}} $$toedit;; esac
-
 # Checksumming utilities
 
 # List all algorithms here, all the variables name must begin with dp_
@@ -3887,6 +3884,7 @@ makesum: check-sanity
 	@cd ${.CURDIR} && ${MAKE} fetch NO_CHECKSUM=yes \
 			DISABLE_SIZE=yes DISTFILES="${DISTFILES}" \
 			MASTER_SITES="${MASTER_SITES}" \
+			MASTER_SITE_SUBDIR="${MASTER_SITE_SUBDIR}" \
 			PATCH_SITES="${PATCH_SITES}"
 	@${SETENV} \
 			${_CHECKSUM_INIT_ENV} \
@@ -4363,19 +4361,7 @@ INDEX_OUT=/dev/stdout
 
 .      if empty(FLAVORS) || defined(_DESCRIBE_WITH_FLAVOR)
 describe:
-	@(${ECHO_CMD} -n "${PKGNAME}|${.CURDIR}|${PREFIX}|"; \
-	${ECHO_CMD} -n ${COMMENT:Q}; \
-	${ECHO_CMD} -n "|${_DESCR}|${MAINTAINER}|${CATEGORIES}|${_EXTRACT_DEPENDS}|${_PATCH_DEPENDS}|${_FETCH_DEPENDS}|${_BUILD_DEPENDS:O:u}|${_RUN_DEPENDS:O:u}|"; \
-	while read one two discard; do \
-		case "$$one" in \
-		WWW:)   case "$$two" in \
-			https://*|http://*|ftp://*) ${ECHO_CMD} -n "$$two" ;; \
-			*) ${ECHO_CMD} -n "http://$$two" ;; \
-			esac; \
-			break; \
-			;; \
-		esac; \
-	done < ${DESCR}; ${ECHO_CMD}) >>${INDEX_OUT}
+	@(${ECHO_CMD} "${PKGNAME}|${.CURDIR}|${PREFIX}|"${COMMENT:Q}"|${_DESCR}|${MAINTAINER}|${CATEGORIES}|${_EXTRACT_DEPENDS}|${_PATCH_DEPENDS}|${_FETCH_DEPENDS}|${_BUILD_DEPENDS:O:u}|${_RUN_DEPENDS:O:u}|${_WWW}" >> ${INDEX_OUT})
 .      else # empty(FLAVORS)
 describe: ${FLAVORS:S/^/describe-/}
 .        for f in ${FLAVORS}
@@ -4386,11 +4372,7 @@ describe-${f}:
 .    endif
 
 www-site:
-.    if exists(${DESCR})
-	@${AWK} '$$1 ~ /^WWW:/ {print $$2}' ${DESCR} | ${HEAD} -1
-.    else
-	@${ECHO_CMD}
-.    endif
+	@${ECHO_CMD} ${_WWW}
 
 .    if !target(readmes)
 readmes:	readme

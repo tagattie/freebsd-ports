@@ -1,10 +1,11 @@
 PORTNAME=	blis
-PORTVERSION=	0.8.1
+PORTVERSION=	0.9.0
 PORTREVISION=	1
 CATEGORIES=	math
 
 MAINTAINER=	jmd@FreeBSD.org
 COMMENT=	Software framework for high-performance BLAS-like libraries
+WWW=		https://github.com/flame/blis
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -65,6 +66,6 @@ USE_GCC=	yes
 .endif
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libblis.so.3.0.0
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libblis.so.4.0.0
 
 .include <bsd.port.post.mk>

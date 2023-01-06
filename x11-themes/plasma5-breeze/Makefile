@@ -1,10 +1,10 @@
 PORTNAME=	breeze
 DISTVERSION=	${KDE_PLASMA_VERSION}
-PORTREVISION=	1
 CATEGORIES=	x11-themes kde kde-plasma
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Plasma5 artwork, styles and assets for the Breeze visual style
+WWW=		https://www.kde.org/plasma-desktop
 
 LICENSE=	GPLv2
 
@@ -17,7 +17,7 @@ USE_KDE=	auth breeze-icons codecs config configwidgets coreaddons \
 		kcmutils plasma-framework service wayland widgetsaddons \
 		windowsystem
 USE_QT=		core dbus declarative gui network widgets x11extras xml \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 USE_XORG=	x11 xcb
 
 .include <bsd.port.mk>

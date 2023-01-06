@@ -2,11 +2,13 @@ PORTNAME=	mythtv
 DISTVERSIONPREFIX=	v
 DISTVERSION=	32.0-60
 DISTVERSIONSUFFIX=	-ge5c974e402
+PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	multimedia
 
 MAINTAINER?=	ahicks@p-o.co.uk
 COMMENT?=	Homebrew PVR project
+WWW=		https://www.mythtv.org/
 
 LICENSE=	GPLv2+
 
@@ -48,9 +50,9 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	MythTV
 USE_GL=		gl
 USE_LDCONFIG=	yes
-USE_QT=		buildtools_build core dbus gui imageformats_run \
-		linguist_build multimedia network opengl qmake_build script \
-		sql sql-mysql_run webkit widgets xml
+USE_QT=		buildtools:build core dbus gui imageformats:run \
+		linguist:build multimedia network opengl qmake:build script \
+		sql sql-mysql:run webkit widgets xml
 USE_XORG=	x11 xv xrandr xxf86vm xinerama xext xcb
 
 HAS_CONFIGURE=	yes
@@ -113,7 +115,7 @@ OPTIONS_DEFAULT=	BINDINGS HDHOMERUN VDPAU
 OPTIONS_SUB=		yes
 
 BINDINGS_DESC=		Perl and Python bindings
-BINDINGS_BUILD_DEPENDS= ${PYTHON_PKGNAMEPREFIX}mysqlclient>=0:databases/py-mysqlclient@${PY_FLAVOR} \
+BINDINGS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mysqlclient>=0:databases/py-mysqlclient@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}future>=0:devel/py-future@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}lxml>=0:devel/py-lxml@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests@${PY_FLAVOR} \

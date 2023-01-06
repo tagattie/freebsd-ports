@@ -1,11 +1,12 @@
 PORTNAME=	tox
-PORTVERSION=	3.25.1
+PORTVERSION=	3.28.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Virtualenv-based automation of test activities
+WWW=		https://tox.readthedocs.org/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

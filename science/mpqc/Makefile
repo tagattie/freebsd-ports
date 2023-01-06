@@ -6,6 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Massively Parallel Quantum Chemistry Program
+WWW=		https://mpqc.org/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -46,6 +47,7 @@ ATLAS_USES_OFF=		blaslapack:netlib
 DOXYGEN_CONFIGURE_ENABLE=	doxygen-man
 DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen \
 			dot:graphics/graphviz
+DOXYGEN_USES=		tex
 DOXYGEN_USE=		TEX=base,dvipsk,pdftex
 
 ICC_BUILD_DEPENDS=	${LOCALBASE}/intel_cc_80/bin/icc:lang/icc

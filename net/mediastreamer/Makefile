@@ -4,6 +4,7 @@ CATEGORIES=	net
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Real-time audio and video streaming and processing
+WWW=		https://www.linphone.org/technical-corner/mediastreamer2
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
@@ -70,7 +71,7 @@ OPUS_LIB_DEPENDS=	libopus.so:audio/opus
 OPUS_CMAKE_BOOL=	ENABLE_OPUS
 QTGL_IMPLIES=	VIDEO
 QTGL_USES=	qt:5
-QTGL_USE=	QT=core,declarative,gui,network,buildtools_build,qmake_build
+QTGL_USE=	QT=core,declarative,gui,network,buildtools:build,qmake:build
 QTGL_CMAKE_BOOL=	ENABLE_QT_GL
 SPEEX_LIB_DEPENDS=	libspeex.so:audio/speex
 SPEEX_CMAKE_BOOL=	ENABLE_SPEEX_CODEC

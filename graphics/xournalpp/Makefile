@@ -1,11 +1,12 @@
 PORTNAME=	xournalpp
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.1.1
-PORTREVISION=	10
+DISTVERSION=	1.1.3
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Handwriting notetaking software with PDF annotation support
+WWW=		https://github.com/xournalpp/xournalpp
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -17,7 +18,7 @@ LIB_DEPENDS=	libharfbuzz.so:print/harfbuzz \
 		libsndfile.so:audio/libsndfile \
 		libzip.so:archivers/libzip
 
-USES=		cmake compiler:c++11-lang gettext-tools gnome lua:53 pkgconfig xorg
+USES=		cmake compiler:c++11-lang gettext-tools gnome lua:53 pkgconfig tex xorg
 USE_GITHUB=	yes
 USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk30 librsvg2 libxml2 pango
 USE_XORG=	x11 xi

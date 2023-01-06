@@ -1,11 +1,12 @@
 PORTNAME=	opn-cli
-DISTVERSION=	0.8.1
+DISTVERSION=	1.3.0
 CATEGORIES=	net-mgmt python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	freebsd@moov.de
 COMMENT=	OPNsense CLI written in Python
+WWW=		https://github.com/andeman/opn-cli
 
 LICENSE=	BSD2CLAUSE
 

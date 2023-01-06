@@ -8,6 +8,7 @@
     SUBDIR += alarm-clock-applet
     SUBDIR += anydesk
     SUBDIR += appwrapper
+    SUBDIR += arttime
     SUBDIR += aspostit
     SUBDIR += ausweisapp2
     SUBDIR += autocutsel
@@ -47,7 +48,6 @@
     SUBDIR += dosage
     SUBDIR += dstask
     SUBDIR += easystroke
-    SUBDIR += egroupware
     SUBDIR += elementary-calendar
     SUBDIR += fasd
     SUBDIR += fbreader
@@ -111,6 +111,7 @@
     SUBDIR += gxmessage
     SUBDIR += gxneur
     SUBDIR += havoc
+    SUBDIR += health
     SUBDIR += hebcal
     SUBDIR += helpviewer
     SUBDIR += horde-groupware
@@ -123,9 +124,11 @@
     SUBDIR += i3lock
     SUBDIR += i3status
     SUBDIR += ical
+    SUBDIR += iconbrowser
     SUBDIR += itinerary
     SUBDIR += jjclient
     SUBDIR += jlj
+    SUBDIR += jot
     SUBDIR += just
     SUBDIR += kaddressbook
     SUBDIR += kalarm
@@ -145,15 +148,16 @@
     SUBDIR += kongress
     SUBDIR += kontact
     SUBDIR += korganizer
+    SUBDIR += kronometer
     SUBDIR += kruler
     SUBDIR += ktimetracker
     SUBDIR += kuserfeedback
     SUBDIR += latte-dock
+    SUBDIR += lazycli
     SUBDIR += libcprime
     SUBDIR += libkdepim
     SUBDIR += libportal
     SUBDIR += ljclive
-    SUBDIR += lookbook
     SUBDIR += lumina-archiver
     SUBDIR += lumina-calculator
     SUBDIR += lumina-fileinfo
@@ -176,11 +180,11 @@
     SUBDIR += mindforger
     SUBDIR += moregroupware
     SUBDIR += mozo
-    SUBDIR += myitcrm
     SUBDIR += nautilus-sendto
     SUBDIR += nextcloudclient
     SUBDIR += note
     SUBDIR += notekit
+    SUBDIR += notes
     SUBDIR += noti
     SUBDIR += notification-daemon
     SUBDIR += notify-osd
@@ -206,6 +210,7 @@
     SUBDIR += preferences
     SUBDIR += presage
     SUBDIR += projectlibre
+    SUBDIR += pueue
     SUBDIR += puush
     SUBDIR += py-autokey
     SUBDIR += py-bugwarrior
@@ -237,6 +242,7 @@
     SUBDIR += solanum
     SUBDIR += sowon
     SUBDIR += spice-gtk
+    SUBDIR += subsurface
     SUBDIR += synapse
     SUBDIR += syncthingtray
     SUBDIR += sysctlview
@@ -248,6 +254,7 @@
     SUBDIR += teapot
     SUBDIR += terminal-image-viewer
     SUBDIR += thinkingrock
+    SUBDIR += thokr
     SUBDIR += timewarrior
     SUBDIR += todo
     SUBDIR += todour
@@ -262,9 +269,9 @@
     SUBDIR += when
     SUBDIR += wmpinboard
     SUBDIR += x026
+    SUBDIR += xannotate
     SUBDIR += xcalendar
     SUBDIR += xcbautolock
-    SUBDIR += xchm
     SUBDIR += xdg-desktop-portal
     SUBDIR += xfce4-generic-slider
     SUBDIR += xfce4-notes-plugin

@@ -1,12 +1,13 @@
 PORTNAME=	systemd
 PORTVERSION=	219
-DISTVERSIONSUFFIX=	-78.el7_9.3
-PORTREVISION=	10
+DISTVERSIONSUFFIX=	-78.el7_9.7
+PORTREVISION=	11
 CATEGORIES=	devel linux
 PKGNAMESUFFIX=	-libs
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Libraries for accessing systemd (Linux CentOS ${LINUX_DIST_VER})
+WWW=		https://www.freedesktop.org/wiki/Software/systemd/
 
 LICENSE=	LGPL21+
 

@@ -1,5 +1,5 @@
 PORTNAME=	tt-rss
-PORTVERSION=	g20220903
+PORTVERSION=	g20221225
 PORTEPOCH=	2
 CATEGORIES=	www
 MASTER_SITES=	https://git-gitea.tt-rss.org/fox/tt-rss/archive/
@@ -8,6 +8,7 @@ DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	dereks@lifeofadishwasher.com
 COMMENT=	Tiny Tiny RSS: web-based news feed (RSS/Atom) aggregator
+WWW=		https://tt-rss.org/
 
 LICENSE=	GPLv2
 
@@ -15,12 +16,13 @@ RUN_DEPENDS=	${LOCALBASE}/bin/git:devel/git
 
 USES=		gettext-tools php:cli,web shebangfix
 USE_PHP=	ctype dom exif fileinfo filter hash iconv intl json mbstring \
-		openssl pcntl pdo posix session tokenizer xml zip
+		openssl pcntl pdo phar posix session simplexml tokenizer xml \
+		xmlwriter zip
 USE_RC_SUBR=	ttrssd
 
 SHEBANG_FILES=	update.php update_daemon2.php
 
-_GIT_TAGNAME=	d47b8c849
+_GIT_TAGNAME=	22f8a2274
 
 REINPLACE_ARGS=	-i ""
 
@@ -60,7 +62,7 @@ do-install:
 		${STAGEDIR}${DATADIR} \
 		${STAGEDIR}${EXAMPLESDIR}
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} "*" ${STAGEDIR}${WWWDIR} \
-		"! -name LICENSE ! -name .empty")
+		"! -name LICENSE ! -name .empty ! -name Jenkinsfile")
 	${RM} -r ${STAGEDIR}${WWWDIR}/debian
 	${INSTALL_DATA} ${WRKDIR}/httpd-tt-rss.conf ${STAGEDIR}${DATADIR}
 	${ECHO} "${OPSYS}:${PORTVERSION}:${_GIT_TAGNAME}" > \

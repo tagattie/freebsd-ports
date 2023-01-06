@@ -1,10 +1,12 @@
 PORTNAME=	lightdm
 PORTVERSION=	1.32.0
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	https://github.com/canonical/${PORTNAME}/releases/download/${DISTVERSIONPREFIX}${DISTVERSION}/
 
 MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	Lightweight Display Manager
+WWW=		https://github.com/canonical/lightdm
 
 # library/bindings are LGPLv2 or LGPLv3, the rest GPLv3+
 LICENSE=	LGPL20 LGPL3 GPLv3

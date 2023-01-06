@@ -1,11 +1,12 @@
 PORTNAME=	xmlschema
-DISTVERSION=	2.0.3
+DISTVERSION=	2.1.1
 CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Implementation of XML Schema for Python
+WWW=		https://pypi.org/project/xmlschema/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

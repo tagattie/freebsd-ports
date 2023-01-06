@@ -1,11 +1,12 @@
 PORTNAME=	pytest-twisted
-PORTVERSION=	1.13.4
+PORTVERSION=	1.14.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Twisted plugin for pytest
+WWW=		https://github.com/pytest-dev/pytest-twisted
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

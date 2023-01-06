@@ -1,5 +1,5 @@
 PORTNAME=	intellij-ultimate
-DISTVERSION=	2022.2.1
+DISTVERSION=	2022.2.3
 CATEGORIES=	java devel
 MASTER_SITES=	https://download-cf.jetbrains.com/idea/
 DISTNAME=	ideaIU-${DISTVERSION}-no-jbr
@@ -7,6 +7,7 @@ DIST_SUBDIR=	jetbrains
 
 MAINTAINER=	andoriyu@gmail.com
 COMMENT=	IntelliJ IDEA Ultimate Edition
+WWW=		https://www.jetbrains.com/idea/
 
 LICENSE=	IntelliJ-Ultimate
 LICENSE_NAME=	Subscription license agreement for business and organizations
@@ -32,7 +33,7 @@ NO_BUILD=	yes
 SUB_FILES=	idea idea.desktop pkg-message
 
 BUILD_TYPE=	IU
-BUILD_VERSION=	222.3739.54
+BUILD_VERSION=	222.4345.14
 BUILD_MARKER=	${BUILD_TYPE}-${BUILD_VERSION}
 PLIST_SUB=	BUILD_MARKER=${BUILD_MARKER}
 WRKSRC=		${WRKDIR}/idea-${BUILD_MARKER}

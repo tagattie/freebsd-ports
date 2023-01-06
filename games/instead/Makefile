@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Simple Text Adventure, The Interpreter
+WWW=		https://instead.syscall.ru/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -41,5 +42,11 @@ LUAJIT_USE_OFF=		lua:51
 LUAJIT_CMAKE_BOOL=	WITH_LUAJIT
 HARFBUZZ_CMAKE_BOOL=	WITH_HARFBUZZ
 HARFBUZZ_LIB_DEPENDS=	libharfbuzz.so:print/harfbuzz
+
+.include <bsd.port.options.mk>
+
+.if ${ARCH:Mpowerpc64*}
+LUAJIT_LIB_DEPENDS=	libluajit-5.1.so:lang/luajit-openresty
+.endif
 
 .include <bsd.port.mk>

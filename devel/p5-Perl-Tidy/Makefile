@@ -1,11 +1,12 @@
 PORTNAME=	Perl-Tidy
-PORTVERSION=	20220613
+PORTVERSION=	20221112
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Indents and reformats Perl scripts to make them easier to read
+WWW=		https://metacpan.org/release/Perl-Tidy
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

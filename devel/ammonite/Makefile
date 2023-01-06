@@ -1,14 +1,15 @@
 PORTNAME=	ammonite
-DISTVERSION=	2.5.3
+DISTVERSION=	2.5.5
 CATEGORIES=	devel java
 MASTER_SITES=	https://github.com/lihaoyi/Ammonite/releases/download/${PORTVERSION}/
-DISTNAME=	2.13-${PORTVERSION}
+DISTNAME=	3.2-${PORTVERSION}
 EXTRACT_SUFX=
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=
 
 MAINTAINER=	freebsd-ports@jan0sch.de
 COMMENT=	Provides a system shell in the high-level Scala language
+WWW=		https://ammonite.io/
 
 LICENSE=	MIT
 

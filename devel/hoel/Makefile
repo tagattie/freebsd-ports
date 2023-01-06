@@ -1,10 +1,11 @@
 PORTNAME=	hoel
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.4.25
+DISTVERSION=	1.4.26
 CATEGORIES=	devel
 
 MAINTAINER=	dvl@FreeBSD.org
 COMMENT=	Database abstraction library written in C
+WWW=		https://github.com/babelouest/hoel
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE

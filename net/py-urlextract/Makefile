@@ -1,11 +1,12 @@
 PORTNAME=	urlextract
-PORTVERSION=	1.6.0
+PORTVERSION=	1.7.1
 CATEGORIES=	net python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Collects and extracts URLs from given text
+WWW=		https://github.com/lipoja/URLExtract
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

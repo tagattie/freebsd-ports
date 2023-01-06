@@ -1,10 +1,11 @@
 PORTNAME=	pgroonga
-PORTVERSION=	2.3.8
+PORTVERSION=	2.4.2
 CATEGORIES=	databases textproc
 MASTER_SITES=	http://packages.groonga.org/source/pgroonga/
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Open-source fulltext search engine for PostGRESQL
+WWW=		https://pgroonga.github.io/
 
 LICENSE=	PostgreSQL
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -32,10 +33,10 @@ PLIST_SUB+=	OLDPG=""
 .endif
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/postgresql/pgroonga.so
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/postgresql/pgroonga_check.so
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/postgresql/pgroonga_crash_safer.so
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/postgresql/pgroonga_database.so
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/postgresql/pgroonga_wal_applier.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/postgresql/pgroonga*.so
+#	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/postgresql/pgroonga_check.so
+#	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/postgresql/pgroonga_crash_safer.so
+#	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/postgresql/pgroonga_database.so
+#	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/postgresql/pgroonga_wal_applier.so
 
 .include <bsd.port.post.mk>

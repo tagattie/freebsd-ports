@@ -1,9 +1,11 @@
 PORTNAME=	pftop
 PORTVERSION=	0.8
+PORTREVISION=	1
 CATEGORIES=	sysutils net
 
 MAINTAINER=	grembo@FreeBSD.org
 COMMENT=	Utility for real-time display of statistics for pf
+WWW=		https://github.com/araujobsd/pftop/
 
 LICENSE=	BSD2CLAUSE
 

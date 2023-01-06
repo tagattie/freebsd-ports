@@ -1,11 +1,12 @@
 PORTNAME=	pyflakes
-PORTVERSION=	2.5.0
+PORTVERSION=	3.0.1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Passive checker of Python programs
+WWW=		https://github.com/PyCQA/pyflakes
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

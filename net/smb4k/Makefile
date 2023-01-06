@@ -5,6 +5,7 @@ CATEGORIES=	net kde
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Advanced network neighborhood browser and Samba share mounting utility
+WWW=		http://smb4k.berlios.de
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -17,10 +18,10 @@ USE_KDE=	auth codecs completion config configwidgets coreaddons crash \
 		dbusaddons dnssd i18n iconthemes jobwidgets kio notifications \
 		plasma-framework service solid wallet widgetsaddons \
 		windowsystem xmlgui \
-		doctools_build ecm_build
+		doctools:build ecm:build
 USE_QT=		concurrent core dbus declarative gui network printsupport \
 		testlib widgets xml \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 USE_XORG=	x11
 
 KDE_INVENT=	992987421af68f2695867722b8dc4ca30a4669ec network

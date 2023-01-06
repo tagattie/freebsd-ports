@@ -1,11 +1,12 @@
 PORTNAME=	scapy
-PORTVERSION=	2.4.5
+PORTVERSION=	2.5.0
 CATEGORIES=	net python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Powerful interactive packet manipulation program in python
+WWW=		https://scapy.net/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -43,7 +44,6 @@ SOX_RUN_DEPENDS=	${LOCALBASE}/bin/sox:audio/sox
 
 post-patch:
 	@${REINPLACE_CMD} "s,share/man/man1,man/man1," ${WRKSRC}/setup.py
-	@${REINPLACE_CMD} "s,pdflatex,pdftex," ${WRKSRC}/scapy/extlib.py
 	@${REINPLACE_CMD} "s,/usr/share/,${LOCALBASE}/share/," \
 		${WRKSRC}/scapy/modules/nmap.py
 	@${REINPLACE_CMD} "s,/etc/,${LOCALBASE}/etc/," \

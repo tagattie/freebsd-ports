@@ -1,13 +1,14 @@
 PORTNAME=	nfft
-DISTVERSION=	3.5.2
-PORTREVISION=	2
+DISTVERSION=	3.5.3
 CATEGORIES=	math
 MASTER_SITES=	https://github.com/NFFT/${PORTNAME}/releases/download/${DISTVERSION}/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Nonequispaced fast Fourier transform
+WWW=		https://www-user.tu-chemnitz.de/~potts/nfft
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	bash:shells/bash \
 		cunit>0:devel/cunit

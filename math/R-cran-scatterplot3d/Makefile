@@ -1,11 +1,11 @@
 PORTNAME=	scatterplot3d
-DISTVERSION=	0.3-41
-PORTREVISION=	2
+DISTVERSION=	0.3-42
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	3D Scatter Plot
+WWW=		https://cran.r-project.org/package=scatterplot3d
 
 LICENSE=	GPLv2
 

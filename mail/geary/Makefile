@@ -1,6 +1,6 @@
 PORTNAME=	geary
 PORTVERSION=	40.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	mail gnome
 MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
 DIST_SUBDIR=	gnome
@@ -11,6 +11,7 @@ PATCHFILES=	0f75e7a84a39492d0748cec2ba6028e08cae3644.diff:-p1 \
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Mail client for GNOME
+WWW=		https://wiki.gnome.org/Apps/Geary
 
 LICENSE=	BSD2CLAUSE CC-BY-3.0 LGPL21+
 LICENSE_COMB=	multi

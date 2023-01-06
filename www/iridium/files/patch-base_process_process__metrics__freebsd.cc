@@ -1,6 +1,6 @@
---- base/process/process_metrics_freebsd.cc.orig	2022-03-28 20:16:21 UTC
+--- base/process/process_metrics_freebsd.cc.orig	2022-12-01 10:35:46 UTC
 +++ base/process/process_metrics_freebsd.cc
-@@ -3,21 +3,41 @@
+@@ -3,20 +3,39 @@
  // found in the LICENSE file.
  
  #include "base/process/process_metrics.h"
@@ -16,18 +16,16 @@
 +#include <kvm.h>
 +#include <libutil.h>
 +
- #include "base/cxx17_backports.h"
  #include "base/memory/ptr_util.h"
  #include "base/process/process_metrics_iocounters.h"
 +#include "base/values.h"
  
  namespace base {
 +namespace {
- 
 +int GetPageShift() {
 +  int pagesize = getpagesize();
 +  int pageshift = 0;
-+
+ 
 +  while (pagesize > 1) {
 +    pageshift++;
 +    pagesize >>= 1;
@@ -44,35 +42,41 @@
  
  // static
  std::unique_ptr<ProcessMetrics> ProcessMetrics::CreateProcessMetrics(
-@@ -27,17 +47,18 @@ std::unique_ptr<ProcessMetrics> ProcessMetrics::Create
+@@ -24,22 +43,19 @@ std::unique_ptr<ProcessMetrics> ProcessMetrics::Create
+   return WrapUnique(new ProcessMetrics(process));
+ }
  
- double ProcessMetrics::GetPlatformIndependentCPUUsage() {
+-double ProcessMetrics::GetPlatformIndependentCPUUsage() {
++TimeDelta ProcessMetrics::GetCumulativeCPUUsage() {
    struct kinfo_proc info;
 -  int mib[] = {CTL_KERN, KERN_PROC, KERN_PROC_PID, process_};
 -  size_t length = sizeof(info);
 +  size_t length = sizeof(struct kinfo_proc);
++  struct timeval tv;
  
-+  int mib[] =  {CTL_KERN, KERN_PROC, KERN_PROC_PID, process_ };
++  int mib[] = { CTL_KERN, KERN_PROC, KERN_PROC_PID, process_ };
 +
-   if (sysctl(mib, base::size(mib), &info, &length, NULL, 0) < 0)
+   if (sysctl(mib, std::size(mib), &info, &length, NULL, 0) < 0)
 -    return 0;
-+    return 0.0;
++    return TimeDelta();
  
 -  return (info.ki_pctcpu / FSCALE) * 100.0;
-+  return static_cast<double>((info.ki_pctcpu * 100.0) / FSCALE);
++  return Microseconds(info.ki_runtime);
  }
  
- TimeDelta ProcessMetrics::GetCumulativeCPUUsage() {
+-TimeDelta ProcessMetrics::GetCumulativeCPUUsage() {
 -  NOTREACHED();
-+  NOTIMPLEMENTED();
-   return TimeDelta();
+-  return TimeDelta();
+-}
+-
+ bool ProcessMetrics::GetIOCounters(IoCounters* io_counters) const {
+   return false;
  }
- 
-@@ -68,4 +89,221 @@ size_t GetSystemCommitCharge() {
+@@ -67,4 +83,221 @@ size_t GetSystemCommitCharge() {
    return mem_total - (mem_free*pagesize) - (mem_inactive*pagesize);
  }
  
-+int GetNumberOfThreads(ProcessHandle process) {
++int64_t GetNumberOfThreads(ProcessHandle process) {
 +  // Taken from FreeBSD top (usr.bin/top/machine.c)
 +
 +  kvm_t* kd = kvm_open(NULL, "/dev/null", NULL, O_RDONLY, "kvm_open");
@@ -145,7 +149,7 @@
 +
 +  length = sizeof(total_count);
 +
-+  if (sysctl(mib, base::size(mib), &total_count, &length, NULL, 0) < 0) {
++  if (sysctl(mib, std::size(mib), &total_count, &length, NULL, 0) < 0) {
 +    total_count = -1;
 +  }
 +

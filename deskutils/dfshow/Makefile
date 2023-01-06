@@ -1,10 +1,11 @@
 PORTNAME=	dfshow
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9.6-beta
+DISTVERSION=	0.9.7-beta
 CATEGORIES=	deskutils
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Directory file editor
+WWW=		https://dfshow.op-ezy.co.uk/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

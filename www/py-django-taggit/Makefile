@@ -1,11 +1,12 @@
 PORTNAME=	django-taggit
-PORTVERSION=	3.0.0
+PORTVERSION=	3.1.0
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	kai@FreeBSD.org
 COMMENT=	Reusable Django application for simple tagging
+WWW=		https://github.com/jazzband/django-taggit
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

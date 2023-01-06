@@ -1,12 +1,13 @@
 PORTNAME=	readarr
 PORTVERSION=	0.1.1.1320
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-p2p
 MASTER_SITES=	https://github.com/Readarr/Readarr/releases/download/v${PORTVERSION}/
 DISTNAME=	Readarr.develop.${PORTVERSION}.freebsd-core-x64
 
 MAINTAINER=	michiel@vanbaak.eu
 COMMENT=	Book Manager and Automation (Sonarr for Ebooks)
+WWW=		https://readarr.com
 
 LICENSE=	GPLv3
 

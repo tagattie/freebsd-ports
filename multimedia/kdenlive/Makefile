@@ -1,9 +1,11 @@
 PORTNAME=	kdenlive
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	multimedia kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE professional quality non-linear video editing suite
+WWW=		https://www.kdenlive.org
 
 LICENSE=	GPLv2
 
@@ -12,7 +14,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/linux/input.h:devel/evdev-proto \
 		${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat \
 		${LOCALBASE}/lib/mlt-7/libmltglaxnimate.so:multimedia/mlt7-glaxnimate
 RUN_DEPENDS=	ffmpeg${FFMPEG_SUFX}:multimedia/ffmpeg${FFMPEG_SUFX} \
-		${LOCALBASE}/lib/mlt-7/libmltqt.so:multimedia/mlt7-qt5 \
+		${LOCALBASE}/lib/mlt-7/libmltqt.so:multimedia/mlt7-qt@qt5 \
 		${LOCALBASE}/lib/mlt-7/libmltglaxnimate.so:multimedia/mlt7-glaxnimate
 
 USES=		cmake compiler:c++11-lang desktop-file-utils gettext-tools \
@@ -24,12 +26,12 @@ USE_KDE=	archive attica auth bookmarks codecs completion config \
 		kdeclarative newstuff notifications notifyconfig package \
 		service solid sonnet textwidgets widgetsaddons windowsystem \
 		xmlgui \
-		ecm_build \
-		init_run
+		ecm:build \
+		init:run
 USE_QT=		concurrent core dbus declarative gui multimedia network \
 		networkauth quickcontrols2 xml \
-		buildtools_build qmake_build \
-		quickcontrols_run script svg webkit widgets
+		buildtools:build qmake:build \
+		quickcontrols:run script svg webkit widgets
 USE_XORG=	x11
 CFLAGS+=	-isystem${LOCALBASE}/include # linux/input.h
 CMAKE_ARGS=	-DFFMPEG_SUFFIX:STRING="${FFMPEG_SUFX}"
@@ -38,7 +40,7 @@ CMAKE_ARGS=	-DFFMPEG_SUFFIX:STRING="${FFMPEG_SUFX}"
 FFMPEG_SUFX=	# Currently empty.
 
 OPTIONS_DEFINE=	DVDWIZARD FILESHARE FREI0R LADSPA SCREENCAST V4L XINE DOCS
-OPTIONS_DEFAULT=DVDWIZARD FILESHARE FREI0R LADSPA SCREENCAST V4L XINE
+OPTIONS_DEFAULT=DVDWIZARD FILESHARE FREI0R LADSPA SCREENCAST V4L
 OPTIONS_SUB=	yes
 
 DVDWIZARD_DESC=	DVD authoring via DVDAuthor and cdrtools

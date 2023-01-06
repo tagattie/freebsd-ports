@@ -1,10 +1,11 @@
 PORTNAME=	ufraw
 PORTVERSION=	0.22.20210424
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 
 MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Read and manipulate raw images from various digital cameras
+WWW=		http://ufraw.sourceforge.net/
 
 LICENSE=	GPLv2
 

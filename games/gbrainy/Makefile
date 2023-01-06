@@ -1,11 +1,12 @@
 PORTNAME=	gbrainy
-DISTVERSION=	2.4.5
+DISTVERSION=	2.4.6
 PORTEPOCH=	2
 CATEGORIES=	games
 MASTER_SITES=	https://gent.softcatala.org/jmas/gbrainy/
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Brain teaser game and trainer
+WWW=		https://live.gnome.org/gbrainy
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

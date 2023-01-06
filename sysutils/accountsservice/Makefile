@@ -1,6 +1,6 @@
 PORTNAME=	accountsservice
 PORTVERSION=	0.6.55
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils devel
 MASTER_SITES=	http://www.freedesktop.org/software/${PORTNAME}/
 
@@ -9,6 +9,7 @@ PATCHFILES+=	ac9b14f1c1bb.patch:-p1 # https://gitlab.freedesktop.org/accountsser
 
 MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	D-Bus interface for user account query and manipulation
+WWW=		https://gitlab.freedesktop.org/accountsservice/accountsservice
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

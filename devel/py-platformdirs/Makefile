@@ -1,15 +1,15 @@
 PORTNAME=	platformdirs
-PORTVERSION=	2.5.2
-PORTREVISION=	1
+PORTVERSION=	2.5.4
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python module for determining appropriate platform-specific dirs
+WWW=		https://github.com/platformdirs/platformdirs
 
 LICENSE=	MIT
-LICENSE_FILE=	${WRKSRC}/LICENSE.txt
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		python:3.7+
 USE_PYTHON=	autoplist concurrent distutils

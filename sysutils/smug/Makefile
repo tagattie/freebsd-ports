@@ -1,11 +1,12 @@
 PORTNAME=	smug
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.3.2
-PORTREVISION=	1
+PORTREVISION=	4
 CATEGORIES=	sysutils
 
 MAINTAINER=	lcook@FreeBSD.org
 COMMENT=	Session manager and task runner for tmux
+WWW=		https://github.com/ivaaaan/smug
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -31,10 +32,10 @@ COMPLETIONS_PLIST_FILES=	share/bash-completion/completions/${PORTNAME} \
 MANPAGES_PLIST_FILES=		man/man1/${PORTNAME}.1.gz
 
 post-install-COMPLETIONS-on:
-	${INSTALL_DATA} ${WRKSRC}/completion/${PORTNAME}.bash \
-		${STAGEDIR}${PREFIX}/share/bash-completion/completions/${PORTNAME}
-	${INSTALL_DATA} ${WRKSRC}/completion/${PORTNAME}.fish \
-		${STAGEDIR}${PREFIX}/share/fish/vendor_completions.d/${PORTNAME}.fish
+.for _shell in bash fish
+	${INSTALL_DATA} ${WRKSRC}/completion/${PORTNAME}.${_shell} \
+		${STAGEDIR}${PREFIX}/${COMPLETIONS_PLIST_FILES:M*${_shell}*}
+.endfor
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

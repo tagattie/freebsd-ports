@@ -1,10 +1,11 @@
 PORTNAME=	mroonga
-PORTVERSION=	12.07
+PORTVERSION=	12.10
 CATEGORIES=	databases textproc
 MASTER_SITES=	http://packages.groonga.org/source/mroonga/
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Open-source fulltext search engine for MySQL
+WWW=		https://mroonga.org/
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING

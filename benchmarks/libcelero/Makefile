@@ -1,10 +1,11 @@
 PORTNAME=	libcelero
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.8.3
+DISTVERSION=	2.8.5
 CATEGORIES=	benchmarks
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C++ benchmark authoring library/framework
+WWW=		https://github.com/DigitalInBlue/Celero
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/license.txt

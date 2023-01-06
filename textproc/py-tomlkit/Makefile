@@ -1,11 +1,12 @@
 PORTNAME=	tomlkit
-PORTVERSION=	0.11.4
+PORTVERSION=	0.11.6
 CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Style-preserving TOML library
+WWW=		https://github.com/sdispater/tomlkit
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

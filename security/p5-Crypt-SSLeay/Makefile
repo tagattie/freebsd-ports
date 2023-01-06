@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl5 interface to allow p5-libwww LWP to make https connections
+WWW=		https://metacpan.org/release/Crypt-SSLeay
 
 LICENSE=	ART20
 
@@ -19,6 +20,7 @@ USES=		perl5 ssl
 USE_PERL5=	configure
 CONFIGURE_ARGS=	--no-live-tests
 CFLAGS+=	-I${OPENSSLINC}
+CFLAGS+=	-DOPENSSL_NO_SSL2
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Crypt/SSLeay/SSLeay.so

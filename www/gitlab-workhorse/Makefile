@@ -1,11 +1,12 @@
 PORTNAME=	gitlab-workhorse
-PORTVERSION=	15.2.3
+PORTVERSION=	15.5.6
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	0
 CATEGORIES=	www
 
 MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Smart reverse proxy for GitLab
+WWW=		https://gitlab.com/gitlab-org/gitlab-workhorse
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/../LICENSE
@@ -24,7 +25,7 @@ USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 GL_PROJECT=	gitlab-foss
 # Find the commit hash here: https://gitlab.com/gitlab-org/gitlab-foss/-/tags
-GL_COMMIT=	a2c3f44b8aa62d78c27c892e6a6b7ba6bd442787
+GL_COMMIT=	a2f39fb243f2ad2ba59939e2e6446ec9b19911f2
 
 # for go dependencies
 # Gitlab hosts there dependencies on their own platform and not on go-proxy

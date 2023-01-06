@@ -6,6 +6,7 @@ MASTER_SITES=	GNUPG
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	General purpose cryptographic library based on the code from GnuPG
+WWW=		https://www.gnupg.org/software/libgcrypt/index.html
 
 LICENSE=	GPLv2+ LGPL21+
 LICENSE_COMB=	multi
@@ -42,6 +43,10 @@ STATIC_CONFIGURE_ENABLE=	static
 
 .if ${ARCH} == "armv6" || ${ARCH} == "armv7"
 CONFIGURE_ARGS+=	--disable-jent-support
+.endif
+
+.if defined(WITH_DEBUG)
+CFLAGS+=	-DWITH_DEBUG
 .endif
 
 post-patch:

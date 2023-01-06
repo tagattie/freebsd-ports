@@ -1,10 +1,11 @@
 PORTNAME=	ndpi
-PORTVERSION=	4.4.d20220714
+PORTVERSION=	4.4.d20221026
 PORTEPOCH=	1
 CATEGORIES=	net
 
 MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	NTOP-maintained superset of the popular OpenDPI library
+WWW=		https://www.ntop.org/products/deep-packet-inspection/ndpi/
 
 LICENSE=	LGPL3+
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -29,7 +30,7 @@ INSTALL_TARGET=	install-strip
 USE_GITHUB=	yes
 GH_ACCOUNT=	ntop
 GH_PROJECT=	nDPI
-GH_TAGNAME=	dd8953c
+GH_TAGNAME=	299fc4d
 
 PLIST_SUB=	MAJOR_VER=${PORTVERSION:R:R} VER=${PORTVERSION:R}
 

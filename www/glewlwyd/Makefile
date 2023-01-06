@@ -1,10 +1,11 @@
 PORTNAME=	glewlwyd
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.7.3
+DISTVERSION=	2.7.4
 CATEGORIES=	www
 
 MAINTAINER=	dvl@FreeBSD.org
 COMMENT=	Single Sign On server, multiple factor authentication
+WWW=		https://github.com/babelouest/glewlwyd
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

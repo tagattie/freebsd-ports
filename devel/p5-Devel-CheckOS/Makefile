@@ -1,11 +1,12 @@
 PORTNAME=	Devel-CheckOS
-PORTVERSION=	1.94
+PORTVERSION=	1.95
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Check currently running OS
+WWW=		https://metacpan.org/release/Devel-CheckOS
 
 LICENSE=	ART10 GPLv2
 LICENSE_COMB=	dual

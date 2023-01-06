@@ -1,10 +1,11 @@
 PORTNAME=	gedkeeper
-PORTVERSION=	2.21.0
+PORTVERSION=	2.22.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	misc
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Personal genealogical database editor
+WWW=		http://gedkeeper.net/
 
 LICENSE=	GPLv3+
 
@@ -22,6 +23,8 @@ _BUILD_TYPE=	Release
 DATADIR=	${PREFIX}/lib/${PORTNAME}
 
 post-patch:
+	@${REINPLACE_CMD} -e '/{70BD5213-9A14-4E76-906D-8FE1633ADB3E}/d' \
+		${WRKSRC}/projects/GEDKeeper2.linux.sln
 	@${REINPLACE_CMD} -e '/Reference Include/s,System\.XML,System.Xml,' \
 		${WRKSRC}/projects/GKCommunicator/GKNetCore/GKNetCore.csproj
 

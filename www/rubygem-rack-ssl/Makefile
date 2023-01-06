@@ -7,11 +7,12 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Rack middleware to force SSL/TLS
+WWW=		https://github.com/josh/rack-ssl
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-rack>=0:www/rubygem-rack
+RUN_DEPENDS=	rubygem-rack>=0,3:www/rubygem-rack
 
 NO_ARCH=	yes
 USE_RUBY=	yes

@@ -1,5 +1,5 @@
 PORTNAME=	robocode
-PORTVERSION=	1.9.4.7
+PORTVERSION=	1.9.4.8
 CATEGORIES=	games education java
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${DISTVERSION}-setup.jar
@@ -8,6 +8,7 @@ DIST_SUBDIR=	java
 
 MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	Game for learning Java[tm] programming language
+WWW=		https://robocode.sourceforge.io/
 
 LICENSE=	EPL
 LICENSE_FILE=	${WRKSRC}/license/epl-v10.html

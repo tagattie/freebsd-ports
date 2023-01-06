@@ -1,5 +1,5 @@
 PORTNAME=	libexo
-PORTVERSION=	4.16.4
+PORTVERSION=	4.18.0
 CATEGORIES=	x11 xfce
 MASTER_SITES=	XFCE
 DISTNAME=	exo-${DISTVERSIONFULL}
@@ -7,6 +7,7 @@ DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Application library for the Xfce desktop environment
+WWW=		https://www.xfce.org/
 
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi

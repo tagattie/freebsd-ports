@@ -1,11 +1,11 @@
 PORTNAME=	containerd
 DISTVERSIONPREFIX=v
-DISTVERSION=	1.6.6
-PORTREVISION=	4
+DISTVERSION=	1.6.14
 CATEGORIES=	sysutils
 
 MAINTAINER=	decke@FreeBSD.org
 COMMENT=	Open and reliable container runtime
+WWW=		https://containerd.io/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

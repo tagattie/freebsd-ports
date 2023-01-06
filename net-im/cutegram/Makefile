@@ -7,6 +7,7 @@ CATEGORIES=	net-im
 
 MAINTAINER=	henry.hu.sh@gmail.com
 COMMENT=	Free and opensource telegram client
+WWW=		https://aseman.co/en/products/cutegram/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -23,7 +24,7 @@ GH_SUBDIR=	Cutegram/asemantools:tools
 USES=		compiler:c++11-lang desktop-file-utils gl gnome qmake:outsource \
 		qt:5 ssl
 USE_GL=		gl
-USE_QT=		qmake_build buildtools_build dbus core declarative graphicaleffects \
+USE_QT=		qmake:build buildtools:build dbus core declarative graphicaleffects \
 		gui multimedia network quickcontrols sql sql-sqlite3 xml \
 		widgets webkit
 QMAKE_ARGS=	LIBQTELEGRAM_INCLUDE_PATH="${LOCALBASE}/include/libqtelegram-ae" \

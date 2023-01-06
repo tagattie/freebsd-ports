@@ -6,6 +6,7 @@ MASTER_SITES=	http://ftp.midnight-commander.org/ \
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Midnight Commander, a free Norton Commander clone
+WWW=		https://midnight-commander.org/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -45,7 +46,7 @@ ASPELL_CONFIGURE_ENABLE=aspell
 
 EDITOR_CONFIGURE_WITH=	internal-edit
 
-EXTATTR_LIB_DEPENDS=	libe2p.so:sysutils/e2fsprogs
+EXTATTR_LIB_DEPENDS=	libe2p.so:sysutils/e2fsprogs-core
 
 ICONV_USES=		iconv
 ICONV_CONFIGURE_ENABLE=	charset

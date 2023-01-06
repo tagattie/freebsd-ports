@@ -1,11 +1,12 @@
 PORTNAME=	DateTime-Format-Natural
-PORTVERSION=	1.13
+PORTVERSION=	1.14
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Create machine readable date/time with natural parsing logic
+WWW=		https://metacpan.org/release/DateTime-Format-Natural
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

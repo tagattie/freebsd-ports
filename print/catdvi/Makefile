@@ -6,11 +6,12 @@ MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DVI to text/plain translator
+WWW=		http://catdvi.sourceforge.net/
 
 LICENSE=	GPLv2
 
+USES=		gmake tex
 USE_TEX=	latex
-USES=		gmake
 GNU_CONFIGURE=	yes
 MAKEFILE=	GNUmakefile
 ALL_TARGET=	# empty

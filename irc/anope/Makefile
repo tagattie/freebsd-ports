@@ -1,9 +1,10 @@
 PORTNAME=	anope
-PORTVERSION=	2.0.11
+PORTVERSION=	2.0.12
 CATEGORIES=	irc
 
 MAINTAINER=	egypcio@FreeBSD.org
 COMMENT=	Set of IRC services for IRC networks
+WWW=		https://www.anope.org/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/docs/COPYING

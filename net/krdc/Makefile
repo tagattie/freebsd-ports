@@ -1,10 +1,10 @@
 PORTNAME=	krdc
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
-PORTREVISION=	1
 CATEGORIES=	net kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	RDP and VNC client for KDE
+WWW=		https://kde.org/applications/internet/krdc/
 
 LIB_DEPENDS=	libvncserver.so:net/libvncserver \
 		libssh.so:security/libssh
@@ -15,9 +15,9 @@ USE_KDE=	auth bookmarks codecs completion config configwidgets \
 		coreaddons dnssd doctools i18n iconthemes kcmutils \
 		notifications notifyconfig service wallet widgetsaddons \
 		windowsystem xmlgui \
-		ecm_build
+		ecm:build
 USE_QT=		core dbus gui network widgets xml \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 USE_XORG=	x11
 USE_LDCONFIG=	yes
 

@@ -1,5 +1,5 @@
 PORTNAME=	wsgi-intercept
-PORTVERSION=	1.10.0
+PORTVERSION=	1.11.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -7,6 +7,7 @@ DISTNAME=	wsgi_intercept-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	WSGI application in place of a real URI for testing
+WWW=		https://github.com/cdent/wsgi-intercept
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

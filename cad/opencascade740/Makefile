@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	740
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Open CASCADE Technology, 3D modeling & numerical simulation
+WWW=		https://www.opencascade.org/
 
 LICENSE=	OCTPL
 LICENSE_NAME=	LGPL21 with exception
@@ -75,6 +76,7 @@ VIS_LIB_DEPENDS=	libftgl.so:graphics/ftgl		\
 			libfreeimageplus.so:graphics/freeimage
 
 DOXYGEN_IMPLIES=	DOCS
+DOXYGEN_USES=	tex
 DOXYGEN_USE=	TEX=latex:build
 DOXYGEN_BUILD_DEPENDS=	bash:shells/bash		\
 			doxygen:devel/doxygen		\
@@ -138,6 +140,5 @@ regression-test:	install
 	CSF_TestDataPath=${OCCROOT}/data		\
 	DRAWEXE -f ${FILESDIR}/regtest "
 .endif
-
 
 .include <bsd.port.mk>

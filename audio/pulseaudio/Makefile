@@ -10,6 +10,7 @@ MASTER_SITES=	https://freedesktop.org/software/pulseaudio/releases/
 
 MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	Sound server for UNIX
+WWW=		https://pulseaudio.org/
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LGPL
@@ -111,6 +112,7 @@ post-patch:
 		-e 's|--directory|-d|g' \
 		${WRKSRC}/src/utils/pa-info
 	@${REINPLACE_CMD} -e 's|-Wmissing-include-dirs||g' \
+		-e 's|main ()|main (void)|g' \
 		${WRKSRC}/configure
 
 pre-install-TEST-on: do-test

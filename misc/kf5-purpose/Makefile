@@ -1,6 +1,5 @@
 PORTNAME=	purpose
 DISTVERSION=	${KDE_FRAMEWORKS_VERSION}
-PORTREVISION=	2
 CATEGORIES=	misc kde kde-frameworks
 
 MAINTAINER=	kde@FreeBSD.org
@@ -16,9 +15,9 @@ USE_GNOME=	intltool
 USE_KDE=	config completion coreaddons i18n kdeclarative kio \
 		kirigami2 notifications jobwidgets service solid \
 		widgetsaddons windowsystem \
-		ecm_build
+		ecm:build
 USE_QT=		concurrent core dbus declarative gui network widgets xml \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 USE_XORG=	x11
 
 .include <bsd.port.mk>

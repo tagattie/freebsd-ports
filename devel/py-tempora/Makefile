@@ -1,11 +1,12 @@
 PORTNAME=	tempora
-PORTVERSION=	5.0.2
+PORTVERSION=	5.1.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Objects and routines pertaining to date and time
+WWW=		https://github.com/jaraco/tempora
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

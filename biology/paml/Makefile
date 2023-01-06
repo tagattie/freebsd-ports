@@ -1,10 +1,11 @@
 PORTNAME=	paml
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.10.5
+DISTVERSION=	4.10.6
 CATEGORIES=	biology
 
 MAINTAINER=	jrm@FreeBSD.org
 COMMENT=	Phylogenetic Analysis by Maximum Likelihood (PAML)
+WWW=		http://abacus.gene.ucl.ac.uk/software/paml.html
 
 LICENSE=	GPLv3
 

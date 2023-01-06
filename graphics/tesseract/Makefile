@@ -1,10 +1,10 @@
 PORTNAME=	tesseract
-PORTVERSION=	5.2.0
-PORTREVISION=	1
+PORTVERSION=	5.3.0
 CATEGORIES=	graphics
 
 MAINTAINER=	pkubaj@FreeBSD.org
 COMMENT=	Commercial quality open source OCR engine
+WWW=		https://github.com/tesseract-ocr/tesseract
 
 LICENSE=	APACHE20
 

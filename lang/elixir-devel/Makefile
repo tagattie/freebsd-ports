@@ -1,6 +1,6 @@
 PORTNAME=	elixir
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.14.0
+DISTVERSION=	1.14.2
 PORTREVISION=	0
 CATEGORIES=	lang
 MASTER_SITES+=	https://github.com/elixir-lang/elixir/releases/download/${DISTVERSIONPREFIX}${PORTVERSION}/:doc
@@ -10,6 +10,7 @@ DIST_SUBDIR=	elixir/${PORTVERSION}
 
 MAINTAINER=	erlang@FreeBSD.org
 COMMENT=	Functional, meta-programming aware language built on top of Erlang VM
+WWW=		https://elixir-lang.org/
 
 LICENSE=	APACHE20
 
@@ -33,13 +34,12 @@ MAKE_ENV+=	MAN_PREFIX=${PREFIX}/man \
 OPTIONS_DEFINE=		DOCS
 OPTIONS_SUB=		yes
 
-ERLANG_VER=	24
+ERLANG_VER?=	24
 
 .include <bsd.port.options.mk>
 
 post-extract:
 	@${FIND} ${WRKDIR}/doc -name .build -delete
-
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}

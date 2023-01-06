@@ -2,8 +2,9 @@ PORTNAME=	clixon
 PORTVERSION=	5.8.0
 CATEGORIES=	devel
 
-MAINTAINER=	dcornejo@netgate.com
+MAINTAINER=	dave@dogwood.com
 COMMENT=	YANG-based toolchain including CLI, NETCONF and RESTCONF interfaces
+WWW=		https://www.clicon.org/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

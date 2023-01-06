@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.eukleides.org/files/
 
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	Euclidean geometry drawing language
+WWW=		http://www.eukleides.org/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -13,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 RUN_DEPENDS=	pstoedit:graphics/pstoedit \
 		getopt>=0:misc/getopt
 
-USES=		bison gettext iconv gmake readline tar:bzip2
+USES=		bison gettext iconv gmake readline tar:bzip2 tex
 USE_TEX=	latex
 INSTALL_TARGET=	install PREFIX=${STAGEDIR}${PREFIX}
 

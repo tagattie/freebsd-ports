@@ -1,11 +1,12 @@
 PORTNAME=	validate-pyproject
-PORTVERSION=	0.10
+PORTVERSION=	0.10.1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Validation library and CLI tool for checking on pyproject.toml files using JSON schema
+WWW=		https://github.com/abravalheri/validate-pyproject
 
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

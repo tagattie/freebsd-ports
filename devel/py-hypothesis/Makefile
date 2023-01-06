@@ -1,11 +1,12 @@
 PORTNAME=	hypothesis
-PORTVERSION=	6.54.4
+PORTVERSION=	6.58.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Library for property based testing
+WWW=		https://hypothesis.works/
 
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
@@ -20,6 +21,7 @@ USE_PYTHON=	autoplist concurrent distutils
 NO_ARCH=	yes
 
 OPTIONS_DEFINE=	CLI CODEMODS DATEUTIL DJANGO DPCONTRACTS GHOSTWRITER LARK NUMPY PANDAS PYTEST PYTZ REDIS
+OPTIONS_DEFAULT=CLI DATEUTIL DJANGO DPCONTRACTS GHOSTWRITER LARK NUMPY PANDAS PYTEST PYTZ REDIS
 CLI_DESC=		Command-line interface support
 CODEMODS_DESC=		Refactor deprecated or inefficient code
 DATEUTIL_DESC=		Provide dateutil timezones
@@ -50,7 +52,7 @@ REDIS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}redis>=3.0.0:databases/py-redis@${PY_F
 .include <bsd.port.pre.mk>
 
 .if ${PYTHON_REL} < 31100
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}exceptiongroup>=1.0.0rc8:devel/py-exceptiongroup@${PY_FLAVOR}
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}exceptiongroup>=1.0.0:devel/py-exceptiongroup@${PY_FLAVOR}
 .endif
 
 .include <bsd.port.post.mk>

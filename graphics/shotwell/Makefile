@@ -1,11 +1,11 @@
 PORTNAME=	shotwell
-PORTVERSION=	0.30.16
-PORTREVISION=	1
+PORTVERSION=	0.30.17
 CATEGORIES=	graphics gnome
 MASTER_SITES=	GNOME
 
 MAINTAINER=	cmt@FreeBSD.org
 COMMENT=	Open source photo manager for GNOME
+WWW=		https://wiki.gnome.org/Apps/Shotwell
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING

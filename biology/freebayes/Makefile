@@ -1,10 +1,12 @@
 PORTNAME=		freebayes
 DISTVERSIONPREFIX=	v
 DISTVERSION=		1.3.6
+PORTREVISION=		1
 CATEGORIES=		biology
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Bayesian haplotype-based polymorphism discovery and genotyping
+WWW=		https://github.com/ekg/freebayes
 
 LICENSE=	MIT
 

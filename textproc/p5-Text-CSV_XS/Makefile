@@ -1,5 +1,5 @@
 PORTNAME=	Text-CSV_XS
-DISTVERSION=	1.48
+DISTVERSION=	1.49
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:HMBRAND
@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	svysh.fbsd@gmail.com
 COMMENT=	Comma-separated values manipulation routines
+WWW=		https://metacpan.org/release/Text-CSV_XS
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -1,11 +1,11 @@
 PORTNAME=	phpldapadmin
-PORTVERSION=	1.2.6.3
-PORTREVISION=	1
+PORTVERSION=	1.2.6.4
 CATEGORIES=	net www
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
 MAINTAINER=	ports@bsdserwis.com
 COMMENT=	PHP application to administer LDAP over the web
+WWW=		http://phpldapadmin.sourceforge.net/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -43,7 +43,6 @@ SUB_FILES+=	pkg-message
 
 post-patch:
 	cd ${WRKSRC} ;							    \
-	${CP} lib/Attribute.php lib/PLAAttribute.php;			    \
 	${FIND} . ! -type d ! -name ${CFGFILE}.example ! -name .cvsignore   \
 	    ! -name .gitignore ! -name *.orig 				    \
 	    ! -name Attribute.php | ${SORT} |				    \

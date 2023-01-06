@@ -1,11 +1,12 @@
 PORTNAME=	htslib
-DISTVERSION=	1.15
+DISTVERSION=	1.16
 CATEGORIES=	biology devel
 # Github generated distfiles are incomplete, so use custom tarball
 MASTER_SITES=	https://github.com/samtools/htslib/releases/download/${DISTVERSION}/
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	C library for high-throughput sequencing data formats
+WWW=		https://www.htslib.org/
 
 LICENSE=	BSD3CLAUSE MIT
 LICENSE_COMB=	multi

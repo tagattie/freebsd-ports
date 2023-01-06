@@ -1,11 +1,11 @@
 PORTNAME=	net-scp
-PORTVERSION=	3.0.0
-PORTREVISION=	1
+PORTVERSION=	4.0.0
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Non-interactive SCP processing
+WWW=		https://github.com/net-ssh/net-scp
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

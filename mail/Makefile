@@ -83,6 +83,7 @@
     SUBDIR += cyrus-imapd30
     SUBDIR += cyrus-imapd32
     SUBDIR += cyrus-imapd34
+    SUBDIR += cyrus-imapd36
     SUBDIR += cyrus2courier
     SUBDIR += cyrus2dovecot
     SUBDIR += davmail
@@ -206,6 +207,7 @@
     SUBDIR += mailman-postfix
     SUBDIR += mailman3
     SUBDIR += mailscanner
+    SUBDIR += mailslurper
     SUBDIR += mailsync
     SUBDIR += mailutils
     SUBDIR += mailx
@@ -453,7 +455,6 @@
     SUBDIR += perdition
     SUBDIR += pflogsumm
     SUBDIR += pfqueue
-    SUBDIR += php74-imap
     SUBDIR += php80-imap
     SUBDIR += php81-imap
     SUBDIR += php82-imap
@@ -481,6 +482,7 @@
     SUBDIR += postfixadmin-lite
     SUBDIR += postfixadmin33
     SUBDIR += postfixadmin33-lite
+    SUBDIR += postforward
     SUBDIR += postgrey
     SUBDIR += postsrsd
     SUBDIR += prepflog
@@ -503,6 +505,7 @@
     SUBDIR += py-flufl.bounce
     SUBDIR += py-fuglu
     SUBDIR += py-imapclient
+    SUBDIR += py-imaplib2
     SUBDIR += py-mail-parser
     SUBDIR += py-mailmanclient
     SUBDIR += py-mailnag
@@ -511,6 +514,7 @@
     SUBDIR += py-milter
     SUBDIR += py-notmuch
     SUBDIR += py-notmuch2
+    SUBDIR += py-offlineimap3
     SUBDIR += py-postfix-mta-sts-resolver
     SUBDIR += py-premailer
     SUBDIR += py-pymailq
@@ -518,6 +522,7 @@
     SUBDIR += py-pyspf
     SUBDIR += py-python-slimta
     SUBDIR += py-pyzmail
+    SUBDIR += py-rfc6555
     SUBDIR += py-spf-engine
     SUBDIR += py-validate_email
     SUBDIR += pymsgauth
@@ -559,9 +564,11 @@
     SUBDIR += roundcube-automatic_addressbook
     SUBDIR += roundcube-calendar-kolab
     SUBDIR += roundcube-carddav
+    SUBDIR += roundcube-classic
     SUBDIR += roundcube-contextmenu
     SUBDIR += roundcube-html5_notifier
     SUBDIR += roundcube-identity_smtp
+    SUBDIR += roundcube-larry
     SUBDIR += roundcube-login_info
     SUBDIR += roundcube-sauserprefs
     SUBDIR += roundcube-thunderbird_labels
@@ -605,6 +612,7 @@
     SUBDIR += rubygem-roadie
     SUBDIR += rubygem-roadie-rails-rails4
     SUBDIR += rubygem-roadie-rails-rails52
+    SUBDIR += rubygem-roadie-rails-rails61
     SUBDIR += rubygem-roadie3
     SUBDIR += rubygem-ruby-qmail
     SUBDIR += rubygem-valid_email

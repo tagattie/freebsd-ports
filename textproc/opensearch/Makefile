@@ -1,17 +1,20 @@
 PORTNAME=	opensearch
-DISTVERSION=	2.2.0
+DISTVERSION=	2.4.0
 DISTVERSIONSUFFIX=	-linux-x64
 CATEGORIES=	textproc java devel
-MASTER_SITES=	https://artifacts.opensearch.org/releases/bundle/${PORTNAME}/${PORTVERSION}/
+MASTER_SITES=	https://artifacts.opensearch.org/releases/bundle/${PORTNAME}/${DISTVERSION}/
 
 MAINTAINER=	opensearch@FreeBSD.org
 COMMENT=	Full-text search engine for Java
+WWW=		https://opensearch.org
 
 LICENSE=	APACHE20
 
 BUILD_DEPENDS=	jna>0:devel/jna
 RUN_DEPENDS=	bash>0:shells/bash \
 		jna>0:devel/jna
+
+CONFLICTS=	opensearch13
 
 USES=		cpe shebangfix
 USE_JAVA=	yes
@@ -32,13 +35,12 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 OPTIONS_DEFINE=	PLUGINS
 OPTIONS_DEFAULT=PLUGINS
-OPTIONS_SUB=	yes
 
 .include <bsd.port.options.mk>
 
 CONFIG_FILES=	opensearch.yml jvm.options log4j2.properties
 
-PLUGINS_CONFIG_FILES= \
+PLUGINS_CONFIG_FILES?= \
 		opensearch-notifications-core/notifications-core.yml \
 		opensearch-notifications/notifications.yml \
 		opensearch-observability/observability.yml \
@@ -48,8 +50,8 @@ PLUGINS_CONFIG_FILES= \
 		opensearch-performance-analyzer/performance-analyzer.properties \
 		opensearch-performance-analyzer/plugin-stats-metadata \
 		opensearch-performance-analyzer/rca.conf \
-		opensearch-performance-analyzer/rca_idle_master.conf \
-		opensearch-performance-analyzer/rca_master.conf \
+		opensearch-performance-analyzer/rca_idle_cluster_manager.conf \
+		opensearch-performance-analyzer/rca_cluster_manager.conf \
 		opensearch-performance-analyzer/supervisord.conf \
 		opensearch-reports-scheduler/reports-scheduler.yml \
 		opensearch-security/action_groups.yml \
@@ -110,11 +112,23 @@ do-install-PLUGINS-on:
 		 ${STAGEDIR}${ETCDIR}/opensearch-security
 .for f in ${PLUGINS_CONFIG_FILES}
 	${INSTALL} ${WRKSRC}/config/${f} ${STAGEDIR}${ETCDIR}/${f}.sample
+	${ECHO} "@sample ${ETCDIR}/${f}.sample" >> ${TMPPLIST}
 .endfor
 .for f in ${PLUGINS_SAMPLE_CONFIG_FILES}
 	${INSTALL} ${WRKSRC}/config/${f}.example ${STAGEDIR}${ETCDIR}/${f}.sample
+	${ECHO} "${ETCDIR}/${f}.sample" >> ${TMPPLIST}
 .endfor
 	(cd ${WRKSRC}/ && ${COPYTREE_SHARE} "plugins" ${STAGEDIR}${PREFIX}/lib/opensearch/)
 	(cd ${WRKSRC}/plugins/opensearch-security/tools && ${COPYTREE_BIN} "*.sh" ${STAGEDIR}${PREFIX}/lib/opensearch/plugins/opensearch-security/tools)
+
+post-install:
+.for f in ${CONFIG_FILES}
+	${ECHO} "@sample ${ETCDIR}/${f}.sample" >> ${TMPPLIST}
+.endfor
+	${FIND} -s ${STAGEDIR}${PREFIX}/lib/opensearch -not -type d | ${SORT} | \
+		${SED} -e 's#^${STAGEDIR}${PREFIX}/##' >> ${TMPPLIST}
+	${ECHO} "@dir lib/opensearch/plugins" >> ${TMPPLIST}
+	${ECHO} "@dir libexec/opensearch" >> ${TMPPLIST}
+	${ECHO} "@dir(opensearch,opensearch,0755) ${ETCDIR}" >> ${TMPPLIST}
 
 .include <bsd.port.mk>

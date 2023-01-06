@@ -1,10 +1,10 @@
 PORTNAME=	privatebin
-PORTVERSION=	1.4.0
-PORTREVISION=	1
+PORTVERSION=	1.5.1
 CATEGORIES=	www security
 
 MAINTAINER=	dvl@FreeBSD.org
 COMMENT=	Simple end-to-end encrypting zero-knowledge paste-bin server
+WWW=		https://privatebin.info/
 
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

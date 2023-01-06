@@ -1,6 +1,5 @@
 PORTNAME=	botan
-DISTVERSION=	2.19.2
-PORTREVISION=	2
+DISTVERSION=	2.19.3
 CATEGORIES=	security
 MASTER_SITES=	http://botan.randombit.net/releases/
 PKGNAMESUFFIX=	2
@@ -8,6 +7,7 @@ DISTNAME=	Botan-${PORTVERSION}
 
 MAINTAINER=	fluffy@FreeBSD.org
 COMMENT=	Portable, easy to use and efficient C++ crypto library
+WWW=		https://botan.randombit.net/
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/license.txt

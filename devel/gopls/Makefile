@@ -1,17 +1,17 @@
 PORTNAME=	gopls
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9.4
+DISTVERSION=	0.11.0
 CATEGORIES=	devel
 
 MAINTAINER=	fuz@fuz.su
 COMMENT=	Go language LSP server
+WWW=		https://pkg.go.dev/golang.org/x/tools/gopls
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		go:modules
 GO_MODULE=	golang.org/x/tools/gopls
-GO_TARGET=	.
 
 OPTIONS_DEFINE=	DOCS
 

@@ -1,9 +1,10 @@
 PORTNAME=	xarchiver
-DISTVERSION=	0.5.4.19
+DISTVERSION=	0.5.4.20
 CATEGORIES=	archivers
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Desktop-agnostic GTK frontend to various archiving tools
+WWW=		https://github.com/ib/xarchiver
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

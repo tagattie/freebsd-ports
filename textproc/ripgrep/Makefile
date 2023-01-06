@@ -1,10 +1,11 @@
 PORTNAME=	ripgrep
 DISTVERSION=	13.0.0
-PORTREVISION=	13
+PORTREVISION=	16
 CATEGORIES=	textproc
 
 MAINTAINER=	petteri.valkonen@iki.fi
 COMMENT=	Command line search tool
+WWW=		https://blog.burntsushi.net/ripgrep/
 
 LICENSE=	MIT UNLICENSE
 LICENSE_COMB=	dual

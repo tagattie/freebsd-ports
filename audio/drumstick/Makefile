@@ -6,12 +6,13 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	MIDI libraries for Qt/C++
+WWW=		https://sourceforge.net/projects/drumstick
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		compiler:c++11-lang cmake desktop-file-utils pkgconfig qt:6 shared-mime-info tar:bz2
-USE_QT=		base svg 5compat tools_build
+USE_QT=		base svg 5compat tools:build
 USE_LDCONFIG=	yes
 
 CMAKE_ARGS=	-DUSE_QT=6

@@ -1,11 +1,12 @@
 PORTNAME=	nheko
 DISTVERSIONPREFIX=v
-DISTVERSION=	0.10.0
-PORTREVISION=	2
+DISTVERSION=	0.10.2
+PORTREVISION=	1
 CATEGORIES=	net-im
 
 MAINTAINER=	adridg@FreeBSD.org
 COMMENT=	Matrix IM client based on Qt technologies
+WWW=		https://nheko.im/nheko-reborn/nheko/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -28,8 +29,8 @@ USES=		cmake compiler:c++17-lang desktop-file-utils \
 		localbase:ldflags pkgconfig qt:5 ssl tar:xz
 USE_QT=		concurrent core dbus declarative gui multimedia network \
 		quickcontrols2 svg widgets \
-		graphicaleffects_run \
-		buildtools_build linguist_build qmake_build
+		graphicaleffects:run \
+		buildtools:build linguist:build qmake:build
 
 # There is one external dependency: lmdb++
 #  - lmdb++ is a single header file, it just needs to be included

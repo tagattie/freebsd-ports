@@ -1,10 +1,11 @@
 PORTNAME=	active_scaffold
-PORTVERSION=	3.6.12
+PORTVERSION=	3.6.14
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Gem to handle all CRUD user interface needs
+WWW=		https://github.com/activescaffold/active_scaffold
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

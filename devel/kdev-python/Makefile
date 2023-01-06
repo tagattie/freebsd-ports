@@ -1,10 +1,10 @@
 PORTNAME=	kdev-python
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
-PORTREVISION=	1
 CATEGORIES=	devel kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Python support for KDevelop
+WWW=		https://www.kdevelop.org/
 
 LICENSE=	GPLv2+
 
@@ -17,11 +17,11 @@ USE_KDE=	attica auth codecs completion config configwidgets coreaddons \
 		solid sonnet syntaxhighlighting texteditor textwidgets \
 		threadweaver widgetsaddons windowsystem xmlgui
 USE_QT=		concurrent core dbus gui network widgets xml \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 USE_XORG=	x11
 
 # Versioning values, to reduce plist churn (match with devel/kdevelop)
-PLATFORM_VER=	37
+PLATFORM_VER=	510
 PLIST_SUB+=	PLATFORM_VER=${PLATFORM_VER}
 
 # Does not build with jobs.

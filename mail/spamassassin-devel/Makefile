@@ -5,11 +5,12 @@ PKGNAMESUFFIX=	-devel
 
 MAINTAINER?=	cy@FreeBSD.org
 COMMENT?=	Highly efficient mail filter for identifying spam
+WWW=		https://spamassassin.apache.org/
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	apache
-GH_TAGNAME=	16dacd8e7
-SA_COMMIT_DATE=	2022.08.28
+GH_TAGNAME=	8fda3fa8a
+SA_COMMIT_DATE=	2023.01.03
 
 LICENSE=	APACHE20
 

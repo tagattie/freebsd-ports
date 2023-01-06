@@ -1,21 +1,21 @@
---- base/threading/platform_thread_posix.cc.orig	2022-03-28 18:11:04 UTC
+--- base/threading/platform_thread_posix.cc.orig	2022-12-06 08:09:13 UTC
 +++ base/threading/platform_thread_posix.cc
-@@ -75,7 +75,7 @@ void* ThreadFunc(void* params) {
+@@ -78,7 +78,7 @@ void* ThreadFunc(void* params) {
      if (!thread_params->joinable)
        base::DisallowSingleton();
  
 -#if !BUILDFLAG(IS_NACL)
 +#if !BUILDFLAG(IS_NACL) && !BUILDFLAG(IS_BSD)
- #if BUILDFLAG(USE_PARTITION_ALLOC_AS_MALLOC)
-     internal::PCScan::NotifyThreadCreated(internal::GetStackPointer());
- #endif
-@@ -362,6 +362,9 @@ bool PlatformThread::CanChangeThreadPriority(ThreadPri
- // static
- void PlatformThread::SetCurrentThreadPriorityImpl(ThreadPriority priority) {
+ #if BUILDFLAG(USE_PARTITION_ALLOC_AS_MALLOC) && BUILDFLAG(STARSCAN)
+     partition_alloc::internal::PCScan::NotifyThreadCreated(
+         partition_alloc::internal::GetStackPointer());
+@@ -380,6 +380,9 @@ void SetCurrentThreadTypeImpl(ThreadType thread_type,
+                               MessagePumpType pump_type_hint) {
  #if BUILDFLAG(IS_NACL)
-+  NOTIMPLEMENTED();
+   NOTIMPLEMENTED();
 +// avoid pledge(2) violation
 +#elif BUILDFLAG(IS_BSD)
-   NOTIMPLEMENTED();
++   NOTIMPLEMENTED();
  #else
-   if (internal::SetCurrentThreadPriorityForPlatform(priority))
+   if (internal::SetCurrentThreadTypeForPlatform(thread_type, pump_type_hint))
+     return;

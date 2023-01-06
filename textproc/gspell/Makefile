@@ -1,11 +1,13 @@
 PORTNAME=	gspell
 PORTVERSION=	1.10.0
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Spell checking for GTK+
+WWW=		https://wiki.gnome.org/Projects/gspell
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING

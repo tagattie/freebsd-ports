@@ -1,7 +1,7 @@
 PORTNAME=	arataga
 PORTVERSION=	0.5.1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	SF/sobjectizer/oess/oess-2:oess
 DISTFILES=	oess-2.2.3-full.tar.bz2:oess
@@ -11,6 +11,7 @@ PATCHFILES=	0ec1144117ae.patch:-p2 1c78ad1dbca8.patch:-p2
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Performant SOCKS5/HTTP1.1 proxy server
+WWW=		https://github.com/Stiffstream/arataga
 
 LICENSE=	AGPLv3
 

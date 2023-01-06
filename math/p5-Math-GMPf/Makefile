@@ -1,11 +1,12 @@
 PORTNAME=	Math-GMPf
-PORTVERSION=	0.48
+PORTVERSION=	0.49
 CATEGORIES=	math perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Perl interface to the GMP library floating point (mpf) functions
+WWW=		https://metacpan.org/release/Math-GMPf
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -1,10 +1,10 @@
 PORTNAME=	kwin
 DISTVERSION=	${KDE_PLASMA_VERSION}
-PORTREVISION=	1
 CATEGORIES=	x11-wm kde kde-plasma
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Plasma5 window manager
+WWW=		https://www.kde.org/plasma-desktop
 
 LICENSE=	GPLv2
 
@@ -40,12 +40,12 @@ USE_KDE=	activities attica auth breeze codecs completion config \
 		notifications package plasma-framework \
 		plasma-wayland-protocols runner service sonnet textwidgets \
 		wayland widgetsaddons windowsystem xmlgui \
-		doctools_build ecm_build
+		doctools:build ecm:build
 USE_LDCONFIG=	yes
 USE_QT=		concurrent core dbus declarative gui multimedia network script \
 		sensors uiplugin uitools widgets x11extras xml \
-		buildtools_build qmake_build testlib_build \
-		quickcontrols2_run virtualkeyboard_run
+		buildtools:build qmake:build testlib:build \
+		quickcontrols2:run virtualkeyboard:run
 USE_XORG=	ice sm x11 xcb xext xi
 SHEBANG_FILES=	kconf_update/*.py \
 		kconf_update/*.pl

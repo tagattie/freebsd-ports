@@ -4,8 +4,9 @@ CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	cs@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Plugin that verifies YubiKey OTP tokens
+WWW=		https://pypi.org/project/django-otp-yubikey/
 
 LICENSE=	BSD2CLAUSE
 

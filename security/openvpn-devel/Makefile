@@ -1,5 +1,5 @@
 PORTNAME=	openvpn
-DISTVERSION=	g20220820
+DISTVERSION=	g20221228
 PORTREVISION=	0
 PORTEPOCH=	1
 CATEGORIES=	security net net-vpn
@@ -9,6 +9,7 @@ MAINTAINER=	gert@greenie.muc.de
 # let's use ?= in spite of portlint WARNings because this might become
 # security/openvpn one day which would then have a slave port:
 COMMENT?=	Secure IP/Ethernet tunnel daemon
+WWW=		https://openvpn.net/community/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT.GPL
@@ -17,13 +18,15 @@ BUILD_DEPENDS+=	cmocka>=0:sysutils/cmocka \
 		rst2man:textproc/py-docutils
 LIB_DEPENDS+=	liblzo2.so:archivers/lzo2
 
-USES=		autoreconf cpe libtool pkgconfig shebangfix tar:xz
+USES=		autoreconf cpe libtool pkgconfig python:build shebangfix tar:xz
 IGNORE_SSL=	libressl libressl-devel
 USE_GITLAB=	yes
-GL_COMMIT=	734de8f9aa2df56bcb45ebab7cfa799a23f36403
+GL_COMMIT=	84e70c479e81eebe9933bec586c5fd144456294d
 USE_RC_SUBR=	openvpn
 
-SHEBANG_FILES=	sample/sample-scripts/auth-pam.pl sample/sample-scripts/ucn.pl \
+SHEBANG_FILES=	sample/sample-scripts/auth-pam.pl \
+		sample/sample-scripts/totpauth.py \
+		sample/sample-scripts/ucn.pl \
 		sample/sample-scripts/verify-cn
 
 GNU_CONFIGURE=		yes
@@ -50,7 +53,7 @@ PORTEXAMPLES=	*
 
 OPTIONS_DEFINE=		DOCS EASYRSA EXAMPLES LZ4 PKCS11 SMALL DCO TEST \
 			X509ALTUSERNAME
-OPTIONS_DEFAULT=	EASYRSA LZ4 OPENSSL TEST
+OPTIONS_DEFAULT=	EASYRSA LZ4 OPENSSL TEST DCO
 OPTIONS_EXCLUDE_FreeBSD_12=	DCO # FreeBSD 14 only
 OPTIONS_EXCLUDE_FreeBSD_13=	DCO # FreeBSD 14 only
 OPTIONS_SINGLE=		SSL

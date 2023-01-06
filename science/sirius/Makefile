@@ -1,6 +1,7 @@
 PORTNAME=	sirius
 DISTVERSIONPREFIX=	v
 DISTVERSION=	7.3.2
+PORTREVISION=	3
 CATEGORIES=	science
 PKGNAMESUFFIX=	-quantum-chemistry # other software also has the name "sirius"
 
@@ -9,6 +10,7 @@ PATCHFILES=	c45ef15637958885b1b299c09ec1bf9376e50ecc.patch:-p1 # https://github.
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Domain specific library for electronic structure calculations
+WWW=		https://github.com/electronic-structure/SIRIUS
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -1,10 +1,11 @@
 PORTNAME=	tins
-PORTVERSION=	1.31.1
+PORTVERSION=	1.32.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Useful tools library in Ruby
+WWW=		https://github.com/flori/tins
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

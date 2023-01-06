@@ -1,10 +1,11 @@
 PORTNAME=	gromacs
-DISTVERSION=	2022.3
+DISTVERSION=	2022.4
 CATEGORIES=	science
 MASTER_SITES=	ftp://ftp.gromacs.org/pub/gromacs/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Compute molecular dynamics
+WWW=		https://www.gromacs.org/
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING

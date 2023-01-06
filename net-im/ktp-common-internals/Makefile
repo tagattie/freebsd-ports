@@ -1,10 +1,10 @@
 PORTNAME=	ktp-common-internals
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
-PORTREVISION=	1
 CATEGORIES=	net-im kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE Telepathy internal library
+WWW=		https://community.kde.org/KTp
 
 LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \
 		libsignon-qt5.so:sysutils/signon-qt5 \
@@ -26,9 +26,9 @@ USE_KDE=	auth bookmarks codecs completion config configwidgets \
 		kio notifications notifyconfig parts people service solid \
 		sonnet syntaxhighlighting texteditor textwidgets wallet widgetsaddons \
 		windowsystem xmlgui \
-		ecm_build
+		ecm:build
 USE_QT=		concurrent core dbus declarative gui network sql widgets xml \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 USE_XORG=	x11
 USE_LDCONFIG=	yes
 

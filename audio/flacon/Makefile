@@ -1,10 +1,11 @@
 PORTNAME=	flacon
-PORTVERSION=	9.2.0
+PORTVERSION=	9.5.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	audio
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Graphical audio file extractor and encoder
+WWW=		https://flacon.github.io/
 
 LICENSE=	LGPL21+
 
@@ -15,13 +16,13 @@ TEST_DEPENDS=	alacenc:audio/alacenc \
 		lame:audio/lame mac:audio/mac \
 		mediainfo:multimedia/mediainfo \
 		oggenc:audio/vorbis-tools \
-		opusenc:audio/opus-tools \
+		opusenc:audio/opus-tools sox:audio/sox \
 		ttaenc:audio/tta wavpack:audio/wavpack
 
 USES=		cmake compiler:c++11-lang desktop-file-utils pkgconfig qt:5
 USE_GITHUB=	yes
-USE_QT=		buildtools_build concurrent_build qmake_build testlib_build \
-		linguisttools_build core gui network widgets
+USE_QT=		buildtools:build concurrent:build qmake:build testlib:build \
+		linguisttools:build core gui network widgets
 CMAKE_ARGS=	-DBUILD_TESTS:BOOL=YES
 
 do-test:

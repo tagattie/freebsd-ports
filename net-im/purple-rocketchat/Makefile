@@ -1,9 +1,10 @@
 PORTNAME=	purple-rocketchat
-PORTVERSION=	0.20211002
+PORTVERSION=	0.20220915
 CATEGORIES=	net-im
 
 MAINTAINER=	mizhka@freebsd.org
 COMMENT=	Rocket.Chat Plugin for libpurple
+WWW=		https://github.com/EionRobb/purple-rocketchat
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -15,7 +16,7 @@ LIB_DEPENDS=	libjson-glib-1.0.so:devel/json-glib \
 USES=		dos2unix gmake gnome pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	EionRobb
-GH_TAGNAME=	5c08ad0eacd39914d27b692d7eb42a94a991fb4c
+GH_TAGNAME=	a8a887c0c34402293bcf782f1cb76a0046f4a0a0
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 

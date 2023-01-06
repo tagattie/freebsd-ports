@@ -1,11 +1,12 @@
 PORTNAME=	ruamel.yaml.clib
-PORTVERSION=	0.2.6
+PORTVERSION=	0.2.7
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	C version of reader, parser and emitter for ruamel.yaml
+WWW=		https://sourceforge.net/projects/ruamel-yaml-clib/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

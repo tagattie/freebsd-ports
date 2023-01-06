@@ -1,12 +1,13 @@
 PORTNAME=	libgd
 PORTVERSION=	2.3.3
-PORTREVISION=	1
+PORTREVISION=	5
 PORTEPOCH=	1
 CATEGORIES+=	graphics
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/gd-${PORTVERSION}/
 
 MAINTAINER?=	dinoex@FreeBSD.org
 COMMENT?=	Graphics library for fast creation of images
+WWW=		https://libgd.github.io/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -24,7 +25,7 @@ USE_LDCONFIG=	yes
 TEST_TARGET=	check
 
 OPTIONS_DEFINE=	PNG JPEG WEBP TIFF XPM HEIF AVIF LIQ FREETYPE FONTCONFIG RAQM ICONV
-OPTIONS_DEFAULT=PNG JPEG WEBP TIFF LIQ FREETYPE FONTCONFIG ICONV
+OPTIONS_DEFAULT=PNG JPEG WEBP TIFF FREETYPE FONTCONFIG ICONV
 NO_OPTIONS_SORT=yes
 OPTIONS_SUB=	yes
 PNG_LIB_DEPENDS=	libpng.so:graphics/png
@@ -46,6 +47,7 @@ AVIF_LIB_DEPENDS=	libavif.so:graphics/libavif
 AVIF_CONFIGURE_OFF=	--without-avif
 AVIF_CPPFLAGS=		-I${LOCALBASE}/include
 AVIF_USES=		autoreconf
+AVIF_BROKEN=	option AVIF has a circular dependency loop
 LIQ_DESC=	libimagequant color conversion support
 LIQ_LIB_DEPENDS=	libimagequant.so:graphics/libimagequant
 LIQ_CONFIGURE_OFF=	--with-liq=no

@@ -1,11 +1,12 @@
 PORTNAME=	App-Regather
-PORTVERSION=	0.84.00
+PORTVERSION=	0.85.00
 CATEGORIES=	sysutils perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	zeus@gnu.org.ua
 COMMENT=	Script to perform actions on LDAP syncrepl events
+WWW=		https://metacpan.org/release/App-Regather
 
 LICENSE=	GPLv3+
 

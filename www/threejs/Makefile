@@ -1,10 +1,11 @@
 PORTNAME=	three.js
-PORTVERSION=	144
+PORTVERSION=	148
 DISTVERSIONPREFIX=	r
 CATEGORIES=	www
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	JavaScript 3D library
+WWW=		https://threejs.org/
 
 LICENSE=	MIT
 

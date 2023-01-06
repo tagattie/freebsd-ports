@@ -1,11 +1,12 @@
 PORTNAME=	jquery-rails
-PORTVERSION=	4.5.0
+PORTVERSION=	4.5.1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-rails50
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Provides a Rails generator for jQuery
+WWW=		https://github.com/rails/jquery-rails
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE

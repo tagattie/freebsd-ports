@@ -2,6 +2,9 @@ PORTNAME=	kwayland
 DISTVERSION=	${KDE_FRAMEWORKS_VERSION}
 CATEGORIES=	x11 kde kde-frameworks
 
+PATCH_SITES=	https://invent.kde.org/frameworks/kwayland/-/commit/
+PATCHFILES=	f2e900261c0dfc44397b6e89eda86a098652b1de.diff:-p1
+
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KF5 Client and Server library wrapper for the Wayland libraries
 
@@ -16,8 +19,8 @@ LICENSE_COMB=	dual
 USES=		cmake compiler:c++11-lib gettext gl kde:5 pkgconfig \
 		qt:5 tar:xz
 USE_GL=		egl
-USE_KDE=	ecm_build
+USE_KDE=	ecm:build
 USE_QT=		concurrent core gui wayland \
-		buildtools_build qmake_build testlib_build
+		buildtools:build qmake:build testlib:build
 
 .include <bsd.port.mk>

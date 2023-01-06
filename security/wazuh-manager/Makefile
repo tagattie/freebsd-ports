@@ -1,22 +1,23 @@
 PORTNAME=	wazuh
-DISTVERSION=	4.3.7
+DISTVERSION=	4.3.10
 DISTVERSIONPREFIX=	v
 CATEGORIES=	security
-MASTER_SITES=	https://packages.wazuh.com/deps/16/libraries/sources/:wazuh_sources \
+MASTER_SITES=	https://packages.wazuh.com/deps/17/libraries/sources/:wazuh_sources \
 		LOCAL/acm/${PORTNAME}/:wazuh_cache
 PKGNAMESUFFIX=	-manager
 DISTFILES=	${EXTERNAL_DISTFILES} \
-		${PORTNAME}-cache-any${EXTRACT_SUFX}:wazuh_cache
+		${PORTNAME}-cache-any-${DISTVERSION}${EXTRACT_SUFX}:wazuh_cache
 DIST_SUBDIR=	${PORTNAME}-${DISTVERSION}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Security tool to monitor and check logs and intrusions (manager)
+WWW=		https://wazuh.com/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	cmake:devel/cmake
+BUILD_DEPENDS=	cmake:devel/cmake-core
 LIB_DEPENDS+=	libgdbm.so:databases/gdbm \
 		libnghttp2.so:www/libnghttp2
 
@@ -29,7 +30,7 @@ USE_RC_SUBR=	${PORTNAME}${PKGNAMESUFFIX}
 
 MAKE_ARGS+=	TARGET=server INSTALLDIR=${WAZUHPREFIX} INSTALL_SHARED="${INSTALL_LIB}" PYTHON_SOURCE=yes
 
-WAZUH_CACHEFILE=	${PORTNAME}-cache-any${EXTRACT_SUFX}
+WAZUH_CACHEFILE=	${PORTNAME}-cache-any-${DISTVERSION}${EXTRACT_SUFX}
 EXTERNAL_DISTFILES=	cJSON.tar.gz:wazuh_sources \
 			curl.tar.gz:wazuh_sources \
 			libdb.tar.gz:wazuh_sources \
@@ -103,7 +104,7 @@ WAZUHMOD750=	/ /logs/wazuh /logs/archives /logs/alerts /logs/firewall \
 		/wodles/aws /wodles/azure /wodles/docker /wodles/gcloud \
 		/wodles/gcloud/buckets /wodles/gcloud/pubsub /wodles/oscap \
 		/wodles/oscap/content /stats /integrations
-         
+
 WAZUHMOD770=	/etc/decoders /etc/lists /etc/lists/amazon /etc/rootcheck \
 		/etc/rules /etc/shared/default /logs /queue/agent-groups \
 		/queue/alerts /queue/cluster /queue/fim /queue/fim/db \

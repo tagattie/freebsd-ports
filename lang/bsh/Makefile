@@ -1,9 +1,10 @@
 PORTNAME=	bsh
-DISTVERSION=	2.1.0
+DISTVERSION=	2.1.1
 CATEGORIES=	lang java
 
 MAINTAINER=	pfg@FreeBSD.org
 COMMENT=	Beanshell java scripting language
+WWW=		http://www.beanshell.org/
 
 LICENSE=	APACHE20
 

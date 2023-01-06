@@ -7,6 +7,7 @@ CATEGORIES=	deskutils kde
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Desktop organization tool
+WWW=		https://basket-notepads.github.io/
 
 LICENSE=	GPLv2
 
@@ -23,7 +24,7 @@ USE_KDE=	ecm archive auth codecs completion config configwidgets \
 		notifications parts service solid sonnet textwidgets \
 		widgetsaddons windowsystem xmlgui
 USE_QT=		concurrent core dbus gui network phonon4 testlib widgets xml \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 USE_XORG=	x11
 
 USE_GITHUB=	yes

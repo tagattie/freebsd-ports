@@ -1,12 +1,13 @@
 PORTNAME=	DBD-InterBase
 PORTVERSION=	0.48
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	yuri@rivera.ru
 COMMENT=	DBI driver for InterBase/Firebird/Yaffil RDBMS server
+WWW=		https://metacpan.org/release/DBD-InterBase
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-DBI>=0:databases/p5-DBI

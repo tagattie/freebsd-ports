@@ -1,11 +1,12 @@
 PORTNAME=	pydicom
-PORTVERSION=	2.3.0
+PORTVERSION=	2.3.1
 DISTVERSIONPREFIX=v
 CATEGORIES=	science python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Read, modify, and write DICOM files with Python code
+WWW=		https://github.com/pydicom/pydicom
 
 LICENSE=	MIT
 

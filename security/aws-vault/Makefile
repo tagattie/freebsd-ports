@@ -1,11 +1,11 @@
 PORTNAME=	aws-vault
 DISTVERSIONPREFIX=	v
-DISTVERSION=	6.6.0
-PORTREVISION=	3
+DISTVERSION=	6.6.1
 CATEGORIES=	security
 
 MAINTAINER=	dmgk@FreeBSD.org
 COMMENT=	Vault for securely storing and accessing AWS credentials
+WWW=		https://github.com/99designs/aws-vault
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

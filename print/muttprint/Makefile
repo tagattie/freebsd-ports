@@ -6,6 +6,7 @@ MASTER_SITES=	SF/muttprint/muttprint/muttprint-${PORTVERSION}
 
 MAINTAINER=	guru@unixarea.de
 COMMENT=	Utility to print mail for most any mail client
+WWW=		http://muttprint.sourceforge.net/
 
 LICENSE=	GPLv2
 
@@ -16,7 +17,7 @@ RUN_DEPENDS=	psnup:print/psutils \
 		p5-Text-Iconv>=0:converters/p5-Text-Iconv
 
 GNU_CONFIGURE=	yes
-USES=		autoreconf gmake perl5
+USES=		autoreconf gmake perl5 tex
 USE_TEX=	latex dvipsk
 
 NO_BUILD=	yes

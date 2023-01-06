@@ -1,9 +1,10 @@
 PORTNAME=	${GH_PROJECT:tl}
-PORTVERSION=	1.8.4.1
+PORTVERSION=	1.8.4.3
 CATEGORIES=	games
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Realistic 3D train/railway simulator
+WWW=		https://openbve-project.net/
 
 LICENSE=	PD
 

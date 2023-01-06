@@ -1,10 +1,11 @@
 PORTNAME=	zstr
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.0.6
+DISTVERSION=	1.0.7
 CATEGORIES=	archivers devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C++ header-only ZLib wrapper
+WWW=		https://github.com/mateidavid/zstr
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

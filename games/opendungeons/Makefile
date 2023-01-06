@@ -5,6 +5,7 @@ CATEGORIES=	games
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open source game inspired by Dungeon Keeper
+WWW=		https://opendungeons.github.io/
 
 LICENSE=	CC-BY-3.0 CC-BY-SA-3.0 CC0-1.0 GPLv3 MIT OFL11
 LICENSE_COMB=	multi
@@ -24,6 +25,8 @@ LIB_DEPENDS=	libboost_atomic.so:devel/boost-libs \
 		libOgreMain.so:graphics/ogre3d19
 
 BROKEN=		error: no template named 'conditional_t' in namespace 'std'
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=2023-02-14
 
 USES=		cmake pkgconfig
 

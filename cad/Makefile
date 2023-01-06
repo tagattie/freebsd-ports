@@ -11,7 +11,6 @@
     SUBDIR += astk-client
     SUBDIR += astk-serveur
     SUBDIR += atlc
-    SUBDIR += basicdsp
     SUBDIR += brlcad
     SUBDIR += calculix
     SUBDIR += calculix-ccx
@@ -71,12 +70,12 @@
     SUBDIR += ldview
     SUBDIR += leocad
     SUBDIR += lepton-eda
+    SUBDIR += libgdsii
     SUBDIR += libopencad
     SUBDIR += librecad
     SUBDIR += libredwg
     SUBDIR += librepcb
     SUBDIR += librnd
-    SUBDIR += linux-eagle5
     SUBDIR += logisim
     SUBDIR += magic
     SUBDIR += meshdev
@@ -105,10 +104,12 @@
     SUBDIR += py-cq-editor
     SUBDIR += py-ezdxf
     SUBDIR += py-gdspy
+    SUBDIR += py-gmsh
     SUBDIR += py-lcapy
     SUBDIR += py-ocp
     SUBDIR += py-phidl
     SUBDIR += py-pyfda
+    SUBDIR += py-pygmsh
     SUBDIR += py-pymtl
     SUBDIR += python-gdsii
     SUBDIR += qcad
@@ -129,6 +130,7 @@
     SUBDIR += stm32flash
     SUBDIR += sumo
     SUBDIR += surelog
+    SUBDIR += svlint
     SUBDIR += sweethome3d
     SUBDIR += tkgate
     SUBDIR += tochnog

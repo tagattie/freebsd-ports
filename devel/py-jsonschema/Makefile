@@ -1,11 +1,12 @@
 PORTNAME=	jsonschema
-PORTVERSION=	4.9.1
+PORTVERSION=	4.15.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	JSON Schema validation for Python
+WWW=		https://github.com/Julian/jsonschema
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -1,10 +1,12 @@
 PORTNAME=	celluloid
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.24
+PORTREVISION=	1
 CATEGORIES=	multimedia
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Simple GTK+ frontend for mpv
+WWW=		https://celluloid-player.github.io/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -1,11 +1,11 @@
---- net/base/network_change_notifier.cc.orig	2022-04-01 07:48:30 UTC
+--- net/base/network_change_notifier.cc.orig	2022-12-06 08:09:13 UTC
 +++ net/base/network_change_notifier.cc
-@@ -39,7 +39,7 @@
+@@ -37,7 +37,7 @@
  #include "net/base/network_change_notifier_linux.h"
  #elif BUILDFLAG(IS_APPLE)
  #include "net/base/network_change_notifier_mac.h"
--#elif BUILDFLAG(IS_CHROMEOS_ASH) || BUILDFLAG(IS_ANDROID)
-+#elif BUILDFLAG(IS_CHROMEOS_ASH) || BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_BSD)
+-#elif BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID)
++#elif BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_BSD)
  #include "net/base/network_change_notifier_posix.h"
  #elif BUILDFLAG(IS_FUCHSIA)
  #include "net/base/network_change_notifier_fuchsia.h"
@@ -18,4 +18,4 @@
 +      /*dns_config_notifier*/nullptr);
  #else
    NOTIMPLEMENTED();
-   return NULL;
+   return nullptr;

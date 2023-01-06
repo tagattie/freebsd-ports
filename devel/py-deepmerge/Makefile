@@ -1,11 +1,12 @@
 PORTNAME=	deepmerge
-PORTVERSION=	1.0.1
+PORTVERSION=	1.1.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Toolset to deeply merge python dictionaries
+WWW=		https://github.com/toumorokoshi/deepmerge
 
 LICENSE=	MIT
 

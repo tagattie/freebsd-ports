@@ -1,11 +1,12 @@
 PORTNAME=	mailfromd
-PORTVERSION=	8.13
+PORTVERSION=	8.15
 CATEGORIES=	mail
 MASTER_SITES=	http://download.gnu.org.ua/pub/release/${PORTNAME}/ \
 		http://download.gnu.org.ua/pub/alpha/${PORTNAME}/
 
 MAINTAINER=	zeus@gnu.org.ua
 COMMENT=	Mail filtering daemon for Sendmail, Postfix, and MeTA1
+WWW=		https://puszcza.gnu.org.ua/software/mailfromd/
 
 LICENSE=	GPLv3+
 
@@ -63,6 +64,10 @@ GDBM_CONFIGURE_WITH=	gdbm
 .if defined(WITH_DEBUG)
 CONFIGURE_ARGS+=	--enable-debug
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e '/^mfmodnew_LDADD =/s,),& $$(INTLLIBS),' \
+		${WRKSRC}/mfmod/Makefile.in
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DATABASEDIR} ${STAGEDIR}${MFD_RUN_DIR}

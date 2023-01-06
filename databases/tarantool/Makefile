@@ -1,10 +1,11 @@
 PORTNAME=	tarantool
-PORTVERSION=	2.10.2
+PORTVERSION=	2.10.4
 CATEGORIES=	databases
 MASTER_SITES=	https://download.tarantool.org/tarantool/src/
 
 MAINTAINER=	balaev@tarantool.org
 COMMENT=	NoSQL database running in a Lua application server
+WWW=		https://tarantool.io/
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

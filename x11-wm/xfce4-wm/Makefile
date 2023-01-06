@@ -1,6 +1,5 @@
 PORTNAME=	xfce4-wm
-PORTVERSION=	4.16.1
-PORTREVISION=	1
+PORTVERSION=	4.18.0
 CATEGORIES=	x11-wm xfce
 MASTER_SITES=	XFCE
 DISTNAME=	xfwm4-${DISTVERSIONFULL}
@@ -8,14 +7,16 @@ DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Xfce's window manager
+WWW=		https://xfce.org/
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libepoxy.so:graphics/libepoxy
+LIB_DEPENDS=	libepoxy.so:graphics/libepoxy \
+		libharfbuzz.so:print/harfbuzz
 
 USES=		compiler:c11 gettext-tools gmake gnome pkgconfig tar:bzip2 \
 		xfce xorg
-USE_GNOME=	cairo gtk30 intltool libwnck3
+USE_GNOME=	cairo gdkpixbuf2 gtk30 intltool libwnck3
 USE_XFCE=	libmenu xfconf
 USE_XORG=	ice sm x11 xcomposite xdamage xext xfixes xi xinerama \
 		xorgproto xpresent xrandr xrender xres

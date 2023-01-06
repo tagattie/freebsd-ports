@@ -1,10 +1,12 @@
 PORTNAME=	wcslib
-PORTVERSION=	7.11
+PORTVERSION=	7.12
+PORTREVISION=	1
 CATEGORIES=	astro
 MASTER_SITES=	ftp://ftp.atnf.csiro.au/pub/software/wcslib/
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Library for parsing/generating FITS headers
+WWW=		https://www.atnf.csiro.au/people/mcalabre/WCS/index.html
 
 LICENSE=	GPLv3
 

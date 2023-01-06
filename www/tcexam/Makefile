@@ -1,10 +1,11 @@
 PORTNAME=	tcexam
-PORTVERSION=	14.8.5
+PORTVERSION=	15.0.1
 CATEGORIES=	www education
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Open Source system for electronic exams
+WWW=		https://www.tcexam.org/
 
 LICENSE=	GPLv3
 

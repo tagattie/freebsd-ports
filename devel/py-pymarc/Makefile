@@ -1,5 +1,5 @@
 PORTNAME=	pymarc
-PORTVERSION=	4.2.0
+PORTVERSION=	4.2.1
 PORTEPOCH=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Read Write And Modify MARC Bibliographic Data
+WWW=		https://github.com/edsu/pymarc
 
 LICENSE=	BSD2CLAUSE
 

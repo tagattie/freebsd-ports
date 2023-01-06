@@ -1,7 +1,6 @@
 PORTNAME=	lean
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.48.0
-PORTREVISION=	1
+DISTVERSION=	3.50.3
 CATEGORIES=	math
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
@@ -9,9 +8,12 @@ PATCHFILES=	5eecaa0b9c860858372a22ab242566671907c913.patch:-p2
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Theorem prover
+WWW=		https://leanprover-community.github.io/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/../LICENSE
+
+BROKEN_aarch64=	c++ crashes during link on arm64 on math/lean, see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=266777
 
 LIB_DEPENDS=	libgmp.so:math/gmp
 

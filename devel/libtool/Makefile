@@ -1,7 +1,8 @@
 PORTNAME=	libtool
-PORTREVISION=	0
+PORTREVISION=	1
 
 COMMENT=	Generic shared library support script
+WWW=		https://www.gnu.org/software/libtool/
 
 .include "${.CURDIR}/../libtool/Makefile.common"
 
@@ -17,5 +18,12 @@ TEST_TARGET=	check
 
 NO_ARCH=	yes
 INFO=		libtool
+
+.if "${CC}" == "/nxb-bin/usr/bin/cc"
+# Generate libtool script for the native compiler, not the cross compiler.
+CC=		cc
+CXX=		c++
+LD=		ld
+.endif
 
 .include <bsd.port.mk>

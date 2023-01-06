@@ -1,10 +1,11 @@
 PORTNAME=	caliper
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.8.0
+DISTVERSION=	2.9.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Instrumentation and performance profiling library
+WWW=		https://software.llnl.gov/Caliper/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

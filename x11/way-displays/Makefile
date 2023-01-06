@@ -1,9 +1,10 @@
 PORTNAME=	way-displays
-DISTVERSION=	1.6.0
+DISTVERSION=	1.6.2
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Auto Manage Your Wayland Displays
+WWW=		https://github.com/alex-courtis/way-displays
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -1,11 +1,12 @@
 PORTNAME=	gegl
-PORTVERSION=	0.4.38
+PORTVERSION=	0.4.40
 PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	GIMP
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Graph based image processing framework
+WWW=		https://gegl.org/
 
 LICENSE=	BSD3CLAUSE GPLv3+ LGPL3+
 LICENSE_COMB=	multi
@@ -33,7 +34,7 @@ MESON_ARGS=	-Ddocs=false \
 		-Dpygobject=disabled \
 		-Dlua=disabled
 
-GEGL_SHLIB=	0.437.1
+GEGL_SHLIB=	0.439.1
 GEGL_VER=	0.4
 PLIST_SUB+=	GEGL_SHLIB=${GEGL_SHLIB} GEGL_VER=${GEGL_VER}
 

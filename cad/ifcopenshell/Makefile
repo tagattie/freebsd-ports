@@ -4,8 +4,9 @@ DISTVERSION=	0.6.0
 PORTREVISION=	7
 CATEGORIES=	cad
 
-MAINTAINER=	lbartoletti@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open source IFC library and geometry engine
+WWW=		http://ifcopenshell.org
 
 LICENSE=	LGPL3+
 LICENSE_FILE=	${WRKSRC}/COPYING.LESSER

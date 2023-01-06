@@ -1,11 +1,12 @@
 PORTNAME=	oslo.utils
-PORTVERSION=	6.0.1
+PORTVERSION=	6.1.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Oslo Utility library
+WWW=		https://docs.openstack.org/oslo.utils/latest/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

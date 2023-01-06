@@ -1,11 +1,11 @@
---- remoting/host/policy_watcher.cc.orig	2022-08-31 12:19:35 UTC
+--- remoting/host/policy_watcher.cc.orig	2022-10-24 13:33:33 UTC
 +++ remoting/host/policy_watcher.cc
-@@ -177,7 +177,7 @@ std::unique_ptr<base::DictionaryValue> PolicyWatcher::
-   auto result = std::make_unique<base::DictionaryValue>();
-   result->SetBoolKey(key::kRemoteAccessHostFirewallTraversal, true);
-   result->SetBoolKey(key::kRemoteAccessHostRequireCurtain, false);
+@@ -179,7 +179,7 @@ base::Value::Dict PolicyWatcher::GetDefaultPolicies() 
+   result.Set(key::kRemoteAccessHostUdpPortRange, "");
+   result.Set(key::kRemoteAccessHostClipboardSizeBytes, -1);
+   result.Set(key::kRemoteAccessHostAllowRemoteSupportConnections, true);
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_BSD)
-   result->SetBoolKey(key::kRemoteAccessHostMatchUsername, false);
+   result.Set(key::kRemoteAccessHostMatchUsername, false);
  #endif
-   result->Set(key::kRemoteAccessHostClientDomainList,
+ #if !BUILDFLAG(IS_CHROMEOS)

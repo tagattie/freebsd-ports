@@ -1,11 +1,12 @@
 PORTNAME=	font-awesome
-DISTVERSION=	6.1.1
+DISTVERSION=	6.2.1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	https://use.fontawesome.com/releases/v${DISTVERSION}/
 DISTNAME=	fontawesome-free-${DISTVERSION}-desktop
 
 MAINTAINER=	dmgk@FreeBSD.org
 COMMENT=	Suite of pictographic icons from Font Awesome (free version)
+WWW=		https://fontawesome.com/
 
 LICENSE=	OFL11
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

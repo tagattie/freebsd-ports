@@ -4,11 +4,11 @@
 
 PORTNAME=	avidemux
 PORTVERSION=	${AVIDEMUX_VERSION}
-PORTREVISION=	1
 CATEGORIES=	multimedia
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Simple GUI based video editor
+WWW=		https://avidemux.org/
 
 .include "${.CURDIR}/Makefile.common"
 

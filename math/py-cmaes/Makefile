@@ -1,11 +1,12 @@
 PORTNAME=	cmaes
-PORTVERSION=	0.8.2
+PORTVERSION=	0.9.0
 CATEGORIES=	math
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Lightweight CMA Evolution Strategy implementation for Python
+WWW=		https://github.com/CyberAgent/cmaes
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

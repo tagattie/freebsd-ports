@@ -1,11 +1,12 @@
 PORTNAME=	Net-SAML2
-PORTVERSION=	0.59
+PORTVERSION=	0.61
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	SAML2 bindings and protocol implementation
+WWW=		https://metacpan.org/dist/Net-SAML2
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

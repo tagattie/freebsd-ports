@@ -1,12 +1,12 @@
 PORTNAME=	python-socks
-PORTVERSION=	2.0.3
-PORTREVISION=	1
+PORTVERSION=	2.1.1
 CATEGORIES=	net python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Core proxy (SOCKS4, SOCKS5, HTTP tunneling) functionality for Python
+WWW=		https://pypi.org/project/python-socks/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

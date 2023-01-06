@@ -7,6 +7,7 @@ DIST_SUBDIR=		KDE/${PORTNAME}
 
 MAINTAINER=		kde@FreeBSD.org
 COMMENT=		Visual database applications creator
+WWW=		https://www.kexi-project.org/
 
 LIB_DEPENDS=		libKDb3.so:databases/kdb \
 			libKPropertyCore3.so:x11-toolkits/kproperty \
@@ -20,9 +21,9 @@ USE_KDE=		auth bookmarks codecs completion config \
 			configwidgets coreaddons crash ecm guiaddons i18n \
 			iconthemes itemviews jobwidgets kio parts service \
 			solid sonnet syntaxhighlighting texteditor textwidgets \
-			widgetsaddons windowsystem xmlgui breeze-icons_build
+			widgetsaddons windowsystem xmlgui breeze-icons:build
 USE_QT=			concurrent core dbus declarative gui network printsupport webkit widgets xml \
-			buildtools_build qmake_build testlib_build
+			buildtools:build qmake:build testlib:build
 USE_XORG=		x11
 
 CONFLICTS_INSTALL=	calligra-2*

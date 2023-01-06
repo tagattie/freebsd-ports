@@ -1,10 +1,10 @@
 PORTNAME=	kokkos
-DISTVERSION=	3.6.01
-PORTREVISION=	1
+DISTVERSION=	3.7.00
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C++ performance portability programming ecosystem
+WWW=		https://github.com/kokkos/kokkos
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

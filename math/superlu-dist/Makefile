@@ -1,10 +1,11 @@
 PORTNAME=	superlu-dist
 DISTVERSIONPREFIX=	v
-DISTVERSION=	8.1.0
+DISTVERSION=	8.1.2
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Distributed memory, MPI based SuperLU
+WWW=		https://portal.nersc.gov/project/sparse/superlu/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/License.txt

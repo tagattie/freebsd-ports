@@ -1,6 +1,6 @@
 PORTNAME=	coq
 PORTVERSION=	8.6
-PORTREVISION=	11
+PORTREVISION=	13
 PORTEPOCH=	3
 CATEGORIES=	math
 MASTER_SITES=	http://coq.inria.fr/distrib/V${PORTVERSION}/files/ \
@@ -9,6 +9,7 @@ PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Theorem prover based on lambda-C
+WWW=		https://coq.inria.fr/
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -46,6 +47,7 @@ IDE_DESC=		Include desktop environment (coqide)
 IDE_BUILD_DEPENDS=	lablgtk2:x11-toolkits/ocaml-lablgtk2
 IDE_RUN_DEPENDS=	lablgtk2:x11-toolkits/ocaml-lablgtk2
 IDE_CONFIGURE_OFF=	-coqide no
+DOCS_USES=		tex
 DOCS_USE=		TEX=latex:build,dvipsk:build,texmf:build
 DOCS_BUILD_DEPENDS=	hevea:textproc/hevea
 DOCS_CONFIGURE_OFF=	-with-doc no

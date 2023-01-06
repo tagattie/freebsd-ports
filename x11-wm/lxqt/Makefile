@@ -1,15 +1,16 @@
 PORTNAME=	lxqt
-PORTVERSION=	1.1.0
+PORTVERSION=	1.2.0
 CATEGORIES=	x11-wm
 
 MAINTAINER=	jsm@FreeBSD.org
 COMMENT=	Meta-port for the LXQt Desktop
+WWW=		https://lxqt-project.org
 
 RUN_DEPENDS=	startlxqt:x11-wm/lxqt-session \
 	lxqt-about:x11/lxqt-about \
 	lxqt-admin-user:sysutils/lxqt-admin \
 	lxqt-config:sysutils/lxqt-config \
-	lxqt-qtplugin>=1.1.0:sysutils/lxqt-qtplugin \
+	lxqt-qtplugin>=1.2.0:sysutils/lxqt-qtplugin \
 	qterminal:x11/qterminal \
 	obconf-qt:x11-wm/obconf-qt \
 	lximage-qt:graphics/lximage-qt \

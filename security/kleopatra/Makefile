@@ -1,10 +1,10 @@
 PORTNAME=	kleopatra
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
-PORTREVISION=	1
 CATEGORIES=	security kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Certificate manager for KDE
+WWW=		https://www.kde.org/applications/utilities/kleopatra/
 
 LIB_DEPENDS=	libassuan.so:security/libassuan \
 		libboost_thread.so:devel/boost-libs \
@@ -19,9 +19,9 @@ USE_KDE=	auth codecs config configwidgets coreaddons crash dbusaddons \
 		doctools i18n iconthemes itemmodels kcmutils notifications \
 		service sonnet textwidgets widgetsaddons windowsystem xmlgui \
 		libkleo mime \
-		ecm_build
+		ecm:build
 USE_QT=		core dbus gui network printsupport testlib widgets xml \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 USE_XORG=	x11
 
 OPTIONS_DEFINE=	DOCS

@@ -1,6 +1,6 @@
---- content/renderer/renderer_blink_platform_impl.cc.orig	2022-08-31 12:19:35 UTC
+--- content/renderer/renderer_blink_platform_impl.cc.orig	2022-11-30 08:12:58 UTC
 +++ content/renderer/renderer_blink_platform_impl.cc
-@@ -109,7 +109,7 @@
+@@ -110,7 +110,7 @@
  
  #if BUILDFLAG(IS_MAC)
  #include "content/child/child_process_sandbox_support_impl_mac.h"
@@ -9,7 +9,7 @@
  #include "content/child/child_process_sandbox_support_impl_linux.h"
  #endif
  
-@@ -178,7 +178,7 @@ RendererBlinkPlatformImpl::RendererBlinkPlatformImpl(
+@@ -180,7 +180,7 @@ RendererBlinkPlatformImpl::RendererBlinkPlatformImpl(
        main_thread_scheduler_(main_thread_scheduler) {
    // RenderThread may not exist in some tests.
    if (RenderThreadImpl::current()) {
@@ -18,7 +18,7 @@
      mojo::PendingRemote<font_service::mojom::FontService> font_service;
      RenderThreadImpl::current()->BindHostReceiver(
          font_service.InitWithNewPipeAndPassReceiver());
-@@ -188,7 +188,7 @@ RendererBlinkPlatformImpl::RendererBlinkPlatformImpl(
+@@ -190,7 +190,7 @@ RendererBlinkPlatformImpl::RendererBlinkPlatformImpl(
  #endif
    }
  
@@ -36,8 +36,8 @@
  void RendererBlinkPlatformImpl::SetThreadType(base::PlatformThreadId thread_id,
                                                base::ThreadType thread_type) {
    if (RenderThreadImpl* render_thread = RenderThreadImpl::current()) {
-@@ -276,7 +276,7 @@ blink::BlameContext* RendererBlinkPlatformImpl::GetTop
- }
+@@ -272,7 +272,7 @@ void RendererBlinkPlatformImpl::SetThreadType(base::Pl
+ #endif
  
  blink::WebSandboxSupport* RendererBlinkPlatformImpl::GetSandboxSupport() {
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_MAC)

@@ -1,11 +1,12 @@
 PORTNAME=	dwave-networkx
-DISTVERSION=	0.8.12
+DISTVERSION=	0.8.13
 CATEGORIES=	science python # quantum-computing
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME:S/-/_/}-${DISTVERSION}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	DWave: Extension of the NetworkX Python package for graphs
+WWW=		https://github.com/dwavesystems/dwave-networkx
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

@@ -1,10 +1,10 @@
 PORTNAME=	stumpwm
-DISTVERSION=	22.05-157
-DISTVERSIONSUFFIX=	-g740e945
+DISTVERSION=	22.11
 CATEGORIES=	x11-wm lisp
 
 MAINTAINER=	jrm@FreeBSD.org
 COMMENT=	Tiling, keyboard driven Window Manager written in Common Lisp
+WWW=		https://www.nongnu.org/stumpwm/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

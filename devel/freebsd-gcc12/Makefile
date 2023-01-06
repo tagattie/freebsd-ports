@@ -1,5 +1,6 @@
 PORTNAME=	gcc
 PORTVERSION=	12.1.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	GCC
 PKGNAMEPREFIX=	${TARGETARCH}-
@@ -7,9 +8,12 @@ PKGNAMESUFFIX=	${SUFFIX}
 
 MAINTAINER=	jhb@FreeBSD.org
 COMMENT=	Cross GNU Compiler Collection for ${TARGETARCH}
+WWW=		https://gcc.gnu.org/
 
 LICENSE=	GPLv3 GPLv3RLE
 LICENSE_COMB=	multi
+
+IGNORE_FreeBSD_12= Not supported on FreeBSD 12
 
 BUILD_DEPENDS=	${BU_PREFIX}-as:devel/binutils@${BU_FLAVOR} \
 		objdump:devel/binutils

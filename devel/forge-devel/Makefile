@@ -1,12 +1,13 @@
 PORTNAME=	forge
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.3.1-69
-DISTVERSIONSUFFIX=	-g6a820a4
+DISTVERSION=	0.3.2-72
+DISTVERSIONSUFFIX=	-g9fc0745
 CATEGORIES=	devel elisp
 PKGNAMESUFFIX=	-devel${EMACS_PKGNAMESUFFIX}
 
 MAINTAINER=	yasu@FreeBSD.org
 COMMENT=	Work with Git forges from the comfort of Magit (Development Version)
+WWW=		https://github.com/magit/forge
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -56,6 +57,7 @@ DOCS_BUILD_DEPENDS=	gsed:textproc/gsed
 DOCS_ALL_TARGET=	html
 DOCS_BINARY_ALIAS=	sed=gsed
 PDF_BUILD_DEPENDS=	texi2pdf:print/texinfo
+PDF_USES=		tex
 PDF_USE=		TEX=dvipdfmx:build
 PDF_ALL_TARGET=		pdf
 

@@ -1,5 +1,5 @@
 PORTNAME=	asterisk
-PORTVERSION=	16.28.0
+PORTVERSION=	16.29.1
 CATEGORIES=	net
 MASTER_SITES=	https://downloads.asterisk.org/pub/telephony/%SUBDIR%/:DEFAULT,g729
 MASTER_SITE_SUBDIR=	asterisk/ \
@@ -11,6 +11,7 @@ DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open Source PBX and telephony toolkit
+WWW=		https://www.asterisk.org
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -264,7 +265,7 @@ post-patch:
 .if exists(${FILESDIR}/.asterisk.makeopts)
 	${CP} ${FILESDIR}/.asterisk.makeopts ${WRKSRC}/menuselect.makeopts
 .endif
- 
+
 post-patch-GEOLOCATION-on:
 	@${REINPLACE_CMD} -e 's/%%LLD_EMULATION%%/${LLD_EMULATION}/' ${WRKSRC}/Makefile.rules
 
@@ -280,7 +281,7 @@ post-configure:
 	@cd ${WRKSRC} && ./menuselect/menuselect --disable res_timing_kqueue menuselect.makeopts
 	@cd ${WRKSRC} && ./menuselect/menuselect --enable chan_mgcp menuselect.makeopts
 	@cd ${WRKSRC} && ./menuselect/menuselect --enable res_pktccops menuselect.makeopts
- 
+
 post-configure-GEOLOCATION-on:
 	@cd ${WRKSRC} && ./menuselect/menuselect --enable res_geolocation menuselect.makeopts
 

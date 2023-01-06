@@ -1,11 +1,12 @@
 PORTNAME=	tinyfugue
-PORTVERSION=	5.1.3
+PORTVERSION=	5.1.4
 PORTREVISION=	0
 CATEGORIES=	net games
 PKGNAMESUFFIX=	-devel${PKGNAMESUFFIX2}
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Popular programmable MUD client, with macro support and more
+WWW=		https://github.com/ingwarsw/tinyfugue
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -1,10 +1,12 @@
 PORTNAME=	igraph
 DISTVERSION=	0.9.8
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${DISTVERSION}/
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Package For Manipulating Undirected And Directed Graphs
+WWW=		https://igraph.org/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

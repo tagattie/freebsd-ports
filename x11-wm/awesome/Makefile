@@ -7,6 +7,7 @@ CATEGORIES=	x11-wm
 
 MAINTAINER=	rigoletto@FreeBSD.org
 COMMENT=	Highly configurable, next generation framework window manager
+WWW=		https://awesomewm.org/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -26,7 +27,7 @@ LIB_DEPENDS=	libcairo.so:graphics/cairo \
 
 CONFLICTS_INSTALL=	awesome3
 
-USES=		cmake compiler:c11 gettext gnome iconv magick:build pkgconfig lua \
+USES=		cmake compiler:c11 gettext gnome iconv magick:build pkgconfig lua:-53 \
 		shebangfix xorg
 USE_GNOME=	glib20 pango gdkpixbuf2 librsvg2
 USE_XORG=	pixman x11 xau xcb xdmcp xext xft xinerama xrandr xrender \
@@ -62,5 +63,9 @@ post-patch:
 	# Ref https://github.com/awesomeWM/awesome/issues/1377
 	@${REINPLACE_CMD} -e "/COMMAND lua/ s,lua,${LUA_CMD}," \
 		${WRKSRC}/awesomeConfig.cmake
+	# https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=267119
+	# Fix build with clang14
+	@${REINPLACE_CMD} -e "s/-export-dynamic/\"-Xlinker -E\"/" \
+		${WRKSRC}/CMakeLists.txt
 
 .include <bsd.port.post.mk>

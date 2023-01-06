@@ -1,9 +1,10 @@
 PORTNAME=	liboqs
-DISTVERSION=	0.7.2.20220607
+DISTVERSION=	0.7.2-20220607
 CATEGORIES=	security
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C library for quantum-resistant cryptography
+WWW=		https://openquantumsafe.org/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

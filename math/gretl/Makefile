@@ -5,6 +5,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTVERSIONFULL}/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	GNU Regression, Econometrics, and Time-series Library
+WWW=		http://gretl.sourceforge.net/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -35,7 +36,8 @@ OPTIONS_SUB=		yes
 
 ADDONS_DESC=		Build gretl addons
 ADDONS_CONFIGURE_ENABLE=	build-addons
-ADDONS_VARS=		USE_TEX="formats dvipsk:build"
+ADDONS_USES=		tex
+ADDONS_USE=			TEX=formats,dvipsk:build
 
 ATLAS_DESC=		Use ATLAS for BLAS and LAPACK
 ATLAS_LIB_DEPENDS=	libatlas.so:math/atlas

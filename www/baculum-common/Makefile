@@ -7,12 +7,12 @@ DISTNAME=	bacula-gui-${PORTVERSION}
 
 MAINTAINER=	sipopo@yandex.ru
 COMMENT?=	common libraries for baculum
+WWW=		https://www.bacula.org/
 
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/${PORTNAME}/LICENSE
 
 USES+=		php
-PHP_VER=	74
 
 BCL_VARDIR?=	/var
 BCL_CACHEDIR?=	${BCL_VARDIR}/cache/${PORTNAME}

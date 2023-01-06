@@ -1,11 +1,11 @@
 PORTNAME=	k9s
-PORTVERSION=	0.24.10
 DISTVERSIONPREFIX=	v
-PORTREVISION=	4
+DISTVERSION=	0.26.7
 CATEGORIES=	sysutils
 
 MAINTAINER=	gogolok@gmail.com
 COMMENT=	Kubernetes command-line tool
+WWW=		https://github.com/derailed/k9s
 
 LICENSE=	APACHE20
 

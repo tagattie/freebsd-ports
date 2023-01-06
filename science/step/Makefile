@@ -1,10 +1,10 @@
 PORTNAME=	step
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
-PORTREVISION=	1
 CATEGORIES=	science education kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE interactive physics simulator
+WWW=		https://edu.kde.org/step
 
 LIB_DEPENDS=	libcln.so:math/cln \
 		libgsl.so:math/gsl \
@@ -18,10 +18,10 @@ USE_KDE=	attica auth bookmarks codecs completion config configwidgets \
 		kdelibs4support khtml kio newstuff notifications parts \
 		plotting service solid sonnet textwidgets unitconversion \
 		widgetsaddons windowsystem xmlgui \
-		ecm_build
+		ecm:build
 USE_QT=		concurrent core dbus declarative gui network opengl printsupport svg \
 		widgets xml \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 USE_XORG=	x11
 CXXFLAGS_sparc64=	-Wno-error=return-type
 

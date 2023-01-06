@@ -1,10 +1,11 @@
 PORTNAME=	calculator
-DISTVERSION=	2.0.0
+DISTVERSION=	2.0.1
 CATEGORIES=	math
 PKGNAMEPREFIX=	elementary-
 
 MAINTAINER=	duchateau.olivier@gmail.com
 COMMENT=	Simple calculator written in Vala
+WWW=		https://github.com/elementary/calculator
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -1,11 +1,11 @@
 PORTNAME=	nagstamon
-PORTVERSION=	3.8.0
+PORTVERSION=	3.10.1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	2
 CATEGORIES=	net-mgmt python
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Nagios status monitor for your desktop
+WWW=		https://nagstamon.ifw-dresden.de/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -25,7 +25,7 @@ CPE_VENDOR=	henri_wahl
 USE_GITHUB=	yes
 GH_ACCOUNT=	HenriWahl
 GH_PROJECT=	Nagstamon
-USE_PYQT=	pyqt5_run sip_run
+USE_PYQT=	pyqt5:run sip:run
 USE_PYTHON=	autoplist distutils noflavors
 
 NO_ARCH=	yes

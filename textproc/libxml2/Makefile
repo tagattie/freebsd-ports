@@ -1,12 +1,13 @@
 PORTNAME=	libxml2
-DISTVERSION=	2.10.2
-PORTREVISION?=	0
+DISTVERSION=	2.10.3
+PORTREVISION?=	1
 CATEGORIES?=	textproc gnome
 MASTER_SITES=	GNOME/sources/${PORTNAME}/${DISTVERSION:R}/
 DIST_SUBDIR=	gnome
 
 MAINTAINER=	desktop@FreeBSD.org
 COMMENT?=	XML parser library for GNOME
+WWW=		http://xmlsoft.org/
 
 LICENSE=	MIT
 

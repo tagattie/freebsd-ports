@@ -1,5 +1,5 @@
 PORTNAME=	nuitka
-PORTVERSION=	1.0
+PORTVERSION=	1.2
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMESUFFIX=	${PYTHON_PKGNAMESUFFIX}
@@ -7,6 +7,7 @@ DISTNAME=	Nuitka-${PORTVERSION}
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Compatible and efficient Python compiler
+WWW=		https://nuitka.net/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

@@ -1,12 +1,14 @@
 PORTNAME=	mythmusic
 DISTVERSIONPREFIX=	v
 DISTVERSION=	32.0-60
+PORTREVISION=	1
 DISTVERSIONSUFFIX=	-ge5c974e402
 CATEGORIES=	audio
 PKGNAMEPREFIX=	mythplugin-
 
 MAINTAINER?=	ahicks@p-o.co.uk
 COMMENT=	Music playing plugin for MythTV
+WWW=		https://www.mythtv.org/wiki/MythMusic
 
 LICENSE=	GPLv2
 
@@ -21,7 +23,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	MythTV
 GH_PROJECT=	mythtv
 USE_LDCONFIG=	yes
-USE_QT=		buildtools_build core gui qmake_build sql widgets xml
+USE_QT=		buildtools:build core gui qmake:build sql widgets xml
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix="${PREFIX}" --cc="${CC}" --cxx="${CXX}" \

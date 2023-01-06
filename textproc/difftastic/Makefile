@@ -1,9 +1,11 @@
 PORTNAME=	difftastic
-DISTVERSION=	0.35.0
+DISTVERSION=	0.40.0
 CATEGORIES=	textproc
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Diff tool that compares files based on their syntax
+WWW=		https://difftastic.wilfred.me.uk/ \
+		https://github.com/Wilfred/difftastic
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -16,7 +18,6 @@ PLIST_FILES=	bin/difft
 
 CARGO_CRATES=	aho-corasick-0.7.18 \
 		ansi_term-0.12.1 \
-		archery-0.4.0 \
 		atty-0.2.14 \
 		autocfg-1.1.0 \
 		bitflags-1.3.2 \
@@ -72,12 +73,10 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		rayon-core-1.9.3 \
 		regex-1.5.6 \
 		regex-syntax-0.6.26 \
-		rpds-0.10.0 \
 		rustc-hash-1.1.0 \
 		rustix-0.35.9 \
 		same-file-1.0.6 \
 		scopeguard-1.1.0 \
-		static_assertions-1.1.0 \
 		strsim-0.10.0 \
 		syn-1.0.95 \
 		term_size-0.3.2 \
@@ -85,8 +84,7 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		terminal_size-0.1.17 \
 		terminal_size-0.2.1 \
 		textwrap-0.15.0 \
-		tree-sitter-0.20.6 \
-		tree_magic_mini-3.0.3 \
+		tree-sitter-0.20.9 \
 		typed-arena-2.0.1 \
 		unicode-ident-1.0.0 \
 		unicode-width-0.1.9 \
@@ -103,11 +101,19 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		windows_i686_msvc-0.36.1 \
 		windows_x86_64_gnu-0.36.1 \
 		windows_x86_64_msvc-0.36.1 \
-		wu-diff-0.1.2
+		wu-diff-0.1.2 \
+		tree_magic_mini@git+https://github.com/Wilfred/tree_magic?branch=fix-panic-for-empty-strings\#13dd6dda15c7062bd8f7dd5bc9bb5b16ce9ee613
 
 PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc
+LIB_DEPENDS+=	libatomic.so:lang/gcc${GCC_DEFAULT}
+LDFLAGS+=	-L/usr/local/lib/gcc${GCC_DEFAULT} -latomic
+.endif
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/difft

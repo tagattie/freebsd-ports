@@ -1,12 +1,13 @@
 PORTNAME=	dee
 PORTVERSION=	1.2.7
-PORTREVISION=	22
+PORTREVISION=	23
 CATEGORIES=	devel
 MASTER_SITES=	https://launchpadlibrarian.net/151383425/ \
 	https://launchpad.net/${PORTNAME}/1.0/${PORTVERSION}/+download/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Model to synchronize multiple instances over DBus
+WWW=		https://launchpad.net/dee
 
 LICENSE=	GPLv3
 

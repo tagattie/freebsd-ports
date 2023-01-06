@@ -6,6 +6,7 @@ MASTER_SITES=	http://lilypond.org/download/source/v${DISTVERSION:R}/
 
 MAINTAINER=	m.ne@gmx.net
 COMMENT=	GNU music typesetter
+WWW=		https://lilypond.org/
 
 LICENSE=	GPLv3
 
@@ -28,7 +29,7 @@ RUN_DEPENDS=	${LOCALBASE}/share/fonts/dejavu/DejaVuSans-Bold.ttf:x11-fonts/dejav
 		mftrace:print/mftrace
 
 USES=		bison:build compiler:c++11-lib cpe ghostscript gmake gnome \
-		magick:7,build perl5 pkgconfig python:3.5+
+		magick:7,build perl5 pkgconfig python:3.5+ tex
 USE_CXXSTD=	c++11
 USE_GNOME=	pango
 USE_PERL5=	build

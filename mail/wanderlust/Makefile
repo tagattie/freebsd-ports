@@ -1,11 +1,12 @@
 PORTNAME=	wanderlust
 PORTVERSION=	2.15.9.b.${SNAPDATE}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail elisp
 PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
 MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT=	Mail and news system for Emacs
+WWW=		https://github.com/wanderlust/wanderlust
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -18,10 +19,10 @@ RUN_DEPENDS=	emacs-w3m${EMACS_PKGNAMESUFFIX}>0:www/emacs-w3m@${EMACS_FLAVOR} \
 
 USES=		emacs
 USE_GITHUB=	yes
-GH_TAGNAME=	a3847bf
+GH_TAGNAME=	f5cb2f0
 
 NO_ARCH=	yes
-SNAPDATE=	20220720
+SNAPDATE=	20221117
 
 MAKE_ARGS+=	EMACS=${EMACS_CMD} \
 		FLAGS="-batch -q -no-site-file" \

@@ -1,11 +1,12 @@
 PORTNAME=	pip-run
-PORTVERSION=	8.8.1
+PORTVERSION=	8.8.2
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Install packages and run Python with them
+WWW=		https://github.com/jaraco/pip-run
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

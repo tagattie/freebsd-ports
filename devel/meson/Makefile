@@ -1,10 +1,11 @@
 PORTNAME=	meson
-PORTVERSION=	0.63.1
+PORTVERSION=	1.0.0
 CATEGORIES=	devel python
 MASTER_SITES=	https://github.com/mesonbuild/${PORTNAME}/releases/download/${PORTVERSION}/
 
 MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	High performance build system
+WWW=		https://mesonbuild.com/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/COPYING

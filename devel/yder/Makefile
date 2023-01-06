@@ -1,11 +1,11 @@
 PORTNAME=	yder
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.4.17
-PORTREVISION=	1
+DISTVERSION=	1.4.18
 CATEGORIES=	devel
 
 MAINTAINER=	dvl@FreeBSD.org
 COMMENT=	Logging library for C applications
+WWW=		https://github.com/babelouest/yder
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -1,11 +1,12 @@
 PORTNAME=	Dist-Zilla
-PORTVERSION=	6.025
+PORTVERSION=	6.028
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Distribution builder
+WWW=		https://metacpan.org/release/Dist-Zilla
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

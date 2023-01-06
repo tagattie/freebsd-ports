@@ -1,11 +1,12 @@
 PORTNAME=	pyscf
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.1.0
+DISTVERSION=	2.1.1
 CATEGORIES=	science python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Python module for quantum chemistry
+WWW=		https://pyscf.org/
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -14,7 +15,7 @@ PY_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}scipy>0:science/py-scipy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}h5py>=2.7:science/py-h5py@${PY_FLAVOR}
 BUILD_DEPENDS=	${PY_DEPENDS} \
-		cmake:devel/cmake \
+		cmake:devel/cmake-core \
 		gmake:devel/gmake
 LIB_DEPENDS=	libcint.so:science/libcint \
 		libxc.so:science/libxc \
@@ -22,7 +23,7 @@ LIB_DEPENDS=	libcint.so:science/libcint \
 RUN_DEPENDS=	${PY_DEPENDS}
 
 USES=		fortran blaslapack:openblas compiler:c++11-lang python
-USE_PYTHON=	distutils autoplist pytest
+USE_PYTHON=	distutils autoplist pytest # 3818 warnings, 57 errors in tests, see https://github.com/pyscf/pyscf/issues/1536
 USE_GITHUB=	yes
 
 POST_PLIST=	fix-plist

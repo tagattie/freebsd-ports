@@ -7,8 +7,11 @@ DISTNAME=	md${DISTVERSION:S/.//g}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	General purpose molecular dynamics code
+WWW=		http://www.fos.su.se/~sasha/mdynamix/
 
 LICENSE=	GPLv2+
+
+BROKEN_FreeBSD_12=	error: invalid value 'gnu++2b' in '-std=gnu++2b'
 
 LIB_DEPENDS=	libmpich.so:net/mpich
 

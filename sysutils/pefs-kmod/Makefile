@@ -1,11 +1,12 @@
 PORTNAME=	pefs
-DISTVERSION=	g20220816
+DISTVERSION=	g20221012
 PORTEPOCH=	1
 CATEGORIES=	sysutils
 PKGNAMESUFFIX=	-kmod
 
 MAINTAINER=	darius@dons.net.au
 COMMENT=	PEFS kernel level stacked cryptographic filesystem
+WWW=		https://wiki.freebsd.org/PEFS
 
 LICENSE=	BSD2CLAUSE
 
@@ -18,7 +19,7 @@ USES=		kmod uidfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	freebsd-pefs
 GH_PROJECT=	pefs
-GH_TAGNAME=	7e65358
+GH_TAGNAME=	aa7f151
 
 MAKE_ENV=	BINDIR="${PREFIX}/sbin" MANDIR="${MANPREFIX}/man/man"
 MAKE_JOBS_UNSAFE=yes

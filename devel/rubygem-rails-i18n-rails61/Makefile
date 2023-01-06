@@ -1,11 +1,12 @@
 PORTNAME=	rails-i18n
-PORTVERSION=	7.0.5
+PORTVERSION=	7.0.6
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-rails61
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Common locale data and translations for Rails i18n
+WWW=		https://github.com/svenfuchs/rails-i18n
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE.txt

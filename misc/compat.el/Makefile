@@ -1,10 +1,12 @@
 PORTNAME=	compat.el
 DISTVERSION=	28.1.2.2
+PORTREVISION=	2
 CATEGORIES=	misc elisp
 PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
 MAINTAINER=	yasu@FreeBSD.org
 COMMENT=	Compatibility library for Emacs Lisp
+WWW=		https://sr.ht/~pkal/compat/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

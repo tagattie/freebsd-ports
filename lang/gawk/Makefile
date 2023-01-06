@@ -1,10 +1,11 @@
 PORTNAME=	gawk
-PORTVERSION=	5.2.0
+PORTVERSION=	5.2.1
 CATEGORIES=	lang
 MASTER_SITES=	GNU
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	GNU version of AWK scripting language
+WWW=		https://www.gnu.org/software/gawk/gawk.html
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

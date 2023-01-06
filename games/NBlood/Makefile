@@ -1,9 +1,10 @@
 PORTNAME=	NBlood
-DISTVERSION=	g20220802
+DISTVERSION=	g20220924
 CATEGORIES=	games
 
 MAINTAINER=	pkubaj@FreeBSD.org
 COMMENT=	Reverse-engineered ports of Build games using EDuke32 engine
+WWW=		https://github.com/nukeykt/NBlood
 
 LICENSE=	GPLv2 BUILDLIC
 LICENSE_COMB=	multi
@@ -20,7 +21,7 @@ LIB_DEPENDS=	libvpx.so:multimedia/libvpx \
 USES=		compiler:c++14-lang gl gmake pkgconfig sdl
 USE_GITHUB=	yes
 GH_ACCOUNT=	nukeykt
-GH_TAGNAME=	4c3ce1e
+GH_TAGNAME=	57dbe1d
 USE_GL=		glu
 USE_SDL=	sdl2
 

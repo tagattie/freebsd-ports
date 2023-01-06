@@ -1,6 +1,6 @@
---- extensions/browser/extension_prefs.cc.orig	2022-08-31 12:19:35 UTC
+--- extensions/browser/extension_prefs.cc.orig	2022-11-30 08:12:58 UTC
 +++ extensions/browser/extension_prefs.cc
-@@ -2295,7 +2295,7 @@ void ExtensionPrefs::RegisterProfilePrefs(
+@@ -2287,7 +2287,7 @@ void ExtensionPrefs::RegisterProfilePrefs(
    registry->RegisterDictionaryPref(kInstallSignature);
    registry->RegisterListPref(kExternalUninstalls);
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \

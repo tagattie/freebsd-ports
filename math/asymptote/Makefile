@@ -10,6 +10,7 @@ PATCHFILES+=	fa28442195bd99b9bac87e3ff752953ac57ee172.patch:-p1 # backport fix f
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Powerful script-based vector graphics language
+WWW=		https://asymptote.sourceforge.io/
 
 LICENSE=	GPLv3 LGPL3
 LICENSE_COMB=	dual
@@ -24,13 +25,13 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cson>=0.8:devel/py-cson@${PY_FLAVOR} \
 		${PY_PILLOW}
 
 USES=		compiler:c++14-lang gettext-runtime ghostscript gl gmake gnome ncurses perl5 python:3.6+ \
-		pyqt:5 shebangfix tar:tgz
+		pyqt:5 shebangfix tar:tgz tex
 SHEBANG_FILES=	GUI/*.py
 USE_GL=		gl glu glut
 USE_GNOME=	librsvg2:run
 USE_PERL5=	build
 USE_TEX=	dvipsk formats
-USE_PYQT=	pyqt5_run
+USE_PYQT=	pyqt5:run
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 GNU_CONFIGURE=	yes

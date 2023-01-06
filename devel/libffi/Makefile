@@ -1,10 +1,11 @@
 PORTNAME=	libffi
-PORTVERSION=	3.4.2
+DISTVERSION=	3.4.4
 CATEGORIES=	devel
-MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/v${PORTVERSION}/
+MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/v${DISTVERSION}/
 
 MAINTAINER=	kbowling@FreeBSD.org
 COMMENT=	Foreign Function Interface
+WWW=		https://sourceware.org/libffi/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

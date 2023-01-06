@@ -1,11 +1,12 @@
 PORTNAME=	greenlet
-PORTVERSION=	1.1.3
+PORTVERSION=	2.0.1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Light-weight microthreads for Python
+WWW=		https://github.com/python-greenlet/greenlet
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

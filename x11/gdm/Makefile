@@ -1,12 +1,13 @@
 PORTNAME=	gdm
 PORTVERSION=	42.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
 DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME display manager
+WWW=		https://www.gnome.org/projects/gdm/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

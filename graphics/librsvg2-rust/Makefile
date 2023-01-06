@@ -1,5 +1,6 @@
 PORTNAME=	librsvg
 PORTVERSION=	2.54.5
+PORTREVISION=	3
 CATEGORIES=	graphics gnome
 MASTER_SITES=	GNOME
 PKGNAMESUFFIX=	2-rust
@@ -7,6 +8,7 @@ DIST_SUBDIR=	gnome2
 
 MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	Library for parsing and rendering SVG vector-graphic files
+WWW=		https://live.gnome.org/LibRsvg
 
 LICENSE=	LGPL20
 

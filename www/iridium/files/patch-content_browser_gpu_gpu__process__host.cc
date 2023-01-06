@@ -1,23 +1,14 @@
---- content/browser/gpu/gpu_process_host.cc.orig	2022-03-28 18:11:04 UTC
+--- content/browser/gpu/gpu_process_host.cc.orig	2022-12-06 08:09:13 UTC
 +++ content/browser/gpu/gpu_process_host.cc
-@@ -100,7 +100,7 @@
- #include "ui/ozone/public/ozone_switches.h"
- #endif
- 
--#if BUILDFLAG(IS_LINUX)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
- #include "ui/gfx/switches.h"
- #endif
- 
-@@ -252,6 +252,7 @@ static const char* const kSwitchNames[] = {
+@@ -255,6 +255,7 @@ static const char* const kSwitchNames[] = {
      switches::kEnableBackgroundThreadPool,
      switches::kEnableGpuRasterization,
      switches::kEnableLogging,
 +    switches::kDisableUnveil,
      switches::kEnableDeJelly,
      switches::kDeJellyScreenWidth,
-     switches::kDocumentTransitionSlowdownFactor,
-@@ -289,7 +290,7 @@ static const char* const kSwitchNames[] = {
+     switches::kDoubleBufferCompositing,
+@@ -288,7 +289,7 @@ static const char* const kSwitchNames[] = {
      switches::kOzoneDumpFile,
      switches::kDisableBufferBWCompression,
  #endif

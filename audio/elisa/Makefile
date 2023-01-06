@@ -1,10 +1,10 @@
 PORTNAME=	elisa
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
-PORTREVISION=	1
 CATEGORIES=	audio kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Audio player with QML and KDE Plasma integration
+WWW=		https://userbase.kde.org/Elisa
 
 LICENSE=	LGPL3+
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -17,7 +17,7 @@ USE_KDE=	auth baloo5 bookmarks codecs completion config configwidgets \
 		service solid widgetsaddons windowsystem xmlgui
 USE_QT=		concurrent core dbus declarative gui multimedia network \
 		quickcontrols2 sql svg widgets xml \
-		buildtools_build declarative-test_build qmake_build testlib_build
+		buildtools:build declarative-test:build qmake:build testlib:build
 USE_XORG=	x11
 
 OPTIONS_DEFINE=	DOCS VLC

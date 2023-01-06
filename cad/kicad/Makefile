@@ -1,12 +1,12 @@
 PORTNAME=	kicad
-PORTVERSION=	6.0.7
-PORTREVISION=	1
+PORTVERSION=	6.0.10
 PORTEPOCH=	2
 CATEGORIES=	cad
 MASTER_SITES=	https://gitlab.com/${PORTNAME}/code/${PORTNAME}/-/archive/${DISTVERSION}/
 
 MAINTAINER=	cmt@FreeBSD.org
 COMMENT=	Schematic and PCB editing software
+WWW=		https://kicad.org/
 
 LICENSE=	GPLv2
 
@@ -30,7 +30,7 @@ SHEBANG_FILES=	pcbnew/python/plugins/touch_slider_wizard.py
 
 USE_XORG=	ice x11 xext
 USE_GL=		gl glu glut
-USE_WX=		3.1
+USE_WX=		3.2
 WX_COMPS=	python:lib wx
 USE_GNOME=	atk cairo gdkpixbuf2 gtk30 pango
 CXXFLAGS+=	--std=c++11 -I${WRKSRC}/include -I${LOCALBASE}/include

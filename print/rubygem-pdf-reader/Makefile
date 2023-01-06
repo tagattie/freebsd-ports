@@ -1,10 +1,11 @@
 PORTNAME=	pdf-reader
-PORTVERSION=	2.10.0
+PORTVERSION=	2.11.0
 CATEGORIES=	print rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	PDF parser conforming as much as possible to the PDF specification
+WWW=		https://github.com/yob/pdf-reader
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE

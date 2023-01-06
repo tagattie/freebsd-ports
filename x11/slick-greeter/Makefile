@@ -1,10 +1,10 @@
 PORTNAME=	slick-greeter
-PORTVERSION=	1.5.3
+PORTVERSION=	1.6.0
 CATEGORIES=	x11
-PORTREVISION=	2
 
 MAINTAINER=	ericbsd@FreeBSD.org
 COMMENT=	Slick-looking LightDM greeter
+WWW=		https://github.com/linuxmint/slick-greeter
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

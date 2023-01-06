@@ -1,11 +1,12 @@
 PORTNAME=	logcheck
-DISTVERSION=	1.3.24
+DISTVERSION=	1.4.0
 CATEGORIES=	security
 MASTER_SITES=	DEBIAN_POOL
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	yasu@FreeBSD.org
 COMMENT=	Auditing tool for system logs on Unix boxes
+WWW=		https://salsa.debian.org/debian/logcheck
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE

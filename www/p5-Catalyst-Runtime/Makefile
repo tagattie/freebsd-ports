@@ -1,11 +1,12 @@
 PORTNAME=	Catalyst-Runtime
-PORTVERSION=	5.90129
+PORTVERSION=	5.90130
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Elegant MVC Web Application Framework (Runtime)
+WWW=		https://metacpan.org/release/Catalyst-Runtime
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

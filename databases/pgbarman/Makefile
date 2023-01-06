@@ -1,13 +1,13 @@
 PORTNAME=		barman
 DISTVERSIONPREFIX=	release/
-DISTVERSION=		3.0.0
-PORTREVISION=	1
+DISTVERSION=		3.3.0
 CATEGORIES=		databases
 PKGNAMEPREFIX=		pg
 PKGNAMESUFFIX=		${PYTHON_PKGNAMESUFFIX}
 
 MAINTAINER=	matthew@FreeBSD.org
 COMMENT=	Backup and recovery manager for PostgreSQL
+WWW=		https://pgbarman.org/
 
 LICENSE=	GPLv3
 
@@ -38,11 +38,7 @@ DOCS_VARS=	PORTDOCS=barman-${DISTVERSION}-manual.pdf \
 
 .include <bsd.port.pre.mk>
 
-.if ${PGSQL_VER:M9\.[12345]}
 PGUSER=		pgsql
-.else
-PGUSER=		postgres
-.endif
 
 post-extract-DOCS-on:
 	${CP} ${DISTDIR}/${PORTDOCS} ${WRKDIR}/

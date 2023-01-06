@@ -1,10 +1,11 @@
 PORTNAME=	protocol-rack
-PORTVERSION=	0.2.3
+PORTVERSION=	0.2.4
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Implementation of the Rack protocol/specification
+WWW=		https://github.com/socketry/protocol-rack
 
 LICENSE=	MIT
 

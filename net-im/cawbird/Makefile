@@ -3,8 +3,9 @@ PORTVERSION=	1.5
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net-im
 
-MAINTAINER=	nc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fork of Corebird GTK Twitter client
+WWW=		https://github.com/IBBoard/cawbird
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

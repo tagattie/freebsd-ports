@@ -1,11 +1,12 @@
 PORTNAME=	sdl2_image
 DISTVERSIONPREFIX=	release-
 DISTVERSION=	2.6.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Simple library to load images of various formats as SDL surfaces
+WWW=		https://github.com/libsdl-org/SDL_image
 
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
@@ -41,6 +42,7 @@ TEST_CONFIGURE_ENV=	LOCALBASE="${LOCALBASE}"
 TEST_LIB_DEPENDS=	libunwind.so:devel/libunwind
 TEST_TEST_TARGET=	test
 TEST_IMPLIES=		PNG JPEG  # does not build otherwise
+TEST_BROKEN=		does not build  # XXX: probably devel/sdl20 problem
 
 post-extract:
 	@${RM} -rf ${WRKSRC}/external

@@ -1,10 +1,11 @@
 PORTNAME=	gmid
-DISTVERSION=	1.8.4
+DISTVERSION=	1.8.6
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/omar-polo/gmid/releases/download/${DISTVERSION}/
 
 MAINTAINER=	freebsd@omarpolo.com
 COMMENT=	Simple and secure Gemini server
+WWW=		https://gmid.omarpolo.com
 
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -23,10 +24,6 @@ LDFLAGS+=	-lcrypto -lssl
 
 USERS=		_gmid
 GROUPS=		_gmid
-
-post-build:
-	${STRIP_CMD} ${WRKSRC}/gg
-	${STRIP_CMD} ${WRKSRC}/gmid
 
 post-install:
 	${INSTALL_DATA} ${FILESDIR}/gmid.conf.sample \

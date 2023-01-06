@@ -1,11 +1,11 @@
 PORTNAME=	gnucash
-PORTVERSION=	4.11
-PORTREVISION=	1
+PORTVERSION=	4.13
 CATEGORIES=	finance gnome
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20%28stable%29/${PORTVERSION}
 
 MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	Quicken-like money and finance manager
+WWW=		https://www.gnucash.org/
 
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
@@ -33,7 +33,7 @@ USES=		cmake:insource compiler:c++11-lib cpe desktop-file-utils \
 		shebangfix tar:bzip2 xorg
 USE_XORG=	x11
 USE_CXXSTD=	c++11
-USE_GNOME=	cairo gtk30 intltool libxml2 libxslt
+USE_GNOME=	cairo gdkpixbuf2 gtk30 intltool libxml2 libxslt
 USE_LDCONFIG=	yes
 
 CMAKE_ARGS=	-DCOMPILE_GSCHEMAS=OFF \

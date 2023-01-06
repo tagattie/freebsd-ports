@@ -5,8 +5,9 @@ CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	cs@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Eliminate annoying things in the Django framework
+WWW=		https://github.com/skorokithakis/django-annoying
 
 LICENSE=	BSD3CLAUSE
 

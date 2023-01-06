@@ -1,11 +1,12 @@
 PORTNAME=	statsmodels
-PORTVERSION=	0.13.2
+PORTVERSION=	0.13.5
 CATEGORIES=	math python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Complement to SciPy for statistical computations
+WWW=		https://github.com/statsmodels/statsmodels
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

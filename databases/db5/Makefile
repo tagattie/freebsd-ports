@@ -1,6 +1,6 @@
 PORTNAME=	db5
 PORTVERSION=	5.3.28
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	databases java
 MASTER_SITES=	https://download.oracle.com/berkeley-db/
 PKGNAMEPREFIX?=
@@ -14,6 +14,7 @@ EXPIRATION_DATE=2022-06-30
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Oracle Berkeley DB, revision ${BDBVER}
+WWW=		https://www.oracle.com/database/berkeley-db/db.html
 
 LICENSE=	SLEEPYCAT
 LICENSE_GROUPS=	FSF GPL OSI

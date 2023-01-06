@@ -1,13 +1,14 @@
 PORTNAME=	zabbix4
-PORTVERSION=	4.0.30
+PORTVERSION=	4.0.44
 PORTREVISION?=	0
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://cdn.zabbix.com/zabbix/sources/stable/${PORTVERSION:R}/
 PKGNAMESUFFIX?=	-server
 DISTNAME=	zabbix-${PORTVERSION}
 
-MAINTAINER=	pg@pakhom.spb.ru
+MAINTAINER=	otis@FreeBSD.org
 COMMENT=	Enterprise-class open source distributed monitoring (${PKGNAMESUFFIX:S/^-//}) LTS
+WWW=		https://www.zabbix.com/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -19,7 +20,6 @@ CONFLICTS_INSTALL=	zabbix[0-35-9]${PKGNAMESUFFIX} \
 
 ZABBIX_BUILD=	${PKGNAMESUFFIX:S/^-//}
 
-.if ${ZABBIX_BUILD} != "frontend" # frontend only needs the version/distribution settings
 .if ${ZABBIX_BUILD} != "agent"
 CONFIGURE_ARGS+=	--cache-file=${WRKSRC}/config.cache \
 			--with-libevent=${LOCALBASE}
@@ -205,10 +205,6 @@ post-install:
 .if ${ZABBIX_BUILD} == "agent"
 	${MV} ${STAGEDIR}${ETCDIR}/zabbix_${ZABBIX_BUILD}d.conf \
 		${STAGEDIR}${ETCDIR}/zabbix_${ZABBIX_BUILD}d.conf.sample
-.endif
-
-.else # frontend
-.include <bsd.port.pre.mk>
 .endif
 
 .include <bsd.port.post.mk>

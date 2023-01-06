@@ -1,12 +1,13 @@
 PORTNAME=	with-editor
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.2.0
-PORTREVISION=	2
+PORTREVISION=	4
 CATEGORIES=	editors elisp
 PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
 MAINTAINER=	yasu@FreeBSD.org
 COMMENT=	Use the Emacsclient as the $$EDITOR of child processes
+WWW=		https://github.com/magit/with-editor
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -35,6 +36,7 @@ DOCS_BUILD_DEPENDS=	gsed:textproc/gsed
 DOCS_ALL_TARGET=	html
 DOCS_BINARY_ALIAS=	sed=gsed
 PDF_BUILD_DEPENDS=	texi2pdf:print/texinfo
+PDF_USES=		tex
 PDF_USE=		TEX=dvipdfmx:build
 PDF_ALL_TARGET=		pdf
 PDF_PLIST_FILES=	${DOCSDIR}/with-editor.pdf

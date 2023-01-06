@@ -3,8 +3,9 @@ PORTVERSION=	1.6.2
 PORTEPOCH=	3
 CATEGORIES=	x11
 
-MAINTAINER=	lbartoletti@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lumina Desktop Environment (meta-port)
+WWW=		https://lumina-desktop.org/
 
 RUN_DEPENDS=	lumina-core>=0:x11/lumina-core \
 		lumina-coreutils>=0:x11/lumina-coreutils \

@@ -7,6 +7,7 @@ MASTER_SITES=	KDE/stable/${PORTNAME}/${DISTVERSION}/src
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE hex editor
+WWW=		https://www.kde.org/applications/utilities/okteta/
 
 USES=		cmake compiler:c++11-lang gettext kde:5 qca qt:5 \
 		shared-mime-info tar:xz xorg
@@ -17,7 +18,7 @@ USE_KDE=	attica auth bookmarks codecs completion crash \
 		widgetsaddons windowsystem xmlgui
 USE_QT=		concurrent core dbus declarative designer gui network printsupport  \
 		script scripttools widgets xml \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 USE_XORG=	x11
 USE_LDCONFIG=	yes
 

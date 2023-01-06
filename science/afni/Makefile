@@ -1,10 +1,11 @@
 PORTNAME=		afni
 DISTVERSIONPREFIX=	AFNI_
-DISTVERSION=		22.2.10
+DISTVERSION=		22.3.07
 CATEGORIES=		science biology graphics perl5 python
 
 MAINTAINER=	fernape@FreeBSD.org
 COMMENT=	Advanced Functional Neuro Imaging
+WWW=		https://afni.nimh.nih.gov/afni/
 
 LICENSE=	GPLv2
 

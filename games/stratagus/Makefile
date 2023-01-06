@@ -5,6 +5,8 @@ CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Free cross-platform real-time strategy gaming engine
+WWW=		https://stratagus.com/stratagus.html \
+		https://github.com/Wargus/stratagus
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -24,7 +26,7 @@ CMAKE_ARGS=	-DGAMEDIR:STRING="bin" \
 CMAKE_ON=	ENABLE_DEV
 CMAKE_OFF=	WITH_STACKTRACE  # not in ports
 
-PORTSCOUT=	limit:^[0-9]+\.
+PORTSCOUT=	limit:^3\.
 
 PORTDOCS=	*
 

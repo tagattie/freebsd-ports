@@ -1,11 +1,12 @@
 PORTNAME=	kbibtex
 DISTVERSION=	0.9.2
-PORTREVISION=	35
+PORTREVISION=	40
 CATEGORIES=	databases kde
 MASTER_SITES=	KDE/stable/KBibTeX/${DISTVERSION}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Bibliography editor for KDE
+WWW=		https://userbase.kde.org/KBibTeX
 
 LIB_DEPENDS=	libicuuc.so:devel/icu \
 		libpoppler.so:graphics/poppler \
@@ -19,10 +20,10 @@ USE_KDE=	auth bookmarks codecs completion config configwidgets \
 		coreaddons crash ecm i18n iconthemes itemviews jobwidgets \
 		kio parts service solid sonnet syntaxhighlighting texteditor \
 		textwidgets wallet widgetsaddons windowsystem xmlgui \
-		doctools_build
+		doctools:build
 USE_QT=		concurrent core dbus declarative gui location network \
 		printsupport webchannel widgets xml xmlpatterns \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 USE_XORG=	x11
 USE_LDCONFIG=	yes
 

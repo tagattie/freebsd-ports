@@ -1,10 +1,11 @@
 PORTNAME=	reline
-DISTVERSION=	0.3.1
+DISTVERSION=	0.3.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	yasu@FreeBSD.org
 COMMENT=	Alternative GNU Readline or Editline implementation by pure Ruby
+WWW=		https://rubygems.org/gems/reline
 
 LICENSE=	BSD2CLAUSE RUBY
 LICENSE_COMB=	dual

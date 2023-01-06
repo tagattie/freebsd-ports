@@ -1,11 +1,11 @@
 PORTNAME=	portfmt
-DISTVERSION=	1.1.2
-PORTREVISION=	1
+DISTVERSION=	1.1.4
 CATEGORIES=	ports-mgmt
-MASTER_SITES=	https://codeberg.org/attachments/0991a836-2810-45b3-9035-45716b5a29a7?dummy=/
+MASTER_SITES=	https://codeberg.org/attachments/906cc7f8-68c6-41ea-95b7-867f54ef5210?dummy=/
 
 MAINTAINER=	tobik@FreeBSD.org
 COMMENT=	Format FreeBSD Ports Makefiles
+WWW=		https://codeberg.org/tobik/portfmt
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

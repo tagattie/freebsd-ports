@@ -1,5 +1,5 @@
 PORTNAME=	onionshare-cli
-PORTVERSION=	2.5
+PORTVERSION=	2.6
 DISTNAME=	onionshare_cli-${PORTVERSION}
 CATEGORIES=	www security python
 MASTER_SITES=   CHEESESHOP
@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	egypcio@FreeBSD.org
 COMMENT=	Secure and anonymous file sharing via Tor (CLI version)
+WWW=		https://onionshare.org
 
 LICENSE=	GPLv3
 

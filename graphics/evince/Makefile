@@ -1,12 +1,13 @@
 PORTNAME=	evince
-DISTVERSION=	42.3
-PORTREVISION=	4
+DISTVERSION=	43.1
+PORTREVISION=	1
 CATEGORIES=	graphics print gnome
 MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
 DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME multi-format document viewer
+WWW=		https://wiki.gnome.org/Apps/Evince
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -75,6 +76,7 @@ DBUS_MESON_TRUE=	dbus
 DBUS_LIB_DEPENDS=	libdbus-1.so:devel/dbus
 
 DVI_DESC=		DVI viewer support
+DVI_USES=		tex
 DVI_USE=		TEX=kpathsea,latex
 DVI_MESON_ENABLED=	dvi
 

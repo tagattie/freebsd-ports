@@ -1,11 +1,12 @@
 PORTNAME=	ristretto
-PORTVERSION=	0.12.3
+PORTVERSION=	0.12.4
 CATEGORIES=	graphics xfce
 MASTER_SITES=	XFCE/apps
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Image viewer with Xfce integration
+WWW=		https://goodies.xfce.org/projects/applications/ristretto
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

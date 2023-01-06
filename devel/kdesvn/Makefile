@@ -6,6 +6,7 @@ MASTER_SITES=	KDE/stable/${PORTNAME}/${DISTVERSION}/
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE frontend for Subversion
+WWW=		https://projects.kde.org/projects/extragear/sdk/kdesvn
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -22,9 +23,9 @@ USE_KDE=	auth bookmarks codecs completion config configwidgets \
 		coreaddons dbusaddons ecm i18n iconthemes itemviews jobwidgets \
 		kio notifications parts service sonnet solid texteditor \
 		textwidgets wallet widgetsaddons windowsystem xmlgui \
-		doctools_build
+		doctools:build
 USE_QT=		concurrent core dbus gui network sql widgets xml \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 USE_XORG=	x11
 
 PORTSCOUT=	ignore:1

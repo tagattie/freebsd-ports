@@ -7,6 +7,7 @@ MASTER_SITES=	SAVANNAH
 
 MAINTAINER=	joerg@FreeBSD.org
 COMMENT=	C and math library for the Atmel AVR controller family
+WWW=		https://savannah.nongnu.org/projects/avr-libc
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -27,6 +28,7 @@ OPTIONS_DEFINE=	DOXYGEN
 .endif
 
 .if ${PORT_OPTIONS:MDOXYGEN}
+USES+=		tex
 USE_TEX=	latex:build
 BUILD_DEPENDS+=	doxygen:devel/doxygen \
 		fig2dev:print/fig2dev \

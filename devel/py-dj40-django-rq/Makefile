@@ -1,11 +1,12 @@
 PORTNAME=	django-rq
-PORTVERSION=	2.5.1
+PORTVERSION=	2.6.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}dj40-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Provides Django integration for RQ (Redis Queue)
+WWW=		https://github.com/rq/django-rq
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

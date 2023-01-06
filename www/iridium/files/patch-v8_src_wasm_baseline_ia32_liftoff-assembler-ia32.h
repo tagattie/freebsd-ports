@@ -1,33 +1,33 @@
---- v8/src/wasm/baseline/ia32/liftoff-assembler-ia32.h.orig	2022-04-01 07:48:30 UTC
+--- v8/src/wasm/baseline/ia32/liftoff-assembler-ia32.h.orig	2022-12-01 10:35:46 UTC
 +++ v8/src/wasm/baseline/ia32/liftoff-assembler-ia32.h
-@@ -434,7 +434,7 @@ void LiftoffAssembler::StoreTaggedPointer(Register dst
+@@ -432,7 +432,7 @@ void LiftoffAssembler::StoreTaggedPointer(Register dst
  }
  
  void LiftoffAssembler::Load(LiftoffRegister dst, Register src_addr,
 -                            Register offset_reg, uint32_t offset_imm,
 +                            Register offset_reg, uintptr_t offset_imm,
-                             LoadType type, LiftoffRegList pinned,
-                             uint32_t* protected_load_pc, bool is_load_mem,
-                             bool i64_offset) {
-@@ -511,7 +511,7 @@ void LiftoffAssembler::Load(LiftoffRegister dst, Regis
+                             LoadType type, uint32_t* protected_load_pc,
+                             bool /* is_load_mem */, bool i64_offset,
+                             bool needs_shift) {
+@@ -512,7 +512,7 @@ void LiftoffAssembler::Load(LiftoffRegister dst, Regis
  }
  
  void LiftoffAssembler::Store(Register dst_addr, Register offset_reg,
 -                             uint32_t offset_imm, LiftoffRegister src,
 +                             uintptr_t offset_imm, LiftoffRegister src,
                               StoreType type, LiftoffRegList pinned,
-                              uint32_t* protected_store_pc, bool is_store_mem) {
-   DCHECK_EQ(type.value_type() == kWasmI64, src.is_gp_pair());
-@@ -579,7 +579,7 @@ void LiftoffAssembler::Store(Register dst_addr, Regist
+                              uint32_t* protected_store_pc,
+                              bool /* is_store_mem */, bool /* i64_offset */) {
+@@ -581,7 +581,7 @@ void LiftoffAssembler::Store(Register dst_addr, Regist
  }
  
  void LiftoffAssembler::AtomicLoad(LiftoffRegister dst, Register src_addr,
 -                                  Register offset_reg, uint32_t offset_imm,
 +                                  Register offset_reg, uintptr_t offset_imm,
-                                   LoadType type, LiftoffRegList pinned) {
+                                   LoadType type, LiftoffRegList /* pinned */) {
    if (type.value() != LoadType::kI64Load) {
-     Load(dst, src_addr, offset_reg, offset_imm, type, pinned, nullptr, true);
-@@ -598,7 +598,7 @@ void LiftoffAssembler::AtomicLoad(LiftoffRegister dst,
+     Load(dst, src_addr, offset_reg, offset_imm, type, nullptr, true);
+@@ -600,7 +600,7 @@ void LiftoffAssembler::AtomicLoad(LiftoffRegister dst,
  }
  
  void LiftoffAssembler::AtomicStore(Register dst_addr, Register offset_reg,

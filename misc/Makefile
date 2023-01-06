@@ -8,8 +8,10 @@
     SUBDIR += amanda-client
     SUBDIR += amanda-perl-wrapper
     SUBDIR += amanda-server
+    SUBDIR += amazon-qldb-shell
     SUBDIR += ansiweather
     SUBDIR += apparix
+    SUBDIR += arrow-datafusion
     SUBDIR += artikulate
     SUBDIR += asbutton
     SUBDIR += asr-manpages
@@ -23,6 +25,7 @@
     SUBDIR += bibletime
     SUBDIR += biblical-curse
     SUBDIR += binclock
+    SUBDIR += binocle
     SUBDIR += biosfont-demos
     SUBDIR += birthday
     SUBDIR += bogosort
@@ -32,6 +35,7 @@
     SUBDIR += broot
     SUBDIR += bsod
     SUBDIR += buffer
+    SUBDIR += caffe
     SUBDIR += cheat
     SUBDIR += chef
     SUBDIR += chmlib
@@ -43,6 +47,7 @@
     SUBDIR += cloc
     SUBDIR += clpbar
     SUBDIR += colortail
+    SUBDIR += coloursum
     SUBDIR += colwide
     SUBDIR += compat.el
     SUBDIR += compat10x
@@ -75,8 +80,10 @@
     SUBDIR += delay
     SUBDIR += diction
     SUBDIR += digitemp
+    SUBDIR += dijo
     SUBDIR += dive
     SUBDIR += dnetc
+    SUBDIR += dotenv-linter
     SUBDIR += dtach
     SUBDIR += dvorak7min
     SUBDIR += dynomite
@@ -205,6 +212,7 @@
     SUBDIR += lastools
     SUBDIR += latex-mk
     SUBDIR += lazyread
+    SUBDIR += lbann
     SUBDIR += lc
     SUBDIR += lesspipe
     SUBDIR += lf
@@ -231,6 +239,7 @@
     SUBDIR += locale-en_DK
     SUBDIR += localedata
     SUBDIR += logsurfer
+    SUBDIR += lscolors
     SUBDIR += lv
     SUBDIR += lxde-common
     SUBDIR += lxi-tools
@@ -265,6 +274,7 @@
     SUBDIR += nut
     SUBDIR += ompl
     SUBDIR += ondir
+    SUBDIR += onnx
     SUBDIR += opencyc
     SUBDIR += openhab
     SUBDIR += openhab-addons
@@ -277,7 +287,6 @@
     SUBDIR += openr2
     SUBDIR += openvdb
     SUBDIR += orange3
-    SUBDIR += orion
     SUBDIR += orville-write
     SUBDIR += osinfo-db
     SUBDIR += ossp-uuid
@@ -331,6 +340,7 @@
     SUBDIR += p5-I18N-Charset
     SUBDIR += p5-I18N-LangTags
     SUBDIR += p5-LEGO-RCX
+    SUBDIR += p5-Library-CallNumber-LC
     SUBDIR += p5-List-Compare
     SUBDIR += p5-List-Util-WeightedRoundRobin
     SUBDIR += p5-Locale-Codes
@@ -358,13 +368,13 @@
     SUBDIR += pecl-timezonedb
     SUBDIR += perkeep
     SUBDIR += pfm
-    SUBDIR += php74-calendar
     SUBDIR += php80-calendar
     SUBDIR += php81-calendar
     SUBDIR += php82-calendar
     SUBDIR += pinfo
     SUBDIR += pipe
     SUBDIR += posixtestsuite
+    SUBDIR += pqrs
     SUBDIR += proxyper
     SUBDIR += pspresent
     SUBDIR += ptsort
@@ -374,11 +384,15 @@
     SUBDIR += py-SimpleSoapy
     SUBDIR += py-SoapySDR
     SUBDIR += py-alive-progress
+    SUBDIR += py-apache-beam
+    SUBDIR += py-ascii-magic
     SUBDIR += py-boost-histogram
+    SUBDIR += py-censys
     SUBDIR += py-cinder
     SUBDIR += py-colorbrewer
     SUBDIR += py-colored
     SUBDIR += py-crudini
+    SUBDIR += py-detecta
     SUBDIR += py-dictdiffer
     SUBDIR += py-eemeter
     SUBDIR += py-emoji
@@ -398,17 +412,22 @@
     SUBDIR += py-mxnet
     SUBDIR += py-onnx
     SUBDIR += py-onnx-tf
+    SUBDIR += py-openpaperwork-core
+    SUBDIR += py-openpaperwork-gtk
+    SUBDIR += py-openvdb
     SUBDIR += py-orange3-associate
     SUBDIR += py-orange3-datafusion
     SUBDIR += py-orange3-educational
     SUBDIR += py-orange3-network
     SUBDIR += py-orange3-timeseries
     SUBDIR += py-palettable
+    SUBDIR += py-papermill
     SUBDIR += py-pexpect
     SUBDIR += py-powerline-status
     SUBDIR += py-progressbar
     SUBDIR += py-progressbar2
     SUBDIR += py-pyEDFlib
+    SUBDIR += py-pyct
     SUBDIR += py-pyfiglet
     SUBDIR += py-pykml
     SUBDIR += py-pypatent
@@ -434,6 +453,7 @@
     SUBDIR += py-wurlitzer
     SUBDIR += py-xgboost
     SUBDIR += pyobd
+    SUBDIR += pytorch
     SUBDIR += qbrew
     SUBDIR += qlas
     SUBDIR += qt5-doc
@@ -450,11 +470,13 @@
     SUBDIR += ringtonetools
     SUBDIR += rname
     SUBDIR += rpl
+    SUBDIR += rsclock
     SUBDIR += rtfm
     SUBDIR += rubygem-dotenv
     SUBDIR += rubygem-dotenv-rails-rails4
     SUBDIR += rubygem-dotenv-rails-rails5
     SUBDIR += rubygem-dotenv-rails-rails50
+    SUBDIR += rubygem-dotenv-rails-rails61
     SUBDIR += rubygem-haversine_distance
     SUBDIR += rubygem-iesd
     SUBDIR += rubygem-mime-types
@@ -538,6 +560,7 @@
     SUBDIR += vifm
     SUBDIR += visp
     SUBDIR += viz
+    SUBDIR += vote
     SUBDIR += vxl
     SUBDIR += wego
     SUBDIR += whichman
@@ -566,6 +589,7 @@
     SUBDIR += xtail
     SUBDIR += xtar
     SUBDIR += ytree
+    SUBDIR += zine
     SUBDIR += zoneinfo
 
 .include <bsd.port.subdir.mk>

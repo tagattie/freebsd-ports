@@ -1,11 +1,12 @@
 PORTNAME=	openldap
 PORTVERSION=	2.4.44
-DISTVERSIONSUFFIX=	-22.el7
-PORTREVISION=	2
+DISTVERSIONSUFFIX=	-25.el7_9
+PORTREVISION=	3
 CATEGORIES=	net linux
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	LDAP libraries (Linux CentOS ${LINUX_DIST_VER})
+WWW=		https://www.OpenLDAP.org/
 
 USES=		cpe linux:c7
 USE_LDCONFIG=	yes

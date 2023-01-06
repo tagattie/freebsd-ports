@@ -4,6 +4,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	pali.gabor@gmail.com
 COMMENT=	BHyVe with unofficial extensions
+WWW=		https://github.com/pgj/freebsd-bhyve-plus-port
 
 LICENSE=	BSD2CLAUSE
 
@@ -49,6 +50,7 @@ IGNORE+=	cannot build: unsupported system
 WRKSRC=		${WRKDIR}
 
 _LINKS=		sys/cam/ctl \
+		sys/contrib/dev/acpica \
 		sys/dev/e1000 \
 		sys/dev/mii \
 		sys/dev/usb/controller \

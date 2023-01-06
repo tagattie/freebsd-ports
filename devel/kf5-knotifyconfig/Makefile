@@ -1,6 +1,5 @@
 PORTNAME=	knotifyconfig
 DISTVERSION=	${KDE_FRAMEWORKS_VERSION}
-PORTREVISION=	1
 CATEGORIES=	devel kde kde-frameworks
 
 MAINTAINER=	kde@FreeBSD.org
@@ -11,9 +10,9 @@ LIB_DEPENDS=	libcanberra.so:audio/libcanberra
 USES=		cmake compiler:c++11-lib gettext kde:5 qt:5 tar:xz xorg
 USE_KDE=	completion config coreaddons i18n jobwidgets kio \
 		service solid widgetsaddons windowsystem \
-		ecm_build
+		ecm:build
 USE_QT=		concurrent core dbus gui network phonon4 widgets \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 USE_XORG=	x11
 
 OPTIONS_DEFINE=		AUDIO

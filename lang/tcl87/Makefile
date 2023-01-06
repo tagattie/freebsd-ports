@@ -9,6 +9,7 @@ DISTNAME=	${PORTNAME}${DISTVERSION}-src
 
 MAINTAINER=	tcltk@FreeBSD.org
 COMMENT=	Tool Command Language
+WWW=		https://www.tcl.tk/
 
 LICENSE=	TclTk
 LICENSE_NAME=	Tcl/Tk License
@@ -54,6 +55,7 @@ CONFIGURE_ARGS=	--enable-shared \
 		--includedir=${PREFIX}/include/tcl${TCL_VER} \
 		--enable-symbols \
 		--with-system-libtommath
+LDFLAGS+=	-Wl,-z,muldefs
 
 TCL_VERSION=	8.7a5
 TCL_VER=	8.7

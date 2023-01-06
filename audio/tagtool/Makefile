@@ -6,9 +6,13 @@ MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNOME MP3/Ogg file tagger
+WWW=		http://pwp.netcabo.pt/paol/tagtool/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+DEPRECATED=	Abandonware and obsolete, doesn't properly support ID3v2 tagging
+EXPIRATION_DATE=2023-03-31
 
 LIB_DEPENDS=	libgnuregex.so.6:devel/libgnuregex \
 		libid3.so:audio/id3lib \

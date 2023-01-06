@@ -1,10 +1,12 @@
 PORTNAME=	inspec-core
 PORTVERSION=	4.56.20
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Framework to create end-to-end infrastructure tests
+WWW=		https://github.com/inspec/inspec
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -21,7 +23,7 @@ RUN_DEPENDS=	rubygem-addressable>=2.4<3:www/rubygem-addressable \
 		rubygem-parallel>=1.9<2:sysutils/rubygem-parallel \
 		rubygem-parslet1>=1.5<2:textproc/rubygem-parslet1 \
 		rubygem-pry>=0.13<1:devel/rubygem-pry \
-		rubygem-rspec>=3.9<3.11.1:devel/rubygem-rspec \
+		rubygem-rspec>=3.9<3.13:devel/rubygem-rspec \
 		rubygem-rspec-its>=1.2<2:devel/rubygem-rspec-its \
 		rubygem-rubyzip>=1.2.2<3:archivers/rubygem-rubyzip \
 		rubygem-semverse>=3.0<4:devel/rubygem-semverse \

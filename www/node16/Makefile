@@ -1,12 +1,13 @@
 PORTNAME=	node
 DISTVERSIONPREFIX=	v
-DISTVERSION=	16.16.0
+DISTVERSION=	16.19.0
 CATEGORIES=	www
 MASTER_SITES=	https://nodejs.org/dist/v${DISTVERSION}/
 PKGNAMESUFFIX=	16
 
-MAINTAINER=	bhughes@FreeBSD.org
+MAINTAINER=	otis@FreeBSD.org
 COMMENT=	V8 JavaScript for client and server
+WWW=		https://nodejs.org/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -15,12 +16,11 @@ BROKEN_SSL=		libressl libressl-devel
 BROKEN_SSL_REASON=	Node.js ${PORTVERSION:R:R}.x LTS requires OpenSSL 1.1.x or the BUNDLED_SSL option enabled
 ONLY_FOR_ARCHS=		aarch64 amd64 armv6 armv7 i386 powerpc64 powerpc64le
 
-USES=		compiler:c++11-lib gmake python:3.6-3.10,build pkgconfig \
+USES=		compiler:c++11-lib gmake python:3.6+,build pkgconfig \
 		localbase shebangfix
 
 OPTIONS_DEFINE=		BUNDLED_SSL DOCS NLS DTRACE COREPACK
 OPTIONS_DEFAULT=	DTRACE COREPACK
-OPTIONS_DEFAULT+=	${OPTIONS_DEFAULT_${OPSYS}_${OSREL:R}}
 OPTIONS_SUB=		yes
 
 .if !exists(/usr/sbin/dtrace)
@@ -110,6 +110,11 @@ post-configure:
 		| ${XARGS} -0 ${REINPLACE_CMD} -e "s|-I${LOCALBASE}/include||g"
 
 post-install:
+	${RM} -rf ${STAGEDIR}${PREFIX}/share/systemtap
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/node
+
+post-install-DTRACE-on:
+	${MKDIR} ${STAGEDIR}${PREFIX}/lib/dtrace
+	${INSTALL_DATA} ${WRKSRC}/out/Release/node.d ${STAGEDIR}${PREFIX}/lib/dtrace
 
 .include <bsd.port.mk>

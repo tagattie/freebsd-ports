@@ -1,11 +1,12 @@
 PORTNAME=	gradle
-PORTVERSION=	7.5.1
+PORTVERSION=	7.6
 CATEGORIES=	devel java
 MASTER_SITES=	https://downloads.gradle.org/distributions/
 EXTRACT_SUFX=	-bin.zip
 
 MAINTAINER=	ygy@FreeBSD.org
 COMMENT=	Project automation tool
+WWW=		https://www.gradle.org/
 
 LICENSE=	APACHE20 BSD3CLAUSE CDDL EPL LGPL21+ MIT MPL20
 LICENSE_COMB=	multi

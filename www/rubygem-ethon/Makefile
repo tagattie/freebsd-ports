@@ -1,10 +1,11 @@
 PORTNAME=	ethon
-PORTVERSION=	0.15.0
+PORTVERSION=	0.16.0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Very lightweight libcurl wrapper
+WWW=		https://github.com/typhoeus/ethon
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

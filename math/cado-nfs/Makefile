@@ -1,10 +1,11 @@
 PORTNAME=	cado-nfs
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.3.0.20220722
+DISTVERSION=	2.3.0-20220722
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Implementation of the Number Field Sieve Algorithm
+WWW=		https://cado-nfs.gitlabpages.inria.fr/
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -1,5 +1,6 @@
 PORTNAME=	peazip
 PORTVERSION=	8.8.0
+PORTREVISION=	1
 CATEGORIES=	archivers
 MASTER_SITES=	https://github.com/giorgiotani/PeaZip/releases/download/${PORTVERSION}/
 PKGNAMESUFFIX=	${LAZARUS_PKGNAMESUFFIX}
@@ -7,6 +8,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}.src
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Free archiver and file compressor
+WWW=		https://peazip.github.io
 
 LICENSE=	LGPL3
 

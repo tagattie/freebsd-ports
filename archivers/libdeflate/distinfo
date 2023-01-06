@@ -1,3 +1,5 @@
-TIMESTAMP = 1659680511
-SHA256 (ebiggers-libdeflate-v1.13_GH0.tar.gz) = 0d81f197dc31dc4ef7b6198fde570f4e8653c77f4698fcb2163d820a9607c838
-SIZE (ebiggers-libdeflate-v1.13_GH0.tar.gz) = 173736
+TIMESTAMP = 1670215210
+SHA256 (ebiggers-libdeflate-v1.15_GH0.tar.gz) = 58b95040df7383dc0413defb700d9893c194732474283cc4c8f144b00a68154b
+SIZE (ebiggers-libdeflate-v1.15_GH0.tar.gz) = 180818
+SHA256 (98174ac5e6fe2a806923bcb6bfa24cdbf32c79d0.patch) = 3b80183158aee9c01274258548a938bfa2bf4377ccfb0d6f3277424126068a37
+SIZE (98174ac5e6fe2a806923bcb6bfa24cdbf32c79d0.patch) = 1502

@@ -5,6 +5,7 @@ CATEGORIES=	textproc
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Easy to use but powerful document formatting/preparation language
+WWW=		https://fbb-git.gitlab.io/yodl/
 
 LICENSE=	GPLv3
 
@@ -49,6 +50,7 @@ PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
 WRKSRC_SUBDIR=	${PORTNAME}
 
 OPTIONS_DEFINE=	DOCS
+DOCS_USES=	tex
 DOCS_USE=	TEX=latex:build,dvipsk:build
 
 post-patch:

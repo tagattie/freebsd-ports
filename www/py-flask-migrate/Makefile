@@ -1,6 +1,5 @@
 PORTNAME=	flask-migrate
-PORTVERSION=	3.1.0
-PORTREVISION=	1
+PORTVERSION=	4.0.0
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -8,6 +7,7 @@ DISTNAME=	Flask-Migrate-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Database schema migrations for Flask applications
+WWW=		https://github.com/miguelgrinberg/Flask-Migrate
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

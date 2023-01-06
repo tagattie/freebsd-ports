@@ -1,5 +1,5 @@
 PORTNAME=	gdk-pixbuf
-PORTVERSION=	2.42.9
+PORTVERSION=	2.42.10
 CATEGORIES=	graphics
 MASTER_SITES=	GNOME
 PKGNAMESUFFIX=	2
@@ -7,6 +7,7 @@ DIST_SUBDIR=	gnome
 
 MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	Graphic library for GTK+
+WWW=		https://developer.gnome.org/gdk-pixbuf/
 
 LICENSE=	LGPL20+
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -21,7 +22,7 @@ MESON_ARGS=	-Dbuiltin_loaders="none" -Dgtk_doc=false -Dinstalled_tests=false -Dt
 TRIGGERS=	gdk-pixbuf-query-loaders
 SUB_LIST=	GTK2_VERSION=${GTK2_VERSION}
 
-LIBVERSION=	0.4200.9
+LIBVERSION=	0.4200.10
 PLIST_SUB+=	LIBVERSION=${LIBVERSION}
 
 OPTIONS_SUB=	yes

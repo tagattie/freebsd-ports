@@ -1,13 +1,10 @@
 PORTNAME=	marble
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
-PORTREVISION=	2
 CATEGORIES=	astro education kde kde-applications
-
-PATCH_SITES=	https://invent.kde.org/education/marble/-/commit/
-PATCHFILES=	677153cc8c1450a8a370fbd1c7505dd7e4ea50fc.diff:-p1
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Virtual globe and world atlas for KDE
+WWW=		https://marble.kde.org/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
@@ -20,10 +17,10 @@ USE_KDE=	attica auth codecs completion config configwidgets coreaddons \
 		crash doctools i18n jobwidgets kio newstuff package parts \
 		plasma-framework plasma-workspace-wallpapers runner service solid \
 		sonnet textwidgets wallet widgetsaddons windowsystem xmlgui \
-		ecm_build
+		ecm:build
 USE_QT=		concurrent core dbus declarative designer gui location network opengl \
 		phonon4 printsupport script serialport sql svg webchannel widgets xml \
-		buildtools_build qmake_build testlib_build
+		buildtools:build qmake:build testlib:build
 USE_XORG=	x11
 
 USE_LDCONFIG=	yes

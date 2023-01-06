@@ -1,6 +1,6 @@
---- chrome/browser/extensions/api/image_writer_private/removable_storage_provider.cc.orig	2022-03-28 18:11:04 UTC
+--- chrome/browser/extensions/api/image_writer_private/removable_storage_provider.cc.orig	2022-12-01 10:35:46 UTC
 +++ chrome/browser/extensions/api/image_writer_private/removable_storage_provider.cc
-@@ -22,6 +22,7 @@ static base::LazyInstance<scoped_refptr<StorageDeviceL
+@@ -20,6 +20,7 @@ static base::LazyInstance<scoped_refptr<StorageDeviceL
  
  void RemovableStorageProvider::GetAllDevices(DeviceListReadyCallback callback) {
    DCHECK_CURRENTLY_ON(content::BrowserThread::UI);
@@ -8,7 +8,7 @@
    if (g_test_device_list.Get().get() != nullptr) {
      base::ThreadTaskRunnerHandle::Get()->PostTask(
          FROM_HERE,
-@@ -35,6 +36,9 @@ void RemovableStorageProvider::GetAllDevices(DeviceLis
+@@ -33,6 +34,9 @@ void RemovableStorageProvider::GetAllDevices(DeviceLis
         base::TaskShutdownBehavior::SKIP_ON_SHUTDOWN},
        base::BindOnce(&RemovableStorageProvider::PopulateDeviceList),
        std::move(callback));

@@ -1,11 +1,12 @@
 PORTNAME=	nbsphinx
-PORTVERSION=	0.8.9
+PORTVERSION=	0.8.10
 CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Jupyter Notebook Tools for Sphinx
+WWW=		https://github.com/spatialaudio/nbsphinx
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

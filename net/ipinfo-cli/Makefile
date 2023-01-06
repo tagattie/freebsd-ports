@@ -1,11 +1,12 @@
 PORTNAME=	ipinfo
 DISTVERSIONPREFIX=	ipinfo-
-DISTVERSION=	2.9.0
-PORTREVISION=	1
+DISTVERSION=	2.10.0
+PORTREVISION=	2
 CATEGORIES=	net
 
 MAINTAINER=	0xdutra@gmail.com
 COMMENT=	Official Command Line Interface for the IPinfo API
+WWW=		https://github.com/ipinfo/cli
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

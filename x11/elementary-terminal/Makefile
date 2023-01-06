@@ -1,10 +1,11 @@
 PORTNAME=	terminal
-DISTVERSION=	6.1.0
+DISTVERSION=	6.1.1
 CATEGORIES=	x11
 PKGNAMEPREFIX=	elementary-
 
 MAINTAINER=	nc@FreeBSD.org
 COMMENT=	Terminal emulator designed for elementary OS
+WWW=		https://github.com/elementary/terminal
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

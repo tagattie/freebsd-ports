@@ -1,10 +1,12 @@
 PORTNAME=	zola
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.16.1
+PORTREVISION=	3
 CATEGORIES=	www
 
 MAINTAINER=	mikael@FreeBSD.org
 COMMENT=	Fast static site generator
+WWW=		https://www.getzola.org/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

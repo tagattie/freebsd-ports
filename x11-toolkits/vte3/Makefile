@@ -1,6 +1,6 @@
 PORTNAME=	vte
 PORTVERSION=	0.68.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	GNOME
 PKGNAMESUFFIX=	3
@@ -8,6 +8,7 @@ DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Terminal widget with improved accessibility and I18N support
+WWW=		https://wiki.gnome.org/Apps/Terminal/VTE
 
 LICENSE=	LGPL21
 

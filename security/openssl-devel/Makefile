@@ -1,5 +1,5 @@
 PORTNAME=	openssl
-DISTVERSION=	3.0.5
+DISTVERSION=	3.0.7
 CATEGORIES=	security devel
 MASTER_SITES=	https://www.openssl.org/source/ \
 		ftp://ftp.cert.dfn.de/pub/tools/net/openssl/source/
@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	brnrd@FreeBSD.org
 COMMENT=	TLSv1.3 capable SSL and crypto library
+WWW=		https://www.openssl.org/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

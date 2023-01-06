@@ -1,6 +1,5 @@
 PORTNAME=	geogebra
-PORTVERSION=	5.0.625.0
-PORTREVISION=	1
+PORTVERSION=	5.0.752.0
 CATEGORIES=	math education java
 MASTER_SITES=	http://download.geogebra.org/installers/5.0/ \
 		https://static.geogebra.org/images/ \
@@ -11,6 +10,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	uzsolt@uzsolt.hu
 COMMENT=	Dynamic software that joins geometry, algebra, and calculus
+WWW=		https://www.geogebra.org/
 
 LICENSE=	GEOGEBRA
 LICENSE_NAME=	GeoGebra Non-Commercial License Agreement

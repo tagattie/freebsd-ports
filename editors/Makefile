@@ -12,6 +12,7 @@
     SUBDIR += bee-host
     SUBDIR += biew
     SUBDIR += bitedit
+    SUBDIR += bless
     SUBDIR += boiling-egg
     SUBDIR += bpatch
     SUBDIR += bvi
@@ -197,7 +198,7 @@
     SUBDIR += linux-sublime3
     SUBDIR += linux-wps-office
     SUBDIR += lite
-    SUBDIR += madedit
+    SUBDIR += lite-xl
     SUBDIR += marker
     SUBDIR += mg
     SUBDIR += micro
@@ -212,6 +213,7 @@
     SUBDIR += neovim
     SUBDIR += neovim-qt
     SUBDIR += notepadnext
+    SUBDIR += novelwriter
     SUBDIR += nvi-m17n
     SUBDIR += nvi2
     SUBDIR += o
@@ -236,6 +238,7 @@
     SUBDIR += py-vim-bridge
     SUBDIR += quilter
     SUBDIR += rehex
+    SUBDIR += retext
     SUBDIR += rubygem-neovim
     SUBDIR += scite
     SUBDIR += se
@@ -261,6 +264,7 @@
     SUBDIR += texworks
     SUBDIR += the
     SUBDIR += treeform
+    SUBDIR += turbo
     SUBDIR += tweak
     SUBDIR += uemacs
     SUBDIR += uzap

@@ -1,8 +1,8 @@
---- chrome/test/BUILD.gn.orig	2022-04-01 07:48:30 UTC
+--- chrome/test/BUILD.gn.orig	2022-12-06 08:09:13 UTC
 +++ chrome/test/BUILD.gn
-@@ -9110,7 +9110,7 @@ test("chrome_app_unittests") {
+@@ -10087,7 +10087,7 @@ test("chrome_app_unittests") {
+     "//components/heap_profiling/in_process",
      "//components/safe_browsing:buildflags",
-     "//pdf:pdf_ppapi",
    ]
 -  if (!is_fuchsia) {
 +  if (!is_fuchsia && !is_bsd) {

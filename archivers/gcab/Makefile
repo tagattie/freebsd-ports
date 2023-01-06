@@ -1,10 +1,11 @@
 PORTNAME=	gcab
-PORTVERSION=	1.4
+PORTVERSION=	1.5
 CATEGORIES=	archivers gnome
 MASTER_SITES=	GNOME
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GObject library to create cabinet files
+WWW=		https://wiki.gnome.org/msitools
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -10,11 +10,12 @@
 
 DISTVERSIONPREFIX=	v
 PORTNAME=	ksh
-PORTVERSION=	1.0.3
+PORTVERSION=	1.0.4
 CATEGORIES=	shells
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Development branch of AT&T KornShell 93
+WWW=		http://www.kornshell.com/
 
 LICENSE=	EPL
 

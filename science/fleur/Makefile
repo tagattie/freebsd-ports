@@ -1,10 +1,11 @@
 PORTNAME=	fleur
-DISTVERSION=	6.0.20220715
+DISTVERSION=	6.0-20220715
 PORTREVISION=	1
 CATEGORIES=	science # chemistry
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	FLAPW code for atomic computations in quantum chemistry and physics
+WWW=		https://www.flapw.de/master/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

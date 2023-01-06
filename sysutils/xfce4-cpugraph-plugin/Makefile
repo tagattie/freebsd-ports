@@ -1,11 +1,12 @@
 PORTNAME=	xfce4-cpugraph-plugin
-PORTVERSION=	1.2.6
+PORTVERSION=	1.2.7
 CATEGORIES=	sysutils xfce
 MASTER_SITES=	XFCE/panel-plugins
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Graphical representation of the CPU load
+WWW=		https://goodies.xfce.org/projects/panel-plugins/xfce4-cpugraph-plugin
 
 LICENSE=	GPLv2
 

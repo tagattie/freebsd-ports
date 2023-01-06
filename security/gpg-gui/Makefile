@@ -3,8 +3,9 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	0.2.2
 CATEGORIES=	security
 
-MAINTAINER=	nc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GUI wrapper for symmetric GPG file encryption
+WWW=		https://github.com/AnsgarKlein/GPG-Gui
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

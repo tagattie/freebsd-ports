@@ -1,12 +1,13 @@
 PORTNAME=	cardano-db-sync
-PORTVERSION=	13.0.4
+PORTVERSION=	13.1.0.0
 CATEGORIES=	net-p2p databases
 
 PATCH_SITES=	https://arrowd.name/:freebsd_compat
-PATCHFILES=	1210.patch:freebsd_compat
+PATCHFILES=	1210_1.patch:freebsd_compat
 
 MAINTAINER=	arrowd@FreeBSD.org
 COMMENT=	PostgreSQL-driven Cardano blockchain data tool
+WWW=		https://cardano.org/
 
 LICENSE=	APACHE20
 
@@ -45,7 +46,7 @@ GH_TUPLE=	HeinrichApfelmus:threepenny-gui:e3bb8283fc7d2e8aa374eea29426002e8dcd67
 GH_TUPLE+=	input-output-hk:libsodium:${LIBSODIUM_HASH}:sodium \
 		bitcoin-core:secp256k1:${SECP256K1_HASH}:secp
 
-CARDANO_DB_SYNC_HASH=	b32fb363a738eb0453ed6c84f2dfd7723c0640bd
+CARDANO_DB_SYNC_HASH=	1040fa9ec85fd75ce9f02dae2006170136793d02
 LIBSODIUM_HASH=		66f017f16633f2060db25e17c170c2afa0f2a8a1
 # Obtained from https://github.com/input-output-hk/cardano-node/blob/master/.github/workflows/github-page.yml#L21
 SECP256K1_HASH=		ac83be33d0956faf6b7f61a60ab524ef7d6a473a
@@ -94,8 +95,8 @@ USE_CABAL=	Glob-0.10.2_3 \
 		base16-bytestring-1.0.2.0 \
 		base58-bytestring-0.1.0 \
 		base64-bytestring-1.2.1.0 \
-		base64-bytestring-type-1.0.1_14 \
-		basement-0.0.12_1 \
+		base64-bytestring-type-1.0.1_15 \
+		basement-0.0.12_2 \
 		bech32-1.1.2 \
 		bifunctors-5.5.11_1 \
 		bimap-0.4.0_1 \
@@ -103,7 +104,7 @@ USE_CABAL=	Glob-0.10.2_3 \
 		binary-orphans-1.0.2_1 \
 		blaze-builder-0.4.2.2_1 \
 		blaze-html-0.9.1.2_2 \
-		blaze-markup-0.8.2.8_2 \
+		blaze-markup-0.8.2.8_3 \
 		bsb-http-chunked-0.0.0.4_3 \
 		byteorder-1.0.4 \
 		bytestring-builder-0.10.8.2.0 \
@@ -126,7 +127,7 @@ USE_CABAL=	Glob-0.10.2_3 \
 		conduit-extra-1.3.5_1 \
 		connection-0.3.1_1 \
 		constraints-0.13.3 \
-		constraints-extras-0.3.2.1 \
+		constraints-extras-0.3.2.1_1 \
 		contravariant-1.5.5 \
 		cookie-0.4.5 \
 		criterion-1.5.13.0_2 \
@@ -156,25 +157,27 @@ USE_CABAL=	Glob-0.10.2_3 \
 		either-5.0.1.1_1 \
 		ekg-0.4.0.15_8 \
 		ekg-core-0.1.1.7_2 \
-		entropy-0.4.1.7 \
+		entropy-0.4.1.7_1 \
 		erf-2.0.0.0 \
 		esqueleto-3.5.3.0 \
 		extra-1.7.10 \
 		fast-logger-3.1.1 \
+		fgl-5.7.0.3_1 \
 		file-embed-0.0.15.0 \
 		filelock-0.1.1.5 \
 		fin-0.1.1_2 \
 		fingertree-0.1.5.0 \
 		fmlist-0.9.4 \
-		foldl-1.4.12_4 \
+		foldl-1.4.12_5 \
 		formatting-6.3.7_2 \
 		foundation-0.0.26.1_1 \
 		free-5.1.7_1 \
-		generic-data-0.9.2.1 \
+		generic-data-0.9.2.1_1 \
 		generic-deriving-1.14.1 \
-		generic-monoid-0.1.0.1_1 \
+		generic-monoid-0.1.0.1_2 \
 		generic-random-1.5.0.1 \
-		generics-sop-0.5.1.2 \
+		generics-sop-0.5.1.2_1 \
+		graphviz-2999.20.1.0_2 \
 		gray-code-0.3.1 \
 		groups-0.5.3 \
 		half-0.3.1 \
@@ -182,7 +185,7 @@ USE_CABAL=	Glob-0.10.2_3 \
 		hashable-1.3.5.0_1 \
 		haskell-lexer-1.1 \
 		hedgehog-1.1.1_2 \
-		hedgehog-quickcheck-0.1.1_3 \
+		hedgehog-quickcheck-0.1.1_4 \
 		hostname-1.0 \
 		hourglass-0.2.12 \
 		hsc2hs-0.68.8_1 \
@@ -195,18 +198,18 @@ USE_CABAL=	Glob-0.10.2_3 \
 		http-client-tls-0.3.6.1 \
 		http-conduit-2.3.8 \
 		http-date-0.0.11 \
-		http-media-0.8.0.0_6 \
+		http-media-0.8.0.0_7 \
 		http-types-0.12.3 \
 		http2-3.0.3 \
 		indexed-profunctors-0.1.1 \
 		indexed-traversable-0.1.2_2 \
 		indexed-traversable-instances-0.1.1_1 \
-		insert-ordered-containers-0.2.5.1_2 \
+		insert-ordered-containers-0.2.5.1_3 \
 		int-cast-0.2.0.0_4 \
 		integer-logarithms-1.0.3.1_3 \
 		invariant-0.5.5 \
-		io-streams-1.5.2.1_2 \
-		io-streams-haproxy-1.0.1.0_5 \
+		io-streams-1.5.2.1_3 \
+		io-streams-haproxy-1.0.1.0_6 \
 		iproute-1.7.12 \
 		js-chart-2.9.4.1 \
 		kan-extensions-5.2.3 \
@@ -214,19 +217,22 @@ USE_CABAL=	Glob-0.10.2_3 \
 		lazy-search-0.1.2.1 \
 		lazysmallcheck-0.6 \
 		lens-5.1_1 \
-		libyaml-0.1.2 \
+		libyaml-0.1.2_1 \
 		lift-type-0.1.0.1 \
 		lifted-async-0.10.2.2 \
 		lifted-base-0.2.3.12 \
 		list-t-1.0.5.1 \
 		logict-0.7.0.3_1 \
+		loop-0.3.0 \
+		markov-chain-usage-model-0.0.0 \
 		math-functions-0.3.4.2 \
+		matrix-0.3.6.1_1 \
 		megaparsec-9.2.0_2 \
 		memory-0.16.0_1 \
 		mersenne-random-pure64-0.2.2.0_1 \
 		microlens-0.4.12.0 \
 		microlens-mtl-0.2.0.1 \
-		microlens-th-0.4.3.10 \
+		microlens-th-0.4.3.10_1 \
 		microstache-1.0.2_3 \
 		mime-types-0.1.0.9 \
 		mmorph-1.1.5_1 \
@@ -258,11 +264,12 @@ USE_CABAL=	Glob-0.10.2_3 \
 		partial-order-0.2.0.0 \
 		path-pieces-0.2.1_1 \
 		pem-0.2.4 \
-		persistent-2.13.3.0_2 \
+		persistent-2.13.3.0_3 \
 		persistent-documentation-0.1.0.4 \
 		persistent-postgresql-2.13.4.0 \
-		pipes-4.3.16_3 \
-		postgresql-libpq-0.9.4.3_2 \
+		pipes-4.3.16_6 \
+		polyparse-1.13_5 \
+		postgresql-libpq-0.9.4.3_3 \
 		postgresql-simple-0.6.4_8 \
 		pretty-show-1.10 \
 		pretty-simple-4.0.0.0 \
@@ -276,12 +283,13 @@ USE_CABAL=	Glob-0.10.2_3 \
 		psqueues-0.2.7.3 \
 		quickcheck-instances-0.3.27_2 \
 		quickcheck-io-0.2.0 \
+		quickcheck-state-machine-0.7.1 \
 		quiet-0.2 \
 		ral-0.1_2 \
 		random-1.2.1 \
 		random-shuffle-0.0.4 \
-		readable-0.3.1 \
-		recursion-schemes-5.2.2.2 \
+		readable-0.3.1_1 \
+		recursion-schemes-5.2.2.2_1 \
 		reducers-3.12.4_2 \
 		reflection-2.1.6_1 \
 		regex-base-0.94.0.2_1 \
@@ -297,7 +305,7 @@ USE_CABAL=	Glob-0.10.2_3 \
 		semigroupoids-5.3.7 \
 		semigroups-0.20 \
 		serialise-0.2.4.0_1 \
-		servant-0.19_4 \
+		servant-0.19_5 \
 		servant-server-0.19_1 \
 		servant-swagger-1.1.10_5 \
 		setenv-0.1.1.3_1 \
@@ -307,10 +315,10 @@ USE_CABAL=	Glob-0.10.2_3 \
 		singleton-bool-0.1.5_3 \
 		size-based-0.1.2.0_1 \
 		snap-core-1.0.4.2_1 \
-		snap-server-1.1.2.0_1 \
+		snap-server-1.1.2.0_2 \
 		socks-0.6.1 \
 		some-1.0.2 \
-		sop-core-0.5.0.2 \
+		sop-core-0.5.0.2_1 \
 		split-0.2.3.4_2 \
 		splitmix-0.1.0.4_1 \
 		statistics-0.16.0.1 \
@@ -338,7 +346,7 @@ USE_CABAL=	Glob-0.10.2_3 \
 		temporary-1.3 \
 		terminal-size-0.3.2.1 \
 		testing-type-modifiers-0.1.0.1 \
-		text-ansi-0.1.1_3 \
+		text-ansi-0.1.1_4 \
 		text-short-0.1.5_1 \
 		tf-random-0.5 \
 		th-abstraction-0.4.3.0 \
@@ -352,7 +360,7 @@ USE_CABAL=	Glob-0.10.2_3 \
 		th-utilities-0.2.4.3 \
 		these-1.1.1.1_6 \
 		time-compat-1.9.6.1_4 \
-		time-manager-0.0.0 \
+		time-manager-0.0.0_1 \
 		time-units-1.0.0 \
 		tls-1.5.7 \
 		transformers-base-0.4.6 \
@@ -365,7 +373,7 @@ USE_CABAL=	Glob-0.10.2_3 \
 		unagi-chan-0.4.1.4 \
 		unbounded-delays-0.1.1.1 \
 		unix-bytestring-0.3.7.6 \
-		unix-compat-0.5.4_1 \
+		unix-compat-0.5.4_2 \
 		unix-time-0.4.7 \
 		unliftio-0.2.21.0 \
 		unliftio-core-0.2.0.1_2 \
@@ -376,20 +384,21 @@ USE_CABAL=	Glob-0.10.2_3 \
 		vault-0.3.1.5_2 \
 		vector-0.12.3.1_2 \
 		vector-algorithms-0.8.0.4_2 \
-		vector-binary-instances-0.2.5.2_2 \
+		vector-binary-instances-0.2.5.2_3 \
 		vector-th-unbox-0.2.2_3 \
 		void-0.7.3 \
 		wai-3.2.3 \
 		wai-app-static-3.1.7.2_1 \
-		wai-extra-3.1.8 \
+		wai-extra-3.1.8_1 \
 		wai-logger-2.4.0 \
 		warp-3.3.19 \
 		wcwidth-0.0.2 \
 		websockets-0.12.7.3_1 \
-		websockets-snap-0.10.3.1 \
+		websockets-snap-0.10.3.1_1 \
 		wide-word-0.1.1.2_4 \
 		witherable-0.4.2_3 \
 		wl-pprint-annotated-0.1.0.1_1 \
+		wl-pprint-text-1.2.0.2 \
 		word8-0.1.3 \
 		x509-1.7.6 \
 		x509-store-1.6.9 \
@@ -407,9 +416,9 @@ post-patch:
 			-e '/Cardano.Db.RevFromGit/d' \
 			${WRKSRC}/cardano-db/src/Cardano/Db/Version.hs
 
-	${ECHO_CMD} "package *" >> ${WRKSRC}/cabal.project.${PORTNAME}
-	${ECHO_CMD} "  extra-include-dirs: ${LIBS_PREFIX}${PREFIX}/include" >> ${WRKSRC}/cabal.project.${PORTNAME}
-	${ECHO_CMD} "  extra-lib-dirs: ${LIBS_PREFIX}${PREFIX}/lib" >> ${WRKSRC}/cabal.project.${PORTNAME}
+	${ECHO_CMD} "package *" >> ${WRKSRC}/cabal.project.local
+	${ECHO_CMD} "  extra-include-dirs: ${LIBS_PREFIX}${PREFIX}/include" >> ${WRKSRC}/cabal.project.local
+	${ECHO_CMD} "  extra-lib-dirs: ${LIBS_PREFIX}${PREFIX}/lib" >> ${WRKSRC}/cabal.project.local
 
 pre-build:
 	cd ${WRKSRC_sodium} && ./autogen.sh

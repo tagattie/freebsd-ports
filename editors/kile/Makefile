@@ -1,11 +1,12 @@
 PORTNAME=	kile
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.0b3
-PORTREVISION=	34
+PORTREVISION=	38
 CATEGORIES=	editors kde
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	LaTeX source editor for KDE
+WWW=		https://kile.sourceforge.io/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -20,9 +21,9 @@ USE_KDE=	auth bookmarks codecs completion config configwidgets \
 		init itemviews jobwidgets js khtml kio okular parts service \
 		solid sonnet syntaxhighlighting texteditor textwidgets \
 		widgetsaddons windowsystem xmlgui \
-		doctools_build
+		doctools:build
 USE_QT=		concurrent core dbus gui network script widgets xml \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 USE_XORG=	x11
 SHEBANG_FILES=	*.pl
 

@@ -1,5 +1,5 @@
 PORTNAME=	zfs-autobackup
-DISTVERSION=	3.1.2
+DISTVERSION=	3.1.3
 CATEGORIES=	sysutils python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -7,6 +7,7 @@ DISTNAME=	zfs_autobackup-${DISTVERSION}
 
 MAINTAINER=	skozlov@FreeBSD.org
 COMMENT=	Periodicly backup zfs filesystems to other locations
+WWW=		https://github.com/psy0rz/zfs_autobackup
 
 LICENSE=	GPLv3
 

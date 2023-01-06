@@ -1,11 +1,12 @@
 PORTNAME=	numexpr
-PORTVERSION=	2.8.3
+PORTVERSION=	2.8.4
 CATEGORIES=	math python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Fast numerical array expression evaluator for Python and NumPy
+WWW=		https://github.com/pydata/numexpr
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

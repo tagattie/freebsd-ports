@@ -1,11 +1,11 @@
 PORTNAME=	cups-filters
-PORTVERSION=	1.28.15
-PORTREVISION=	4
+PORTVERSION=	1.28.16
 CATEGORIES=	print
 MASTER_SITES=	https://www.openprinting.org/download/cups-filters/
 
 MAINTAINER=	tijl@FreeBSD.org
 COMMENT=	Additional backends, filters and other software for CUPS
+WWW=		https://wiki.linuxfoundation.org/openprinting/cups-filters
 
 LICENSE=	BSD4CLAUSE GPLv2 GPLv2+ GPLv3 GPLv3+ LGPL20 LGPL21+ MIT
 LICENSE_COMB=	multi
@@ -76,11 +76,12 @@ GHOSTSCRIPT_CONFIGURE_ENABLE=	ghostscript
 GHOSTSCRIPT_DESC=		PS-to-PDF and PS/PDF-to-raster using Ghostscript
 GHOSTSCRIPT_USES=		ghostscript
 
-IMAGES_CONFIGURE_ENABLE=	imagefilters
+IMAGES_CONFIGURE_ENABLE=	exif imagefilters
 IMAGES_CONFIGURE_WITH=		jpeg png tiff
 IMAGES_DESC=			Accept JPEG, PNG, and TIFF files as input
-IMAGES_LIB_DEPENDS=		libtiff.so:graphics/tiff \
-				libpng.so:graphics/png
+IMAGES_LIB_DEPENDS=		libexif.so:graphics/libexif \
+				libpng.so:graphics/png \
+				libtiff.so:graphics/tiff
 IMAGES_USES=			jpeg
 
 MUPDF_BUILD_DEPENDS=		mutool:graphics/mupdf

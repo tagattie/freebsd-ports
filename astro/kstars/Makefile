@@ -1,12 +1,13 @@
 PORTNAME=	kstars
-DISTVERSION=	3.6.0
-PORTREVISION=	2
+DISTVERSION=	3.6.2
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	astro kde
 MASTER_SITES=	KDE/stable/${PORTNAME}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE desktop planetarium
+WWW=		https://edu.kde.org/kstars
 
 LICENSE=	GPLv2
 
@@ -30,11 +31,11 @@ USE_KDE=	attica auth bookmarks codecs completion config configwidgets\
 		iconthemes init itemviews jobwidgets kio newstuff notifications \
 		notifyconfig parts plotting service solid texteditor \
 		widgetsaddons windowsystem xmlgui \
-		doctools_build ecm_build
+		doctools:build ecm:build
 USE_QT=		concurrent core datavis3d dbus declarative gui multimedia \
 		network opengl printsupport sql svg testlib websockets widgets \
 		xml \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 USE_XORG=	x11
 
 .include <bsd.port.mk>

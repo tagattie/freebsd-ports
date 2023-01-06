@@ -7,6 +7,7 @@ MASTER_SITES=	https://dl.bintray.com/otfried/generic/ipe/${PORTVERSION:R}/
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Extensible vector graphics editor with LaTeX support
+WWW=		https://ipe.otfried.org/
 
 LICENSE=	GPLv3+
 
@@ -17,9 +18,10 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libpng.so:graphics/png \
 		libspiro.so:graphics/libspiro
 
-USES=		compiler:c++11-lib gmake gnome jpeg lua:52 pkgconfig shebangfix qt:5
+USES=		compiler:c++11-lib gmake gnome jpeg lua:52 pkgconfig shebangfix qt:5 tex
 USE_GNOME=	cairo
-USE_QT=		buildtools_build core gui qmake_build widgets
+USE_LDCONFIG=	yes
+USE_QT=		buildtools:build core gui qmake:build widgets
 USE_TEX=	pdftex
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
@@ -38,7 +40,6 @@ MAKE_ENV=	DL_LIBS="" \
 		JPEG_LIBS="-L${LOCALBASE}/lib -ljpeg" \
 		LUA_PACKAGE="lua-${LUA_VER}" \
 		MOC="${MOC}"
-USE_LDCONFIG=	yes
 
 PLIST_SUB=	VERSION="${PORTVERSION}"
 

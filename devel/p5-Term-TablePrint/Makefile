@@ -1,11 +1,12 @@
 PORTNAME=	Term-TablePrint
-PORTVERSION=	0.153
+PORTVERSION=	0.154
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Print a table to the terminal and browse it interactively
+WWW=		https://metacpan.org/release/Term-TablePrint
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

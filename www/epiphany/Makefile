@@ -1,12 +1,13 @@
 PORTNAME=	epiphany
 PORTVERSION=	42.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www gnome
 MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
 DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Extremely lightweight and simple web browser for GNOME
+WWW=		https://www.gnome.org/projects/epiphany/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

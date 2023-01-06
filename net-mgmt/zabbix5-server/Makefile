@@ -1,5 +1,5 @@
 PORTNAME=	zabbix5
-DISTVERSION=	5.0.26
+DISTVERSION=	5.0.30
 PORTREVISION?=	0
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://cdn.zabbix.com/zabbix/sources/stable/${DISTVERSION:R}/
@@ -8,6 +8,7 @@ DISTNAME=	zabbix-${DISTVERSION}
 
 MAINTAINER=	otis@FreeBSD.org
 COMMENT=	Enterprise-class open source distributed monitoring (${PKGNAMESUFFIX:S/^-//}) LTS
+WWW=		https://www.zabbix.com/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -18,7 +19,6 @@ CONFLICTS_INSTALL=	zabbix[0-9][0-9]${PKGNAMESUFFIX} zabbix[0-46-9]${PKGNAMESUFFI
 
 ZABBIX_BUILD=	${PKGNAMESUFFIX:S/^-//}
 
-.if ${ZABBIX_BUILD} != "frontend" # frontend only needs the version/distribution settings
 .if ${ZABBIX_BUILD} != "agent"
 CONFIGURE_ARGS+=	--with-libevent=${LOCALBASE} --cache-file=${WRKSRC}/config.cache
 LIB_DEPENDS+=	libevent.so:devel/libevent
@@ -60,6 +60,8 @@ CONFIGURE_ARGS+=	--enable-${ZABBIX_BUILD} \
 LIB_DEPENDS+=	libnetsnmp.so:net-mgmt/net-snmp
 
 CPPFLAGS+=	-I${LOCALBASE}/include
+
+PORTSCOUT=	limit:^5\.0\.
 
 SUB_FILES=	pkg-message
 
@@ -211,10 +213,6 @@ post-install:
 .if ${ZABBIX_BUILD} == "proxy"
 	${MV} ${STAGEDIR}${LOCALBASE}/bin/zabbix_js \
 		${STAGEDIR}${LOCALBASE}/bin/zabbix_proxy_js
-.endif
-
-.else # frontend
-.include <bsd.port.pre.mk>
 .endif
 
 .include <bsd.port.post.mk>

@@ -1,11 +1,12 @@
 PORTNAME=	python-gvm
-DISTVERSION=	22.8.0
+DISTVERSION=	22.9.1
 CATEGORIES=	security python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	The Greenbone Vulnerability Management Python API library
+WWW=		https://github.com/greenbone/python-gvm
 
 LICENSE=	GPLv3+
 

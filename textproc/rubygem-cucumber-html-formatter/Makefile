@@ -1,10 +1,11 @@
 PORTNAME=	cucumber-html-formatter
-PORTVERSION=	20.0.0
+PORTVERSION=	20.1.0
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	HTML formatter for Cucumber
+WWW=		https://github.com/cucumber/html-formatter
 
 LICENSE=	MIT
 

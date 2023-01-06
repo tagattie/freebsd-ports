@@ -1,11 +1,12 @@
 PORTNAME=	threema-web
-PORTVERSION=	2.4.2
+PORTVERSION=	2.5.0
 CATEGORIES=	www net-im
 MASTER_SITES=	https://github.com/threema-ch/${PORTNAME}/releases/download/v${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-gh
 
 MAINTAINER=	egypcio@FreeBSD.org
 COMMENT=	Threema Web application
+WWW=		https://threema.ch/en/faq/web_info
 
 LICENSE=	AGPLv3
 

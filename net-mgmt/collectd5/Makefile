@@ -1,12 +1,13 @@
 PORTNAME=	collectd
 PORTVERSION=	5.12.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://storage.googleapis.com/collectd-tarballs/
 PKGNAMESUFFIX=	5
 
 MAINTAINER=	ports@bsdserwis.com
 COMMENT=	Systems & network statistics collection daemon
+WWW=		https://www.collectd.org/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -181,7 +182,7 @@ NOTIFYEMAIL_LIB_DEPENDS=	libesmtp.so:mail/libesmtp
 NOTIFYEMAIL_CONFIGURE_ENABLE=	notify_email
 NOTIFYEMAIL_CONFIGURE_WITH=	libesmtp=${LOCALBASE}
 
-NUTUPS_LIB_DEPENDS=		libupsclient.so:sysutils/nut
+NUTUPS_LIB_DEPENDS=		libnutclient.so:sysutils/nut
 NUTUPS_CONFIGURE_ENABLE=	nut
 NUTUPS_CONFIGURE_WITH=		upsclient=${LOCALBASE}
 

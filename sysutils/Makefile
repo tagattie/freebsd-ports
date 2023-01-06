@@ -45,13 +45,13 @@
     SUBDIR += ansible-kld
     SUBDIR += ansible-sshjail
     SUBDIR += ansible-sysrc
-    SUBDIR += ansible4
     SUBDIR += anvil
     SUBDIR += apache-mesos
     SUBDIR += apachetop
     SUBDIR += apcctrl
     SUBDIR += apcpwr
     SUBDIR += apcupsd
+    SUBDIR += apt-mirror-devel
     SUBDIR += aptly
     SUBDIR += arc_summary
     SUBDIR += arcconf
@@ -62,6 +62,7 @@
     SUBDIR += asmctl
     SUBDIR += asmem
     SUBDIR += asusoled
+    SUBDIR += async
     SUBDIR += atf-fvp
     SUBDIR += atf-master
     SUBDIR += atf-rk3328
@@ -88,6 +89,7 @@
     SUBDIR += bacula11-docs
     SUBDIR += bacula11-server
     SUBDIR += bacula13-client
+    SUBDIR += bacula13-client-static
     SUBDIR += bacula13-docs
     SUBDIR += bacula13-server
     SUBDIR += bacula9-client
@@ -118,8 +120,8 @@
     SUBDIR += bchunk
     SUBDIR += beadm
     SUBDIR += beadm-devel
-    SUBDIR += beats6
     SUBDIR += beats7
+    SUBDIR += beats8
     SUBDIR += bfs
     SUBDIR += bhyve+
     SUBDIR += bhyve-firmware
@@ -129,6 +131,7 @@
     SUBDIR += bksh
     SUBDIR += bkt
     SUBDIR += boot-extract
+    SUBDIR += bottom
     SUBDIR += boxbackup-devel
     SUBDIR += bpytop
     SUBDIR += brasero
@@ -137,6 +140,7 @@
     SUBDIR += bsd-splash-changer
     SUBDIR += bsdconfig
     SUBDIR += bsdcrashtar
+    SUBDIR += bsdebfetch
     SUBDIR += bsdfan
     SUBDIR += bsdhwmon
     SUBDIR += bsdinfo
@@ -145,6 +149,7 @@
     SUBDIR += bstack
     SUBDIR += btop
     SUBDIR += btsixad
+    SUBDIR += buildah
     SUBDIR += bulk_extractor
     SUBDIR += bupstash
     SUBDIR += burp
@@ -172,11 +177,9 @@
     SUBDIR += cfengine-devel
     SUBDIR += cfengine-masterfiles
     SUBDIR += cfengine-masterfiles-devel
-    SUBDIR += cfengine-masterfiles317
     SUBDIR += cfengine-masterfiles318
     SUBDIR += cfengine-masterfiles319
     SUBDIR += cfengine-masterfiles320
-    SUBDIR += cfengine317
     SUBDIR += cfengine318
     SUBDIR += cfengine319
     SUBDIR += cfengine320
@@ -209,6 +212,7 @@
     SUBDIR += conky
     SUBDIR += conky-awesome
     SUBDIR += conman
+    SUBDIR += conmon
     SUBDIR += consolehm
     SUBDIR += consolekit2
     SUBDIR += consul
@@ -217,6 +221,7 @@
     SUBDIR += consul_exporter
     SUBDIR += container-diff
     SUBDIR += containerd
+    SUBDIR += containers-common
     SUBDIR += contractor
     SUBDIR += copytape
     SUBDIR += coreos-ct
@@ -247,6 +252,7 @@
     SUBDIR += daggy
     SUBDIR += damager
     SUBDIR += dar
+    SUBDIR += darling-dmg
     SUBDIR += datadog-agent
     SUBDIR += datadog-integrations
     SUBDIR += dateutils
@@ -264,6 +270,7 @@
     SUBDIR += devcpu-data
     SUBDIR += devcpu-data-amd
     SUBDIR += devcpu-data-intel
+    SUBDIR += devctl-jail-kmod
     SUBDIR += devstat
     SUBDIR += dfc
     SUBDIR += di
@@ -324,12 +331,14 @@
     SUBDIR += dwatch-json
     SUBDIR += dwatch-pwsnoop
     SUBDIR += e2fsprogs
+    SUBDIR += e2fsprogs-core
     SUBDIR += e2tools
     SUBDIR += ebsnvme-id
     SUBDIR += ec2-scripts
     SUBDIR += eclat
     SUBDIR += edid-decode
     SUBDIR += edk2
+    SUBDIR += egress-monitor
     SUBDIR += eject
     SUBDIR += eksctl
     SUBDIR += endian
@@ -354,6 +363,7 @@
     SUBDIR += f3
     SUBDIR += facter
     SUBDIR += fakertc
+    SUBDIR += faketty
     SUBDIR += fand
     SUBDIR += fanout
     SUBDIR += fatback
@@ -428,6 +438,7 @@
     SUBDIR += fusefs-lkl
     SUBDIR += fusefs-mhddfs
     SUBDIR += fusefs-mp3fs
+    SUBDIR += fusefs-nbt
     SUBDIR += fusefs-ntfs
     SUBDIR += fusefs-ntfs-compression
     SUBDIR += fusefs-pod
@@ -452,7 +463,6 @@
     SUBDIR += g15daemon
     SUBDIR += gaffitter
     SUBDIR += ganglia-monitor-core
-    SUBDIR += ganglia-webfrontend
     SUBDIR += gapcmon
     SUBDIR += garcon
     SUBDIR += gather
@@ -503,6 +513,7 @@
     SUBDIR += gstopd
     SUBDIR += gstreamer1-plugins-cdio
     SUBDIR += gtk-imonc
+    SUBDIR += hammer2
     SUBDIR += handlr
     SUBDIR += hardlink
     SUBDIR += hare
@@ -532,6 +543,7 @@
     SUBDIR += hs-cputype
     SUBDIR += hstr
     SUBDIR += htop
+    SUBDIR += httm
     SUBDIR += httplog
     SUBDIR += hw-probe
     SUBDIR += hwstat
@@ -560,6 +572,7 @@
     SUBDIR += ipfs-go
     SUBDIR += ipfs-go-fs-repo-migrations
     SUBDIR += ipget
+    SUBDIR += ipmi_exporter
     SUBDIR += ipmitool
     SUBDIR += ipsc
     SUBDIR += isc-cron
@@ -659,8 +672,8 @@
     SUBDIR += logrotate
     SUBDIR += logstalgia
     SUBDIR += logstash-forwarder
-    SUBDIR += logstash6
     SUBDIR += logstash7
+    SUBDIR += logstash8
     SUBDIR += logtool
     SUBDIR += logwatch
     SUBDIR += loki
@@ -676,6 +689,7 @@
     SUBDIR += ltrace
     SUBDIR += lttng-tools
     SUBDIR += lttng-ust
+    SUBDIR += lua-puremagic
     SUBDIR += luckybackup
     SUBDIR += lxinput
     SUBDIR += lxqt-admin
@@ -769,6 +783,7 @@
     SUBDIR += most
     SUBDIR += mountsmb2
     SUBDIR += mping
+    SUBDIR += mprocs
     SUBDIR += mptd
     SUBDIR += msiklm
     SUBDIR += msktutil
@@ -814,6 +829,7 @@
     SUBDIR += ntpstat
     SUBDIR += nut
     SUBDIR += nut-devel
+    SUBDIR += nut_exporter
     SUBDIR += nvclock
     SUBDIR += nvimpager
     SUBDIR += nvme-cli
@@ -821,6 +837,7 @@
     SUBDIR += oak
     SUBDIR += obliterate
     SUBDIR += oc
+    SUBDIR += ocijail
     SUBDIR += odo
     SUBDIR += ods2
     SUBDIR += ohmu
@@ -973,8 +990,6 @@
     SUBDIR += pfstat
     SUBDIR += pftables
     SUBDIR += pftop
-    SUBDIR += php74-fileinfo
-    SUBDIR += php74-posix
     SUBDIR += php80-fileinfo
     SUBDIR += php80-posix
     SUBDIR += php81-fileinfo
@@ -1003,11 +1018,14 @@
     SUBDIR += plconfig
     SUBDIR += pmt
     SUBDIR += pnscan
+    SUBDIR += podman
+    SUBDIR += podman-suite
     SUBDIR += polkit
     SUBDIR += polkit-gnome
     SUBDIR += polkit-qt
     SUBDIR += pot
     SUBDIR += potnet
+    SUBDIR += poweralertd
     SUBDIR += powerdxx
     SUBDIR += powerman
     SUBDIR += powermon
@@ -1015,6 +1033,7 @@
     SUBDIR += pprotectd
     SUBDIR += prips
     SUBDIR += procenv
+    SUBDIR += process-viewer
     SUBDIR += procmap
     SUBDIR += progsreiserfs
     SUBDIR += pslist
@@ -1035,10 +1054,8 @@
     SUBDIR += pwsafe
     SUBDIR += pxattr
     SUBDIR += pxp-agent
-    SUBDIR += py-ansible-base
     SUBDIR += py-ansible-compat
     SUBDIR += py-ansible-core
-    SUBDIR += py-ansible-core211
     SUBDIR += py-ansible-lint
     SUBDIR += py-ansible-runner
     SUBDIR += py-azure-cli
@@ -1120,6 +1137,7 @@
     SUBDIR += pydf
     SUBDIR += qchroot
     SUBDIR += qdirstat
+    SUBDIR += qflipper
     SUBDIR += qjail
     SUBDIR += qjail54
     SUBDIR += qlogtools
@@ -1128,6 +1146,7 @@
     SUBDIR += qt5-qtpaths
     SUBDIR += qt5-qtplugininfo
     SUBDIR += qtpass
+    SUBDIR += qtxdg-tools
     SUBDIR += quickjail
     SUBDIR += quicksynergy
     SUBDIR += racktables
@@ -1140,6 +1159,7 @@
     SUBDIR += rclean
     SUBDIR += rcm
     SUBDIR += rdate
+    SUBDIR += rdfind
     SUBDIR += rdup
     SUBDIR += read-edid
     SUBDIR += recoverdm
@@ -1262,6 +1282,7 @@
     SUBDIR += rubygem-yell
     SUBDIR += rundeck2
     SUBDIR += rundeck3
+    SUBDIR += runiq
     SUBDIR += runit
     SUBDIR += runit-faster
     SUBDIR += runj
@@ -1313,6 +1334,7 @@
     SUBDIR += signon-plugin-oauth2
     SUBDIR += signon-qt5
     SUBDIR += signon-ui
+    SUBDIR += skopeo
     SUBDIR += slack
     SUBDIR += sleuthkit
     SUBDIR += slst
@@ -1538,6 +1560,7 @@
     SUBDIR += watchfolder
     SUBDIR += watchman
     SUBDIR += watchmen
+    SUBDIR += waynergy
     SUBDIR += webmin
     SUBDIR += weedit
     SUBDIR += wemux

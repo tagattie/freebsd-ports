@@ -1,11 +1,13 @@
 PORTNAME=	bleach
 PORTVERSION=	5.0.1
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Easy safelist-based HTML-sanitizing tool
+WWW=		https://github.com/mozilla/bleach
 
 LICENSE=	APACHE20
 
@@ -25,6 +27,6 @@ OPTIONS_DEFINE=	CSS
 OPTIONS_DEFAULT=CSS
 CSS_DESC=	CSS support
 
-CSS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tinycss2>=1.1.0<1.2:textproc/py-tinycss2@${PY_FLAVOR}
+CSS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tinycss2>=1.1.0<1.3:textproc/py-tinycss2@${PY_FLAVOR}
 
 .include <bsd.port.mk>

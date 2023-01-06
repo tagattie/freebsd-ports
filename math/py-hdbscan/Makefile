@@ -1,11 +1,12 @@
 PORTNAME=	hdbscan
-PORTVERSION=	0.8.28
+PORTVERSION=	0.8.29
 CATEGORIES=	math python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Clustering based on density with variable density clusters
+WWW=		https://github.com/scikit-learn-contrib/hdbscan
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

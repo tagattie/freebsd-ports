@@ -1,6 +1,6 @@
 PORTNAME=	texlive
 PORTVERSION=	${TEXLIVE_VERSION}
-PORTREVISION=	7
+PORTREVISION=	12
 CATEGORIES=	print
 MASTER_SITES=	TEX_CTAN/systems/texlive/${TEXLIVE_YEAR}
 PKGNAMESUFFIX=	-base
@@ -9,6 +9,7 @@ DIST_SUBDIR=	TeX
 
 MAINTAINER=	tex@FreeBSD.org
 COMMENT=	TeX Live Typesetting System, base binaries
+WWW=		https://tug.org/texlive/
 
 LIB_DEPENDS=	libicuio.so:devel/icu \
 		libt1.so:devel/t1lib \
@@ -27,7 +28,7 @@ RUN_DEPENDS=	p5-File-HomeDir>=0:devel/p5-File-HomeDir \
 		psbook:print/psutils
 
 USES=		compiler:c++11-lib cpe ghostscript gnome localbase pkgconfig perl5 \
-		python:run shebangfix tar:xz xorg
+		python:run shebangfix tar:xz tex xorg
 CPE_VENDOR=	tug
 USE_CXXSTD=	gnu++11
 USE_GNOME=	cairo

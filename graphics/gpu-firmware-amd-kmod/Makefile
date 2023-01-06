@@ -1,9 +1,11 @@
 PORTNAME=	gpu-firmware-amd-kmod
-PORTVERSION=	20220511
+PORTVERSION=	20221207
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Firmware modules for ${FLAVOR} AMD GPUs
+WWW=		https://github.com/freebsd/drm-kmod-firmware
 
 LICENSE=	AMD
 LICENSE_NAME=	AMD firmware license (amdgpu/radeon)
@@ -45,18 +47,24 @@ FLAVORS=	banks \
 		vega20 \
 		vegam \
 		verde \
+		dimgrey_cavefish \
 		green_sardine \
-		sienna_cichlid
+		navy_flounder \
+		sienna_cichlid \
+		vangogh
 
+dimgrey_cavefish_IGNORE_FreeBSD_12=	"Not supported on < 13.1"
 green_sardine_IGNORE_FreeBSD_12=	"Not supported on < 13.1"
 sienna_cichlid_IGNORE_FreeBSD_12=	"Not supported on < 13.1"
+navy_flounder_IGNORE_FreeBSD_12=	"Not supported on < 13.1"
+vangogh_IGNORE_FreeBSD_12=		"Not supported on < 13.1"
 
 USES=		kmod uidfix
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	freebsd
 GH_PROJECT=	drm-kmod-firmware
-GH_TAGNAME=	20220511
+GH_TAGNAME=	20221207
 
 MAKE_ENV=	KMODS="amdgpukmsfw"
 MAKE_ENV+=	AMDGPUKMODS="${FLAVOR}"

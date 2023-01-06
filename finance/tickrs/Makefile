@@ -1,10 +1,12 @@
 PORTNAME=	tickrs
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.14.6
+PORTREVISION=	3
 CATEGORIES=	finance
 
 MAINTAINER=	lcook@FreeBSD.org
 COMMENT=	Realtime ticker data in your terminal
+WWW=		https://github.com/tarkah/tickrs
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

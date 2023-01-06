@@ -1,11 +1,12 @@
 PORTNAME=	altgraph
-PORTVERSION=	0.17.2
+PORTVERSION=	0.17.3
 CATEGORIES=	math python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Python graph (network) package
+WWW=		https://github.com/ronaldoussoren/altgraph
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

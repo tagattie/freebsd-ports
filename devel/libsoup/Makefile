@@ -1,12 +1,12 @@
 PORTNAME=	libsoup
-DISTVERSION=	2.74.2
-PORTREVISION=	1
+DISTVERSION=	2.74.3
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
 
 MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	SOAP (Simple Object Access Protocol) implementation in C
+WWW=		https://libsoup.org/
 
 LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/COPYING

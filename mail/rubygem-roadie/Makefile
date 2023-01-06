@@ -1,10 +1,11 @@
 PORTNAME=	roadie
-PORTVERSION=	5.0.1
+PORTVERSION=	5.1.0
 CATEGORIES=	mail rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Helper for generating HTML mails
+WWW=		https://github.com/Mange/roadie
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

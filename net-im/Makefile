@@ -14,6 +14,7 @@
     SUBDIR += cutegram
     SUBDIR += dendrite
     SUBDIR += dino
+    SUBDIR += discordo
     SUBDIR += echat
     SUBDIR += ejabberd
     SUBDIR += farstream
@@ -37,6 +38,7 @@
     SUBDIR += jitsi-prosody-plugins
     SUBDIR += jitsi-srtp-native
     SUBDIR += jitsi-videobridge
+    SUBDIR += jsxc
     SUBDIR += kaccounts-integration
     SUBDIR += kaccounts-providers
     SUBDIR += kaidan
@@ -67,6 +69,8 @@
     SUBDIR += libsignon-glib
     SUBDIR += libstrophe
     SUBDIR += loudmouth
+    SUBDIR += lurch
+    SUBDIR += mastodon
     SUBDIR += matterbridge
     SUBDIR += matterhorn
     SUBDIR += matterircd

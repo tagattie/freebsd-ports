@@ -1,16 +1,17 @@
 PORTNAME=	uharfbuzz
-PORTVERSION=	0.30.0
+PORTVERSION=	0.33.0
 CATEGORIES=	print python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Streamlined Cython bindings for the harfbuzz shaping engine
+WWW=		https://github.com/harfbuzz/uharfbuzz
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	harfbuzz>=5.1.0:print/harfbuzz \
+BUILD_DEPENDS=	harfbuzz>=6.0.0:print/harfbuzz \
 		${PYTHON_PKGNAMEPREFIX}setuptools_scm>=0:devel/py-setuptools_scm@${PY_FLAVOR}
 LIB_DEPENDS=	libharfbuzz.so:print/harfbuzz
 

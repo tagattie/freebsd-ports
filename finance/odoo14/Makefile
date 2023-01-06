@@ -1,11 +1,13 @@
 PORTNAME=	odoo
 PORTVERSION=	14.0
+PORTREVISION=	2
 CATEGORIES=	finance www
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 PKGNAMESUFFIX=	14
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Suite of web based open source business apps
+WWW=		https://www.odoo.com
 
 LICENSE=	LGPL3
 
@@ -64,7 +66,7 @@ RUN_DEPENDS=	wkhtmltopdf>0:converters/wkhtmltopdf \
 		${PYTHON_PKGNAMEPREFIX}idna>0:dns/py-idna@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}stdnum>0:devel/py-stdnum@${PY_FLAVOR}
 
-USES=		cpe python:3.5+ pgsql shebangfix
+USES=		cpe python:3.7+ pgsql shebangfix
 USE_PYTHON=	distutils
 USE_OPENLDAP=	yes
 
@@ -93,6 +95,10 @@ post-patch:
 		${WRKSRC}/odoo/addons/mail/models/mail_thread.py \
 		${WRKSRC}/odoo/addons/mail/controllers/main.py \
 		${WRKSRC}/odoo/addons/hr/models/hr_employee.py
+	@${REINPLACE_CMD} -i "" -e 's|(index !== |(index == |g' \
+		${WRKSRC}/odoo/addons/web/static/src/js/libs/content-disposition.js
+	@${REINPLACE_CMD} -i "" -e 's|BaseResponse|Response|g' \
+		${WRKSRC}/odoo/http.py
 
 post-extract:
 	@cd ${WRKSRC}/addons/ && ${MV} * ${WRKSRC}/odoo/addons/

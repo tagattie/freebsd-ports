@@ -31,6 +31,7 @@
     SUBDIR += cheese
     SUBDIR += chilitags
     SUBDIR += cineencoder
+    SUBDIR += clapper
     SUBDIR += clutter-gst
     SUBDIR += clutter-gst3
     SUBDIR += cmrt
@@ -61,6 +62,7 @@
     SUBDIR += ffmpeg
     SUBDIR += ffmpegthumbnailer
     SUBDIR += ffms2
+    SUBDIR += ffnvcodec-headers
     SUBDIR += filebot
     SUBDIR += flvmeta
     SUBDIR += flvstreamer
@@ -97,7 +99,6 @@
     SUBDIR += gstreamer1-plugins-gnonlin
     SUBDIR += gstreamer1-plugins-good
     SUBDIR += gstreamer1-plugins-hls
-    SUBDIR += gstreamer1-plugins-kate
     SUBDIR += gstreamer1-plugins-libde265
     SUBDIR += gstreamer1-plugins-mpeg2dec
     SUBDIR += gstreamer1-plugins-mpeg2enc
@@ -120,7 +121,6 @@
     SUBDIR += gstreamer1-plugins-x265
     SUBDIR += gstreamer1-qt
     SUBDIR += gstreamer1-rtsp-server
-    SUBDIR += gstreamer1-transcoder
     SUBDIR += gstreamer1-vaapi
     SUBDIR += gstreamer1-validate
     SUBDIR += gstreamermm
@@ -175,7 +175,6 @@
     SUBDIR += libfame
     SUBDIR += libgav1
     SUBDIR += libhdhomerun
-    SUBDIR += libkate
     SUBDIR += libmatroska
     SUBDIR += libmediaart
     SUBDIR += libmediainfo
@@ -232,7 +231,7 @@
     SUBDIR += mlt6-qt5
     SUBDIR += mlt7
     SUBDIR += mlt7-glaxnimate
-    SUBDIR += mlt7-qt5
+    SUBDIR += mlt7-qt
     SUBDIR += motion
     SUBDIR += mp3cd
     SUBDIR += mp4v2
@@ -260,15 +259,13 @@
     SUBDIR += nymphcast
     SUBDIR += nymphcastlib
     SUBDIR += nymphrpc
-    SUBDIR += obs-audio-spectralizer
-    SUBDIR += obs-ndi
     SUBDIR += obs-qtwebkit
+    SUBDIR += obs-recursion-effect
     SUBDIR += obs-scrab
     SUBDIR += obs-streamfx
     SUBDIR += obs-studio
-    SUBDIR += obs-transition-matrix
-    SUBDIR += obs-v4l2sink
-    SUBDIR += obs-websocket
+    SUBDIR += obs-text-pthread
+    SUBDIR += obs-waveform
     SUBDIR += oggvideotools
     SUBDIR += ogmrip
     SUBDIR += ogmtools
@@ -294,7 +291,6 @@
     SUBDIR += phonon-gstreamer
     SUBDIR += phonon-vlc
     SUBDIR += photofilmstrip
-    SUBDIR += php-pHash
     SUBDIR += pipe-viewer
     SUBDIR += pipewire
     SUBDIR += pitivi
@@ -384,6 +380,8 @@
     SUBDIR += transcode
     SUBDIR += tvheadend
     SUBDIR += ustreamer
+    SUBDIR += uvg266
+    SUBDIR += uxplay
     SUBDIR += v4l-utils
     SUBDIR += v4l_compat
     SUBDIR += vamps
@@ -417,6 +415,7 @@
     SUBDIR += vdr-plugin-xvdr
     SUBDIR += vdr-plugins
     SUBDIR += vid.stab
+    SUBDIR += video-trimmer
     SUBDIR += vlc
     SUBDIR += vmaf
     SUBDIR += vtkmpeg2encode

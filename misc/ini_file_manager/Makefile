@@ -7,10 +7,9 @@ DISTNAME=	ini-files-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ini configuration file reader and manipulator package for Ada
+WWW=		https://sourceforge.net/projects/ini-files/
 
 LICENSE=	MIT
-
-EXPIRATION_DATE=2022-09-30
 
 USES=		ada zip dos2unix
 

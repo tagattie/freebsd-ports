@@ -1,10 +1,11 @@
 PORTNAME=	encrypted-dns-server
 DISTVERSION=	0.9.6
-PORTREVISION=	1
+PORTREVISION=	4
 CATEGORIES=	dns
 
 MAINTAINER=	felix@userspace.com.au
 COMMENT=	High-performance, zero maintenance encrypted DNS proxy
+WWW=		https://github.com/jedisct1/encrypted-dns-server
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

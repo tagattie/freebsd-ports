@@ -1,11 +1,12 @@
 PORTNAME=	libxfce4util
-PORTVERSION=	4.16.0
+PORTVERSION=	4.18.0
 CATEGORIES=	x11 xfce
 MASTER_SITES=	XFCE
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Extension library for the Xfce desktop environment
+WWW=		https://www.xfce.org/
 
 LICENSE=	GPLv2
 

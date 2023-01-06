@@ -1,11 +1,12 @@
 PORTNAME=	vici
-DISTVERSION=	5.9.3
+DISTVERSION=	5.9.9
 CATEGORIES=	security net-vpn python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	driesm@FreeBSD.org
 COMMENT=	Native Python interface for strongSwan's VICI protocol
+WWW=		https://pypi.org/project/vici/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

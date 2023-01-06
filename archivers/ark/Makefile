@@ -1,10 +1,10 @@
 PORTNAME=	ark
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
-PORTREVISION=	1
 CATEGORIES=	archivers kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Archiving tool for KDE
+WWW=		https://utils.kde.org/projects/ark/
 
 LICENSE=	GPLv2+
 
@@ -14,9 +14,9 @@ USE_KDE=	archive auth bookmarks codecs completion config configwidgets \
 		coreaddons crash dbusaddons doctools i18n iconthemes \
 		itemmodels itemviews jobwidgets khtml kio parts pty service \
 		solid sonnet textwidgets widgetsaddons windowsystem xmlgui \
-		ecm_build
+		ecm:build
 USE_QT=		concurrent core dbus gui network widgets xml \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 USE_XORG=	x11
 USE_LDCONFIG=	yes
 

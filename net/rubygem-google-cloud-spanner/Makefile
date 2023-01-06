@@ -1,10 +1,11 @@
 PORTNAME=	google-cloud-spanner
-PORTVERSION=	2.14.0
+PORTVERSION=	2.16.1
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Official library for Google Cloud Spanner API
+WWW=		https://github.com/googleapis/ruby-spanner
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

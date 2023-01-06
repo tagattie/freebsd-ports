@@ -1,6 +1,6 @@
---- components/autofill_assistant/browser/autofill_assistant_impl.cc.orig	2022-07-22 17:30:31 UTC
+--- components/autofill_assistant/browser/autofill_assistant_impl.cc.orig	2022-11-30 08:12:58 UTC
 +++ components/autofill_assistant/browser/autofill_assistant_impl.cc
-@@ -121,7 +121,7 @@ void AutofillAssistantImpl::GetCapabilitiesByHashPrefi
+@@ -161,7 +161,7 @@ void AutofillAssistantImpl::GetCapabilitiesByHashPrefi
    client_context.set_platform_type(ClientContextProto::PLATFORM_TYPE_ANDROID);
  #endif
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_MAC) || \

@@ -1,10 +1,11 @@
 PORTNAME=	intx
-PORTVERSION=	0.8.0
 DISTVERSIONPREFIX=	v
+DISTVERSION=	0.9.0
 CATEGORIES=	math
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Extended precision integer library
+WWW=		https://github.com/chfast/intx
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

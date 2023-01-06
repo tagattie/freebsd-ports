@@ -1,26 +1,27 @@
 PORTNAME=	haruna
-DISTVERSION=	0.9.1
+DISTVERSION=	0.9.3
 PORTREVISION=	1
 MASTER_SITES=	KDE/stable/${PORTNAME}/
 CATEGORIES=	multimedia kde
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE video player
+WWW=		https://invent.kde.org/multimedia/haruna
 
 LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 		libmpv.so:multimedia/mpv
 RUN_DEPENDS=	kio-extras>0:devel/kio-extras \
 		yt-dlp:www/yt-dlp
 
-USES=		cmake compiler:c++11-lang kde:5 qt:5 tar:xz xorg
+USES=		cmake compiler:c++11-lang desktop-file-utils kde:5 qt:5 tar:xz xorg
 USE_KDE=	auth bookmarks codecs completion config configwidgets coreaddons \
 		doctools filemetadata i18n iconthemes kirigami2 itemviews jobwidgets \
 		kio service solid widgetsaddons windowsystem xmlgui \
-		ecm_build doctools_build \
-		breeze_run breeze-icons_run qqc2-desktop-style_run
+		ecm:build doctools:build \
+		breeze:run breeze-icons:run qqc2-desktop-style:run
 USE_QT=		concurrent core dbus declarative gui network quickcontrols2 \
 		widgets x11extras xml \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 USE_XORG=	x11
 
 .include <bsd.port.mk>

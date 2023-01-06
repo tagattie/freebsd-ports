@@ -12,8 +12,9 @@ EXTRACT_ONLY=	texlive-${TEXLIVE_VERSION}-source${EXTRACT_SUFX}
 
 MAINTAINER=	tex@FreeBSD.org
 COMMENT=	ASCII Japanese pTeX
+WWW=		https://ctan.org/pkg/ptex
 
-USES=		localbase tar:xz perl5 pkgconfig
+USES=		localbase tar:xz perl5 pkgconfig tex
 USE_TEX=	kpathsea web2c ptexenc texmf formats fmtutil
 TEXHASHDIRS=	${TEXMFDISTDIR} ${TEXMFVARDIR}
 EXTRACT_AFTER_ARGS=	${EXTRACT_FILES:S,^,${DISTNAME}/,}

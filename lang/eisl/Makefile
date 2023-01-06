@@ -1,15 +1,16 @@
 PORTNAME=	eisl
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.62
+DISTVERSION=	2.63
 CATEGORIES=	lang devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Interpreter and compiler compatible with ISLisp standard
+WWW=		https://github.com/sasagawa888/eisl
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/documents/license.txt
 
-BROKEN_i386=	stage breaks: Abort trap, see https://github.com/sasagawa888/eisl/issues/218
+BROKEN_i386=	stage breaks: data segment of more than 500GB is required, see https://github.com/sasagawa888/eisl/issues/218
 
 TEST_DEPENDS=	cppcheck:devel/cppcheck
 

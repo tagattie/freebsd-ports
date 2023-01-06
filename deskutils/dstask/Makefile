@@ -1,11 +1,12 @@
 PORTNAME=	dstask
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.25
+DISTVERSION=	0.26
 PORTREVISION=	1
 CATEGORIES=	deskutils
 
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	Single binary terminal-based TODO manager with git-based sync
+WWW=		https://github.com/naggie/dstask
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

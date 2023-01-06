@@ -1,6 +1,5 @@
 PORTNAME=		ldb
-PORTVERSION=		2.2.1
-PORTREVISION=		1
+PORTVERSION=		2.2.3
 PORTEPOCH=		0
 CATEGORIES=		databases
 MASTER_SITES=		SAMBA
@@ -8,6 +7,7 @@ PKGNAMESUFFIX?=		22
 
 MAINTAINER=		timur@FreeBSD.org
 COMMENT=		LDAP-like embedded database
+WWW=		https://ldb.samba.org/
 
 LICENSE=		GPLv3+
 

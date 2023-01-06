@@ -1,12 +1,11 @@
---- third_party/blink/renderer/platform/scheduler/common/thread.cc.orig	2022-04-01 07:48:30 UTC
+--- third_party/blink/renderer/platform/scheduler/common/thread.cc.orig	2022-12-01 10:35:46 UTC
 +++ third_party/blink/renderer/platform/scheduler/common/thread.cc
-@@ -99,7 +99,8 @@ void Thread::CreateAndSetCompositorThread() {
+@@ -87,7 +87,7 @@ void Thread::CreateAndSetCompositorThread() {
        std::make_unique<scheduler::CompositorThread>(params);
    compositor_thread->Init();
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
-+// pledge(2)
 +#if (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)) && !BUILDFLAG(IS_OPENBSD)
-   if (base::FeatureList::IsEnabled(
-           features::kBlinkCompositorUseDisplayThreadPriority)) {
-     compositor_thread->GetTaskRunner()->PostTaskAndReplyWithResult(
+   compositor_thread->GetTaskRunner()->PostTaskAndReplyWithResult(
+       FROM_HERE, base::BindOnce(&base::PlatformThread::CurrentId),
+       base::BindOnce([](base::PlatformThreadId compositor_thread_id) {

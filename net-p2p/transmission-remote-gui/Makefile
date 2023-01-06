@@ -1,6 +1,6 @@
 PORTNAME=	transmission-remote-gui
 PORTVERSION=	5.18.0
-PORTREVISION=	12
+PORTREVISION=	13
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net-p2p
 PKGNAMESUFFIX=	${LAZARUS_PKGNAMESUFFIX}
@@ -10,6 +10,7 @@ GH_PROJECT=	transgui
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Remote GUI for transmission daemon
+WWW=		https://github.com/transmission-remote-gui/transgui
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING.txt

@@ -92,17 +92,20 @@
     SUBDIR += minizip-ng
     SUBDIR += mscompress
     SUBDIR += mtf
+    SUBDIR += nevada-toolset
     SUBDIR += nfpm
     SUBDIR += nomarch
     SUBDIR += nwreckdum
     SUBDIR += ocaml-bz2
     SUBDIR += ocaml-zip
     SUBDIR += opkg-openwrt
+    SUBDIR += ouch
     SUBDIR += p5-Archive-Any
     SUBDIR += p5-Archive-Any-Lite
     SUBDIR += p5-Archive-Any-Plugin-Rar
     SUBDIR += p5-Archive-Extract
     SUBDIR += p5-Archive-Extract-Libarchive
+    SUBDIR += p5-Archive-Libarchive
     SUBDIR += p5-Archive-Peek
     SUBDIR += p5-Archive-Rar
     SUBDIR += p5-Archive-SimpleExtractor
@@ -153,10 +156,6 @@
     SUBDIR += php-lz4
     SUBDIR += php-snappy
     SUBDIR += php-zstd
-    SUBDIR += php74-bz2
-    SUBDIR += php74-phar
-    SUBDIR += php74-zip
-    SUBDIR += php74-zlib
     SUBDIR += php80-bz2
     SUBDIR += php80-phar
     SUBDIR += php80-zip
@@ -173,7 +172,6 @@
     SUBDIR += pixz
     SUBDIR += plzip
     SUBDIR += ppmd
-    SUBDIR += ppmd-7z
     SUBDIR += ppunpack
     SUBDIR += pxz
     SUBDIR += py-acefile
@@ -184,6 +182,7 @@
     SUBDIR += py-brotlipy
     SUBDIR += py-bup
     SUBDIR += py-bz2file
+    SUBDIR += py-compressed-rtf
     SUBDIR += py-libarchive-c
     SUBDIR += py-lz4
     SUBDIR += py-lzma
@@ -233,6 +232,7 @@
     SUBDIR += szip
     SUBDIR += tar-stream-chunker
     SUBDIR += tardy
+    SUBDIR += tartest
     SUBDIR += thunar-archive-plugin
     SUBDIR += torrentzip
     SUBDIR += ucl

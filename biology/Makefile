@@ -3,10 +3,12 @@
     SUBDIR += abyss
     SUBDIR += ad2vcf
     SUBDIR += artemis
+    SUBDIR += augustus
     SUBDIR += avida
     SUBDIR += babel
     SUBDIR += bamtools
     SUBDIR += bamutil
+    SUBDIR += barrnap
     SUBDIR += bbmap
     SUBDIR += bcftools
     SUBDIR += bedtools
@@ -39,6 +41,7 @@
     SUBDIR += emboss
     SUBDIR += erminej
     SUBDIR += exonerate
+    SUBDIR += fasda
     SUBDIR += fasta
     SUBDIR += fasta3
     SUBDIR += fastahack
@@ -80,6 +83,7 @@
     SUBDIR += kmcp
     SUBDIR += lamarc
     SUBDIR += libbigwig
+    SUBDIR += libcombine
     SUBDIR += libgff
     SUBDIR += libgtextutils
     SUBDIR += libneurosim
@@ -89,6 +93,8 @@
     SUBDIR += linux-foldingathome
     SUBDIR += mafft
     SUBDIR += mapm3
+    SUBDIR += megahit
+    SUBDIR += metaeuk
     SUBDIR += migrate
     SUBDIR += minimap2
     SUBDIR += mmseqs2
@@ -145,6 +151,7 @@
     SUBDIR += py-bcbio-gff
     SUBDIR += py-biom-format
     SUBDIR += py-biopython
+    SUBDIR += py-biosig
     SUBDIR += py-bx-python
     SUBDIR += py-crossmap
     SUBDIR += py-cutadapt
@@ -170,11 +177,13 @@
     SUBDIR += py-py2bit
     SUBDIR += py-pybigwig
     SUBDIR += py-pyfaidx
+    SUBDIR += py-pyrodigal
     SUBDIR += py-pysam
     SUBDIR += py-python-libsbml
     SUBDIR += py-pywgsim
     SUBDIR += py-resdk
     SUBDIR += py-scikit-bio
+    SUBDIR += py-valerius
     SUBDIR += py-xenaPython
     SUBDIR += pyfasta
     SUBDIR += python-nexus
@@ -182,6 +191,7 @@
     SUBDIR += rampler
     SUBDIR += readseq
     SUBDIR += recombine
+    SUBDIR += rna-seq
     SUBDIR += ruby-bio
     SUBDIR += rubygem-bio
     SUBDIR += rubygem-bio-executables

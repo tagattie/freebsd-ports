@@ -1,11 +1,12 @@
 PORTNAME=	mysql_fdw
 DISTVERSIONPREFIX=	REL-
-DISTVERSION=	2_8_0
+DISTVERSION=	2_9_0
 CATEGORIES=	databases
 PKGNAMEPREFIX=	postgresql${PGSQL_VER:S/.//}-
 
 MAINTAINER=	tz@FreeBSD.org
 COMMENT=	PostgreSQL foreign data wrapper for MySQL
+WWW=		https://github.com/EnterpriseDB/mysql_fdw
 
 LICENSE=	PostgreSQL
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -16,12 +17,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	EnterpriseDB
 
 MAKE_ENV=	USE_PGXS=1
-
-PLIST_FILES=	lib/postgresql/mysql_fdw.so \
-		share/postgresql/extension/mysql_fdw--1.0--1.1.sql \
-		share/postgresql/extension/mysql_fdw--1.0.sql \
-		share/postgresql/extension/mysql_fdw--1.1.sql \
-		share/postgresql/extension/mysql_fdw.control
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/postgresql/mysql_fdw.so

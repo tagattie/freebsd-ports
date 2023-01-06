@@ -1,5 +1,5 @@
 PORTNAME=	wesnoth
-PORTVERSION=	1.16.5
+PORTVERSION=	1.16.6
 PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	games
@@ -9,6 +9,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${PORTVERSION:R}/${PORTNAME}-${PORTVERS
 
 MAINTAINER=	fluffy@FreeBSD.org
 COMMENT=	Fantasy turn-based strategy game
+WWW=		https://www.wesnoth.org/
 
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual

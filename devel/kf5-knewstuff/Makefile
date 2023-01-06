@@ -1,6 +1,5 @@
 PORTNAME=	knewstuff
 DISTVERSION=	${KDE_FRAMEWORKS_VERSION}
-PORTREVISION=	1
 CATEGORIES=	devel kde kde-frameworks
 
 MAINTAINER=	kde@FreeBSD.org
@@ -11,9 +10,9 @@ USE_KDE=	archive attica5 auth codecs completion config \
 		configwidgets coreaddons i18n iconthemes itemviews \
 		jobwidgets kio kirigami2 package service solid sonnet \
 		textwidgets widgetsaddons windowsystem xmlgui \
-		ecm_build
+		ecm:build
 USE_QT=		concurrent core dbus declarative gui network widgets xml \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 USE_XORG=	x11
 
 .include <bsd.port.mk>

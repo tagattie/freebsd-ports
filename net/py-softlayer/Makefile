@@ -1,5 +1,5 @@
 PORTNAME=	softlayer
-PORTVERSION=	6.1.1
+PORTVERSION=	6.1.2
 CATEGORIES=	net python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -7,6 +7,7 @@ DISTNAME=	SoftLayer-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	SoftLayer API Python Client
+WWW=		https://github.com/softlayer/softlayer-python
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

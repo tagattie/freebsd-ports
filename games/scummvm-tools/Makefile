@@ -6,6 +6,7 @@ MASTER_SITES=	https://downloads.scummvm.org/frs/${PORTNAME}/${PORTVERSION}/
 
 MAINTAINER=	kai@FreeBSD.org
 COMMENT=	Tools for use with the SCUMMVM game emulator
+WWW=		https://www.scummvm.org/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -39,7 +40,7 @@ OPTIONS_DEFINE=	WXGTK DOCS
 OPTIONS_DEFAULT=WXGTK
 OPTIONS_SUB=	yes
 
-WXGTK_USE=	WX=2.8
+WXGTK_USE=	WX=3.2
 WXGTK_VARS=	WX_COMPS=wx WX_CONFIG_ARGS=absolute
 WXGTK_CONFIGURE_ENABLE=	wxwidgets
 

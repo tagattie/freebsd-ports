@@ -1,5 +1,6 @@
 PORTNAME=	devilutionX
 DISTVERSION=	1.4.1
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	https://github.com/diasurgical/devilutionx-assets/releases/download/${DATA_VERSION}/:data
 DISTFILES=	devilutionx.mpq?tag=${DATA_VERSION}:data
@@ -7,6 +8,7 @@ EXTRACT_ONLY=	${DISTFILES:N*\:data:C/:.*//}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Diablo I engine for modern operating systems
+WWW=		https://github.com/diasurgical/devilutionX
 
 LICENSE=	UNLICENSE CC-BY-NC-SA-4.0 OFL11
 LICENSE_COMB=	multi
@@ -16,7 +18,7 @@ LIB_DEPENDS=	libfmt.so:devel/libfmt
 BUILD_DEPENDS=	${LOCALBASE}/include/SimpleIni.h:devel/simpleini
 
 USES=		cmake compiler:c++11-lang dos2unix gettext-tools pkgconfig sdl
-DOS2UNIX_GLOB=	*.cpp *.h CMakeLists.txt
+DOS2UNIX_GLOB=	*.cpp *.h CMakeLists.txt Dependencies.cmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	diasurgical
 GH_TUPLE=	diasurgical:libsmackerdec:2997ee0e41e91bb723003bc09234be553b190e38:libsmackerdec/_deps/libsmackerdec-src \

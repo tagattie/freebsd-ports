@@ -16,7 +16,7 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 		libmpfr.so:math/mpfr \
 		libzzip.so:devel/zziplib
 
-USES=		gnome libtool pkgconfig shebangfix tar:xz xorg
+USES=		gnome libtool pkgconfig shebangfix tar:xz tex xorg
 USE_TEX=	kpathsea web2c texmf formats texlua texluajit fmtutil
 USE_XORG=	pixman
 USE_GNOME=	cairo
@@ -96,6 +96,6 @@ post-install:
 	${FIND} -s ${STAGEDIR}${PREFIX}/share/texmf-dist -type d -empty | ${SORT} -r | \
 		${SED} -e 's#^${STAGEDIR}${PREFIX}/#@dir #' >> ${TMPPLIST}
 	${ECHO_CMD} "share/texmf-var/web2c/luatex/lollipop.log" >> ${TMPPLIST}
-	${ECHO_CMD} "share/texmf-var/web2c/luatex/lollipop.fmt" >> ${TMPPLIST} 
+	${ECHO_CMD} "share/texmf-var/web2c/luatex/lollipop.fmt" >> ${TMPPLIST}
 
 .include <bsd.port.mk>

@@ -1,9 +1,10 @@
 PORTNAME=	dimod
-DISTVERSION=	0.11.5
+DISTVERSION=	0.12.3
 CATEGORIES=	science python
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	DWave: Shared API for QUBO/Ising samplers
+WWW=		https://github.com/dwavesystems/dimod
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -17,11 +18,6 @@ GH_ACCOUNT=	dwavesystems
 
 NO_BUILD=	yes
 NO_ARCH=	yes
-
-PLIST_FILES=	include/dimod/iterators.h \
-		include/dimod/lp.h \
-		include/dimod/quadratic_model.h \
-		include/dimod/utils.h
 
 BINARY_ALIAS=	g++=${CXX} git=true
 

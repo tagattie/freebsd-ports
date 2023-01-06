@@ -8,13 +8,14 @@ DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	mainland@apeiron.net
 COMMENT=	Display LaTeX output in your IMs
+WWW=		https://sourceforge.net/projects/pidgin-latex/
 
 BUILD_DEPENDS=	${LOCALBASE}/include/pidgin/pidgin.h:net-im/pidgin
 RUN_DEPENDS=	pidgin:net-im/pidgin
 
 WRKSRC=		${WRKDIR}/${PKGNAMEPREFIX}${PORTNAME}
 
-USES=		gmake gnome magick:6,run pkgconfig tar:bzip2
+USES=		gmake gnome magick:6,run pkgconfig tar:bzip2 tex
 USE_TEX=	latex
 USE_GNOME=	gtk20
 MAKE_ARGS=	CC="${CC}"

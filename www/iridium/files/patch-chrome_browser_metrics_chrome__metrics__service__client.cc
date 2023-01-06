@@ -1,6 +1,24 @@
---- chrome/browser/metrics/chrome_metrics_service_client.cc.orig	2022-04-01 07:48:30 UTC
+--- chrome/browser/metrics/chrome_metrics_service_client.cc.orig	2022-12-06 08:09:13 UTC
 +++ chrome/browser/metrics/chrome_metrics_service_client.cc
-@@ -773,7 +773,7 @@ void ChromeMetricsServiceClient::RegisterMetricsServic
+@@ -176,7 +176,7 @@
+ #include "chrome/notification_helper/notification_helper_constants.h"
+ #endif
+ 
+-#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+ #include "components/metrics/motherboard_metrics_provider.h"
+ #endif
+ 
+@@ -731,7 +731,7 @@ void ChromeMetricsServiceClient::RegisterMetricsServic
+   metrics_service_->RegisterMetricsProvider(
+       std::make_unique<metrics::CPUMetricsProvider>());
+ 
+-#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+   metrics_service_->RegisterMetricsProvider(
+       std::make_unique<metrics::MotherboardMetricsProvider>());
+ #endif
+@@ -810,7 +810,7 @@ void ChromeMetricsServiceClient::RegisterMetricsServic
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -9,7 +27,7 @@
      (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS))
    metrics_service_->RegisterMetricsProvider(
        std::make_unique<DesktopPlatformFeaturesMetricsProvider>());
-@@ -869,7 +869,7 @@ void ChromeMetricsServiceClient::RegisterMetricsServic
+@@ -908,7 +908,7 @@ void ChromeMetricsServiceClient::RegisterMetricsServic
        std::make_unique<PowerMetricsProvider>());
  #endif
  
@@ -18,7 +36,7 @@
    metrics_service_->RegisterMetricsProvider(
        metrics::CreateDesktopSessionMetricsProvider());
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || (BUILDFLAG(IS_LINUX)
-@@ -1045,7 +1045,7 @@ bool ChromeMetricsServiceClient::RegisterForProfileEve
+@@ -1093,7 +1093,7 @@ bool ChromeMetricsServiceClient::RegisterForProfileEve
  #endif
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.

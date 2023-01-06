@@ -1,10 +1,11 @@
 PORTNAME=	libretro-beetle_psx
 PORTVERSION=	0.20220211
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 
-MAINTAINER=	dmenelkir@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Standalone port/fork of Mednafen PSX to the Libretro API
+WWW=		https://github.com/libretro/beetle-psx-libretro
 
 LICENSE=	GPLv2
 
@@ -19,8 +20,14 @@ GH_TAGNAME=	88929ae
 
 PLIST_FILES=	lib/libretro/mednafen_psx_libretro.so
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH:Marmv?}
+USE_GCC=	yes:build
+.endif
+
 do-install:
 	${MKDIR} ${STAGEDIR}/${PREFIX}/lib/libretro;
 	${INSTALL_LIB} ${WRKSRC}/mednafen_psx_libretro.so ${STAGEDIR}/${PREFIX}/lib/libretro;
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

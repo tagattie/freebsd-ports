@@ -1,11 +1,12 @@
 PORTNAME=	texlab
 DISTVERSIONPREFIX=	v
 DISTVERSION=	4.2.0
-PORTREVISION=	1
+PORTREVISION=	4
 CATEGORIES=	devel
 
 MAINTAINER=	antranigv@freebsd.am
 COMMENT=	Language Server Protocol for LaTeX
+WWW=		https://texlab.netlify.app/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

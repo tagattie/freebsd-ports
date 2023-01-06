@@ -1,10 +1,11 @@
 PORTNAME=	sameboy
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.15.5
+DISTVERSION=	0.15.8
 CATEGORIES=	emulators games
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Game Boy and Game Boy Color emulator written in C
+WWW=		https://sameboy.github.io/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

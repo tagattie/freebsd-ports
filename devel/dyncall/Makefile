@@ -1,11 +1,12 @@
 PORTNAME=	dyncall
-DISTVERSION=	1.3
+DISTVERSION=	1.4
 CATEGORIES=	devel
 MASTER_SITES=	https://www.dyncall.org/r${DISTVERSION}/ \
 		http://www.potion-studios.com/
 
 MAINTAINER=	tphilipp@potion-studios.com
 COMMENT=	Highly dynamic multi-platform foreign function call interface library
+WWW=		https://www.dyncall.org
 
 LICENSE=	ISCL
 

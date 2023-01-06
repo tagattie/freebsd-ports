@@ -1,5 +1,6 @@
 PORTNAME=	qiskit-aer
 DISTVERSION=	0.10.4
+PORTREVISION=	1
 CATEGORIES=	science # quantum-computing
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
@@ -7,6 +8,7 @@ PATCHFILES=	46d86944f349a177acb40fb8a3adc301c395fe60.patch:-p1 # https://github.
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Quantum circuits simulator submodule of the Qiskit framework
+WWW=		https://qiskit.org/aer/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

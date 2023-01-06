@@ -1,11 +1,12 @@
 PORTNAME=	setuptools-rust
-PORTVERSION=	1.5.1
+PORTVERSION=	1.5.2
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Setuptools Rust extension plugin
+WWW=		https://github.com/PyO3/setuptools-rust
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

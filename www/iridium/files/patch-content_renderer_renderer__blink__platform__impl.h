@@ -1,15 +1,24 @@
---- content/renderer/renderer_blink_platform_impl.h.orig	2022-04-01 07:48:30 UTC
+--- content/renderer/renderer_blink_platform_impl.h.orig	2022-12-06 08:09:13 UTC
 +++ content/renderer/renderer_blink_platform_impl.h
-@@ -30,7 +30,7 @@
+@@ -29,7 +29,7 @@
+ #include "third_party/blink/public/common/user_agent/user_agent_metadata.h"
  #include "third_party/blink/public/mojom/cache_storage/cache_storage.mojom.h"
- #include "third_party/blink/public/mojom/loader/code_cache.mojom.h"
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
  #include "components/services/font/public/cpp/font_loader.h"  // nogncheck
  #include "third_party/skia/include/core/SkRefCnt.h"           // nogncheck
  #endif
-@@ -276,7 +276,7 @@ class CONTENT_EXPORT RendererBlinkPlatformImpl : publi
+@@ -171,7 +171,7 @@ class CONTENT_EXPORT RendererBlinkPlatformImpl : publi
+       const blink::WebURL& top_document_web_url) override;
+   gpu::GpuMemoryBufferManager* GetGpuMemoryBufferManager() override;
+   blink::WebString ConvertIDNToUnicode(const blink::WebString& host) override;
+-#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
+   void SetThreadType(base::PlatformThreadId thread_id,
+                      base::ThreadType) override;
+ #endif
+@@ -237,7 +237,7 @@ class CONTENT_EXPORT RendererBlinkPlatformImpl : publi
    void Collect3DContextInformation(blink::Platform::GraphicsInfo* gl_info,
                                     const gpu::GPUInfo& gpu_info) const;
  
@@ -18,7 +27,7 @@
    std::unique_ptr<blink::WebSandboxSupport> sandbox_support_;
  #endif
  
-@@ -304,7 +304,7 @@ class CONTENT_EXPORT RendererBlinkPlatformImpl : publi
+@@ -257,7 +257,7 @@ class CONTENT_EXPORT RendererBlinkPlatformImpl : publi
    mutable base::WaitableEvent io_thread_id_ready_event_;
    base::PlatformThreadId io_thread_id_ = base::kInvalidThreadId;
  

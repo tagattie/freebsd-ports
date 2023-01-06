@@ -7,6 +7,7 @@ MASTER_SITES=	https://dl.opendesktop.org/api/files/download/id/1482097460/ \
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Simple KDE based image viewer
+WWW=		http://kde-apps.org/content/show.php/ShowImage?content=143977
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -15,9 +16,9 @@ USES=		cmake compiler:c++11-lang kde:5 qt:5 tar:bzip2 xorg
 USE_KDE=	auth bookmarks codecs completion config configwidgets \
 		coreaddons ecm i18n itemviews jobwidgets kio service solid \
 		widgetsaddons windowsystem xmlgui \
-		doctools_build
+		doctools:build
 USE_QT=		concurrent core dbus gui network xml widgets \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 USE_XORG=	x11
 
 .include <bsd.port.mk>

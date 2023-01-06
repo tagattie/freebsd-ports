@@ -1,20 +1,22 @@
 PORTNAME=	xfce4-power-manager
-PORTVERSION=	4.16.0
+PORTVERSION=	4.18.0
 CATEGORIES=	sysutils xfce
 MASTER_SITES=	XFCE
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Power manager for the Xfce Desktop
+WWW=		https://goodies.xfce.org/projects/applications/xfce4-power-manager
 
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libnotify.so:devel/libnotify \
-		libupower-glib.so:sysutils/upower
+		libupower-glib.so:sysutils/upower \
+		libharfbuzz.so:print/harfbuzz
 
 USES=		compiler:c11 gettext-tools gmake gnome libtool pkgconfig \
 		tar:bzip2 xfce xorg
-USE_GNOME=	cairo glib20 gtk30 intltool
+USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30 intltool
 USE_XFCE=	panel
 USE_XORG=	ice sm xrandr x11 xext xtst xscrnsaver
 

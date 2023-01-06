@@ -1,10 +1,10 @@
 PORTNAME=	kde-cli-tools
 DISTVERSION=	${KDE_PLASMA_VERSION}
-PORTREVISION=	1
 CATEGORIES=	sysutils kde kde-plasma
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Plasma5 non-interactive system tools
+WWW=		https://www.kde.org/plasma-desktop
 
 USES=		cmake compiler:c++11-lib cpe gettext desktop-file-utils \
 		 kde:5 qt:5 tar:xz xorg
@@ -14,10 +14,10 @@ USE_KDE=	activities auth bookmarks codecs completion config \
 		kdeclarative kdesu kio notifications parts plasma-workspace \
 		pty service solid sonnet textwidgets unitconversion \
 		widgetsaddons windowsystem xmlgui \
-		doctools_build ecm_build
+		doctools:build ecm:build
 USE_QT=		concurrent core dbus declarative gui network printsupport svg \
 		widgets x11extras xml \
-		buildtools_build qmake_build testlib_build
+		buildtools:build qmake:build testlib:build
 USE_XORG=	x11
 CPE_VENDOR=	kde
 

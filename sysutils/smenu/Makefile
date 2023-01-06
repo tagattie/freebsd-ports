@@ -1,10 +1,11 @@
 PORTNAME=	smenu
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.0.0
+DISTVERSION=	1.1.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	Terminal utility to interactively filter text
+WWW=		https://github.com/p-gen/smenu
 
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE

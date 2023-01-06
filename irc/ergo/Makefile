@@ -1,12 +1,12 @@
 PORTNAME=	ergo
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.10.0
-PORTREVISION=	3
+DISTVERSION=	2.11.0
 CATEGORIES=	irc
 PKGNAMESUFFIX=	-irc-server
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Modern IRC server (daemon/ircd) written in Go
+WWW=		https://ergo.chat/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

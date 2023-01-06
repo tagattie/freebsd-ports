@@ -7,6 +7,7 @@ DIST_SUBDIR=	KDE/${PORTNAME}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE micro-blogging client
+WWW=		https://www.kde.org/applications/internet/choqok/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -22,9 +23,9 @@ USE_KDE=	attica auth bookmarks codecs completion config configwidgets \
 		itemviews jobwidgets kcmutils kdewebkit kio notifications \
 		notifyconfig parts purpose service solid sonnet textwidgets \
 		wallet widgetsaddons windowsystem xmlgui \
-		kded_run
+		kded:run
 USE_QT=		concurrent core dbus gui network networkauth webkit widgets xml \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 USE_XORG=	x11
 USE_LDCONFIG=	yes
 

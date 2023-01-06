@@ -1,10 +1,12 @@
 PORTNAME=		vcflib
 DISTVERSIONPREFIX=	v
 DISTVERSION=		1.0.3
+PORTREVISION=		1
 CATEGORIES=		biology
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	C++ library and CLI tools for parsing and manipulating VCF files
+WWW=		https://github.com/vcflib/vcflib
 
 LICENSE=	MIT
 

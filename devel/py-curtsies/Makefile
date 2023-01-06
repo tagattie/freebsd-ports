@@ -1,11 +1,12 @@
 PORTNAME=	curtsies
-PORTVERSION=	0.4.0
+PORTVERSION=	0.4.1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Curses-like terminal wrapper, with colored strings
+WWW=		https://github.com/bpython/curtsies
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

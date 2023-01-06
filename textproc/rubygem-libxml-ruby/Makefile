@@ -1,10 +1,11 @@
 PORTNAME=	libxml-ruby
-PORTVERSION=	3.2.3
+PORTVERSION=	3.2.4
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Ruby language bindings for the GNOME Libxml2 XML toolkit
+WWW=		https://xml4r.github.io/libxml-ruby/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

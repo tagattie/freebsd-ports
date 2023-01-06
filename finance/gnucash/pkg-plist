@@ -196,6 +196,7 @@ include/gnucash/qof-string-cache.h
 include/gnucash/qof.h
 include/gnucash/qofbackend.h
 include/gnucash/qofbook.h
+include/gnucash/qofbook.hpp
 include/gnucash/qofbookslots.h
 include/gnucash/qofchoice.h
 include/gnucash/qofclass.h
@@ -620,6 +621,20 @@ share/metainfo/gnucash.appdata.xml
 %%DATADIR%%/accounts/en_GB/acctchrt_spouseretire.gnucash-xea
 %%DATADIR%%/accounts/en_GB/uk-vat.gnucash-xea
 %%DATADIR%%/accounts/en_IN/acctchrt_gstindia.gnucash-xea
+%%DATADIR%%/accounts/es_AR/acctchrt_brokerage.gnucash-xea
+%%DATADIR%%/accounts/es_AR/acctchrt_business.gnucash-xea
+%%DATADIR%%/accounts/es_AR/acctchrt_carloan.gnucash-xea
+%%DATADIR%%/accounts/es_AR/acctchrt_cdmoneymkt.gnucash-xea
+%%DATADIR%%/accounts/es_AR/acctchrt_checkbook.gnucash-xea
+%%DATADIR%%/accounts/es_AR/acctchrt_childcare.gnucash-xea
+%%DATADIR%%/accounts/es_AR/acctchrt_common.gnucash-xea
+%%DATADIR%%/accounts/es_AR/acctchrt_currency.gnucash-xea
+%%DATADIR%%/accounts/es_AR/acctchrt_fixedassets.gnucash-xea
+%%DATADIR%%/accounts/es_AR/acctchrt_homeloan.gnucash-xea
+%%DATADIR%%/accounts/es_AR/acctchrt_homeown.gnucash-xea
+%%DATADIR%%/accounts/es_AR/acctchrt_otherloan.gnucash-xea
+%%DATADIR%%/accounts/es_AR/acctchrt_renter.gnucash-xea
+%%DATADIR%%/accounts/es_AR/acctchrt_spouseinc.gnucash-xea
 %%DATADIR%%/accounts/es_ES/acctchrt_brokerage.gnucash-xea
 %%DATADIR%%/accounts/es_ES/acctchrt_carloan.gnucash-xea
 %%DATADIR%%/accounts/es_ES/acctchrt_cdmoneymkt.gnucash-xea
@@ -695,6 +710,7 @@ share/metainfo/gnucash.appdata.xml
 %%DATADIR%%/accounts/fr_CH/acctchrt_homeloan.gnucash-xea
 %%DATADIR%%/accounts/fr_CH/acctchrt_homeown.gnucash-xea
 %%DATADIR%%/accounts/fr_CH/acctchrt_otherloan.gnucash-xea
+%%DATADIR%%/accounts/fr_CH/acctchrt_pme-19.gnucash-xea
 %%DATADIR%%/accounts/fr_CH/acctchrt_renter.gnucash-xea
 %%DATADIR%%/accounts/fr_CH/acctchrt_retiremt.gnucash-xea
 %%DATADIR%%/accounts/fr_CH/acctchrt_spouseinc.gnucash-xea
@@ -1366,6 +1382,7 @@ share/icons/hicolor/scalable/apps/gnucash-icon.svg
 %%NLS%%share/locale/lt/LC_MESSAGES/gnucash.mo
 %%NLS%%share/locale/lv/LC_MESSAGES/gnucash.mo
 %%NLS%%share/locale/mai/LC_MESSAGES/gnucash.mo
+%%NLS%%share/locale/mk/LC_MESSAGES/gnucash.mo
 %%NLS%%share/locale/mni/LC_MESSAGES/gnucash.mo
 %%NLS%%share/locale/mni@bengali/LC_MESSAGES/gnucash.mo
 %%NLS%%share/locale/mr/LC_MESSAGES/gnucash.mo

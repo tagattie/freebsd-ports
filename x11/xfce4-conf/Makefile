@@ -1,5 +1,5 @@
 PORTNAME=	xfce4-conf
-PORTVERSION=	4.16.0
+PORTVERSION=	4.18.0
 CATEGORIES=	x11 xfce
 MASTER_SITES=	XFCE
 DISTNAME=	xfconf-${DISTVERSIONFULL}
@@ -7,6 +7,7 @@ DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	D-Bus-based configuration storage system
+WWW=		https://www.xfce.org/projects
 
 LICENSE=	GPLv2
 

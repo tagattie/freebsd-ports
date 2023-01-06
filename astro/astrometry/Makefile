@@ -1,11 +1,12 @@
 PORTNAME=	astrometry
-PORTVERSION=	0.91
+PORTVERSION=	0.93
 CATEGORIES=	astro
 MASTER_SITES=	http://astrometry.net/downloads/
 DISTNAME=	${PORTNAME}.net-${PORTVERSION}
 
 MAINTAINER=	rhurlin@FreeBSD.org
 COMMENT=	Astronomic calibration service
+WWW=		https://astrometry.net/
 
 LICENSE=	GPLv3+
 

@@ -1,11 +1,12 @@
 PORTNAME=	jaraco.context
-PORTVERSION=	4.1.2
+PORTVERSION=	4.2.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Context managers by jaraco
+WWW=		https://github.com/jaraco/jaraco.context
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

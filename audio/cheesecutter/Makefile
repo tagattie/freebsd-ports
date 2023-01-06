@@ -2,11 +2,12 @@ PORTNAME=	cheesecutter
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.9-beta-3-25
 DISTVERSIONSUFFIX=	-gdbe9a9d
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Tracker for composing music for the C64 SID chip
+WWW=		https://github.com/theyamo/CheeseCutter
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

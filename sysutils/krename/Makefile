@@ -1,11 +1,11 @@
 PORTNAME=	krename
-PORTVERSION=	5.0.1
-PORTREVISION=	1
+DISTVERSION=	5.0.2
 CATEGORIES=	sysutils kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION}/src
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Powerful batch file renamer for KDE
+WWW=		https://userbase.kde.org/KRename
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -20,7 +20,7 @@ USE_KDE=	auth bookmarks codecs completion config configwidgets \
 		coreaddons crash i18n iconthemes itemviews jobwidgets \
 		kio service solid widgetsaddons windowsystem xmlgui
 USE_QT=		concurrent core dbus declarative gui network xml widgets \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 USE_XORG=	x11
 
 .include <bsd.port.mk>

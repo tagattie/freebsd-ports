@@ -7,8 +7,12 @@ PKGNAMESUFFIX?=	56-server
 
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT?=	Multithreaded SQL database (server)
+WWW=		https://www.mysql.com/
 
 LICENSE=	GPLv2
+
+DEPRECATED=	Upstream support ended in February 2021
+EXPIRATION_DATE=	2023-06-30
 
 BROKEN_armv6=	qemu: uncaught target signal 11 (Segmentation fault) - core dumped
 

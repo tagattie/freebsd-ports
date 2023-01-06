@@ -1,8 +1,8 @@
 PORTNAME=	twofactor_admin
-PORTVERSION=	3.2.0
+PORTVERSION=	4.1.9
 DISTVERSIONPREFIX=	v
 CATEGORIES=	security
-MASTER_SITES=	https://github.com/ChristophWurst/${PORTNAME}/releases/download/${DISTVERSIONPREFIX}${PORTVERSION}/
+MASTER_SITES=	https://github.com/nextcloud-releases/${PORTNAME}/releases/download/${DISTVERSIONPREFIX}${PORTVERSION}/
 PKGNAMEPREFIX=	nextcloud-
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 DISTNAME=	${PORTNAME}
@@ -10,11 +10,12 @@ DIST_SUBDIR=	${PKGNAMEPREFIX:S/-//}/${DISTNAME}-${DISTVERSIONPREFIX}${PORTVERSIO
 
 MAINTAINER=	brnrd@FreeBSD.org
 COMMENT=	Admin create one-time TOTP app for Nextcloud
+WWW=		https://apps.nextcloud.com/apps/twofactor_admin
 
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	nextcloud${PHP_PKGNAMESUFFIX}>=17:www/nextcloud@${PHP_FLAVOR}
+RUN_DEPENDS=	nextcloud${PHP_PKGNAMESUFFIX}>=23:www/nextcloud@${PHP_FLAVOR}
 
 USES=		php:flavors
 IGNORE_WITH_PHP=	82

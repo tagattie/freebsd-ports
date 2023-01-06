@@ -1,11 +1,13 @@
 PORTNAME=	cdo
 PORTVERSION=	2.0.6
+PORTREVISION=	1
 CATEGORIES=	science
 MASTER_SITES=	https://code.mpimet.mpg.de/attachments/download/27276/ \
 		LOCAL/sunpoet
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Climate Data Operators
+WWW=		https://code.mpimet.mpg.de/projects/cdo
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

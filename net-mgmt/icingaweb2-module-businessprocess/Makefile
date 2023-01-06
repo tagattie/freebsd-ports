@@ -7,12 +7,13 @@ PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Manage Business Processes in Icinga Web 2
+WWW=		https://github.com/Icinga/icingaweb2-module-businessprocess
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	icingaweb2${PHP_PKGNAMESUFFIX}>=2.4.1:net-mgmt/icingaweb2@${PHP_FLAVOR} \
-		icingaweb2-module-ipl${PHP_PKGNAMESUFFIX}>=0.1.1:net-mgmt/icingaweb2-module-ipl@${PHP_FLAVOR}
+		icinga-php-library${PHP_PKGNAMESUFFIX}>=0.10.0:net-mgmt/icinga-php-library@${PHP_FLAVOR}
 
 USES=		php:web,flavors
 

@@ -5,8 +5,11 @@ CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Manage files with git, without checking their contents into git
+WWW=		https://git-annex.branchable.com/
 
 LICENSE=	GPLv3
+
+BROKEN_aarch64=	compiler crashes
 
 BUILD_DEPENDS=	rsync:net/rsync \
 		git:devel/git \
@@ -299,6 +302,13 @@ MAN1PAGES=	git-annex-add git-annex-expire git-annex-lookupkey \
 		git-remote-tor-annex git-annex-examinekey git-annex-log \
 		git-annex-rekey git-annex-undo
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == aarch64
+# compiler goes out of memory
+BUILD_ARGS+=	--disable-optimization
+.endif
+
 post-build:
 .for man in ${MAN1PAGES}
 	${WRKSRC}/Build/mdwn2man ${man} 1 ${WRKSRC}/doc/${man}.mdwn > ${WRKSRC}/doc/${man}.1
@@ -313,4 +323,4 @@ post-stage:
 	${LN} -sf git-annex ${STAGEDIR}${PREFIX}/bin/git-annex-shell
 	${LN} -sf git-annex ${STAGEDIR}${PREFIX}/bin/git-remote-tor-annex
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -1,15 +1,15 @@
---- ui/views/controls/textfield/textfield.cc.orig	2022-04-01 07:48:30 UTC
+--- ui/views/controls/textfield/textfield.cc.orig	2022-12-01 10:35:46 UTC
 +++ ui/views/controls/textfield/textfield.cc
-@@ -73,7 +73,7 @@
- 
- // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
- // of lacros-chrome is complete.
--#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || BUILDFLAG(IS_BSD)
- #include "ui/base/ime/linux/text_edit_command_auralinux.h"
- #include "ui/base/ime/linux/text_edit_key_bindings_delegate_auralinux.h"
+@@ -71,7 +71,7 @@
+ #include "base/win/win_util.h"
  #endif
-@@ -166,7 +166,7 @@ bool IsControlKeyModifier(int flags) {
+ 
+-#if BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+ #include "ui/base/ime/linux/text_edit_command_auralinux.h"
+ #include "ui/linux/linux_ui.h"
+ #endif
+@@ -164,7 +164,7 @@ bool IsControlKeyModifier(int flags) {
  // Control-modified key combination, but we cannot extend it to other platforms
  // as Control has different meanings and behaviors.
  // https://crrev.com/2580483002/#msg46
@@ -18,24 +18,24 @@
    return flags & ui::EF_CONTROL_DOWN;
  #else
    return false;
-@@ -715,7 +715,7 @@ bool Textfield::OnKeyPressed(const ui::KeyEvent& event
+@@ -707,7 +707,7 @@ bool Textfield::OnKeyPressed(const ui::KeyEvent& event
+   if (!textfield)
+     return handled;
  
- // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
- // of lacros-chrome is complete.
--#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || BUILDFLAG(IS_BSD)
-   ui::TextEditKeyBindingsDelegateAuraLinux* delegate =
-       ui::GetTextEditKeyBindingsDelegate();
+-#if BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+   auto* linux_ui = ui::LinuxUi::instance();
    std::vector<ui::TextEditCommandAuraLinux> commands;
-@@ -861,7 +861,7 @@ void Textfield::AboutToRequestFocusFromTabTraversal(bo
+   if (!handled && linux_ui &&
+@@ -851,7 +851,7 @@ void Textfield::AboutToRequestFocusFromTabTraversal(bo
+ }
+ 
  bool Textfield::SkipDefaultKeyEventProcessing(const ui::KeyEvent& event) {
- // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
- // of lacros-chrome is complete.
--#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || BUILDFLAG(IS_BSD)
+-#if BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
    // Skip any accelerator handling that conflicts with custom keybindings.
-   ui::TextEditKeyBindingsDelegateAuraLinux* delegate =
-       ui::GetTextEditKeyBindingsDelegate();
+   auto* linux_ui = ui::LinuxUi::instance();
+   std::vector<ui::TextEditCommandAuraLinux> commands;
 @@ -1721,7 +1721,7 @@ bool Textfield::ShouldDoLearning() {
    return false;
  }

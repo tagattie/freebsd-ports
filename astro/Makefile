@@ -3,6 +3,7 @@
     SUBDIR += R-cran-maptools
     SUBDIR += accrete
     SUBDIR += astrometry
+    SUBDIR += calcmysky
     SUBDIR += celestia
     SUBDIR += celestia-gtk
     SUBDIR += cfitsio
@@ -33,6 +34,7 @@
     SUBDIR += luna
     SUBDIR += marble
     SUBDIR += match
+    SUBDIR += mepo
     SUBDIR += merkaartor
     SUBDIR += mkgmap
     SUBDIR += mkgmap-splitter
@@ -113,6 +115,7 @@
     SUBDIR += sofa
     SUBDIR += sscalc
     SUBDIR += stardates
+    SUBDIR += starfetch
     SUBDIR += starplot
     SUBDIR += stars
     SUBDIR += stellarium

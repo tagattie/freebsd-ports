@@ -1,10 +1,11 @@
 PORTNAME=	dbcsr
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.4.1
+DISTVERSION=	2.5.0
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Distributed Block Compressed Sparse Row matrix library
+WWW=		https://www.cp2k.org/dbcsr
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

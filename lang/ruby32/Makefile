@@ -8,6 +8,7 @@ DIST_SUBDIR=	ruby
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Object-oriented interpreted scripting language
+WWW=		https://www.ruby-lang.org/en/
 
 LICENSE=	BSD2CLAUSE RUBY
 LICENSE_COMB=	dual
@@ -46,7 +47,7 @@ WRKSRC=		${RUBY_WRKSRC}
 
 RUBY_VER=	3.2
 
-OPTIONS_DEFINE=		CAPIDOCS DEBUG DOCS EXAMPLES GMP RDOC
+OPTIONS_DEFINE=		CAPIDOCS DEBUG DOCS EXAMPLES GMP RDOC YJIT
 OPTIONS_DEFAULT=	LIBEDIT RDOC
 OPTIONS_SINGLE=		EDIT
 OPTIONS_SINGLE_EDIT=	LIBEDIT READLINE
@@ -58,6 +59,7 @@ GMP_DESC=	Use GMP to accelerate Bignum operations
 LIBEDIT_DESC=	Use libedit
 RDOC_DESC=	Build and install Rdoc indexes
 READLINE_DESC=	Use libreadline
+YJIT_DESC=	Enable YJIT (Yet Another Ruby JIT)
 
 CAPIDOCS_BUILD_DEPENDS=		dot:graphics/graphviz \
 				doxygen>=1.8.13,2:devel/doxygen
@@ -71,6 +73,8 @@ RDOC_CONFIGURE_ENABLE=		install-rdoc
 READLINE_USES=			readline
 READLINE_CONFIGURE_ON=		--disable-libedit \
 				--with-readline-dir=${LOCALBASE}
+YJIT_BUILD_DEPENDS=		${RUST_DEFAULT}>=1.58.0:lang/${RUST_DEFAULT}
+YJIT_CONFIGURE_ENABLE=		yjit
 
 .include <bsd.port.pre.mk>
 
@@ -98,11 +102,11 @@ _SUF2=		,${PORTEPOCH}
 LIB_DEPENDS+=	libunwind.so:devel/libunwind
 .endif
 
-.if (defined(PPC_ABI) && ${PPC_ABI} == ELFv1) || ${ARCH} == powerpc
+.if defined(PPC_ABI) && ${PPC_ABI} == ELFv1
 USE_GCC=	yes
 .endif
 
-.if ${ARCH} == armv6 || ${ARCH} == armv7
+.if ${ARCH} == armv6 || ${ARCH} == armv7 || ${ARCH} == powerpc
 CONFIGURE_ARGS+=	--with-setjmp-type=_setjmp
 CONFIGURE_ENV+=		ac_cv_func__setjmp=yes
 .endif
@@ -165,18 +169,22 @@ pre-install-RDOC-on:
 post-install:
 .if ${RUBY_VER} == ${RUBY_DEFAULT_VER}
 #
-# Link just installed "ruby" to "ruby27", etc.
+# Link just installed "ruby" to "ruby31", etc.
 #
 . for FILE in ${INSTALLED_SCRIPTS}
 	${LN} -fs ${FILE}${RUBY_SUFFIX} ${STAGEDIR}${PREFIX}/bin/${FILE}
 . endfor
 #
-# Link "ruby.1.gz" to "ruby27.1.gz", etc.
+# Link "ruby.1.gz" to "ruby31.1.gz", etc.
 #
 . for FILE in ${INSTALLED_MANUALS}
 	${LN} -fs ${FILE}${RUBY_SUFFIX}.1.gz ${STAGEDIR}${MANPREFIX}/man/man1/${FILE}.1.gz
 . endfor
 .endif
+
+post-install-CAPIDOCS-on:
+	${RM} ${WRKSRC}/doc/capi/.timestamp ${STAGEDIR}${PREFIX}/share/doc/ruby${RUBY_SUFFIX}/capi/.timestamp
+	cd ${STAGEDIR}${PREFIX} && ${FIND} share/doc/ruby${RUBY_SUFFIX}/capi/ -type f >> ${TMPPLIST}
 
 post-install-DEBUG-off:
 #

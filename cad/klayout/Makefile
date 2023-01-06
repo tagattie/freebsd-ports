@@ -1,10 +1,11 @@
 PORTNAME=	klayout
-PORTVERSION=	0.27.9
+PORTVERSION=	0.28.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	cad
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Qt-based chip mask layout viewing and editing tool
+WWW=		http://www.klayout.de/index.html
 
 LICENSE=	GPLv2
 
@@ -37,7 +38,6 @@ do-configure:
 	cd ${WRKSRC} && \
 	    ${SETENV} ${MAKE_ENV} ${SH} build.sh \
 		-with-qtbinding \
-		-qt5 \
 		-rpath "${PREFIX}/lib/klayout" \
 		-prefix "${PREFIX}" \
 		-python ${PYTHON_CMD} \

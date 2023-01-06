@@ -1,11 +1,12 @@
 PORTNAME=	sphinx-issues
-PORTVERSION=	1.2.0
+PORTVERSION=	3.0.1
 CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Sphinx extension for linking to your project's issue tracker
+WWW=		https://github.com/sloria/sphinx-issues
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

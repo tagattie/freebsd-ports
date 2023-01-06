@@ -1,10 +1,12 @@
 PORTNAME=	fccf
 PORTVERSION=	0.6.0
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Command-line tool that quickly searches through C/C++
+WWW=		https://github.com/p-ranav/fccf
 
 LICENSE=	MIT
 

@@ -6,11 +6,11 @@ CATEGORIES=	net pear
 
 MAINTAINER=	dereks@lifeofadishwasher.com
 COMMENT=	PHP extension for XML-RPC servers and clients
+WWW=		https://pecl.php.net/package/xmlrpc
 
 LICENSE=	PHP301
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-IGNORE_WITH_PHP=	74
 USES=		iconv:translit gnome php:pecl pkgconfig
 USE_PHP=	xml:build
 USE_GNOME=	libxml2

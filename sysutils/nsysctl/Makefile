@@ -1,9 +1,10 @@
 PORTNAME=	nsysctl
-DISTVERSION=	2.1
+DISTVERSION=	2.1.2
 CATEGORIES=	sysutils
 
 MAINTAINER=	alfix86@gmail.com
 COMMENT=	Utility to get and set kernel state at runtime
+WWW=		https://gitlab.com/alfix/nsysctl/
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -13,7 +14,7 @@ LIB_DEPENDS=	libsysctlmibinfo2.so:devel/libsysctlmibinfo2
 USE_GITLAB=	yes
 
 GL_ACCOUNT=	alfix
-GL_COMMIT=	b6520605830a56913ca3ca6dfa0bf20f8f4e8ca1
+GL_COMMIT=	5d92b5a19300c56a95db0012c659f64f36fb1bce
 
 PLIST_FILES=	man/man8/${PORTNAME}.8.gz \
 		sbin/${PORTNAME}

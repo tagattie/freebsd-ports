@@ -1,10 +1,11 @@
 PORTNAME=	roswell
 DISTVERSIONPREFIX=	v
-DISTVERSION=	21.10.14.111
+DISTVERSION=	22.12.14.113
 CATEGORIES=	devel lisp
 
 MAINTAINER=	dmgk@FreeBSD.org
 COMMENT=	Common Lisp installer and launcher
+WWW=		https://roswell.github.io/
 
 LICENSE=	MIT
 

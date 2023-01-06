@@ -1,6 +1,6 @@
 PORTNAME=	arbitrum-avm
 PORTVERSION=	1.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net-p2p
 MASTER_SITES=	LOCAL/nc/mirror/ \
@@ -9,6 +9,7 @@ DISTNAME=	arbitrum-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Arbitrum Virtual Machine
+WWW=		https://arbitrum.io/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

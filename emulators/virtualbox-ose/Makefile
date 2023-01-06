@@ -7,6 +7,7 @@ EXTRACT_ONLY=	VirtualBox-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	vbox@FreeBSD.org
 COMMENT=	General-purpose full virtualizer for x86 hardware
+WWW=		https://www.virtualbox.org/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -144,6 +145,7 @@ LICENSE_DISTFILES_Additions=	${GUESTADDITIONS}
 .if ${PORT_OPTIONS:MMANUAL}
 DBKXMLDIR=	${LOCALBASE}/share/xml/docbook/4.4
 DBKXSLDIR=	${LOCALBASE}/share/xsl/docbook
+USES+=		tex
 USE_TEX=	dvipsk:build formats:build
 .endif
 
@@ -161,7 +163,7 @@ CONFIGURE_ARGS+=	--enable-qt5
 PLIST_SUB+=	QT=""
 USES+=		gl qmake:no_env qt:5 xorg
 USE_GL=		gl glu
-USE_QT=		buildtools_build core dbus gui linguisttools_build opengl
+USE_QT=		buildtools:build core dbus gui linguisttools:build opengl
 USE_QT+=	printsupport widgets x11extras
 USE_XORG=	xcb
 VBOX_PROGS+=	VirtualBox VirtualBoxVM

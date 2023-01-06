@@ -1,10 +1,11 @@
 PORTNAME=	plasma-workspace
 DISTVERSION=	${KDE_PLASMA_VERSION}
-PORTREVISION=	2
+PORTREVISION=	1
 CATEGORIES=	x11 kde kde-plasma
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Plasma5 Plasma workspace
+WWW=		https://www.kde.org/plasma-desktop
 
 LIB_DEPENDS=	libcln.so:math/cln \
 		libdbusmenu-qt5.so:devel/libdbusmenu-qt@qt5 \
@@ -35,20 +36,20 @@ USE_KDE=	activities activities-stats activitymanagerd archive attica \
 		auth baloo bookmarks codecs completion config configwidgets \
 		coreaddons crash dbusaddons emoticons filemetadata globalaccel \
 		guiaddons holidays i18n iconthemes idletime init itemmodels \
-		itemviews jobwidgets js jsembed kcmutils kdeclarative kdesu \
+		itemviews jobwidgets js kcmutils kdeclarative kdesu \
 		kdewebkit kio kscreenlocker kwin libkscreen libksysguard \
 		newstuff notifications notifyconfig package parts people \
 		plasma-framework plasma-integration prison pty runner service \
 		solid sonnet syntaxhighlighting texteditor textwidgets unitconversion \
 		wallet wayland widgetsaddons windowsystem xmlgui xmlrpcclient \
-		doctools_build ecm_build \
-		breeze-icons_run breeze_run kded_run kquickcharts_run \
-		milou_run oxygen-icons5_run
+		doctools:build ecm:build \
+		breeze-icons:run breeze:run kded:run kquickcharts:run \
+		milou:run oxygen-icons5:run
 USE_QT=		concurrent core dbus declarative graphicaleffects gui network \
 		phonon4 printsupport qdbus script sql svg wayland webkit \
 		widgets x11extras xml \
-		buildtools_build qmake_build testlib_build \
-		paths_run quickcontrols_run
+		buildtools:build qmake:build testlib:build \
+		paths:run quickcontrols:run
 USE_XORG=	ice sm x11 xau xcb xcomposite xcursor xext xfixes xft xi xkbfile xrender xtst
 
 CPE_VENDOR=	kde

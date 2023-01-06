@@ -1,10 +1,11 @@
 PORTNAME=	feedjira
-PORTVERSION=	3.2.1
+PORTVERSION=	3.2.2
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Feed fetching and parsing library
+WWW=		https://github.com/feedjira/feedjira
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

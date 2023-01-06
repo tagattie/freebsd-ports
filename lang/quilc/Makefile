@@ -1,13 +1,14 @@
 PORTNAME=	quilc
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.26.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang # quantum-computing
 DIST_SUBDIR=	${PORTNAME}-${DISTVERSION} # many files, some are unversioned
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Optimizing Quil compiler (for quantum computing)
+WWW=		https://github.com/quil-lang/quilc
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

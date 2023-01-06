@@ -1,11 +1,11 @@
 PORTNAME=	heaptrack
-DISTVERSION=	1.3.0
-PORTREVISION=	4
+DISTVERSION=	1.4.0
 CATEGORIES=	devel kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION}/
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Heap memory profiler
+WWW=		https://github.com/KDE/heaptrack
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSES/GPL-2.0-or-later.txt
@@ -22,7 +22,7 @@ USE_KDE=	auth auth codecs completion config config \
 		jobwidgets kio kio service solid threadweaver \
 		widgetsaddons windowsystem
 USE_QT=		concurrent core dbus gui network widgets xml \
-		buildtools_build qmake_build
+		buildtools:build qmake:build
 USE_XORG=	x11
 
 .include <bsd.port.mk>

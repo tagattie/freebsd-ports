@@ -1,19 +1,19 @@
 PORTNAME=	fakeredis
-PORTVERSION=	1.9.0
+PORTVERSION=	1.10.1
 CATEGORIES=	databases python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Fake version of databases/py-redis for unit testing
+WWW=		https://github.com/cunla/fakeredis-py
 
 LICENSE=	BSD3CLAUSE MIT
 LICENSE_COMB=	multi
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}redis>=0<4.3.1:databases/py-redis@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}redis>=0<4.4:databases/py-redis@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}six>=1.16<2.0.0:devel/py-six@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}redis>=0<4.5:databases/py-redis@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sortedcontainers>=2.3.0<3.0.0:devel/py-sortedcontainers@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aioredis>=1.3.1<3.0.0:databases/py-aioredis@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}hypothesis>=0:devel/py-hypothesis@${PY_FLAVOR} \

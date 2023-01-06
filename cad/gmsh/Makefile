@@ -1,6 +1,5 @@
 PORTNAME=	gmsh
-DISTVERSION=	4.9.2
-PORTREVISION=	2
+DISTVERSION=	4.11.0
 CATEGORIES=	cad
 MASTER_SITES=	http://gmsh.info/src/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-source
@@ -8,6 +7,7 @@ DIST_SUBDIR=	gmsh
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Automatic 3D finite element mesh generator
+WWW=		https://www.geuz.org/gmsh/
 
 LICENSE=	AGPLv3+ APACHE20 GPLv3+ GPLv2+ LGPL21
 LICENSE_COMB=	multi
@@ -29,6 +29,7 @@ USE_XORG=	x11 xcursor xext xinerama xfixes xft xrender
 
 CMAKE_ARGS=	-DCMAKE_SKIP_RPATH:BOOL=YES
 
+CXXFLAGS_powerpc64=	-mvsx
 LDFLAGS+=	-lexecinfo
 
 OPTIONS_DEFINE=	CGNS DOCS MED OCC SHARED STATIC

@@ -1,10 +1,11 @@
 PORTNAME=	rhonabwy
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.1.8
+DISTVERSION=	1.1.9
 CATEGORIES=	security
 
 MAINTAINER=	dvl@FreeBSD.org
 COMMENT=	Javascript Object Signing and Encryption (JOSE) library
+WWW=		https://github.com/babelouest/rhonabwy
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -25,6 +26,8 @@ USES=		cmake
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	babelouest
+
+PLIST_SUB=	DISTVERSION=${DISTVERSION}
 
 CMAKE_ARGS=	-DWITH_JOURNALD=off
 

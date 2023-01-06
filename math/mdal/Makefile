@@ -1,10 +1,10 @@
 PORTNAME=	mdal
-DISTVERSION=	0.9.4
-PORTREVISION=	3
+DISTVERSION=	1.0.1
 CATEGORIES=	math geography
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Mesh data abstration library
+WWW=		https://www.mdal.xyz/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

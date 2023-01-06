@@ -1,10 +1,11 @@
 PORTNAME=	vim
-PORTVERSION=	9.0.0379
+PORTVERSION=	9.0.1136
 DISTVERSIONPREFIX=	v
 CATEGORIES=	editors
 
 MAINTAINER=	adamw@FreeBSD.org
 COMMENT=	Improved version of the vi editor (${FLAVOR:U} flavor)
+WWW=		https://www.vim.org/
 
 LICENSE=	VIM
 LICENSE_NAME=	VIM License

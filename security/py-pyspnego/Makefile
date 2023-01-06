@@ -1,11 +1,12 @@
 PORTNAME=	pyspnego
-PORTVERSION=	0.6.0
+PORTVERSION=	0.6.3
 CATEGORIES=	security python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Windows Negotiate Authentication Client and Server
+WWW=		https://github.com/jborean93/pyspnego
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -1,12 +1,12 @@
 PORTNAME=	djangoql
-PORTVERSION=	0.17.0
-PORTREVISION=	1
+PORTVERSION=	0.17.1
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	grembo@FreeBSD.org
 COMMENT=	Advanced search language for Django, with auto-completion
+WWW=		https://github.com/ivelum/djangoql
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

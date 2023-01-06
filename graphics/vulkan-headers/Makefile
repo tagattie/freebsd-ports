@@ -1,10 +1,12 @@
 PORTNAME=	vulkan-headers
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.3.226
+DISTVERSION=	1.3.238
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Headers for the Vulkan graphics API
+WWW=		https://github.com/KhronosGroup/Vulkan-Headers
 
 LICENSE=	APACHE20
 
@@ -14,6 +16,10 @@ GH_ACCOUNT=	KhronosGroup
 GH_PROJECT=	Vulkan-Headers
 STRIP=		# nothing to strip
 NO_ARCH=	yes
+
+post-extract:
+# genvk.py requires docgenerator.py from Vulkan-Docs, so drop useless shebang
+	@${FIND} ${WRKSRC}/registry -name \*.py -exec ${REINPLACE_CMD} -i '' '/^#!/d' {} +
 
 post-patch:
 # XXX Drop after FreeBSD 12.* EOL around 2024-06-30

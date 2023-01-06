@@ -1,9 +1,9 @@
---- net/cert/cert_verify_proc_unittest.cc.orig	2022-08-31 12:19:35 UTC
+--- net/cert/cert_verify_proc_unittest.cc.orig	2022-11-30 08:12:58 UTC
 +++ net/cert/cert_verify_proc_unittest.cc
-@@ -234,7 +234,7 @@ const std::vector<CertVerifyProcType> kAllCertVerifier
+@@ -242,7 +242,7 @@ const std::vector<CertVerifyProcType> kAllCertVerifier
+ #if BUILDFLAG(CHROME_ROOT_STORE_SUPPORTED)
      CERT_VERIFY_PROC_BUILTIN_CHROME_ROOTS
- #elif BUILDFLAG(IS_WIN)
-     CERT_VERIFY_PROC_WIN, CERT_VERIFY_PROC_BUILTIN_CHROME_ROOTS
+ #endif
 -#elif BUILDFLAG(IS_FUCHSIA) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#elif BUILDFLAG(IS_FUCHSIA) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
      CERT_VERIFY_PROC_BUILTIN

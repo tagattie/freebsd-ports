@@ -8,10 +8,11 @@ LICENSE=	GPLv2
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extensible plotting language for producing scientific graphs
+WWW=		http://gri.sourceforge.net/
 
 LIB_DEPENDS=	libnetcdf.so:science/netcdf
 
-USES=		cpe gmake readline shebangfix makeinfo
+USES=		cpe gmake readline shebangfix makeinfo tex
 SHEBANG_FILES=	doc/examples/FEM.pl src/gri_merge src/gri_unpage
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-FreeBSD

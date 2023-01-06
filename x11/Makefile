@@ -39,6 +39,8 @@
     SUBDIR += cinnamon-session
     SUBDIR += cl-clx
     SUBDIR += cl-clx-sbcl
+    SUBDIR += clipcat
+    SUBDIR += cliphist
     SUBDIR += clipman
     SUBDIR += compton-conf
     SUBDIR += conlecterm
@@ -67,6 +69,7 @@
     SUBDIR += eterm
     SUBDIR += evilvte
     SUBDIR += evtest
+    SUBDIR += eww
     SUBDIR += fbdesk
     SUBDIR += fbpanel
     SUBDIR += find-cursor
@@ -94,6 +97,7 @@
     SUBDIR += gnustep-app
     SUBDIR += grabc
     SUBDIR += grim
+    SUBDIR += grimshot
     SUBDIR += gromit
     SUBDIR += gromit-mpx
     SUBDIR += gskrab
@@ -109,6 +113,9 @@
     SUBDIR += hhpc
     SUBDIR += hs-xmobar
     SUBDIR += hsetroot
+    SUBDIR += hyprland-share-picker
+    SUBDIR += hyprpaper
+    SUBDIR += hyprpicker
     SUBDIR += i3blocks
     SUBDIR += i3lock-color
     SUBDIR += iceauth
@@ -171,6 +178,7 @@
     SUBDIR += libXvMC
     SUBDIR += libXxf86dga
     SUBDIR += libXxf86vm
+    SUBDIR += libclipboard
     SUBDIR += libdmx
     SUBDIR += libexo
     SUBDIR += libfakekey
@@ -296,6 +304,7 @@
     SUBDIR += pmenu
     SUBDIR += polybar
     SUBDIR += printscreen
+    SUBDIR += py-autotiling
     SUBDIR += py-caffeine-ng
     SUBDIR += py-i3-quickterm
     SUBDIR += py-i3ipc
@@ -312,8 +321,11 @@
     SUBDIR += remontoire
     SUBDIR += rendercheck
     SUBDIR += rgb
+    SUBDIR += rlaunch
     SUBDIR += rofi
     SUBDIR += rofi-calc
+    SUBDIR += rofi-emoji
+    SUBDIR += rofi-file-browser-extended
     SUBDIR += rofi-pass
     SUBDIR += rofi-wayland
     SUBDIR += roxterm
@@ -322,6 +334,7 @@
     SUBDIR += runner
     SUBDIR += rxvt-unicode
     SUBDIR += sakura
+    SUBDIR += salut
     SUBDIR += sbxkb
     SUBDIR += screen-message
     SUBDIR += screengrab
@@ -332,6 +345,8 @@
     SUBDIR += sessreg
     SUBDIR += setlayout
     SUBDIR += setxkbmap
+    SUBDIR += sfwbar
+    SUBDIR += shotman
     SUBDIR += showkeys
     SUBDIR += showmethekey
     SUBDIR += simplestroke
@@ -360,6 +375,7 @@
     SUBDIR += swaylock-effects
     SUBDIR += swaync
     SUBDIR += swayr
+    SUBDIR += swayrbar
     SUBDIR += swaysettings
     SUBDIR += sxhkd
     SUBDIR += sxpc
@@ -374,6 +390,7 @@
     SUBDIR += tilda
     SUBDIR += tilix
     SUBDIR += tint
+    SUBDIR += tofi
     SUBDIR += trayer
     SUBDIR += ulauncher
     SUBDIR += urxvt-font-size
@@ -458,6 +475,7 @@
     SUBDIR += xconsole
     SUBDIR += xcursorgen
     SUBDIR += xcut
+    SUBDIR += xdg-desktop-portal-hyprland
     SUBDIR += xdg-desktop-portal-wlr
     SUBDIR += xdialog
     SUBDIR += xditview
@@ -483,6 +501,7 @@
     SUBDIR += xfce4-terminal
     SUBDIR += xfce4-verve-plugin
     SUBDIR += xfce4-whiskermenu-plugin
+    SUBDIR += xfce4-windowck-plugin
     SUBDIR += xfd
     SUBDIR += xfishtank
     SUBDIR += xforward

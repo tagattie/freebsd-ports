@@ -1,10 +1,11 @@
 PORTNAME=	gettext_i18n_rails
-PORTVERSION=	1.8.1
+PORTVERSION=	1.9.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Simple FastGettext Rails integration
+WWW=		https://github.com/grosser/gettext_i18n_rails
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE.txt

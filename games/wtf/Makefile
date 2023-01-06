@@ -1,10 +1,11 @@
 PORTNAME=	wtf
-PORTVERSION=	20220320
+PORTVERSION=	20221208
 CATEGORIES=	games
 MASTER_SITES=	SF/bsdwtf
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Translates common Internet acronyms
+WWW=		https://sourceforge.net/projects/bsdwtf/
 
 LICENSE=	PD
 

@@ -8,6 +8,7 @@ EXTRACT_SUFX=	.src.tar.gz
 
 MAINTAINER=	fluffy@FreeBSD.org
 COMMENT=	Documentation system for C, C++, and other languages
+WWW=		https://www.doxygen.org/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -28,7 +29,7 @@ OPTIONS_DEFAULT=	GRAPHVIZ
 QT5_DESC=	Install Doxywizard GUI with Qt5
 SEARCH_DESC=	Build external search tools (doxysearch and doxyindexer)
 
-DOCS_USES=		ghostscript:build
+DOCS_USES=		ghostscript:build tex
 DOCS_USE=		TEX=base:build,dvipsk:build,pdftex:build
 DOCS_ALL_TARGET=	docs
 DOCS_BUILD_DEPENDS=	dot:graphics/graphviz
@@ -44,10 +45,11 @@ PORTDOCS=		*
 
 GRAPHVIZ_RUN_DEPENDS=	dot:graphics/graphviz
 
+LATEX_USES=	tex
 LATEX_USE=	TEX=base,dvipsk,pdftex
 
 QT5_USES=	qt:5
-QT5_USE=	QT=core,widgets,gui,xml,qmake_build,buildtools_build
+QT5_USE=	QT=core,widgets,gui,xml,qmake:build,buildtools:build
 QT5_CMAKE_BOOL=	build_wizard
 QT5_PLIST_FILES=	bin/doxywizard
 
