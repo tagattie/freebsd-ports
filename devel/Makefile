@@ -139,6 +139,7 @@
     SUBDIR += acme
     SUBDIR += acsccid
     SUBDIR += activitymail
+    SUBDIR += actor-framework
     SUBDIR += adacurses
     SUBDIR += aegis
     SUBDIR += agar
@@ -147,6 +148,7 @@
     SUBDIR += ald
     SUBDIR += allegro
     SUBDIR += allegro5
+    SUBDIR += amber
     SUBDIR += aml
     SUBDIR += ammonite
     SUBDIR += amqp-cpp
@@ -313,7 +315,6 @@
     SUBDIR += byaccj
     SUBDIR += c2mdoc
     SUBDIR += c4core
-    SUBDIR += caf
     SUBDIR += calibrator
     SUBDIR += caliper
     SUBDIR += capnproto
@@ -648,6 +649,7 @@
     SUBDIR += fmake
     SUBDIR += fnc
     SUBDIR += fnccheck
+    SUBDIR += fnm
     SUBDIR += folly
     SUBDIR += forge
     SUBDIR += forge-devel
@@ -796,8 +798,10 @@
     SUBDIR += gio-sharp
     SUBDIR += git
     SUBDIR += git-absorb
+    SUBDIR += git-branchless
     SUBDIR += git-bug
     SUBDIR += git-cinnabar
+    SUBDIR += git-cliff
     SUBDIR += git-codereview
     SUBDIR += git-cola
     SUBDIR += git-cvs
@@ -815,6 +819,7 @@
     SUBDIR += git-subrepo
     SUBDIR += git-svn
     SUBDIR += git-town
+    SUBDIR += git-workspace
     SUBDIR += gitaly
     SUBDIR += gitflow
     SUBDIR += gitg
@@ -828,6 +833,7 @@
     SUBDIR += gitlist
     SUBDIR += gitolite
     SUBDIR += gitolite2
+    SUBDIR += gitoxide
     SUBDIR += gitqlient
     SUBDIR += gittrac
     SUBDIR += gitty
@@ -3804,6 +3810,8 @@
     SUBDIR += papi
     SUBDIR += papilio-loader
     SUBDIR += parallel-hashmap
+    SUBDIR += parol
+    SUBDIR += parol-ls
     SUBDIR += pas2dox
     SUBDIR += pasm
     SUBDIR += patch
@@ -4690,6 +4698,7 @@
     SUBDIR += py-iopath
     SUBDIR += py-ipaddr
     SUBDIR += py-ipdb
+    SUBDIR += py-ipydatawidgets
     SUBDIR += py-ipykernel
     SUBDIR += py-ipympl
     SUBDIR += py-ipyparallel
@@ -5454,6 +5463,7 @@
     SUBDIR += py-traceback2
     SUBDIR += py-traitlets
     SUBDIR += py-traits
+    SUBDIR += py-traittypes
     SUBDIR += py-transaction
     SUBDIR += py-transitions
     SUBDIR += py-tree-format
@@ -7350,6 +7360,7 @@
     SUBDIR += ta-lib
     SUBDIR += tablist
     SUBDIR += tabulate
+    SUBDIR += tagref
     SUBDIR += tailor
     SUBDIR += talloc
     SUBDIR += tarpaulin

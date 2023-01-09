@@ -333,6 +333,7 @@
     SUBDIR += linux-c7-trousers
     SUBDIR += local-php-security-checker
     SUBDIR += logcheck
+    SUBDIR += lua-argon2
     SUBDIR += lua-bcrypt
     SUBDIR += luasec
     SUBDIR += lxqt-openssh-askpass
@@ -417,6 +418,7 @@
     SUBDIR += openvpn-auth-radius
     SUBDIR += openvpn-auth-script
     SUBDIR += openvpn-devel
+    SUBDIR += opie
     SUBDIR += ophcrack
     SUBDIR += ossec-hids
     SUBDIR += ossec-hids-agent
