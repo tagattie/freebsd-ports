@@ -247,6 +247,7 @@
     SUBDIR += keychain
     SUBDIR += keynote
     SUBDIR += keyprint
+    SUBDIR += keysmith
     SUBDIR += kf5-kdesu
     SUBDIR += kgpg
     SUBDIR += kickpass
@@ -840,6 +841,7 @@
     SUBDIR += py-azure-keyvault-certificates
     SUBDIR += py-azure-keyvault-keys
     SUBDIR += py-azure-keyvault-secrets
+    SUBDIR += py-badkeys
     SUBDIR += py-base58
     SUBDIR += py-bcrypt
     SUBDIR += py-bitbox02

@@ -236,6 +236,7 @@
     SUBDIR += libutf
     SUBDIR += libxdf
     SUBDIR += lifelines
+    SUBDIR += lightgbm
     SUBDIR += lingoteach
     SUBDIR += locale-en_DK
     SUBDIR += localedata
@@ -409,10 +410,12 @@
     SUBDIR += py-huepy
     SUBDIR += py-ipyfastscape
     SUBDIR += py-kartograph
+    SUBDIR += py-lightgbm
     SUBDIR += py-log_symbols
     SUBDIR += py-mffpy
     SUBDIR += py-molequeue
     SUBDIR += py-mxnet
+    SUBDIR += py-numcodecs
     SUBDIR += py-onnx
     SUBDIR += py-onnx-tf
     SUBDIR += py-openpaperwork-core

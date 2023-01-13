@@ -322,6 +322,7 @@
     SUBDIR += capstone3
     SUBDIR += capstone4
     SUBDIR += capstone5
+    SUBDIR += cargo-bloat
     SUBDIR += cargo-c
     SUBDIR += cargo-generate
     SUBDIR += cask
@@ -623,6 +624,7 @@
     SUBDIR += evemu
     SUBDIR += eventxx
     SUBDIR += exercisix
+    SUBDIR += exomizer
     SUBDIR += f18
     SUBDIR += f77flow
     SUBDIR += fam
@@ -704,6 +706,7 @@
     SUBDIR += fstrm
     SUBDIR += ftjam
     SUBDIR += ftnchek
+    SUBDIR += ftxui
     SUBDIR += fuel
     SUBDIR += functionalplus
     SUBDIR += fungw
@@ -939,6 +942,7 @@
     SUBDIR += horde-content
     SUBDIR += horde-timeobjects
     SUBDIR += horde-whups
+    SUBDIR += hotspot
     SUBDIR += hp48cc
     SUBDIR += hp48xgcc
     SUBDIR += hpx
@@ -5255,6 +5259,7 @@
     SUBDIR += py-pythonfinder
     SUBDIR += py-pythran
     SUBDIR += py-pytimeparse
+    SUBDIR += py-pytoolconfig
     SUBDIR += py-pytools
     SUBDIR += py-pytrie
     SUBDIR += py-pytvmaze
@@ -5393,6 +5398,7 @@
     SUBDIR += py-speaklater
     SUBDIR += py-speg
     SUBDIR += py-spyder-kernels
+    SUBDIR += py-spyder-unittest
     SUBDIR += py-squint
     SUBDIR += py-sre-yield
     SUBDIR += py-srsly
@@ -5571,6 +5577,7 @@
     SUBDIR += py-wsme
     SUBDIR += py-xarray
     SUBDIR += py-xarray-einstats
+    SUBDIR += py-xarray-simlab
     SUBDIR += py-xattr
     SUBDIR += py-xcaplib
     SUBDIR += py-xdg
@@ -5622,6 +5629,7 @@
     SUBDIR += py-z3c.autoinclude
     SUBDIR += py-z3c.batching
     SUBDIR += py-z3c.zcmlhook
+    SUBDIR += py-zarr
     SUBDIR += py-zc.buildout
     SUBDIR += py-zclockfile
     SUBDIR += py-zconfig
@@ -5758,6 +5766,7 @@
     SUBDIR += readline
     SUBDIR += rebar
     SUBDIR += rebar3
+    SUBDIR += recycle
     SUBDIR += redasm
     SUBDIR += redo
     SUBDIR += regexx
@@ -6823,6 +6832,7 @@
     SUBDIR += rubygem-oci
     SUBDIR += rubygem-octopress-hooks
     SUBDIR += rubygem-oj
+    SUBDIR += rubygem-oj-introspect
     SUBDIR += rubygem-omniauth_crowd
     SUBDIR += rubygem-omnibus
     SUBDIR += rubygem-open3
@@ -7115,6 +7125,8 @@
     SUBDIR += rubygem-systemu
     SUBDIR += rubygem-table_print
     SUBDIR += rubygem-tdiff
+    SUBDIR += rubygem-telesign
+    SUBDIR += rubygem-telesignenterprise
     SUBDIR += rubygem-tempfile
     SUBDIR += rubygem-templater
     SUBDIR += rubygem-temple
@@ -7237,6 +7249,7 @@
     SUBDIR += rust-analyzer
     SUBDIR += rust-bindgen
     SUBDIR += rust-cbindgen
+    SUBDIR += rustc-demangle
     SUBDIR += rvi
     SUBDIR += rvm
     SUBDIR += sabre
