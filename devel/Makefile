@@ -306,6 +306,7 @@
     SUBDIR += bugzilla44
     SUBDIR += bugzilla50
     SUBDIR += build
+    SUBDIR += build2
     SUBDIR += buildkite-agent
     SUBDIR += buildstream
     SUBDIR += bullet
@@ -846,6 +847,7 @@
     SUBDIR += glade
     SUBDIR += glademm
     SUBDIR += glib20
+    SUBDIR += glibd
     SUBDIR += glibmm
     SUBDIR += glibmm26
     SUBDIR += glitter
