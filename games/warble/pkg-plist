@@ -1,0 +1,15 @@
+bin/com.github.avojak.warble
+share/applications/com.github.avojak.warble.desktop
+share/com.github.avojak.warble/dictionary.txt
+share/com.github.avojak.warble/words.txt
+share/icons/hicolor/128x128/apps/com.github.avojak.warble.svg
+share/icons/hicolor/128x128@2/apps/com.github.avojak.warble.svg
+share/icons/hicolor/24x24/apps/com.github.avojak.warble.svg
+share/icons/hicolor/24x24@2/apps/com.github.avojak.warble.svg
+share/icons/hicolor/32x32/apps/com.github.avojak.warble.svg
+share/icons/hicolor/32x32@2/apps/com.github.avojak.warble.svg
+share/icons/hicolor/48x48/apps/com.github.avojak.warble.svg
+share/icons/hicolor/48x48@2/apps/com.github.avojak.warble.svg
+share/icons/hicolor/64x64/apps/com.github.avojak.warble.svg
+share/icons/hicolor/64x64@2/apps/com.github.avojak.warble.svg
+share/metainfo/com.github.avojak.warble.appdata.xml
