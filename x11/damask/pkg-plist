@@ -1,0 +1,5 @@
+bin/damask
+share/applications/app.drey.Damask.desktop
+share/icons/hicolor/scalable/apps/app.drey.Damask.svg
+share/icons/hicolor/symbolic/apps/app.drey.Damask-symbolic.svg
+share/metainfo/app.drey.Damask.metainfo.xml
