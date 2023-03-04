@@ -354,6 +354,7 @@
     SUBDIR += p5-Locale-US
     SUBDIR += p5-Net-vCard
     SUBDIR += p5-OSSP-uuid
+    SUBDIR += p5-OpenAI-API
     SUBDIR += p5-Software-License
     SUBDIR += p5-Software-License-CCpack
     SUBDIR += p5-Test-Dir
@@ -422,6 +423,7 @@
     SUBDIR += py-numcodecs
     SUBDIR += py-onnx
     SUBDIR += py-onnx-tf
+    SUBDIR += py-openai
     SUBDIR += py-openpaperwork-core
     SUBDIR += py-openpaperwork-gtk
     SUBDIR += py-openvdb
@@ -462,6 +464,7 @@
     SUBDIR += py-tqdm
     SUBDIR += py-tvm
     SUBDIR += py-uhi
+    SUBDIR += py-wandb
     SUBDIR += py-wurlitzer
     SUBDIR += py-xgboost
     SUBDIR += pyobd
@@ -473,6 +476,8 @@
     SUBDIR += qt5-l10n
     SUBDIR += qt5ct
     SUBDIR += qt6-doc
+    SUBDIR += qt6-examples
+    SUBDIR += qt6ct
     SUBDIR += quantum++
     SUBDIR += raspberrypi-gpioshutdown
     SUBDIR += raspberrypi-userland
