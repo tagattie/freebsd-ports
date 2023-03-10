@@ -884,7 +884,7 @@
     SUBDIR += godot2
     SUBDIR += godot2-tools
     SUBDIR += godot35
-    SUBDIR += devel/godot35-tools
+    SUBDIR += godot35-tools
     SUBDIR += goffice
     SUBDIR += gogs
     SUBDIR += golangci-lint
@@ -1566,6 +1566,7 @@
     SUBDIR += mercurial
     SUBDIR += mergify
     SUBDIR += meson
+    SUBDIR += meson-python
     SUBDIR += microsoft-gsl
     SUBDIR += mill
     SUBDIR += mimalloc
