@@ -339,6 +339,7 @@
     SUBDIR += ccache-memcached
     SUBDIR += ccache-memcached-static
     SUBDIR += ccache-static
+    SUBDIR += ccache4
     SUBDIR += cccc
     SUBDIR += ccdoc
     SUBDIR += ccls
@@ -385,6 +386,7 @@
     SUBDIR += clazy
     SUBDIR += cld2
     SUBDIR += clewn
+    SUBDIR += cli
     SUBDIR += cli11
     SUBDIR += clig
     SUBDIR += cligen
