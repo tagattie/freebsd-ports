@@ -580,7 +580,6 @@
     SUBDIR += openrsync
     SUBDIR += opensips31
     SUBDIR += openslp
-    SUBDIR += opentracker
     SUBDIR += openvswitch
     SUBDIR += ortp
     SUBDIR += osrtspproxy
@@ -1156,6 +1155,7 @@
     SUBDIR += py-twitter-tools
     SUBDIR += py-txamqp
     SUBDIR += py-txrestapi
+    SUBDIR += py-uri-template
     SUBDIR += py-uritemplate
     SUBDIR += py-uritools
     SUBDIR += py-url-normalize
@@ -1214,7 +1214,6 @@
     SUBDIR += rp-pppoe
     SUBDIR += rpki-client
     SUBDIR += rscsi
-    SUBDIR += rsocket-cpp
     SUBDIR += rsplib
     SUBDIR += rssguard
     SUBDIR += rsync
@@ -1298,6 +1297,7 @@
     SUBDIR += rubygem-google-cloud-logging-v2
     SUBDIR += rubygem-google-cloud-pubsub
     SUBDIR += rubygem-google-cloud-pubsub-v1
+    SUBDIR += rubygem-google-cloud-resource_manager
     SUBDIR += rubygem-google-cloud-spanner
     SUBDIR += rubygem-google-cloud-spanner-admin-database-v1
     SUBDIR += rubygem-google-cloud-spanner-admin-instance-v1
