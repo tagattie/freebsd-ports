@@ -1,6 +1,6 @@
 PORTNAME=	bitwarden-cli
 DISTVERSIONPREFIX=	cli-v
-DISTVERSION=	2023.2.0
+DISTVERSION=	2023.3.0
 CATEGORIES=	security
 MASTER_SITES=	https://nodejs.org/dist/v${PKG_NODE_VER}/:node
 DISTFILES=	node-v${PKG_NODE_VER}${EXTRACT_SUFX}:node \
@@ -22,6 +22,7 @@ ONLY_FOR_ARCHS=	aarch64 amd64 i386
 FETCH_DEPENDS=	npm:www/npm${NODEJS_SUFFIX}
 BUILD_DEPENDS=	npm:www/npm${NODEJS_SUFFIX}
 LIB_DEPENDS=	libbrotlidec.so:archivers/brotli \
+		libicui18n.so:devel/icu \
 		libuv.so:devel/libuv \
 		libcares.so:dns/c-ares \
 		libnghttp2.so:www/libnghttp2
@@ -45,7 +46,7 @@ PORTDOCS=	CONTRIBUTING.md README.md SECURITY.md
 OPTIONS_DEFINE=	DOCS
 
 PREFETCH_FILE=	${PKGNAME}-node-modules${EXTRACT_SUFX}
-PREFETCH_TIMESTAMP=	1677564634
+PREFETCH_TIMESTAMP=	1679612370
 PKG_NODE_VER=	16.16.0
 PKG_FETCH_VER=	3.4
 PKG_NODE_CONFIGURE_ARGS=--openssl-use-def-ca-store \
@@ -54,7 +55,8 @@ PKG_NODE_CONFIGURE_ARGS=--openssl-use-def-ca-store \
 			--shared-libuv \
 			--shared-nghttp2 \
 			--shared-openssl \
-			--shared-zlib
+			--shared-zlib \
+			--with-intl=system-icu
 NODE_ARCH=	${ARCH:S/aarch64/arm64/:S/amd64/x64/:S/i386/ia32/}
 
 pre-fetch:
@@ -110,7 +112,7 @@ do-build:
 	cd ${BUILD_WRKSRC} && ${SETENV} ${MAKE_ENV} \
 		npm run build:prod
 	cd ${BUILD_WRKSRC} && ${SETENV} ${MAKE_ENV} \
-		npx pkg . --targets node16-freebsd-${NODE_ARCH} --output ./dist/bw
+		npx pkg . --targets node${NODEJS_VERSION}-freebsd-${NODE_ARCH} --output ./dist/bw
 
 do-install:
 	# don't strip executable since it causes error
