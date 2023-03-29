@@ -4803,6 +4803,7 @@
     SUBDIR += py-jupyter-client
     SUBDIR += py-jupyter-core
     SUBDIR += py-jupyter-events
+    SUBDIR += py-jupyter-kernel-test
     SUBDIR += py-jupyter-packaging
     SUBDIR += py-jupyter-server
     SUBDIR += py-jupyter-server-fileid
@@ -5430,6 +5431,7 @@
     SUBDIR += py-setuptools-rust
     SUBDIR += py-setuptools44
     SUBDIR += py-setuptools58
+    SUBDIR += py-setuptools_git_ls_files
     SUBDIR += py-setuptools_hg
     SUBDIR += py-setuptools_scm
     SUBDIR += py-setuptools_scm_git_archive
@@ -7631,6 +7633,7 @@
     SUBDIR += xelfviewer
     SUBDIR += xeus
     SUBDIR += xeus-cling
+    SUBDIR += xeus-zmq
     SUBDIR += xfce4-dev-tools
     SUBDIR += xmake
     SUBDIR += xmltooling
