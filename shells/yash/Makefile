@@ -1,5 +1,5 @@
 PORTNAME=	yash
-DISTVERSION=	2.52
+DISTVERSION=	2.54
 CATEGORIES=	shells
 MASTER_SITES=	OSDN/yash
 
@@ -19,9 +19,7 @@ CPPFLAGS+=	-std=c99
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
 
-NLS_USES=	gettext-runtime
+NLS_USES=	gettext-runtime localbase:ldflags
 NLS_CONFIGURE_ENABLE=	nls
-NLS_CPPFLAGS=	-I${LOCALBASE}/include
-NLS_LDFLAGS=	-L${LOCALBASE}/lib
 
 .include <bsd.port.mk>
