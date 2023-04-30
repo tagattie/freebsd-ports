@@ -166,6 +166,7 @@
     SUBDIR += byobu
     SUBDIR += calamares
     SUBDIR += catfish
+    SUBDIR += catsit
     SUBDIR += cbsd
     SUBDIR += cbsd-mq-api
     SUBDIR += cbsd-mq-router
@@ -358,6 +359,7 @@
     SUBDIR += envconsul
     SUBDIR += epazote
     SUBDIR += equinix-metal-cli
+    SUBDIR += erdtree
     SUBDIR += etc_os-release
     SUBDIR += etcmerge
     SUBDIR += ethname
@@ -834,6 +836,7 @@
     SUBDIR += nrg2iso
     SUBDIR += nss_ndb
     SUBDIR += nsysctl
+    SUBDIR += ntfs2btrfs
     SUBDIR += ntfy
     SUBDIR += ntpstat
     SUBDIR += nut
@@ -1055,8 +1058,10 @@
     SUBDIR += puppet-mode.el
     SUBDIR += puppet6
     SUBDIR += puppet7
+    SUBDIR += puppet8
     SUBDIR += puppetserver6
     SUBDIR += puppetserver7
+    SUBDIR += puppetserver8
     SUBDIR += pv
     SUBDIR += pwd_unmkdb
     SUBDIR += pwgen

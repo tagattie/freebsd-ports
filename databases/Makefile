@@ -717,8 +717,10 @@
     SUBDIR += pspg
     SUBDIR += puppetdb-terminus6
     SUBDIR += puppetdb-terminus7
+    SUBDIR += puppetdb-terminus8
     SUBDIR += puppetdb6
     SUBDIR += puppetdb7
+    SUBDIR += puppetdb8
     SUBDIR += puredb
     SUBDIR += pxlib
     SUBDIR += pxtools
@@ -964,6 +966,7 @@
     SUBDIR += rubygem-paranoia
     SUBDIR += rubygem-pg
     SUBDIR += rubygem-pg13
+    SUBDIR += rubygem-pg14
     SUBDIR += rubygem-pg_array_parser
     SUBDIR += rubygem-pg_query
     SUBDIR += rubygem-pghero

@@ -934,6 +934,7 @@
     SUBDIR += py-pyqtgraph
     SUBDIR += py-pyrsgis
     SUBDIR += py-pytesseract
+    SUBDIR += py-python-barcode
     SUBDIR += py-python-poppler-qt5
     SUBDIR += py-pyvips
     SUBDIR += py-pyvista
@@ -949,6 +950,7 @@
     SUBDIR += py-seqdiag
     SUBDIR += py-sorl-thumbnail
     SUBDIR += py-spectra
+    SUBDIR += py-sqlalchemy-imageattach
     SUBDIR += py-svg.path
     SUBDIR += py-svgwrite
     SUBDIR += py-termtosvg
