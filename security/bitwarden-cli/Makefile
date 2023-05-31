@@ -1,6 +1,6 @@
 PORTNAME=	bitwarden-cli
 DISTVERSIONPREFIX=	cli-v
-DISTVERSION=	2023.3.0
+DISTVERSION=	2023.4.0
 CATEGORIES=	security
 MASTER_SITES=	https://nodejs.org/dist/v${PKG_NODE_VER}/:node
 DISTFILES=	node-v${PKG_NODE_VER}${EXTRACT_SUFX}:node \
@@ -46,7 +46,7 @@ PORTDOCS=	CONTRIBUTING.md README.md SECURITY.md
 OPTIONS_DEFINE=	DOCS
 
 PREFETCH_FILE=	${PKGNAME}-node-modules${EXTRACT_SUFX}
-PREFETCH_TIMESTAMP=	1679612370
+PREFETCH_TIMESTAMP=	1685506947
 PKG_NODE_VER=	16.16.0
 PKG_FETCH_VER=	3.4
 PKG_NODE_CONFIGURE_ARGS=--openssl-use-def-ca-store \
@@ -61,34 +61,31 @@ NODE_ARCH=	${ARCH:S/aarch64/arm64/:S/amd64/x64/:S/i386/ia32/}
 
 pre-fetch:
 	if [ ! -f ${DISTDIR}/${PREFETCH_FILE} ]; then \
-		${MKDIR} ${WRKDIR}/npm-cache; \
-		${CP} ${FILESDIR}/package.json ${FILESDIR}/package-lock.json ${WRKDIR}/npm-cache; \
-		cd ${WRKDIR}/npm-cache && \
+		${MKDIR} ${WRKDIR}/node-modules-cache; \
+		${CP} -R ${FILESDIR}/packagejsons/* ${WRKDIR}/node-modules-cache; \
+		cd ${WRKDIR}/node-modules-cache && \
 		${SETENV} HOME=${WRKDIR} npm ci --ignore-scripts --no-progress; \
-		${RM} package.json package-lock.json; \
-		${FIND} ${WRKDIR}/npm-cache -type d -exec ${CHMOD} 755 {} ';'; \
-		cd ${WRKDIR} && \
-		${MTREE_CMD} -cbnSp npm-cache | ${MTREE_CMD} -C | ${SED} \
+		${FIND} ${WRKDIR}/node-modules-cache -depth 1 -print | \
+			${GREP} -v node_modules | ${XARGS} ${RM} -r; \
+		${FIND} ${WRKDIR}/node-modules-cache -type d -exec ${CHMOD} 755 {} ';'; \
+		cd ${WRKDIR}/node-modules-cache && \
+		${MTREE_CMD} -cbnSp node_modules | ${MTREE_CMD} -C | ${SED} \
 			-e 's:time=[0-9.]*:time=${PREFETCH_TIMESTAMP}.000000000:' \
 			-e 's:\([gu]id\)=[0-9]*:\1=0:g' \
 			-e 's:flags=.*:flags=none:' \
-			-e 's:^\.:./npm-cache:' > npm-cache.mtree; \
+			-e 's:^\.:./node_modules:' > node-modules-cache.mtree; \
 		${TAR} -cz --options 'gzip:!timestamp' \
 			-f ${DISTDIR}/${PREFETCH_FILE} \
-			@npm-cache.mtree; \
+			@node-modules-cache.mtree; \
 		${RM} -r ${WRKDIR}; \
 	fi
 
 post-extract:
-.for f in package.json package-lock.json
-	${MV} -f ${WRKSRC}/${f} ${WRKSRC}/${f}.bak
-	${CP} ${FILESDIR}/${f} ${WRKSRC}
-.endfor
-	${MV} ${WRKDIR}/npm-cache/node_modules ${WRKSRC}
+	${MV} ${WRKDIR}/node_modules ${WRKSRC}
 
 post-patch:
 	# apply FreeBSD patches for node
-	for p in ${.CURDIR}/../../www/node${NODEJS_VERSION}/files/patch-*; do \
+	for p in ${.CURDIR:H:H}/www/node${NODEJS_VERSION}/files/patch-*; do \
 		${PATCH} -s -p0 -d ${WRKDIR}/node-v${PKG_NODE_VER} < $${p}; \
 	done
 	# apply node patch from pkg-fetch
