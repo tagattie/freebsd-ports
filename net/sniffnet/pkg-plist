@@ -1,4 +1,4 @@
-@(,,4555) bin/sniffnet
+bin/sniffnet
 share/applications/sniffnet.desktop
 share/icons/hicolor/1024x1024/apps/sniffnet.png
 share/icons/hicolor/128x128/apps/sniffnet.png
