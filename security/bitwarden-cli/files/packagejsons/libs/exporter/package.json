@@ -1,7 +1,7 @@
 {
-  "name": "@bitwarden/angular",
+  "name": "@bitwarden/exporter",
   "version": "0.0.0",
-  "description": "Common code used across Bitwarden JavaScript projects.",
+  "description": "Home for all Bitwarden exporters.",
   "keywords": [
     "bitwarden"
   ],
@@ -9,12 +9,15 @@
   "homepage": "https://bitwarden.com",
   "repository": {
     "type": "git",
-    "url": "https://github.com/bitwarden/jslib"
+    "url": "https://github.com/bitwarden/clients"
   },
   "license": "GPL-3.0",
   "scripts": {
     "clean": "rimraf dist",
     "build": "npm run clean && tsc",
     "build:watch": "npm run clean && tsc -watch"
+  },
+  "dependencies": {
+    "@bitwarden/common": "file:../common"
   }
 }
