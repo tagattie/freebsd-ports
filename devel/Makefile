@@ -447,6 +447,7 @@
     SUBDIR += cpan-upload-http
     SUBDIR += cpp-hocon
     SUBDIR += cpp-netlib
+    SUBDIR += cpp-utilities
     SUBDIR += cpp2py
     SUBDIR += cppcheck
     SUBDIR += cppi
@@ -5908,6 +5909,7 @@
     SUBDIR += qt6-tools
     SUBDIR += qt6-translations
     SUBDIR += qtcreator
+    SUBDIR += qtutilities
     SUBDIR += quantum
     SUBDIR += quickcheck++
     SUBDIR += quickcpplib
