@@ -197,6 +197,7 @@
     SUBDIR += gpgme
     SUBDIR += gpgme-cpp
     SUBDIR += gpgme-qt
+    SUBDIR += gpgme-qt-headers
     SUBDIR += gsa
     SUBDIR += gsad
     SUBDIR += gsasl
@@ -877,6 +878,7 @@
     SUBDIR += py-certbot-dns-standalone
     SUBDIR += py-certbot-nginx
     SUBDIR += py-certifi
+    SUBDIR += py-certomancer
     SUBDIR += py-certstream
     SUBDIR += py-ckcc-protocol
     SUBDIR += py-coincurve
@@ -914,6 +916,7 @@
     SUBDIR += py-gvm-tools
     SUBDIR += py-hkdf
     SUBDIR += py-htpasswd
+    SUBDIR += py-httpx-auth
     SUBDIR += py-iris-check-module
     SUBDIR += py-iris-client
     SUBDIR += py-iris-evtx-module

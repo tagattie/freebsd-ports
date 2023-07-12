@@ -393,6 +393,7 @@
     SUBDIR += hs-syfco
     SUBDIR += hsl
     SUBDIR += hydrogen
+    SUBDIR += hyperdeal
     SUBDIR += ideep
     SUBDIR += ignition-math
     SUBDIR += igraph
@@ -1042,6 +1043,7 @@
     SUBDIR += py-rpy2
     SUBDIR += py-rustworkx
     SUBDIR += py-rvlib
+    SUBDIR += py-scikit-fem
     SUBDIR += py-scikit-umfpack
     SUBDIR += py-scs
     SUBDIR += py-seaborn
@@ -1187,6 +1189,7 @@
     SUBDIR += the-algorithms-c++
     SUBDIR += timbl
     SUBDIR += tiny-bignum-c
+    SUBDIR += tinymt
     SUBDIR += tlapack
     SUBDIR += tmv
     SUBDIR += tomsfastmath
