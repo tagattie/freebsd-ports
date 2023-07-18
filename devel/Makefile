@@ -330,9 +330,9 @@
     SUBDIR += caliper
     SUBDIR += capnproto
     SUBDIR += capnproto080
+    SUBDIR += capstone
     SUBDIR += capstone3
     SUBDIR += capstone4
-    SUBDIR += capstone5
     SUBDIR += cargo-bloat
     SUBDIR += cargo-c
     SUBDIR += cargo-generate
@@ -1451,6 +1451,7 @@
     SUBDIR += libzookeeper
     SUBDIR += libzvbi
     SUBDIR += lightning
+    SUBDIR += linenoise
     SUBDIR += linenoise-ng
     SUBDIR += linux-c7-dbus-libs
     SUBDIR += linux-c7-devtools
@@ -1552,6 +1553,7 @@
     SUBDIR += m17n-lib
     SUBDIR += m4
     SUBDIR += mage
+    SUBDIR += magic_enum
     SUBDIR += magit
     SUBDIR += magit-devel
     SUBDIR += make++
@@ -4448,6 +4450,7 @@
     SUBDIR += py-click-creds
     SUBDIR += py-click-default-group
     SUBDIR += py-click-default-group-wheel
+    SUBDIR += py-click-help-colors
     SUBDIR += py-click-log
     SUBDIR += py-click-option-group
     SUBDIR += py-click-plugins
@@ -5325,6 +5328,7 @@
     SUBDIR += py-pytest-flask
     SUBDIR += py-pytest-forked
     SUBDIR += py-pytest-freezegun
+    SUBDIR += py-pytest-freezer
     SUBDIR += py-pytest-helpers-namespace
     SUBDIR += py-pytest-html
     SUBDIR += py-pytest-httpbin
