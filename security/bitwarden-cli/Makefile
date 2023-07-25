@@ -1,6 +1,6 @@
 PORTNAME=	bitwarden-cli
 DISTVERSIONPREFIX=	cli-v
-DISTVERSION=	2023.5.0
+DISTVERSION=	2023.7.0
 CATEGORIES=	security
 MASTER_SITES=	https://nodejs.org/dist/v${PKG_NODE_VER}/:node
 DISTFILES=	node-v${PKG_NODE_VER}${EXTRACT_SUFX}:node \
@@ -30,7 +30,7 @@ RUN_DEPENDS=	xdg-open:devel/xdg-utils \
 		ca_root_nss>0:security/ca_root_nss
 TEST_DEPENDS=	npm:www/npm${NODEJS_SUFFIX}
 
-USES=		gmake localbase:ldflags nodejs:16,build pkgconfig \
+USES=		gmake localbase:ldflags nodejs:18,build pkgconfig \
 		python:build ssl
 
 USE_GITHUB=	yes
@@ -39,16 +39,17 @@ GH_PROJECT=	clients
 
 BUILD_WRKSRC=	${WRKSRC}/apps/cli
 
-PLIST_FILES=	bin/bw
+PLIST_FILES=	bin/bw \
+		share/zsh/site-functions/_bw
 
 PORTDOCS=	CONTRIBUTING.md README.md SECURITY.md
 
 OPTIONS_DEFINE=	DOCS
 
 PREFETCH_FILE=	${PKGNAME}-node-modules${EXTRACT_SUFX}
-PREFETCH_TIMESTAMP=	1687942512
-PKG_NODE_VER=	16.16.0
-PKG_FETCH_VER=	3.4
+PREFETCH_TIMESTAMP=	1690268784
+PKG_NODE_VER=	18.15.0
+PKG_FETCH_VER=	3.5
 PKG_NODE_CONFIGURE_ARGS=--openssl-use-def-ca-store \
 			--shared-brotli \
 			--shared-cares \
@@ -93,6 +94,7 @@ post-patch:
 		${WRKSRC}/node_modules/pkg-fetch/patches/node.v${PKG_NODE_VER}.cpp.patch
 
 pre-build:
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} npm run postinstall
 	# build patched node for pkg
 	cd ${WRKDIR}/node-v${PKG_NODE_VER} && \
 		${SETENV} ${CONFIGURE_ENV} CC=${CC} CXX=${CXX} ./configure ${PKG_NODE_CONFIGURE_ARGS} && \
@@ -110,10 +112,15 @@ do-build:
 		npm run build:prod
 	cd ${BUILD_WRKSRC} && ${SETENV} ${MAKE_ENV} \
 		npx pkg . --targets node${NODEJS_VERSION}-freebsd-${NODE_ARCH} --output ./dist/bw
+	cd ${BUILD_WRKSRC} && \
+		./dist/bw completion --shell zsh > _bw
 
 do-install:
 	# don't strip executable since it causes error
 	${INSTALL_KLD} ${BUILD_WRKSRC}/dist/bw ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/zsh/site-functions
+	${INSTALL_DATA} ${BUILD_WRKSRC}/_bw \
+		${STAGEDIR}${PREFIX}/share/zsh/site-functions/_bw
 
 do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
