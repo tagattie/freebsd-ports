@@ -112,7 +112,7 @@ do-build:
 		npm run build:prod
 	cd ${BUILD_WRKSRC} && ${SETENV} ${MAKE_ENV} \
 		npx pkg . --targets node${NODEJS_VERSION}-freebsd-${NODE_ARCH} --output ./dist/bw
-	cd ${BUILD_WRKSRC} && \
+	cd ${BUILD_WRKSRC} && ${SETENV} ${MAKE_ENV} \
 		./dist/bw completion --shell zsh > _bw
 
 do-install:
