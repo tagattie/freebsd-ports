@@ -19,7 +19,8 @@ LIB_DEPENDS=	libportal.so:deskutils/libportal \
 		libsoup-3.0.so:devel/libsoup3
 RUN_DEPENDS=	xdg-desktop-portal-gnome>0:x11/xdg-desktop-portal-gnome
 
-USES=		gettext-tools gnome meson pkgconfig vala:build
+USES=		desktop-file-utils gettext-tools gnome meson pkgconfig \
+		vala:build
 
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.gnome.org
