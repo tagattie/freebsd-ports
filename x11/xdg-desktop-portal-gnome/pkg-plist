@@ -2,6 +2,7 @@ libexec/xdg-desktop-portal-gnome
 share/applications/xdg-desktop-portal-gnome.desktop
 share/dbus-1/services/org.freedesktop.impl.portal.desktop.gnome.service
 share/locale/ab/LC_MESSAGES/xdg-desktop-portal-gnome.mo
+share/locale/be/LC_MESSAGES/xdg-desktop-portal-gnome.mo
 share/locale/bg/LC_MESSAGES/xdg-desktop-portal-gnome.mo
 share/locale/ca/LC_MESSAGES/xdg-desktop-portal-gnome.mo
 share/locale/cs/LC_MESSAGES/xdg-desktop-portal-gnome.mo
@@ -17,9 +18,11 @@ share/locale/fr/LC_MESSAGES/xdg-desktop-portal-gnome.mo
 share/locale/fur/LC_MESSAGES/xdg-desktop-portal-gnome.mo
 share/locale/gl/LC_MESSAGES/xdg-desktop-portal-gnome.mo
 share/locale/he/LC_MESSAGES/xdg-desktop-portal-gnome.mo
+share/locale/hi/LC_MESSAGES/xdg-desktop-portal-gnome.mo
 share/locale/hr/LC_MESSAGES/xdg-desktop-portal-gnome.mo
 share/locale/hu/LC_MESSAGES/xdg-desktop-portal-gnome.mo
 share/locale/id/LC_MESSAGES/xdg-desktop-portal-gnome.mo
+share/locale/ie/LC_MESSAGES/xdg-desktop-portal-gnome.mo
 share/locale/is/LC_MESSAGES/xdg-desktop-portal-gnome.mo
 share/locale/it/LC_MESSAGES/xdg-desktop-portal-gnome.mo
 share/locale/ja/LC_MESSAGES/xdg-desktop-portal-gnome.mo
