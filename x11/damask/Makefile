@@ -1,5 +1,6 @@
 PORTNAME=	damask
-DISTVERSION=	0.1.3
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.2.0
 CATEGORIES=	x11 gnome
 
 MAINTAINER=	tagattie@FreeBSD.org
@@ -18,13 +19,11 @@ LIB_DEPENDS=	libportal.so:deskutils/libportal \
 		libsoup-3.0.so:devel/libsoup3
 RUN_DEPENDS=	xdg-desktop-portal-gnome>0:x11/xdg-desktop-portal-gnome
 
-USES=		desktop-file-utils gettext-tools gnome meson pkgconfig \
-		vala:build
+USES=		gettext-tools gnome meson pkgconfig vala:build
 
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.gnome.org
 GL_ACCOUNT=	subpop
-GL_COMMIT=	e745c90caba1d49838d7ce33a9ebee81cc37f086
 
 USE_GNOME=	glib20 gtk40 libadwaita
 GLIB_SCHEMAS=	app.drey.Damask.gschema.xml
