@@ -1,5 +1,5 @@
 PORTNAME=	xdg-desktop-portal-gnome
-DISTVERSION=	44.2
+DISTVERSION=	43.1
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
 DIST_SUBDIR=	gnome
@@ -13,8 +13,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	xdg-desktop-portal>0:deskutils/xdg-desktop-portal \
 		xdg-desktop-portal-gtk>0:x11/xdg-desktop-portal-gtk
-LIB_DEPENDS=	libwayland-client.so:graphics/wayland \
-		libfontconfig.so:x11-fonts/fontconfig \
+LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libgnome-desktop-4.so:x11/gnome-desktop
 RUN_DEPENDS=	xdg-desktop-portal>0:deskutils/xdg-desktop-portal \
 		xdg-desktop-portal-gtk>0:x11/xdg-desktop-portal-gtk
