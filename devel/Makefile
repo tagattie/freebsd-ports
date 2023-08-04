@@ -1037,6 +1037,7 @@
     SUBDIR += jetbrains-goland
     SUBDIR += jetbrains-phpstorm
     SUBDIR += jetbrains-pty4j
+    SUBDIR += jetbrains-sqlite
     SUBDIR += jetbrains-webstorm
     SUBDIR += jgoodies-looks
     SUBDIR += jiic
@@ -1441,6 +1442,7 @@
     SUBDIR += libvshadow
     SUBDIR += libvslvm
     SUBDIR += libvterm
+    SUBDIR += libwasmtime
     SUBDIR += libwfut
     SUBDIR += libx86
     SUBDIR += libxalloc
@@ -1493,6 +1495,7 @@
     SUBDIR += llvm14
     SUBDIR += llvm15
     SUBDIR += llvm16
+    SUBDIR += llvm17
     SUBDIR += lm4tools
     SUBDIR += lmdbg
     SUBDIR += lndir
@@ -1517,6 +1520,7 @@
     SUBDIR += love5
     SUBDIR += lpc21isp
     SUBDIR += lrmi
+    SUBDIR += lua-Penlight
     SUBDIR += lua-argparse
     SUBDIR += lua-bitlib
     SUBDIR += lua-bitop
@@ -4560,6 +4564,7 @@
     SUBDIR += py-deprecat
     SUBDIR += py-deprecated
     SUBDIR += py-deprecation
+    SUBDIR += py-deptry
     SUBDIR += py-devtools
     SUBDIR += py-dexml2
     SUBDIR += py-diazo
@@ -4858,6 +4863,7 @@
     SUBDIR += py-jsonschema-spec
     SUBDIR += py-jsonschema-specifications
     SUBDIR += py-jsonschema3
+    SUBDIR += py-jsonschema417
     SUBDIR += py-jsonsir
     SUBDIR += py-jupyter-client
     SUBDIR += py-jupyter-core
@@ -5722,6 +5728,7 @@
     SUBDIR += py-venusian
     SUBDIR += py-verboselogs
     SUBDIR += py-versioneer
+    SUBDIR += py-versioneer-518
     SUBDIR += py-versioningit
     SUBDIR += py-versiontools
     SUBDIR += py-verspec

@@ -314,6 +314,7 @@
     SUBDIR += py-cirq-rigetti
     SUBDIR += py-coards
     SUBDIR += py-dftbplus
+    SUBDIR += py-dftd4
     SUBDIR += py-dimod
     SUBDIR += py-dipy
     SUBDIR += py-dlib
@@ -368,6 +369,7 @@
     SUBDIR += py-mrchem
     SUBDIR += py-netCDF4
     SUBDIR += py-netcdf-flattener
+    SUBDIR += py-nglview
     SUBDIR += py-nibabel
     SUBDIR += py-nilearn
     SUBDIR += py-obspy

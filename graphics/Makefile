@@ -80,7 +80,6 @@
     SUBDIR += blend2d
     SUBDIR += blender
     SUBDIR += blender-doc
-    SUBDIR += blender-lts29
     SUBDIR += bmeps
     SUBDIR += bmp2html
     SUBDIR += bonzomatic
@@ -522,6 +521,7 @@
     SUBDIR += libwmf
     SUBDIR += libwmf-nox11
     SUBDIR += libwpg03
+    SUBDIR += libxisf
     SUBDIR += libyuv
     SUBDIR += libzmf
     SUBDIR += lightzone
