@@ -131,7 +131,6 @@
     SUBDIR += just
     SUBDIR += kaddressbook
     SUBDIR += kalarm
-    SUBDIR += kalendar
     SUBDIR += kcharselect
     SUBDIR += kchmviewer
     SUBDIR += kdeconnect-kde
@@ -179,10 +178,12 @@
     SUBDIR += mbox-importer
     SUBDIR += mencal
     SUBDIR += menumaker
+    SUBDIR += merkuro
     SUBDIR += meteo
     SUBDIR += mindforger
     SUBDIR += moregroupware
     SUBDIR += mozo
+    SUBDIR += mytetra
     SUBDIR += nautilus-sendto
     SUBDIR += nextcloudclient
     SUBDIR += note
