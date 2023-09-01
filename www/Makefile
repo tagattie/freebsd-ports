@@ -273,7 +273,6 @@
     SUBDIR += jira-cli
     SUBDIR += jitsi-meet
     SUBDIR += jmeter
-    SUBDIR += joomla3
     SUBDIR += joomla4
     SUBDIR += jwt-cli
     SUBDIR += kanboard
@@ -2387,6 +2386,7 @@
     SUBDIR += unit-php
     SUBDIR += unit-python
     SUBDIR += unit-ruby
+    SUBDIR += unit-wasm
     SUBDIR += unitc
     SUBDIR += uwebsockets
     SUBDIR += uwsgi
