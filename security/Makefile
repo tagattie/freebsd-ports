@@ -423,6 +423,7 @@
     SUBDIR += openssl-unsafe
     SUBDIR += openssl30
     SUBDIR += openssl31
+    SUBDIR += openssl32
     SUBDIR += openvas
     SUBDIR += openvpn
     SUBDIR += openvpn-admin
@@ -827,6 +828,7 @@
     SUBDIR += plasma5-kwallet-pam
     SUBDIR += please
     SUBDIR += poly1305aes
+    SUBDIR += portacl-rc
     SUBDIR += proftpd-mod_clamav
     SUBDIR += proxycheck
     SUBDIR += proxytunnel
