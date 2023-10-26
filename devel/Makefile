@@ -268,6 +268,7 @@
     SUBDIR += b2
     SUBDIR += babelflow
     SUBDIR += babeltrace
+    SUBDIR += bacnet-stack
     SUBDIR += bacon
     SUBDIR += bam
     SUBDIR += bashdb
@@ -7873,6 +7874,7 @@
     SUBDIR += zapcc
     SUBDIR += zeal
     SUBDIR += zfp
+    SUBDIR += zix
     SUBDIR += zls
     SUBDIR += zookeeper
     SUBDIR += zthread
