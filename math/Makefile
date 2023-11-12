@@ -276,6 +276,7 @@
     SUBDIR += dionysus
     SUBDIR += disco
     SUBDIR += dqfun
+    SUBDIR += dsfmt
     SUBDIR += drgeo
     SUBDIR += dsdp
     SUBDIR += dune-alugrid
@@ -337,9 +338,6 @@
     SUBDIR += flopc++
     SUBDIR += form
     SUBDIR += fparser
-    SUBDIR += fpc-fftw
-    SUBDIR += fpc-gmp
-    SUBDIR += fpc-numlib
     SUBDIR += fplll
     SUBDIR += freefem++
     SUBDIR += fricas
