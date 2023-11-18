@@ -26,6 +26,9 @@ GH_TUPLE=	dialect-app:po:9155653c4493730508989617d8bf86980e6029ae:po/po
 USE_GNOME=	glib20 gtk40 introspection:build libadwaita pygobject3
 GLIB_SCHEMAS=	app.drey.Dialect.gschema.xml
 
+# workaround to avoid filesystem violations during poudriere build
+MAKE_ENV+=	PYTHONDONTWRITEBYTECODE=1
+
 NO_ARCH=	yes
 
 PORTDOCS=	README.md
