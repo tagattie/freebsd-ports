@@ -69,7 +69,8 @@ pre-fetch:
 		${CP} -R ${FILESDIR}/packagejsons/* ${WRKDIR}/node-modules-cache; \
 		cd ${WRKDIR}/node-modules-cache && \
 		${SETENV} HOME=${WRKDIR} npm install -g --prefix=${WRKDIR} npm@9.9.0 && \
-		${SETENV} HOME=${WRKDIR} PATH=${WRKDIR}/bin:${PATH} npm ci --ignore-scripts --no-progress; \
+		${SETENV} HOME=${WRKDIR} PATH=${WRKDIR}/bin:${PATH} \
+			npm ci --ignore-scripts --no-progress --no-audit --no-fund; \
 		${FIND} ${WRKDIR}/node-modules-cache -depth 1 -print | \
 			${GREP} -v node_modules | ${XARGS} ${RM} -r; \
 		${FIND} ${WRKDIR}/node-modules-cache -type d -exec ${CHMOD} 755 {} ';'; \
