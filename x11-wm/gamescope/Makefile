@@ -1,5 +1,5 @@
 PORTNAME=	gamescope
-DISTVERSION=	3.13.5
+DISTVERSION=	3.13.8
 CATEGORIES=	x11-wm wayland
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
@@ -87,4 +87,5 @@ bundled-libcxx:
 .endif
 .endif # exists(/usr/lib/libc++.so)
 
+.include "${.CURDIR:H:H}/x11-toolkits/wlroots016/override.mk"
 .include <bsd.port.mk>
