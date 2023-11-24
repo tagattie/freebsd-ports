@@ -132,10 +132,10 @@
     SUBDIR += davix
     SUBDIR += dddbl
     SUBDIR += ddgr
+    SUBDIR += deforaos-surfer
     SUBDIR += deno
     SUBDIR += devd
     SUBDIR += dezoomify-rs
-    SUBDIR += dfileserver
     SUBDIR += dillo2
     SUBDIR += dojo
     SUBDIR += dokuwiki
