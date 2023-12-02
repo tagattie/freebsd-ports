@@ -108,6 +108,7 @@
     SUBDIR += gtk-app-menu
     SUBDIR += gtk-theme-switch2
     SUBDIR += gtkchtheme
+    SUBDIR += gtklock
     SUBDIR += gtkterm2
     SUBDIR += guake
     SUBDIR += gxkb
@@ -620,8 +621,8 @@
     SUBDIR += xvmcinfo
     SUBDIR += xvt
     SUBDIR += xwatchwin
-    SUBDIR += xwaylandvideobridge
     SUBDIR += xwayland-run
+    SUBDIR += xwaylandvideobridge
     SUBDIR += xwd
     SUBDIR += xwininfo
     SUBDIR += xwinwrap
