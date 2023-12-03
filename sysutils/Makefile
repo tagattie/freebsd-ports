@@ -531,7 +531,6 @@
     SUBDIR += gstat-rs
     SUBDIR += gstopd
     SUBDIR += gstreamer1-plugins-cdio
-    SUBDIR += gtk-imonc
     SUBDIR += hammer2
     SUBDIR += handlr
     SUBDIR += hardlink
@@ -635,6 +634,9 @@
     SUBDIR += keyd
     SUBDIR += kf5-baloo
     SUBDIR += kf5-kwallet
+    SUBDIR += kf6-baloo
+    SUBDIR += kf6-kuserfeedback
+    SUBDIR += kf6-kwallet
     SUBDIR += kfloppy
     SUBDIR += khelpcenter
     SUBDIR += kiconvtool
@@ -1025,6 +1027,17 @@
     SUBDIR += plasma5-polkit-kde-agent-1
     SUBDIR += plasma5-powerdevil
     SUBDIR += plasma5-systemsettings
+    SUBDIR += plasma6-drkonqi
+    SUBDIR += plasma6-kde-cli-tools
+    SUBDIR += plasma6-kinfocenter
+    SUBDIR += plasma6-kmenuedit
+    SUBDIR += plasma6-ksystemstats
+    SUBDIR += plasma6-libksysguard
+    SUBDIR += plasma6-plasma-disks
+    SUBDIR += plasma6-plasma-systemmonitor
+    SUBDIR += plasma6-polkit-kde-agent-1
+    SUBDIR += plasma6-powerdevil
+    SUBDIR += plasma6-systemsettings
     SUBDIR += plconfig
     SUBDIR += plocate
     SUBDIR += pmt
@@ -1034,6 +1047,7 @@
     SUBDIR += polkit
     SUBDIR += polkit-gnome
     SUBDIR += polkit-qt
+    SUBDIR += polkit-qt-1-devel
     SUBDIR += pot
     SUBDIR += potnet
     SUBDIR += poweralertd

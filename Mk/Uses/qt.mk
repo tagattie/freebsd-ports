@@ -150,7 +150,7 @@ _USE_QT_COMMON=		3d charts connectivity datavis3d declarative doc examples image
 _USE_QT5_ONLY=		assistant buildtools concurrent core dbus \
 			declarative-test designer diag gamepad \
 			graphicaleffects gui help l10n linguist linguisttools \
-			network opengl paths phonon4 pixeltool plugininfo printsupport \
+			network opengl paths pixeltool plugininfo printsupport \
 			qdbus qdbusviewer qdoc qdoc-data qev qmake quickcontrols \
 			quickcontrols2 script scripttools sql sql-mysql sql-odbc \
 			sql-pgsql sql-sqlite2 sql-sqlite3 sql-tds testlib uiplugin \
@@ -279,9 +279,6 @@ qt-pdf_LIB=		libQt${_QT_LIBVER}Pdf.so
 
 qt-pixeltool_PORT=	graphics/${_QT_RELNAME}-pixeltool
 qt-pixeltool_PATH=	${LOCALBASE}/${QT_BINDIR_REL}/pixeltool
-
-qt-phonon4_PORT=	multimedia/phonon
-qt-phonon4_LIB=		libphonon4${_QT_RELNAME}.so
 
 qt-positioning_PORT=	devel/${_QT_RELNAME}-positioning
 qt-positioning_LIB=	libQt${_QT_LIBVER}Positioning.so
