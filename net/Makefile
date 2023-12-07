@@ -385,7 +385,6 @@
     SUBDIR += libiscsi
     SUBDIR += libkgapi
     SUBDIR += libksieve
-    SUBDIR += libkvkontakte
     SUBDIR += liblinphone
     SUBDIR += libmaia
     SUBDIR += libmateweather
@@ -425,6 +424,7 @@
     SUBDIR += librsync
     SUBDIR += libsignal-protocol-c
     SUBDIR += libslirp
+    SUBDIR += libsockpp
     SUBDIR += libsrtp2
     SUBDIR += libtnl
     SUBDIR += libtrace
@@ -1034,7 +1034,6 @@
     SUBDIR += py-aiohttp-socks
     SUBDIR += py-amqp
     SUBDIR += py-amqplib
-    SUBDIR += py-anonfile
     SUBDIR += py-avahi
     SUBDIR += py-blobfile
     SUBDIR += py-bonsai
