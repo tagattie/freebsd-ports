@@ -78,6 +78,7 @@
     SUBDIR += R-cran-magrittr
     SUBDIR += R-cran-memoise
     SUBDIR += R-cran-microbenchmark
+    SUBDIR += R-cran-mlbench
     SUBDIR += R-cran-mockery
     SUBDIR += R-cran-msm
     SUBDIR += R-cran-multicool
@@ -581,6 +582,7 @@
     SUBDIR += double-conversion
     SUBDIR += doxygen
     SUBDIR += dparser
+    SUBDIR += dra
     SUBDIR += dragon
     SUBDIR += ds2
     SUBDIR += dsymbol
@@ -611,6 +613,7 @@
     SUBDIR += eiffelstudio
     SUBDIR += electron25
     SUBDIR += electron26
+    SUBDIR += electron27
     SUBDIR += elf
     SUBDIR += elf-dissector
     SUBDIR += elfcat
