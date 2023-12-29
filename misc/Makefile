@@ -414,6 +414,7 @@
     SUBDIR += py-einops
     SUBDIR += py-emoji
     SUBDIR += py-ezc3d
+    SUBDIR += py-facenet-pytorch
     SUBDIR += py-fast-histogram
     SUBDIR += py-fastscapelib
     SUBDIR += py-fleep
@@ -433,6 +434,10 @@
     SUBDIR += py-lightning-utilities
     SUBDIR += py-log_symbols
     SUBDIR += py-mffpy
+    SUBDIR += py-mmcv
+    SUBDIR += py-mmdet
+    SUBDIR += py-mmengine
+    SUBDIR += py-mmsegmentation
     SUBDIR += py-molequeue
     SUBDIR += py-mxnet
     SUBDIR += py-npTDMS
