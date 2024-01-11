@@ -22,4 +22,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}openai>=1.1.0<2.0.0:misc/py-openai@${PY_FLAV
 USES=		python
 USE_PYTHON=	autoplist pep517
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>
