@@ -29,6 +29,7 @@
     SUBDIR += arping
     SUBDIR += arpoison
     SUBDIR += arprelease
+    SUBDIR += arrowdl
     SUBDIR += asio
     SUBDIR += aslookup
     SUBDIR += asterisk-chan_sccp
@@ -126,7 +127,6 @@
     SUBDIR += dico
     SUBDIR += dictd
     SUBDIR += dimes
-    SUBDIR += downzemall
     SUBDIR += dpdk
     SUBDIR += dpdk-20.11
     SUBDIR += dpinger
@@ -1093,6 +1093,7 @@
     SUBDIR += py-pcapy-ng
     SUBDIR += py-port-for
     SUBDIR += py-portend
+    SUBDIR += py-pychromecast
     SUBDIR += py-pyenet
     SUBDIR += py-pyfixbuf
     SUBDIR += py-pygeoip
