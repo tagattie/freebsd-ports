@@ -1,8 +1,9 @@
 PORTNAME=	caffeine-ng
 DISTVERSIONPREFIX=	v
 DISTVERSION=	4.2.0
+DISTVERSIONSUFFIX=	-0-g5027f55
 CATEGORIES=	x11 python
-MASTER_SITES=	https://codeberg.org/WhyNotHugo/caffeine-ng/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
+MASTER_SITES=	https://codeberg.org/WhyNotHugo/${PORTNAME}/releases/download/${DISTVERSIONPREFIX}${DISTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	tagattie@FreeBSD.org
@@ -31,8 +32,6 @@ GLIB_SCHEMAS=	net.launchpad.caffeine.gschema.xml
 
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 NO_ARCH=	yes
-
-WRKSRC=		${WRKDIR}/caffeine-ng
 
 PORTDOCS=	CHANGELOG.rst README.md
 
