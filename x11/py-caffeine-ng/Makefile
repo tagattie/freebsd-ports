@@ -26,7 +26,7 @@ LIB_DEPENDS=	libayatana-appindicator3.so:devel/libayatana-appindicator \
 		libnotify.so:devel/libnotify
 RUN_DEPENDS=	${PY_DEPENDS}
 
-USES=		gettext-tools gnome meson python
+USES=		gettext-tools gnome meson pkgconfig python
 USE_GNOME=	gdkpixbuf2 gtk30 pygobject3
 GLIB_SCHEMAS=	net.launchpad.caffeine.gschema.xml
 
