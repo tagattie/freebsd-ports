@@ -9,7 +9,7 @@ WWW=		https://vgmrips.net/
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/vgm-player.pc:audio/libvgm
 LIB_DEPENDS=	libinih.so:devel/inih
 
-USES=		cmake iconv
+USES=		cmake iconv pkgconfig
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	ValleyBell
