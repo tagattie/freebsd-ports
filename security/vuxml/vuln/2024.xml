@@ -1,3 +1,35 @@
+  <vuln vid="cb22a9a6-c907-11ee-8d1c-40b034429ecf">
+    <topic>p5-Spreadsheet-ParseExcel -- Remote Code Execution Vulnerability</topic>
+    <affects>
+      <package>
+	<name>p5-Spreadsheet-ParseExcel</name>
+	<range><lt>0.66</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Spreadsheet-ParseExcel reports:</p>
+	<blockquote cite="https://nvd.nist.gov/vuln/detail/CVE-2023-7101">
+	  <p>
+	    Spreadsheet::ParseExcel version 0.65 is a Perl module used for parsing Excel files.
+	    Spreadsheet::ParseExcel is vulnerable to an arbitrary code execution (ACE) vulnerability
+	    due to passing unvalidated input from a file into a string-type eval "eval".
+	    Specifically, the issue stems from the evaluation of Number format strings
+	    (not to be confused with printf-style format strings) within the Excel parsing logic.
+	  </p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2023-7101</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2023-7101</url>
+    </references>
+    <dates>
+      <discovery>2023-12-29</discovery>
+      <entry>2024-02-11</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="19e6dd1b-c6a5-11ee-9cd0-6cc21735f730">
     <topic>postgresql-server -- non-owner REFRESH MATERIALIZED VIEW CONCURRENTLY executes arbitrary SQL</topic>
     <affects>
@@ -156,6 +188,14 @@
        <name>ungoogled-chromium</name>
        <range><lt>121.0.6167.160</lt></range>
       </package>
+      <package>
+       <name>qt5-webengine</name>
+       <range><lt>5.15.16.p5_5</lt></range>
+      </package>
+      <package>
+       <name>qt6-webengine</name>
+       <range><lt>6.6.1_5</lt></range>
+      </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
@@ -287,6 +327,14 @@
        <name>ungoogled-chromium</name>
        <range><lt>121.0.6167.139</lt></range>
       </package>
+      <package>
+       <name>qt5-webengine</name>
+       <range><lt>5.15.16.p5_5</lt></range>
+      </package>
+      <package>
+       <name>qt6-webengine</name>
+       <range><lt>6.6.1_5</lt></range>
+      </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
@@ -404,6 +452,10 @@
   <vuln vid="bbcb1584-c068-11ee-bdd6-4ccc6adda413">
     <topic>qt6-webengine -- Multiple vulnerabilities</topic>
     <affects>
+      <package>
+	<name>qt5-webengine</name>
+	<range><lt>5.15.16.p5_5</lt></range>
+      </package>
       <package>
 	<name>qt6-webengine</name>
 	<range><lt>6.6.1_4</lt></range>
