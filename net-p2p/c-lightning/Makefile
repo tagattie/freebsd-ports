@@ -1,6 +1,6 @@
 PORTNAME=	c-lightning
 # To build from an arbitrary git commit comment PORTVERSION and PORTREVISION (if present)
-PORTVERSION=	23.11
+PORTVERSION=	23.11.2
 DISTVERSIONPREFIX=	v
 # and uncomment the following two lines (use for example -git-HEAD or -git-f8d8348c)
 #PORTVERSION=	0
@@ -12,9 +12,6 @@ COMMENT=	Lightning Network implementation in C
 WWW=		https://github.com/ElementsProject/lightning
 
 LICENSE=	MIT
-
-BROKEN_i386=	channeld/channeld.c:5153:8: error: format specifies type 'unsigned long' but the argument has type 'unsigned int' [-Werror,-Wformat]
-BROKEN_powerpc=	channeld/channeld.c:5153:8: error: format specifies type 'unsigned long' but the argument has type 'unsigned int' [-Werror,-Wformat]
 
 BUILD_DEPENDS=	bash:shells/bash \
 		lowdown:textproc/lowdown \
@@ -65,6 +62,9 @@ OPTIONS_DEFAULT=COMPATIBILITY SQLITE
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-rust
+
+# Print the compilation commands (verbose).
+MAKE_ARGS=	V=1
 
 USE_GITHUB=	yes
 .if defined(PKGNAMESUFFIX)
