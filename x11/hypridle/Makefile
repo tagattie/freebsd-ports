@@ -25,8 +25,15 @@ GH_ACCOUNT=	hyprwm
 LDFLAGS+=	-Wl,--as-needed # sdbus-cpp deps
 PLIST_FILES=	bin/${PORTNAME}
 
+# XXX Drop after FreeBSD 14.0 EOL around 2025-03-01
+.if exists(/usr/include/c++/v1/__format/format_functions.h) && \
+   !exists(/usr/include/c++/v1/__format/write_escaped.h)
+CXXFLAGS+=	-fexperimental-library
+.endif
+
 post-patch:
-# Temporarily use ConsoleKit2 like sysutils/gnome-settings-daemon
+# https://github.com/ConsoleKit2/ConsoleKit2/issues/150
+# https://github.com/ConsoleKit2/ConsoleKit2/issues/151
 	@${REINPLACE_CMD} -e 's,/login1,/ConsoleKit/Manager,' \
 		-e 's,login1,ConsoleKit,' \
 		-e 's,logind,consolekit2,' \
