@@ -2637,7 +2637,6 @@ devel/mingw32-bin-msvcrt||2023-11-21|Has expired: Last upstream release was in 2
 devel/mingw32-zlib||2023-11-21|Has expired: Last upstream release was in 2014 and project mingw32 is defunct
 devel/mingw32-gcc||2023-11-21|Has expired: Upstream release was in 2015 and mingw32 project is defunct
 www/guile-www||2023-11-21|Has expired: Last upstream release was in 2002 and no longer relevant nowadays
-x11-toolkits/wlroots-devel|x11-toolkits/wlroots|2023-11-21|Out of date: use x11-toolkits/wlroots for now
 games/suyimazu|games/mizuma|2023-11-22|Project was renamed upstream
 www/dfileserver||2023-11-22|Has expired: Obsolete, consider using www/darkhttpd
 devel/sdts++||2023-11-22|Has expired: Last upstream release was in 2003 and both MASTER_SITES and WWW are unreachable
@@ -3034,3 +3033,5 @@ www/nibbleblog||2024-02-29|Has expired: Upstream WWW redirects to a different CM
 chinese/phpbb-tw||2024-02-29|Has expired: Last upstream was released in 2008 use chinese/phpbb3
 www/phpbb||2024-02-29|Has expired: Last upstream was released in 2008 use www/phpbb3
 devel/pcre++||2024-02-29|Unused in the ports tree depends on pcre which is EOLed since 2021
+sysutils/polkit-qt|sysutils/polkit-qt-1|2024-03-01|Renamed to move upstreams name and flavorized
+sysutils/polkit-qt-1-devel|sysutils/polkit-qt-1|2024-03-01|Renamed to move upstreams name and flavorized
