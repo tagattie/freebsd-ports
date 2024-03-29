@@ -1732,6 +1732,7 @@
     SUBDIR += okteta
     SUBDIR += omake
     SUBDIR += omniORB
+    SUBDIR += omnilinter
     SUBDIR += onetbb
     SUBDIR += oniguruma
     SUBDIR += open-beagle
@@ -7931,6 +7932,7 @@
     SUBDIR += vc
     SUBDIR += vc-intrinsics
     SUBDIR += vcglib
+    SUBDIR += venom
     SUBDIR += vera++
     SUBDIR += vexcl
     SUBDIR += viewvc-devel

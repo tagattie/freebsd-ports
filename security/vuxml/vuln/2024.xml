@@ -1,3 +1,66 @@
+  <vuln vid="bdcd041e-5811-4da3-9243-573a9890fdb1">
+    <topic>electron{27,28} -- Object lifecycle issue in V8</topic>
+    <affects>
+      <package>
+	<name>electron27</name>
+	<range><lt>27.3.8</lt></range>
+      </package>
+      <package>
+	<name>electron28</name>
+	<range><lt>28.2.9</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Electron developers report:</p>
+	<blockquote cite="https://github.com/electron/electron/releases/tag/v27.3.8">
+	  <p>This update fixes the following vulnerability:</p>
+	  <ul>
+	    <li>Security: backported fix for CVE-2024-2625.</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-2625</cvename>
+      <url>https://github.com/advisories/GHSA-j7h3-fcrw-g6j8</url>
+    </references>
+    <dates>
+      <discovery>2024-03-28</discovery>
+      <entry>2024-03-29</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="d2992bc2-ed18-11ee-96dc-001b217b3468">
+    <topic>Gitlab -- vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>gitlab-ce</name>
+	<range><ge>16.10.0</ge><lt>16.10.1</lt></range>
+	<range><ge>16.9.0</ge><lt>16.9.3</lt></range>
+	<range><lt>16.8.5</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gitlab reports:</p>
+	<blockquote cite="https://about.gitlab.com/releases/2024/03/27/security-release-gitlab-16-10-1-released/">
+	  <p>Stored-XSS injected in Wiki page via Banzai pipeline</p>
+	  <p>DOS using crafted emojis</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2023-6371</cvename>
+      <cvename>CVE-2024-2818</cvename>
+      <url>https://about.gitlab.com/releases/2024/03/27/security-release-gitlab-16-10-1-released/</url>
+    </references>
+    <dates>
+      <discovery>2024-03-27</discovery>
+      <entry>2024-03-28</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="814af1be-ec63-11ee-8e76-a8a1599412c6">
     <topic>chromium -- multiple security fixes</topic>
     <affects>
