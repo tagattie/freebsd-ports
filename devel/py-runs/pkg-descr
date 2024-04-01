@@ -1,0 +1,3 @@
+runs has improved versions of call(), check_call(), check_output(),
+and run() from Python's subprocess module that handle multiple
+commands and blocks of text, fix some defects, and add some features.
