@@ -1,0 +1,3 @@
+TokenTrim intelligently trims OpenAI messages to fit within a model's
+token limit (shortening a message by removing characters from the
+middle), making it easy to avoid exceeding the maximum token count.
