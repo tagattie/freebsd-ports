@@ -3043,6 +3043,8 @@ net-im/gtkcord4|net-im/dissent|2024-03-03|Project renamed
 devel/anjuta|devel/gnome-builder|2024-03-12|Has expired: Unmaintained, upstream WWW owned by gambling site, use devel/gnome-builder
 deskutils/rubrica||2024-03-12|Has expired: Upstream WWW redirects to a different site not related to the application
 x11/mrxvt-devel|x11/mrxvt|2024-03-12|Merge most recent version into main port
+math/qalculate-qt@qt5|math/qalculate-qt|2024-03-13|Flavorization has been removed. Qt 5.x has been long deprecated upstream. Please use the unflavored math/qalculate-qt port based on Qt 6.x instead
+math/qalculate-qt@qt6|math/qalculate-qt|2024-03-13|Flavorization has been removed. Continue to enjoy math/qalculate-qt based on Qt 6.x as usual
 games/xataxx||2024-03-16|Has expired: No available WWW
 editors/kak-lsp|editors/kakoune-lsp|2024-03-17|Project was renamed upstream
 www/npm-node16||2024-03-17|Has expired: Depends on deprecated node16
@@ -3060,5 +3062,23 @@ security/rubygem-metasploit-aggregator||2024-03-24|Has expired: No longer used, 
 net-p2p/tooth||2024-03-24|Has expired: Project has been renamed to Tuba. Consider porting to the new project. See https://github.com/GeopJr/Tuba
 www/tidy-devel|www/tidy-html5|2024-03-25|Has expired: no more dev at SF, replaced by www/tidy-html5
 www/tidy-lib|www/tidy-html5|2024-03-25|Has expired: no more dev at SF, replaced by www/tidy-html5
-math/qalculate-qt@qt5|math/qalculate-qt|2024-03-13|Flavorization has been removed. Qt 5.x has been long deprecated upstream. Please use the unflavored math/qalculate-qt port based on Qt 6.x instead
-math/qalculate-qt@qt6|math/qalculate-qt|2024-03-13|Flavorization has been removed. Continue to enjoy math/qalculate-qt based on Qt 6.x as usual
+lang/ruby30||2024-03-31|Has expired: Please migrate to newer versions. Ruby 3.0 will reach its EoL on March 30, 2024
+devel/py-pybind11210|devel/py-pybind11|2024-03-31|Remove obsoleted port. Use devel/py-pybind11 instead
+devel/py-y-py|devel/py-pycrdt|2024-03-31|Remove obsoleted port. Use devel/py-pycrdt instead
+devel/py-ypy-websocket|devel/py-pycrdt-websocket|2024-03-31|Remove obsoleted port. Use devel/py-pycrdt-websocket instead
+math/py-munkres10|math/py-munkres|2024-03-31|Remove obsoleted port. Use math/py-munkres instead
+security/py-pysaml24|security/py-pysaml2|2024-03-31|Remove obsoleted port. Use security/py-pysaml2 instead
+textproc/py-atoml|textproc/py-tomlkit|2024-03-31|Remove obsoleted port. This project has been merged back to tomlkit and is no longer maintained. Use textproc/py-tomlkit>=0.8.0 instead
+databases/rubygem-redis-namespace19|databases/rubygem-redis-namespace|2024-03-31|Remove obsoleted port. Use databases/rubygem-redis-namespace instead
+devel/rubygem-cucumber-core12|devel/rubygem-cucumber-core|2024-03-31|Remove obsoleted port. Use devel/rubygem-cucumber-core instead
+devel/rubygem-cucumber-tag-expressions5|devel/rubygem-cucumber-tag-expressions|2024-03-31|Remove obsoleted port. Use devel/rubygem-cucumber-tag-expressions instead
+devel/rubygem-grape-swagger16|devel/rubygem-grape-swagger|2024-03-31|Remove obsoleted port. Use devel/rubygem-grape-swagger instead
+devel/rubygem-grape17|devel/rubygem-grape|2024-03-31|Remove obsoleted port. Use devel/rubygem-grape instead
+devel/rubygem-sidekiq-cron18|devel/rubygem-sidekiq-cron|2024-03-31|Remove obsoleted port. Use devel/rubygem-sidekiq-cron instead
+devel/rubygem-sidekiq6|devel/rubygem-sidekiq|2024-03-31|Remove obsoleted port. Use devel/rubygem-sidekiq instead
+net/rubygem-google-cloud-storage144|net/rubygem-google-cloud-storage|2024-03-31|Remove obsoleted port. Use net/rubygem-google-cloud-storage instead
+security/rubygem-net-sftp2|security/rubygem-net-sftp|2024-03-31|Remove obsoleted port. Use security/rubygem-net-sftp instead
+textproc/rubygem-cucumber-gherkin26|textproc/rubygem-cucumber-gherkin|2024-03-31|Remove obsoleted port. Use textproc/rubygem-cucumber-gherkin instead
+textproc/rubygem-loofah221|textproc/rubygem-loofah|2024-03-31|Remove obsoleted port. Use textproc/rubygem-loofah instead
+www/rubygem-faraday14|www/rubygem-faraday|2024-03-31|Remove obsoleted port. Use www/rubygem-faraday instead
+devel/rubygem-request_store14|devel/rubygem-request_store|2024-03-31|Remove obsoleted port. Use devel/rubygem-request_store instead

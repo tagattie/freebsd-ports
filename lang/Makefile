@@ -320,7 +320,7 @@
     SUBDIR += rexx-wrapper
     SUBDIR += rhino
     SUBDIR += rizin
-    SUBDIR += ruby30
+    SUBDIR += rizin-cutter
     SUBDIR += ruby31
     SUBDIR += ruby32
     SUBDIR += ruby33

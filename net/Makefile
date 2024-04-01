@@ -1056,6 +1056,7 @@
     SUBDIR += py-gntp
     SUBDIR += py-gspread
     SUBDIR += py-h11
+    SUBDIR += py-haproxy-cli
     SUBDIR += py-haproxy-log-analysis
     SUBDIR += py-haproxyctl
     SUBDIR += py-httpstat
@@ -1328,7 +1329,6 @@
     SUBDIR += rubygem-google-cloud-spanner-admin-instance-v1
     SUBDIR += rubygem-google-cloud-spanner-v1
     SUBDIR += rubygem-google-cloud-storage
-    SUBDIR += rubygem-google-cloud-storage144
     SUBDIR += rubygem-google-cloud-storage145
     SUBDIR += rubygem-google-cloud-trace
     SUBDIR += rubygem-google-cloud-trace-v1

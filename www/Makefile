@@ -1538,6 +1538,7 @@
     SUBDIR += py-django-bootstrap4
     SUBDIR += py-django-braces
     SUBDIR += py-django-cacheops
+    SUBDIR += py-django-choices-field
     SUBDIR += py-django-ckeditor-5
     SUBDIR += py-django-classy-tags
     SUBDIR += py-django-cms
@@ -1843,6 +1844,7 @@
     SUBDIR += py-spyne
     SUBDIR += py-sseclient
     SUBDIR += py-starlette
+    SUBDIR += py-strawberry-graphql-django
     SUBDIR += py-swapper
     SUBDIR += py-textile
     SUBDIR += py-ticketutil
@@ -1912,6 +1914,7 @@
     SUBDIR += rearx
     SUBDIR += reddsaver
     SUBDIR += redmine50
+    SUBDIR += redmine51
     SUBDIR += rejik
     SUBDIR += remark42
     SUBDIR += reportmagic
@@ -2013,7 +2016,6 @@
     SUBDIR += rubygem-faraday-retry1
     SUBDIR += rubygem-faraday0
     SUBDIR += rubygem-faraday1
-    SUBDIR += rubygem-faraday14
     SUBDIR += rubygem-faraday_middleware
     SUBDIR += rubygem-faraday_middleware0
     SUBDIR += rubygem-faye
@@ -2332,6 +2334,7 @@
     SUBDIR += smarty
     SUBDIR += smarty2
     SUBDIR += smarty3
+    SUBDIR += smarty4
     SUBDIR += smb_auth
     SUBDIR += snarf
     SUBDIR += so
