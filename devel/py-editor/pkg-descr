@@ -1,0 +1,3 @@
+editor opens the default text editor or your favorite editor to edit
+an existing file, a new file, or a tempfile, blocks while the user
+edits text, then returns the contents of the file.
