@@ -1,0 +1,9 @@
+Collection of common interactive command line user interfaces, based
+on Inquirer.js.
+
+Born as a Inquirer.js clone, it shares part of the goals and
+philosophy.
+
+So, Inquirer should ease the process of asking end user questions,
+parsing, validating answers, managing hierarchical prompts and
+providing error feedback.
