@@ -1,0 +1,10 @@
+Callable modules! Indexable modules!?
+
+Ever wanted to call a module directly, or index it? Or just sick of
+seeing from foo import foo in your examples?
+
+Give your module the awesome power of an object, or maybe just save a
+little typing, with xmod.
+
+xmod is a tiny library that lets a module to do things that normally
+only a class could do - handy for modules that "just do one thing".
