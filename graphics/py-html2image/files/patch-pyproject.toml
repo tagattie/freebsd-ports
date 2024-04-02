@@ -1,0 +1,16 @@
+--- pyproject.toml.orig	2024-04-01 11:42:07 UTC
++++ pyproject.toml
+@@ -33,9 +33,9 @@ Pillow = "^8.2.0"
+ Pillow = "^8.2.0"
+ 
+ [build-system]
+-requires = ["poetry>=0.12"]
+-build-backend = "poetry.masonry.api"
++requires = ["poetry-core>=0.12"]
++build-backend = "poetry.core.masonry.api"
+ 
+ [tool.poetry.scripts]
+ hti = 'html2image:main'
+-html2image = 'html2image:main'
+\ No newline at end of file
++html2image = 'html2image:main'
