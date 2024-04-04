@@ -1061,6 +1061,7 @@
     SUBDIR += twemproxy
     SUBDIR += unixODBC
     SUBDIR += usql
+    SUBDIR += valkey
     SUBDIR += vfront
     SUBDIR += virtualpg
     SUBDIR += vsqlite
@@ -1070,8 +1071,8 @@
     SUBDIR += xapian-core
     SUBDIR += xls2txt
     SUBDIR += xrootd
-    SUBDIR += xtrabackup
     SUBDIR += xtrabackup80
+    SUBDIR += xtrabackup81
     SUBDIR += zodb
 
 .include <bsd.port.subdir.mk>

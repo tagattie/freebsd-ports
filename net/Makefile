@@ -97,7 +97,6 @@
     SUBDIR += cppzmq
     SUBDIR += croc
     SUBDIR += cryptcat
-    SUBDIR += csocks
     SUBDIR += csync2
     SUBDIR += ctrace
     SUBDIR += cvsup-static
@@ -435,7 +434,6 @@
     SUBDIR += libyang
     SUBDIR += libyang2
     SUBDIR += libzapojit
-    SUBDIR += libzmq2
     SUBDIR += libzmq3
     SUBDIR += libzmq4
     SUBDIR += liferea
@@ -516,6 +514,7 @@
     SUBDIR += net6
     SUBDIR += netatalk3
     SUBDIR += netcat
+    SUBDIR += netdiscover
     SUBDIR += netembryo
     SUBDIR += nethogs
     SUBDIR += netmap
@@ -1364,7 +1363,6 @@
     SUBDIR += rubygem-oauth21
     SUBDIR += rubygem-octokit
     SUBDIR += rubygem-octokit4
-    SUBDIR += rubygem-octokit6
     SUBDIR += rubygem-octopress-deploy
     SUBDIR += rubygem-omniauth-auth0
     SUBDIR += rubygem-omniauth-authentiq
@@ -1440,7 +1438,6 @@
     SUBDIR += s5cmd
     SUBDIR += sacc
     SUBDIR += sakisafecli
-    SUBDIR += samba413
     SUBDIR += samba416
     SUBDIR += samba419
     SUBDIR += samplicator
@@ -1576,6 +1573,7 @@
     SUBDIR += turnserver
     SUBDIR += u6rd
     SUBDIR += ucarp
+    SUBDIR += udp-over-tcp
     SUBDIR += udpbroadcastrelay
     SUBDIR += udptunnel
     SUBDIR += udpxy
