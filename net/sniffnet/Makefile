@@ -1,7 +1,6 @@
 PORTNAME=	sniffnet
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.2.2
-PORTREVISION=	7
+DISTVERSION=	1.3.0
 CATEGORIES=	net wayland
 
 MAINTAINER=	tagattie@FreeBSD.org
@@ -22,13 +21,21 @@ USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	GyulyVGC
 
+PORTDOCS=	README.md ROADMAP.md SECURITY.md
+
+OPTIONS_DEFINE=	DOCS
+
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/resources/packaging/linux/${PORTNAME}.desktop \
 		${STAGEDIR}${DESKTOPDIR}
 .for size in 8 16 22 24 32 36 42 48 64 72 96 128 160 192 256 384 512 1024
-	${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/${size}x${size}/apps
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/${size}x${size}/apps
 	${INSTALL_DATA} ${WRKSRC}/resources/packaging/linux/graphics/${PORTNAME}_${size}x${size}.png \
 		${STAGEDIR}${PREFIX}/share/icons/hicolor/${size}x${size}/apps/${PORTNAME}.png
 .endfor
+
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_MAN} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
