@@ -12,6 +12,8 @@ LICENSE_COMB=	dual
 LICENSE_FILE_APACHE20=	${WRKSRC}/LICENSE-APACHE
 LICENSE_FILE_MIT=	${WRKSRC}/LICENSE-MIT
 
+BROKEN_i386=	failed to compile: evaluation of constant value failed: assertion failed: cfg!(target_feature = "sse") && cfg!(target_feature = "sse2")
+
 LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libfreetype.so:print/freetype2 \
 		libfontconfig.so:x11-fonts/fontconfig
