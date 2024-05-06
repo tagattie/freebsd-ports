@@ -5822,6 +5822,7 @@
     SUBDIR += py-types-Werkzeug
     SUBDIR += py-types-click
     SUBDIR += py-types-cryptography
+    SUBDIR += py-types-decorator
     SUBDIR += py-types-docutils
     SUBDIR += py-types-futures
     SUBDIR += py-types-jsonschema
@@ -7284,8 +7285,6 @@
     SUBDIR += rubygem-p4ruby
     SUBDIR += rubygem-paint
     SUBDIR += rubygem-pairing_heap
-    SUBDIR += rubygem-paperclip-rails5
-    SUBDIR += rubygem-paperclip-rails50
     SUBDIR += rubygem-parser
     SUBDIR += rubygem-pastel
     SUBDIR += rubygem-patch_finder
