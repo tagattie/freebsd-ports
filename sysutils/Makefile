@@ -287,6 +287,7 @@
     SUBDIR += ddh
     SUBDIR += ddpt
     SUBDIR += ddrescue
+    SUBDIR += ddrescueview
     SUBDIR += debhelper
     SUBDIR += debootstrap
     SUBDIR += deltarpm
@@ -1404,6 +1405,7 @@
     SUBDIR += stowES
     SUBDIR += stress
     SUBDIR += stressdisk
+    SUBDIR += superfile
     SUBDIR += superiotool
     SUBDIR += swapd
     SUBDIR += swapexd
@@ -1583,7 +1585,6 @@
     SUBDIR += vbetool
     SUBDIR += vchanger
     SUBDIR += vcp
-    SUBDIR += vector
     SUBDIR += viddy
     SUBDIR += videogen
     SUBDIR += vii
