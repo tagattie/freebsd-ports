@@ -361,6 +361,7 @@
     SUBDIR += cargo-leptos
     SUBDIR += cargo-llvm-cov
     SUBDIR += cargo-mutants
+    SUBDIR += cargo-spellcheck
     SUBDIR += cargo-tarpaulin
     SUBDIR += cargo-udeps
     SUBDIR += cask
@@ -827,6 +828,7 @@
     SUBDIR += git-subrepo
     SUBDIR += git-svn
     SUBDIR += git-town
+    SUBDIR += git-tui
     SUBDIR += git-workspace
     SUBDIR += gitaly
     SUBDIR += gitflow
@@ -872,6 +874,7 @@
     SUBDIR += go-bindata
     SUBDIR += go-bindata-assetfs
     SUBDIR += go-git
+    SUBDIR += go-mode.el
     SUBDIR += go-perf
     SUBDIR += go-protobuf
     SUBDIR += go-tools
@@ -1223,6 +1226,7 @@
     SUBDIR += libdatovka
     SUBDIR += libdatrie
     SUBDIR += libdbusmenu
+    SUBDIR += libdbusmenu-lxqt
     SUBDIR += libdbusmenu-qt
     SUBDIR += libddoc
     SUBDIR += libddwaf
@@ -1384,6 +1388,7 @@
     SUBDIR += libqb
     SUBDIR += libqcow
     SUBDIR += libqsbr
+    SUBDIR += libqt6xdg
     SUBDIR += libqtxdg
     SUBDIR += libr3
     SUBDIR += librcc
@@ -1605,6 +1610,7 @@
     SUBDIR += luv
     SUBDIR += lwp
     SUBDIR += lxqt-build-tools
+    SUBDIR += lxqt2-build-tools
     SUBDIR += lyra
     SUBDIR += m17n-db
     SUBDIR += m17n-docs
@@ -4864,7 +4870,6 @@
     SUBDIR += py-grpcio-status
     SUBDIR += py-grpcio-tools
     SUBDIR += py-gs_api_client
-    SUBDIR += py-gtfslib
     SUBDIR += py-guppy3
     SUBDIR += py-gyp
     SUBDIR += py-hacking
@@ -6620,6 +6625,7 @@
     SUBDIR += rubygem-aws-sdk-supportapp
     SUBDIR += rubygem-aws-sdk-swf
     SUBDIR += rubygem-aws-sdk-synthetics
+    SUBDIR += rubygem-aws-sdk-taxsettings
     SUBDIR += rubygem-aws-sdk-textract
     SUBDIR += rubygem-aws-sdk-timestreaminfluxdb
     SUBDIR += rubygem-aws-sdk-timestreamquery
@@ -7053,7 +7059,6 @@
     SUBDIR += rubygem-gettext
     SUBDIR += rubygem-gettext-setup
     SUBDIR += rubygem-gettext_i18n_rails
-    SUBDIR += rubygem-gettext_i18n_rails111
     SUBDIR += rubygem-gettext_i18n_rails_js
     SUBDIR += rubygem-gettext_i18n_rails_js-rails5
     SUBDIR += rubygem-gettext_i18n_rails_js-rails50
@@ -7817,6 +7822,7 @@
     SUBDIR += sdl12-compat
     SUBDIR += sdl20
     SUBDIR += sdl2pp
+    SUBDIR += sdl3
     SUBDIR += sdl_console
     SUBDIR += sdlmm
     SUBDIR += sdlskk
@@ -7910,6 +7916,7 @@
     SUBDIR += stxxl
     SUBDIR += stylua
     SUBDIR += styx
+    SUBDIR += subprocess
     SUBDIR += subversion
     SUBDIR += subversion-book
     SUBDIR += subversion-lts
