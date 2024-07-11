@@ -1,6 +1,6 @@
 PORTNAME=	virtualbox-ose
 PORTVERSION=	5.2.44
-PORTREVISION?=	19
+PORTREVISION?=	20
 CATEGORIES=	emulators
 MASTER_SITES=	https://download.oracle.com/virtualbox/${PORTVERSION}/:src \
 		LOCAL/bofh/emulators/virtualbox-ose-legacy:docs
@@ -159,7 +159,7 @@ PLIST_SUB+=	QT="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MWEBSERVICE}
-USE_RC_SUBR+=	vboxwebsrv
+USE_RC_SUBR+=	vboxinit vboxwebsrv
 VBOX_LINKS+=	vboxwebsrv
 VBOX_UTILS+=	vboxwebsrv webtest
 .endif
@@ -191,7 +191,7 @@ KMK_FLAGS+=	-j${MAKE_JOBS_NUMBER}
 .include <bsd.port.pre.mk>
 
 .if ${CHOSEN_COMPILER_TYPE} == clang && ${OPSYS} == FreeBSD && \
-    (${OSVERSION} < 1302505 || (${OSVERSION} >= 1400000 && ${OSVERSION} < 1400079))
+    ${OSVERSION} >= 1400000 && ${OSVERSION} < 1400079
 # llvm before 15 included in old versions of the FreeBSD 13 and 14 fails to compile
 # this legacy version of virtualbox-ose, force llvm 15 on those versions of the
 # FreeBSD: PR#265539, 279257.
