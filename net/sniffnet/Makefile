@@ -27,6 +27,7 @@ OPTIONS_DEFINE=	DOCS
 
 # Enable i386 build for SSE2-capable CPUs
 .if ${MACHINE_ARCH} == i386
+CARGO_ENV+=	CARGO_PROFILE_RELEASE_LTO=false
 RUSTFLAGS+=	-C target-feature=+sse2
 .endif
 
