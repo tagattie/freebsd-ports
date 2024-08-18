@@ -515,7 +515,6 @@
     SUBDIR += libvisual04
     SUBDIR += libvisual04-plugins
     SUBDIR += libwmf
-    SUBDIR += libwmf-nox11
     SUBDIR += libwpg03
     SUBDIR += libxisf
     SUBDIR += libyuv
@@ -1236,6 +1235,7 @@
     SUBDIR += xfractint
     SUBDIR += xglurbules
     SUBDIR += xgrasp
+    SUBDIR += ximaging
     SUBDIR += xli
     SUBDIR += xmedcon
     SUBDIR += xmlgraphics-commons
