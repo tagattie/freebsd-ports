@@ -195,6 +195,7 @@
     SUBDIR += api-sanity-autotest
     SUBDIR += apitrace
     SUBDIR += app-builder
+    SUBDIR += app-builder-devel
     SUBDIR += appstream
     SUBDIR += appstream-compose
     SUBDIR += appstream-glib
@@ -4924,6 +4925,7 @@
     SUBDIR += py-graphql-relay
     SUBDIR += py-graphql-relay2
     SUBDIR += py-greenlet
+    SUBDIR += py-grimoirelab-toolkit
     SUBDIR += py-grizzled
     SUBDIR += py-grpc-google-iam-v1
     SUBDIR += py-grpc-stubs
