@@ -4839,6 +4839,7 @@
     SUBDIR += py-fastnumbers
     SUBDIR += py-fastprogress
     SUBDIR += py-fbprophet
+    SUBDIR += py-fiddle
     SUBDIR += py-fields
     SUBDIR += py-filebytes
     SUBDIR += py-filedepot
@@ -5804,7 +5805,9 @@
     SUBDIR += py-rfc3986-validator
     SUBDIR += py-rich-click
     SUBDIR += py-robotframework
+    SUBDIR += py-robotframework-assertion-engine
     SUBDIR += py-robotframework-databaselibrary
+    SUBDIR += py-robotframework-excellib
     SUBDIR += py-robotframework-pabot
     SUBDIR += py-robotframework-pythonlibcore
     SUBDIR += py-robotframework-requests
@@ -6066,6 +6069,7 @@
     SUBDIR += py-usort
     SUBDIR += py-uvloop
     SUBDIR += py-validate-pyproject
+    SUBDIR += py-validate-pyproject-schema-store
     SUBDIR += py-validators
     SUBDIR += py-validictory
     SUBDIR += py-vcrpy
