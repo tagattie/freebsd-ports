@@ -1,3 +1,125 @@
+  <vuln vid="e17384ef-c5e8-4b5d-bb62-c13405e7f1f7">
+    <topic>chromium -- multiple security fixes</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>130.0.6723.91</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>130.0.6723.91</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2024/10/stable-channel-update-for-desktop_29.html">
+	 <p>This update includes 2 security fixes:</p>
+	 <ul>
+	    <li>[375123371] Critical CVE-2024-10487: Out of bounds write in Dawn. Reported by Apple Security Engineering and Architecture (SEAR) on 2024-10-23</li>
+	    <li>[374310077] High CVE-2024-10488: Use after free in WebRTC. Reported by Cassidy Kim(@cassidy6564) on 2024-10-18</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2024-10487</cvename>
+      <cvename>CVE-2024-10488</cvename>
+      <url>https://chromereleases.googleblog.com/2024/10/stable-channel-update-for-desktop_29.html</url>
+    </references>
+    <dates>
+      <discovery>2024-10-29</discovery>
+      <entry>2024-11-02</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="3092668e-97e4-11ef-bdd9-4ccc6adda413">
+    <topic>qt5-webengine -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>qt5-webengine</name>
+	<range><lt>5.15.18p2</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<blockquote cite="https://code.qt.io/cgit/qt/qtwebengine-chromium.git/log/?h=87-based">
+	  <p>Backports for 15 security bugs in Chromium:</p>
+	  <ul>
+	    <li>CVE-2024-4761: Out of bounds write in V8</li>
+	    <li>CVE-2024-5158: Type confusion in V8</li>
+	    <li>CVE-2024-7532: Out of bounds memory access in ANGLE</li>
+	    <li>CVE-2024-7965: Inappropriate implementation in V8</li>
+	    <li>CVE-2024-7967: Heap buffer overflow in Fonts</li>
+	    <li>CVE-2024-7971: Type confusion in V8</li>
+	    <li>CVE-2024-8198: Heap buffer overflow in Skia</li>
+	    <li>CVE-2024-8636: Heap buffer overflow in Skia</li>
+	    <li>CVE-2024-9123: Integer overflow in Skia</li>
+	    <li>CVE-2024-9602: Type confusion in V8</li>
+	    <li>CVE-2024-9603: Type confusion in V8</li>
+	    <li>CVE-2024-10229: Inappropriate implementation in Extensions</li>
+	    <li>CVE-2024-45490: Negative length in libexpat</li>
+	    <li>CVE-2024-45491: Integer overflow in libexpat</li>
+	    <li>CVE-2024-45492: Integer overflow in libexpat</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-4761</cvename>
+      <cvename>CVE-2024-5158</cvename>
+      <cvename>CVE-2024-7532</cvename>
+      <cvename>CVE-2024-7965</cvename>
+      <cvename>CVE-2024-7967</cvename>
+      <cvename>CVE-2024-7971</cvename>
+      <cvename>CVE-2024-8198</cvename>
+      <cvename>CVE-2024-8636</cvename>
+      <cvename>CVE-2024-9123</cvename>
+      <cvename>CVE-2024-9602</cvename>
+      <cvename>CVE-2024-9603</cvename>
+      <cvename>CVE-2024-10229</cvename>
+      <cvename>CVE-2024-45490</cvename>
+      <cvename>CVE-2024-45491</cvename>
+      <cvename>CVE-2024-45492</cvename>
+      <url>https://code.qt.io/cgit/qt/qtwebengine-chromium.git/log/?h=87-based</url>
+    </references>
+    <dates>
+      <discovery>2024-09-18</discovery>
+      <entry>2024-10-31</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="fd538d14-5778-4764-b321-2ddd61a8a58f">
+    <topic>keycloak -- Missing server identity checks when sending mails via SMTPS</topic>
+    <affects>
+      <package>
+	<name>keycloak</name>
+	<range><lt>26.0.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Red Hat reports:</p>
+	<blockquote cite="https://bugzilla.redhat.com/show_bug.cgi?id=2315808">
+	  <p>A vulnerability was found in Apache Sling Commons Messaging
+	    Mail(angus-mail), which provides a simple interface for sending
+	    emails via SMTPS in OSGi, does not offer an option to enable
+	    server identity checks, leaving connections vulnerable to
+	    "man-in-the-middle" attacks and can allow insecure email
+	    communication.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-44549</cvename>
+      <url>https://www.cve.org/CVERecord?id=CVE-2021-44549</url>
+    </references>
+    <dates>
+      <discovery>2024-10-01</discovery>
+      <entry>2024-10-31</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="b73d1f2a-96de-11ef-9e71-00d8612f03c8">
     <topic>librewolf -- Undefined behavior in selection node cache</topic>
     <affects>
