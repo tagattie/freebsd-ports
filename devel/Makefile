@@ -514,6 +514,7 @@
     SUBDIR += ctypes.sh
     SUBDIR += cunit
     SUBDIR += cut
+    SUBDIR += cutelee
     SUBDIR += cutils
     SUBDIR += cutter
     SUBDIR += cvise
@@ -640,6 +641,7 @@
     SUBDIR += electron30
     SUBDIR += electron31
     SUBDIR += electron32
+    SUBDIR += electron33
     SUBDIR += elf
     SUBDIR += elf-dissector
     SUBDIR += elfcat
@@ -693,7 +695,6 @@
     SUBDIR += firmware-utils
     SUBDIR += fistgen
     SUBDIR += flatbuffers
-    SUBDIR += flatbuffers205
     SUBDIR += flatcc
     SUBDIR += flatzebra
     SUBDIR += flex-sdk
@@ -5654,6 +5655,8 @@
     SUBDIR += py-pytest-qt
     SUBDIR += py-pytest-random-order
     SUBDIR += py-pytest-randomly
+    SUBDIR += py-pytest-recorder
+    SUBDIR += py-pytest-recording
     SUBDIR += py-pytest-regressions
     SUBDIR += py-pytest-regtest
     SUBDIR += py-pytest-relaxed
