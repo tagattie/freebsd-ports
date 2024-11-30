@@ -197,6 +197,7 @@
     SUBDIR += chgrep
     SUBDIR += choria
     SUBDIR += chyves
+    SUBDIR += cilium
     SUBDIR += cinnamon-control-center
     SUBDIR += cinnamon-settings-daemon
     SUBDIR += ciso
@@ -1311,7 +1312,6 @@
     SUBDIR += snmp_exporter
     SUBDIR += snooze
     SUBDIR += sockaddr
-    SUBDIR += socket
     SUBDIR += socklog
     SUBDIR += solaar
     SUBDIR += spcm
