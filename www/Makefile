@@ -108,6 +108,8 @@
     SUBDIR += civetweb
     SUBDIR += ckeditor
     SUBDIR += cl-lml
+    SUBDIR += cl-lml-ccl
+    SUBDIR += cl-lml-clisp
     SUBDIR += cl-lml-sbcl
     SUBDIR += clearsilver
     SUBDIR += closure-compiler
@@ -362,6 +364,7 @@
     SUBDIR += mediawiki139
     SUBDIR += mediawiki141
     SUBDIR += mediawiki142
+    SUBDIR += mediawiki143
     SUBDIR += mergelog
     SUBDIR += mhonarc
     SUBDIR += micro_httpd
