@@ -3891,7 +3891,6 @@ devel/py-jailconf||2025-01-02|Unknown, port deleted long time ago, entry added t
 devel/py-zeep||2025-01-02|Unknown, port deleted long time ago, entry added to clean up portscout.freebsd.org
 devel/rubygem-acts-as-taggable-on||2025-01-02|Unknown, port deleted long time ago, entry added to clean up portscout.freebsd.org
 devel/rubygem-google-apis-serviceusage_v1_041||2025-01-02|Unknown, port deleted long time ago, entry added to clean up portscout.freebsd.org
-devel/rubygem-validates_timeliness7||2025-01-02|Unknown, port deleted long time ago, entry added to clean up portscout.freebsd.org
 devel/sublime-merge||2025-01-02|Unknown, port deleted long time ago, entry added to clean up portscout.freebsd.org
 devel/vulkan-validation-layers||2025-01-02|Unknown, port deleted long time ago, entry added to clean up portscout.freebsd.org
 devel/xlocale||2025-01-02|Unknown, port deleted long time ago, entry added to clean up portscout.freebsd.org
@@ -4022,3 +4021,4 @@ devel/raknet||2025-01-15|Has expired: Unmaintained upstream, only builds with EO
 devel/pas2dox||2025-01-15|Has expired: doesn't compile with moddern clang and gcc, upstream last updated it in 2003
 x11-toolkits/kirigami-addons|x11-toolkits/kirigami-addons-qt5|2025-01-16|Moved to have symmetric names with Qt6
 x11-toolkits/kirigami-addons-devel|x11-toolkits/kirigami-addons-qt6|2025-01-16|Moved to have symmetric names with Qt6
+audio/guitarix-lv2||2025-01-18|Has expired: Broken for more than a year

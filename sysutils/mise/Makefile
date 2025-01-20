@@ -1,6 +1,6 @@
 PORTNAME=	mise
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2025.1.7
+DISTVERSION=	2025.1.9
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -57,7 +57,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		binstall-tar-0.4.42 \
 		bit-set-0.6.0 \
 		bit-vec-0.7.0 \
-		bitflags-2.7.0 \
+		bitflags-2.8.0 \
 		block-buffer-0.10.4 \
 		bstr-1.11.3 \
 		built-0.7.5 \
@@ -70,7 +70,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		bzip2-sys-0.1.11+1.0.8 \
 		calm_io-0.1.1 \
 		calmio_filters-0.1.0 \
-		cc-1.2.9 \
+		cc-1.2.10 \
 		cfg-if-1.0.0 \
 		cfg_aliases-0.2.1 \
 		chacha20-0.9.1 \
@@ -253,7 +253,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		jobserver-0.1.32 \
 		js-sys-0.3.77 \
 		junction-1.2.0 \
-		kdl-6.2.2 \
+		kdl-6.3.2 \
 		lazy-regex-3.4.1 \
 		lazy-regex-proc_macros-3.4.1 \
 		lazy_static-1.5.0 \
@@ -500,7 +500,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		type-map-0.5.0 \
 		typeid-1.0.2 \
 		typenum-1.17.0 \
-		ubi-0.3.0 \
+		ubi-0.4.0 \
 		ucd-trie-0.1.7 \
 		unic-char-property-0.9.0 \
 		unic-char-range-0.9.0 \
@@ -523,7 +523,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		utf16_iter-1.0.5 \
 		utf8_iter-1.0.4 \
 		utf8parse-0.2.2 \
-		valuable-0.1.0 \
+		valuable-0.1.1 \
 		vcpkg-0.2.15 \
 		version_check-0.9.5 \
 		versions-6.3.2 \
