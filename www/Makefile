@@ -71,8 +71,6 @@
     SUBDIR += badwolf
     SUBDIR += baikal
     SUBDIR += bareos-webui
-    SUBDIR += bareos20-webui
-    SUBDIR += bareos21-webui
     SUBDIR += bareos22-webui
     SUBDIR += bareos23-webui
     SUBDIR += beehive
@@ -2569,8 +2567,7 @@
     SUBDIR += webgrind
     SUBDIR += webhook
     SUBDIR += webinject
-    SUBDIR += webkit2-gtk3
-    SUBDIR += webkit2-gtk4
+    SUBDIR += webkit2-gtk
     SUBDIR += weblint++
     SUBDIR += webpy
     SUBDIR += webresolve
