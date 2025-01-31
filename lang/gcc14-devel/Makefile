@@ -1,5 +1,5 @@
 PORTNAME=	gcc
-PORTVERSION=	14.2.1.s20250118
+PORTVERSION=	14.2.1.s20250125
 PORTEPOCH=	1
 CATEGORIES=	lang
 MASTER_SITES=	GCC/snapshots/${DIST_VERSION}
@@ -79,10 +79,6 @@ CONFIGURE_TARGET=	x86_64-portbld-${OPSYS:tl}${OSREL}
 
 .elif ${ARCH} == powerpc64
 CONFIGURE_ARGS+=	--with-abi=elfv2
-USE_GCC=	yes
-
-.elif ${ARCH} == powerpc64le
-USE_GCC=	yes
 .endif
 
 .if ${ARCH} == i386
