@@ -48,6 +48,7 @@
     SUBDIR += R-cran-devtools
     SUBDIR += R-cran-diffobj
     SUBDIR += R-cran-doParallel
+    SUBDIR += R-cran-docopt
     SUBDIR += R-cran-ellipsis
     SUBDIR += R-cran-evaluate
     SUBDIR += R-cran-fansi
@@ -136,6 +137,7 @@
     SUBDIR += R-cran-sessioninfo
     SUBDIR += R-cran-sfsmisc
     SUBDIR += R-cran-sourcetools
+    SUBDIR += R-cran-sparsevctrs
     SUBDIR += R-cran-sys
     SUBDIR += R-cran-systemfonts
     SUBDIR += R-cran-testit
@@ -153,6 +155,7 @@
     SUBDIR += R-cran-vcd
     SUBDIR += R-cran-vctrs
     SUBDIR += R-cran-waldo
+    SUBDIR += R-cran-webfakes
     SUBDIR += R-cran-whisker
     SUBDIR += R-cran-whoami
     SUBDIR += R-cran-withr
@@ -619,7 +622,6 @@
     SUBDIR += doctest
     SUBDIR += doctorj
     SUBDIR += dolphin-plugins
-    SUBDIR += dolphin-plugins-devel
     SUBDIR += dotconf
     SUBDIR += double-conversion
     SUBDIR += doxygen
@@ -731,6 +733,7 @@
     SUBDIR += freebsd-git-devtools
     SUBDIR += freebsd-sysroot
     SUBDIR += frink
+    SUBDIR += fruit
     SUBDIR += fsmtrie
     SUBDIR += fstrcmp
     SUBDIR += fstrm
@@ -939,6 +942,7 @@
     SUBDIR += gradle6
     SUBDIR += gradle62
     SUBDIR += gradle761
+    SUBDIR += gradle8
     SUBDIR += grantlee5
     SUBDIR += grcov
     SUBDIR += grex
@@ -1044,6 +1048,7 @@
     SUBDIR += ipython
     SUBDIR += ireport
     SUBDIR += isa-l
+    SUBDIR += isa-l_crypto
     SUBDIR += iscd-commons
     SUBDIR += isfreedesktop
     SUBDIR += isl
@@ -1166,6 +1171,7 @@
     SUBDIR += kodi-platform
     SUBDIR += kokkos
     SUBDIR += kommit
+    SUBDIR += kopeninghours
     SUBDIR += kore
     SUBDIR += kpublictransport
     SUBDIR += kronosnet
@@ -1566,6 +1572,7 @@
     SUBDIR += linux_libusb
     SUBDIR += listserialc
     SUBDIR += liteide
+    SUBDIR += llama.el
     SUBDIR += llbuild
     SUBDIR += lldb-mi
     SUBDIR += llnextgen
@@ -2574,6 +2581,7 @@
     SUBDIR += p5-ExtUtils-Constant
     SUBDIR += p5-ExtUtils-CppGuess
     SUBDIR += p5-ExtUtils-Depends
+    SUBDIR += p5-ExtUtils-H2PM
     SUBDIR += p5-ExtUtils-HasCompiler
     SUBDIR += p5-ExtUtils-Helpers
     SUBDIR += p5-ExtUtils-Install
@@ -2989,6 +2997,7 @@
     SUBDIR += p5-Module-Build
     SUBDIR += p5-Module-Build-Convert
     SUBDIR += p5-Module-Build-Kwalitee
+    SUBDIR += p5-Module-Build-Parse-Yapp
     SUBDIR += p5-Module-Build-Pluggable
     SUBDIR += p5-Module-Build-Pluggable-CPANfile
     SUBDIR += p5-Module-Build-Pluggable-ReadmeMarkdownFromPod
@@ -3727,6 +3736,7 @@
     SUBDIR += p5-Test-Pod
     SUBDIR += p5-Test-Pod-Coverage
     SUBDIR += p5-Test-Pod-Coverage-Permissive
+    SUBDIR += p5-Test-Pod-Links
     SUBDIR += p5-Test-Portability-Files
     SUBDIR += p5-Test-Prereq
     SUBDIR += p5-Test-RandomResults
@@ -3933,6 +3943,7 @@
     SUBDIR += p5-XS-Parse-Keyword
     SUBDIR += p5-XS-Parse-Sublike
     SUBDIR += p5-XSLoader
+    SUBDIR += p5-XT-Files
     SUBDIR += p5-XXX
     SUBDIR += p5-Xporter
     SUBDIR += p5-YAML-AppConfig
@@ -4302,9 +4313,6 @@
     SUBDIR += pkgconf
     SUBDIR += plan9port
     SUBDIR += plasma
-    SUBDIR += plasma5-khotkeys
-    SUBDIR += plasma5-kwrited
-    SUBDIR += plasma5-plasma-sdk
     SUBDIR += plasma6-kwrited
     SUBDIR += plasma6-plasma-sdk
     SUBDIR += plasma6-plasma5support
@@ -5005,6 +5013,7 @@
     SUBDIR += py-icalendar
     SUBDIR += py-ice
     SUBDIR += py-ice37
+    SUBDIR += py-id
     SUBDIR += py-identify
     SUBDIR += py-ijson
     SUBDIR += py-imgkit
