@@ -1182,9 +1182,6 @@
     SUBDIR += lager
     SUBDIR += laminar
     SUBDIR += lasi
-    SUBDIR += lattice-ice40-examples-hx1k
-    SUBDIR += lattice-ice40-examples-hx8k
-    SUBDIR += lattice-ice40-tools
     SUBDIR += lazygit
     SUBDIR += lcov
     SUBDIR += leaktracer
@@ -4796,6 +4793,8 @@
     SUBDIR += py-distributed
     SUBDIR += py-dj50-django-rq
     SUBDIR += py-dj50-strawberry-graphql
+    SUBDIR += py-dj51-django-rq
+    SUBDIR += py-dj51-strawberry-graphql
     SUBDIR += py-django-rq
     SUBDIR += py-dm-tree
     SUBDIR += py-docformatter
@@ -6171,6 +6170,9 @@
     SUBDIR += py-xerox
     SUBDIR += py-xmltodict
     SUBDIR += py-xsdata
+    SUBDIR += py-xsdata-attrs
+    SUBDIR += py-xsdata-plantuml
+    SUBDIR += py-xsdata-pydantic
     SUBDIR += py-xstatic
     SUBDIR += py-xstatic-angular
     SUBDIR += py-xstatic-angular-bootstrap
@@ -7134,7 +7136,6 @@
     SUBDIR += rubygem-cucumber-messages22
     SUBDIR += rubygem-cucumber-messages24
     SUBDIR += rubygem-cucumber-messages25
-    SUBDIR += rubygem-cucumber-messages26
     SUBDIR += rubygem-cucumber-rails
     SUBDIR += rubygem-cucumber-tag-expressions
     SUBDIR += rubygem-cucumber-wire
