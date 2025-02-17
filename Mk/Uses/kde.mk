@@ -85,13 +85,17 @@ KDE_APPLICATIONS_BRANCH?=	${KDE_APPLICATIONS6_BRANCH}
 KDE_APPLICATIONS_VERSION?=	${KDE_APPLICATIONS6_VERSION}
 KDE_APPLICATIONS_SHLIB_VER?=	${KDE_APPLICATIONS6_SHLIB_VER}
 KDE_APPLICATIONS_SHLIB_G_VER?=	${KDE_APPLICATIONS6_SHLIB_G_VER}
+# Some projects despite being a part of Gear distribution continue to use
+# their own versioning with mangled KDE_APPLICATIONS_VERSION as a patchlevel.
+# Provide more variables to ease their maintenance.
+KDE_APPS_BASED_PATCHLEVEL?=	${KDE_APPLICATIONS_VERSION:R:S/.//}0${KDE_APPLICATIONS_VERSION:E}
 
 # Legacy KDE Plasma.
 KDE_PLASMA5_VERSION?=		5.27.12
 KDE_PLASMA5_BRANCH?=		stable
 
 # Current KDE Plasma desktop.
-KDE_PLASMA6_VERSION?=		6.2.5
+KDE_PLASMA6_VERSION?=		6.3.0
 KDE_PLASMA6_BRANCH?=		stable
 
 # Legacy KDE frameworks (Qt5 based).
@@ -102,7 +106,8 @@ KDE_FRAMEWORKS5_BRANCH?=	stable
 KDE_FRAMEWORKS6_VERSION?=	6.10.0
 KDE_FRAMEWORKS6_BRANCH?=	stable
 
-# Current KDE applications.
+# Current KDE applications. Update _${PORTNAME}_PROJECT_VERSION for the following ports:
+# devel/kdevelop, games/libkdegames, games/libkmahjongg, graphics/kgraphviewer
 KDE_APPLICATIONS6_VERSION?=	24.12.2
 KDE_APPLICATIONS6_SHLIB_VER?=	6.3.2
 # G as in KDE Gear, and as in "don't make the variable name longer than required".
@@ -181,6 +186,9 @@ USE_KDE+=		doctools:build
 # Further pass along a SHLIB_VER PLIST_SUB
 PLIST_SUB+=		KDE_APPLICATIONS_SHLIB_VER=${KDE_APPLICATIONS_SHLIB_VER} \
 			KDE_APPLICATIONS_VERSION_SHORT="${KDE_APPLICATIONS_VERSION:R:R}"
+.        if defined(_${PORTNAME}_PROJECT_VERSION)
+PLIST_SUB+=		SHLIB_VER_LONG=${_${PORTNAME}_PROJECT_VERSION}.${KDE_APPS_BASED_PATCHLEVEL}
+.        endif
 DIST_SUBDIR?=		KDE/release-service/${KDE_APPLICATIONS_VERSION}
 .      elif ${_KDE_CATEGORY:Mkde-plasma}
 PORTVERSION?=		${KDE_PLASMA_VERSION}
@@ -657,7 +665,7 @@ kde-breeze-gtk_PORT=		x11-themes/plasma${_KDE_VERSION}-breeze-gtk
 kde-breeze-gtk_PATH=		${KDE_PREFIX}/share/themes/Breeze/gtk-2.0/gtkrc
 
 kde-decoration_PORT=		x11-wm/plasma${_KDE_VERSION}-kdecoration
-kde-decoration_LIB=		libkdecorations2.so
+kde-decoration_LIB=		libkdecorations3.so
 
 kde-discover_PORT=		sysutils/plasma${_KDE_VERSION}-discover
 kde-discover_PATH=		${KDE_PREFIX}/bin/plasma-discover
