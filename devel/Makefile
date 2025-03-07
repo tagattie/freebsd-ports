@@ -8282,6 +8282,7 @@
     SUBDIR += tinycbor
     SUBDIR += tinygo
     SUBDIR += tinylaf
+    SUBDIR += tinysparql
     SUBDIR += tkcon
     SUBDIR += tkcvs
     SUBDIR += tkp4

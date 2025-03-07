@@ -64,7 +64,7 @@ LDAP_CFLAGS=		-I${LOCALBASE}/include -L${LOCALBASE}/lib
 LDAP_USES=	ldap
 SENDFILE_MESON_OFF=-Dwith-sendfile=false
 DBUS_USES=	gnome python
-DBUS_USE=	GNOME=glib20
+DBUS_USE=	GNOME+=glib20
 DBUS_LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib \
 			libdbus-1.so:devel/dbus
 DBUS_RUN_DEPENDS=	${PYTHON_SITELIBDIR}/dbus/_dbus.py:devel/py-dbus@${PY_FLAVOR}
@@ -76,7 +76,7 @@ MYSQL_MESON_OFF=-Dwith-cnid-mysql-backend=false
 ACL_LIB_DEPENDS=	libsunacl.so:sysutils/libsunacl
 ACL_MESON_OFF=-Dwith-acls=false
 LIBWRAP_MESON_OFF=-Dwith-tcp-wrappers=false
-SPOTLIGHT_LIB_DEPENDS=	libtracker-sparql-3.0.so:sysutils/tracker3
+SPOTLIGHT_LIB_DEPENDS=	libtinysparql-3.0.so:devel/tinysparql
 SPOTLIGHT_MESON_OFF=	-Dwith-spotlight=false
 
 SHEBANG_GLOB=	afpstats
