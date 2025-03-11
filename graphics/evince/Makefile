@@ -1,5 +1,6 @@
 PORTNAME=	evince
 DISTVERSION=	46.3.1
+PORTREVISION=	1
 CATEGORIES=	graphics print gnome
 MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
 DIST_SUBDIR=	gnome
@@ -51,7 +52,7 @@ PKGNAMESUFFIX=		-lite
 COMMENT+=		without GNOME dependencies
 CONFLICTS_INSTALL=	evince
 .else
-USE_GNOME+=		introspection:build
+USE_GNOME+=		introspection:build gnomedesktop3
 MESON_ARGS+=		-Dintrospection=true
 CONFLICTS_INSTALL=	evince-lite
 .endif
