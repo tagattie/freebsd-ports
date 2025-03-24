@@ -2443,7 +2443,6 @@
     SUBDIR += snarf
     SUBDIR += so
     SUBDIR += sogo
-    SUBDIR += sogo-activesync
     SUBDIR += sogo2
     SUBDIR += sogo2-activesync
     SUBDIR += spawn-fcgi
@@ -2637,6 +2636,7 @@
     SUBDIR += yaws
     SUBDIR += you-get
     SUBDIR += yourls
+    SUBDIR += youtube
     SUBDIR += yt-dlp
     SUBDIR += ytdl
     SUBDIR += yuicompressor
