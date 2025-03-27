@@ -1,6 +1,6 @@
 PORTNAME=	rash
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.9.5
+DISTVERSION=	2.9.6
 CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -10,6 +10,8 @@ WWW=		https://rash-sh.github.io \
 
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+BROKEN_i386=	compilation fails, see https://github.com/japaric/syscall.rs/issues/37
 
 USES=		cargo
 
