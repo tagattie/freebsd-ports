@@ -223,6 +223,7 @@
     SUBDIR += glassfish4
     SUBDIR += glpi
     SUBDIR += gnome-user-share
+    SUBDIR += go-anubis
     SUBDIR += go-www
     SUBDIR += gobuffalo
     SUBDIR += gohugo
@@ -1666,6 +1667,7 @@
     SUBDIR += py-django42
     SUBDIR += py-django50
     SUBDIR += py-django51
+    SUBDIR += py-django52
     SUBDIR += py-django_compressor
     SUBDIR += py-djangocms-admin-style
     SUBDIR += py-djangoql
