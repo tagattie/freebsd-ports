@@ -1,6 +1,6 @@
 PORTNAME=	llama-cpp
 DISTVERSIONPREFIX=	b
-DISTVERSION=	5022
+DISTVERSION=	5106
 CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -24,8 +24,14 @@ GH_TUPLE=	nomic-ai:kompute:4565194:kompute/kompute
 SHEBANG_GLOB=	*.py
 
 CMAKE_ON=	BUILD_SHARED_LIBS
-CMAKE_OFF=	LLAMA_BUILD_TESTS
+CMAKE_OFF=	GGML_NATIVE \
+		FREEBSD_ALLOW_ADVANCED_CPU_FEATURES \
+		LLAMA_BUILD_TESTS
 CMAKE_TESTING_ON=	LLAMA_BUILD_TESTS
+
+# user for llama-server, only used when EXAMPLES=ON
+USER=		nobody
+SUB_LIST=	USER=${USER}
 
 OPTIONS_DEFINE=		CURL EXAMPLES VULKAN
 OPTIONS_DEFAULT=	CURL VULKAN
@@ -50,6 +56,12 @@ BINARY_ALIAS=	git=false \
 do-test-ci: # build of tests fails, see https://github.com/ggerganov/llama.cpp/issues/10955
 	@cd ${WRKSRC} && \
 		${SETENV} ${MAKE_ENV} bash ci/run.sh ./tmp/results ./tmp/mnt
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MEXAMPLES}
+USE_RC_SUBR=	llama-server
+.endif
 
 # tests as of 4458: 97% tests passed, 1 tests failed out of 31, see https://github.com/ggerganov/llama.cpp/issues/11036
 
