@@ -4162,6 +4162,7 @@ sysutils/shim||2025-02-22|Has expired: upstream has been inactive for 10 years a
 devel/py-python-gilt|devel/gilt|2025-02-23|Project switched language from python to go
 textproc/uim-gtk|textproc/uim-gtk2|2025-02-23|Rename with versioned suffix
 x11-toolkits/scenefx|x11-toolkits/scenefx02|2025-02-25|Renamed to match versioned API
+textproc/rubygem-rexml-gitlab|textproc/rubygem-rexml|2025-02-25|Use textproc/rubygem-rexml
 www/kdsoap@qt5||2025-02-26|Qt5 flavor is no longer needed
 www/kdsoap@qt6|www/kdsoap|2025-02-26|Unflavorize; only Qt6 support is needed
 net/drive||2025-02-28|Remove expired port
@@ -4305,3 +4306,4 @@ databases/rubygem-scenic61||2025-04-04|Has expired: Uses EOL version 6.1.X of Ra
 devel/py-blist||2025-04-04|Has expired: Abandoned project, no consumers, no modern python support
 textproc/rubygem-case_transform61||2025-04-04|Has expired: Uses EOL version 6.1.X of Rails
 lang/python-doc-pdf-letter|lang/python-doc-pdf-a4|2025-04-09|Letter-size PDF no longer provided since 3.12
+net-im/py-punjab||2025-04-13|Has expired: Abandoned project, not compatible with decent python/twisted
