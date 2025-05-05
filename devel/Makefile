@@ -200,6 +200,7 @@
     SUBDIR += apache-rat
     SUBDIR += aphpbreakdown
     SUBDIR += aphpunit
+    SUBDIR += api-linter
     SUBDIR += api-sanity-autotest
     SUBDIR += apitrace
     SUBDIR += app-builder
@@ -393,7 +394,6 @@
     SUBDIR += ccache-static
     SUBDIR += ccache4
     SUBDIR += cccc
-    SUBDIR += ccdoc
     SUBDIR += ccls
     SUBDIR += cctz
     SUBDIR += cdecl
@@ -954,6 +954,7 @@
     SUBDIR += grcov
     SUBDIR += grex
     SUBDIR += grpc
+    SUBDIR += grpc-gateway
     SUBDIR += gsettings-desktop-schemas
     SUBDIR += gsl-lite
     SUBDIR += gsoap
@@ -4335,9 +4336,11 @@
     SUBDIR += projectcenter
     SUBDIR += protobuf
     SUBDIR += protobuf-c
+    SUBDIR += protobuf-go
     SUBDIR += protobuf-java
     SUBDIR += protobuf25
     SUBDIR += protobuf3
+    SUBDIR += protoc-gen-go-grpc
     SUBDIR += prototool
     SUBDIR += protozero
     SUBDIR += pructl
@@ -4842,6 +4845,7 @@
     SUBDIR += py-epc
     SUBDIR += py-epdb
     SUBDIR += py-epsilon
+    SUBDIR += py-etcd3gw
     SUBDIR += py-etils
     SUBDIR += py-etuples
     SUBDIR += py-evdev
@@ -8058,7 +8062,6 @@
     SUBDIR += rubygem-web-console3-rails5
     SUBDIR += rubygem-web-console3-rails50
     SUBDIR += rubygem-web-console3-rails52
-    SUBDIR += rubygem-webby
     SUBDIR += rubygem-webfinger
     SUBDIR += rubygem-webpacker-rails60
     SUBDIR += rubygem-webpacker-rails61
