@@ -1,6 +1,6 @@
 PORTNAME=	virtualbox-ose
 DISTVERSION=	7.0.26
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES=	emulators
 MASTER_SITES=	https://download.virtualbox.org/virtualbox/${DISTVERSION}/:src \
 		LOCAL/vvd:docs
@@ -28,7 +28,7 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 		libcurl.so:ftp/curl
 RUN_DEPENDS=	${LOCALBASE}/etc/rc.d/vboxnet:emulators/virtualbox-ose-kmod-70
 
-USES=		compiler:c++14-lang cpe gnome iconv qt:5 pkgconfig ssl tar:bzip2
+USES=		compiler:c++14-lang cpe gnome iconv pkgconfig qt:5 ssl tar:bzip2
 CPE_VENDOR=	oracle
 CPE_PRODUCT=	vm_virtualbox
 USE_BINUTILS=	yes
@@ -93,14 +93,14 @@ AIO_DESC=		Enable Asyncronous IO support (check pkg-message)
 DEBUG_DESC=		Debug symbols, additional logs and assertions
 GUESTADDITIONS_DESC=	Build with Guest Additions
 NLS_DESC=		Native language support (requires QT5)
-OGG_DESC=		Use libogg for audio recording
+OGG_DESC=		Use libogg from audio/libogg instead of bundled one
 QT5_DESC=		Build with QT5 frontend (requires X11)
 R0LOGGING_DESC=		Enable R0 logging (requires DEBUG)
 UDPTUNNEL_DESC=		Build with UDP tunnel support
 VBOXIMG_DESC=		Build vboximg-mount (requires fuse-libs)
 VDE_DESC=		Build with VDE support
 VNC_DESC=		Build with VNC support
-VORBIS_DESC=		Use libvorbis for audio recording
+VORBIS_DESC=		Use libvorbis from audio/libvorbis instead of bundled one
 VPX_DESC=		Use libvpx for video recording
 WEBSERVICE_DESC=	Build Webservice
 
