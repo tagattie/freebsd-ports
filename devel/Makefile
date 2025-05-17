@@ -660,6 +660,7 @@
     SUBDIR += electron33
     SUBDIR += electron34
     SUBDIR += electron35
+    SUBDIR += electron36
     SUBDIR += elf
     SUBDIR += elf-dissector
     SUBDIR += elfcat
@@ -6058,6 +6059,7 @@
     SUBDIR += py-twisted
     SUBDIR += py-txaio
     SUBDIR += py-txi2p-tahoe
+    SUBDIR += py-ty
     SUBDIR += py-typechecks
     SUBDIR += py-typeguard
     SUBDIR += py-typer
