@@ -4308,6 +4308,7 @@
     SUBDIR += php84-tokenizer
     SUBDIR += phpunit10
     SUBDIR += phpunit11
+    SUBDIR += phpunit12
     SUBDIR += phpunit8
     SUBDIR += phpunit9
     SUBDIR += physfs
@@ -6427,6 +6428,7 @@
     SUBDIR += rubygem-abstract
     SUBDIR += rubygem-actionpack-action_caching
     SUBDIR += rubygem-actionpack-page_caching
+    SUBDIR += rubygem-actionview-gitlab
     SUBDIR += rubygem-actionview4
     SUBDIR += rubygem-actionview5
     SUBDIR += rubygem-actionview50
@@ -6439,6 +6441,7 @@
     SUBDIR += rubygem-actionview80
     SUBDIR += rubygem-active_hash
     SUBDIR += rubygem-active_scaffold
+    SUBDIR += rubygem-activejob-gitlab
     SUBDIR += rubygem-activejob4
     SUBDIR += rubygem-activejob5
     SUBDIR += rubygem-activejob50
@@ -6451,6 +6454,7 @@
     SUBDIR += rubygem-activejob80
     SUBDIR += rubygem-activemessaging
     SUBDIR += rubygem-activerecord-deprecated_finders
+    SUBDIR += rubygem-activesupport-gitlab
     SUBDIR += rubygem-activesupport4
     SUBDIR += rubygem-activesupport5
     SUBDIR += rubygem-activesupport50
@@ -6880,6 +6884,7 @@
     SUBDIR += rubygem-aws-sdk-sqs
     SUBDIR += rubygem-aws-sdk-ssm
     SUBDIR += rubygem-aws-sdk-ssmcontacts
+    SUBDIR += rubygem-aws-sdk-ssmguiconnect
     SUBDIR += rubygem-aws-sdk-ssmincidents
     SUBDIR += rubygem-aws-sdk-ssmquicksetup
     SUBDIR += rubygem-aws-sdk-ssmsap
@@ -7207,6 +7212,7 @@
     SUBDIR += rubygem-device_detector
     SUBDIR += rubygem-devise
     SUBDIR += rubygem-devise-pwned_password
+    SUBDIR += rubygem-devise-rails-gitlab
     SUBDIR += rubygem-devise-rails5
     SUBDIR += rubygem-devise-rails52
     SUBDIR += rubygem-devise-rails60
@@ -7291,6 +7297,7 @@
     SUBDIR += rubygem-flexmock
     SUBDIR += rubygem-flipper
     SUBDIR += rubygem-flipper-active_support_cache_store
+    SUBDIR += rubygem-flipper-active_support_cache_store-rails-gitlab
     SUBDIR += rubygem-flipper-active_support_cache_store-rails70
     SUBDIR += rubygem-flipper-gitlab
     SUBDIR += rubygem-flipper-ui
@@ -7430,6 +7437,7 @@
     SUBDIR += rubygem-hashie-forbidden_attributes
     SUBDIR += rubygem-hashie4
     SUBDIR += rubygem-health_check
+    SUBDIR += rubygem-health_check-rails-gitlab
     SUBDIR += rubygem-health_check-rails70
     SUBDIR += rubygem-heapy
     SUBDIR += rubygem-highline
@@ -7466,6 +7474,7 @@
     SUBDIR += rubygem-iostruct
     SUBDIR += rubygem-ipynbdiff
     SUBDIR += rubygem-irb
+    SUBDIR += rubygem-irb-gitlab
     SUBDIR += rubygem-iso8601
     SUBDIR += rubygem-jaeger-client
     SUBDIR += rubygem-jammit
@@ -7684,6 +7693,7 @@
     SUBDIR += rubygem-peek-gc-rails52
     SUBDIR += rubygem-peek-host
     SUBDIR += rubygem-peek-performance_bar
+    SUBDIR += rubygem-peek-rails-gitlab
     SUBDIR += rubygem-peek-rails4
     SUBDIR += rubygem-peek-rails52
     SUBDIR += rubygem-peek-rails60
@@ -7738,6 +7748,7 @@
     SUBDIR += rubygem-rails-deprecated_sanitizer
     SUBDIR += rubygem-rails-deprecated_sanitizer-rails5
     SUBDIR += rubygem-rails-deprecated_sanitizer-rails50
+    SUBDIR += rubygem-rails-i18n-rails-gitlab
     SUBDIR += rubygem-rails-i18n-rails5
     SUBDIR += rubygem-rails-i18n-rails50
     SUBDIR += rubygem-rails-i18n-rails52
@@ -7764,6 +7775,7 @@
     SUBDIR += rubygem-rbtrace
     SUBDIR += rubygem-rbtree
     SUBDIR += rubygem-rdoc
+    SUBDIR += rubygem-rdoc-gitlab
     SUBDIR += rubygem-re2
     SUBDIR += rubygem-react-rails
     SUBDIR += rubygem-react-rails-rails5
@@ -7883,6 +7895,7 @@
     SUBDIR += rubygem-sidekiq
     SUBDIR += rubygem-sidekiq-bulk
     SUBDIR += rubygem-sidekiq-cron
+    SUBDIR += rubygem-sidekiq-cron-rails-gitlab
     SUBDIR += rubygem-sidekiq-cron-rails70
     SUBDIR += rubygem-sidekiq-gitlab
     SUBDIR += rubygem-sidekiq-scheduler
@@ -7917,6 +7930,7 @@
     SUBDIR += rubygem-sprockets
     SUBDIR += rubygem-sprockets-es6
     SUBDIR += rubygem-sprockets-helpers
+    SUBDIR += rubygem-sprockets-rails-rails-gitlab
     SUBDIR += rubygem-sprockets-rails-rails4
     SUBDIR += rubygem-sprockets-rails-rails5
     SUBDIR += rubygem-sprockets-rails-rails50
@@ -8054,7 +8068,7 @@
     SUBDIR += rubygem-validates_timeliness7
     SUBDIR += rubygem-version_gem
     SUBDIR += rubygem-versionomy
-    SUBDIR += rubygem-view_component-rails70
+    SUBDIR += rubygem-view_component-rails-gitlab
     SUBDIR += rubygem-virtus
     SUBDIR += rubygem-vite_rails-rails70
     SUBDIR += rubygem-vite_ruby
@@ -8177,6 +8191,7 @@
     SUBDIR += skypat
     SUBDIR += slf4j
     SUBDIR += slibtool
+    SUBDIR += sltdl
     SUBDIR += smake
     SUBDIR += smc
     SUBDIR += smooth
