@@ -5338,7 +5338,6 @@
     SUBDIR += py-opencensus-context
     SUBDIR += py-opendht
     SUBDIR += py-openstacksdk
-    SUBDIR += py-oslex
     SUBDIR += py-opentelemetry-api
     SUBDIR += py-opentelemetry-exporter-otlp
     SUBDIR += py-opentelemetry-exporter-otlp-proto-common
@@ -7499,6 +7498,7 @@
     SUBDIR += rubygem-jruby-jars
     SUBDIR += rubygem-json
     SUBDIR += rubygem-json-canonicalization
+    SUBDIR += rubygem-json-gitlab
     SUBDIR += rubygem-json-schema
     SUBDIR += rubygem-json1
     SUBDIR += rubygem-json27
