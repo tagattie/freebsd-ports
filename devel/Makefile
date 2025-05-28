@@ -5958,6 +5958,7 @@
     SUBDIR += py-spyder-kernels
     SUBDIR += py-spyder-unittest
     SUBDIR += py-sqids
+    SUBDIR += py-sqlfluff
     SUBDIR += py-squint
     SUBDIR += py-sre-yield
     SUBDIR += py-srsly
@@ -6161,6 +6162,7 @@
     SUBDIR += py-vsts-cd-manager
     SUBDIR += py-vulture
     SUBDIR += py-wadllib
+    SUBDIR += py-wait-for2
     SUBDIR += py-warlock
     SUBDIR += py-watchdog
     SUBDIR += py-watchfiles
