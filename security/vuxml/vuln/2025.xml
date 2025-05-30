@@ -1,3 +1,254 @@
+  <vuln vid="4864aec7-3d80-11f0-9a55-b42e991fc52e">
+    <topic>Chrome -- Heap corruption exploitation</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>137.0.7151.55</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>chrome-cve-admin@google.com reports:</p>
+	<blockquote cite="https://chromereleases.googleblog.com/2025/05/stable-channel-update-for-desktop_27.html">
+	  <p>Use after free in Compositing in Google Chrome prior to
+	  137.0.7151.55 allowed a remote attacker to potentially
+	  exploit heap corruption via a crafted HTML page.
+	  (Chromium security severity: High)</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-5063</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-5063</url>
+    </references>
+    <dates>
+      <discovery>2025-05-27</discovery>
+      <entry>2025-05-30</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="a6e1b7ee-3d7c-11f0-9a55-b42e991fc52e">
+    <topic>Mozilla -- memory corruption</topic>
+    <affects>
+      <package>
+	<name>firefox-esr</name>
+	<range><lt>128.11.0</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<range><lt>128.11.0</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>security@mozilla.org reports:</p>
+	<blockquote cite="https://bugzilla.mozilla.org/show_bug.cgi?id=1924108">
+	  <p>Memory safety bug present in Firefox ESR 128.10, and
+	  Thunderbird 128.10.
+	  This bug showed evidence of memory corruption and we presume
+	  that with enough effort this could have been exploited to run
+	  arbitrary code.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-5269</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-5269</url>
+    </references>
+    <dates>
+      <discovery>2025-05-27</discovery>
+      <entry>2025-05-30</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="a5b553e5-3d7c-11f0-9a55-b42e991fc52e">
+    <topic>Mozilla -- Memory safety bugs</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>139.0,2</lt></range>
+      </package>
+      <package>
+	<name>firefox-esr</name>
+	<range><lt>128.11</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<range><lt>128.11</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>security@mozilla.org reports:</p>
+	<blockquote cite="https://bugzilla.mozilla.org/buglist.cgi?bug_id=1950136%2C1958121%2C1960499%2C1962634">
+	  <p>Memory safety bugs present in Firefox 138, Thunderbird
+	  138, Firefox ESR 128.10, and Thunderbird 128.10.
+	  Some of these bugs showed evidence of memory corruption and
+	  we presume that with enough effort some of these could have
+	  been exploited to run arbitrary code.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-5268</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-5268</url>
+    </references>
+    <dates>
+      <discovery>2025-05-27</discovery>
+      <entry>2025-05-30</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="a470ac63-3d7c-11f0-9a55-b42e991fc52e">
+    <topic>Firefox -- unencrypted SNI</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>139.0,2</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>security@mozilla.org reports:</p>
+	<blockquote cite="https://bugzilla.mozilla.org/show_bug.cgi?id=1910298">
+	  <p>In certain cases, SNI could have been sent unencrypted
+	  even when encrypted DNS was enabled.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-5270</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-5270</url>
+    </references>
+    <dates>
+      <discovery>2025-05-27</discovery>
+      <entry>2025-05-30</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="a3291f81-3d7c-11f0-9a55-b42e991fc52e">
+    <topic>Firefox -- content injection attack</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>139.0,2</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>security@mozilla.org reports:</p>
+	<blockquote cite="https://bugzilla.mozilla.org/show_bug.cgi?id=1920348">
+	  <p>Previewing a response in Devtools ignored CSP headers,
+	  which could have allowed content injection attacks.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-5271</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-5271</url>
+    </references>
+    <dates>
+      <discovery>2025-05-27</discovery>
+      <entry>2025-05-30</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="a14dbea7-3d7c-11f0-9a55-b42e991fc52e">
+    <topic>Mozilla -- Memory safety bugs</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>139.0,2</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<range><lt>129.0</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>security@mozilla.org reports:</p>
+	<blockquote cite="https://bugzilla.mozilla.org/buglist.cgi?bug_id=1726254%2C1742738%2C1960121">
+	  <p>Memory safety bugs present in Firefox 138 and Thunderbird
+	  138. Some of these bugs showed evidence of memory corruption
+	  and we presume that with enough effort some of these could
+	  have been exploited to run arbitrary code.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-5272</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-5272</url>
+    </references>
+    <dates>
+      <discovery>2025-05-27</discovery>
+      <entry>2025-05-30</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="a372abb0-3d3c-11f0-86e7-b42e991fc52e">
+    <topic>ModSecurity -- Possible DoS Vulnerability</topic>
+    <affects>
+      <package>
+	<name>ap24-mod_security</name>
+	<range><lt>2.9.8</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>security-advisories@github.com reports:</p>
+	<blockquote cite="https://github.com/owasp-modsecurity/ModSecurity/pull/3389">
+	  <p>ModSecurity is an open source, cross platform web application
+	firewall (WAF) engine for Apache, IIS and Nginx.  Versions up to
+	and including 2.9.8 are vulnerable to denial of service in one
+	special case (in stable released versions): when the payload&apos;s
+	content type is `application/json`, and there is at least one rule
+	which does a `sanitiseMatchedBytes` action.  A patch is available
+	at pull request 3389 and expected to be part of version 2.9.9.  No
+	known workarounds are available.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-47947</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-47947</url>
+    </references>
+    <dates>
+      <discovery>2025-05-21</discovery>
+      <entry>2025-05-30</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="67dd7a9e-3cd8-11f0-b601-5404a68ad561">
+    <topic>traefik -- Path traversal vulnerability</topic>
+    <affects>
+      <package>
+	<name>traefik</name>
+	<range><lt>3.4.1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The traefik project reports:</p>
+	<blockquote cite="https://github.com/traefik/traefik/security/advisories/GHSA-vrch-868g-9jx5">
+	  <p>There is a potential vulnerability in Traefik managing the requests
+	  using a PathPrefix, Path or PathRegex matcher. When Traefik is configured
+	  to route the requests to a backend using a matcher based on the path, if
+	  the URL contains a URL encoded string in its path, it's possible to target
+	  a backend, exposed using another router, by-passing the middlewares chain.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-47952</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-47952</url>
+    </references>
+    <dates>
+      <discovery>2025-05-27</discovery>
+      <entry>2025-05-29</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="c36decbe-3c84-11f0-8d29-b42e991fc52e">
     <topic>glpi-project -- GLPI multiple vulnerabilities</topic>
     <affects>
@@ -158,11 +409,11 @@
 	<body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Internet Systems Consortium, Inc. reports:</p>
 	<blockquote cite="https://kb.isc.org/docs/">
-          <p><ul>
-	  <li>Loading a malicious hook library can lead to local privilege escalation https://kb.isc.org/docs/cve-2025-32801</li>
-	  <li>Insecure handling of file paths allows multiple local attacks https://kb.isc.org/docs/cve-2025-32802</li>
-	  <li>Insecure file permissions can result in confidential information leakage https://kb.isc.org/docs/cve-2025-32803</li>
-          </ul></p>
+	<ul>
+	    <li>Loading a malicious hook library can lead to local privilege escalation https://kb.isc.org/docs/cve-2025-32801</li>
+	    <li>Insecure handling of file paths allows multiple local attacks https://kb.isc.org/docs/cve-2025-32802</li>
+	    <li>Insecure file permissions can result in confidential information leakage https://kb.isc.org/docs/cve-2025-32803</li>
+	</ul>
 	</blockquote>
 	</body>
     </description>
