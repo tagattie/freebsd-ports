@@ -4828,6 +4828,7 @@
     SUBDIR += py-doit
     SUBDIR += py-domdf-python-tools
     SUBDIR += py-donut-shellcode
+    SUBDIR += py-dotmap
     SUBDIR += py-dotted
     SUBDIR += py-dotty-dict
     SUBDIR += py-dpcontracts
@@ -5929,6 +5930,7 @@
     SUBDIR += py-sgmllib3k
     SUBDIR += py-sgqlc
     SUBDIR += py-sh
+    SUBDIR += py-shandy-sqlfmt
     SUBDIR += py-shapely
     SUBDIR += py-shellingham
     SUBDIR += py-shpyx
@@ -5960,7 +5962,7 @@
     SUBDIR += py-spyder-kernels
     SUBDIR += py-spyder-unittest
     SUBDIR += py-sqids
-    SUBDIR += py-sqlfluff
+    SUBDIR += py-sqlfmt
     SUBDIR += py-squint
     SUBDIR += py-sre-yield
     SUBDIR += py-srsly

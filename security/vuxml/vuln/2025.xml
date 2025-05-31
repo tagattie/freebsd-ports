@@ -1,3 +1,139 @@
+  <vuln vid="2926c487-3e53-11f0-95d4-00a098b42aeb">
+    <topic>libxml2 -- Out-of-bounds memory access</topic>
+    <affects>
+      <package>
+	<name>libxml2</name>
+	<range><lt>2.14.2</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>cve@mitre.org reports:</p>
+	<blockquote cite="https://gitlab.gnome.org/GNOME/libxml2/-/issues/889">
+	  <p>In libxml2 before 2.13.8 and 2.14.x before 2.14.2, out-of-bounds
+	memory access can occur in the Python API (Python bindings) because
+	of an incorrect return value.  This occurs in xmlPythonFileRead and
+	xmlPythonFileReadRaw because of a difference between bytes and
+	characters.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-32414</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-32414</url>
+    </references>
+    <dates>
+      <discovery>2025-04-08</discovery>
+      <entry>2025-05-31</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="fdd02be0-3e50-11f0-95d4-00a098b42aeb">
+    <topic>libxml2 -- Stack-based Buffer Overflow</topic>
+    <affects>
+      <package>
+	<name>libxml2</name>
+	<range><lt>2.13.6</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>cve@mitre.org reports:</p>
+	<blockquote cite="https://gitlab.gnome.org/GNOME/libxml2/-/issues/847">
+	  <p>libxml2 before 2.12.10 and 2.13.x before 2.13.6 has a stack-based
+	buffer overflow in xmlSnprintfElements in valid.c.  To exploit this,
+	DTD validation must occur for an untrusted document or untrusted
+	DTD.  NOTE: this is similar to CVE-2017-9047.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-24928</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-24928</url>
+    </references>
+    <dates>
+      <discovery>2025-02-18</discovery>
+      <entry>2025-05-31</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="bd2af307-3e50-11f0-95d4-00a098b42aeb">
+    <topic>libxml2 -- Use After Free</topic>
+    <affects>
+      <package>
+	<name>libxml2</name>
+	<range><lt>2.13.6</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>cve@mitre.org reports:</p>
+	<blockquote cite="https://gitlab.gnome.org/GNOME/libxml2/-/issues/828">
+	  <p>libxml2 before 2.12.10 and 2.13.x before 2.13.6 has a use-after-free
+	in xmlSchemaIDCFillNodeTables and xmlSchemaBubbleIDCNodeTables in
+	xmlschemas.c.  To exploit this, a crafted XML document must be
+	validated against an XML schema with certain identity constraints,
+	or a crafted XML schema must be used.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-56171</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2024-56171</url>
+    </references>
+    <dates>
+      <discovery>2025-02-18</discovery>
+      <entry>2025-05-31</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="25acd603-3dde-11f0-8cb5-a8a1599412c6">
+    <topic>chromium -- multiple security fixes</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>137.0.7151.55</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>137.0.7151.55</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2025/05/stable-channel-update-for-desktop_27.html">
+	 <p>This update includes 11 security fixes:</p>
+	 <ul>
+	    <li>[411573532] High CVE-2025-5063: Use after free in Compositing. Reported by Anonymous on 2025-04-18</li>
+	    <li>[417169470] High CVE-2025-5280: Out of bounds write in V8. Reported by [pwn2car] on 2025-05-12</li>
+	    <li>[40058068] Medium CVE-2025-5064: Inappropriate implementation in Background Fetch API. Reported by Maurice Dauer  on 2021-11-29</li>
+	    <li>[40059071] Medium CVE-2025-5065: Inappropriate implementation in FileSystemAccess API. Reported by NDevTK on 2022-03-11</li>
+	    <li>[356658477] Medium CVE-2025-5066: Inappropriate implementation in Messages. Reported by Mohit Raj (shadow2639)  on 2024-07-31</li>
+	    <li>[417215501] Medium CVE-2025-5281: Inappropriate implementation in BFCache. Reported by Jesper van den Ende (Pelican Party Studios) on 2025-05-12</li>
+	    <li>[419467315] Medium CVE-2025-5283: Use after free in libvpx. Reported by Mozilla on 2025-05-22</li>
+	    <li>[40075024] Low CVE-2025-5067: Inappropriate implementation in Tab Strip. Reported by Khalil Zhani on 2023-10-17</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2025-5063</cvename>
+      <cvename>CVE-2025-5280</cvename>
+      <cvename>CVE-2025-5064</cvename>
+      <cvename>CVE-2025-5065</cvename>
+      <cvename>CVE-2025-5066</cvename>
+      <cvename>CVE-2025-5281</cvename>
+      <cvename>CVE-2025-5283</cvename>
+      <cvename>CVE-2025-5067</cvename>
+      <url>https://chromereleases.googleblog.com/2025/05/stable-channel-update-for-desktop_27.html</url>
+    </references>
+    <dates>
+      <discovery>2025-05-27</discovery>
+      <entry>2025-05-31</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="4864aec7-3d80-11f0-9a55-b42e991fc52e">
     <topic>Chrome -- Heap corruption exploitation</topic>
     <affects>
@@ -2362,7 +2498,7 @@
       </package>
       <package>
 	<name>librewolf</name>
-	<range><lt>134.0,2</lt></range>
+	<range><lt>134.0</lt></range>
       </package>
     </affects>
     <description>
@@ -2638,7 +2774,7 @@
       </package>
       <package>
 	<name>librewolf</name>
-	<range><lt>136.0,2</lt></range>
+	<range><lt>136.0</lt></range>
       </package>
       <package>
 	<name>thunderbird</name>
@@ -2675,7 +2811,7 @@
       </package>
       <package>
 	<name>librewolf</name>
-	<range><lt>136.0,2</lt></range>
+	<range><lt>136.0</lt></range>
       </package>
       <package>
 	<name>firefox-esr</name>
@@ -2727,7 +2863,7 @@
       </package>
       <package>
 	<name>librewolf</name>
-	<range><lt>136.0,2</lt></range>
+	<range><lt>136.0</lt></range>
       </package>
       <package>
 	<name>firefox-esr</name>
@@ -2769,7 +2905,7 @@
       </package>
       <package>
 	<name>librewolf</name>
-	<range><lt>136.0,2</lt></range>
+	<range><lt>136.0</lt></range>
       </package>
       <package>
 	<name>firefox-esr</name>
@@ -2813,7 +2949,7 @@
       </package>
       <package>
 	<name>librewolf</name>
-	<range><lt>136.0,2</lt></range>
+	<range><lt>136.0</lt></range>
       </package>
       <package>
 	<name>thunderbird</name>
