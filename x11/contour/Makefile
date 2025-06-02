@@ -38,6 +38,12 @@ PORTDOCS=	README.md SECURITY.md TODO.md
 
 OPTIONS_DEFINE=	DOCS
 
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ${ARCH} == i386
+EXTRA_PATCHES=	${PATCHDIR}/extra-patch-src_crispy_read__selector.h
+.endif
+
 post-install:
 	@${RM} -r ${STAGEDIR}${DATADIR} \
 		${STAGEDIR}${PREFIX}/share/terminfo
