@@ -11,6 +11,7 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/cmake/boxed-cpp/boxed-cpp-config.cmake:devel/boxed-cpp \
+		${LOCALBASE}/lib/cmake/Catch2/Catch2Config.cmake:devel/catch2 \
 		${LOCALBASE}/lib/cmake/reflection-cpp/reflection-cpp-config.cmake:devel/reflection-cpp \
 		${LOCALBASE}/share/cmake/Microsoft.GSL/Microsoft.GSLConfig.cmake:devel/microsoft-gsl \
 		${LOCALBASE}/lib/cmake/range-v3/range-v3-config.cmake:devel/range-v3
@@ -38,7 +39,7 @@ PORTDOCS=	README.md SECURITY.md TODO.md
 OPTIONS_DEFINE=	DOCS
 
 post-install:
-	${RM} -r ${STAGEDIR}${DATADIR} \
+	@${RM} -r ${STAGEDIR}${DATADIR} \
 		${STAGEDIR}${PREFIX}/share/terminfo
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/bash_completion.d \
 		${STAGEDIR}${PREFIX}/share/fish/vendor_completions.d \
