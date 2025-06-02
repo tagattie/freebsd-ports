@@ -79,6 +79,7 @@
     SUBDIR += R-cran-hms
     SUBDIR += R-cran-ids
     SUBDIR += R-cran-ini
+    SUBDIR += R-cran-interp
     SUBDIR += R-cran-iterators
     SUBDIR += R-cran-itertools
     SUBDIR += R-cran-kit
@@ -198,7 +199,6 @@
     SUBDIR += apache-log4j2
     SUBDIR += apache-orc
     SUBDIR += apache-rat
-    SUBDIR += aphpbreakdown
     SUBDIR += aphpunit
     SUBDIR += api-linter
     SUBDIR += api-sanity-autotest
@@ -273,7 +273,6 @@
     SUBDIR += avro
     SUBDIR += avro-c
     SUBDIR += avro-cpp
-    SUBDIR += awless
     SUBDIR += aws-c-common
     SUBDIR += aws-c-compression
     SUBDIR += aws-c-event-stream
@@ -475,7 +474,6 @@
     SUBDIR += cmake-modules-webos
     SUBDIR += cmakedoc
     SUBDIR += cmph
-    SUBDIR += cmunge
     SUBDIR += coccinelle
     SUBDIR += cocogitto
     SUBDIR += codeblocks
@@ -697,7 +695,6 @@
     SUBDIR += evcxr-jupyter
     SUBDIR += evdev-proto
     SUBDIR += evemu
-    SUBDIR += eventxx
     SUBDIR += exercisix
     SUBDIR += exomizer
     SUBDIR += expected
@@ -984,7 +981,6 @@
     SUBDIR += heirloom-devtools
     SUBDIR += hexcompare
     SUBDIR += hexd
-    SUBDIR += hgreviewboard
     SUBDIR += hgsvn
     SUBDIR += highlighterkit
     SUBDIR += highway
@@ -4467,6 +4463,7 @@
     SUBDIR += py-automaton
     SUBDIR += py-autopage
     SUBDIR += py-autoprop
+    SUBDIR += py-avocado-framework
     SUBDIR += py-avro
     SUBDIR += py-awesomeversion
     SUBDIR += py-aws-lambda-builders
@@ -4813,8 +4810,6 @@
     SUBDIR += py-diskcache
     SUBDIR += py-distlib
     SUBDIR += py-distributed
-    SUBDIR += py-dj50-django-rq
-    SUBDIR += py-dj50-strawberry-graphql
     SUBDIR += py-dj51-django-rq
     SUBDIR += py-dj51-strawberry-graphql
     SUBDIR += py-django-rq
@@ -5797,6 +5792,7 @@
     SUBDIR += py-pyvisa-py
     SUBDIR += py-pyxb-x
     SUBDIR += py-pyyaml
+    SUBDIR += py-pyyaml-ft
     SUBDIR += py-pyyaml-include
     SUBDIR += py-pyyaml_env_tag
     SUBDIR += py-pyzipper
@@ -5962,7 +5958,7 @@
     SUBDIR += py-spyder-kernels
     SUBDIR += py-spyder-unittest
     SUBDIR += py-sqids
-    SUBDIR += py-sqlfmt
+    SUBDIR += py-sqlfluff
     SUBDIR += py-squint
     SUBDIR += py-sre-yield
     SUBDIR += py-srsly
