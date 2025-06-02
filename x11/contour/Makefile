@@ -44,6 +44,11 @@ OPTIONS_DEFINE=	DOCS
 EXTRA_PATCHES=	${PATCHDIR}/extra-patch-src_crispy_read__selector.h
 .endif
 
+# FreeBSD 13 does not have tic in base, so we need one from ports
+.if ${OPSYS} == FreeBSD && ${OSREL:R} == 13
+BUILD_DEPENDS+=	tic:devel/ncurses
+.endif
+
 post-install:
 	@${RM} -r ${STAGEDIR}${DATADIR} \
 		${STAGEDIR}${PREFIX}/share/terminfo
