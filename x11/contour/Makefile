@@ -22,7 +22,7 @@ LIB_DEPENDS=	libunicode.so:devel/libunicode-contour \
 		libssh2.so:security/libssh2 \
 		libfontconfig.so:x11-fonts/fontconfig
 
-USES=		cmake:testing desktop-file-utils gl qt:6 xorg
+USES=		cmake:testing desktop-file-utils gl pkgconfig qt:6 xorg
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	contour-terminal
