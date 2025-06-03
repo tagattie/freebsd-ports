@@ -50,8 +50,7 @@ BUILD_DEPENDS+=	tic:devel/ncurses
 .endif
 
 post-install:
-	@${RM} -r ${STAGEDIR}${DATADIR} \
-		${STAGEDIR}${PREFIX}/share/terminfo
+	@${RM} -r ${STAGEDIR}${DATADIR}
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/bash_completion.d \
 		${STAGEDIR}${PREFIX}/share/fish/vendor_completions.d \
 		${STAGEDIR}${PREFIX}/share/zsh/site-functions
