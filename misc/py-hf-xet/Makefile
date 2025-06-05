@@ -13,6 +13,8 @@ WWW=		https://github.com/huggingface/xet-core
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_i386=	fails to build: cannot find function `_mm256_insert_epi64` in this scope
+
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}maturin>=1.7<2.0:devel/py-maturin@${PY_FLAVOR}
 
 USES=		cargo python ssl
