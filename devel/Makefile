@@ -1262,6 +1262,7 @@
     SUBDIR += libcutl
     SUBDIR += libcwd
     SUBDIR += libdaemon
+    SUBDIR += libdex
     SUBDIR += libdap
     SUBDIR += libdatadog
     SUBDIR += libdatovka
@@ -1409,6 +1410,7 @@
     SUBDIR += libpdel
     SUBDIR += libpeak
     SUBDIR += libpeas
+    SUBDIR += libpeas1
     SUBDIR += libpff
     SUBDIR += libphdi
     SUBDIR += libphonenumber
@@ -4703,6 +4705,7 @@
     SUBDIR += py-comm
     SUBDIR += py-commandlines
     SUBDIR += py-commentjson
+    SUBDIR += py-condense-json
     SUBDIR += py-conditional
     SUBDIR += py-confection
     SUBDIR += py-configargparse
@@ -5181,6 +5184,7 @@
     SUBDIR += py-libevdev
     SUBDIR += py-libioc
     SUBDIR += py-libpeas
+    SUBDIR += py-libpeas1
     SUBDIR += py-libplist
     SUBDIR += py-libtaxii
     SUBDIR += py-libtmux

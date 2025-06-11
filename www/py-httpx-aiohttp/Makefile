@@ -20,6 +20,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiohttp>=3<4:www/py-aiohttp@${PY_FLAVOR} \
 USES=		python
 USE_PYTHON=	autoplist pep517
 
+NO_ARCH=	yes
+
 PORTDOCS=	CHANGELOG.md README.md
 
 OPTIONS_DEFINE=	DOCS

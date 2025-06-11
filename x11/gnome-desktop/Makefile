@@ -34,7 +34,7 @@ MESON_ARGS=	-Dudev=enabled \
 		-Dsystemd=disabled \
 		-Dgtk_doc=false \
 		-Ddebug_tools=false \
-		-Ddesktop_docs=true
+		-Ddesktop_docs=false
 CPE_VENDOR=	gnome
 
 .include <bsd.port.mk>
