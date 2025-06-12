@@ -311,7 +311,7 @@ velbustcpd:*:367:
 sshesame:*:368:
 neo4j:*:369:
 _wsdd:*:370:
-# free: 371
+reposilite:*:371:
 # free: 372
 # free: 373
 # free: 374
@@ -337,7 +337,7 @@ ldap:*:389:
 # free: 394
 # free: 395
 # free: 396
-# free: 397
+rtorrent:*:397:
 tiarra:*:398:
 # free: 399
 # free: 400

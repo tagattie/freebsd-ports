@@ -317,7 +317,7 @@ velbustcpd:*:367:367::0:0:Velbustcp Deamon:/nonexistent:/usr/sbin/nologin
 sshesame:*:368:368::0:0:Sshesame Daemon:/nonexistent:/usr/sbin/nologin
 neo4j:*:369:369::0:0:neo4j Database Daemon:/nonexistent:/usr/sbin/nologin
 _wsdd:*:370:370::0:0:Web Service Discovery Daemon:/nonexistent:/usr/sbin/nologin
-# free: 371
+reposilite:*:371:371::0:0:Reposilite user:/nonexistent:/usr/sbin/nologin
 # free: 372
 # free: 373
 # free: 374
@@ -343,7 +343,7 @@ ldap:*:389:389::0:0:OpenLDAP Server:/nonexistent:/usr/sbin/nologin
 # free: 394
 # free: 395
 # free: 396
-# free: 397
+rtorrent:*:397:397::0:0:rtorrent Daemon User:/nonexistent:/usr/sbin/nologin
 tiarra:*:398:398::0:0:Tiarra IRC Proxy:/nonexistent:/usr/sbin/nologin
 # free: 399
 # free: 400
