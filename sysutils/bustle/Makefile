@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	appstreamcli:devel/appstream
 LIB_DEPENDS=	libgraphene-1.0.so:graphics/graphene
 
-USES=		cargo desktop-file-utils gnome meson
+USES=		cargo desktop-file-utils gettext-tools gnome meson
 
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.gnome.org
