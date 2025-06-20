@@ -18,7 +18,8 @@ LIB_DEPENDS=	libjson-glib-1.0.so:devel/json-glib \
 		libsoup-3.0.so:devel/libsoup3 \
 		libxml2.so:textproc/libxml2
 
-USES=		desktop-file-utils gettext-tools gnome localbase:ldflags meson
+USES=		desktop-file-utils gettext-tools gnome localbase:ldflags meson \
+		pkgconfig
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	mjakeman
