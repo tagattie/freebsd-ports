@@ -17,6 +17,7 @@ LIB_DEPENDS=	libjson-glib-1.0.so:devel/json-glib \
 		libbacktrace.so:devel/libbacktrace \
 		libsoup-3.0.so:devel/libsoup3 \
 		libxml2.so:textproc/libxml2
+RUN_DEPENDS=	${LOCALBASE}/bin/unzip:archivers/unzip
 
 USES=		desktop-file-utils gettext-tools gnome localbase:ldflags meson \
 		pkgconfig
