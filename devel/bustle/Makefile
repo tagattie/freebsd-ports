@@ -1,6 +1,6 @@
 PORTNAME=	bustle
 DISTVERSION=	0.12.0
-CATEGORIES=	sysutils gnome
+CATEGORIES=	devel gnome
 
 MAINTAINER=	tagattie@FreeBSD.org
 COMMENT=	Visualize D-Bus activity
