@@ -250,6 +250,7 @@
     SUBDIR += habari
     SUBDIR += hiawatha
     SUBDIR += hiawatha-monitor
+    SUBDIR += homepage
     SUBDIR += homer-web
     SUBDIR += hotcrp
     SUBDIR += hs-DAV
@@ -280,6 +281,7 @@
     SUBDIR += igal2
     SUBDIR += ikiwiki
     SUBDIR += ilias
+    SUBDIR += imaginary
     SUBDIR += iridium
     SUBDIR += janus
     SUBDIR += jericho-html
