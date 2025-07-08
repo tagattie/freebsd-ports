@@ -684,9 +684,6 @@
     SUBDIR += esbuild
     SUBDIR += estd
     SUBDIR += etcd
-    SUBDIR += etcd31
-    SUBDIR += etcd32
-    SUBDIR += etcd33
     SUBDIR += etcd34
     SUBDIR += etcd35
     SUBDIR += etcd36
