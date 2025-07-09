@@ -1,4 +1,4 @@
-TIMESTAMP = 1751375262
+TIMESTAMP = 1752026513
 SHA256 (rust/crates/Inflector-0.11.4.crate) = fe438c63458706e03479442743baae6c88256498e6431708f6dfc520a26515d3
 SIZE (rust/crates/Inflector-0.11.4.crate) = 17438
 SHA256 (rust/crates/addr2line-0.21.0.crate) = 8a30b2e23b9e17a9f90641c7ab1549cd9b44f296d3ccbf309d2863cfe398a0cb
@@ -1083,5 +1083,5 @@ SHA256 (rust/crates/zune-inflate-0.2.54.crate) = 73ab332fe2f6680068f3582b16a24f9
 SIZE (rust/crates/zune-inflate-0.2.54.crate) = 37973
 SHA256 (rust/crates/zune-jpeg-0.4.14.crate) = 99a5bab8d7dedf81405c4bb1f2b83ea057643d9cb28778cea9eecddeedd2e028
 SIZE (rust/crates/zune-jpeg-0.4.14.crate) = 63388
-SHA256 (openai-codex-rust-v0.2.0_GH0.tar.gz) = aa59d6af465d1fe89a82ae684ae3d8d5e6c1f6fbc270cc389c5966c6e969d867
-SIZE (openai-codex-rust-v0.2.0_GH0.tar.gz) = 20430689
+SHA256 (openai-codex-rust-v0.3.0_GH0.tar.gz) = bfd20a94aa5cfed99896ba2f6411a7e6e379f3b82ce6ecdead9f436b646793ab
+SIZE (openai-codex-rust-v0.3.0_GH0.tar.gz) = 20443365
