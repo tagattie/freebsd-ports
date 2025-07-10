@@ -1,6 +1,6 @@
 PORTNAME=	codex
 DISTVERSIONPREFIX=	rust-v
-DISTVERSION=	0.3.0
+DISTVERSION=	0.4.0
 CATEGORIES=	misc
 
 MAINTAINER=	tagattie@FreeBSD.org
@@ -36,10 +36,25 @@ PORTDOCS=	README.md config.md
 
 OPTIONS_DEFINE=	DOCS
 
+post-build:
+	@${MKDIR} ${WRKSRC}/completions
+.for sh in bash fish zsh
+	${CARGO_TARGET_DIR}/*/${PORTNAME} completion ${sh} > ${WRKSRC}/completions/${PORTNAME}.${sh}
+.endfor
+
 do-install:
 .for f in ${PLIST_FILES:S/bin\///}
 	${INSTALL_PROGRAM} ${CARGO_TARGET_DIR}/*/${f} ${STAGEDIR}${PREFIX}/bin
 .endfor
+	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/bash_completion.d \
+		${STAGEDIR}${PREFIX}/share/fish/completions \
+		${STAGEDIR}${PREFIX}/share/zsh/site-functions
+	${INSTALL_DATA} ${WRKSRC}/completions/${PORTNAME}.bash \
+		${STAGEDIR}${PREFIX}/etc/bash_completion.d/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/completions/${PORTNAME}.fish \
+		${STAGEDIR}${PREFIX}/share/fish/completions/${PORTNAME}.fish
+	${INSTALL_DATA} ${WRKSRC}/completions/${PORTNAME}.zsh \
+		${STAGEDIR}${PREFIX}/share/zsh/site-functions/_${PORTNAME}
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
