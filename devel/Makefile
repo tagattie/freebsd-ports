@@ -783,6 +783,7 @@
     SUBDIR += geany-plugin-latex
     SUBDIR += geany-plugin-lineoperations
     SUBDIR += geany-plugin-lipsum
+    SUBDIR += geany-plugin-lsp
     SUBDIR += geany-plugin-lua
     SUBDIR += geany-plugin-macro
     SUBDIR += geany-plugin-markdown
@@ -5574,6 +5575,7 @@
     SUBDIR += py-pydantic-compat
     SUBDIR += py-pydantic-core
     SUBDIR += py-pydantic-extra-types
+    SUBDIR += py-pydantic-resolve
     SUBDIR += py-pydantic-settings
     SUBDIR += py-pydantic-vault
     SUBDIR += py-pydantic-yaml
@@ -7176,6 +7178,7 @@
     SUBDIR += rubygem-cucumber-messages22
     SUBDIR += rubygem-cucumber-messages24
     SUBDIR += rubygem-cucumber-messages25
+    SUBDIR += rubygem-cucumber-messages27
     SUBDIR += rubygem-cucumber-rails
     SUBDIR += rubygem-cucumber-tag-expressions
     SUBDIR += rubygem-cucumber-wire
