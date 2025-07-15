@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	cog:devel/py-cogapp
 RUN_DEPENDS=	groff:textproc/groff
 
-USES=		meson ncurses
+USES=		meson ncurses pkgconfig
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	plp13
