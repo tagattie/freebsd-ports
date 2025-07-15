@@ -11,7 +11,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	cog:devel/py-cogapp
 
-USES=		groff:run meson ncurses pkgconfig
+USES=		groff:run meson pkgconfig
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	plp13
@@ -36,6 +36,13 @@ MANPAGES_MESON_ENABLED=	man-pages
 
 PORTDOCS=	BUILDING.md CONTRIBUTING.md DEBUGGING.md OS_SPECIFIC.md \
 		README.md TESTING.md TROUBLESHOOTING.md
+
+# FreeBSD 13 is missing /usr/libdata/pkgconfig/ncursesw.pc
+.if ${OPSYS} == FreeBSD && ${OSREL:R} == 13
+USES+=		ncurses:port
+.else
+USES+=		ncurses
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
