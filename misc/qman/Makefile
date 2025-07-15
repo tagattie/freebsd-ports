@@ -10,9 +10,8 @@ LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	cog:devel/py-cogapp
-RUN_DEPENDS=	groff:textproc/groff
 
-USES=		meson ncurses pkgconfig
+USES=		groff:run meson ncurses pkgconfig
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	plp13
