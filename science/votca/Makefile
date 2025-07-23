@@ -6,11 +6,13 @@ CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	CSG and XTP: libraries for atomistic simulations
-WWW=		https://github.com/votca/votca
+WWW=		https://www.votca.org/ \
+		https://github.com/votca/votca
 
 LICENSE=	APACHE20
 
-BROKEN_i386=	undefined reference to `__atomic_load'
+BROKEN_i386=		undefined reference to `__atomic_load' # '
+BROKEN_FreeBSD_13=	compilation fails: error: no member named 'bool_isnan' in namespace 'std::__math'; did you mean simply 'bool_isnan'?
 
 PY_DEPENDS=	\
 		${PYTHON_PKGNAMEPREFIX}ase>0:science/py-ase@${PY_FLAVOR} \
