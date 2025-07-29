@@ -107,6 +107,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		display_container-0.9.0 \
 		displaydoc-0.2.5 \
 		doc-comment-0.3.3 \
+		dotenvy-0.15.7 \
 		dupe-0.9.1 \
 		dupe_derive-0.9.1 \
 		dyn-clone-1.0.19 \
@@ -318,7 +319,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		r-efi-5.3.0 \
 		radix_trie-0.2.1 \
 		rand-0.8.5 \
-		rand-0.9.1 \
+		rand-0.9.2 \
 		rand_chacha-0.3.1 \
 		rand_chacha-0.9.0 \
 		rand_core-0.6.4 \
@@ -405,9 +406,9 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		strsim-0.10.0 \
 		strsim-0.11.1 \
 		strum-0.26.3 \
-		strum-0.27.1 \
+		strum-0.27.2 \
 		strum_macros-0.26.4 \
-		strum_macros-0.27.1 \
+		strum_macros-0.27.2 \
 		subtle-2.6.1 \
 		syn-1.0.109 \
 		syn-2.0.104 \
@@ -442,11 +443,11 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		tokio-test-0.4.4 \
 		tokio-util-0.7.15 \
 		toml-0.8.23 \
-		toml-0.9.1 \
+		toml-0.9.2 \
 		toml_datetime-0.6.11 \
 		toml_datetime-0.7.0 \
 		toml_edit-0.22.27 \
-		toml_parser-1.0.0 \
+		toml_parser-1.0.1 \
 		toml_writer-1.0.0 \
 		tower-0.5.2 \
 		tower-http-0.6.6 \
@@ -459,7 +460,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		tracing-error-0.2.1 \
 		tracing-log-0.2.0 \
 		tracing-subscriber-0.3.19 \
-		tree-sitter-0.25.6 \
+		tree-sitter-0.25.8 \
 		tree-sitter-bash-0.25.0 \
 		tree-sitter-language-0.1.5 \
 		try-lock-0.2.5 \
