@@ -10,7 +10,8 @@ WWW=		https://github.com/hyprwm/hyprlock
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	hyprwayland-scanner>=0.4.4:devel/hyprwayland-scanner \
+BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto \
+		hyprwayland-scanner>=0.4.4:devel/hyprwayland-scanner \
 		wayland-protocols>=1.35:graphics/wayland-protocols
 LIB_DEPENDS=	libhyprlang.so:devel/hyprlang \
 		libhyprutils.so:devel/hyprutils \
