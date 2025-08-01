@@ -1,11 +1,11 @@
-PORTNAME=	svt-av1
+PORTNAME=	svt-av1-hdr
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.1.0
 CATEGORIES=	multimedia
 
 MAINTAINER=	jbeich@FreeBSD.org
-COMMENT=	Scalable AV1 encoder
-WWW=		https://01.org/svt
+COMMENT=	Scalable AV1 encoder focused on perceptual quality
+WWW=		https://github.com/juliobbv-p/svt-av1-hdr
 
 LICENSE=	BSD2CLAUSE BSD3CLAUSE MIT
 LICENSE_COMB=	multi
@@ -17,14 +17,13 @@ BUILD_DEPENDS=	${BUILD_DEPENDS_${ARCH}}
 BUILD_DEPENDS_amd64=	nasm:devel/nasm
 
 USES=		cmake compiler:c11
-USE_GITLAB=	yes
+USE_GITHUB=	yes
 USE_LDCONFIG=	yes
-GL_ACCOUNT=	AOMediaCodec
-GL_PROJECT=	SVT-AV1
+GH_ACCOUNT=	juliobbv-p
 CMAKE_OFF=	NATIVE
 PLIST_SUB=	VERSION=${DISTVERSION:C/-.*//}
 
-CONFLICTS_INSTALL=	svt-av1-hdr # bin/SvtAv1EncApp
+CONFLICTS_INSTALL=	svt-av1 # bin/SvtAv1EncApp
 
 OPTIONS_DEFINE=	LTO
 OPTIONS_DEFAULT=LTO
