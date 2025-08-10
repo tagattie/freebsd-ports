@@ -1,6 +1,6 @@
 PORTNAME=	codex
 DISTVERSIONPREFIX=	rust-v
-DISTVERSION=	0.12.0
+DISTVERSION=	0.20.0
 CATEGORIES=	misc
 
 MAINTAINER=	tagattie@FreeBSD.org
@@ -20,18 +20,17 @@ GH_ACCOUNT=	openai
 
 CARGO_CARGOTOML=	${BUILD_WRKSRC}/Cargo.toml
 CARGO_CARGOLOCK=	${BUILD_WRKSRC}/Cargo.lock
+CARGO_BUILD_ARGS=	--bin ${PORTNAME}
 CARGO_INSTALL_PATH=	codex-rs
+CARGO_TEST_ARGS=	--all-features
 CARGO_ENV=		OPENSSL_NO_VENDOR=1
 
 BUILD_WRKSRC=	${WRKSRC}/codex-rs
 
-PLIST_FILES=	bin/codex \
-		bin/codex-exec \
-		bin/codex-execpolicy \
-		bin/codex-file-search \
-		bin/codex-mcp-client \
-		bin/codex-mcp-server \
-		bin/codex-tui
+PLIST_FILES=	bin/${PORTNAME} \
+		etc/bash_completion.d/${PORTNAME} \
+		share/fish/completions/${PORTNAME}.fish \
+		share/zsh/site-functions/_${PORTNAME}
 PORTDOCS=	README.md config.md
 
 OPTIONS_DEFINE=	DOCS
@@ -39,13 +38,13 @@ OPTIONS_DEFINE=	DOCS
 post-build:
 	@${MKDIR} ${WRKSRC}/completions
 .for sh in bash fish zsh
-	${CARGO_TARGET_DIR}/*/${PORTNAME} completion ${sh} > ${WRKSRC}/completions/${PORTNAME}.${sh}
+	${CARGO_TARGET_DIR}/*/${PORTNAME} completion ${sh} > \
+		${WRKSRC}/completions/${PORTNAME}.${sh}
 .endfor
 
 do-install:
-.for f in ${PLIST_FILES:S/bin\///}
-	${INSTALL_PROGRAM} ${CARGO_TARGET_DIR}/*/${f} ${STAGEDIR}${PREFIX}/bin
-.endfor
+	${INSTALL_PROGRAM} ${CARGO_TARGET_DIR}/*/${PORTNAME} \
+		${STAGEDIR}${PREFIX}/bin
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/bash_completion.d \
 		${STAGEDIR}${PREFIX}/share/fish/completions \
 		${STAGEDIR}${PREFIX}/share/zsh/site-functions
