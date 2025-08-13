@@ -1,0 +1,7 @@
+bin/walker-launcher
+etc/xdg/walker/config.default.toml
+etc/xdg/walker/themes/colors.css
+etc/xdg/walker/themes/default.css
+etc/xdg/walker/themes/default.toml
+etc/xdg/walker/themes/default_window.toml
+etc/xdg/walker/themes/xdg_default.css

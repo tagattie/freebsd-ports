@@ -1,0 +1,17 @@
+Walker is a highly extendable application launcher that doesn't hold
+back on features and usability. Fast. Unclutters your brain. Improves
+your workflow.
+
+Features:
+- plugin support: simple stdin/stdout (external or via configuration,
+  see wiki)
+- icons/images
+- start as service for faster startup
+- run entries via labels (F<1-8> or jkl;asdf)
+- non-blocking async handling of results
+- typeahead
+- start with explicit modules, style or config
+- drag & drop support
+- dmenu-mode (with streaming support for large datasets)
+- run as password input
+- theming support (global, per module, with inheritance)
