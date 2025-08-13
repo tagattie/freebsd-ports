@@ -1,3 +1,69 @@
+  <vuln vid="e2d49973-785a-11f0-a1c0-0050569f0b83">
+    <topic>www/varnish7 -- Denial of Service in HTTP/2</topic>
+    <affects>
+      <package>
+	<name>varnish7</name>
+	<range><lt>7.7.2</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Varnish Development Team reports:</p>
+	<blockquote cite="https://varnish-cache.org/security/VSV00017.html#vsv00017">
+	    <p>A denial of service attack can be performed on Varnish Cache servers
+	       that have the HTTP/2 protocol turned on. An attacker can create a
+	       large number of streams and immediately reset them without ever
+	       reaching the maximum number of concurrent streams allowed for the
+	       session, causing the Varnish server to consume unnecessary
+	       resources processing requests for which the response will not be
+	       delivered.</p>
+	    <p>This attack is a variant of the HTTP/2 Rapid Reset Attack, which was
+	       partially handled as VSV00013.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-8671</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-8671</url>
+    </references>
+    <dates>
+      <discovery>2025-08-13</discovery>
+      <entry>2025-08-13</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="defe9a20-781e-11f0-97c4-40b034429ecf">
+    <topic>p5-Authen-SASL -- Insecure source of randomness</topic>
+    <affects>
+      <package>
+	<name>p5-Authen-SASL</name>
+	<range><lt>2.1900</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>p5-Authen-SASL project reports:</p>
+	<blockquote cite="https://github.com/advisories/GHSA-496q-8ph2-c4fj">
+	  <p>Authen::SASL::Perl::DIGEST_MD5 versions 2.04 through 2.1800 for Perl generates the cnonce insecurely.</p>
+	  <p>The cnonce (client nonce) is generated from an MD5 hash of the PID, the epoch time and the built-in rand function.
+	     The PID will come from a small set of numbers, and the epoch time may be guessed, if it is not leaked from the HTTP Date header.
+	     The built-in rand function is unsuitable for cryptographic usage.</p>
+	  <p>According to RFC 2831, The cnonce-value is an opaque quoted string value provided by the client and used by both client and server
+	     to avoid chosen plaintext attacks, and to provide mutual authentication. The security of the implementation depends on a good choice.
+	     It is RECOMMENDED that it contain at least 64 bits of entropy.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-40918</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-40918</url>
+    </references>
+    <dates>
+      <discovery>2025-07-16</discovery>
+      <entry>2025-08-13</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="15fd1321-768a-11f0-b3f7-a8a1599412c6">
     <topic>chromium -- multiple security fixes</topic>
     <affects>
