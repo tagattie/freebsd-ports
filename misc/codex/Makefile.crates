@@ -57,9 +57,9 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		cfg-if-1.0.1 \
 		cfg_aliases-0.1.1 \
 		chrono-0.4.41 \
-		clap-4.5.41 \
-		clap_builder-4.5.41 \
-		clap_complete-4.5.55 \
+		clap-4.5.43 \
+		clap_builder-4.5.43 \
+		clap_complete-4.5.56 \
 		clap_derive-4.5.41 \
 		clap_lex-0.7.5 \
 		clipboard-win-5.4.1 \
@@ -447,9 +447,9 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		tokio-rustls-0.26.2 \
 		tokio-stream-0.1.17 \
 		tokio-test-0.4.4 \
-		tokio-util-0.7.15 \
+		tokio-util-0.7.16 \
 		toml-0.8.23 \
-		toml-0.9.4 \
+		toml-0.9.5 \
 		toml_datetime-0.6.11 \
 		toml_datetime-0.7.0 \
 		toml_edit-0.22.27 \
