@@ -1,7 +1,7 @@
 PORTNAME=	crush
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.5.0
-CATEGORIES=	misc
+DISTVERSION=	0.6.2
+CATEGORIES=	misc devel
 
 MAINTAINER=	tagattie@FreeBSD.org
 COMMENT=	Glamourous AI coding agent for your favourite terminal
