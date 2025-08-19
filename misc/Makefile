@@ -498,7 +498,6 @@
     SUBDIR += py-openpaperwork-core
     SUBDIR += py-openpaperwork-gtk
     SUBDIR += py-openvdb
-    SUBDIR += py-opt-einsum
     SUBDIR += py-optuna
     SUBDIR += py-oterm
     SUBDIR += py-palettable
@@ -549,6 +548,7 @@
     SUBDIR += py-torchmetrics
     SUBDIR += py-torchvision
     SUBDIR += py-tqdm
+    SUBDIR += py-transformers
     SUBDIR += py-tvm
     SUBDIR += py-uhi
     SUBDIR += py-vaderSentiment
