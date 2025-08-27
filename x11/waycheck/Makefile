@@ -14,7 +14,7 @@ LICENSE_FILE_CC0-1.0=	${WRKSRC}/LICENSES/CC0-1.0.txt
 
 LIB_DEPENDS=	libwayland-client.so:graphics/wayland
 
-USES=		meson qt:6
+USES=		meson pkgconfig qt:6
 
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.freedesktop.org/
