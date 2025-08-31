@@ -5147,6 +5147,7 @@
     SUBDIR += py-jupyter-core
     SUBDIR += py-jupyter-docprovider
     SUBDIR += py-jupyter-events
+    SUBDIR += py-jupyter-kernel-gateway
     SUBDIR += py-jupyter-kernel-test
     SUBDIR += py-jupyter-lsp
     SUBDIR += py-jupyter-packaging
@@ -5337,6 +5338,7 @@
     SUBDIR += py-onigurumacffi
     SUBDIR += py-opcodes
     SUBDIR += py-openapi-core
+    SUBDIR += py-openapi-pydantic
     SUBDIR += py-openapi-schema-validator
     SUBDIR += py-openapi-spec-validator
     SUBDIR += py-opencensus
