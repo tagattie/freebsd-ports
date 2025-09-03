@@ -1,6 +1,6 @@
 PORTNAME=	codex
 DISTVERSIONPREFIX=	rust-v
-DISTVERSION=	0.22.0
+DISTVERSION=	0.28.0
 CATEGORIES=	misc
 
 MAINTAINER=	tagattie@FreeBSD.org
@@ -27,15 +27,19 @@ CARGO_ENV=		OPENSSL_NO_VENDOR=1
 
 BUILD_WRKSRC=	${WRKSRC}/codex-rs
 
-PLIST_FILES=	bin/${PORTNAME} \
-		etc/bash_completion.d/${PORTNAME} \
-		share/fish/completions/${PORTNAME}.fish \
-		share/zsh/site-functions/_${PORTNAME}
+PLIST_FILES=	bin/${PORTNAME}
 PORTDOCS=	README.md config.md
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=		COMPLETIONS DOCS
+OPTIONS_DEFAULT=	COMPLETIONS
 
-post-build:
+COMPLETIONS_DESC=	Build and/or install shell completions
+
+COMPLETIONS_PLIST_FILES=etc/bash_completion.d/${PORTNAME} \
+			share/fish/completions/${PORTNAME}.fish \
+			share/zsh/site-functions/_${PORTNAME}
+
+post-build-COMPLETIONS-on:
 	@${MKDIR} ${WRKSRC}/completions
 .for sh in bash fish zsh
 	${CARGO_TARGET_DIR}/*/${PORTNAME} completion ${sh} > \
@@ -45,6 +49,8 @@ post-build:
 do-install:
 	${INSTALL_PROGRAM} ${CARGO_TARGET_DIR}/*/${PORTNAME} \
 		${STAGEDIR}${PREFIX}/bin
+
+do-install-COMPLETIONS-on:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/bash_completion.d \
 		${STAGEDIR}${PREFIX}/share/fish/completions \
 		${STAGEDIR}${PREFIX}/share/zsh/site-functions
