@@ -4751,8 +4751,6 @@ math/libmissing||2025-09-02|Has expired: Old. FreeBSD's libm improved since 2012
 security/p5-Dancer2-Plugin-Auth-Extensible-Provider-Usergroup||2025-09-02|Has expired: Depends on expired security/p5-Data-Entropy via security/p5-Dancer2-Plugin-Passphrase
 security/p5-Dancer-Plugin-Auth-Extensible-Provider-Usergroup||2025-09-02|Has expired: Depends on expired security/p5-Data-Entropy via security/p5-Dancer-Plugin-Passphrase
 security/py-onlykey||2025-09-02|Has expired: Depends on expired security/libu2f-host
-security/yubikey-manager-qt||2025-09-02|Has expired: Depends on expired security/libu2f-host via security/py-yubikey-manager
-security/yubioath-desktop||2025-09-02|Has expired: Depends on expired security/libu2f-host via security/py-yubikey-manager
 textproc/opensearch-dashboards213||2025-09-02|Has expired: Depends on expired www/npm-node18
 textproc/opensearch-dashboards210||2025-09-02|Has expired: Depends on expired www/npm-node18
 textproc/opensearch-dashboards216||2025-09-02|Has expired: Depends on expired www/npm-node18
@@ -4765,3 +4763,5 @@ security/p5-Data-Entropy||2025-09-02|Has expired: The maintainer of this distrib
 security/libu2f-host||2025-09-02|Has expired: This project is deprecated and is no longer being maintained. libfido2 is a new project with support for U2F and FIDO2. Use security/libfido2 instead
 net-mgmt/nagcon||2025-09-02|Has expired: Obsolete, only supports legacy versions of Nagios
 www/yarn-node18||2025-09-02|Has expired: Depeneds on expired www/node18. Node.js 18.* has reached its EoL on 2025-04-30
+www/npm-node18||2025-09-03|Has expired: Depeneds on expired www/node18. Node.js 18.* has reached its EoL on 2025-04-30
+www/node18||2025-09-03|Has expired: Node.js 18.* has reached its EoL on 2025-04-30. Use Node.js 22.* (www/node22) instead
