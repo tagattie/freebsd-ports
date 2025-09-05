@@ -1,0 +1,15 @@
+bin/pictureoftheday
+share/applications/de.swsnr.pictureoftheday.desktop
+share/dbus-1/services/de.swsnr.pictureoftheday.service
+share/icons/hicolor/scalable/apps/de.swsnr.pictureoftheday.svg
+share/icons/hicolor/symbolic/apps/de.swsnr.pictureoftheday-symbolic.svg
+share/locale/de/LC_MESSAGES/de.swsnr.pictureoftheday.mo
+share/locale/es/LC_MESSAGES/de.swsnr.pictureoftheday.mo
+share/locale/et/LC_MESSAGES/de.swsnr.pictureoftheday.mo
+share/locale/fi/LC_MESSAGES/de.swsnr.pictureoftheday.mo
+share/locale/nl/LC_MESSAGES/de.swsnr.pictureoftheday.mo
+share/locale/pt/LC_MESSAGES/de.swsnr.pictureoftheday.mo
+share/locale/pt_BR/LC_MESSAGES/de.swsnr.pictureoftheday.mo
+share/locale/ru/LC_MESSAGES/de.swsnr.pictureoftheday.mo
+share/locale/zh_Hans/LC_MESSAGES/de.swsnr.pictureoftheday.mo
+share/metainfo/de.swsnr.pictureoftheday.metainfo.xml

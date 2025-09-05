@@ -1,0 +1,20 @@
+--- justfile.orig	2025-07-23 06:36:29 UTC
++++ justfile
+@@ -150,7 +150,7 @@ install:
+     @# Install all message catalogs
+     find po/ -name '*.po' -exec just version= DESTPREFIX='{{DESTPREFIX}}' APPID='{{APPID}}' _install-po '{}' ';'
+     @# Install cargo build --release binary
+-    install -Dm0755 target/release/pictureoftheday '{{DESTPREFIX}}/bin/{{APPID}}'
++    @#install -Dm0755 target/release/pictureoftheday '{{DESTPREFIX}}/bin/{{APPID}}'
+     @# Install translated appstream metadata and desktop file
+     install -Dm0644 build/de.swsnr.pictureoftheday.desktop '{{DESTPREFIX}}/share/applications/{{APPID}}.desktop'
+     install -Dm0644 build/de.swsnr.pictureoftheday.metainfo.xml '{{DESTPREFIX}}/share/metainfo/{{APPID}}.metainfo.xml'
+@@ -161,7 +161,7 @@ install:
+     install -Dm0644 build/de.swsnr.pictureoftheday.service '{{DESTPREFIX}}/share/dbus-1/services/{{APPID}}.service'
+     install -Dm0644 'build/schemas/{{APPID}}.gschema.xml' '{{DESTPREFIX}}/share/glib-2.0/schemas/{{APPID}}.gschema.xml'
+     @# Compile settings schemas after installation
+-    glib-compile-schemas --strict '{{DESTPREFIX}}/share/glib-2.0/schemas'
++    @#glib-compile-schemas --strict '{{DESTPREFIX}}/share/glib-2.0/schemas'
+ 
+ # Print release notes
+ print-release-notes:
