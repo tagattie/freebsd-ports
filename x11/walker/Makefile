@@ -11,6 +11,7 @@ WWW=		https://github.com/abenz1267/walker
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BUILD_DEPENDS=	protoc:devel/protobuf
 LIB_DEPENDS=	libpoppler-glib.so:graphics/poppler-glib \
 		libgtk4-layer-shell.so:x11-toolkits/gtk4-layer-shell
 RUN_DEPENDS=	elephant:sysutils/elephant
