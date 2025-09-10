@@ -1,7 +1,7 @@
 PORTNAME=	codex
 DISTVERSIONPREFIX=	rust-v
-DISTVERSION=	0.29.0
-CATEGORIES=	misc
+DISTVERSION=	0.31.0
+CATEGORIES=	misc devel
 
 MAINTAINER=	tagattie@FreeBSD.org
 COMMENT=	Lightweight coding agent that runs in your terminal
