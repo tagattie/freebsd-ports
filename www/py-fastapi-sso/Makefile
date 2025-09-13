@@ -22,6 +22,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fastapi>=0.80:www/py-fastapi@${PY_FLAVOR} \
 USES=		python
 USE_PYTHON=	autoplist pep517
 
+NO_ARCH=	yes
+
 PORTDOCS=	README.md
 
 OPTIONS_DEFINE=	DOCS
