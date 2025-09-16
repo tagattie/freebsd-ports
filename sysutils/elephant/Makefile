@@ -10,6 +10,9 @@ WWW=		https://github.com/abenz1267/elephant
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+NOT_FOR_ARCHS=		i386
+NOT_FOR_ARCHS_REASON=	-buildmode=plugin not supported on freebsd/386
+
 USES=		go:1.25,modules
 
 GO_MODULE=	github.com/abenz1267/elephant
