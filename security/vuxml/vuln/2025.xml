@@ -36,21 +36,27 @@
     </affects>
     <description>
 	<body xmlns="http://www.w3.org/1999/xhtml">
-	<p>SO-AND-SO reports:</p>
-	<blockquote cite="https://github.com/OpenPrinting/cups/releases/tag/v2.4.13">
-	  <p>The release 2.4.13 brings two CVE fixes - fix for important CVE-2025-58060
-	  and fix for moderate CVE-2025-58364, together with several bug fixes.</p>
+	<p>OpenPrinting reports:</p>
+	<blockquote cite="https://github.com/OpenPrinting/cups/security/advisories/GHSA-4c68-qgrh-rmmq">
+	  <p>When the AuthType is set to anything but Basic, if the request contains an
+	    Authorization: Basic ... header, the password is not checked.</p>
+	</blockquote>
+	<blockquote cite="https://github.com/OpenPrinting/cups/security/advisories/GHSA-7qx3-r744-6qv4">
+	  <p>An unsafe deserialization and validation of printer attributes, causes null
+	    dereference in libcups library.</p>
 	</blockquote>
 	</body>
     </description>
     <references>
       <cvename>CVE-2025-58060</cvename>
       <cvename>CVE-2025-58364</cvename>
-      <url>https://github.com/OpenPrinting/cups/releases/tag/v2.4.13</url>
+      <url>https://github.com/OpenPrinting/cups/security/advisories/GHSA-4c68-qgrh-rmmq</url>
+      <url>https://github.com/OpenPrinting/cups/security/advisories/GHSA-7qx3-r744-6qv4</url>
     </references>
     <dates>
-      <discovery>2025-09-12</discovery>
+      <discovery>2025-09-11</discovery>
       <entry>2025-09-12</entry>
+      <modified>2025-09-16</modified>
     </dates>
   </vuln>
 
