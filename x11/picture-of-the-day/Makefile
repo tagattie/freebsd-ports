@@ -1,6 +1,6 @@
 PORTNAME=	picture-of-the-day
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.7.2
+DISTVERSION=	1.8.1
 CATEGORIES=	x11
 MASTER_SITES=	https://codeberg.org/swsnr/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -21,7 +21,7 @@ LIB_DEPENDS=	libsoup-3.0.so:devel/libsoup3
 USES=		cargo gettext-tools gnome
 
 USE_GNOME=	gtk40 libadwaita
-GLIB_SCHEMAS=	de.swsnr.pictureoftheday.gschema.xml
+GLIB_SCHEMAS=	de.swsnr.pictureoftheday.Devel.gschema.xml
 
 BINARY_ALIAS=	cp=gcp \
 		install=ginstall \

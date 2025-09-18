@@ -1,6 +1,6 @@
---- src/app/widgets/preferences_dialog.rs.orig	2025-09-05 05:53:21 UTC
+--- src/app/widgets/preferences_dialog.rs.orig	2025-09-13 05:15:46 UTC
 +++ src/app/widgets/preferences_dialog.rs
-@@ -72,7 +72,7 @@ mod imp {
+@@ -85,7 +85,7 @@ mod imp {
                      None,
                      "{n}/{total} collection enabled",
                      "{n}/{total} collections enabled",
