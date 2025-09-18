@@ -357,10 +357,11 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		seccompiler-0.5.0 \
 		security-framework-2.11.1 \
 		security-framework-sys-2.14.0 \
-		serde-1.0.219 \
-		serde_derive-1.0.219 \
+		serde-1.0.224 \
+		serde_core-1.0.224 \
+		serde_derive-1.0.224 \
 		serde_derive_internals-0.29.1 \
-		serde_json-1.0.143 \
+		serde_json-1.0.145 \
 		serde_repr-0.1.20 \
 		serde_spanned-1.0.0 \
 		serde_urlencoded-0.7.1 \
@@ -491,7 +492,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		webbrowser-1.0.5 \
 		weezl-0.1.10 \
 		which-6.0.3 \
-		wildmatch-2.4.0 \
+		wildmatch-2.5.0 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.9 \
