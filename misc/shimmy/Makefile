@@ -31,6 +31,8 @@ PORTDOCS=	CHANGELOG.md CONTRIBUTING.md DEVELOPERS.md README.md \
 OPTIONS_DEFINE=	DOCS VULKAN
 OPTIONS_DEFAULT=VULKAN
 
+VULKAN_BUILD_DEPENDS=	glslc:graphics/shaderc \
+			vulkan-headers>0:graphics/vulkan-headers
 VULKAN_LIB_DEPENDS=	libvulkan.so:graphics/vulkan-loader
 VULKAN_USES=		localbase:ldflags
 VULKAN_VARS=		CARGO_FEATURES+=llama-cpp-2/vulkan
