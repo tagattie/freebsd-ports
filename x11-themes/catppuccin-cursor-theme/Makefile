@@ -28,6 +28,8 @@ SHEBANG_FILES=	build \
 		scripts/build-cursors \
 		scripts/generate-metadata
 
+MAKE_ENV=	FONTCONFIG_FILE=${WRKDIR}/fonts.conf
+
 PORTDOCS=	AUTHORS CHANGELOG.md README.md
 
 OPTIONS_DEFINE=	DOCS
@@ -35,6 +37,13 @@ OPTIONS_DEFINE=	DOCS
 _FLAVORS=	Latte Frappe Macchiato Mocha
 _ACCENTS=	Blue Dark Flamingo Green Lavender Light Maroon Mauve Peach Pink \
 		Red Rosewater Sapphire Sky Teal Yellow
+
+post-extract:
+	@${CP} ${FILESDIR}/fonts.conf ${WRKDIR}
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
+		${WRKDIR}/fonts.conf
 
 do-build:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} just all
