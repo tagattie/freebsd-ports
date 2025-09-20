@@ -15,6 +15,7 @@ BUILD_DEPENDS=	zip:archivers/zip \
 		whiskers:devel/catppuccin-whiskers \
 		${PYTHON_PKGNAMEPREFIX}pyside6>0:devel/pyside6@${PY_FLAVOR} \
 		inkscape:graphics/inkscape \
+		bash:shells/bash \
 		xcursorgen:x11/xcursorgen
 
 USES=		python:build shebangfix
