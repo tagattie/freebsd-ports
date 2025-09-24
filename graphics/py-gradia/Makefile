@@ -16,7 +16,8 @@ LICENSE_FILE_OFL11=	${WRKSRC}/data/fonts/LICENSE-OFL.txt
 BUILD_DEPENDS=	appstreamcli:devel/appstream \
 		blueprint-compiler:devel/blueprint-compiler
 RUN_DEPENDS=	xdg-desktop-portal>0:deskutils/xdg-desktop-portal \
-		${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow@${PY_FLAVOR} \
+		webp-pixbuf-loader>0:graphics/webp-pixbuf-loader
 
 USES=		desktop-file-utils gettext-tools gnome meson pkgconfig python \
 		shebangfix
