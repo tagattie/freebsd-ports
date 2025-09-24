@@ -17,4 +17,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pysocks>=1.5.7:net/py-pysocks@${PY_FLAVOR} \
 USES=		python
 USE_PYTHON=	autoplist distutils
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>
