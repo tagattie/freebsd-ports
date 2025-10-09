@@ -28,8 +28,10 @@ PLIST_FILES=	bin/create_realistic_safetensors \
 PORTDOCS=	CHANGELOG.md CONTRIBUTING.md DEVELOPERS.md README.md \
 		ROADMAP.md SECURITY.md
 
-OPTIONS_DEFINE=	DOCS VULKAN
-OPTIONS_DEFAULT=VULKAN
+OPTIONS_DEFINE=		DOCS VULKAN
+OPTIONS_DEFAULT=	VULKAN
+# i386 build with VULKAN fails with: LLVM ERROR: out of memory
+OPTIONS_EXCLUDE_i386=	VULKAN
 
 VULKAN_BUILD_DEPENDS=	glslc:graphics/shaderc \
 			vulkan-headers>0:graphics/vulkan-headers
