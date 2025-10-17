@@ -1,9 +1,7 @@
-Collection of common interactive command line user interfaces, based
-on Inquirer.js.
+python-inquirer is a library that provides a collection of common
+interactive command-line user interfaces. It allows developers to
+easily ask end-users questions, parse and validate answers, manage
+hierarchical prompts, and provide error feedback.
 
-Born as a Inquirer.js clone, it shares part of the goals and
-philosophy.
-
-So, Inquirer should ease the process of asking end user questions,
-parsing, validating answers, managing hierarchical prompts and
-providing error feedback.
+python-inquirer is based on Inquirer.js and supports various input
+types like text, editor, lists, checkboxes, and paths.
