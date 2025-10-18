@@ -1,5 +1,5 @@
 PORTNAME=	httpx-aiohttp
-DISTVERSION=	0.1.8
+DISTVERSION=	0.1.9
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,7 +18,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiohttp>=3.10.0<4:www/py-aiohttp@${PY_FLAVOR
 		${PYTHON_PKGNAMEPREFIX}httpx>=0.27.0:www/py-httpx@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	autoplist pep517
+USE_PYTHON=	autoplist pep517 pytest
 
 NO_ARCH=	yes
 
