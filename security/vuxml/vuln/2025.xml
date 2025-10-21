@@ -1,3 +1,156 @@
+  <vuln vid="88f34edb-ae9b-11f0-b3f7-a8a1599412c6">
+    <topic>chromium -- multiple security fixes</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>141.0.7390.107</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>141.0.7390.107</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2025/10/stable-channel-update-for-desktop_14.html">
+	 <p>This update includes 1 security fix:</p>
+	 <ul>
+	    <li>[447192722] High CVE-2025-11756: Use after free in Safe Browsing. Reported by asnine on 2025-09-25</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2025-11756</cvename>
+      <url>https://chromereleases.googleblog.com/2025/10/stable-channel-update-for-desktop_14.html</url>
+    </references>
+    <dates>
+      <discovery>2025-10-14</discovery>
+      <entry>2025-10-21</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="60ddafd2-ae9e-11f0-b3f7-a8a1599412c6">
+    <topic>chromium -- multiple security fixes</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>141.0.7390.65</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>141.0.7390.65</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2025/10/stable-channel-update-for-desktop.html">
+	 <p>This update includes 3 security fixes:</p>
+	 <ul>
+	    <li>[443196747] High CVE-2025-11458: Heap buffer overflow in Sync. Reported by raven at KunLun lab on 2025-09-05</li>
+	    <li>[446722008] High CVE-2025-11460: Use after free in Storage. Reported by Sombra on 2025-09-23</li>
+	    <li>[441917796] Medium CVE-2025-11211: Out of bounds read in WebCodecs. Reported by Jakob Košir on 2025-08-29</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2025-11458</cvename>
+      <cvename>CVE-2025-11460</cvename>
+      <cvename>CVE-2025-11211</cvename>
+      <url>https://chromereleases.googleblog.com/2025/10/stable-channel-update-for-desktop.html</url>
+    </references>
+    <dates>
+      <discovery>2025-10-07</discovery>
+      <entry>2025-10-21</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="cdf2abf7-ae83-11f0-b5fb-b42e991fc52e">
+    <topic>Mongodb -- Use-after-free in the MongoDB</topic>
+    <affects>
+      <package>
+	<name>mongodb70</name>
+	<range><lt>7.0.25</lt></range>
+      </package>
+      <package>
+	<name>mongodb80</name>
+	<range><lt>8.0.15</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>cna@mongodb.com reports:</p>
+	<blockquote cite="https://jira.mongodb.org/browse/SERVER-105873">
+	  <p>An authorized user may crash the MongoDB server by
+	  causing buffer over-read. This can be done by issuing a DDL
+	  operation while queries are being issued, under some
+	  conditions.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-11979</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-11979</url>
+    </references>
+    <dates>
+      <discovery>2025-10-20</discovery>
+      <entry>2025-10-21</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="4553e4b3-addf-11f0-9b8d-40a6b7c3b3b8">
+    <topic>Hidden/Protected custom variables are prone to filter enumeration</topic>
+    <affects>
+      <package>
+	<name>icingaweb2-module-icingadb-php81</name>
+	<range><lt>1.1.4</lt></range>
+	<range><ge>1.2</ge><lt>1.2.3,1</lt></range>
+      </package>
+      <package>
+	<name>icingaweb2-module-icingadb-php82</name>
+	<range><lt>1.1.4</lt></range>
+	<range><ge>1.2</ge><lt>1.2.3,1</lt></range>
+      </package>
+      <package>
+	<name>icingaweb2-module-icingadb-php83</name>
+	<range><lt>1.1.4</lt></range>
+	<range><ge>1.2</ge><lt>1.2.3,1</lt></range>
+      </package>
+      <package>
+	<name>icingaweb2-module-icingadb-php84</name>
+	<range><lt>1.1.4</lt></range>
+	<range><ge>1.2</ge><lt>1.2.3,1</lt></range>
+      </package>
+      <package>
+	<name>icingaweb2-module-icingadb-php85</name>
+	<range><lt>1.1.4</lt></range>
+	<range><ge>1.2</ge><lt>1.2.3,1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Icinga reports:</p>
+	<blockquote cite="https://github.com/Icinga/icingadb-web/security/advisories/GHSA-w57j-28jc-8429">
+	  <p>An authorized user with access to Icinga DB Web, can use
+	  a custom variable in a filter that is either protected by
+	  icingadb/protect/variables or hidden by icingadb/denylist/variables,
+	  to guess values assigned to it.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-61789</cvename>
+      <url>https://github.com/Icinga/icingadb-web/security/advisories/GHSA-w57j-28jc-8429</url>
+    </references>
+    <dates>
+      <discovery>2025-10-16</discovery>
+      <entry>2025-10-20</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="4355ce42-ad06-11f0-b2aa-b42e991fc52e">
     <topic>Mozilla -- XSS in sites without content-type header</topic>
     <affects>
