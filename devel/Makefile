@@ -408,6 +408,7 @@
     SUBDIR += cgdb
     SUBDIR += cgit
     SUBDIR += cgprof
+    SUBDIR += chai
     SUBDIR += charva
     SUBDIR += check
     SUBDIR += checkbashisms
@@ -610,6 +611,7 @@
     SUBDIR += dev86
     SUBDIR += devhelp
     SUBDIR += devtodo
+    SUBDIR += dfuzzer
     SUBDIR += dia2code
     SUBDIR += dill
     SUBDIR += ding-libs
