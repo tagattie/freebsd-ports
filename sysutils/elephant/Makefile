@@ -47,6 +47,7 @@ WINDOWS_DESC=		Find and focus opened windows
 
 BOOKMARKS_RUN_DEPENDS=	jq:textproc/jq
 BOOKMARKS_USES=		sqlite
+BOOKMARKS_PLIST_FILES=	etc/xdg/elephant/providers/bookmarks.so
 CALC_RUN_DEPENDS=	qalc:math/libqalculate \
 			wl-copy:x11/wl-clipboard
 CALC_PLIST_FILES=	etc/xdg/elephant/providers/calc.so
