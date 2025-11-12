@@ -10,7 +10,8 @@ WWW=		https://github.com/hyprwm/hyprtoolkit
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	hyprwayland-scanner>=0.4.0:devel/hyprwayland-scanner \
+BUILD_DEPENDS=	googletest>0:devel/googletest \
+		hyprwayland-scanner>=0.4.0:devel/hyprwayland-scanner \
 		wayland-protocols>0:graphics/wayland-protocols
 LIB_DEPENDS=	libhyprlang.so:devel/hyprlang \
 		libhyprutils.so:devel/hyprutils \
