@@ -24,6 +24,8 @@ USE_XORG=	pixman
 
 LDFLAGS+=	-Wl,--as-needed
 
+CONFLICTS_INSTALL=	hyprland-qtutils
+
 PLIST_FILES=	bin/hyprland-dialog \
 		bin/hyprland-donate-screen \
 		bin/hyprland-update-screen
