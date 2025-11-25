@@ -1,7 +1,7 @@
 PORTNAME=	hyprlauncher
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.1.3
-CATEGORIES=	x11
+CATEGORIES=	x11 wayland
 
 MAINTAINER=	tagattie@FreeBSD.org
 COMMENT=	Multipurpose and versatile launcher / picker for Hyprland
