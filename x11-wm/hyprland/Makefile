@@ -6,6 +6,10 @@ MASTER_SITES=	https://github.com/hyprwm/Hyprland/releases/download/${DISTVERSION
 DISTNAME=	source-${DISTVERSIONFULL}
 DIST_SUBDIR=	${PORTNAME}
 
+PATCH_SITES=	https://github.com/hyprwm/Hyprland/commit/
+PATCHFILES=	43527d363472b52f17dd9f9f4f87ec25cbf8a399.patch:-p1 \
+		55a93b8a52ad3bd2c0a7468e8f79f5667eea0702.patch:-p1
+
 MAINTAINER=	tagattie@FreeBSD.org
 COMMENT=	Dynamic tiling Wayland compositor that doesn't sacrifice on its looks #'
 WWW=		https://hypr.land/
