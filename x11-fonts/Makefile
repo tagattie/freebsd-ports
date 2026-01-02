@@ -137,6 +137,7 @@
     SUBDIR += gnu-unifont-otf
     SUBDIR += gofont-ttf
     SUBDIR += gohufont
+    SUBDIR += google-fonts
     SUBDIR += hack-font
     SUBDIR += hanazono-fonts-ttf
     SUBDIR += hermit
@@ -276,7 +277,6 @@
     SUBDIR += paratype
     SUBDIR += pcf2bdf
     SUBDIR += plex-ttf
-    SUBDIR += powerline-fonts
     SUBDIR += prociono
     SUBDIR += profont
     SUBDIR += proggy_fonts
