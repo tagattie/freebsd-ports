@@ -56,6 +56,10 @@ X11_CMAKE_BOOL=		X11
 
 GIT_COMMIT_HASH=a1a150fab00a93ea983aaca5df55304bc837f51b
 
+.if ${OPSYS} == FreeBSD && ${ARCH} == i386
+EXTRA_PATCHES=	${PATCHDIR}/extra-patch-src_wayland_buffer_dmabuf.cpp
+.endif
+
 post-install:
 	@${RM} ${STAGEDIR}${PREFIX}/bin/qs
 	@${RLN} ${STAGEDIR}${PREFIX}/bin/quickshell ${STAGEDIR}${PREFIX}/bin/qs
