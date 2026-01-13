@@ -18,7 +18,8 @@ LIB_DEPENDS=	libxkbcommon.so:x11/libxkbcommon
 USES=		cmake:testing display:test gl localbase:ldflags pkgconfig qt:6
 
 USE_GL=		opengl
-USE_QT=		base declarative shadertools:build
+USE_QT=		5compat base declarative imageformats multimedia svg \
+		shadertools:build
 
 CMAKE_ARGS=		-DDISTRIBUTOR:STRING="FreeBSD ports/packages" \
 			-DINSTALL_QML_PREFIX:STRING=${QT_QMLDIR_REL} \
