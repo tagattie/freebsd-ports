@@ -719,6 +719,7 @@
     SUBDIR += mcron
     SUBDIR += mdcat
     SUBDIR += mdf2iso
+    SUBDIR += mdfried
     SUBDIR += megacli
     SUBDIR += megarc
     SUBDIR += memdump
@@ -1036,6 +1037,7 @@
     SUBDIR += py-ansible-compat
     SUBDIR += py-ansible-core
     SUBDIR += py-ansible-core219
+    SUBDIR += py-ansible-core220
     SUBDIR += py-ansible-lint
     SUBDIR += py-ansible-runner
     SUBDIR += py-appjail-gui
@@ -1235,6 +1237,7 @@
     SUBDIR += rubygem-mothra
     SUBDIR += rubygem-murder
     SUBDIR += rubygem-ohai
+    SUBDIR += rubygem-ohai18
     SUBDIR += rubygem-openbolt
     SUBDIR += rubygem-openfact
     SUBDIR += rubygem-openvoxserver-ca
@@ -1587,6 +1590,7 @@
     SUBDIR += waitforssh
     SUBDIR += walk
     SUBDIR += watchfolder
+    SUBDIR += watchcat
     SUBDIR += watchman
     SUBDIR += watchmen
     SUBDIR += waynergy
