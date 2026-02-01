@@ -101,9 +101,6 @@
     SUBDIR += bareos-client
     SUBDIR += bareos-server
     SUBDIR += bareos-traymonitor
-    SUBDIR += bareos22-client
-    SUBDIR += bareos22-server
-    SUBDIR += bareos22-traymonitor
     SUBDIR += bareos23-client
     SUBDIR += bareos23-server
     SUBDIR += bareos23-traymonitor
@@ -1103,6 +1100,7 @@
     SUBDIR += py-python-consul
     SUBDIR += py-python-crontab
     SUBDIR += py-python-nomad
+    SUBDIR += py-python-on-whales
     SUBDIR += py-pytsk
     SUBDIR += py-pywatchman
     SUBDIR += py-pyznap
@@ -1589,8 +1587,8 @@
     SUBDIR += wait_on
     SUBDIR += waitforssh
     SUBDIR += walk
-    SUBDIR += watchfolder
     SUBDIR += watchcat
+    SUBDIR += watchfolder
     SUBDIR += watchman
     SUBDIR += watchmen
     SUBDIR += waynergy
