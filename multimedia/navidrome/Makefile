@@ -1,10 +1,10 @@
 PORTNAME=	navidrome
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.59.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 
-MAINTAINER=	kbowling@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Modern Music Server and Streamer compatible with Subsonic/Airsonic
 WWW=		https://www.navidrome.org/
 
