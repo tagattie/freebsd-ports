@@ -41,18 +41,19 @@ CONFIGURE_ARGS=--without-localdirs \
 		--with-liblua=included \
 		--without-nmap-update
 MAKE_JOBS_UNSAFE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 OPTIONS_DEFINE=	DOCS NLS PCAP SSH2 SSL
 OPTIONS_DEFAULT=NLS SSH2 SSL
 OPTIONS_SUB=	yes
 
 PCAP_DESC=		Build with libpcap from nmap
-PCAP_BROKEN=		Broken libdbus linkage with builtin PCAP
 SSH2_DESC=		SSH2 protocol support
 
 NLS_CONFIGURE_ENABLE=	nls
 PCAP_CONFIGURE_ON=	--with-libpcap=included
+PCAP_LIB_DEPENDS=	libdbus-1.so:devel/dbus
+PCAP_USES=		localbase:ldflags
+PCAP_LDFLAGS=		-ldbus-1
 SSH2_IMPLIES=		SSL
 SSH2_CONFIGURE_ON=	--with-libssh2=included
 SSH2_CONFIGURE_OFF=	--without-libssh2
