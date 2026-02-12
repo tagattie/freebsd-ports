@@ -24,6 +24,8 @@ USE_PYTHON=	autoplist concurrent distutils
 
 SHEBANG_FILES=	nwg_displays/main.py
 
+NO_ARCH=	yes
+
 PLIST_FILES=	share/applications/${PORTNAME}.desktop \
 		share/pixmaps/${PORTNAME}.svg
 PORTDOCS=	README.md
