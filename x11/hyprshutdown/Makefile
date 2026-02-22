@@ -10,6 +10,7 @@ WWW=		https://github.com/hyprwm/hyprshutdown
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BUILD_DEPENDS=	glaze>=6.1.0:devel/glaze
 LIB_DEPENDS=	libhyprutils.so:devel/hyprutils \
 		libdrm.so:graphics/libdrm \
 		libhyprtoolkit.so:x11-toolkits/hyprtoolkit
