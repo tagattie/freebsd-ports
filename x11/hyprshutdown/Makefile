@@ -21,6 +21,6 @@ GH_ACCOUNT=	hyprwm
 
 USE_XORG=	pixman
 
-PLIST_FILES=	bin/hyprshutdown
+PLIST_FILES=	bin/${PORTNAME}
 
 .include <bsd.port.mk>
