@@ -1,0 +1,13 @@
+--- swift/stdlib/public/Platform/SwiftGlibc.h.gyb.orig	2025-12-09 23:45:54 UTC
++++ swift/stdlib/public/Platform/SwiftGlibc.h.gyb
+@@ -98,6 +98,10 @@ headers = [
+   'utmpx.h',
+   'wait.h',
+   'wordexp.h',
++
++  # FreeBSD
++  'pthread_np.h', 
++  'sys/extattr.h',
+ ]
+ }%
+ 

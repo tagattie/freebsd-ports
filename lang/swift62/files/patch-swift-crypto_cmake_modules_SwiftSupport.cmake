@@ -1,0 +1,15 @@
+--- swift-crypto/cmake/modules/SwiftSupport.cmake.orig	2025-07-23 08:26:08 UTC
++++ swift-crypto/cmake/modules/SwiftSupport.cmake
+@@ -44,6 +44,12 @@ function(get_swift_host_arch result_var_name)
+     set("${result_var_name}" "x86_64" PARENT_SCOPE)
+   elseif("${CMAKE_SYSTEM_PROCESSOR}" STREQUAL "amd64")
+     set("${result_var_name}" "x86_64" PARENT_SCOPE)
++  elseif("${CMAKE_SYSTEM_PROCESSOR}" STREQUAL "amd64")
++    if("${CMAKE_SYSTEM_NAME}" STREQUAL "FreeBSD")
++      set("${result_var_name}" "x86_64" PARENT_SCOPE)
++    else()
++      set("${result_var_name}" "amd64" PARENT_SCOPE)
++    endif()
+   elseif("${CMAKE_SYSTEM_PROCESSOR}" STREQUAL "IA64")
+     set("${result_var_name}" "itanium" PARENT_SCOPE)
+   elseif("${CMAKE_SYSTEM_PROCESSOR}" STREQUAL "x86")

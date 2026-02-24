@@ -1,0 +1,11 @@
+--- swift/utils/build-script-impl.orig	2026-01-28 03:04:30 UTC
++++ swift/utils/build-script-impl
+@@ -463,7 +463,7 @@ function verify_host_is_supported() {
+ function verify_host_is_supported() {
+     local host="$1"
+     case ${host} in
+-      freebsd-arm64             \
++      freebsd-aarch64           \
+       | freebsd-x86_64          \
+       | openbsd-x86_64          \
+       | openbsd-aarch64         \

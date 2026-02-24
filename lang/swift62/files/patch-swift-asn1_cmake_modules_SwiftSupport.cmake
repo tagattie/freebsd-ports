@@ -1,0 +1,15 @@
+--- swift-asn1/cmake/modules/SwiftSupport.cmake.orig	2025-04-14 11:00:45 UTC
++++ swift-asn1/cmake/modules/SwiftSupport.cmake
+@@ -42,6 +42,12 @@ function(get_swift_host_arch result_var_name)
+     set("${result_var_name}" "armv7" PARENT_SCOPE)
+   elseif("${CMAKE_SYSTEM_PROCESSOR}" MATCHES "AMD64|amd64")
+     set("${result_var_name}" "x86_64" PARENT_SCOPE)
++  elseif("${CMAKE_SYSTEM_PROCESSOR}" STREQUAL "amd64")
++    if("${CMAKE_SYSTEM_NAME}" STREQUAL "FreeBSD")
++      set("${result_var_name}" "x86_64" PARENT_SCOPE)
++    else()
++      set("${result_var_name}" "amd64" PARENT_SCOPE)
++    endif()
+   elseif("${CMAKE_SYSTEM_PROCESSOR}" STREQUAL "IA64")
+     set("${result_var_name}" "itanium" PARENT_SCOPE)
+   elseif("${CMAKE_SYSTEM_PROCESSOR}" STREQUAL "x86")
