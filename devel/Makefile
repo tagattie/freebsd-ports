@@ -4336,6 +4336,7 @@
     SUBDIR += premake5
     SUBDIR += priv_wrapper
     SUBDIR += prjpeppercorn111
+    SUBDIR += prjpeppercorn112
     SUBDIR += projectcenter
     SUBDIR += prometheus-cpp
     SUBDIR += protobuf
@@ -6351,6 +6352,7 @@
     SUBDIR += py-xxhash
     SUBDIR += py-yacs
     SUBDIR += py-yamllint
+    SUBDIR += py-yamlloader
     SUBDIR += py-yamlordereddictloader
     SUBDIR += py-yappi
     SUBDIR += py-yapps2
