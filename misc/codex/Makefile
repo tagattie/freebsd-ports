@@ -14,6 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BROKEN_i386=	fails to build: rustc-LLVM ERROR: out of memory
 
 LIB_DEPENDS=	libzstd.so:archivers/zstd \
+		libasound.so:audio/alsa-lib \
 		libdbus-1.so:devel/dbus \
 		libonig.so:devel/oniguruma
 RUN_DEPENDS=	bash:shells/bash \
