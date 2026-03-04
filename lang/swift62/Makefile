@@ -1,6 +1,6 @@
 PORTNAME=	swift
 DISTVERSIONPREFIX=	swift-
-DISTVERSION=	6.2.3
+DISTVERSION=	6.2.4
 DISTVERSIONSUFFIX=	-RELEASE
 CATEGORIES=	lang
 PKGNAMESUFFIX=	62
@@ -47,12 +47,13 @@ USES=		cmake:indirect gnome libedit ninja:build perl5 pkgconfig \
 		python shebangfix sqlite:3 tar:xz
 
 USE_GITHUB=	nodefault
-GH_TUPLE=	swiftlang:swift:${DISTVERSIONFULL}:swift/swift \
+GH_TUPLE=	\
 		swiftlang:swift-cmark:${DISTVERSIONFULL}:swift_cmark/cmark \
 		swiftlang:indexstore-db:${DISTVERSIONFULL}:indexstore_db/indexstore-db \
 		swiftlang:swift-llbuild:${DISTVERSIONFULL}:swift_llbuild/llbuild \
 		swiftlang:llvm-project:${DISTVERSIONFULL}:llvm_project/llvm-project \
 		swiftlang:sourcekit-lsp:${DISTVERSIONFULL}:sourcekit_lsp/sourcekit-lsp \
+		swiftlang:swift:${DISTVERSIONFULL}:swift/swift \
 		apple:swift-argument-parser:1.6.1:swift_argument_parser/swift-argument-parser \
 		apple:swift-asn1:1.3.2:swift_asn1/swift-asn1 \
 		apple:swift-async-algorithms:1.0.1:swift_async_algorithms/swift-async-algorithms \
@@ -91,7 +92,7 @@ GH_TUPLE=	swiftlang:swift:${DISTVERSIONFULL}:swift/swift \
 		swiftlang:swift-tools-protocols:0.0.10:swift_tools_protocols/swift-tools-protocols \
 		swiftlang:swift-tools-support-core:${DISTVERSIONFULL}:swift_tools_support_core/swift-tools-support-core \
 		swiftlang:swift-package-manager:${DISTVERSIONFULL}:swift_package_manager/swiftpm \
-		WebAssembly:wasi-libc:wasi-sdk-26:wasi_libc/wasi-libc \
+		WebAssembly:wasi-libc:wasi-sdk-27:wasi_libc/wasi-libc \
 		swiftwasm:WasmKit:0.2.0:WasmKit/wasmkit
 
 USE_PERL5=	build
