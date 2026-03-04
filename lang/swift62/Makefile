@@ -9,8 +9,14 @@ DIST_SUBDIR=	${PORTNAME}
 BOOTSTRAP_SWIFT_VERSION=	6.2.3
 BOOTSTRAP_SUPPORTED_RELEASES=	14.3 15.0
 .if !defined(BOOTSTRAP_MODE)
+.   if make(makesum)
+.	for rel in ${BOOTSTRAP_SUPPORTED_RELEASES}
+DISTFILES+=	${PORTNAME}${PKGNAMESUFFIX}-bootstrap-${BOOTSTRAP_SWIFT_VERSION}-${SWIFT_ARCH}-unknown-${OPSYS:tl}${rel}${EXTRACT_SUFX}:bootstrap
+.	endfor
+.   else
 MASTER_SITES=	LOCAL/tagattie/${PORTNAME}:bootstrap
 DISTFILES=	${PORTNAME}${PKGNAMESUFFIX}-bootstrap-${BOOTSTRAP_SWIFT_VERSION}-${SWIFT_ARCH}-unknown-${OPSYS:tl}${OSREL}${EXTRACT_SUFX}:bootstrap
+.   endif
 .else
 .   if make(makesum)
 .	for rel in ${BOOTSTRAP_SUPPORTED_RELEASES}
