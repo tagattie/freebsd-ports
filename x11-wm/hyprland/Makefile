@@ -70,6 +70,10 @@ X11_CMAKE_BOOL_OFF=	NO_XWAYLAND
 
 .include <bsd.port.options.mk>
 
+.if ${OPSYS} == FreeBSD && ${ARCH} == i386
+EXTRA_PATCHES=	${PATCHDIR}/extra-patch-src_layout_algorithm_tiled_scrolling_ScrollTapeController.cpp
+.endif
+
 post-patch:
 # Respect consolekit2 as XDG_RUNTIME_DIR fallback
 	@${REINPLACE_CMD} 's|/run/user|/var&|' \
