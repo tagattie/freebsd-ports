@@ -1,6 +1,5 @@
 PORTNAME=	typescript-go
 PORTVERSION=	7.0.0.g20260312
-PORTREVISION=	1
 CATEGORIES=	lang
 
 MAINTAINER=	tagattie@FreeBSD.org
