@@ -1389,6 +1389,7 @@
     SUBDIR += py-elementpath
     SUBDIR += py-emeraldtree
     SUBDIR += py-empy
+    SUBDIR += py-en-core-web-sm
     SUBDIR += py-enchant
     SUBDIR += py-enrich
     SUBDIR += py-epy-reader
