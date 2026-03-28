@@ -22,10 +22,12 @@ RUN_DEPENDS=	bash:shells/bash \
 		rg:textproc/ripgrep
 TEST_DEPENDS=	bash:shells/bash
 
-USES=		cargo ninja:build python:test shebangfix ssl
+USES=		cargo gnome llvm:min=19 ninja:build python:test shebangfix ssl
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	openai
+
+USE_GNOME=	glib20
 
 SHEBANG_FILES=	codex-rs/skills/src/assets/samples/imagegen/scripts/image_gen.py \
 		codex-rs/skills/src/assets/samples/plugin-creator/scripts/create_basic_plugin.py \
