@@ -1,5 +1,6 @@
 PORTNAME=	asap3
 DISTVERSION=	3.13.11
+PORTREVISION=	1
 CATEGORIES=	science python # chemistry
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,9 +12,9 @@ WWW=		https://wiki.fysik.dtu.dk/asap
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYNUMPY}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy1>=1.16:math/py-numpy1@${PY_FLAVOR}
 LIB_DEPENDS=	libmpich.so:net/mpich # not sure if this is used
-RUN_DEPENDS=	${PYNUMPY} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy1>=1.16:math/py-numpy1@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}ase>=3.24.0:science/py-ase@${PY_FLAVOR}
 
 USES=		localbase python

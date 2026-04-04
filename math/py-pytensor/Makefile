@@ -1,5 +1,6 @@
 PORTNAME=	pytensor
 DISTVERSION=	2.34.0 # last tag not requiring numpy-2.x
+PORTREVISION=	1
 CATEGORIES=	math python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,7 +14,7 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/doc/LICENSE.txt
 
 BUILD_DEPENDS=	${PY_SETUPTOOLS} \
-		${PYNUMPY} \
+		${PYTHON_PKGNAMEPREFIX}numpy1>=1.16:math/py-numpy1@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}versioneer>=0.29:devel/py-versioneer@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR} \
 		${PY_DEPENDS}
@@ -23,7 +24,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cons>0:devel/py-cons@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}logical-unification>0:math/py-logical-unification@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}miniKanren>0:devel/py-miniKanren@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}numba>=0.57:devel/py-numba@${PY_FLAVOR} \
-		${PYNUMPY} \
+		${PYTHON_PKGNAMEPREFIX}numpy1>=1.16:math/py-numpy1@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scipy>=1:science/py-scipy@${PY_FLAVOR}
 
 USES=		python
