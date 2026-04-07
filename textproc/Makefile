@@ -63,6 +63,7 @@
     SUBDIR += aq
     SUBDIR += arianna
     SUBDIR += asciidoc
+    SUBDIR += asciinema
     SUBDIR += asm-xml
     SUBDIR += asm2html
     SUBDIR += aspell
@@ -1338,7 +1339,6 @@
     SUBDIR += py-anymarkup
     SUBDIR += py-anymarkup-core
     SUBDIR += py-arabic-reshaper
-    SUBDIR += py-asciinema
     SUBDIR += py-asonic
     SUBDIR += py-autopep8
     SUBDIR += py-awesome-slugify
@@ -1463,6 +1463,7 @@
     SUBDIR += py-latexcodec
     SUBDIR += py-license-expression
     SUBDIR += py-line-protocol-parser
+    SUBDIR += py-lingua-language-detector
     SUBDIR += py-linkify-it-py
     SUBDIR += py-m2r
     SUBDIR += py-mako
