@@ -1,4 +1,4 @@
-TIMESTAMP = 1775480799
+TIMESTAMP = 1775552348
 SHA256 (rust/crates/addr2line-0.24.2.crate) = dfbe277e56a376000877090da837660b4427aad530e3028d44e0bffe4f89a1c1
 SIZE (rust/crates/addr2line-0.24.2.crate) = 39015
 SHA256 (rust/crates/adler2-2.0.1.crate) = 320119579fcad9c21884f5c4861d16174d0e06250625266f50fe6898340abefa
@@ -461,5 +461,5 @@ SHA256 (rust/crates/zerocopy-derive-0.8.26.crate) = 9ecf5b4cc5364572d7f4c329661b
 SIZE (rust/crates/zerocopy-derive-0.8.26.crate) = 88080
 SHA256 (rust/crates/zeroize-1.8.1.crate) = ced3678a2879b30306d323f4542626697a464a97c0a07c9aebf7ebca65cd4dde
 SIZE (rust/crates/zeroize-1.8.1.crate) = 20029
-SHA256 (asciinema-asciinema-v3.0.0_GH0.tar.gz) = f44feaa1bc150e7964635dc4714fd86089a968587fed81dccf860ee7b64617ca
-SIZE (asciinema-asciinema-v3.0.0_GH0.tar.gz) = 184931
+SHA256 (asciinema-asciinema-v3.0.1_GH0.tar.gz) = 612ecb265ccb316f07c9825bacd7301fd21f03a72b516edd370b0d3aa1adf2bb
+SIZE (asciinema-asciinema-v3.0.1_GH0.tar.gz) = 167034
