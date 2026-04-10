@@ -6241,6 +6241,7 @@
     SUBDIR += py-ufmt
     SUBDIR += py-uhid-freebsd
     SUBDIR += py-ujson
+    SUBDIR += py-uncalled-for
     SUBDIR += py-undefined
     SUBDIR += py-unearth
     SUBDIR += py-unicodecsv
