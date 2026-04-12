@@ -1,3 +1,111 @@
+  <vuln vid="8d549898-3598-11f1-a8bc-3c7c3fba4204">
+    <topic>py-ormar -- vulnerabilities</topic>
+    <affects>
+    <package>
+	<name>py310-ormar</name>
+	<name>py311-ormar</name>
+	<name>py312-ormar</name>
+	<name>py313-ormar</name>
+	<name>py313t-ormar</name>
+	<name>py314-ormar</name>
+	<range><lt>0.23.1</lt></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>https://github.com/ormar-orm/ormar/security/advisories reports:</p>
+	<blockquote cite="https://github.com/collerek/ormar/security/advisories">
+	  <ul>
+	    <li>SQL Injection in aggregate functions min() and max()</li>
+	    <li>Pydantic Validation Bypass via __pk_only__ and __excluded__ Kwargs Injection in Model Constructor</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-26198</cvename>
+      <url>https://github.com/ormar-orm/ormar/security/advisories/GHSA-xxh2-68g9-8jqr</url>
+      <cvename>CVE-2026-27953</cvename>
+      <url>https://github.com/ormar-orm/ormar/security/advisories/GHSA-f964-whrq-44h8</url>
+    </references>
+    <dates>
+      <discovery>2026-02-22</discovery>
+      <entry>2026-04-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="766bb9b5-357f-11f1-98f0-00a098b42aeb">
+    <topic>(lib)tiff -- Integer Overflow or Wraparound</topic>
+    <affects>
+    <package>
+	<name>tiff</name>
+	<range><lt>4.7.1_1</lt></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>PrymEvol and Quang Luong reports:</p>
+	<blockquote cite="https://www.cve.org/CVERecord?id=CVE-2026-4775">
+	  <p>A flaw was found in the libtiff library.  A remote attacker could
+	     exploit a signed integer overflow vulnerability in the
+	     putcontig8bitYCbCr44tile function by providing a specially crafted
+	     TIFF file.  This flaw can lead to an out-of-bounds heap write due
+	     to incorrect memory pointer calculations, potentially causing a
+	     denial of service (application crash) or arbitrary code execution.
+	  </p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-4775</cvename>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2026-4775</url>
+    </references>
+    <dates>
+      <discovery>2026-03-24</discovery>
+      <entry>2026-04-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="431c2753-3503-11f1-bc6d-3c7c3fba4204">
+    <topic>DNSdist -- vulnerabilities</topic>
+    <affects>
+    <package>
+	<name>dnsdist</name>
+	<range><lt>2.0.3</lt></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>https://www.dnsdist.org/security-advisories/powerdns-advisory-for-dnsdist-2026-02.html reports:</p>
+	<blockquote cite="https://www.dnsdist.org/security-advisories/powerdns-advisory-for-dnsdist-2026-02.html">
+	  <ul>
+	    <li>CVE-2026-0396: HTML injection in the web dashboard</li>
+	    <li>CVE-2026-0397: Information disclosure via CORS misconfiguration</li>
+	    <li>CVE-2026-24028: Out-of-bounds read when parsing DNS packets via Lua</li>
+	    <li>CVE-2026-24029: DNS over HTTPS ACL bypass</li>
+	    <li>CVE-2026-24030: Unbounded memory allocation for DoQ and DoH3</li>
+	    <li>CVE-2026-27853: Out-of-bounds write when rewriting large DNS packets</li>
+	    <li>CVE-2026-27854: Use after free when parsing EDNS options in Lua</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-0396</cvename>
+      <cvename>CVE-2026-0397</cvename>
+      <cvename>CVE-2026-24028</cvename>
+      <cvename>CVE-2026-24029</cvename>
+      <cvename>CVE-2026-24030</cvename>
+      <cvename>CVE-2026-27853</cvename>
+      <cvename>CVE-2026-27854</cvename>
+      <url>https://www.dnsdist.org/security-advisories/powerdns-advisory-for-dnsdist-2026-02.html</url>
+    </references>
+    <dates>
+      <discovery>2026-03-31</discovery>
+      <entry>2026-04-10</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="d77bd2f5-34f0-11f1-bc6d-3c7c3fba4204">
     <topic>Mbed TLS -- vulnerabilities</topic>
     <affects>

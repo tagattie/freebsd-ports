@@ -6091,6 +6091,7 @@
     SUBDIR += py-stack-data
     SUBDIR += py-statgrab
     SUBDIR += py-statsd
+    SUBDIR += py-standard-imghdr
     SUBDIR += py-stdlib-list
     SUBDIR += py-stdlibs
     SUBDIR += py-stdnum

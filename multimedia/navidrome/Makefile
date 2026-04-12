@@ -19,7 +19,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 ONLY_FOR_ARCHS=	aarch64 amd64
 
 LIB_DEPENDS=	libtag.so:audio/taglib
-RUN_DEPENDS=	ffmpeg:multimedia/ffmpeg
 
 USES=		cpe go:1.25+,modules pkgconfig
 
