@@ -729,6 +729,7 @@
     SUBDIR += fnm
     SUBDIR += folly
     SUBDIR += forge
+    SUBDIR += forgejo-cli
     SUBDIR += forgejo-runner
     SUBDIR += fortran-stdlib
     SUBDIR += fortran-utils
