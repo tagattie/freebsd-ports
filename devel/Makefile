@@ -5252,6 +5252,7 @@
     SUBDIR += py-lazy-object-proxy
     SUBDIR += py-lazy_imports
     SUBDIR += py-lazy_loader
+    SUBDIR += py-lazyarray
     SUBDIR += py-legacy-api-wrap
     SUBDIR += py-levenshtein
     SUBDIR += py-libcst
