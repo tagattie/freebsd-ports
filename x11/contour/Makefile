@@ -13,7 +13,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 BUILD_DEPENDS=	${LOCALBASE}/lib/cmake/boxed-cpp/boxed-cpp-config.cmake:devel/boxed-cpp \
 		${LOCALBASE}/lib/cmake/reflection-cpp/reflection-cpp-config.cmake:devel/reflection-cpp \
 		${LOCALBASE}/share/cmake/Microsoft.GSL/Microsoft.GSLConfig.cmake:devel/microsoft-gsl \
-		${LOCALBASE}/lib/cmake/range-v3/range-v3-config.cmake:devel/range-v3
+		${LOCALBASE}/lib/cmake/range-v3/range-v3-config.cmake:devel/range-v3 \
+		vulkan-headers>0:graphics/vulkan-headers
 LIB_DEPENDS=	libunicode.so:devel/libunicode-contour \
 		libyaml-cpp.so:devel/yaml-cpp \
 		libfreetype.so:print/freetype2 \
@@ -34,6 +35,7 @@ USE_GNOME=	cairo
 USE_QT=		base declarative multimedia tools:build
 
 CMAKE_ON=		CONTOUR_INSTALL_TOOLS
+CMAKE_OFF=		CONTOUR_USE_CPM
 CMAKE_TESTING_ON=	CONTOUR_TESTING
 
 PORTDOCS=	README.md SECURITY.md
