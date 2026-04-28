@@ -41,4 +41,10 @@ PLIST_SUB=	SOVERSION_FULL=${DISTVERSION:C/-.*//} \
 LIB_DEPENDS+=	libepoll-shim.so:devel/libepoll-shim
 .endif
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == i386
+EXTRA_PATCHES=	${PATCHDIR}/extra-patch-src_backend_Headless.cpp
+.endif
+
 .include <bsd.port.mk>
