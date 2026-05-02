@@ -339,6 +339,7 @@
     SUBDIR += boxed-cpp
     SUBDIR += boxfort
     SUBDIR += bpython
+    SUBDIR += brpc
     SUBDIR += brz
     SUBDIR += bsdbuild
     SUBDIR += bsdcflow
@@ -8698,6 +8699,7 @@
     SUBDIR += vc-intrinsics
     SUBDIR += vcglib
     SUBDIR += vdf
+    SUBDIR += vectorscan
     SUBDIR += venom
     SUBDIR += vera++
     SUBDIR += vexcl
