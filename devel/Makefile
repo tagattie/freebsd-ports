@@ -746,6 +746,7 @@
     SUBDIR += freebsd-gcc14
     SUBDIR += freebsd-gcc15
     SUBDIR += freebsd-git-arc
+    SUBDIR += freebsd-git-pr
     SUBDIR += freebsd-nvme-shim
     SUBDIR += freebsd-sysroot
     SUBDIR += frink
@@ -4331,6 +4332,7 @@
     SUBDIR += phpunit10
     SUBDIR += phpunit11
     SUBDIR += phpunit12
+    SUBDIR += phpunit13
     SUBDIR += phpunit8
     SUBDIR += phpunit9
     SUBDIR += physfs
@@ -4664,6 +4666,7 @@
     SUBDIR += py-buildbot-wsgi-dashboards
     SUBDIR += py-buildbot-www
     SUBDIR += py-bullet3
+    SUBDIR += py-bump-my-version
     SUBDIR += py-bump2version
     SUBDIR += py-bytecode
     SUBDIR += py-cabby
@@ -5639,6 +5642,7 @@
     SUBDIR += py-pre-commit
     SUBDIR += py-pre-commit-hooks
     SUBDIR += py-prefixed
+    SUBDIR += py-prek
     SUBDIR += py-preshed
     SUBDIR += py-preshed3
     SUBDIR += py-pretend
