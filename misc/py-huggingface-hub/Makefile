@@ -27,19 +27,13 @@ RUN_DEPENDS_amd64=	${PYTHON_PKGNAMEPREFIX}hf-xet>=1.4.3<2.0.0:misc/py-hf-xet@${P
 RUN_DEPENDS_aarch4=	${PYTHON_PKGNAMEPREFIX}hf-xet>=1.4.3<2.0.0:misc/py-hf-xet@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	pep517
+USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
 
 PORTDOCS=	README.md
 
 OPTIONS_DEFINE=	DOCS
-
-post-install:
-.for p in hf huggingface-cli tiny-agents
-	${RLN} ${STAGEDIR}${PREFIX}/bin/${p}-${PYTHON_VER} \
-		${STAGEDIR}${PREFIX}/bin/${p}
-.endfor
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
