@@ -12,7 +12,8 @@ LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${LOCALBASE}/share/cmake/CLI11/CLI11Config.cmake:devel/cli11 \
-		${LOCALBASE}/lib/cmake/SPIRV-Tools/SPIRV-ToolsConfig.cmake:graphics/spirv-tools
+		${LOCALBASE}/lib/cmake/SPIRV-Tools/SPIRV-ToolsConfig.cmake:graphics/spirv-tools \
+		vulkan-headers>0:graphics/vulkan-headers
 LIB_DEPENDS=	libdrm.so:graphics/libdrm \
 		libxkbcommon.so:x11/libxkbcommon
 
@@ -22,10 +23,10 @@ USE_GL=		opengl
 USE_QT=		5compat base declarative imageformats multimedia svg \
 		shadertools:build
 
-CMAKE_ARGS=		-DDISTRIBUTOR:STRING="FreeBSD ports/packages" \
-			-DINSTALL_QML_PREFIX:STRING=${QT_QMLDIR_REL} \
-			-DGIT_REVISION:STRING=${GIT_COMMIT_HASH}
-CMAKE_OFF=		CRASH_HANDLER
+CMAKE_ARGS=	-DDISTRIBUTOR:STRING="FreeBSD ports/packages" \
+		-DINSTALL_QML_PREFIX:STRING=${QT_QMLDIR_REL} \
+		-DGIT_REVISION:STRING=${GIT_COMMIT_HASH}
+CMAKE_OFF=	CRASH_HANDLER
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
