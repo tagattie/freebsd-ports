@@ -194,8 +194,10 @@ PLIST_SUB+=	BOOTSTRAP=""
 
 # Bootstrap swift toolchain has been built on FreeBSD 14 jail.
 # So we need compat14x on FreeBSD 15 or later.
-.if ${OSVERSION} >= 1500000
+.if !defined(BOOTSTRAP_MODE)
+.   if ${OSVERSION} >= 1500000
 BUILD_DEPENDS+=	${LOCALBASE}/lib/compat/libutil.so.9:misc/compat14x
+.   endif
 .endif
 
 post-extract:
