@@ -190,6 +190,14 @@ PLIST_SUB+=	BOOTSTRAP="@comment "
 PLIST_SUB+=	BOOTSTRAP=""
 .endif
 
+.include <bsd.port.pre.mk>
+
+# Bootstrap swift toolchain has been built on FreeBSD 14 jail.
+# So we need compat14x on FreeBSD 15 or later.
+.if ${OSVERSION} >= 1500000
+BUILD_DEPENDS+=	${LOCALBASE}/lib/compat/libutil.so.9:misc/compat14x
+.endif
+
 post-extract:
 	@${CP} ${WRKSRC}/swift-corelibs-libdispatch/dispatch/generic/module.modulemap \
 		${WRKSRC}/swift-corelibs-libdispatch/dispatch
@@ -269,4 +277,4 @@ make-bootstrap-archive:
 		-C ${STAGEDIR} .
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
