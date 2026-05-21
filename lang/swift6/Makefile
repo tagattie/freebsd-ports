@@ -130,6 +130,9 @@ STAGE5_MODULES=	${STAGE4_MODULES} \
 		swiftformat \
 		swiftdocc
 # I can't make sourcekit-lsp build successfully. So temporarily disable it.
+# The following GitHub PRs might be relevant:
+# https://github.com/swiftlang/swift-tools-protocols/pull/48
+# https://github.com/swiftlang/sourcekit-lsp/pull/2632
 #STAGE5_MODULES+=sourcekit-lsp
 COMMON_BUILDFLAGS=	\
 		--install-prefix ${SWIFT_PREFIX} \
