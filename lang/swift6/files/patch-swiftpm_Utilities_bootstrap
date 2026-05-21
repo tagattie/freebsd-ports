@@ -1,6 +1,6 @@
---- swiftpm/Utilities/bootstrap.orig	2026-02-12 20:38:55 UTC
+--- swiftpm/Utilities/bootstrap.orig	2026-05-19 11:23:40 UTC
 +++ swiftpm/Utilities/bootstrap
-@@ -635,7 +635,7 @@ def build_with_cmake(args, cmake_args, ninja_args, sou
+@@ -638,7 +638,7 @@ def build_with_cmake(args, cmake_args, ninja_args, sou
              "env"] + cmake_env + ["MACOSX_DEPLOYMENT_TARGET=%s" % (g_macos_deployment_target),
              args.cmake_path, "-G", "Ninja",
              "-DCMAKE_MAKE_PROGRAM=%s" % args.ninja_path,
@@ -8,4 +8,4 @@
 +            "-DCMAKE_BUILD_TYPE:=Release",
              "-DCMAKE_Swift_FLAGS='%s'" % swift_flags,
              "-DCMAKE_Swift_COMPILER:=%s" % (args.swiftc_path),
-             "-DCMAKE_C_COMPILER:=%s" % (args.clang_path),
+             "-DCMAKE_Swift_COMPILER_TARGET={}".format((get_build_target(args) + g_macos_deployment_target) if platform.system() == 'Darwin' else get_build_target(args)),

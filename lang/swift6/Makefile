@@ -1,27 +1,20 @@
 PORTNAME=	swift
 DISTVERSIONPREFIX=	swift-
-DISTVERSION=	6.2.4
+DISTVERSION=	6.3.1
 DISTVERSIONSUFFIX=	-RELEASE
 CATEGORIES=	lang
-PKGNAMESUFFIX=	62
+PKGNAMESUFFIX=	6
 DIST_SUBDIR=	${PORTNAME}
 
-BOOTSTRAP_SWIFT_VERSION=	6.2.3
-BOOTSTRAP_SUPPORTED_RELEASES=	14.3 15.0
+BOOTSTRAP_SWIFT_VERSION=	6.3.1
 .if !defined(BOOTSTRAP_MODE)
-.   if make(makesum)
-.	for rel in ${BOOTSTRAP_SUPPORTED_RELEASES}
-DISTFILES+=	${PORTNAME}${PKGNAMESUFFIX}-bootstrap-${BOOTSTRAP_SWIFT_VERSION}-${SWIFT_ARCH}-unknown-${OPSYS:tl}${rel}${EXTRACT_SUFX}:bootstrap
-.	endfor
-.   else
+.   if !make(makesum)
 MASTER_SITES=	LOCAL/tagattie/${PORTNAME}:bootstrap
-DISTFILES=	${PORTNAME}${PKGNAMESUFFIX}-bootstrap-${BOOTSTRAP_SWIFT_VERSION}-${SWIFT_ARCH}-unknown-${OPSYS:tl}${OSREL}${EXTRACT_SUFX}:bootstrap
 .   endif
+DISTFILES=	${PORTNAME}${PKGNAMESUFFIX}-bootstrap-${BOOTSTRAP_SWIFT_VERSION}-${SWIFT_ARCH}-unknown-${OPSYS:tl}${EXTRACT_SUFX}:bootstrap
 .else
 .   if make(makesum)
-.	for rel in ${BOOTSTRAP_SUPPORTED_RELEASES}
-DISTFILES+=	${PORTNAME}${PKGNAMESUFFIX}-bootstrap-${DISTVERSION}-${SWIFT_ARCH}-unknown-${OPSYS:tl}${rel}${EXTRACT_SUFX}:bootstrap
-.	endfor
+DISTFILES=	${PORTNAME}${PKGNAMESUFFIX}-bootstrap-${DISTVERSION}-${SWIFT_ARCH}-unknown-${OPSYS:tl}${EXTRACT_SUFX}:bootstrap
 .   endif
 .endif
 
@@ -32,8 +25,6 @@ WWW=		https://www.swift.org/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/swift/LICENSE.txt
 
-# See https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=286342
-BROKEN_FreeBSD_13=	fails to build: error: use of undeclared identifier 'strtoll_l'
 ONLY_FOR_ARCHS=		amd64
 ONLY_FOR_ARCHS_REASON=	bootstrap is available only on amd64 architecture
 
@@ -61,7 +52,7 @@ GH_TUPLE=	\
 		swiftlang:swift-build:${DISTVERSIONFULL}:swift_build/swift-build \
 		apple:swift-certificates:1.10.1:swift_certificates/swift-certificates \
 		apple:swift-collections:1.1.6:swift_collections/swift-collections \
-		swiftlang:swift-corelibs-blocksruntime:63319b6:swift_corelibs_blocksruntime/swift-corelibs-blocksruntime \
+		swiftlang:swift-corelibs-blocksruntime:${DISTVERSIONFULL}:swift_corelibs_blocksruntime/swift-corelibs-blocksruntime \
 		swiftlang:swift-corelibs-foundation:${DISTVERSIONFULL}:swift_corelibs_foundation/swift-corelibs-foundation \
 		swiftlang:swift-corelibs-libdispatch:${DISTVERSIONFULL}:swift_corelibs_libdispatch/swift-corelibs-libdispatch \
 		swiftlang:swift-corelibs-xctest:${DISTVERSIONFULL}:swift_corelibs_xctest/swift-corelibs-xctest \
@@ -84,16 +75,16 @@ GH_TUPLE=	\
 		apple:swift-numerics:1.0.2:swift_numerics/swift-numerics \
 		swiftlang:swift-sdk-generator:${DISTVERSIONFULL}:swift_sdk_generator/swift-sdk-generator \
 		swiftlang:swift-stress-tester:${DISTVERSIONFULL}:swift_stress_tester/swift-stress-tester \
-		swiftlang:swift-subprocess:0.2.1:swift_subprocess/swift-subprocess \
+		swiftlang:swift-subprocess:0.4:swift_subprocess/swift-subprocess \
 		swiftlang:swift-syntax:${DISTVERSIONFULL}:swift_syntax/swift-syntax \
 		apple:swift-system:1.5.0:swift_system/swift-system \
 		swiftlang:swift-testing:${DISTVERSIONFULL}:swift_testing/swift-testing \
-		swiftlang:swift-toolchain-sqlite:1.0.7:swift_toolchain_sqlite/swift-toolchain-sqlite \
+		swiftlang:swift-toolchain-sqlite:1.0.9:swift_toolchain_sqlite/swift-toolchain-sqlite \
 		swiftlang:swift-tools-protocols:0.0.10:swift_tools_protocols/swift-tools-protocols \
 		swiftlang:swift-tools-support-core:${DISTVERSIONFULL}:swift_tools_support_core/swift-tools-support-core \
 		swiftlang:swift-package-manager:${DISTVERSIONFULL}:swift_package_manager/swiftpm \
-		WebAssembly:wasi-libc:wasi-sdk-27:wasi_libc/wasi-libc \
-		swiftwasm:WasmKit:0.2.0:WasmKit/wasmkit
+		WebAssembly:wasi-libc:wasi-sdk-32:wasi_libc/wasi-libc \
+		swiftwasm:WasmKit:0.2.1:WasmKit/wasmkit
 
 USE_PERL5=	build
 USE_GNOME=	libxml2
@@ -106,12 +97,14 @@ SHEBANG_FILES=	swift/utils/api_checker/sdk-module-lists/infer-imports.py \
 		swift/utils/swift-api-dump.py \
 		swiftpm/Utilities/bootstrap
 
+MAKE_ENV+=	SKIP_BUILD_SWIFTPM_INTERNALTESTSUPPORT=1
+
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 
 WRKSRC=		${WRKDIR}/swift-project
 
 PLIST_SUB=	SWIFT_ARCH=${SWIFT_ARCH} \
-		SWIFT_TARGET_TRIPLE=${SWIFT_ARCH}-unknown-${OPSYS:tl}${OSREL}
+		SWIFT_TARGET_TRIPLE=${SWIFT_ARCH}-unknown-${OPSYS:tl}
 PORTDOCS=	CHANGELOG.md CONTRIBUTING.md README.md
 
 OPTIONS_DEFINE=	DOCS
@@ -135,8 +128,9 @@ STAGE4_MODULES=	${STAGE3_MODULES} \
 STAGE5_MODULES=	${STAGE4_MODULES} \
 		swift-driver \
 		swiftformat \
-		swiftdocc \
-		sourcekit-lsp
+		swiftdocc
+# I can't make sourcekit-lsp build successfully. So temporarily disable it.
+#STAGE5_MODULES+=sourcekit-lsp
 COMMON_BUILDFLAGS=	\
 		--install-prefix ${SWIFT_PREFIX} \
 		--install-all true \
@@ -244,10 +238,9 @@ do-install:
 	for dir in include lib local share; do \
 		${COPYTREE_SHARE} .${SWIFT_PREFIX}/$${dir} ${STAGEDIR}; \
 	done
-	# Stripping swift executables and libraries breaks executables produced
-	# by swift compiler. So don't strip them for now
-	# @${FIND} ${STAGEDIR}${SWIFT_PREFIX} -type f -exec ${FILE} {} ';' | \
-	# 	${GREP} 'ELF.*FreeBSD' | ${CUT} -d ':' -f 1 | ${XARGS} ${STRIP_CMD}
+	@${FIND} ${STAGEDIR}${SWIFT_PREFIX} -type f -exec ${FILE} {} ';' | \
+		${GREP} 'ELF.*FreeBSD' | ${CUT} -d ':' -f 1 | \
+		${XARGS} ${STRIP_CMD} --strip-debug
 	@${GZIP_CMD} ${STAGEDIR}${SWIFT_PREFIX}/share/man/man1/swift.1
 
 do-install-DOCS-on:
@@ -265,17 +258,15 @@ do-test:
 # general users. The packages used here were produced locally using poudriere
 # with bootstrap mode.
 make-bootstrap-archive:
-.   for rel in ${BOOTSTRAP_SUPPORTED_RELEASES}
 	@${RM} -r ${STAGEDIR}
 	@${MKDIR} ${STAGEDIR}
 	${TAR} -xz --strip-components 1 \
-		-f ${WRKDIR}/${PORTNAME}${PKGNAMESUFFIX}-${DISTVERSION}-${OPSYS:tl}${rel}-${ARCH}.pkg \
+		-f ${WRKDIR}/${PORTNAME}${PKGNAMESUFFIX}-${DISTVERSION}.pkg \
 		-C ${STAGEDIR}
-	${TAR} -cJf ${WRKDIR}/${PORTNAME}${PKGNAMESUFFIX}-bootstrap-${DISTVERSION}-${SWIFT_ARCH}-unknown-${OPSYS:tl}${rel}${EXTRACT_SUFX} \
+	${TAR} -cJf ${WRKDIR}/${PORTNAME}${PKGNAMESUFFIX}-bootstrap-${DISTVERSION}-${SWIFT_ARCH}-unknown-${OPSYS:tl}${EXTRACT_SUFX} \
 		--options 'xz:threads=0' \
 		-s '|^\./|${PORTNAME}${PKGNAMESUFFIX}-bootstrap/|' \
 		-C ${STAGEDIR} .
-.   endfor
 .endif
 
 .include <bsd.port.mk>

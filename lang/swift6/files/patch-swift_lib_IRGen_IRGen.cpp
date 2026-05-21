@@ -1,6 +1,6 @@
---- swift/lib/IRGen/IRGen.cpp.orig	2025-12-09 23:45:54 UTC
+--- swift/lib/IRGen/IRGen.cpp.orig	2026-04-14 02:40:33 UTC
 +++ swift/lib/IRGen/IRGen.cpp
-@@ -158,6 +158,9 @@ swift::getIRTargetOptions(const IRGenOptions &Opts, AS
+@@ -171,6 +171,9 @@ swift::getIRTargetOptions(const IRGenOptions &Opts, AS
    if (Clang->getTargetInfo().getTriple().isOSBinFormatWasm())
      TargetOpts.ThreadModel = llvm::ThreadModel::Single;
  

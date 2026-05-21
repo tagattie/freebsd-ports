@@ -1,6 +1,6 @@
---- swift/stdlib/public/Platform/SwiftGlibc.h.gyb.orig	2025-12-09 23:45:54 UTC
+--- swift/stdlib/public/Platform/SwiftGlibc.h.gyb.orig	2026-04-14 02:40:33 UTC
 +++ swift/stdlib/public/Platform/SwiftGlibc.h.gyb
-@@ -98,6 +98,10 @@ headers = [
+@@ -101,6 +101,10 @@ headers = [
    'utmpx.h',
    'wait.h',
    'wordexp.h',
