@@ -1,3 +1,163 @@
+  <vuln vid="36a3131d-5600-11f1-b339-3497f65b111b">
+    <topic>nginx -- heap buffer overflow in ngx_http_rewrite_module</topic>
+    <affects>
+      <package>
+       <name>nginx</name>
+       <range><lt>1.30.2,3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>The nginx developers report:</p>
+       <blockquote cite="https://nginx.org/en/CHANGES">
+       <p>
+       A heap memory buffer overflow might occur in a worker process
+       when using a configuration with overlapping captures in
+       ngx_http_rewrite_module, potentially resulting in arbitrary
+       code execution (CVE-2026-9256).
+       </p>
+      </blockquote>
+     </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-9256</cvename>
+      <url>https://nginx.org/en/CHANGES</url>
+    </references>
+    <dates>
+      <discovery>2026-05-22</discovery>
+      <entry>2026-05-22</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="ea4c5b9d-55f7-11f1-915c-8974b59277b5">
+    <topic>gstreamer1 -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>gstreamer1</name>
+	<range><lt>1.28.3</lt></range>
+      </package>
+      <package>
+	<name>gstreamer1-plugins</name>
+	<range><lt>1.28.3</lt></range>
+      </package>
+      <package>
+	<name>gstreamer1-plugins-base</name>
+	<range><lt>1.28.3</lt></range>
+      </package>
+      <package>
+	<name>gstreamer1-plugins-good</name>
+	<range><lt>1.28.3</lt></range>
+      </package>
+      <package>
+	<name>gstreamer1-plugins-bad</name>
+	<range><lt>1.28.3</lt></range>
+      </package>
+      <package>
+	<name>gstreamer1-plugins-ugly</name>
+	<range><lt>1.28.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+      <p>The GStreamer project reports multiple security vulnerabilities fixed in the 1.28.3 release:</p>
+      <blockquote cite="https://gstreamer.freedesktop.org/security/">
+	<p>Six security vulnerabilities were addressed, including:</p>
+	<ul>
+	  <li>Bounds check errors in MXF VANC packet handling.</li>
+	  <li>Use-after-free in GStreamer core buffer value deserialization.</li>
+	  <li>Out-of-bounds read in MXF demuxer temporal offset check.</li>
+	  <li>Out-of-bounds write in H.266/VVC parser when parsing PPS tile slices.</li>
+	  <li>Insufficient validation in MOV/MP4 demuxer uncompressed video handling.</li>
+	  <li>Out-of-bounds reads in MPEG PS PES header parsing.</li>
+	</ul>
+	<p>These could lead to application crashes, memory corruption, or potentially arbitrary code execution.</p>
+      </blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://gstreamer.freedesktop.org/security/sa-2026-0024.html</url>
+      <url>https://gstreamer.freedesktop.org/security/sa-2026-0025.html</url>
+      <url>https://gstreamer.freedesktop.org/security/sa-2026-0026.html</url>
+      <url>https://gstreamer.freedesktop.org/security/sa-2026-0027.html</url>
+      <url>https://gstreamer.freedesktop.org/security/sa-2026-0028.html</url>
+      <url>https://gstreamer.freedesktop.org/security/sa-2026-0029.html</url>
+    </references>
+    <dates>
+      <discovery>2026-05-11</discovery>
+      <entry>2026-05-22</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="05aadfcc-55f5-11f1-915c-8974b59277b5">
+    <topic>gstreamer1 -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>gstreamer1</name>
+	<range><lt>1.28.2</lt></range>
+      </package>
+      <package>
+	<name>gstreamer1-plugins</name>
+	<range><lt>1.28.2</lt></range>
+      </package>
+      <package>
+	<name>gstreamer1-plugins-base</name>
+	<range><lt>1.28.2</lt></range>
+      </package>
+      <package>
+	<name>gstreamer1-plugins-good</name>
+	<range><lt>1.28.2</lt></range>
+      </package>
+      <package>
+	<name>gstreamer1-plugins-bad</name>
+	<range><lt>1.28.2</lt></range>
+      </package>
+      <package>
+	<name>gstreamer1-plugins-ugly</name>
+	<range><lt>1.28.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+      <p>The GStreamer project reports multiple security vulnerabilities fixed in the 1.28.2 release:</p>
+      <blockquote cite="https://gstreamer.freedesktop.org/security/">
+	<p>Several security vulnerabilities were addressed, including:</p>
+	<ul>
+	  <li>H.264 video parser NULL pointer dereference when freeing SPS/MVC data.</li>
+	  <li>Integer overflows in the AV1 LEB128 parser, H.266/VVC video parser, and WAV parser cue handling.</li>
+	  <li>Heap buffer overflow in the Matroska demuxer.</li>
+	  <li>Assertion failures in the FLV demuxer on corrupted streams.</li>
+	  <li>NULL-pointer dereferences in the mDVDsub subtitle parser.</li>
+	  <li>Multiple out-of-bounds reads and writes in the MOV/MP4 demuxer audio channel layout parsing.</li>
+	  <li>Denial of service in SRT/WebVTT parser</li>
+	</ul>
+	<p>These could lead to application crashes, memory exhaustion, or potentially arbitrary code execution.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-5056</cvename>
+      <cvename>CVE-2026-39043</cvename>
+      <cvename>CVE-2026-39044</cvename>
+      <cvename>CVE-2026-46469</cvename>
+      <cvename>CVE-2026-46470</cvename>
+      <cvename>CVE-2026-46472</cvename>
+      <url>https://gstreamer.freedesktop.org/security/sa-2026-0013.html</url>
+      <url>https://gstreamer.freedesktop.org/security/sa-2026-0014.html</url>
+      <url>https://gstreamer.freedesktop.org/security/sa-2026-0015.html</url>
+      <url>https://gstreamer.freedesktop.org/security/sa-2026-0017.html</url>
+      <url>https://gstreamer.freedesktop.org/security/sa-2026-0018.html</url>
+      <url>https://gstreamer.freedesktop.org/security/sa-2026-0019.html</url>
+      <url>https://gstreamer.freedesktop.org/security/sa-2026-0020.html</url>
+      <url>https://gstreamer.freedesktop.org/security/sa-2026-0021.html</url>
+      <url>https://gstreamer.freedesktop.org/security/sa-2026-0022.html</url>
+      <url>https://gstreamer.freedesktop.org/security/sa-2026-0023.html</url>
+    </references>
+    <dates>
+      <discovery>2026-04-07</discovery>
+      <entry>2026-05-22</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="738f5590-550c-11f1-9f97-3fa0ea3edd7d">
     <topic>qt6-webengine -- multiple vulnerabilities</topic>
     <affects>
