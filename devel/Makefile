@@ -3568,6 +3568,7 @@
     SUBDIR += p5-Sub-Exporter-Lexical
     SUBDIR += p5-Sub-Exporter-Progressive
     SUBDIR += p5-Sub-HandlesVia
+    SUBDIR += p5-Sub-HandlesVia-XS
     SUBDIR += p5-Sub-Identify
     SUBDIR += p5-Sub-Infix
     SUBDIR += p5-Sub-Info
@@ -8196,7 +8197,6 @@
     SUBDIR += rubygem-rufo
     SUBDIR += rubygem-rufus-scheduler
     SUBDIR += rubygem-rugged
-    SUBDIR += rubygem-rugged17
     SUBDIR += rubygem-runt
     SUBDIR += rubygem-ruport
     SUBDIR += rubygem-safe_yaml
