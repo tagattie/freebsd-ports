@@ -615,7 +615,6 @@
     SUBDIR += desed
     SUBDIR += desktop-file-utils
     SUBDIR += dev86
-    SUBDIR += devhelp
     SUBDIR += devtodo
     SUBDIR += dfuzzer
     SUBDIR += dia2code
@@ -5220,6 +5219,7 @@
     SUBDIR += py-jep
     SUBDIR += py-jinja2-ansible-filters
     SUBDIR += py-jinja2-time
+    SUBDIR += py-jinxed
     SUBDIR += py-jira
     SUBDIR += py-jitterentropy
     SUBDIR += py-jmespath
