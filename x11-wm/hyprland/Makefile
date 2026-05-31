@@ -16,6 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto \
 		glaze>=7.2.0<8.0.0:devel/glaze \
 		hyprwayland-scanner>=0.3.10:devel/hyprwayland-scanner \
+		glslang>0:graphics/glslang \
 		hyprland-protocols>=0.6.4:graphics/hyprland-protocols \
 		wayland-protocols>=1.47:graphics/wayland-protocols
 LIB_DEPENDS=	libhyprlang.so:devel/hyprlang \
