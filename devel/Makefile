@@ -2559,6 +2559,7 @@
     SUBDIR += p5-Devel-TraceUse
     SUBDIR += p5-Devel-ebug
     SUBDIR += p5-Devel-ptkdb
+    SUBDIR += p5-Device-Modbus
     SUBDIR += p5-Device-USB
     SUBDIR += p5-Digest-TransformPath
     SUBDIR += p5-Dir-Project
@@ -4407,6 +4408,7 @@
     SUBDIR += py-PYB11Generator
     SUBDIR += py-PeachPy
     SUBDIR += py-PyExecJS
+    SUBDIR += py-PyGObject-stubs
     SUBDIR += py-PyGithub
     SUBDIR += py-PyLD
     SUBDIR += py-PyPubSub
@@ -8475,7 +8477,6 @@
     SUBDIR += rvi
     SUBDIR += rvm
     SUBDIR += rxcpp
-    SUBDIR += rye
     SUBDIR += sabre
     SUBDIR += safe-iop
     SUBDIR += samurai
@@ -8708,7 +8709,6 @@
     SUBDIR += truc
     SUBDIR += tup
     SUBDIR += tvision
-    SUBDIR += twiggy
     SUBDIR += typeshare
     SUBDIR += ua_parser-core
     SUBDIR += uclcmd
@@ -8743,6 +8743,7 @@
     SUBDIR += venom
     SUBDIR += vera++
     SUBDIR += vexcl
+    SUBDIR += viewvc
     SUBDIR += viewvc-devel
     SUBDIR += violet
     SUBDIR += vipack
