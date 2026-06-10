@@ -1,6 +1,6 @@
 PORTNAME=	swift
 DISTVERSIONPREFIX=	swift-
-DISTVERSION=	6.3.1
+DISTVERSION=	6.3.2
 DISTVERSIONSUFFIX=	-RELEASE
 CATEGORIES=	lang
 PKGNAMESUFFIX=	6
@@ -8,9 +8,7 @@ DIST_SUBDIR=	${PORTNAME}
 
 BOOTSTRAP_SWIFT_VERSION=	6.3.1
 .if !defined(BOOTSTRAP_MODE)
-.   if !make(makesum)
 MASTER_SITES=	LOCAL/tagattie/${PORTNAME}:bootstrap
-.   endif
 DISTFILES=	${PORTNAME}${PKGNAMESUFFIX}-bootstrap-${BOOTSTRAP_SWIFT_VERSION}-${SWIFT_ARCH}-unknown-${OPSYS:tl}${EXTRACT_SUFX}:bootstrap
 .else
 .   if make(makesum)
@@ -71,20 +69,20 @@ GH_TUPLE=	\
 		swiftlang:swift-lmdb:${DISTVERSIONFULL}:swift_lmdb/swift-lmdb \
 		apple:swift-log:1.5.4:swift_log/swift-log \
 		swiftlang:swift-markdown:${DISTVERSIONFULL}:swift_markdown/swift-markdown \
-		apple:swift-nio:2.92.2:swift_nio/swift-nio \
+		apple:swift-nio:2.65.0:swift_nio/swift-nio \
 		apple:swift-numerics:1.0.2:swift_numerics/swift-numerics \
 		swiftlang:swift-sdk-generator:${DISTVERSIONFULL}:swift_sdk_generator/swift-sdk-generator \
 		swiftlang:swift-stress-tester:${DISTVERSIONFULL}:swift_stress_tester/swift-stress-tester \
-		swiftlang:swift-subprocess:0.4:swift_subprocess/swift-subprocess \
+		swiftlang:swift-subprocess:0.2.1:swift_subprocess/swift-subprocess \
 		swiftlang:swift-syntax:${DISTVERSIONFULL}:swift_syntax/swift-syntax \
 		apple:swift-system:1.5.0:swift_system/swift-system \
 		swiftlang:swift-testing:${DISTVERSIONFULL}:swift_testing/swift-testing \
-		swiftlang:swift-toolchain-sqlite:1.0.9:swift_toolchain_sqlite/swift-toolchain-sqlite \
-		swiftlang:swift-tools-protocols:0.0.10:swift_tools_protocols/swift-tools-protocols \
+		swiftlang:swift-toolchain-sqlite:1.0.7:swift_toolchain_sqlite/swift-toolchain-sqlite \
+		swiftlang:swift-tools-protocols:0.0.9:swift_tools_protocols/swift-tools-protocols \
 		swiftlang:swift-tools-support-core:${DISTVERSIONFULL}:swift_tools_support_core/swift-tools-support-core \
 		swiftlang:swift-package-manager:${DISTVERSIONFULL}:swift_package_manager/swiftpm \
-		WebAssembly:wasi-libc:wasi-sdk-32:wasi_libc/wasi-libc \
-		swiftwasm:WasmKit:0.2.1:WasmKit/wasmkit
+		WebAssembly:wasi-libc:wasi-sdk-27:wasi_libc/wasi-libc \
+		swiftwasm:WasmKit:0.1.6:WasmKit/wasmkit
 
 USE_PERL5=	build
 USE_GNOME=	libxml2
@@ -101,7 +99,7 @@ MAKE_ENV+=	SKIP_BUILD_SWIFTPM_INTERNALTESTSUPPORT=1
 
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 
-WRKSRC=		${WRKDIR}/swift-project
+WRKSRC=		${WRKDIR}/swift-${DISTVERSION}
 
 PLIST_SUB=	SWIFT_ARCH=${SWIFT_ARCH} \
 		SWIFT_TARGET_TRIPLE=${SWIFT_ARCH}-unknown-${OPSYS:tl}
@@ -126,14 +124,12 @@ STAGE3_MODULES=	${STAGE2_MODULES} \
 STAGE4_MODULES=	${STAGE3_MODULES} \
 		swiftpm
 STAGE5_MODULES=	${STAGE4_MODULES} \
+		indexstore-db \
+		lldb \
 		swift-driver \
 		swiftformat \
-		swiftdocc
-# I can't make sourcekit-lsp build successfully. So temporarily disable it.
-# The following GitHub PRs might be relevant:
-# https://github.com/swiftlang/swift-tools-protocols/pull/48
-# https://github.com/swiftlang/sourcekit-lsp/pull/2632
-#STAGE5_MODULES+=sourcekit-lsp
+		swiftdocc \
+		sourcekit-lsp
 COMMON_BUILDFLAGS=	\
 		--install-prefix ${SWIFT_PREFIX} \
 		--install-all true \
@@ -264,6 +260,7 @@ do-test:
 	cd ${WRKSRC}/swift && \
 	${SETENV} ${TEST_ENV} ./utils/run-test \
 		--build-dir ${WRKSRC}/build/Ninja-Release \
+		--build skip \
 		--build-jobs ${MAKE_JOBS_NUMBER}
 
 .if defined(BOOTSTRAP_MODE)
