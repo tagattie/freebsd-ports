@@ -80,7 +80,7 @@ COMPLETIONS_PLIST_FILES=etc/bash_completion.d/${PORTNAME} \
 			share/fish/completions/${PORTNAME}.fish \
 			share/zsh/site-functions/_${PORTNAME}
 
-post-extract:
+post-configure:
 	@${MKDIR} ${WRKSRC_crate_v8}/third_party/icu/common
 .for suffix in l b
 	@if [ -r ${LOCALBASE}/share/icu/*/icudt*${suffix}.dat ]; then \
