@@ -505,6 +505,7 @@
     SUBDIR += nextcloud-groupfolders
     SUBDIR += nextcloud-news
     SUBDIR += nextcloud-notes
+    SUBDIR += nextcloud-memories
     SUBDIR += nextcloud-tasks
     SUBDIR += nghttp2
     SUBDIR += nginx
@@ -2037,6 +2038,8 @@
     SUBDIR += py-youtube-transcript-api
     SUBDIR += py-yt-dlp
     SUBDIR += py-yt-dlp-ejs
+    SUBDIR += py-yubal
+    SUBDIR += py-yubal-api
     SUBDIR += pydio-cells
     SUBDIR += qdecoder
     SUBDIR += qhttpengine
