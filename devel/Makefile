@@ -4973,6 +4973,7 @@
     SUBDIR += py-fabric3
     SUBDIR += py-face
     SUBDIR += py-factory-boy
+    SUBDIR += py-faicons
     SUBDIR += py-fam
     SUBDIR += py-fastbencode
     SUBDIR += py-fastcache
@@ -5094,6 +5095,7 @@
     SUBDIR += py-graphql-core2
     SUBDIR += py-graphql-relay
     SUBDIR += py-graphql-relay2
+    SUBDIR += py-great-tables
     SUBDIR += py-greenlet
     SUBDIR += py-grimoirelab-toolkit
     SUBDIR += py-grizzled
@@ -8695,6 +8697,7 @@
     SUBDIR += tokio-console
     SUBDIR += toml11
     SUBDIR += tomlplusplus
+    SUBDIR += toomanycooks
     SUBDIR += tortoisehg
     SUBDIR += tpasm
     SUBDIR += tracy
