@@ -2030,6 +2030,7 @@
     SUBDIR += p5-CHI-Driver-DBI
     SUBDIR += p5-CLASS
     SUBDIR += p5-CLI-Osprey
+    SUBDIR += p5-CLI-Simple
     SUBDIR += p5-CPAN-Changes
     SUBDIR += p5-CPAN-Checksums
     SUBDIR += p5-CPAN-Common-Index
@@ -5422,6 +5423,8 @@
     SUBDIR += py-mutmut
     SUBDIR += py-mygpoclient
     SUBDIR += py-mypy
+    SUBDIR += py-mypy-boto3-dynamodb
+    SUBDIR += py-mypy-boto3-glue
     SUBDIR += py-mypy-boto3-s3
     SUBDIR += py-mypy-protobuf
     SUBDIR += py-mypy_extensions
@@ -7602,6 +7605,7 @@
     SUBDIR += rubygem-gitlab-chronic
     SUBDIR += rubygem-gitlab-dangerfiles
     SUBDIR += rubygem-gitlab-experiment
+    SUBDIR += rubygem-gitlab-grape-openapi
     SUBDIR += rubygem-gitlab-labkit
     SUBDIR += rubygem-gitlab-license
     SUBDIR += rubygem-gitlab-pygments.rb
@@ -8227,6 +8231,7 @@
     SUBDIR += rubygem-semi_semantic
     SUBDIR += rubygem-semver2
     SUBDIR += rubygem-semver_dialects
+    SUBDIR += rubygem-semver_dialects-gitlab
     SUBDIR += rubygem-semverse
     SUBDIR += rubygem-sentry-rails
     SUBDIR += rubygem-sentry-raven
@@ -8469,6 +8474,7 @@
     SUBDIR += rubygem-zhexdump
     SUBDIR += rubygem-zlib
     SUBDIR += rubygem-zstd-ruby
+    SUBDIR += rubygem-zstd-ruby-gitlab
     SUBDIR += rubymine
     SUBDIR += rudeconfig
     SUBDIR += rudiments
