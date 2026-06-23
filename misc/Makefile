@@ -9,7 +9,6 @@
     SUBDIR += adiak
     SUBDIR += adios2
     SUBDIR += aichat
-    SUBDIR += air
     SUBDIR += alpaca
     SUBDIR += amanda-client
     SUBDIR += amanda-perl-wrapper
@@ -573,6 +572,7 @@
     SUBDIR += py-openvdb
     SUBDIR += py-optuna
     SUBDIR += py-oterm
+    SUBDIR += py-paddlepaddle
     SUBDIR += py-palettable
     SUBDIR += py-papermill
     SUBDIR += py-pdd

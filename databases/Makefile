@@ -38,6 +38,7 @@
     SUBDIR += cegobridge
     SUBDIR += clickhouse
     SUBDIR += clickhouse-cpp
+    SUBDIR += clickhouse-devel
     SUBDIR += closql
     SUBDIR += couchdb3
     SUBDIR += courier-authlib-mysql
@@ -753,7 +754,6 @@
     SUBDIR += py-aiosqlite
     SUBDIR += py-alembic
     SUBDIR += py-anysqlite
-    SUBDIR += py-apache-arrow
     SUBDIR += py-apsw
     SUBDIR += py-apswutils
     SUBDIR += py-asyncmy
