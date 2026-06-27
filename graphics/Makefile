@@ -638,12 +638,12 @@
     SUBDIR += nvidia-drm-61-kmod
     SUBDIR += nvidia-drm-61-kmod-580
     SUBDIR += nvidia-drm-61-kmod-devel
-    SUBDIR += nvidia-drm-66-kmod
-    SUBDIR += nvidia-drm-66-kmod-580
-    SUBDIR += nvidia-drm-66-kmod-devel
     SUBDIR += nvidia-drm-612-kmod
     SUBDIR += nvidia-drm-612-kmod-580
     SUBDIR += nvidia-drm-612-kmod-devel
+    SUBDIR += nvidia-drm-66-kmod
+    SUBDIR += nvidia-drm-66-kmod-580
+    SUBDIR += nvidia-drm-66-kmod-devel
     SUBDIR += nvidia-drm-kmod
     SUBDIR += nvidia-drm-kmod-580
     SUBDIR += nvidia-drm-kmod-devel
@@ -933,6 +933,7 @@
     SUBDIR += py-descartes
     SUBDIR += py-diplib
     SUBDIR += py-dj52-sorl-thumbnail
+    SUBDIR += py-dj60-sorl-thumbnail
     SUBDIR += py-django-easy-thumbnails
     SUBDIR += py-djvulibre
     SUBDIR += py-easyocr

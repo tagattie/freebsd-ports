@@ -5326,7 +5326,6 @@ accessibility/libqaccessibilityclient@qt6|accessibility/libqaccessibilityclient|
 net/kpeoplevcard||2026-05-30|Removed, not needed anymore
 shells/agsh|shells/meka|2026-05-30|Project renamed upstream
 graphics/kdiagram||2026-05-31|Removed, not needed anymore
-archivers/rubygem-rubyzip2|archivers/rubygem-rubyzip|2026-05-31|Has expired: Outdated. Upstream disappeared
 japanese/p5-2chproxy||2026-05-31|Has expired: Abandoned, it is not compatible with the current servers, migrate to proxy2ch
 www/py-azure-storage||2026-05-31|Has expired: Deprecated by upstream. Use other py-azure-storage-* ports instead
 www/py-pyjwt1|www/py-pyjwt|2026-05-31|Has expired: Obsoleted. Use www/py-pyjwt instead
@@ -5378,3 +5377,4 @@ net-im/libaccounts-qt@qt5||2026-06-22|Unflavorize, remove Qt5 flavor
 net-im/libaccounts-qt@qt6|net-im/libaccounts-qt|2026-06-22|Unflavorize
 science/minc2|science/minc-tools|2026-06-24|Split into science/minc-tools and science/libminc
 www/xist|www/py-ll-xist|2026-06-24|Use correct Python package name
+net/seda||2026-06-26|Has expired: old, no users in the ports tree, unmaintained, uses long deprecated code removed in jdk25
