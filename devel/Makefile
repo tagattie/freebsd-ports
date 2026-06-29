@@ -1791,19 +1791,29 @@
     SUBDIR += ocaml-dolmen
     SUBDIR += ocaml-domain-name
     SUBDIR += ocaml-dune
+    SUBDIR += ocaml-duration
+    SUBDIR += ocaml-eqaf
     SUBDIR += ocaml-extlib
     SUBDIR += ocaml-findlib
     SUBDIR += ocaml-fmt
     SUBDIR += ocaml-fpath
     SUBDIR += ocaml-gen
+    SUBDIR += ocaml-gmap
     SUBDIR += ocaml-hmap
+    SUBDIR += ocaml-integers
     SUBDIR += ocaml-ipaddr
+    SUBDIR += ocaml-js_of_ocaml-ocamlbuild
     SUBDIR += ocaml-lacaml
     SUBDIR += ocaml-linol
     SUBDIR += ocaml-logs
     SUBDIR += ocaml-lsp
     SUBDIR += ocaml-lwt
+    SUBDIR += ocaml-lwt_log
     SUBDIR += ocaml-magic
+    SUBDIR += ocaml-magic-mime
+    SUBDIR += ocaml-merlin
+    SUBDIR += ocaml-mew
+    SUBDIR += ocaml-mew_vi
     SUBDIR += ocaml-mtime
     SUBDIR += ocaml-ocamlbuild
     SUBDIR += ocaml-ocplib-endian
@@ -1823,6 +1833,7 @@
     SUBDIR += ocaml-ppx_deriving
     SUBDIR += ocaml-ppx_hash
     SUBDIR += ocaml-ppx_js_style
+    SUBDIR += ocaml-ppx_optcomp
     SUBDIR += ocaml-ppx_sexp_conv
     SUBDIR += ocaml-ppx_yojson_conv
     SUBDIR += ocaml-ppx_yojson_conv_lib
@@ -1840,6 +1851,7 @@
     SUBDIR += ocaml-stdio
     SUBDIR += ocaml-topkg
     SUBDIR += ocaml-trace
+    SUBDIR += ocaml-trie
     SUBDIR += ocaml-uchar
     SUBDIR += ocaml-ulex
     SUBDIR += ocaml-uutf
@@ -5351,6 +5363,7 @@
     SUBDIR += py-logutils
     SUBDIR += py-logzero
     SUBDIR += py-looseversion
+    SUBDIR += py-loro
     SUBDIR += py-louie
     SUBDIR += py-lru-dict
     SUBDIR += py-lsprotocol
@@ -5367,6 +5380,7 @@
     SUBDIR += py-makefun
     SUBDIR += py-mando
     SUBDIR += py-manuel
+    SUBDIR += py-marimo
     SUBDIR += py-marisa-trie
     SUBDIR += py-marrow.mailer
     SUBDIR += py-marrow.util
@@ -5832,6 +5846,7 @@
     SUBDIR += py-pyquil
     SUBDIR += py-pyral
     SUBDIR += py-pyrate-limiter
+    SUBDIR += py-pyrefly
     SUBDIR += py-pyrepl
     SUBDIR += py-pyrfc3339
     SUBDIR += py-pyright
@@ -6969,6 +6984,8 @@
     SUBDIR += rubygem-aws-sdk-kms-gitlab
     SUBDIR += rubygem-aws-sdk-lakeformation
     SUBDIR += rubygem-aws-sdk-lambda
+    SUBDIR += rubygem-aws-sdk-lambdacore
+    SUBDIR += rubygem-aws-sdk-lambdamicrovms
     SUBDIR += rubygem-aws-sdk-launchwizard
     SUBDIR += rubygem-aws-sdk-lex
     SUBDIR += rubygem-aws-sdk-lexmodelbuildingservice
@@ -7073,6 +7090,7 @@
     SUBDIR += rubygem-aws-sdk-rekognition
     SUBDIR += rubygem-aws-sdk-repostspace
     SUBDIR += rubygem-aws-sdk-resiliencehub
+    SUBDIR += rubygem-aws-sdk-resiliencehubv2
     SUBDIR += rubygem-aws-sdk-resourceexplorer2
     SUBDIR += rubygem-aws-sdk-resourcegroups
     SUBDIR += rubygem-aws-sdk-resourcegroupstaggingapi
@@ -7099,6 +7117,7 @@
     SUBDIR += rubygem-aws-sdk-sagemakeredgemanager
     SUBDIR += rubygem-aws-sdk-sagemakerfeaturestoreruntime
     SUBDIR += rubygem-aws-sdk-sagemakergeospatial
+    SUBDIR += rubygem-aws-sdk-sagemakerjobruntime
     SUBDIR += rubygem-aws-sdk-sagemakermetrics
     SUBDIR += rubygem-aws-sdk-sagemakerruntime
     SUBDIR += rubygem-aws-sdk-sagemakerruntimehttp2

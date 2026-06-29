@@ -222,6 +222,7 @@
     SUBDIR += neo4j
     SUBDIR += ocaml-dbm
     SUBDIR += ocaml-mysql
+    SUBDIR += ocaml-pgocaml
     SUBDIR += ocaml-sqlite3
     SUBDIR += octosql
     SUBDIR += odbc-cpp-wrapper
@@ -1163,6 +1164,7 @@
     SUBDIR += tredis
     SUBDIR += trilogy
     SUBDIR += tuning-primer
+    SUBDIR += turso
     SUBDIR += twemproxy
     SUBDIR += unixODBC
     SUBDIR += usql
