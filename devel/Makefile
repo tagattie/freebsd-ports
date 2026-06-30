@@ -4875,6 +4875,7 @@
     SUBDIR += py-dask-expr
     SUBDIR += py-dask-geopandas
     SUBDIR += py-dask-histogram
+    SUBDIR += py-databricks-sdk
     SUBDIR += py-dataclass-array
     SUBDIR += py-dataclasses-json
     SUBDIR += py-datadog
@@ -5158,6 +5159,7 @@
     SUBDIR += py-hologram
     SUBDIR += py-homebase
     SUBDIR += py-http-prompt
+    SUBDIR += py-huey
     SUBDIR += py-humanize
     SUBDIR += py-hunter
     SUBDIR += py-hupper
@@ -5882,6 +5884,7 @@
     SUBDIR += py-pytest-dependency
     SUBDIR += py-pytest-django
     SUBDIR += py-pytest-doctestplus
+    SUBDIR += py-pytest-dotenv
     SUBDIR += py-pytest-drop-dup-tests
     SUBDIR += py-pytest-enabler
     SUBDIR += py-pytest-env
@@ -5932,6 +5935,7 @@
     SUBDIR += py-pytest-remotedata
     SUBDIR += py-pytest-repeat
     SUBDIR += py-pytest-rerunfailures
+    SUBDIR += py-pytest-retry
     SUBDIR += py-pytest-ruff
     SUBDIR += py-pytest-run-parallel
     SUBDIR += py-pytest-services
@@ -6322,6 +6326,7 @@
     SUBDIR += py-types-psutil
     SUBDIR += py-types-psycopg2
     SUBDIR += py-types-python-dateutil
+    SUBDIR += py-types-pytz
     SUBDIR += py-types-pyyaml
     SUBDIR += py-types-requests
     SUBDIR += py-types-retry

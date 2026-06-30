@@ -1,3 +1,324 @@
+  <vuln vid="bebbc065-73d2-11f1-910d-3c7c3fba4204">
+    <topic>NSD -- vulnerabilities</topic>
+    <affects>
+    <package>
+	<name>nsd</name>
+	<range><lt>4.14.3</lt></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>NLnet Labs reports:</p>
+	<blockquote cite="https://www.nlnetlabs.nl/downloads/nsd/CVE-2026-12244.txt">
+	  <p>CVE-2026-12244: A specially crafted SVCB RR can cause a heap overflow of up to 65509 attacker controlled bytes.</p>
+	  <p>If NSD is configured as secondary for a zone, the primary of that zone can crash NSD with an AXFR containing a DNS message with a special crafted SVCB RR with an rdata size of 65512, that let's an (uint16_t) variable that is used to allocate space needed for the RR wrap (because total size > 65535), causing a heap overflow. The attacker can perform a controlled (RCE class) head write of up to 65509 bytes<br/><br/>
+Even though the data is from a configured primary inside NSD's trust boundary, we do consider the risk significant enough for multi-tenant secondary DNS deployments, given the potential severity of the attack.</p>
+	</blockquote>
+	<blockquote cite="https://www.nlnetlabs.nl/downloads/nsd/CVE-2026-12245.txt">
+	  <p>CVE-2026-12245: An attacker can keep all children in a crash-restart loop denying DoT service.</p>
+	  <p>NSD from version 4.13.0 has a heap use-after-free bug in logging errors on TLS connections, causing a crash of the server process, which can be triggered trivially by sending a DNS query over a DoT connection, and closing the connection without reading the response.<br/><br/>
+Any client with access to the DoT port (853) can trigger this. Even though a new server process will be immediately reforked to replace the crashed one, an attacker can keep all children in a crash-restart loop denying DoT service.</p>
+	</blockquote>
+	<blockquote cite="https://www.nlnetlabs.nl/downloads/nsd/CVE-2026-12246.txt">
+	  <p>CVE-2026-12246: The RR type APL rdata address, if too large, causes out of bounds write on the
+stack, when the zonefile is written out.</p>
+	  <p>NSD version 4.14.0 introduced a bug where a specially crafted APL RR, with an adflength larger than permitted for the address family will overwrite the stack when the zone is written to disk, with a maximum of 111 attacker controlled bytes.<br/><br/>
+Even though the data is from a configured primary inside NSD's trust boundary, we do consider the risk significant enough for multi-tenant secondary DNS deployments, where a primary could introduce the rogue APL with the secondary not noticing or only after the fact.</p>
+	</blockquote>
+	<blockquote cite="https://www.nlnetlabs.nl/downloads/nsd/CVE-2026-12490.txt">
+	  <p>CVE-2026-12490: Secondaries authenticated by a client certificate to transfer a zone over TLS,
+can bypass verification by transferring over TCP.</p>
+	  <p>When a "provide-xfr" is given with a "tls-auth-name", a secondary requesting a transfer should provide a client certificate with that name. However, no client certificate is needed when the request comes in over TLS over the regular "tls-port" (and not the "tls-auth-port") or over over TCP over the regular port, when the other conditions of the "provide-xfr" rule match.<br/><br/>
+The transfer security restrictions for client certificates can be bypassed completely if the attacker can match the other access control conditions, and the "tls-auth-xfr-only" option is not explicitly set to "yes" (which it by default is not)</p>
+	</blockquote>
+	<p>Thanks to people below for reporting and disclosing these vulnerabilities:</p>
+	<ul>
+	  <li>Qifan Zhang from Palo Alto Networks</li>
+	  <li>Haruki Oyama from Waseda University</li>
+	  <li>zhangph</li>
+	</ul>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-12244</cvename>
+      <url>https://www.nlnetlabs.nl/downloads/nsd/CVE-2026-12244.txt</url>
+      <cvename>CVE-2026-12245</cvename>
+      <url>https://www.nlnetlabs.nl/downloads/nsd/CVE-2026-12245.txt</url>
+      <cvename>CVE-2026-12246</cvename>
+      <url>https://www.nlnetlabs.nl/downloads/nsd/CVE-2026-12246.txt</url>
+      <cvename>CVE-2026-12490</cvename>
+      <url>https://www.nlnetlabs.nl/downloads/nsd/CVE-2026-12490.txt</url>
+    </references>
+    <dates>
+      <discovery>2026-06-25</discovery>
+      <entry>2026-06-29</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="0f3342e3-73ba-11f1-910d-3c7c3fba4204">
+    <topic>rclone -- Unauthenticated command execution in `rclone rcd --rc-serve` via inline remote instantiation</topic>
+    <affects>
+    <package>
+	<name>rclone</name>
+	<range><ge>1.46.0</ge><lt>1.74.3</lt></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p><a href="https://github.com/rclone/rclone/security/advisories/GHSA-qw24-gh76-8rvv">https://github.com/rclone/rclone/security/advisories/GHSA-qw24-gh76-8rvv</a> reports:</p>
+	<blockquote cite="https://github.com/rclone/rclone/security/advisories/GHSA-qw24-gh76-8rvv">
+	  <p>Rclone is a command-line program to sync files and directories to
+and from different cloud storage providers.<br/>From 1.46.0 until 1.74.3, rclone rcd --rc-serve accepts unauthenticated GET and HEAD
+requests to paths of the form: /[remote:path]/object.<br/>The remote
+value is parsed from the URL and passed to normal backend initialization.
+Inline remote configuration can set backend options that execute
+local commands during initialization.<br/>As a result, a single
+unauthenticated GET or HEAD request can execute a command as the
+rclone process user.</p>
+	<p>Thanks to <a href="https://github.com/ncw">Nick Craig-Wood</a> for reporting this vulnerability.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-49980</cvename>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2026-49980</url>
+      <url>https://github.com/rclone/rclone/security/advisories/GHSA-qw24-gh76-8rvv</url>
+    </references>
+    <dates>
+      <discovery>2026-06-24</discovery>
+      <entry>2026-06-29</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="a8614190-73b4-11f1-910d-3c7c3fba4204">
+    <topic>PowerDNS -- vulnerabilities</topic>
+    <affects>
+    <package>
+	<name>powerdns</name>
+	<range><lt>5.1.2</lt></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>PowerDNS Team reports:</p>
+	<blockquote cite="https://doc.powerdns.com/authoritative/security-advisories/powerdns-advisory-2026-05.html">
+	<ul>
+	  <li>CVE-2026-33257: Insufficient input validation of internal webserver</li>
+	  <li>CVE-2026-33260: Insufficient input validation of internal webserver</li>
+	  <li>CVE-2026-33608: Incomplete domain name sanitization during Bind autosecondary zone transfer</li>
+	  <li>CVE-2026-33609: LDAP DN injection</li>
+	  <li>CVE-2026-33610: Possible file descriptor exhaustion in forward-dnsupdate</li>
+	  <li>CVE-2026-33611: Insufficient validation of HTTPS and SVCB records</li>
+	</ul>
+	<p>Thanks to people below for reporting these vulnerabilities:</p>
+	<ul>
+	  <li>Vitaly Simonovich</li>
+	  <li>Cavid</li>
+	  <li>Tibs</li>
+	  <li>ylwango613</li>
+	</ul>
+	</blockquote>
+	<blockquote cite="https://doc.powerdns.com/authoritative/security-advisories/powerdns-advisory-2026-07.html">
+	<ul>
+	  <li>CVE-2026-42005: Insufficient input validation of internal web server</li>
+	</ul>
+	<p>Thanks to ilya rozentsvaig for reporting this vulnerability.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-33257</cvename>
+      <cvename>CVE-2026-33260</cvename>
+      <cvename>CVE-2026-33608</cvename>
+      <cvename>CVE-2026-33609</cvename>
+      <cvename>CVE-2026-33610</cvename>
+      <cvename>CVE-2026-33611</cvename>
+      <cvename>CVE-2026-42005</cvename>
+      <url>https://doc.powerdns.com/authoritative/security-advisories/powerdns-advisory-2026-05.html</url>
+      <url>https://doc.powerdns.com/authoritative/security-advisories/powerdns-advisory-2026-07.html</url>
+    </references>
+    <dates>
+      <discovery>2026-02-16</discovery>
+      <entry>2026-06-29</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="62c4ed54-73aa-11f1-910d-3c7c3fba4204">
+    <topic>powerdns-recursor -- vulnerabilities</topic>
+    <affects>
+   <package>
+	<name>powerdns-recursor</name>
+	<range><lt>5.4.3</lt></range>
+   </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>PowerDNS Team reports:</p>
+	<blockquote cite="https://doc.powerdns.com/recursor/security-advisories/powerdns-advisory-2026-08.html">
+	<ul>
+	  <li>CVE-2026-3361: ZoneToCache can poison the cache</li>
+	  <li>CVE-2026-40012: Information about ECS zero scoped answers might leak to clients that use a specific ECS</li>
+	  <li>CVE-2026-42005: Unbounded resource consumption in internal webserver</li>
+	  <li>CVE-2026-42387: Insufficient input validation in ZoneToCache</li>
+	  <li>CVE-2026-42388: Missing input validation for catalog zones</li>
+	  <li>CVE-2026-42389: Reject more queries with invalid header values</li>
+	  <li>CVE-2026-42390: ZONEMD validation can be bypassed</li>
+	  <li>CVE-2026-52690: Spoofed answers can mark an authoritative non-EDNS capable</li>
+	</ul>
+	<p>Thanks to people below for reporting these vulnerabilities.</p>
+	<ul>
+	  <li>Danial Mahadzir</li>
+	  <li>ilya rozentsvaig</li>
+	  <li>Vitaly Simonovich</li>
+	  <li>ylwango613</li>
+	  <li>nurmukhammyed</li>
+	  <li>Mehtab Zafar</li>
+	</ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-3361</cvename>
+      <cvename>CVE-2026-40012</cvename>
+      <cvename>CVE-2026-42005</cvename>
+      <cvename>CVE-2026-42387</cvename>
+      <cvename>CVE-2026-42388</cvename>
+      <cvename>CVE-2026-42389</cvename>
+      <cvename>CVE-2026-42390</cvename>
+      <cvename>CVE-2026-52690</cvename>
+      <url>https://doc.powerdns.com/recursor/security-advisories/powerdns-advisory-2026-08.html</url>
+    </references>
+    <dates>
+      <discovery>2026-04-04</discovery>
+      <entry>2026-06-29</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="6c0e17cf-73a0-11f1-910d-3c7c3fba4204">
+    <topic>DNSdist -- vulnerabilities</topic>
+    <affects>
+    <package>
+	<name>dnsdist</name>
+	<range><lt>2.0.7</lt></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The DNSdist team reports:</p>
+	<blockquote cite="https://www.dnsdist.org/security-advisories/powerdns-advisory-for-dnsdist-2026-09.html">
+	<ul>
+	  <li>CVE-2026-40011: Prometheus denial of service via crafted DNS queries</li>
+	  <li>CVE-2026-42004: EDNS options smuggling</li>
+	  <li>CVE-2026-42005: Insufficient input validation of internal web server</li>
+	  <li>CVE-2026-40208: Denial of service via DoH3 queries</li>
+	  <li>CVE-2026-40209: Denial of service via IXFR queries</li>
+	  <li>CVE-2026-40210: Out-of-bounds read in SetMacAddrAction</li>
+	  <li>CVE-2026-40211: Denial of service via crafted DoH3 queries</li>
+	</ul>
+	<p>Thanks to people below for reporting these vulnerabilities.</p>
+	<ul>
+	  <li>Haruki Oyama (Waseda University)</li>
+	  <li>Vitaly Simonovich</li>
+	  <li>ilya rozentsvaig</li>
+	  <li>ylwango613</li>
+	  <li>Qifan Zhang (Palo Alto Networks)</li>
+	  <li>Mehtab Zafar</li>
+	</ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-40011</cvename>
+      <cvename>CVE-2026-42004</cvename>
+      <cvename>CVE-2026-42005</cvename>
+      <cvename>CVE-2026-40208</cvename>
+      <cvename>CVE-2026-40209</cvename>
+      <cvename>CVE-2026-40210</cvename>
+      <cvename>CVE-2026-40211</cvename>
+      <url>https://www.dnsdist.org/security-advisories/powerdns-advisory-for-dnsdist-2026-09.html</url>
+    </references>
+    <dates>
+      <discovery>2026-06-25</discovery>
+      <entry>2026-06-29</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="4e82a0e6-6801-42c6-8fb6-91b6b275a9e1">
+    <topic>gstreamer1 -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>gstreamer1-libav</name>
+	<name>gstreamer1-plugins</name>
+	<name>gstreamer1-plugins-bad</name>
+	<name>gstreamer1-plugins-good</name>
+	<name>gstreamer1-plugins-ugly</name>
+	<range><lt>1.28.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The GStreamer project reports:</p>
+	<blockquote cite="https://gstreamer.freedesktop.org/security/">
+	  <p>Multiple security issues were identified and fixed in the GStreamer framework.</p>
+	  <ul>
+	    <li>GStreamer-SA-2026-0030: Missing bounds checks in RTCP SDES packet parsing</li>
+	    <li>GStreamer-SA-2026-0031: Integer overflow and truncation in MXF demuxer</li>
+	    <li>GStreamer-SA-2026-0032: Out-of-bounds read and write in XMP tag parser</li>
+	    <li>GStreamer-SA-2026-0033: Out-of-bounds read and modification of const data in ID3v2 parser</li>
+	    <li>GStreamer-SA-2026-0034: Division by zero in mDVDsub subtitle parser</li>
+	    <li>GStreamer-SA-2026-0035: Integer overflow in WavPack decoder</li>
+	    <li>GStreamer-SA-2026-0036: Out-of-bounds read in SBC audio parser header parsing</li>
+	    <li>GStreamer-SA-2026-0037: Heap corruption in gst-libav AV protocol pipe</li>
+	    <li>GStreamer-SA-2026-0038: Memory leak and NULL pointer dereference in gst-libav demuxer</li>
+	    <li>GStreamer-SA-2026-0039: Assertion in AV1 parser tile data parsing</li>
+	    <li>GStreamer-SA-2026-0040: Out-of-bounds read in VA JPEG decoder segment parsing</li>
+	    <li>GStreamer-SA-2026-0042: Out-of-bounds reads and integer overflows in RealMedia demuxer</li>
+	    <li>GStreamer-SA-2026-0043: Out-of-bounds read and write in RFB source</li>
+	    <li>GStreamer-SA-2026-0045: Out-of-bounds reads in PCAP parser due to missing bounds checks</li>
+	    <li>GStreamer-SA-2026-0046: Integer overflow in VMNC decoder cursor payload size calculation</li>
+	    <li>GStreamer-SA-2026-0047: One-byte out-of-bounds read in H.264 NAL unit parser</li>
+	    <li>GStreamer-SA-2026-0048: Out-of-bounds read in H.266 parser VUI aspect ratio parsing</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-12891</cvename>
+      <cvename>CVE-2026-12892</cvename>
+      <cvename>CVE-2026-12893</cvename>
+      <cvename>CVE-2026-52717</cvename>
+      <cvename>CVE-2026-52718</cvename>
+      <cvename>CVE-2026-52719</cvename>
+      <cvename>CVE-2026-52720</cvename>
+      <cvename>CVE-2026-52721</cvename>
+      <cvename>CVE-2026-52722</cvename>
+      <cvename>CVE-2026-53703</cvename>
+      <cvename>CVE-2026-53704</cvename>
+      <cvename>CVE-2026-53705</cvename>
+      <url>https://gstreamer.freedesktop.org/security/sa-2026-0030.html</url>
+      <url>https://gstreamer.freedesktop.org/security/sa-2026-0031.html</url>
+      <url>https://gstreamer.freedesktop.org/security/sa-2026-0032.html</url>
+      <url>https://gstreamer.freedesktop.org/security/sa-2026-0033.html</url>
+      <url>https://gstreamer.freedesktop.org/security/sa-2026-0034.html</url>
+      <url>https://gstreamer.freedesktop.org/security/sa-2026-0035.html</url>
+      <url>https://gstreamer.freedesktop.org/security/sa-2026-0036.html</url>
+      <url>https://gstreamer.freedesktop.org/security/sa-2026-0037.html</url>
+      <url>https://gstreamer.freedesktop.org/security/sa-2026-0038.html</url>
+      <url>https://gstreamer.freedesktop.org/security/sa-2026-0039.html</url>
+      <url>https://gstreamer.freedesktop.org/security/sa-2026-0040.html</url>
+      <url>https://gstreamer.freedesktop.org/security/sa-2026-0042.html</url>
+      <url>https://gstreamer.freedesktop.org/security/sa-2026-0043.html</url>
+      <url>https://gstreamer.freedesktop.org/security/sa-2026-0045.html</url>
+      <url>https://gstreamer.freedesktop.org/security/sa-2026-0046.html</url>
+      <url>https://gstreamer.freedesktop.org/security/sa-2026-0047.html</url>
+      <url>https://gstreamer.freedesktop.org/security/sa-2026-0048.html</url>
+    </references>
+    <dates>
+      <discovery>2026-06-12</discovery>
+      <entry>2026-06-29</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="d06b1fa2-731f-11f1-a0d2-589cfc10a551">
     <topic>Multiple vulnerability found in Expat</topic>
     <affects>
