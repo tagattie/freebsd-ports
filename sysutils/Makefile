@@ -317,6 +317,7 @@
     SUBDIR += doctl
     SUBDIR += doinkd
     SUBDIR += downtimed
+    SUBDIR += dpv
     SUBDIR += dsbbatmon
     SUBDIR += dsbdriverd
     SUBDIR += dsblogoutmgr
@@ -674,7 +675,6 @@
     SUBDIR += loganalyzer
     SUBDIR += logrotate
     SUBDIR += logstalgia
-    SUBDIR += logstash7
     SUBDIR += logstash8
     SUBDIR += logstash91
     SUBDIR += logstash92
