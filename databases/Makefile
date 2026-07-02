@@ -171,7 +171,6 @@
     SUBDIR += mariadb-java-client
     SUBDIR += mariadb1011-client
     SUBDIR += mariadb1011-server
-    SUBDIR += mariadb106-client
     SUBDIR += mariadb114-client
     SUBDIR += mariadb114-server
     SUBDIR += mariadb118-client
@@ -732,8 +731,6 @@
     SUBDIR += prometheus-postgresql-adapter
     SUBDIR += proxysql
     SUBDIR += pspg
-    SUBDIR += puppetdb-terminus8
-    SUBDIR += puppetdb8
     SUBDIR += puredb
     SUBDIR += pxlib
     SUBDIR += pxtools
