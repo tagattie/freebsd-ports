@@ -3,7 +3,7 @@ bin/karukan-dict
 bin/karukan-server
 bin/sudachi-dict
 lib/fcitx5/karukan.so
-lib/fcitx5/libkarukan_im.so
+lib/fcitx5/libkarukan_fcitx5.so
 share/fcitx5/addon/karukan.conf
 share/fcitx5/inputmethod/karukan.conf
 share/fcitx5/karukan/default.toml

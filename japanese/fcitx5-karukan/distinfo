@@ -1,4 +1,4 @@
-TIMESTAMP = 1779841731
+TIMESTAMP = 1783498997
 SHA256 (rust/crates/adler2-2.0.1.crate) = 320119579fcad9c21884f5c4861d16174d0e06250625266f50fe6898340abefa
 SIZE (rust/crates/adler2-2.0.1.crate) = 13366
 SHA256 (rust/crates/ahash-0.8.12.crate) = 5a15f179cd60c4584b8a8c596927aadc462e27f2ca70c04e0071964a73ba7a75
@@ -729,5 +729,5 @@ SHA256 (rust/crates/zerovec-derive-0.11.2.crate) = eadce39539ca5cb3985590102671f
 SIZE (rust/crates/zerovec-derive-0.11.2.crate) = 21421
 SHA256 (rust/crates/zmij-1.0.21.crate) = b8848ee67ecc8aedbaf3e4122217aff892639231befc6a1b58d29fff4c2cabaa
 SIZE (rust/crates/zmij-1.0.21.crate) = 26665
-SHA256 (togatoga-karukan-g20260523-3a96300e1005a80f6acb98b3dba877ed2041f8ba_GH0.tar.gz) = 814d6c25dddc5ced9356f92e86ce626da9bb3ee250f8dadfbab4036e0d8e39ed
-SIZE (togatoga-karukan-g20260523-3a96300e1005a80f6acb98b3dba877ed2041f8ba_GH0.tar.gz) = 3442056
+SHA256 (togatoga-karukan-g20260624-6746900de5ae44f1cf3b28784235e9b2f22326ee_GH0.tar.gz) = 6bac2e03e5f01c048520d7fc3544b25e37fd6bf0d3df52bd7a1b528d14f1bf41
+SIZE (togatoga-karukan-g20260624-6746900de5ae44f1cf3b28784235e9b2f22326ee_GH0.tar.gz) = 3661571

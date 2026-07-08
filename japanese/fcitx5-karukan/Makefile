@@ -1,5 +1,5 @@
 PORTNAME=	fcitx5-karukan
-DISTVERSION=	g20260523
+DISTVERSION=	g20260624
 CATEGORIES=	japanese textproc
 
 MAINTAINER=	tagattie@FreeBSD.org
@@ -15,14 +15,14 @@ LIB_DEPENDS=	libonig.so:devel/oniguruma \
 		libFcitx5Core.so:textproc/fcitx5 \
 		libxkbcommon.so:x11/libxkbcommon
 
-USES=		cargo cmake:noninja gmake llvm:build,lib localbase:ldflags ssl
+USES=		cargo cmake:noninja gmake llvm localbase:ldflags ssl
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	togatoga
 GH_PROJECT=	karukan
-GH_TAGNAME=	3a96300e1005a80f6acb98b3dba877ed2041f8ba
+GH_TAGNAME=	6746900de5ae44f1cf3b28784235e9b2f22326ee
 
-CMAKE_SOURCE_PATH=	${WRKSRC}/karukan-im/fcitx5-addon
+CMAKE_SOURCE_PATH=	${WRKSRC}/karukan-fcitx5/fcitx5-addon
 
 CARGO_CARGOTOML=	${WRKSRC}/Cargo.toml
 CARGO_CARGOLOCK=	${WRKSRC}/Cargo.lock
@@ -32,6 +32,13 @@ CARGO_INSTALL=		no
 CARGO_TEST=		no
 
 RUSTFLAGS=		-C link-arg=-lomp
+
+PORTDOCS=	README.md \
+		README-karukan-fcitx5.md \
+		README-karukan-im.md \
+		README-karukan-cli.md
+
+OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|/usr|${PREFIX}|" \
@@ -54,6 +61,14 @@ post-install:
 .for f in default.toml default_user_dict.txt
 	${INSTALL_DATA} ${WRKSRC}/karukan-im/config/${f} \
 		${STAGEDIR}${PREFIX}/share/fcitx5/karukan
+.endfor
+
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}
+.for dir in karukan-fcitx5 karukan-im karukan-cli
+	${INSTALL_MAN} ${WRKSRC}/${dir}/README.md \
+		${STAGEDIR}${DOCSDIR}/README-${dir}.md
 .endfor
 
 .include <bsd.port.mk>
