@@ -22,10 +22,10 @@ ARRAYVAR_GH_TUPLE=	openresty:array-var-nginx-module:v0.06:arrayvar
 ARRAYVAR_IMPLIES=	DEVEL_KIT
 ARRAYVAR_VARS=		DSO_EXTMODS+=arrayvar
 
-AUTH_JWT_VERSION=	0.13.1
+AUTH_JWT_VERSION=	0.14.1
 AUTH_JWT_GH_TUPLE=	kjdev:nginx-auth-jwt:${AUTH_JWT_VERSION}:auth_jwt \
 			kjdev:nxe-json:0.5.0:nxe_json \
-			kjdev:nxe-jwx:0.1.0:nxe_jwx
+			kjdev:nxe-jwx:0.2.0:nxe_jwx
 AUTH_JWT_LIB_DEPENDS=	libjansson.so:devel/jansson
 AUTH_JWT_PREVENTS=	HTTP_AUTH_JWT
 AUTH_JWT_PREVENTS_MSG=	choose auth_jwt or http_auth_jwt module
@@ -161,7 +161,7 @@ HTTP_SLICE_AHEAD_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-src_http_modules_ngx_htt
 
 HTTP_SUBS_FILTER_GH_TUPLE=	yaoweibin:ngx_http_substitutions_filter_module:e12e965:subs_filter
 HTTP_SUBS_FILTER_VARS=		DSO_EXTMODS+=subs_filter
-HTTP_SUBS_FILTER_IGNORE=	substitutions filter module: patching is required
+HTTP_SUBS_FILTER_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-ngx_http_subs_filter_module.c
 
 HTTP_TARANTOOL_GH_TUPLE=	tarantool:nginx_upstream_module:aeb8696:nginx_tarantool
 HTTP_TARANTOOL_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-ngx_http_tarantool-config
