@@ -675,6 +675,7 @@
     SUBDIR += electron40
     SUBDIR += electron41
     SUBDIR += electron42
+    SUBDIR += electron43
     SUBDIR += elf
     SUBDIR += elf-dissector
     SUBDIR += elfcat
@@ -4292,7 +4293,6 @@
     SUBDIR += pecl-msgpack
     SUBDIR += pecl-mustache
     SUBDIR += pecl-opentelemetry
-    SUBDIR += pecl-pcov
     SUBDIR += pecl-protobuf
     SUBDIR += pecl-psr
     SUBDIR += pecl-runkit7
@@ -4322,6 +4322,7 @@
     SUBDIR += php-ice37
     SUBDIR += php-libawl
     SUBDIR += php-maxminddb
+    SUBDIR += php-pcov
     SUBDIR += php-pie
     SUBDIR += php-raphf
     SUBDIR += php-swoole

@@ -487,6 +487,10 @@
     SUBDIR += py-comfyui-workflow-templates-media-video
     SUBDIR += py-compressed-tensors
     SUBDIR += py-cppman
+    SUBDIR += py-crewai
+    SUBDIR += py-crewai-cli
+    SUBDIR += py-crewai-core
+    SUBDIR += py-crewai-tools
     SUBDIR += py-crudini
     SUBDIR += py-csvw
     SUBDIR += py-cvat-sdk
@@ -536,7 +540,6 @@
     SUBDIR += py-jiwer
     SUBDIR += py-kartograph
     SUBDIR += py-kokoro
-    SUBDIR += py-lance-namespace-urllib3-client
     SUBDIR += py-langchain
     SUBDIR += py-langchain-anthropic
     SUBDIR += py-langchain-aws
