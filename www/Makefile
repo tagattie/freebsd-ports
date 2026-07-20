@@ -506,6 +506,7 @@
     SUBDIR += nextcloud-deck
     SUBDIR += nextcloud-forms
     SUBDIR += nextcloud-groupfolders
+    SUBDIR += nextcloud-impersonate
     SUBDIR += nextcloud-memories
     SUBDIR += nextcloud-news
     SUBDIR += nextcloud-notes
@@ -1818,6 +1819,7 @@
     SUBDIR += py-h2
     SUBDIR += py-habanero
     SUBDIR += py-hdfs
+    SUBDIR += py-hf-transfer
     SUBDIR += py-horizon
     SUBDIR += py-hpack
     SUBDIR += py-hstspreload
