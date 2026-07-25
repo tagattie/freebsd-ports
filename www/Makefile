@@ -318,6 +318,7 @@
     SUBDIR += jmeter
     SUBDIR += joomla4
     SUBDIR += joomla5
+    SUBDIR += joomla6
     SUBDIR += jwt-cli
     SUBDIR += kamal-proxy
     SUBDIR += kanboard
@@ -1703,6 +1704,7 @@
     SUBDIR += py-django42
     SUBDIR += py-django52
     SUBDIR += py-django60
+    SUBDIR += py-django61
     SUBDIR += py-django_compressor
     SUBDIR += py-django_statici18n
     SUBDIR += py-djangocms-admin-style
