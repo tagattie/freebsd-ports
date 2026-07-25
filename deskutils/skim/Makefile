@@ -1,6 +1,6 @@
 PORTNAME=	skim
 DISTVERSIONPREFIX=	v
-DISTVERSION=	5.3.1
+DISTVERSION=	5.5.0
 CATEGORIES=	deskutils
 PKGNAMESUFFIX=	-fuzzy-finder
 
@@ -64,11 +64,11 @@ CARGO_CRATES=	adler2-2.0.1 \
 		ciborium-0.2.2 \
 		ciborium-io-0.2.2 \
 		ciborium-ll-0.2.2 \
-		clap-4.6.2 \
+		clap-4.6.4 \
 		clap_builder-4.6.2 \
 		clap_complete-4.6.7 \
 		clap_complete_nushell-4.6.1 \
-		clap_derive-4.6.1 \
+		clap_derive-4.6.4 \
 		clap_lex-1.1.0 \
 		clap_mangen-0.3.0 \
 		color_quant-1.1.0 \
@@ -169,15 +169,15 @@ CARGO_CRATES=	adler2-2.0.1 \
 		itertools-0.13.0 \
 		itertools-0.14.0 \
 		itoa-1.0.18 \
-		jiff-0.2.33 \
+		jiff-0.2.34 \
 		jiff-core-0.1.0 \
-		jiff-static-0.2.33 \
+		jiff-static-0.2.34 \
 		js-sys-0.3.103 \
 		kanal-0.1.1 \
 		kasuari-0.4.12 \
 		lab-0.11.0 \
 		lazy_static-1.5.0 \
-		libc-0.2.186 \
+		libc-0.2.189 \
 		libm-0.2.16 \
 		libmimalloc-sys-0.1.44 \
 		line-clipping-0.3.7 \
@@ -217,10 +217,10 @@ CARGO_CRATES=	adler2-2.0.1 \
 		parking_lot-0.12.5 \
 		parking_lot_core-0.9.12 \
 		pastey-0.2.3 \
-		pest-2.8.7 \
-		pest_derive-2.8.7 \
-		pest_generator-2.8.7 \
-		pest_meta-2.8.7 \
+		pest-2.8.8 \
+		pest_derive-2.8.8 \
+		pest_generator-2.8.8 \
+		pest_meta-2.8.8 \
 		phf-0.11.3 \
 		phf_codegen-0.11.3 \
 		phf_generator-0.11.3 \
@@ -236,8 +236,8 @@ CARGO_CRATES=	adler2-2.0.1 \
 		portable-pty-0.9.0 \
 		powerfmt-0.2.0 \
 		ppv-lite86-0.2.21 \
-		proc-macro-error-attr3-3.0.2 \
-		proc-macro-error3-3.0.2 \
+		proc-macro-error-attr3-3.0.3 \
+		proc-macro-error3-3.0.3 \
 		proc-macro2-1.0.107 \
 		pulldown-cmark-0.13.4 \
 		pxfm-0.1.30 \
@@ -288,7 +288,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		serde-1.0.229 \
 		serde_core-1.0.229 \
 		serde_derive-1.0.229 \
-		serde_json-1.0.150 \
+		serde_json-1.0.151 \
 		serial2-0.2.37 \
 		serial_test-3.5.0 \
 		serial_test_derive-3.5.0 \
@@ -313,7 +313,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		strum_macros-0.28.0 \
 		syn-1.0.109 \
 		syn-2.0.119 \
-		syn-3.0.0 \
+		syn-3.0.3 \
 		tap-1.0.1 \
 		tempfile-3.27.0 \
 		termina-0.3.3 \
@@ -325,14 +325,14 @@ CARGO_CRATES=	adler2-2.0.1 \
 		thiserror-impl-1.0.69 \
 		thiserror-impl-2.0.19 \
 		thread_local-1.1.10 \
-		time-0.3.53 \
+		time-0.3.54 \
 		time-core-0.1.9 \
 		tinytemplate-1.2.1 \
 		tinyvec-1.12.0 \
 		tinyvec_macros-0.1.1 \
-		tokio-1.53.0 \
+		tokio-1.53.1 \
 		tokio-macros-2.7.1 \
-		tokio-util-0.7.18 \
+		tokio-util-0.7.19 \
 		tui-term-0.3.4 \
 		typeid-1.0.3 \
 		typenum-1.20.1 \
@@ -396,8 +396,8 @@ CARGO_CRATES=	adler2-2.0.1 \
 		winreg-0.10.1 \
 		wit-bindgen-0.57.1 \
 		wyz-0.5.1 \
-		zerocopy-0.8.54 \
-		zerocopy-derive-0.8.54 \
+		zerocopy-0.8.55 \
+		zerocopy-derive-0.8.55 \
 		zmij-1.0.23 \
 		zune-core-0.5.1 \
 		zune-jpeg-0.5.15
