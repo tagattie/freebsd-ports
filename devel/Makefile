@@ -193,7 +193,6 @@
     SUBDIR += antlr3
     SUBDIR += antlr4
     SUBDIR += apache-ant
-    SUBDIR += apache-commons-configuration
     SUBDIR += apache-commons-daemon
     SUBDIR += apache-commons-io
     SUBDIR += apache-commons-jxpath
@@ -8624,6 +8623,7 @@
     SUBDIR += serd
     SUBDIR += serdisplib
     SUBDIR += serialize
+    SUBDIR += sfl-library
     SUBDIR += sfml
     SUBDIR += sfsexp
     SUBDIR += sgb
