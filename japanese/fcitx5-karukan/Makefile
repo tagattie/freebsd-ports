@@ -1,5 +1,5 @@
 PORTNAME=	fcitx5-karukan
-DISTVERSION=	g20260624
+DISTVERSION=	g20260725
 CATEGORIES=	japanese textproc
 
 MAINTAINER=	tagattie@FreeBSD.org
@@ -20,7 +20,7 @@ USES=		cargo cmake:noninja gmake llvm localbase:ldflags ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	togatoga
 GH_PROJECT=	karukan
-GH_TAGNAME=	6746900de5ae44f1cf3b28784235e9b2f22326ee
+GH_TAGNAME=	7756d68c725ea2c6e611618af79e06b6363275db
 
 CMAKE_SOURCE_PATH=	${WRKSRC}/karukan-fcitx5/fcitx5-addon
 
