@@ -28,7 +28,7 @@ OPTIONS_DEFINE=	DOCS
 
 post-install:
 	@${MV} ${STAGEDIR}${PREFIX}/bin/tsgo \
-		${STAGEDIR}${PREFIX}/bin/tsc \
+		${STAGEDIR}${PREFIX}/bin/tsc
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
