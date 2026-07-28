@@ -307,8 +307,6 @@
     SUBDIR += java-beepcore
     SUBDIR += jcifs
     SUBDIR += jgroups
-    SUBDIR += jicmp
-    SUBDIR += jicmp6
     SUBDIR += jose
     SUBDIR += jotta-cli
     SUBDIR += jrdesktop
@@ -368,6 +366,7 @@
     SUBDIR += lambdamoo
     SUBDIR += latd
     SUBDIR += lavinmq
+    SUBDIR += lazyrsync
     SUBDIR += ldap-stats
     SUBDIR += ldapbrowser
     SUBDIR += ldapdiff
