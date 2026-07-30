@@ -533,6 +533,7 @@
     SUBDIR += nemesis
     SUBDIR += netatalk4
     SUBDIR += netcat
+    SUBDIR += netcode
     SUBDIR += netdiscover
     SUBDIR += netembryo
     SUBDIR += nethogs
@@ -1253,6 +1254,7 @@
     SUBDIR += redir
     SUBDIR += redpanda-connect
     SUBDIR += relayd
+    SUBDIR += reliable
     SUBDIR += remarkable-devd
     SUBDIR += remmina
     SUBDIR += remotebox
@@ -1746,6 +1748,7 @@
     SUBDIR += yazproxy
     SUBDIR += yconalyzer
     SUBDIR += yggdrasil
+    SUBDIR += yojimbo
     SUBDIR += yptransitd
     SUBDIR += zapret
     SUBDIR += zapret2
