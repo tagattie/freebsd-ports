@@ -4489,14 +4489,18 @@
     SUBDIR += py-aiofile
     SUBDIR += py-aiofiles
     SUBDIR += py-aiohttp-apispec
+    SUBDIR += py-aiohttp-asgi
     SUBDIR += py-aioice
     SUBDIR += py-aioitertools
     SUBDIR += py-aiologger
+    SUBDIR += py-aiomisc
+    SUBDIR += py-aiomisc-pytest
     SUBDIR += py-aiorpcX
     SUBDIR += py-aiorpcX-legacy
     SUBDIR += py-aiortc
     SUBDIR += py-aiorwlock
     SUBDIR += py-aiosignal
+    SUBDIR += py-aiothreads
     SUBDIR += py-airspeed
     SUBDIR += py-airspeed-ext
     SUBDIR += py-airtable-python-wrapper
@@ -8749,6 +8753,7 @@
     SUBDIR += taskctl
     SUBDIR += taskflow
     SUBDIR += tass64
+    SUBDIR += tauri-cli
     SUBDIR += tbox
     SUBDIR += tcl-memchan
     SUBDIR += tcl-mmap
