@@ -27,7 +27,6 @@
     SUBDIR += c3p0
     SUBDIR += cargo-pgrx
     SUBDIR += cassandra-cpp-driver
-    SUBDIR += cassandra3
     SUBDIR += cassandra4
     SUBDIR += cassandra5
     SUBDIR += casstcl
@@ -785,6 +784,7 @@
     SUBDIR += py-dbt-semantic-interfaces
     SUBDIR += py-dbt-snowflake
     SUBDIR += py-dbutils
+    SUBDIR += py-deltalake
     SUBDIR += py-duckdb
     SUBDIR += py-duckdb_engine
     SUBDIR += py-fakeredis
@@ -931,6 +931,7 @@
     SUBDIR += redis82
     SUBDIR += redis84
     SUBDIR += redis86
+    SUBDIR += redis88
     SUBDIR += redis_exporter
     SUBDIR += redisbloom
     SUBDIR += redisjson
