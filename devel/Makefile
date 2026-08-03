@@ -2425,13 +2425,11 @@
     SUBDIR += p5-Data-Stag
     SUBDIR += p5-Data-Stream-Bulk
     SUBDIR += p5-Data-Structure-Util
-    SUBDIR += p5-Data-Swap
     SUBDIR += p5-Data-Table
     SUBDIR += p5-Data-Taxonomy-Tags
     SUBDIR += p5-Data-TemporaryBag
     SUBDIR += p5-Data-Throttler
     SUBDIR += p5-Data-Throttler-Memcached
-    SUBDIR += p5-Data-Thunk
     SUBDIR += p5-Data-TreeDumper
     SUBDIR += p5-Data-TreeDumper-Renderer-GTK
     SUBDIR += p5-Data-Types
@@ -2533,7 +2531,6 @@
     SUBDIR += p5-Devel-ArgNames
     SUBDIR += p5-Devel-Autoflush
     SUBDIR += p5-Devel-Backtrace
-    SUBDIR += p5-Devel-BeginLift
     SUBDIR += p5-Devel-CallChecker
     SUBDIR += p5-Devel-Caller
     SUBDIR += p5-Devel-Caller-IgnoreNamespaces
@@ -5537,6 +5534,7 @@
     SUBDIR += py-notify2
     SUBDIR += py-num2words
     SUBDIR += py-numba
+    SUBDIR += py-numkong
     SUBDIR += py-nvidia-ml-py
     SUBDIR += py-objgraph
     SUBDIR += py-objprint
