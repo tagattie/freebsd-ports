@@ -1,3 +1,248 @@
+  <vuln vid="9096f6e4-3a2f-4d16-89fb-f909aa0a7760">
+    <topic>jenkins -- multiple vulnerabilities</topic>
+    <affects>
+    <package>
+	<name>jenkins</name>
+	<range><lt>2.576</lt></range>
+    </package>
+    <package>
+	<name>jenkins-lts</name>
+	<range><lt>2.568.2</lt></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Jenkins Security Advisory 2026-08-05:</p>
+	<blockquote cite="https://www.jenkins.io/security/advisory/2026-08-05/">
+	  <ul>
+	    <li>SECURITY-3911 / CVE-2026-70426: Agent-to-controller
+	    deserialization filter bypass (Critical)</li>
+	    <li>SECURITY-3930 / CVE-2026-70427: Link following vulnerability
+	    allows arbitrary file creation (High)</li>
+	    <li>SECURITY-3927 / CVE-2026-70428: Path traversal vulnerability in
+	    file parameters (High)</li>
+	    <li>SECURITY-3924 / CVE-2026-70429: Improper handling of case
+	    sensitivity allows privilege escalation (High)</li>
+	    <li>SECURITY-3916 / CVE-2026-70430: Users with Overall/Manage
+	    permission can instantiate any types related to configuration
+	    (Low)</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-70426</cvename>
+      <cvename>CVE-2026-70427</cvename>
+      <cvename>CVE-2026-70428</cvename>
+      <cvename>CVE-2026-70429</cvename>
+      <cvename>CVE-2026-70430</cvename>
+      <url>https://www.jenkins.io/security/advisory/2026-08-05/</url>
+    </references>
+    <dates>
+      <discovery>2026-08-05</discovery>
+      <entry>2026-08-06</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="10f5d195-90a5-11f1-bc30-3497f65b111b">
+    <topic>MySQL 8.4 -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>mysql84-client</name>
+	<range><lt>8.4.11</lt></range>
+      </package>
+      <package>
+	<name>mysql84-server</name>
+	<range><lt>8.4.11</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Oracle Critical Patch Update of July 2026 addresses 54 issues
+	  in Oracle MySQL, 31 of which apply to the MySQL 8.4 series and to
+	  the MySQL Router shipped with these ports.</p>
+	<p>The affected server components are Optimizer, Replication,
+	  Group Replication (plugin and GCS), X Plugin, Clone Plugin,
+	  InnoDB, JSON, DDL, Performance Schema and Pluggable
+	  Authentication.</p>
+	<p>Most of the issues require an authenticated account, in many
+	  cases one with high privileges, and let an attacker hang or
+	  repeatedly crash the server, resulting in a denial of service.
+	  Three issues need no credentials at all: CVE-2026-60315 (CVSS
+	  8.2) is reachable over the X protocol and affects availability,
+	  while CVE-2026-60314 and CVE-2026-60725 affect MySQL Router over
+	  HTTP, the latter allowing unauthorized read and write access.
+	  The highest rated issue for this branch is CVE-2026-60163 (CVSS
+	  8.4) in the Group Replication plugin, exploitable locally with
+	  full impact on confidentiality, integrity and availability.</p>
+	<p>Please refer to the referenced CVE entries for the details of
+	  each individual issue.</p>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-46936</cvename>
+      <cvename>CVE-2026-47012</cvename>
+      <cvename>CVE-2026-47023</cvename>
+      <cvename>CVE-2026-47052</cvename>
+      <cvename>CVE-2026-47064</cvename>
+      <cvename>CVE-2026-60145</cvename>
+      <cvename>CVE-2026-60163</cvename>
+      <cvename>CVE-2026-60177</cvename>
+      <cvename>CVE-2026-60178</cvename>
+      <cvename>CVE-2026-60182</cvename>
+      <cvename>CVE-2026-60183</cvename>
+      <cvename>CVE-2026-60184</cvename>
+      <cvename>CVE-2026-60185</cvename>
+      <cvename>CVE-2026-60186</cvename>
+      <cvename>CVE-2026-60187</cvename>
+      <cvename>CVE-2026-60188</cvename>
+      <cvename>CVE-2026-60189</cvename>
+      <cvename>CVE-2026-60190</cvename>
+      <cvename>CVE-2026-60191</cvename>
+      <cvename>CVE-2026-60314</cvename>
+      <cvename>CVE-2026-60315</cvename>
+      <cvename>CVE-2026-60316</cvename>
+      <cvename>CVE-2026-60331</cvename>
+      <cvename>CVE-2026-60332</cvename>
+      <cvename>CVE-2026-60585</cvename>
+      <cvename>CVE-2026-60725</cvename>
+      <cvename>CVE-2026-60747</cvename>
+      <cvename>CVE-2026-61081</cvename>
+      <cvename>CVE-2026-61094</cvename>
+      <cvename>CVE-2026-61096</cvename>
+      <cvename>CVE-2026-61109</cvename>
+      <url>https://www.oracle.com/security-alerts/cpujul2026.html</url>
+      <url>https://dev.mysql.com/community/security/advisories/2026-07-21/</url>
+    </references>
+    <dates>
+      <discovery>2026-07-21</discovery>
+      <entry>2026-08-05</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="10f5f76e-90a5-11f1-bc30-3497f65b111b">
+    <topic>MySQL 9.7 -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>mysql97-client</name>
+	<range><lt>9.7.2</lt></range>
+      </package>
+      <package>
+	<name>mysql97-server</name>
+	<range><lt>9.7.2</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Oracle Critical Patch Update of July 2026 addresses 54 issues
+	  in Oracle MySQL, 43 of which apply to the MySQL 9.7 series and to
+	  the MySQL Router shipped with these ports. The 9.7 branch is
+	  affected by every server issue of the 8.4 branch plus twelve
+	  additional ones in code paths that only exist in 9.x.</p>
+	<p>The affected server components are Optimizer, Replication,
+	  Group Replication (plugin and GCS), X Plugin, Clone Plugin,
+	  InnoDB, JSON, JSON Duality, GIS, DDL, Configurator, Performance
+	  Schema and Pluggable Authentication.</p>
+	<p>Most of the issues require an authenticated account, in many
+	  cases one with high privileges, and let an attacker hang or
+	  repeatedly crash the server, resulting in a denial of service.
+	  Three issues need no credentials at all: CVE-2026-60315 (CVSS
+	  8.2) is reachable over the X protocol and affects availability,
+	  while CVE-2026-60314 and CVE-2026-60725 affect MySQL Router over
+	  HTTP, the latter allowing unauthorized read and write access.
+	  The highest rated issue for this branch is CVE-2026-60163 (CVSS
+	  8.4) in the Group Replication plugin, exploitable locally with
+	  full impact on confidentiality, integrity and availability.
+	  CVE-2026-60181 in the Configurator component requires user
+	  interaction and is specific to the 9.7 branch.</p>
+	<p>Please refer to the referenced CVE entries for the details of
+	  each individual issue.</p>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-46936</cvename>
+      <cvename>CVE-2026-47008</cvename>
+      <cvename>CVE-2026-47012</cvename>
+      <cvename>CVE-2026-47023</cvename>
+      <cvename>CVE-2026-47052</cvename>
+      <cvename>CVE-2026-47064</cvename>
+      <cvename>CVE-2026-60145</cvename>
+      <cvename>CVE-2026-60163</cvename>
+      <cvename>CVE-2026-60174</cvename>
+      <cvename>CVE-2026-60177</cvename>
+      <cvename>CVE-2026-60178</cvename>
+      <cvename>CVE-2026-60181</cvename>
+      <cvename>CVE-2026-60182</cvename>
+      <cvename>CVE-2026-60183</cvename>
+      <cvename>CVE-2026-60184</cvename>
+      <cvename>CVE-2026-60185</cvename>
+      <cvename>CVE-2026-60186</cvename>
+      <cvename>CVE-2026-60187</cvename>
+      <cvename>CVE-2026-60188</cvename>
+      <cvename>CVE-2026-60189</cvename>
+      <cvename>CVE-2026-60190</cvename>
+      <cvename>CVE-2026-60191</cvename>
+      <cvename>CVE-2026-60194</cvename>
+      <cvename>CVE-2026-60195</cvename>
+      <cvename>CVE-2026-60311</cvename>
+      <cvename>CVE-2026-60314</cvename>
+      <cvename>CVE-2026-60315</cvename>
+      <cvename>CVE-2026-60316</cvename>
+      <cvename>CVE-2026-60324</cvename>
+      <cvename>CVE-2026-60331</cvename>
+      <cvename>CVE-2026-60332</cvename>
+      <cvename>CVE-2026-60585</cvename>
+      <cvename>CVE-2026-60718</cvename>
+      <cvename>CVE-2026-60725</cvename>
+      <cvename>CVE-2026-60747</cvename>
+      <cvename>CVE-2026-61081</cvename>
+      <cvename>CVE-2026-61093</cvename>
+      <cvename>CVE-2026-61094</cvename>
+      <cvename>CVE-2026-61096</cvename>
+      <cvename>CVE-2026-61108</cvename>
+      <cvename>CVE-2026-61109</cvename>
+      <cvename>CVE-2026-61128</cvename>
+      <cvename>CVE-2026-61144</cvename>
+      <url>https://www.oracle.com/security-alerts/cpujul2026.html</url>
+      <url>https://dev.mysql.com/community/security/advisories/2026-07-21/</url>
+    </references>
+    <dates>
+      <discovery>2026-07-21</discovery>
+      <entry>2026-08-05</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="575ddefc-9085-11f1-b295-98b78501ef2a">
+    <topic>PowerDNS Recursor -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>powerdns-recursor</name>
+	<range><lt>5.4.4</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>PowerDNS Team reports:</p>
+	<blockquote cite="https://doc.powerdns.com/recursor/security-advisories/powerdns-advisory-2026-10.html">
+	  <ul>
+	    <li>CVE-2026-52688: RRSIGs with too few labels can lead to bypass of DNSSEC wildcard validation</li>
+	    <li>CVE-2026-52686: Wildcard CNAME proof validation bypass¶</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-52868</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2026-52688</url>
+      <cvename>CVE-2026-52686</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2026-52686</url>
+    </references>
+    <dates>
+      <discovery>2026-07-22</discovery>
+      <entry>2026-08-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="347fe124-8f53-11f1-9f4f-3c7c3fba4204">
     <topic>Angie -- multiple vulnerabilities</topic>
     <affects>
@@ -1502,7 +1747,7 @@
     </package>
     <package>
 	<name>firefox-esr</name>
-	<range><lt>140.12</lt></range>
+	<range><lt>140.12,2</lt></range>
     </package>
     <package>
 	<name>thunderbird</name>
@@ -1542,7 +1787,7 @@
     </package>
     <package>
 	<name>firefox-esr</name>
-	<range><lt>140.13</lt></range>
+	<range><lt>140.13,2</lt></range>
     </package>
     <package>
 	<name>thunderbird</name>
@@ -11656,7 +11901,7 @@ affected.</p>
     </package>
     <package>
 	<name>thunderbird</name>
-	<range><lt>150.0.0,2</lt></range>
+	<range><lt>150.0.0</lt></range>
     </package>
     </affects>
     <description>

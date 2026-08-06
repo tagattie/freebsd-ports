@@ -4,7 +4,6 @@
     SUBDIR += ALPSCore
     SUBDIR += ChipmunkPhysics
     SUBDIR += InsightToolkit
-    SUBDIR += InsightToolkit501
     SUBDIR += PETSc
     SUBDIR += R-cran-DCluster
     SUBDIR += R-cran-Epi
@@ -415,7 +414,6 @@
     SUBDIR += py-plumed
     SUBDIR += py-pnetcdf
     SUBDIR += py-probeinterface
-    SUBDIR += py-pubchempy
     SUBDIR += py-pupynere
     SUBDIR += py-py3Dmol
     SUBDIR += py-pyaixi
