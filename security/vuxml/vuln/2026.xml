@@ -1,3 +1,111 @@
+  <vuln vid="1fae5869-9275-11f1-83e9-901b0e13f1a0">
+    <topic>libXfont2 -- multiple vulnerabilities</topic>
+    <affects>
+<package>
+<name>libXfont2</name>
+<range><lt>2.0.9</lt></range>
+</package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Zhixi "Jace" Sun, independent security researcher reports:</p>
+	<blockquote cite="https://lists.x.org/archives/xorg-announce/2026-August/003734.html">
+	  <ul>
+	    <li>CVE-2026-44950: Font Server Client Cumulative Glyph Data Heap Buffer Overflow</li>
+	    <li>CVE-2026-59679: Font Server Client encoding Out-Of-Bounds Read/Write</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-44950</cvename>
+      <cvename>CVE-2026-59679</cvename>
+      <url>https://lists.x.org/archives/xorg-announce/2026-August/003734.html</url>
+    </references>
+    <dates>
+      <discovery>2026-08-05</discovery>
+      <entry>2026-08-07</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="7e45952f-9268-11f1-ab2f-3c7c3fba4204">
+    <topic>DNSDist, PowerDNS, PowerDNS Recursor -- vulnerability</topic>
+    <affects>
+      <package>
+	<name>dnsdist</name>
+	<range><lt>2.1.1</lt></range>
+      </package>
+      <package>
+	<name>powerdns</name>
+	<range><lt>5.1.4</lt></range>
+      </package>
+      <package>
+	<name>powerdns-recursor</name>
+	<range><lt>5.4.5</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<blockquote cite="https://blog.powerdns.com/2026/08/06/powerdns-security-advisory-2026-11-for-powerdns-authoritative-server-recursor-and-dnsdist">
+	<p>CVE-2026-52682: A crafted DNS packet can cause increased memory and CPU consumption.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-52682</cvename>
+      <url>https://blog.powerdns.com/2026/08/06/powerdns-security-advisory-2026-11-for-powerdns-authoritative-server-recursor-and-dnsdist</url>
+    </references>
+    <dates>
+      <discovery>2026-07-28</discovery>
+      <entry>2026-08-07</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="5ce58e67-919a-11f1-b333-901b0edee044">
+    <topic>py-djangorestframework -- two vulnerabilities</topic>
+    <affects>
+    <package>
+       <name>py310-djangorestframework</name>
+       <name>py311-djangorestframework</name>
+       <name>py312-djangorestframework</name>
+       <name>py313-djangorestframework</name>
+       <name>py313t-djangorestframework</name>
+       <name>py314-djangorestframework</name>
+       <name>py314t-djangorestframework</name>
+       <name>py315-djangorestframework</name>
+       <range><lt>3.17.2,1</lt></range>
+    </package>
+    <package>
+       <name>py312-dj60-djangorestframework</name>
+       <name>py313-dj60-djangorestframework</name>
+       <name>py313t-dj60-djangorestframework</name>
+       <name>py314-dj60-djangorestframework</name>
+       <name>py314t-dj60-djangorestframework</name>
+       <name>py315-dj60-djangorestframework</name>
+       <range><lt>3.17.2</lt></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Bruno Alla reports:</p>
+	<blockquote cite="https://github.com/encode/django-rest-framework/releases/tag/3.17.2">
+	<ul>
+	  <li>Potential bypass of Django `DATA_UPLOAD_MAX_MEMORY_SIZE` when parsing oversized JSON and urlencoded request bodies via DRF `request.data`</li>
+	  <li>AdminRenderer may disclose GET-protected data when rendering invalid write requests</li>
+	</ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <url>https://github.com/encode/django-rest-framework/security/advisories/GHSA-2m8g-3cmr-wg3w</url>
+      <url>https://github.com/encode/django-rest-framework/security/advisories/GHSA-g47c-3xmw-q6m2</url>
+    </references>
+    <dates>
+      <discovery>2026-08-05</discovery>
+      <entry>2026-08-07</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="e1208b90-91c3-11f1-a0bc-3c7c3fba4204">
     <topic>Keycloak -- multiple vulnerabilities</topic>
     <affects>
@@ -469,6 +577,7 @@
     <topic>py-mkdocs-material -- DOM XSS vulnerability</topic>
     <affects>
 <package>
+    <name>py310-mkdocs-material</name>
     <name>py311-mkdocs-material</name>
     <name>py312-mkdocs-material</name>
     <name>py313-mkdocs-material</name>
@@ -493,6 +602,7 @@
     <dates>
       <discovery>2026-07-17</discovery>
       <entry>2026-07-31</entry>
+      <modified>2026-08-07</modified>
     </dates>
   </vuln>
 
