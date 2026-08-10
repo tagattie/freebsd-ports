@@ -217,6 +217,7 @@
     SUBDIR += free-sa-devel
     SUBDIR += freenginx
     SUBDIR += freenginx-acme
+    SUBDIR += freenginx-acme-module
     SUBDIR += freenginx-devel
     SUBDIR += freeunit
     SUBDIR += freeunit-php
@@ -294,7 +295,9 @@
     SUBDIR += http_post
     SUBDIR += httpasyncclient
     SUBDIR += httpclient
+    SUBDIR += httpclient5
     SUBDIR += httpcore
+    SUBDIR += httpcore5
     SUBDIR += httptunnel
     SUBDIR += httpx
     SUBDIR += httrack
@@ -308,6 +311,7 @@
     SUBDIR += iocaine
     SUBDIR += iridium
     SUBDIR += janus
+    SUBDIR += jcef
     SUBDIR += jericho-html
     SUBDIR += jesred
     SUBDIR += jetty10
@@ -1751,7 +1755,6 @@
     SUBDIR += py-flask-jwt
     SUBDIR += py-flask-jwt-extended
     SUBDIR += py-flask-limiter
-    SUBDIR += py-flask-limiter3
     SUBDIR += py-flask-login
     SUBDIR += py-flask-marshmallow
     SUBDIR += py-flask-migrate
