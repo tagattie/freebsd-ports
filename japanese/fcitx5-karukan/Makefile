@@ -11,6 +11,8 @@ LICENSE_COMB=		dual
 LICENSE_FILE_APACHE20=	${WRKSRC}/LICENSE-APACHE
 LICENSE_FILE_MIT=	${WRKSRC}/LICENSE-MIT
 
+BROKEN_i386=	fails to build: cannot find function `_mm256_insert_epi64` in this scope
+
 LIB_DEPENDS=	libonig.so:devel/oniguruma \
 		libFcitx5Core.so:textproc/fcitx5 \
 		libxkbcommon.so:x11/libxkbcommon
