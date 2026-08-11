@@ -1,5 +1,5 @@
---- cargo-crates/llama-cpp-sys-2-0.1.152/build.rs.orig	2006-07-24 01:21:28 UTC
-+++ cargo-crates/llama-cpp-sys-2-0.1.152/build.rs
+--- cargo-crates/llama-cpp-sys-2-0.1.154/build.rs.orig	2006-07-24 01:21:28 UTC
++++ cargo-crates/llama-cpp-sys-2-0.1.154/build.rs
 @@ -24,6 +24,7 @@ enum TargetOs {
      Apple(AppleVariant),
      Linux,
@@ -44,7 +44,7 @@
              if build_shared_libs {
                  (&["lib"], &["so"])
              } else {
-@@ -843,7 +846,7 @@ fn main() {
+@@ -869,7 +872,7 @@ fn main() {
          println!("cargo:rustc-link-lib=android");
      }
  
@@ -53,7 +53,7 @@
          && target_triple.contains("aarch64")
          && target_cpu != Some("native".into())
      {
-@@ -879,7 +882,7 @@ fn main() {
+@@ -905,7 +908,7 @@ fn main() {
                      config.cxxflag("/FS");
                  }
              }
@@ -62,7 +62,7 @@
                  // If we are not using system provided vulkan SDK, add vulkan libs for linking
                  if let Ok(vulkan_path) = env::var("VULKAN_SDK") {
                      let vulkan_lib_path = Path::new(&vulkan_path).join("lib");
-@@ -1258,6 +1261,14 @@ fn main() {
+@@ -1363,6 +1366,14 @@ fn main() {
                  println!("cargo:rustc-link-lib=static=stdc++");
              } else {
                  println!("cargo:rustc-link-lib=dylib=stdc++");
