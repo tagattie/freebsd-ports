@@ -17,12 +17,15 @@ LIB_DEPENDS=	libonig.so:devel/oniguruma \
 		libFcitx5Core.so:textproc/fcitx5 \
 		libxkbcommon.so:x11/libxkbcommon
 
-USES=		cargo cmake:noninja gmake llvm localbase:ldflags pkgconfig ssl
+USES=		cargo cmake:noninja gmake kde llvm localbase:ldflags pkgconfig \
+		ssl
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	togatoga
 GH_PROJECT=	karukan
 GH_TAGNAME=	8d132a978c9e9b32daaf556a559bf46da5ed36ec
+
+USE_KDE=	ecm:build
 
 CMAKE_SOURCE_PATH=	${WRKSRC}/karukan-im/fcitx5/fcitx5-addon
 
