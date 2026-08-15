@@ -1,3 +1,60 @@
+  <vuln vid="56449320-97c5-11f1-84d7-3c7c3fba4204">
+    <topic>OpenEXR -- 3.4.14 fixes multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>openexr</name>
+	<range><lt>3.4.14</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Cary Phillips reports:</p>
+	<blockquote cite="https://github.com/AcademySoftwareFoundation/openexr/releases/tag/v3.4.14">
+	  <p>[The OpenEXR 3.4.14] release addresses the following security vulnerabilities:</p>
+	  <ul>
+	    <li>CVE-2026-68514: PyOpenEXR deep prefixed literal RGB key collision heap buffer overflow</li>
+	    <li>CVE-2026-68513: PyOpenEXR prefixed literal RGB key collision heap buffer overflow</li>
+	    <li>CVE-2026-62986: PyOpenEXR deep prefixed RGB stale lane disclosure</li>
+	    <li>CVE-2026-61703: PyOpenEXR deep mixed RGB heap buffer overflow</li>
+	    <li>CVE-2026-61555: empty multiView viewFromChannelName file crash</li>
+	    <li>CVE-2026-59985: ILP32 OpenEXRCore RLE decode heap OOB read DoS</li>
+	    <li>CVE-2026-59984: ILP32 B44 InputFile decode scratch buffer overflow</li>
+	    <li>CVE-2026-59983: ILP32 DeepTiledInputFile sample count table decode OOB read</li>
+	    <li>CVE-2026-59982: ILP32 DWAA InputFile packed AC buffer overflow</li>
+	    <li>CVE-2026-59981: OpenEXRUtil SampleCountChannel row nonzero dataWindow heap OOB read</li>
+	    <li>CVE-2026-59189: OpenEXRUtil DeepImageChannel row nonzero dataWindow heap OOB read</li>
+	    <li>CVE-2026-59187: OpenEXR exrmetrics deep pixelmode heap buffer overflow</li>
+	    <li>CVE-2026-59186: OpenEXR ILP32 TiledRgbaInputFile large tile Array2D heap OOB write</li>
+	    <li>CVE-2026-59184: OpenEXRUtil FlatImageChannel row nonzero dataWindow heap OOB write</li>
+	    <li>CVE-2026-59183: Signed Integer Overflow Leading to Out-of-Bounds Memory Access in Deep Tile Decoding</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-68514</cvename>
+      <cvename>CVE-2026-68513</cvename>
+      <cvename>CVE-2026-62986</cvename>
+      <cvename>CVE-2026-61703</cvename>
+      <cvename>CVE-2026-61555</cvename>
+      <cvename>CVE-2026-59985</cvename>
+      <cvename>CVE-2026-59984</cvename>
+      <cvename>CVE-2026-59983</cvename>
+      <cvename>CVE-2026-59982</cvename>
+      <cvename>CVE-2026-59981</cvename>
+      <cvename>CVE-2026-59189</cvename>
+      <cvename>CVE-2026-59187</cvename>
+      <cvename>CVE-2026-59186</cvename>
+      <cvename>CVE-2026-59184</cvename>
+      <cvename>CVE-2026-59183</cvename>
+      <url>https://github.com/AcademySoftwareFoundation/openexr/releases/tag/v3.4.14</url>
+    </references>
+    <dates>
+      <discovery>2026-08-07</discovery>
+      <entry>2026-08-14</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="2c73b6d5-971c-11f1-bdc8-2cf05da270f3">
     <topic>Gitlab -- vulnerabilities</topic>
     <affects>
@@ -14582,8 +14639,8 @@ affected.</p>
   <vuln vid="30bda1c3-369b-11f1-b51c-6dd25bec137b">
     <topic>Python -- HTTP proxy CONNECT tunnel does not sanitize CR/LF</topic>
     <affects>
-      <package><name>python310</name><range><ge>0</ge></range></package>
-      <package><name>python311</name><range><ge>0</ge></range></package>
+      <package><name>python310</name><range><lt>3.10.21</lt></range></package>
+      <package><name>python311</name><range><lt>3.11.16</lt></range></package>
       <package><name>python312</name><range><lt>3.12.13_3</lt></range></package>
       <package><name>python313</name><range><lt>3.13.14</lt></range></package>
       <package><name>python313t</name><range><lt>3.13.14</lt></range></package>
@@ -14604,15 +14661,15 @@ affected.</p>
     <dates>
       <discovery>2026-03-20</discovery>
       <entry>2026-04-12</entry>
-      <modified>2026-06-19</modified>
+      <modified>2026-08-14</modified>
     </dates>
    </vuln>
 
   <vuln vid="5ec4dcf6-3588-11f1-b51c-6dd25bec137b">
     <topic>Python -- configparser vulnerable to excessive CPU use</topic>
     <affects>
-      <package><name>python310</name><range><ge>0</ge></range></package>
-      <package><name>python311</name><range><ge>0</ge></range></package>
+      <package><name>python310</name><range><lt>3.10.21</lt></range></package>
+      <package><name>python311</name><range><lt>3.11.16</lt></range></package>
       <package><name>python312</name><range><lt>3.12.13_4</lt></range></package>
       <package><name>python313</name><range><lt>3.13.14</lt></range></package>
       <package><name>python313t</name><range><lt>3.13.14</lt></range></package>
@@ -14632,7 +14689,7 @@ affected.</p>
     <dates>
       <discovery>2026-03-23</discovery>
       <entry>2026-04-12</entry>
-      <modified>2026-08-09</modified>
+      <modified>2026-08-14</modified>
     </dates>
   </vuln>
 
@@ -15369,7 +15426,7 @@ affected.</p>
     <package><name>python313t</name> <range><ge>0</ge></range></package>
     <package><name>python314</name> <range><ge>0</ge></range></package>
     <package><name>python314t</name> <range><ge>0</ge></range></package>
-    <package><name>python315</name> <range><ge>0</ge></range></package>
+    <package><name>python315</name> <range><lt>3.15.0.a6</lt></range></package>
     </affects>
     <description>
 	<body xmlns="http://www.w3.org/1999/xhtml">
@@ -15388,7 +15445,7 @@ affected.</p>
     <dates>
       <discovery>2026-01-20</discovery>
       <entry>2026-04-01</entry>
-      <modified>2026-08-08</modified>
+      <modified>2026-08-14</modified>
     </dates>
   </vuln>
 
