@@ -1,0 +1,4 @@
+A TUI manual for every command-line tool you have.
+
+man tells you about one command. --help tells you about one
+invocation. Neither explores a tool you don't already know.

@@ -1,0 +1,31 @@
+PORTNAME=	mandible
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.3.1
+CATEGORIES=	misc
+
+MAINTAINER=	tagattie@FreeBSD.org
+COMMENT=	TUI manual viewer for every command-line tool you have
+WWW=		https://github.com/AS-FOSS/mandible
+
+LICENSE=		APACHE20 MIT
+LICENSE_COMB=		dual
+LICENSE_FILE_APACHE20=	${WRKSRC}/LICENSE-APACHE
+LICENSE_FILE_MIT=	${WRKSRC}/LICENSE-MIT
+
+USES=		cargo
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	AS-FOSS
+
+CARGO_INSTALL_PATH=	mandible
+
+PLIST_FILES=	bin/${PORTNAME}
+PORTDOCS=	CHANGELOG.md CONTRIBUTING.md README.md
+
+OPTIONS_DEFINE=	DOCS
+
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_MAN} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
+
+.include <bsd.port.mk>
