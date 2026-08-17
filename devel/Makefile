@@ -4487,6 +4487,7 @@
     SUBDIR += py-aioapns
     SUBDIR += py-aioboto3
     SUBDIR += py-aiobotocore
+    SUBDIR += py-aiocache
     SUBDIR += py-aiofile
     SUBDIR += py-aiofiles
     SUBDIR += py-aiohttp-apispec
@@ -5229,6 +5230,7 @@
     SUBDIR += py-icalendar-searcher
     SUBDIR += py-ice
     SUBDIR += py-ice37
+    SUBDIR += py-icecream
     SUBDIR += py-id
     SUBDIR += py-identify
     SUBDIR += py-ijson
@@ -6561,7 +6563,6 @@
     SUBDIR += py-yarg
     SUBDIR += py-yaspin
     SUBDIR += py-yattag
-    SUBDIR += py-yg.lockfile
     SUBDIR += py-ytmusicapi
     SUBDIR += py-yunomi
     SUBDIR += py-zarr
