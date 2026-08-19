@@ -45,6 +45,10 @@ OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 
+.if ${ARCH} == i386
+EXTRA_PATCHES=	${PATCHDIR}/extra-patch-src_crispy_ReadSelector.hpp
+.endif
+
 .if ${ARCH:Mpowerpc*}
 USES+=		compiler:gcc-c++11-lib
 .endif
