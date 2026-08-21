@@ -908,6 +908,7 @@
     SUBDIR += gitu
     SUBDIR += gitui
     SUBDIR += glab
+    SUBDIR += glab-tui
     SUBDIR += glade
     SUBDIR += glaze
     SUBDIR += glib20
@@ -6801,6 +6802,7 @@
     SUBDIR += rubygem-analogger
     SUBDIR += rubygem-annoy
     SUBDIR += rubygem-anonymous_loader
+    SUBDIR += rubygem-anonymous_loader-gitlab
     SUBDIR += rubygem-ansi
     SUBDIR += rubygem-apipie-bindings
     SUBDIR += rubygem-apipie-params
@@ -7785,12 +7787,12 @@
     SUBDIR += rubygem-graf
     SUBDIR += rubygem-grape
     SUBDIR += rubygem-grape-entity
+    SUBDIR += rubygem-grape-gitlab
     SUBDIR += rubygem-grape-path-helpers
     SUBDIR += rubygem-grape-route-helpers
     SUBDIR += rubygem-grape-swagger
     SUBDIR += rubygem-grape-swagger-entity
     SUBDIR += rubygem-grape-swagger-gitlab
-    SUBDIR += rubygem-grape20
     SUBDIR += rubygem-grape_logging
     SUBDIR += rubygem-grape_logging-gitlab
     SUBDIR += rubygem-graphiql-rails
@@ -8547,6 +8549,7 @@
     SUBDIR += rubygem-validates_timeliness
     SUBDIR += rubygem-validates_timeliness7
     SUBDIR += rubygem-version_gem
+    SUBDIR += rubygem-version_gem-gitlab
     SUBDIR += rubygem-versionomy
     SUBDIR += rubygem-view_component-rails-gitlab
     SUBDIR += rubygem-virtus
