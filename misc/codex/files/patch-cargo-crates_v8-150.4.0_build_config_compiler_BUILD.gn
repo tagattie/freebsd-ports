@@ -55,7 +55,7 @@
 +    if (!is_win && !is_bsd) {
        cflags += [ "-fdiagnostics-show-inlining-chain" ]
 -    } else {
-+    } else is (!is_bsd) {
++    } else if (!is_bsd) {
        # Combine after https://github.com/llvm/llvm-project/pull/192241
        cflags += [ "/clang:-fdiagnostics-show-inlining-chain" ]
      }
@@ -112,3 +112,14 @@
      cflags = [ "-fauto-profile=${auto_profile_path}" ]
      inputs = [ auto_profile_path ]
    }
+@@ -2827,10 +2835,6 @@ config("split_dwarf") {
+   # thinlto requires -gsplit-dwarf in ldflags.
+   if (use_thin_lto && !is_apple) {
+     ldflags = split_dwarf_flags
+-  } else {
+-    # .dwo files are generated when ThinLTO is not used.
+-    c_additional_outputs =
+-        [ "{{target_out_dir}}/{{label_name}}/{{source_name_part}}.dwo" ]
+   }
+ }
+ 

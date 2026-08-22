@@ -55,7 +55,11 @@ SHEBANG_FILES=	codex-rs/app-server-protocol/scripts/write_schema_fixtures.py \
 CARGO_CARGOTOML=	${BUILD_WRKSRC}/Cargo.toml
 CARGO_CARGOLOCK=	${BUILD_WRKSRC}/Cargo.lock
 CARGO_BUILD_ARGS=	--bin ${PORTNAME} \
+			--bin ${PORTNAME}-code-mode-host \
 			--bin ${PORTNAME}-responses-api-proxy
+CARGO_INSTALL_PATH=	codex-rs/cli \
+			codex-rs/code-mode-host \
+			codex-rs/responses-api-proxy
 CARGO_TEST_ARGS=	--all-features --no-fail-fast
 CARGO_ENV=		OPENSSL_NO_VENDOR=1 \
 			V8_FROM_SOURCE=1 \
@@ -74,7 +78,9 @@ BINARY_ALIAS=	python3=${PYTHON_CMD} \
 BUILD_WRKSRC=	${WRKSRC}/codex-rs
 
 PLIST_FILES=	bin/${PORTNAME} \
-		bin/${PORTNAME}-responses-api-proxy
+		bin/${PORTNAME}-code-mode-host \
+		bin/${PORTNAME}-responses-api-proxy \
+		bin/logs_client
 PORTDOCS=	README.md config.md
 
 OPTIONS_DEFINE=		COMPLETIONS DOCS
@@ -85,6 +91,11 @@ COMPLETIONS_DESC=	Build and/or install shell completions
 COMPLETIONS_PLIST_FILES=etc/bash_completion.d/${PORTNAME} \
 			share/fish/completions/${PORTNAME}.fish \
 			share/zsh/site-functions/_${PORTNAME}
+
+post-extract:
+	@${MKDIR} ${WRKSRC_crate_v8}/third_party/icu/common
+	@${CP} ${WRKSRC_crate_deno_core_icudata}/src/icudtl.dat \
+		${WRKSRC_crate_v8}/third_party/icu/common
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/bin/bash|${LOCALBASE}&|' \
@@ -179,13 +190,12 @@ post-build-COMPLETIONS-on:
 		${WRKSRC}/completions/${PORTNAME}.${sh}
 .endfor
 
-do-install:
-.for prog in ${PORTNAME} ${PORTNAME}-responses-api-proxy
-	${INSTALL_PROGRAM} ${CARGO_TARGET_DIR}/*/${prog} \
-		${STAGEDIR}${PREFIX}/bin
+post-install:
+.for prog in ${PLIST_FILES:Mbin/*}
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/${prog}
 .endfor
 
-do-install-COMPLETIONS-on:
+post-install-COMPLETIONS-on:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/bash_completion.d \
 		${STAGEDIR}${PREFIX}/share/fish/completions \
 		${STAGEDIR}${PREFIX}/share/zsh/site-functions
@@ -196,7 +206,7 @@ do-install-COMPLETIONS-on:
 	${INSTALL_DATA} ${WRKSRC}/completions/${PORTNAME}.zsh \
 		${STAGEDIR}${PREFIX}/share/zsh/site-functions/_${PORTNAME}
 
-do-install-DOCS-on:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_MAN} ${PORTDOCS:S|^|${BUILD_WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
