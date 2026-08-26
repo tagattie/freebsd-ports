@@ -1,3 +1,112 @@
+  <vuln vid="9008d14d-a0af-11f1-8144-8447094a420f">
+    <topic>OpenSSL -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>openssl</name>
+	<range><lt>3.0.22,1</lt></range>
+      </package>
+      <package>
+	<name>openssl34</name>
+	<range><lt>3.4.7</lt></range>
+      </package>
+      <package>
+	<name>openssl35</name>
+	<range><lt>3.5.8</lt></range>
+      </package>
+      <package>
+	<name>openssl36</name>
+	<range><lt>3.6.4</lt></range>
+      </package>
+      <package>
+	<name>openssl40</name>
+	<range><lt>4.0.2</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The OpenSSL poject reports:</p>
+	<blockquote cite="https://openssl-library.org/news/secadv/20260825.txt">
+	  <ul>
+	    <li>Heap Buffer Overflow in CMS Key Unwrapping (CVE-2026-63072) (Moderate)</li>
+	    <li>Invalid Pointer Dereference in CMP Server via Crafted protectionAlg (CVE-2026-63076) (Moderate)</li>
+	    <li>RPK Server Signature Algorithm Selection Can Dereference a Missing Certificate (CVE-2026-14457) (Low)</li>
+	    <li>Excessive Memory Use Buffering DTLS Records for a Future Epoch (CVE-2026-54874) (Low)</li>
+	    <li>Untrusted Sender DN Used as Format String in CMP Response Validation (CVE-2026-63073) (Low)</li>
+	    <li>CMP Indefinite Cache Growth of ExtraCerts (CVE-2026-63074) (Low)</li>
+	    <li>QUIC ACK-only Packet Retention Can Cause Memory Exhaustion (CVE-2026-63075) (Low)</li>
+	    <li>AEAD Forgeries with Empty Ciphertext When Using EVP_Cipher() (CVE-2026-75803) (Low)</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-63072</cvename>
+      <cvename>CVE-2026-63076</cvename>
+      <cvename>CVE-2026-14457</cvename>
+      <cvename>CVE-2026-54874</cvename>
+      <cvename>CVE-2026-63073</cvename>
+      <cvename>CVE-2026-63074</cvename>
+      <cvename>CVE-2026-63075</cvename>
+      <cvename>CVE-2026-75803</cvename>
+      <url>https://openssl-library.org/news/secadv/20260825.txt</url>
+    </references>
+    <dates>
+      <discovery>2026-08-25</discovery>
+      <entry>2026-08-25</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="f68670ea-a05d-11f1-8144-8447094a420f">
+    <topic>MariaDB -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>mariadb106-server</name>
+	<range><lt>10.6.28</lt></range>
+      </package>
+      <package>
+	<name>mariadb1011-server</name>
+	<range><lt>10.11.19</lt></range>
+      </package>
+      <package>
+	<name>mariadb114-server</name>
+	<range><lt>11.4.13</lt></range>
+      </package>
+      <package>
+	<name>mariadb118-server</name>
+	<range><lt>11.8.9</lt></range>
+      </package>
+      <package>
+	<name>mariadb123-server</name>
+	<range><lt>12.3.3</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The MariaDB project reports:</p>
+	<blockquote cite="https://mariadb.com/docs/release-notes/community-server/12.3/12.3.3">
+	  <p>Details in links</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-61081</cvename>
+      <cvename>CVE-2026-60585</cvename>
+      <cvename>CVE-2026-60331</cvename>
+      <cvename>CVE-2026-60747</cvename>
+      <cvename>CVE-2026-47023</cvename>
+      <cvename>CVE-2026-60184</cvename>
+      <url>https://mariadb.com/docs/release-notes/community-server/12.3/12.3.3</url>
+      <url>https://mariadb.com/docs/release-notes/community-server/11.8/11.8.9</url>
+      <url>https://mariadb.com/docs/release-notes/community-server/11.4/11.4.13</url>
+      <url>https://mariadb.com/docs/release-notes/community-server/10.11/10.11.19</url>
+      <url>https://mariadb.com/docs/release-notes/community-server/10.6/10.6.28</url>
+    </references>
+    <dates>
+      <discovery>2026-08-25</discovery>
+      <entry>2026-08-25</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a7b4cdfc-9f9d-11f1-a655-3497f65b111b">
     <topic>mod_gnutls -- multiple vulnerabilities</topic>
     <affects>
