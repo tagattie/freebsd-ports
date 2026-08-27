@@ -473,6 +473,7 @@
     SUBDIR += openvpn-auth-radius
     SUBDIR += openvpn-auth-script
     SUBDIR += openvpn-devel
+    SUBDIR += open-vulnerability-cli
     SUBDIR += ophcrack
     SUBDIR += opie
     SUBDIR += opkssh
@@ -875,7 +876,6 @@
     SUBDIR += plasma6-kscreenlocker
     SUBDIR += plasma6-ksshaskpass
     SUBDIR += plasma6-kwallet-pam
-    SUBDIR += please
     SUBDIR += portacl-rc
     SUBDIR += proftpd-mod_clamav
     SUBDIR += proxytunnel
@@ -908,7 +908,7 @@
     SUBDIR += py-badkeys
     SUBDIR += py-base58
     SUBDIR += py-bcrypt
-    SUBDIR += py-biscuit-auth
+    SUBDIR += py-biscuit-python
     SUBDIR += py-bitbox02
     SUBDIR += py-blake3
     SUBDIR += py-btchip-python
