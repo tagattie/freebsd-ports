@@ -1,3 +1,91 @@
+  <vuln vid="d2e1db41-f7a7-45e9-ace3-b94038416545">
+    <topic>net-p2p/c-lightning -- unknown vulnerability</topic>
+    <affects>
+      <package>
+	<name>c-lightning</name>
+	<range><lt>26.06.7</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Core Lightning team reports:</p>
+	<blockquote cite="https://github.com/ElementsProject/lightning/releases/tag/v26.06.7">
+	    <p>This point release includes fixes for vulnerabilities responsibly
+	      reported by a number of sources. It also comes at a time when
+	      increasingly capable AI models are being used to identify
+	      potential vulnerabilities in open-source code, significantly
+	      increasing the volume and pace of security reports.</p>
+
+	    <p>The potential impact and associated risks are front of mind for
+	      everyone involved, not least the remediation team who have worked
+	      tirelessly to triage, resolve, and compile this release.</p>
+
+	    <p>This embargo period will last for two weeks. The source code
+	      will not be published until 14 days have passed. During this time,
+	      we strongly encourage everyone to upgrade. At the end of this
+	      two-week period, the full release details will be made
+	      available.</p>
+
+	    <p>This delay is designed to reduce the chances of prospective
+	      attackers reverse-engineering the fixes and exploiting them before
+	      the network can update.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <url>https://github.com/ElementsProject/lightning/releases/tag/v26.06.7</url>
+    </references>
+    <dates>
+      <discovery>2026-08-27</discovery>
+      <entry>2026-08-29</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="4d06b948-a323-11f1-a655-3497f65b111b">
+    <topic>phpBB -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>phpbb3</name>
+	<range><lt>3.3.17</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The phpBB Team reports:</p>
+	<blockquote cite="https://github.com/phpbb/phpbb/blob/release-3.3.17/phpBB/docs/CHANGELOG.html">
+	  <p>Changes since 3.3.16: Improper state verification in OAuth
+	    implementation (SECURITY-293), improve secure downloads referer
+	    checking (SECURITY-292), hardening of hostname lookups
+	    (SECURITY-295).</p>
+	  <p>Changes since 3.3.15: Password Reset Link Poisoning
+	    (SECURITY-285), IDOR when composing PMs (SECURITY-286), CSRF on
+	    report submission (SECURITY-287), Cross-User Notification Read
+	    State Manipulation (SECURITY-290), hardening against
+	    non-rasterized image uploads (SECURITY-289).</p>
+	  <p>Changes since 3.3.14: Use jQuery to generate HTML from page
+	    data (SECURITY-283).</p>
+	</blockquote>
+	<p>The password reset issue fixed in 3.3.16 has been assigned
+	  CVE-2026-29199 (CVSS 8.1). When force_server_vars is disabled,
+	  phpBB takes the host name from the HTTP Host header to build the
+	  password reset link, so an attacker able to control that header
+	  can have reset mails point to a domain under their control, which
+	  may lead to account takeover.</p>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-29199</cvename>
+      <url>https://github.com/advisories/GHSA-7gm6-w7mx-58cr</url>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2026-29199</url>
+      <url>https://www.phpbb.com/community/viewtopic.php?t=2671024</url>
+      <url>https://github.com/phpbb/phpbb/blob/release-3.3.17/phpBB/docs/CHANGELOG.html</url>
+    </references>
+    <dates>
+      <discovery>2026-05-04</discovery>
+      <entry>2026-08-28</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="aac25935-f19d-4ac8-80fc-043365686a63">
     <topic>Elixir -- Denial of service via uncontrolled recursion in charlist conversion</topic>
     <affects>
