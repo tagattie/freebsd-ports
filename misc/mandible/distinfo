@@ -1,4 +1,4 @@
-TIMESTAMP = 1788007814
+TIMESTAMP = 1788239744
 SHA256 (rust/crates/ahash-0.8.12.crate) = 5a15f179cd60c4584b8a8c596927aadc462e27f2ca70c04e0071964a73ba7a75
 SIZE (rust/crates/ahash-0.8.12.crate) = 43413
 SHA256 (rust/crates/aho-corasick-1.1.5.crate) = c982642fa9e8606056828ee9a8505737230110bb1099153c79efe865c59d12ba
@@ -511,5 +511,5 @@ SHA256 (rust/crates/zerocopy-derive-0.8.55.crate) = 0fe976fb70c78cd64cccfe3a6fc1
 SIZE (rust/crates/zerocopy-derive-0.8.55.crate) = 103316
 SHA256 (rust/crates/zmij-1.0.23.crate) = 29666d0abbfad1e3dc4dcf6144730dd3a3ab225bbbdac83319345b1b44ccfc1b
 SIZE (rust/crates/zmij-1.0.23.crate) = 28612
-SHA256 (AS-FOSS-mandible-v0.4.5_GH0.tar.gz) = 88d2e28f40b3a35e82485db21b01b4848ce2791f99ba05486bf280b45bf3cc12
-SIZE (AS-FOSS-mandible-v0.4.5_GH0.tar.gz) = 1433510
+SHA256 (AS-FOSS-mandible-v0.6.1_GH0.tar.gz) = 0b7cbc57862c49f027a142ca07434c609d33618f0060874447ead546b9e00904
+SIZE (AS-FOSS-mandible-v0.6.1_GH0.tar.gz) = 1844051
