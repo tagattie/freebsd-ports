@@ -71,6 +71,7 @@ BINARY_ALIAS=	python3=${PYTHON_CMD} \
 		ar=${LOCALBASE}/bin/llvm-ar${LLVM_VERSION} \
 		nm=${LOCALBASE}/bin/llvm-nm${LLVM_VERSION} \
 		ld=${LOCALBASE}/bin/ld.lld${LLVM_VERSION}
+PORTSCOUT=	limit:^rust-v[0-9]\.
 
 BUILD_WRKSRC=	${WRKSRC}/codex-rs
 
