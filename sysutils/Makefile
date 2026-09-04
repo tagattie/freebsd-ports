@@ -131,6 +131,7 @@
     SUBDIR += bksh
     SUBDIR += bkt
     SUBDIR += blisp
+    SUBDIR += blockio
     SUBDIR += bmd
     SUBDIR += bmd-plugin-avahi
     SUBDIR += bmd-plugin-hookcmd
@@ -553,11 +554,13 @@
     SUBDIR += inotify-tools
     SUBDIR += installwatch
     SUBDIR += intel-epct
-    SUBDIR += intel-nvmupdate-100g
-    SUBDIR += intel-nvmupdate-10g
-    SUBDIR += intel-nvmupdate-40g
+    SUBDIR += intel-nvmupdate-700series
     SUBDIR += intel-nvmupdate-e610
-    SUBDIR += intel-nvmupdate-e830
+    SUBDIR += intel-nvmupdate-e810
+    SUBDIR += intel-nvmupdate-e830-e835
+    SUBDIR += intel-nvmupdate-i210
+    SUBDIR += intel-nvmupdate-i225-i226
+    SUBDIR += intel-nvmupdate-x550
     SUBDIR += intel-pcm
     SUBDIR += intel-undervolt
     SUBDIR += inxi
