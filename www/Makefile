@@ -528,6 +528,7 @@
     SUBDIR += nginx-lite
     SUBDIR += nginx-module-array-var
     SUBDIR += nginx-module-cache-purge
+    SUBDIR += nginx-module-form-input
     SUBDIR += nginx-module-lua
     SUBDIR += nginx-module-lua-stream
     SUBDIR += nginx-module-ndk
@@ -1660,6 +1661,7 @@
     SUBDIR += py-django-mptt
     SUBDIR += py-django-multiselectfield
     SUBDIR += py-django-netfields
+    SUBDIR += py-django-ninja
     SUBDIR += py-django-object-actions
     SUBDIR += py-django-otp
     SUBDIR += py-django-otp-yubikey
