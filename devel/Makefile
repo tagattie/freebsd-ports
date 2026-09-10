@@ -673,6 +673,7 @@
     SUBDIR += electron41
     SUBDIR += electron42
     SUBDIR += electron43
+    SUBDIR += electron44
     SUBDIR += elf
     SUBDIR += elf-dissector
     SUBDIR += elfcat
@@ -5118,6 +5119,7 @@
     SUBDIR += py-flynt
     SUBDIR += py-foolscap
     SUBDIR += py-forbiddenfruit
+    SUBDIR += py-fortranformat
     SUBDIR += py-freebsd
     SUBDIR += py-freebsd-sysctl
     SUBDIR += py-freenas.utils
