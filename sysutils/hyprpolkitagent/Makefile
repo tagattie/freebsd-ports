@@ -10,6 +10,7 @@ WWW=		https://github.com/hyprwm/hyprpolkitagent
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BUILD_DEPENDS=	wayland-protocols>0:graphics/wayland-protocols
 LIB_DEPENDS=	libbasu.so:devel/basu \
 		libhyprlang.so:devel/hyprlang \
 		libhyprutils.so:devel/hyprutils \
