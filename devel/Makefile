@@ -533,6 +533,7 @@
     SUBDIR += creduce
     SUBDIR += critcl
     SUBDIR += criterion
+    SUBDIR += croaring
     SUBDIR += cscope
     SUBDIR += cscout
     SUBDIR += csfml
@@ -7462,6 +7463,7 @@
     SUBDIR += rubygem-builder
     SUBDIR += rubygem-bullet
     SUBDIR += rubygem-bullet-rails72
+    SUBDIR += rubygem-bullet-rails81
     SUBDIR += rubygem-byebug
     SUBDIR += rubygem-c21e
     SUBDIR += rubygem-cabin
@@ -8596,6 +8598,7 @@
     SUBDIR += rubygem-wisper
     SUBDIR += rubygem-wisper2
     SUBDIR += rubygem-with_advisory_lock61
+    SUBDIR += rubygem-with_advisory_lock81
     SUBDIR += rubygem-with_env
     SUBDIR += rubygem-wmi-lite
     SUBDIR += rubygem-xdg

@@ -1,3 +1,206 @@
+  <vuln vid="cd5bfb7d-ac34-11f1-9b94-901b0e13f1a0">
+    <topic>yt-dlp: Improper Neutralization of Special Elements</topic>
+    <affects>
+    <package>
+	<name>yt-dlp</name>
+	<range><lt>2026.07.04</lt></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>https://github.com/yt-dlp/yt-dlp/security/advisories/GHSA-6v4j-43gg-vj32 reports:</p>
+	<blockquote cite="https://github.com/yt-dlp/yt-dlp/security/advisories/GHSA-6v4j-43gg-vj32">
+	<p>yt-dlp and youtube-dl are command-line audio/video downloaders.
+	Prior to 2026.7.4, the --write-link, --write-url-link, and
+	--write-desktop-link options can write .url or .desktop shortcut
+	files using attacker-controlled webpage_url or filename metadata
+	without sufficient validation or escaping, allowing malicious
+	file:// URI injection on Windows or newline-based desktop
+	entry key injection on Linux that can execute commands if
+	the generated shortcut is
+	opened. This issue is fixed in version 2026.7.4.
+	</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-55404</cvename>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2026-55404</url>
+    </references>
+    <dates>
+      <discovery>2026-07-08</discovery>
+      <entry>2026-09-09</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="fcc6917b-adbc-11f1-a655-3497f65b111b">
+    <topic>immich -- locked assets remain accessible through shared albums and links</topic>
+    <affects>
+	<package>
+	  <name>immich</name>
+	  <range><le>3.2.0</le></range>
+	</package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>NVD reports:</p>
+	<blockquote cite="https://nvd.nist.gov/vuln/detail/CVE-2026-82272">
+	  <p>Immich through 3.1.0 fails to properly enforce locked asset
+	    visibility when assets are locked through the single-asset
+	    endpoint, allowing them to remain accessible through shared
+	    albums and links.</p>
+	</blockquote>
+	<p>The single-asset code path still lacks the album removal that the
+	  bulk path performs, so 3.2.0 is affected as well.  Upstream has not
+	  released a fix yet.</p>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-82272</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2026-82272</url>
+      <url>https://github.com/immich-app/immich/issues/29526</url>
+    </references>
+    <dates>
+      <discovery>2026-08-28</discovery>
+      <entry>2026-09-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="fcc6baaa-adbc-11f1-a655-3497f65b111b">
+    <topic>immich -- open redirect and reflected XSS in maintenance endpoint</topic>
+    <affects>
+	<package>
+	  <name>immich</name>
+	  <range><lt>3.2.0</lt></range>
+	</package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The immich project reports:</p>
+	<blockquote cite="https://github.com/immich-app/immich/security/advisories/GHSA-h5w4-vjv4-9r5q">
+	  <p>The /maintenance endpoint fails to validate the continue URL
+	    parameter.  When maintenance mode is disabled, which is the
+	    default, the application accepts unvalidated redirect targets,
+	    enabling both open redirects and reflected cross-site scripting.
+	    An unauthenticated user can craft a malicious link leading to
+	    account takeover, including administrative accounts, through
+	    same-origin API requests with credentials.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <url>https://github.com/immich-app/immich/security/advisories/GHSA-h5w4-vjv4-9r5q</url>
+    </references>
+    <dates>
+      <discovery>2026-08-23</discovery>
+      <entry>2026-09-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="5d69ee28-adb9-11f1-9d0e-4c526214c986">
+    <topic>redpanda-connect -- memory exhaustion via oversized AMQP frames</topic>
+    <affects>
+	<package>
+	  <name>redpanda-connect</name>
+	  <range><lt>4.109.0</lt></range>
+	</package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>amqp091-go developers report:</p>
+	<blockquote cite="https://github.com/rabbitmq/amqp091-go/security/advisories/GHSA-6c5v-hqjr-5xxp">
+	  <p>Before version 1.13.0, a compromised or malicious AMQP broker
+	    can force the client to allocate resources for and process
+	    content body frames that exceed the negotiated frame_max limit.
+	    This can lead to unexpected memory consumption or
+	    application-layer denial of service (DoS), bypassing the
+	    protocol's built-in framing constraints.</p>
+	</blockquote>
+	<p>Redpanda Connect vendored an affected amqp091-go release
+	  up to version 4.108.0; 4.109.0 bumps it to 1.14.0.</p>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-79921</cvename>
+      <url>https://github.com/rabbitmq/amqp091-go/security/advisories/GHSA-6c5v-hqjr-5xxp</url>
+      <url>https://github.com/redpanda-data/connect/pull/4795</url>
+    </references>
+    <dates>
+      <discovery>2026-08-26</discovery>
+      <entry>2026-09-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="9736fef3-ada6-11f1-a655-3497f65b111b">
+    <topic>FreeIPA -- multiple vulnerabilities</topic>
+    <affects>
+	<package>
+	  <name>freeipa-server</name>
+	  <range><lt>4.13.4</lt></range>
+	</package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The FreeIPA project reports:</p>
+	<blockquote cite="https://www.freeipa.org/release-notes/4-13-4.html">
+	  <ul>
+	    <li>CVE-2026-76578: the access control instruction for self-managed
+	      OTP tokens requires no authentication and does not restrict which
+	      attributes may be written alongside the token entry. An
+	      unauthenticated LDAP client can create a Kerberos principal and
+	      add it to the administrators group.</li>
+	    <li>CVE-2026-79678: insufficiently validated --organization and
+	      --base-url input to idp-add reaches a constrained eval() before
+	      the LDAP access control check is enforced, allowing any
+	      authenticated principal to enumerate server environment variables
+	      and to exhaust memory.</li>
+	    <li>CVE-2026-11861: where a cross-realm trust with Active Directory
+	      is configured, Active Directory users can bypass authentication
+	      for FreeIPA services including the Web UI, the SMB server and the
+	      LDAP directory.</li>
+	    <li>CVE-2026-13097: the uniqueness constraint on Kerberos principal
+	      name attributes does not account for equivalent representations of
+	      the same name, so a user with LDAP write privileges can create a
+	      service principal that impersonates a privileged one.</li>
+	    <li>CVE-2026-19550: trust-fetch-domains is gated by a read-only
+	      permission on the trust object rather than a trust administration
+	      permission, letting any authenticated user trigger a privileged
+	      trust refresh against an attacker-supplied server.</li>
+	    <li>CVE-2026-73196: an oversized OTP key value is decoded and
+	      re-encoded without a size limit, consuming excessive CPU and
+	      memory.</li>
+	    <li>CVE-2026-73197: the migration endpoint reads oversized POST
+	      bodies fully into memory, which an unauthenticated client can
+	      abuse for denial of service.</li>
+	    <li>CVE-2026-73198: the i18n_messages endpoint accepts arbitrarily
+	      large request bodies, which an unauthenticated client can abuse
+	      for memory exhaustion.</li>
+	    <li>CVE-2026-73199: a null pointer dereference in the ipa-enrollment
+	      SLAPI plugin crashes the directory server when a malformed LDAP
+	      extended operation omits a required request value.</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-11861</cvename>
+      <cvename>CVE-2026-13097</cvename>
+      <cvename>CVE-2026-19550</cvename>
+      <cvename>CVE-2026-73196</cvename>
+      <cvename>CVE-2026-73197</cvename>
+      <cvename>CVE-2026-73198</cvename>
+      <cvename>CVE-2026-73199</cvename>
+      <cvename>CVE-2026-76578</cvename>
+      <cvename>CVE-2026-79678</cvename>
+      <url>https://www.freeipa.org/release-notes/4-13-3.html</url>
+      <url>https://www.freeipa.org/release-notes/4-13-4.html</url>
+    </references>
+    <dates>
+      <discovery>2026-08-19</discovery>
+      <entry>2026-09-11</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="6a6ddb1d-ac6b-11f1-982d-3c7c3fba4204">
     <topic>CrowdSec -- multiple vulnerabilities</topic>
     <affects>
