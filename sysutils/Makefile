@@ -1284,6 +1284,8 @@
     SUBDIR += rubygem-openfact
     SUBDIR += rubygem-openvoxserver-ca
     SUBDIR += rubygem-parallel
+    SUBDIR += rubygem-parallel-gitlab
+    SUBDIR += rubygem-parallel1
     SUBDIR += rubygem-puppet_forge
     SUBDIR += rubygem-puppetfile-resolver
     SUBDIR += rubygem-r10k

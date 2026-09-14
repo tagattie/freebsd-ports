@@ -5484,6 +5484,7 @@
     SUBDIR += py-mirakuru
     SUBDIR += py-mmh3
     SUBDIR += py-mock
+    SUBDIR += py-mockito
     SUBDIR += py-molecule
     SUBDIR += py-molecule-plugins
     SUBDIR += py-mondrian
@@ -8625,6 +8626,7 @@
     SUBDIR += rust-analyzer
     SUBDIR += rust-bindgen-cli
     SUBDIR += rust-cbindgen
+    SUBDIR += rust-cxxbridge
     SUBDIR += rust-mode
     SUBDIR += rust-script
     SUBDIR += rustc-demangle
