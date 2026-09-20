@@ -704,6 +704,7 @@
     SUBDIR += etcd34
     SUBDIR += etcd35
     SUBDIR += etcd36
+    SUBDIR += etcd37
     SUBDIR += etl
     SUBDIR += evcxr-jupyter
     SUBDIR += evdev-proto
@@ -6369,6 +6370,7 @@
     SUBDIR += py-tree-format
     SUBDIR += py-tree-sitter
     SUBDIR += py-tree-sitter-bash
+    SUBDIR += py-tree-sitter-c
     SUBDIR += py-tree-sitter-css
     SUBDIR += py-tree-sitter-go
     SUBDIR += py-tree-sitter-javascript
@@ -6376,6 +6378,7 @@
     SUBDIR += py-tree-sitter-python
     SUBDIR += py-tree-sitter-regex
     SUBDIR += py-tree-sitter-sql
+    SUBDIR += py-tree-sitter-typescript
     SUBDIR += py-tree-sitter-yaml
     SUBDIR += py-tree-sitter023
     SUBDIR += py-treelib
