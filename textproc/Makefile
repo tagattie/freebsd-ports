@@ -100,6 +100,7 @@
     SUBDIR += chkascii
     SUBDIR += choose
     SUBDIR += chpp
+    SUBDIR += ciigo
     SUBDIR += cl-ppcre
     SUBDIR += cl-ppcre-ccl
     SUBDIR += cl-ppcre-clisp
@@ -255,6 +256,7 @@
     SUBDIR += goldendict
     SUBDIR += goldendict-ng
     SUBDIR += google-ctemplate
+    SUBDIR += google-translate
     SUBDIR += gpp
     SUBDIR += grap
     SUBDIR += grass
@@ -1691,6 +1693,7 @@
     SUBDIR += py-rouge-score
     SUBDIR += py-rst2ansi
     SUBDIR += py-rst2html5
+    SUBDIR += py-sacrebleu
     SUBDIR += py-sacremoses
     SUBDIR += py-scour
     SUBDIR += py-segments
@@ -1800,6 +1803,7 @@
     SUBDIR += py-tomli-w
     SUBDIR += py-tomlkit
     SUBDIR += py-tomllint
+    SUBDIR += py-toon-format
     SUBDIR += py-toronado
     SUBDIR += py-towncrier
     SUBDIR += py-translationstring
@@ -2264,8 +2268,8 @@
     SUBDIR += ugrep
     SUBDIR += uim
     SUBDIR += uim-el
-    SUBDIR += uim-gtk2
     SUBDIR += uim-gtk3
+    SUBDIR += uim-gtk4
     SUBDIR += uim-m17nlib
     SUBDIR += uim-qt5
     SUBDIR += uim-qt6

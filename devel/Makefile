@@ -6018,6 +6018,7 @@
     SUBDIR += py-pytest-repeat
     SUBDIR += py-pytest-rerunfailures
     SUBDIR += py-pytest-retry
+    SUBDIR += py-pytest-rich
     SUBDIR += py-pytest-ruff
     SUBDIR += py-pytest-run-parallel
     SUBDIR += py-pytest-services
@@ -6039,6 +6040,7 @@
     SUBDIR += py-pytest-xprocess
     SUBDIR += py-pytest_httpserver
     SUBDIR += py-python-application
+    SUBDIR += py-python-box
     SUBDIR += py-python-bugzilla
     SUBDIR += py-python-dateutil
     SUBDIR += py-python-dbusmock
@@ -6314,6 +6316,8 @@
     SUBDIR += py-tasklib
     SUBDIR += py-tatsu
     SUBDIR += py-tatsu-lts
+    SUBDIR += py-tavalidate
+    SUBDIR += py-tavern
     SUBDIR += py-tblib
     SUBDIR += py-tdworkflow
     SUBDIR += py-telepath
