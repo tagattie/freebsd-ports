@@ -58,7 +58,7 @@ DISTFILES_PROTON_ME:=	\
 		${DISTFILES_PROTON_ME_TEMPLATE:S/%%NAME%%/${name}/:S/%%VERSION%%/${version}/:S/%%INDEX%%/${name:S/-/_/g}_${version:S/./_/g}/}
 .endfor
 
-GIT_HASH_SHORT=	51a4c9b
+GIT_HASH_SHORT=	578532c
 
 post-extract:
 .for crate in ${CRATES_PROTON_ME}
