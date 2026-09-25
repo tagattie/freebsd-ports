@@ -12,6 +12,9 @@ WWW=		https://www.elastic.co/products/beats/
 
 LICENSE=	APACHE20
 
+DEPRECATED=	Support for ${DISTVERSION:R}.x has ended 04 Aug 2026 - use ${PORTNAME}94 or ${PORTNAME}95 instead
+EXPIRATION_DATE=	2026-12-31
+
 USES=		go:modules
 USE_GITHUB=	yes
 
@@ -68,7 +71,7 @@ LOCAL_MASTER_SITES=		LOCAL/vvd/elastic
 
 .include <bsd.port.options.mk>
 
-.ifmake makesum || makesum-fetch || makeplist || distclean
+.ifmake makesum || makeplist || distclean
 .  for O in ${OPTIONS_MULTI_BEATS}
 .    if !${PORT_OPTIONS:M${O}}
 MASTER_SITES+=	${${O}_MASTER_SITES}

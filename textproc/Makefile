@@ -369,6 +369,7 @@
     SUBDIR += kibana92
     SUBDIR += kibana93
     SUBDIR += kibana94
+    SUBDIR += kibana95
     SUBDIR += kiss-templates
     SUBDIR += kmfl-european-latin
     SUBDIR += kmfl-khmer
@@ -456,7 +457,9 @@
     SUBDIR += linux-c7-libcroco
     SUBDIR += linux-c7-libxml2
     SUBDIR += linux-c7-libxslt
+    SUBDIR += linux-rl9-enchant2
     SUBDIR += linux-rl9-expat
+    SUBDIR += linux-rl9-hyphen
     SUBDIR += linux-rl9-libstemmer
     SUBDIR += linux-rl9-libxml2
     SUBDIR += linux-rl9-libxslt

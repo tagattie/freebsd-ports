@@ -451,6 +451,7 @@
     SUBDIR += linux-c7-avahi-libs
     SUBDIR += linux-c7-openldap
     SUBDIR += linux-c7-tcp_wrappers-libs
+    SUBDIR += linux-remotedesktopmanager
     SUBDIR += linux-rl9-avahi-libs
     SUBDIR += linux-rl9-openldap
     SUBDIR += linux-rl9-sdl_net
@@ -1193,6 +1194,7 @@
     SUBDIR += py-suds
     SUBDIR += py-terminado
     SUBDIR += py-tiny-proxy
+    SUBDIR += py-tinytuya
     SUBDIR += py-tofu
     SUBDIR += py-transip
     SUBDIR += py-trio
