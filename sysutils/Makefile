@@ -142,6 +142,7 @@
     SUBDIR += bpytop
     SUBDIR += brasero
     SUBDIR += brename
+    SUBDIR += bricoler
     SUBDIR += brut
     SUBDIR += bsd-splash-changer
     SUBDIR += bsdconfig
@@ -226,6 +227,7 @@
     SUBDIR += cni-dnsname
     SUBDIR += colorize
     SUBDIR += conan
+    SUBDIR += condy
     SUBDIR += confctl
     SUBDIR += conky
     SUBDIR += conky-awesome
@@ -373,6 +375,7 @@
     SUBDIR += env4801
     SUBDIR += envconsul
     SUBDIR += epazote
+    SUBDIR += eppctl
     SUBDIR += erdtree
     SUBDIR += erldash
     SUBDIR += etcmerge
@@ -511,6 +514,7 @@
     SUBDIR += gstat-rs
     SUBDIR += gstopd
     SUBDIR += gstreamer1-plugins-cdio
+    SUBDIR += gtime
     SUBDIR += handlr
     SUBDIR += hardlink
     SUBDIR += hare
@@ -1080,7 +1084,6 @@
     SUBDIR += py-ansible-runner
     SUBDIR += py-appjail-gui
     SUBDIR += py-azure-cli
-    SUBDIR += py-azure-cli-acr
     SUBDIR += py-azure-cli-core
     SUBDIR += py-azure-cli-telemetry
     SUBDIR += py-bitrot

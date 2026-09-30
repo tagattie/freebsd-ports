@@ -12,6 +12,7 @@
     SUBDIR += R-cran-GDD
     SUBDIR += R-cran-R.devices
     SUBDIR += R-cran-RColorBrewer
+    SUBDIR += R-cran-bmp
     SUBDIR += R-cran-colorspace
     SUBDIR += R-cran-cowplot
     SUBDIR += R-cran-diagram
@@ -354,7 +355,6 @@
     SUBDIR += hdr_histogram
     SUBDIR += hdr_tools
     SUBDIR += heimer
-    SUBDIR += hiptext
     SUBDIR += hobbes-icons-xpm
     SUBDIR += hppsmtools
     SUBDIR += hs-tart
@@ -578,6 +578,7 @@
     SUBDIR += linux-rl9-spirv-tools
     SUBDIR += linux-rl9-vulkan
     SUBDIR += linux-rl9-wayland
+    SUBDIR += linux-slang
     SUBDIR += lua-gd
     SUBDIR += lua-qrencode
     SUBDIR += lunasvg
@@ -817,6 +818,7 @@
     SUBDIR += pcdtojpeg
     SUBDIR += pcl-pointclouds
     SUBDIR += pdf2svg
+    SUBDIR += pdfium
     SUBDIR += pdfpc
     SUBDIR += pear-Horde_Image
     SUBDIR += pear-Image_3D
@@ -977,7 +979,6 @@
     SUBDIR += py-kornia
     SUBDIR += py-kornia-rs
     SUBDIR += py-leather
-    SUBDIR += py-lerc
     SUBDIR += py-liffile
     SUBDIR += py-mapclassify
     SUBDIR += py-mayavi
@@ -1035,6 +1036,7 @@
     SUBDIR += py-pygraph
     SUBDIR += py-pygraphviz
     SUBDIR += py-pyinsane2
+    SUBDIR += py-pylerc
     SUBDIR += py-pymaging
     SUBDIR += py-pymaging-png
     SUBDIR += py-pyocr

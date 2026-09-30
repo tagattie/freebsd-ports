@@ -569,6 +569,9 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # run-depends-list
 #				- Show all directories which are run-dependencies
 #				  for this port.
+# test-depends
+#				- Build and install all test-dependencies for this
+#				  port.
 # test-depends-list
 #				- Show all directories which are test-dependencies
 #				  for this port.
@@ -1486,8 +1489,8 @@ _DID_FLAVORS_HELPERS=	yes
 _FLAVOR_HELPERS_OVERRIDE=	DESCR PLIST PKGNAMEPREFIX PKGNAMESUFFIX
 _FLAVOR_HELPERS_APPEND=	 	CONFLICTS CONFLICTS_BUILD CONFLICTS_INSTALL \
 							PKG_DEPENDS EXTRACT_DEPENDS PATCH_DEPENDS \
-							FETCH_DEPENDS BUILD_DEPENDS LIB_DEPENDS \
-							RUN_DEPENDS TEST_DEPENDS
+							FETCH_DEPENDS BUILD_RUN_DEPENDS BUILD_DEPENDS \
+							LIB_DEPENDS RUN_DEPENDS TEST_DEPENDS
 # These overwrite the current value
 .      for v in ${_FLAVOR_HELPERS_OVERRIDE}
 .        if defined(${FLAVOR}_${v})
@@ -4087,7 +4090,7 @@ ${deptype:tl}-depends:
 
 # Dependency lists: both build and runtime, recursive.  Print out directory names.
 
-_UNIFIED_DEPENDS=${PKG_DEPENDS_ALL} ${EXTRACT_DEPENDS_ALL} ${PATCH_DEPENDS_ALL} ${FETCH_DEPENDS_ALL} ${BUILD_DEPENDS_ALL} ${LIB_DEPENDS_ALL} ${RUN_DEPENDS_ALL} ${TEST_DEPENDS_ALL}
+_UNIFIED_DEPENDS=${PKG_DEPENDS_ALL} ${EXTRACT_DEPENDS_ALL} ${PATCH_DEPENDS_ALL} ${FETCH_DEPENDS_ALL} ${BUILD_DEPENDS_ALL} ${LIB_DEPENDS_ALL} ${RUN_DEPENDS_ALL}
 _DEPEND_SPECIALS=	${_UNIFIED_DEPENDS:M*\:*\:*:C,^[^:]*:([^:]*):.*$,\1,}
 
 .    for d in ${_UNIFIED_DEPENDS:M*\:/*}

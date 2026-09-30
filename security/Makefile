@@ -124,7 +124,6 @@
     SUBDIR += cryptopp
     SUBDIR += cryptopp-modern
     SUBDIR += ct-submit
-    SUBDIR += cvechecker
     SUBDIR += cvm
     SUBDIR += cyberchef
     SUBDIR += cyrus-sasl2
@@ -462,8 +461,8 @@
     SUBDIR += openssl-oqsprovider
     SUBDIR += openssl-pkcs11provider
     SUBDIR += openssl-unsafe
+    SUBDIR += openssl30
     SUBDIR += openssl34
-    SUBDIR += openssl35
     SUBDIR += openssl36
     SUBDIR += openssl40
     SUBDIR += openssl41
