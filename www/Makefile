@@ -369,6 +369,7 @@
     SUBDIR += linklint
     SUBDIR += links
     SUBDIR += links1
+    SUBDIR += linkwarden
     SUBDIR += linux-brave
     SUBDIR += linux-c7-qtwebkit
     SUBDIR += linux-chrome
@@ -381,6 +382,7 @@
     SUBDIR += linux-vieb
     SUBDIR += linux-widevine-cdm
     SUBDIR += litmus
+    SUBDIR += littlefedi
     SUBDIR += ljdeps
     SUBDIR += llhttp
     SUBDIR += loco
@@ -574,7 +576,6 @@
     SUBDIR += osticket
     SUBDIR += ot-recorder
     SUBDIR += otrs
-    SUBDIR += otter-browser
     SUBDIR += owncast
     SUBDIR += owncloud
     SUBDIR += p5-AMF-Perl
@@ -2598,8 +2599,6 @@
     SUBDIR += snarf
     SUBDIR += so
     SUBDIR += sogo
-    SUBDIR += sogo2
-    SUBDIR += sogo2-activesync
     SUBDIR += spawn-fcgi
     SUBDIR += spreadlogd
     SUBDIR += sqlpage
