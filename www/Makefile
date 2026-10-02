@@ -1948,7 +1948,6 @@
     SUBDIR += py-pywikibot
     SUBDIR += py-pywry
     SUBDIR += py-qh3
-    SUBDIR += py-qt5-webengine
     SUBDIR += py-qt6-webengine
     SUBDIR += py-quart
     SUBDIR += py-quart-trio
@@ -2063,7 +2062,6 @@
     SUBDIR += qdecoder
     SUBDIR += qhttpengine
     SUBDIR += qt5-webchannel
-    SUBDIR += qt5-webengine
     SUBDIR += qt5-webglplugin
     SUBDIR += qt5-websockets
     SUBDIR += qt5-websockets-qml
