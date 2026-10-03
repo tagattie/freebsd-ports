@@ -608,6 +608,7 @@
     SUBDIR += jstest-gtk
     SUBDIR += jtop
     SUBDIR += jtopen
+    SUBDIR += jtransfer
     SUBDIR += jvmtop
     SUBDIR += k3b
     SUBDIR += k8temp
@@ -1072,7 +1073,6 @@
     SUBDIR += py-ansible-core221
     SUBDIR += py-ansible-lint
     SUBDIR += py-ansible-runner
-    SUBDIR += py-appjail-gui
     SUBDIR += py-azure-cli
     SUBDIR += py-azure-cli-core
     SUBDIR += py-azure-cli-telemetry
