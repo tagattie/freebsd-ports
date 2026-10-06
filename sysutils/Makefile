@@ -859,7 +859,9 @@
     SUBDIR += opentofu
     SUBDIR += openupsd
     SUBDIR += openvox-agent8
+    SUBDIR += openvox-agent9
     SUBDIR += openvox-server8
+    SUBDIR += openvox-server9
     SUBDIR += osinfo-db-tools
     SUBDIR += osquery
     SUBDIR += p5-App-Regather
@@ -1509,7 +1511,6 @@
     SUBDIR += tvterm
     SUBDIR += tw_cli
     SUBDIR += twa-kmod
-    SUBDIR += twmn
     SUBDIR += tzdialog
     SUBDIR += u-boot-a13-olinuxino
     SUBDIR += u-boot-a64-olinuxino

@@ -1937,6 +1937,8 @@
     SUBDIR += py-pyramid-mako
     SUBDIR += py-pyramid_rpc
     SUBDIR += py-pysmartdl
+    SUBDIR += py-pytauri
+    SUBDIR += py-pytauri-wheel
     SUBDIR += py-python-digitalocean
     SUBDIR += py-python-dotenv
     SUBDIR += py-python-fasthtml
