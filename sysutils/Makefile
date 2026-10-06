@@ -648,7 +648,6 @@
     SUBDIR += kubo-go
     SUBDIR += kustomize
     SUBDIR += kvmclock-kmod
-    SUBDIR += lava
     SUBDIR += lazyssh
     SUBDIR += lbl-cf
     SUBDIR += lbl-hf
@@ -1589,6 +1588,7 @@
     SUBDIR += ucspi-unix
     SUBDIR += udfclient
     SUBDIR += ufetch
+    SUBDIR += ufs-utils
     SUBDIR += uhidd
     SUBDIR += uhubctl
     SUBDIR += uif2iso
