@@ -312,6 +312,7 @@
     SUBDIR += ibus-m17n
     SUBDIR += ibus-table
     SUBDIR += ibus-typing-booster
+    SUBDIR += ibus-uim
     SUBDIR += ibus-uniemoji
     SUBDIR += icdiff
     SUBDIR += id-aspell
@@ -1486,7 +1487,6 @@
     SUBDIR += py-guess-language
     SUBDIR += py-hashids
     SUBDIR += py-hexdump
-    SUBDIR += py-hieroglyph
     SUBDIR += py-hjson
     SUBDIR += py-hotdoc
     SUBDIR += py-html-text
@@ -2277,6 +2277,7 @@
     SUBDIR += uim-m17nlib
     SUBDIR += uim-qt5
     SUBDIR += uim-qt6
+    SUBDIR += uim-wayland
     SUBDIR += uml2svg
     SUBDIR += uncle
     SUBDIR += uncrustify
