@@ -1,0 +1,26 @@
+--- nebula_app/Cargo.toml.orig	2026-10-11 11:53:58 UTC
++++ nebula_app/Cargo.toml
+@@ -35,12 +35,12 @@ optional = true
+ workspace = true
+ optional = true
+ 
+-[target.'cfg(target_os = "linux")'.dependencies.gpui_platform]
++[target.'cfg(any(target_os = "linux", target_os = "freebsd"))'.dependencies.gpui_platform]
+ workspace = true
+ optional = true
+ features = ["wayland", "x11"]
+ 
+-[target.'cfg(target_os = "linux")'.dependencies.ashpd]
++[target.'cfg(any(target_os = "linux", target_os = "freebsd"))'.dependencies.ashpd]
+ version = "=0.13.13"
+ default-features = false
+ features = ["global_shortcuts"]
+@@ -169,7 +169,7 @@ xdg = "3.0.0"
+ [target.'cfg(not(windows))'.dependencies]
+ xdg = "3.0.0"
+ 
+-[target.'cfg(any(target_os = "linux", target_os = "macos"))'.dependencies]
++[target.'cfg(any(target_os = "linux", target_os = "macos", target_os = "freebsd"))'.dependencies]
+ rfd = "0.17.2"
+ notify-rust = "=4.18.0"
+ # 原生菜单栏 / StatusNotifierItem，复用维护中的系统适配，避免第二套 GTK 事件循环。
