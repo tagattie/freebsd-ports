@@ -21,7 +21,8 @@ CPE_VENDOR=	lcdf
 GNU_CONFIGURE=	yes
 
 PORTDOCS=	NEWS.md README.md
-PLIST_FILES=	bin/gifdiff bin/gifsicle \
+PLIST_FILES=	bin/gifdiff \
+		bin/gifsicle \
 		share/man/man1/gifdiff.1.gz \
 		share/man/man1/gifsicle.1.gz
 
