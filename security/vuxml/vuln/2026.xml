@@ -1,3 +1,217 @@
+  <vuln vid="07e99f22-c176-4c8f-9678-a57ba8114959">
+    <topic>Timing leaks of the nonce in ECDSA, EdDSA and DSA signatures</topic>
+    <affects>
+      <package>
+        <name>py312-pycryptodome</name>
+        <name>py312-pycryptodomex</name>
+        <name>py313-pycryptodome</name>
+        <name>py313-pycryptodomex</name>
+        <name>py313t-pycryptodome</name>
+        <name>py313t-pycryptodomex</name>
+        <name>py314-pycryptodome</name>
+        <name>py314-pycryptodomex</name>
+        <name>py314t-pycryptodome</name>
+        <name>py314t-pycryptodomex</name>
+        <name>py311-pycryptodome</name>
+        <name>py311-pycryptodomex</name>
+        <name>py315-pycryptodome</name>
+        <name>py315-pycryptodomex</name>
+        <name>py27-pycryptodome</name>
+        <name>py27-pycryptodomex</name>
+        <range>
+          <lt>3.24.1</lt>
+        </range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>Helder Eijs reports</p>
+        <blockquote cite="://github.com/Legrandin/pycryptodome/commit/59351474682db6648825f17b11112d6821d66cb9">
+          <p>Fix timing leaks of the nonce in ECDSA, EdDSA and DSA signatures
+            The signing time depended on the secret nonce, enough to recover the
+            private key with a lattice attack.
+
+            - EC: scalars are encoded and processed on the full length of the
+              order, and ec_mix_add() is constant time for the point at infinity
+              (a zero digit).
+            - DSA: g^k uses k + q or k + 2q (fixed length) and mpz_powm_sec, or the
+              library's Montgomery exponentiation without GMP. About 40% slower.</p>
+        </blockquote>
+      </body>
+    </description>
+    <references>
+      </references>
+    <dates>
+      <discovery>2026-10-11</discovery>
+      <entry>2026-10-12</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="5518664d-c652-11f1-b273-2cf05da270f3">
+    <topic>Gitlab -- vulnerabilities</topic>
+    <affects>
+<package>
+	<name>gitlab-ce</name>
+	<name>gitlab-ee</name>
+	<range><ge>19.4.0</ge><lt>19.4.2</lt></range>
+	<range><ge>19.3.0</ge><lt>19.3.4</lt></range>
+	<range><ge>10.3.0</ge><lt>19.2.8</lt></range>
+</package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gitlab reports:</p>
+	<blockquote cite="https://docs.gitlab.com/releases/patches/patch-release-gitlab-19-4-2-released/?nav=19.4.2">
+	  <p>Integer Overflow issue in CI/CD Regular Expression Compiler impacts GitLab CE/EE</p>
+	  <p>Cross-site Scripting issue in syntax highlighting impacts GitLab CE/EE</p>
+	  <p>Improper Authorization issue in downstream pipeline creation service impacts GitLab CE/EE</p>
+	  <p>Permissive Regular Expression issue in repository file access impacts GitLab CE/EE</p>
+	  <p>Incorrect Authorization issue in scheduled pipeline execution policy impacts GitLab EE</p>
+	  <p>Improper Neutralization of Input Used for LLM Prompting issue in GitLab Duo Agent Platform impacts GitLab EE</p>
+	  <p>Sensitive Information Exposure issue in GitLab Pages impacts GitLab CE/EE</p>
+	  <p>Open Redirect issue in Kubernetes proxy impacts GitLab CE/EE</p>
+	  <p>Incorrect Authorization issue in GraphQL notes widget impacts GitLab CE/EE</p>
+	  <p>Incorrect Authorization issue in GraphQL work item hierarchy impacts GitLab CE/EE</p>
+	  <p>Incorrect Authorization issue in GraphQL scope impacts GitLab CE/EE</p>
+	  <p>Page cache poisoning via improper cache key construction in merge requests impacts GitLab CE/EE</p>
+	  <p>Incorrect Authorization issue in work items GraphQL API impacts GitLab CE/EE</p>
+	  <p>Missing Authorization issue in merge request accessibility report comparison endpoint impacts GitLab CE/EE</p>
+	  <p>Incorrect Privilege Assignment issue in custom roles impacts GitLab EE</p>
+	  <p>Insufficient Granularity of Access Control issue in project label management impacts GitLab CE/EE</p>
+	  <p>Governance Control Bypass issue in Duo Agent Platform impacts GitLab EE</p>
+	  <p>Incorrect Authorization issue in package registry impacts GitLab CE/EE</p>
+	  <p>Incorrect Authorization issue in merge request approval eligibility check impacts GitLab EE</p>
+	  <p>Incorrect Authorization issue in fine-grained personal access tokens impacts GitLab CE/EE</p>
+	  <p>Server Side Request Forgery (SSRF) issue in repository import impacts GitLab CE/EE</p>
+	  <p>Incorrect Authorization issue in project import impacts GitLab CE/EE</p>
+	  <p>Incorrect Authorization issue in Package Registry impacts GitLab CE/EE</p>
+	  <p>Improper Access Control issue in project CI/CD settings impacts GitLab EE</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-97229</cvename>
+      <cvename>CVE-2026-92883</cvename>
+      <cvename>CVE-2026-16301</cvename>
+      <cvename>CVE-2026-14814</cvename>
+      <cvename>CVE-2026-81839</cvename>
+      <cvename>CVE-2026-96893</cvename>
+      <cvename>CVE-2026-101168</cvename>
+      <cvename>CVE-2026-7767</cvename>
+      <cvename>CVE-2026-16275</cvename>
+      <cvename>CVE-2026-84284</cvename>
+      <cvename>CVE-2026-85529</cvename>
+      <cvename>CVE-2026-100755</cvename>
+      <cvename>CVE-2026-14552</cvename>
+      <cvename>CVE-2026-6567</cvename>
+      <cvename>CVE-2026-104661</cvename>
+      <cvename>CVE-2026-14210</cvename>
+      <cvename>CVE-2026-105458</cvename>
+      <cvename>CVE-2026-5954</cvename>
+      <cvename>CVE-2026-92528</cvename>
+      <cvename>CVE-2026-78335</cvename>
+      <cvename>CVE-2026-100104</cvename>
+      <cvename>CVE-2026-82632</cvename>
+      <cvename>CVE-2026-103549</cvename>
+      <cvename>CVE-2026-9268</cvename>
+      <url>https://docs.gitlab.com/releases/patches/patch-release-gitlab-19-4-2-released/?nav=19.4.2</url>
+    </references>
+    <dates>
+      <discovery>2026-10-12</discovery>
+      <entry>2026-10-12</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="bfa621d9-e508-4e3e-9a15-c2b54929ea77">
+    <topic>gstreamer1 -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>gstreamer1</name>
+	<name>gstreamer1-editing-services</name>
+	<name>gstreamer1-plugins</name>
+	<name>gstreamer1-plugins-bad</name>
+	<name>gstreamer1-plugins-good</name>
+	<name>gstreamer1-plugins-ugly</name>
+	<name>gstreamer1-rtsp-server</name>
+	<range><lt>1.28.8</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The GStreamer project reports:</p>
+	<blockquote cite="https://gstreamer.freedesktop.org/security/">
+	  <p>Multiple security issues were identified and fixed in the GStreamer framework.</p>
+	  <ul>
+	    <li>GStreamer-SA-2026-0078: Type confusion crash in GValue list comparison when parsing caps</li>
+	    <li>GStreamer-SA-2026-0083: Out-of-bounds read and write in GStreamer video meta deserialization</li>
+	    <li>GStreamer-SA-2026-0084: Out-of-bounds read in the RTSP KeyMgmt header parser</li>
+	    <li>GStreamer-SA-2026-0085: Stack-based out-of-bounds write in closed caption converter and combiner</li>
+	    <li>GStreamer-SA-2026-0086: Out-of-bounds read in H.265 RTP depayloader when processing short packets</li>
+	    <li>GStreamer-SA-2026-0087: Excessive memory allocation in the ASF demuxer</li>
+	    <li>GStreamer-SA-2026-0088: Heap out-of-bounds write in RTP L8/L16/L24 audio depayloaders</li>
+	    <li>GStreamer-SA-2026-0089: Integer overflow and out-of-bounds read in Matroska demuxer Xiph codec data parser</li>
+	    <li>GStreamer-SA-2026-0090: Arbitrary element instantiation in GStreamer Editing Services project file loader</li>
+	    <li>GStreamer-SA-2026-0091: Out-of-bounds read in RTCP SDES privately defined entry handling</li>
+	    <li>GStreamer-SA-2026-0092: Out-of-bounds read in SVG image decoder</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-86476</cvename>
+      <url>https://gstreamer.freedesktop.org/security/sa-2026-0078.html</url>
+      <url>https://gstreamer.freedesktop.org/security/sa-2026-0083.html</url>
+      <url>https://gstreamer.freedesktop.org/security/sa-2026-0084.html</url>
+      <url>https://gstreamer.freedesktop.org/security/sa-2026-0085.html</url>
+      <url>https://gstreamer.freedesktop.org/security/sa-2026-0086.html</url>
+      <url>https://gstreamer.freedesktop.org/security/sa-2026-0087.html</url>
+      <url>https://gstreamer.freedesktop.org/security/sa-2026-0088.html</url>
+      <url>https://gstreamer.freedesktop.org/security/sa-2026-0089.html</url>
+      <url>https://gstreamer.freedesktop.org/security/sa-2026-0090.html</url>
+      <url>https://gstreamer.freedesktop.org/security/sa-2026-0091.html</url>
+      <url>https://gstreamer.freedesktop.org/security/sa-2026-0092.html</url>
+    </references>
+    <dates>
+      <discovery>2026-10-08</discovery>
+      <entry>2026-10-12</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="bb4528f4-c5d4-11f1-8c8c-ac5afc632ba3">
+    <topic>podman -- vulnerabilities</topic>
+    <affects>
+	<package>
+	<name>podman</name>
+	<range><lt>5.8.8</lt></range>
+	</package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Podman developers report:</p>
+	<blockquote cite="https://github.com/podman-container-tools/podman/releases/tag/v5.8.8">
+	  <p>This release addresses (CVE-2026-94603), where a
+	  "podman run" on a checkpoint image (any image with the
+	  io.podman.annotations.checkpoint.runtime.name annotation) could
+	  disable all sandboxing, including sandboxing specified by the
+	  user, when the container was created.</p>
+	  <p>Removed support for checkpoint images in podman run due to
+	  serious security concerns with the different security models of
+	  running images and running checkpoints. Checkpoints ignore
+	  user-specified security configuration and are very difficult to
+	  run safely.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-94603</cvename>
+      <url>https://github.com/podman-container-tools/podman/releases/tag/v5.8.8</url>
+    </references>
+    <dates>
+      <discovery>2026-10-11</discovery>
+      <entry>2026-10-11</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="0f5aaca7-c4d5-11f1-96b4-74563cf85f9d">
     <topic>py-WsgiDAV -- Multiple vulnerabilities</topic>
     <affects>
