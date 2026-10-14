@@ -1,7 +1,7 @@
 PORTNAME=	freenginx
 PORTVERSION=	${NGINX_VERSION}
 .include "version.mk"
-PORTREVISION?=	20
+PORTREVISION?=	22
 CATEGORIES=	www
 MASTER_SITES=	https://freenginx.org/download/ \
 		LOCAL/joneum
@@ -332,14 +332,6 @@ post-patch-PASSENGER-on:
 		s!-Iext/libeio!!' \
 		${WRKSRC_PASSENGER}/build/common_library.rb
 
-post-patch-POSTGRES-on:
-	@${REINPLACE_CMD} 's!%%PREFIX%%!${LOCALBASE}!g' ${WRKSRC_postgres}/config
-
-post-patch-SFLOW-on:
-	@${REINPLACE_CMD} \
-		's!%%PREFIX%%!${LOCALBASE}!g' \
-		${WRKSRC_sflow}/ngx_http_sflow_config.h
-
 pre-configure-SMALL_LIGHT-on:
 	( cd ${WRKSRC_small_light} && ./setup )
 
@@ -353,6 +345,11 @@ pre-configure-ARRAYVAR-on:
 	@${CP} -R ${LOCALBASE}/share/nginx/modules/nginx-module-array-var ${WRKSRC_arrayvar}
 	@${CHMOD} -R u+w ${WRKSRC_arrayvar}
 
+pre-configure-AWS_AUTH-on:
+	@${RM} -rf ${WRKSRC_aws_auth}
+	@${CP} -R ${LOCALBASE}/share/nginx/modules/nginx-module-aws-auth ${WRKSRC_aws_auth}
+	@${CHMOD} -R u+w ${WRKSRC_aws_auth}
+
 pre-configure-CACHE_PURGE-on:
 	@${RM} -rf ${WRKSRC_cache_purge}
 	@${CP} -R ${LOCALBASE}/share/nginx/modules/nginx-module-cache-purge ${WRKSRC_cache_purge}
@@ -363,10 +360,25 @@ pre-configure-DEVEL_KIT-on:
 	@${CP} -R ${LOCALBASE}/share/nginx/modules/nginx-module-ndk ${WRKSRC_devel_kit}
 	@${CHMOD} -R u+w ${WRKSRC_devel_kit}
 
+pre-configure-FIPS_CHECK-on:
+	@${RM} -rf ${WRKSRC_fipscheck}
+	@${CP} -R ${LOCALBASE}/share/nginx/modules/nginx-module-fips-check ${WRKSRC_fipscheck}
+	@${CHMOD} -R u+w ${WRKSRC_fipscheck}
+
 pre-configure-FORMINPUT-on:
 	@${RM} -rf ${WRKSRC_forminput}
 	@${CP} -R ${LOCALBASE}/share/nginx/modules/nginx-module-form-input ${WRKSRC_forminput}
 	@${CHMOD} -R u+w ${WRKSRC_forminput}
+
+pre-configure-GRIDFS-on:
+	@${RM} -rf ${WRKSRC_gridfs}
+	@${CP} -R ${LOCALBASE}/share/nginx/modules/nginx-module-gridfs ${WRKSRC_gridfs}
+	@${CHMOD} -R u+w ${WRKSRC_gridfs}
+
+pre-configure-HTTP_ACCEPT_LANGUAGE-on:
+	@${RM} -rf ${WRKSRC_accept_language}
+	@${CP} -R ${LOCALBASE}/share/nginx/modules/nginx-module-accept-language ${WRKSRC_accept_language}
+	@${CHMOD} -R u+w ${WRKSRC_accept_language}
 
 pre-configure-LET-on:
 	@${RM} -rf ${WRKSRC_let}
@@ -383,16 +395,43 @@ pre-configure-LUASTREAM-on:
 	@${CP} -R ${LOCALBASE}/share/nginx/modules/nginx-module-lua-stream ${WRKSRC_luastream}
 	@${CHMOD} -R u+w ${WRKSRC_luastream}
 
+pre-configure-MODSECURITY3-on:
+	@${RM} -rf ${WRKSRC_modsecurity3}
+	@${CP} -R ${LOCALBASE}/share/nginx/modules/nginx-module-modsecurity3 ${WRKSRC_modsecurity3}
+	@${CHMOD} -R u+w ${WRKSRC_modsecurity3}
+
 pre-configure-NJS-on:
 	@${RM} -rf ${WRKSRC_njs}
 	@${CP} -R ${LOCALBASE}/share/nginx/modules/nginx-module-njs ${WRKSRC_njs}
 	@${CHMOD} -R u+w ${WRKSRC_njs}
 	@${CHMOD} u+x ${WRKSRC_njs}/configure
 
+pre-configure-POSTGRES-on:
+	@${RM} -rf ${WRKSRC_postgres}
+	@${CP} -R ${LOCALBASE}/share/nginx/modules/nginx-module-postgres ${WRKSRC_postgres}
+	@${CHMOD} -R u+w ${WRKSRC_postgres}
+
+pre-configure-REDIS2-on:
+	@${RM} -rf ${WRKSRC_redis2}
+	@${CP} -R ${LOCALBASE}/share/nginx/modules/nginx-module-redis2 ${WRKSRC_redis2}
+	@${CHMOD} -R u+w ${WRKSRC_redis2}
+
+pre-configure-SFLOW-on:
+	@${RM} -rf ${WRKSRC_sflow}
+	@${CP} -R ${LOCALBASE}/share/nginx/modules/nginx-module-sflow ${WRKSRC_sflow}
+	@${CHMOD} -R u+w ${WRKSRC_sflow}
+	@${REINPLACE_CMD} 's!"/etc/hsflowd.auto"!"${LOCALBASE}/etc/hsflowd.auto"!' \
+		${WRKSRC_sflow}/src/ngx_http_sflow_config.h
+
 pre-configure-SLOWFS_CACHE-on:
 	@${RM} -rf ${WRKSRC_slowfs_cache}
 	@${CP} -R ${LOCALBASE}/share/nginx/modules/nginx-module-slowfs-cache ${WRKSRC_slowfs_cache}
 	@${CHMOD} -R u+w ${WRKSRC_slowfs_cache}
+
+pre-configure-STS-on:
+	@${RM} -rf ${WRKSRC_sts}
+	@${CP} -R ${LOCALBASE}/share/nginx/modules/nginx-module-sts ${WRKSRC_sts}
+	@${CHMOD} -R u+w ${WRKSRC_sts}
 
 pre-configure-VOD-on:
 	@${RM} -rf ${WRKSRC_vod}
