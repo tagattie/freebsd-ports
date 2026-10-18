@@ -253,11 +253,6 @@ CFLAGS+=	-DNDEBUG
 CONFIGURE_ENV+=	EXTRA_PRE_CXXFLAGS="-std=c++14"
 .endif
 
-.if (PORT_OPTIONS:MMODSECURITY3)
-CONFIGURE_ARGS+=	--with-ld-opt="-L ${LOCALBASE}/lib -lpcre"
-LIB_DEPENDS+=		libpcre.so:devel/pcre
-.endif
-
 .if ${PORT_OPTIONS:MNJS} && empty(PORT_OPTIONS:MNJS_XML)
 CONFIGURE_ENV+=		NJS_LIBXSLT=NO
 NJS_CONFIGURE_ARGS=	--no-libxml2
@@ -332,19 +327,6 @@ post-patch-HTTP_TARANTOOL-on:
 
 post-patch-ICONV-on:
 	@${REINPLACE_CMD} 's!%%PREFIX%%!${LOCALBASE}!g' ${WRKSRC_iconv}/config
-
-post-patch-PASSENGER-on:
-	@${REINPLACE_CMD} \
-		'176,178s!true!false!' \
-		${WRKSRC_PASSENGER}/build/basics.rb
-	@${REINPLACE_CMD} \
-		's!-I/usr/include/libev!!; \
-		s!-lev!!; \
-		s!-Iext/libev!!; \
-		s!-I/usr/include/libeio!!; \
-		s!-leio!!; \
-		s!-Iext/libeio!!' \
-		${WRKSRC_PASSENGER}/build/common_library.rb
 
 pre-configure-SMALL_LIGHT-on:
 	( cd ${WRKSRC_small_light} && ./setup )
@@ -441,6 +423,12 @@ pre-configure-SLOWFS_CACHE-on:
 	@${RM} -rf ${WRKSRC_slowfs_cache}
 	@${CP} -R ${LOCALBASE}/share/nginx/modules/nginx-module-slowfs-cache ${WRKSRC_slowfs_cache}
 	@${CHMOD} -R u+w ${WRKSRC_slowfs_cache}
+
+pre-configure-PASSENGER-on:
+	@${RM} -rf ${WRKSRC_passenger}
+	@${CP} -R ${LOCALBASE}/share/nginx/modules/nginx-module-passenger \
+		${WRKSRC_passenger}
+	@${CHMOD} -R u+w ${WRKSRC_passenger}
 
 pre-configure-STS-on:
 	@${RM} -rf ${WRKSRC_sts}
