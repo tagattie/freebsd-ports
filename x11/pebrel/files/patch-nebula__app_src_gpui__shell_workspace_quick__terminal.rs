@@ -1,4 +1,4 @@
---- nebula_app/src/gpui_shell/workspace/quick_terminal.rs.orig	2026-10-11 12:02:22 UTC
+--- nebula_app/src/gpui_shell/workspace/quick_terminal.rs.orig	2026-10-16 12:40:11 UTC
 +++ nebula_app/src/gpui_shell/workspace/quick_terminal.rs
 @@ -41,15 +41,15 @@ impl Global for QuickTerminalHotkey {}
  
@@ -6,7 +6,7 @@
  
 -#[cfg(target_os = "linux")]
 +#[cfg(any(target_os = "linux", target_os = "freebsd"))]
- struct PortalHotkey(crate::platform::global_shortcut::Portal);
+ struct PortalHotkey(crate::platform::global_shortcut::Portal, Option<String>);
 -#[cfg(target_os = "linux")]
 +#[cfg(any(target_os = "linux", target_os = "freebsd"))]
  impl Global for PortalHotkey {}
