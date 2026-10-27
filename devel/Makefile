@@ -4440,6 +4440,7 @@
     SUBDIR += premake5
     SUBDIR += priv_wrapper
     SUBDIR += prjpeppercorn113
+    SUBDIR += prjpeppercorn114
     SUBDIR += projectcenter
     SUBDIR += prometheus-cpp
     SUBDIR += protobuf
@@ -5487,6 +5488,7 @@
     SUBDIR += py-minimongo
     SUBDIR += py-minio
     SUBDIR += py-mirakuru
+    SUBDIR += py-mktestdocs
     SUBDIR += py-mmh3
     SUBDIR += py-mock
     SUBDIR += py-mockito
