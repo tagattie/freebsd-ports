@@ -1,6 +1,6 @@
---- nebula_app/src/gpui_shell/terminal/view/tests.rs.orig	2026-10-11 12:01:43 UTC
+--- nebula_app/src/gpui_shell/terminal/view/tests.rs.orig	2026-10-26 13:00:59 UTC
 +++ nebula_app/src/gpui_shell/terminal/view/tests.rs
-@@ -109,7 +109,7 @@ fn all_font_faces_explicitly_control_ligatures_without
+@@ -140,7 +140,7 @@ fn all_font_faces_explicitly_control_ligatures_without
  
  // Linux's headless platform uses the real text shaper with no display or GPU.
  // GPUI's normal test context uses NoopTextSystem and cannot prove ligatures.

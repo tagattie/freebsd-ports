@@ -1,6 +1,6 @@
---- nebula_app/Cargo.toml.orig	2026-10-11 11:53:58 UTC
+--- nebula_app/Cargo.toml.orig	2026-10-26 13:00:59 UTC
 +++ nebula_app/Cargo.toml
-@@ -35,12 +35,12 @@ optional = true
+@@ -42,12 +42,12 @@ optional = true
  workspace = true
  optional = true
  
@@ -15,7 +15,7 @@
  version = "=0.13.13"
  default-features = false
  features = ["global_shortcuts"]
-@@ -169,7 +169,7 @@ xdg = "3.0.0"
+@@ -178,7 +178,7 @@ xdg = "3.0.0"
  [target.'cfg(not(windows))'.dependencies]
  xdg = "3.0.0"
  

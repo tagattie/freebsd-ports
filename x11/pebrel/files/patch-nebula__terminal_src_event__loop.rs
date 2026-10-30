@@ -1,6 +1,6 @@
---- nebula_terminal/src/event_loop.rs.orig	2026-10-16 12:40:11 UTC
+--- nebula_terminal/src/event_loop.rs.orig	2026-10-26 13:00:59 UTC
 +++ nebula_terminal/src/event_loop.rs
-@@ -737,7 +737,7 @@ where
+@@ -819,7 +819,7 @@ where
                                      // just loop back round for the inevitable `Exited` event.
                                      // This sucks, but checking the process is either racy or
                                      // blocking.

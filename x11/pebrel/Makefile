@@ -1,6 +1,6 @@
 PORTNAME=	pebrel
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.2.2
+DISTVERSION=	2.3.1
 CATEGORIES=	x11
 
 MAINTAINER=	tagattie@FreeBSD.org
@@ -20,10 +20,13 @@ GH_ACCOUNT=	Kuddev
 
 USE_XORG=	xcb
 
-CARGO_BUILD_ARGS=	--package nebula --bin pebrel
+CARGO_BUILD_ARGS=	--package nebula \
+			--bin pebrel \
+			--bin pebrel-cli
 CARGO_INSTALL_PATH=	nebula_app
 
 PLIST_FILES=	bin/${PORTNAME} \
+		bin/${PORTNAME}-cli \
 		share/applications/io.github.kuddev.pebrel.desktop
 PORTDOCS=	CHANGELOG.md CONTRIBUTING.md README.md SECURITY.md
 

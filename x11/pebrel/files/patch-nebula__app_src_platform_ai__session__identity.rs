@@ -1,6 +1,6 @@
---- nebula_app/src/platform/ai_session_identity.rs.orig	2026-10-07 15:23:24 UTC
+--- nebula_app/src/platform/ai_session_identity.rs.orig	2026-10-26 13:00:59 UTC
 +++ nebula_app/src/platform/ai_session_identity.rs
-@@ -107,7 +107,7 @@ pub(crate) fn probe_codex_session(
+@@ -130,7 +130,7 @@ pub(crate) fn probe_codex_session(
          return probe_wsl(distro, context.wsl_user(), &pane_id, instance);
      }
  
@@ -9,7 +9,7 @@
      {
          let _ = shell_pid;
          return probe_local_proc(&pane_id, instance);
-@@ -332,6 +332,162 @@ fn probe_local_proc(pane_id: &str, instance: &str) -> 
+@@ -355,6 +355,162 @@ fn probe_local_proc(pane_id: &str, instance: &str) -> 
              let Ok(first_line) = read_first_line(&fd_path) else { continue };
              let fd_number = fd.file_name().to_string_lossy().parse::<u32>().ok();
              let Some(fd_number) = fd_number else { continue };

@@ -1,6 +1,6 @@
---- nebula_app/src/ai_hook/unix.rs.orig	2026-10-07 15:23:24 UTC
+--- nebula_app/src/ai_hook/unix.rs.orig	2026-10-26 13:00:59 UTC
 +++ nebula_app/src/ai_hook/unix.rs
-@@ -152,6 +152,23 @@ fn peer_pid(stream: &UnixStream) -> Option<u32> {
+@@ -261,6 +261,23 @@ fn peer_pid(stream: &UnixStream) -> Option<u32> {
          return (ok == 0 && credentials.uid == libc::geteuid() && credentials.pid > 0)
              .then_some(credentials.pid as u32);
      }
@@ -24,7 +24,7 @@
      #[cfg(target_os = "macos")]
      unsafe {
          let (mut uid, mut gid) = (0, 0);
-@@ -169,7 +186,7 @@ fn peer_pid(stream: &UnixStream) -> Option<u32> {
+@@ -278,7 +295,7 @@ fn peer_pid(stream: &UnixStream) -> Option<u32> {
          );
          return (ok == 0 && pid > 0).then_some(pid as u32);
      }
