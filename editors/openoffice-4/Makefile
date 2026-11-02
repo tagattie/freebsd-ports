@@ -1,6 +1,6 @@
 PORTNAME=	apache-openoffice
 PORTVERSION=	${AOOVERSION}${AOORCN:?.p${AOORCN}:}
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	editors java
 #MASTER_SITES=	https://dist.apache.org/repos/dist/dev/openoffice/${AOOVERSION}${AOORCN:?-RC${AOORCN}:}/source/
 MASTER_SITES=	https://dlcdn.apache.org/openoffice/${PORTVERSION}/source/ \
@@ -49,7 +49,7 @@ LICENSE_PERMS_ICU=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LICENSE_PERMS_TWAIN=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LICENSE_PERMS_W3C=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-DEPRECATED=	Depends on expired java/apache-commons-lang and textproc/lucene
+DEPRECATED=	Depends on expired java/apache-commons-lang
 EXPIRATION_DATE=2026-12-31
 
 ONLY_FOR_ARCHS=	amd64 i386 powerpc64 powerpc64le
@@ -69,7 +69,6 @@ BUILD_DEPENDS=								\
 		${JAVALIBDIR}/junit.jar:java/junit			\
 		${JAVALIBDIR}/bsh.jar:lang/bsh				\
 		bash:shells/bash					\
-		${JAVALIBDIR}/lucene-core-3.6.2.jar:textproc/lucene	\
 		p5-XML-Parser>=0:textproc/p5-XML-Parser			\
 		p5-libwww>=0:www/p5-libwww				\
 		p5-LWP-Protocol-https>0:www/p5-LWP-Protocol-https
@@ -225,6 +224,7 @@ PYTHON_DISTFILE=	38c84292658ed4456157195f1c9bcbe1-Python-2.7.18.tgz
 EXTRA_DISTFILES=	d6eef4b4cacb2183f2bf265a5a03a354-boost_1_55_0.tar.bz2 \
 			e3738abd0d3ce1870dc1fd1f22bba5b1-icu4c-4_2_1-src.tgz \
 			128cfc86ed5953e57fe0f5ae98b62c2e-libtextcat-2.2.tar.gz \
+			17960f35b2239654ba608cf1f3e256b3-lucene-2.9.4-src.tar.gz \
 			d62650a6f908e85643e557a236ea989c-vigra1.6.0.tar.gz
 
 .if ${CHOSEN_COMPILER_TYPE} == clang
@@ -297,9 +297,6 @@ CONFIGURE_ARGS+=							\
 			--disable-kde4					\
 			--with-system-libxml				\
 			--with-system-libxslt				\
-			--with-system-lucene				\
-			--with-lucene-core-jar=${JAVALIBDIR}/lucene-core-3.6.2.jar \
-			--with-lucene-analyzers-jar=${JAVALIBDIR}/lucene-analyzers-3.6.2.jar \
 			--with-system-mythes				\
 			--with-external-thes-dir=${LOCALBASE}/share/mythes \
 			--with-system-nss				\
@@ -399,14 +396,6 @@ post-patch:
 	${REINPLACE_CMD} -e "s|%%JAVA_HOME%%|${JAVA_HOME}|" \
 		${WRKSRC}/desktop/scripts/soffice.sh
 	${REINPLACE_CMD} -e '/^mkdir -p/,$$d' ${CREATE_TREE}
-
-# Verify that lucene was built with the CONTRIB option instead of
-# failing mysteriously during the build
-pre-configure:
-	@if [ ! -f ${JAVALIBDIR}/lucene-analyzers-3.6.2.jar ]; then \
-		${ECHO} "error: textproc/lucene must be built with the CONTRIB option enabled"; \
-		exit 1; \
-	fi
 
 do-build:
 	${PRINTF} "[repositories]\nmain=active\nextras=active\n" > ${WRKSUBDIR}/source_config
