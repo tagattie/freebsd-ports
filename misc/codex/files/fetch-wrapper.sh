@@ -30,19 +30,29 @@ while [ $# -gt 0 ]; do
 done
 
 case ${url} in
-    https://github.com/*)
+    https://github.com/*/archive/*)
         substitution="|^[^/]*/||"
+        fetch ${args} -o - | \
+            tar -cf - \
+                --mtime "@0" \
+                --numeric-owner \
+                --uid 0 --gid 0 \
+                -s ${substitution} \
+                @- | \
+            gzip -n > ${out}
+        ;;
+    https://*.googlesource.com/*/+archive/*)
+        substitution="|^||"
+        fetch ${args} -o - | \
+            tar -cf - \
+                --mtime "@0" \
+                --numeric-owner \
+                --uid 0 --gid 0 \
+                -s ${substitution} \
+                @- | \
+            gzip -n > ${out}
         ;;
     *)
-        substitution="|^||"
+        fetch ${args} -o ${out}
         ;;
 esac
-
-fetch ${args} -o - | \
-    tar -cf - \
-        --mtime "@0" \
-        --numeric-owner \
-        --uid 0 --gid 0 \
-        -s ${substitution} \
-        @- | \
-    gzip -n > ${out}
