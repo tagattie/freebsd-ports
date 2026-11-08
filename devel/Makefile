@@ -836,6 +836,7 @@
     SUBDIR += gengetopt
     SUBDIR += genht
     SUBDIR += genie
+    SUBDIR += gerrit
     SUBDIR += getopt-ada
     SUBDIR += getoptions
     SUBDIR += gettext
@@ -4353,8 +4354,6 @@
     SUBDIR += php-pie
     SUBDIR += php-raphf
     SUBDIR += php-swoole
-    SUBDIR += php80-APCu
-    SUBDIR += php80-arcanist
     SUBDIR += php82-ffi
     SUBDIR += php82-gettext
     SUBDIR += php82-intl
@@ -4493,6 +4492,7 @@
     SUBDIR += py-adb
     SUBDIR += py-addict
     SUBDIR += py-aenum
+    SUBDIR += py-agent-client-protocol
     SUBDIR += py-aioapns
     SUBDIR += py-aioboto3
     SUBDIR += py-aiobotocore

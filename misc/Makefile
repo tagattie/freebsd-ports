@@ -245,6 +245,7 @@
     SUBDIR += kf5-purpose
     SUBDIR += kf6-purpose
     SUBDIR += kgeography
+    SUBDIR += kimi-code
     SUBDIR += klettres
     SUBDIR += koboldcpp
     SUBDIR += kookbook
@@ -484,6 +485,7 @@
     SUBDIR += py-comfyui-workflow-templates-json
     SUBDIR += py-comfyui-workflow-templates-media-api
     SUBDIR += py-comfyui-workflow-templates-media-assets-01
+    SUBDIR += py-comfyui-workflow-templates-media-assets-02
     SUBDIR += py-comfyui-workflow-templates-media-image
     SUBDIR += py-comfyui-workflow-templates-media-other
     SUBDIR += py-comfyui-workflow-templates-media-video
