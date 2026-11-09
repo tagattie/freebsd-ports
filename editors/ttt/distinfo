@@ -1,5 +1,5 @@
-TIMESTAMP = 1793540687
-SHA256 (go/editors_ttt/ttt-v1.10.0/v1.10.0.mod) = e090ad698f43302cc988a5689fe1989713048eee4711a5e0a7dde79d041de00b
-SIZE (go/editors_ttt/ttt-v1.10.0/v1.10.0.mod) = 825
-SHA256 (go/editors_ttt/ttt-v1.10.0/v1.10.0.zip) = 267ee03efd182eec69e82b8be21bb5ed32db78689da5e5658098965e86e6bf4b
-SIZE (go/editors_ttt/ttt-v1.10.0/v1.10.0.zip) = 10262840
+TIMESTAMP = 1794229564
+SHA256 (go/editors_ttt/ttt-v1.11.0/v1.11.0.mod) = 0e99e01d12ef7a9cc6e71282900acccd89ba19313ecf9c1121e75332bd31460b
+SIZE (go/editors_ttt/ttt-v1.11.0/v1.11.0.mod) = 825
+SHA256 (go/editors_ttt/ttt-v1.11.0/v1.11.0.zip) = 79436cfc46034846367c3ac1b6268e7ad6cea3ce1d9bf391ef345b4c22d6fb89
+SIZE (go/editors_ttt/ttt-v1.11.0/v1.11.0.zip) = 10384209
