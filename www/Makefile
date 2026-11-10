@@ -197,7 +197,6 @@
     SUBDIR += feroxbuster
     SUBDIR += ffproxy
     SUBDIR += fgallery
-    SUBDIR += filebrowser
     SUBDIR += filebrowser-quantum
     SUBDIR += filepizza
     SUBDIR += fileserv
@@ -547,6 +546,7 @@
     SUBDIR += nginx-module-auth-ldap
     SUBDIR += nginx-module-auth-pam
     SUBDIR += nginx-module-aws-auth
+    SUBDIR += nginx-module-brotli
     SUBDIR += nginx-module-cache-purge
     SUBDIR += nginx-module-cert-expiry
     SUBDIR += nginx-module-dav-ext
@@ -572,10 +572,12 @@
     SUBDIR += nginx-module-modsecurity3
     SUBDIR += nginx-module-ndk
     SUBDIR += nginx-module-njs
+    SUBDIR += nginx-module-otel
     SUBDIR += nginx-module-passenger
     SUBDIR += nginx-module-postgres
     SUBDIR += nginx-module-rds-csv
     SUBDIR += nginx-module-rds-json
+    SUBDIR += nginx-module-redis
     SUBDIR += nginx-module-redis2
     SUBDIR += nginx-module-set-misc
     SUBDIR += nginx-module-sflow
@@ -1522,8 +1524,8 @@
     SUBDIR += php-http
     SUBDIR += php-laminas-escaper
     SUBDIR += php-laminas-feed
-    SUBDIR += php-url-highlight
     SUBDIR += php-solr
+    SUBDIR += php-url-highlight
     SUBDIR += php82-opcache
     SUBDIR += php82-session
     SUBDIR += php82-tidy
@@ -2373,6 +2375,7 @@
     SUBDIR += rubygem-kaminari-activerecord-rails61
     SUBDIR += rubygem-kaminari-activerecord-rails70
     SUBDIR += rubygem-kaminari-core
+    SUBDIR += rubygem-kaminari-core-gitlab
     SUBDIR += rubygem-kaminari-rails-gitlab
     SUBDIR += rubygem-kaminari-rails4
     SUBDIR += rubygem-kaminari-rails5

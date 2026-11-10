@@ -1,7 +1,7 @@
 PORTNAME=	freenginx
 PORTVERSION=	${NGINX_VERSION}
 .include "version.mk"
-PORTREVISION?=	3
+PORTREVISION?=	5
 CATEGORIES=	www
 MASTER_SITES=	https://freenginx.org/download/ \
 		LOCAL/joneum
@@ -292,9 +292,6 @@ post-patch:
 		s!%%NGINX_ERRORLOG%%!${NGINX_ERRORLOG}!' \
 		${WRKSRC}/conf/nginx.conf
 
-post-patch-BROTLI-on:
-	@${REINPLACE_CMD} 's!%%PREFIX%%!${LOCALBASE}!g' ${WRKSRC_brotli}/filter/config
-
 
 post-patch-FASTDFS-on:
 	@${REINPLACE_CMD} \
@@ -326,6 +323,11 @@ pre-configure-AWS_AUTH-on:
 	@${RM} -rf ${WRKSRC_aws_auth}
 	@${CP} -R ${LOCALBASE}/share/nginx/modules/nginx-module-aws-auth ${WRKSRC_aws_auth}
 	@${CHMOD} -R u+w ${WRKSRC_aws_auth}
+
+pre-configure-BROTLI-on:
+	@${RM} -rf ${WRKSRC_brotli}
+	@${CP} -R ${LOCALBASE}/share/nginx/modules/nginx-module-brotli ${WRKSRC_brotli}
+	@${CHMOD} -R u+w ${WRKSRC_brotli}
 
 pre-configure-CACHE_PURGE-on:
 	@${RM} -rf ${WRKSRC_cache_purge}
@@ -401,6 +403,11 @@ pre-configure-HTTP_AUTH_DIGEST-on:
 	@${RM} -rf ${WRKSRC_auth_digest}
 	@${CP} -R ${LOCALBASE}/share/nginx/modules/nginx-module-auth-digest ${WRKSRC_auth_digest}
 	@${CHMOD} -R u+w ${WRKSRC_auth_digest}
+
+pre-configure-HTTP_REDIS-on:
+	@${RM} -rf ${WRKSRC_redis}
+	@${CP} -R ${LOCALBASE}/share/nginx/modules/nginx-module-redis ${WRKSRC_redis}
+	@${CHMOD} -R u+w ${WRKSRC_redis}
 
 pre-configure-LINK-on:
 	@${RM} -rf ${WRKSRC_link}
@@ -483,6 +490,11 @@ pre-configure-NJS-on:
 	@${CP} -R ${LOCALBASE}/share/nginx/modules/nginx-module-njs ${WRKSRC_njs}
 	@${CHMOD} -R u+w ${WRKSRC_njs}
 	@${CHMOD} u+x ${WRKSRC_njs}/configure
+
+pre-configure-OTEL-on:
+	@${RM} -rf ${WRKSRC_otel}
+	@${CP} -R ${LOCALBASE}/share/nginx/modules/nginx-module-otel ${WRKSRC_otel}
+	@${CHMOD} -R u+w ${WRKSRC_otel}
 
 pre-configure-POSTGRES-on:
 	@${RM} -rf ${WRKSRC_postgres}
