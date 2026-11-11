@@ -1914,6 +1914,7 @@
     SUBDIR += ode
     SUBDIR += ois
     SUBDIR += okteta
+    SUBDIR += okteta-qt5
     SUBDIR += ollama-hpp
     SUBDIR += omake
     SUBDIR += omniORB
@@ -5005,6 +5006,8 @@
     SUBDIR += py-distributed
     SUBDIR += py-dj60-django-rq
     SUBDIR += py-dj60-strawberry-graphql
+    SUBDIR += py-dj61-django-rq
+    SUBDIR += py-dj61-strawberry-graphql
     SUBDIR += py-django-rq
     SUBDIR += py-dlinfo
     SUBDIR += py-dm-tree

@@ -1,3 +1,390 @@
+  <vuln vid="05286f93-de01-11f1-bbb3-901b0e9408dc">
+    <topic>conduit -- e2ee signing keys vulnerability</topic>
+    <affects>
+      <package>
+	<name>matrix-conduit</name>
+	<range><lt>0.10.16</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Conduit team reports:</p>
+	<blockquote cite="https://gitlab.com/famedly/conduit/-/releases/v0.10.16">
+	  <p>Fixes a vulnerability where E2EE signing keys could be
+	  accepted from servers other than the one the user belongs
+	  to. It is recommended you upgrade ASAP.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <url>https://gitlab.com/famedly/conduit/-/releases/v0.10.16</url>
+    </references>
+    <dates>
+      <discovery>2026-11-10</discovery>
+      <entry>2026-11-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="9e9c6e36-dd9f-11f1-bae2-3497f65b111b">
+    <topic>immich -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>immich</name>
+	<name>immich-cli</name>
+	<range><lt>3.4.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Immich project reports:</p>
+	<blockquote cite="https://github.com/immich-app/immich/security/advisories">
+	  <ul>
+	    <li>An attacker-chosen OAuth state cookie allows forced account
+	      linking and takeover of any account, bypassing the fix for
+	      CVE-2025-43856.</li>
+	    <li>A malicious or intercepted server can read, exfiltrate and
+	      delete arbitrary local files through the duplicate check of the
+	      command line client.</li>
+	    <li>An external library import follows symbolic links, which
+	      allows arbitrary files to be read.</li>
+	    <li>Unsanitized EXIF make, model and lens model allow path
+	      traversal in the storage template engine.</li>
+	    <li>An unanchored regular expression allows the allowedHosts
+	      protection of plugins to be bypassed completely.</li>
+	    <li>A shared link ignores the "Show metadata" setting on metadata
+	      searches, which leaks EXIF and GPS data.</li>
+	    <li>An upload through a shared link runs as the link owner, so the
+	      owner check of the live photo video can never fail.</li>
+	    <li>Metadata of other owners can be written through the duplicate
+	      resolve endpoint.</li>
+	    <li>Archive downloads through a shared link can include original
+	      files despite the edited asset enforcement.</li>
+	    <li>A partner can read the metadata of the sharer's locked folder
+	      when a search request omits the visibility, and the archived
+	      timeline metadata as well.</li>
+	    <li>Read-scoped API keys can reset cluster group people data.</li>
+	    <li>An unbounded motion photo offset causes memory and disk
+	      exhaustion.</li>
+	    <li>An uploaded SVG asset allows stored cross-site scripting.</li>
+	    <li>Email messages allow HTML injection.</li>
+	    <li>Before 3.2.4, an uploaded SVG file reaches the ImageMagick
+	      coders, which allows code execution on the server
+	      (CVE-2026-105764).</li>
+	    <li>A share link with uploads disabled can be used to test whether
+	      the owner has a given file.</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-105764</cvename>
+      <url>https://github.com/immich-app/immich/security/advisories/GHSA-q89f-h332-8q2h</url>
+      <url>https://github.com/immich-app/immich/security/advisories/GHSA-7j23-rprg-3g5q</url>
+      <url>https://github.com/immich-app/immich/security/advisories/GHSA-p632-vh57-j6x4</url>
+      <url>https://github.com/immich-app/immich/security/advisories/GHSA-wp5v-5wj6-j2fh</url>
+      <url>https://github.com/immich-app/immich/security/advisories/GHSA-wwfq-95jq-3m3c</url>
+      <url>https://github.com/immich-app/immich/security/advisories/GHSA-8xfw-gq8x-8mrr</url>
+      <url>https://github.com/immich-app/immich/security/advisories/GHSA-gjj9-fvfp-jw63</url>
+      <url>https://github.com/immich-app/immich/security/advisories/GHSA-9g87-8gwq-4xqp</url>
+      <url>https://github.com/immich-app/immich/security/advisories/GHSA-6jjx-fxr3-8vf2</url>
+      <url>https://github.com/immich-app/immich/security/advisories/GHSA-rq4j-mp2m-85qp</url>
+      <url>https://github.com/immich-app/immich/security/advisories/GHSA-v7v2-63g5-gwf7</url>
+      <url>https://github.com/immich-app/immich/security/advisories/GHSA-j722-3hvf-c9vr</url>
+      <url>https://github.com/immich-app/immich/security/advisories/GHSA-qcp2-7vph-gq64</url>
+      <url>https://github.com/immich-app/immich/security/advisories/GHSA-c9h4-ccvj-j2h2</url>
+      <url>https://github.com/immich-app/immich/security/advisories/GHSA-wjrq-m9hw-r4vq</url>
+      <url>https://github.com/immich-app/immich/security/advisories/GHSA-v94m-9pp2-pm59</url>
+      <url>https://github.com/immich-app/immich/security/advisories/GHSA-xm8q-2hq2-gpxg</url>
+    </references>
+    <dates>
+      <discovery>2026-11-10</discovery>
+      <entry>2026-11-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="3047b511-dde7-11f1-8135-8447094a420f">
+    <topic>LibreSSL -- Out of bounds read</topic>
+    <affects>
+      <package>
+	<name>libressl</name>
+	<name>libressl-libtls</name>
+	<name>libressl-devel</name>
+	<name>libressl-devel-libtls</name>
+	<range><lt>4.4.1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The OpenBSD project reports:</p>
+	<blockquote cite="https://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-4.4.1-relnotes.txt.">
+	  <p>Out of bounds read that may happen during renegotiation in TLSv1.2.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <url>https://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-4.4.1-relnotes.txt</url>
+    </references>
+    <dates>
+      <discovery>2026-11-11</discovery>
+      <entry>2026-11-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="f2904526-ddd3-11f1-8135-8447094a420f">
+    <topic>Apache httpd -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>apache24</name>
+	<range><lt>2.4.71</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Apache httpd project reports:</p>
+	<blockquote cite="https://httpd.apache.org/security/vulnerabilities_24.html">
+	  <p>CVE-2026-119618 (critical): mod_http2: heap corruption and RCE in assign_headers</p>
+	  <p>CVE-2026-106023 (important): mod_md NULL pointer dereference leads to child process crash</p>
+	  <p>CVE-2026-109163 (low): mod_vhost_alias 1 byte stack buffer overwrite (after CVE-2026-63292)</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-119618</cvename>
+      <cvename>CVE-2026-109163</cvename>
+      <cvename>CVE-2026-106023</cvename>
+      <url>https://httpd.apache.org/security/vulnerabilities_24.html</url>
+    </references>
+    <dates>
+      <discovery>2026-11-11</discovery>
+      <entry>2026-11-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="9e2564aa-ddb8-11f1-adaa-3c7c3fba4204">
+    <topic>Mbed TLS -- multiple vulnerabilities</topic>
+    <affects>
+	<package>
+	  <name>mbedtls4</name>
+	  <range><lt>4.2.0</lt></range>
+	</package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Mbed TLS Team reports:</p>
+	<blockquote cite="https://github.com/Mbed-TLS/mbedtls/releases/tag/mbedtls-4.2.0">
+	  <ul>
+	    <li>CVE-2026-50581: Fix a bug where transcript-hash computation errors during TLS 1.2
+		extended master secret calculation could be ignored instead of causing the handshake
+		to fail. This could allow a handshake to continue with a master secret that was not
+		correctly bound to the handshake transcript, undermining the security guarantees of
+		the extended master secret extension.</li>
+	    <li>CVE-2026-50640: Fix a TLS 1.3 server-side error-handling bug affecting session ticket
+		generation. Under rare conditions, such as memory allocation failures while computing
+		the resumption master secret, the server could issue invalid session tickets instead
+		of failing the handshake. Clients presented with such tickets would fail session
+		resumption and fall back to a full handshake. In deployments relying on session
+		resumption, repeated occurrences could increase the frequency of full handshakes
+		and amplify resource consumption during periods of resource exhaustion or other
+		transient failures.</li>
+	    <li>CVE-2026-50580: Fix a remote buffer overflow in (D)TLS with ECDHE-PSK cipher suites
+		when CBC is disabled.</li>
+	    <li>CVE-2026-50586: Fix a potential information disclosure in TLS 1.2 servers using session
+		tickets. If the session ticket write callback failed without setting the lifetime output
+		parameter, Mbed TLS could send 4 bytes of uninitialized stack memory to the peer in the
+		NewSessionTicket message.</li>
+	    <li>CVE-2026-50588: Fix an out-of-bounds read when parsing TLS 1.2 ECJPAKE ServerKeyExchange
+		messages.</li>
+	    <li>CVE-2026-50579: Fix a use-after-free/double-free risk in mbedtls_pkcs7_free() when reusing
+		an mbedtls_pkcs7 context across parse -> free -> parse -> free cycles. The function now
+		resets the context after freeing it, ensuring stale signed_data.signers.next pointers cannot
+		be walked by a later free operation.</li>
+	    <li>CVE-2026-54441: Improved documentation of mbedtls_ssl_conf_sig_algs() to emphasize that this
+		function only sets signature algorithms that are enforced during TLS key exchange and not on
+		certificate verification.</li>
+	    <li>CVE-2026-50585 : Ensure 'badmac_seen' and 'dtls_srtp_info' fields from 'mbedtls_ssl_context'
+		are properly zeroized when mbedtls_ssl_session_reset() is called. This could cause premature
+		DTLS connection failure or incorrect DTLS-SRTP parameter inheritance for applications reusing
+		an SSL context.</li>
+	    <li>CVE-2026-25832: Fix TLS 1.3 clients to reject a HelloRetryRequest whose selected group was
+		not advertised in the original ClientHello.</li>
+	    <li>CVE-2026-49300: Fix two bugs in the X.509 certificate parser that caused some inputs with a
+		malformed basicConstraints extension to be accepted. This could have dangerous results, in
+		particular causing some certificates to be parsed as CA certificates when other X.509
+		implementations would parse them as end-entity certificates.</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-50581</cvename>
+      <cvename>CVE-2026-50640</cvename>
+      <cvename>CVE-2026-50580</cvename>
+      <cvename>CVE-2026-50586</cvename>
+      <cvename>CVE-2026-50588</cvename>
+      <cvename>CVE-2026-50579</cvename>
+      <cvename>CVE-2026-54441</cvename>
+      <cvename>CVE-2026-50585</cvename>
+      <cvename>CVE-2026-25832</cvename>
+      <cvename>CVE-2026-49300</cvename>
+      <url>https://github.com/Mbed-TLS/mbedtls/releases/tag/mbedtls-4.2.0</url>
+      <url>https://mbed-tls.readthedocs.io/en/latest/security-advisories/</url>
+    </references>
+    <dates>
+      <discovery>2026-07-07</discovery>
+      <entry>2026-11-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="808dee2b-dd99-11f1-ac90-2cf05da270f3">
+    <topic>Gitlab -- vulnerability</topic>
+    <affects>
+<package>
+	<name>gitlab-ce</name>
+	<name>gitlab-ee</name>
+	<range><ge>19.5.0</ge><lt>19.5.4</lt></range>
+	<range><ge>19.4.0</ge><lt>19.4.6</lt></range>
+	<range><ge>7.0.0</ge><lt>19.3.8</lt></range>
+</package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gitlab reports:</p>
+	<blockquote cite="https://docs.gitlab.com/releases/patches/patch-release-gitlab-19-5-4-released/?nav=19.5.4">
+	  <p>Vulnerability in git</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-105437</cvename>
+      <url>https://docs.gitlab.com/releases/patches/patch-release-gitlab-19-5-4-released/?nav=19.5.4</url>
+    </references>
+    <dates>
+      <discovery>2026-11-10</discovery>
+      <entry>2026-11-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="8dc02503-dd51-11f1-a654-f8b46a88f42c">
+    <topic>krb5 -- MIT krb5 Security Advisory 2026-001</topic>
+    <affects>
+      <package>
+	<name>krb5</name>
+	<range><lt>1.22.3</lt></range>
+      </package>
+      <package>
+	<name>krb5-122</name>
+	<range><lt>1.22.3</lt></range>
+      </package>
+      <package>
+	<name>krb5-devel</name>
+	<range><lt>2026-11-05</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The MIT KRB5 Project reports:</p>
+	<blockquote cite="https://web.mit.edu/kerberos/advisories/MITKRB5-SA-2026-001.txt">
+	  <p>An authenticated attacker can bypass authentication indicator
+	     enforcement by requesting a service ticket with fake CAMMAC
+	     authorization data.  Updating to the 1.22.3 release on the KDC
+	     is sufficient to prevent this attack.</p>
+	  <p>An authenticated attacker can bypass an application server's
+	     PAC authorization data checks by requesting a service ticket
+	     with a fake PAC.  Updating to the 1.22.3 release on either the
+	     KDC or the affected application server will prevent this
+	     attack.</p>
+	  <p>An authenticated attacker with administrative privileges can
+	     bypass the lockdown_keys attribute by using the password change
+	     protocol instead of the kadmin protocol to modify a principal's
+	     keys.</p>
+	  <p>The KDC, kadmind, and GSS-API application servers are all
+	     vulnerable to denial of service attacks by unauthenticated
+	     attackers.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-71199</cvename>
+      <cvename>CVE-2026-107884</cvename>
+      <cvename>CVE-2026-111423</cvename>
+      <cvename>CVE-2026-40355</cvename>
+      <cvename>CVE-2026-40356</cvename>
+      <cvename>CVE-2026-71200</cvename>
+      <cvename>CVE-2026-107364</cvename>
+      <cvename>CVE-2026-107708</cvename>
+      <cvename>CVE-2026-107778</cvename>
+      <cvename>CVE-2026-112314</cvename>
+      <cvename>CVE-2026-112315</cvename>
+      <cvename>CVE-2026-112316</cvename>
+      <cvename>CVE-2026-112317</cvename>
+      <cvename>CVE-2026-112318</cvename>
+      <cvename>CVE-2026-112319</cvename>
+      <cvename>CVE-2026-112320</cvename>
+      <cvename>CVE-2026-112321</cvename>
+      <cvename>CVE-2026-112322</cvename>
+      <cvename>CVE-2026-112323</cvename>
+      <cvename>CVE-2026-119079</cvename>
+      <url>https://web.mit.edu/kerberos/advisories/MITKRB5-SA-2026-001.txt</url>
+    </references>
+    <dates>
+      <discovery>2026-11-09</discovery>
+      <entry>2026-11-10</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="a18ffa98-dd42-11f1-8816-a0369f7f7be0">
+    <topic>chromium -- security fixes</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>157.0.8103.50</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>157.0.8103.50</lt></range>
+      </package>
+      <package>
+       <name>linux-chrome</name>
+       <range><lt>157.0.8103.50</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2026/11/stable-channel-update-for-desktop_018223192.html">
+	 <p>This update includes 9 security fixes:</p>
+	 <ul>
+	    <li>High CVE-2026-125345: Uninitialized resource in WebGL.</li>
+	    <li>High CVE-2026-125347: Incorrect authorization in FileSystem.</li>
+	    <li>High CVE-2026-125343: Buffer overflow in Compositing.</li>
+	    <li>High CVE-2026-125348: Out of bounds write in GPU.</li>
+	    <li>High CVE-2026-125344: Type confusion in V8.</li>
+	    <li>High CVE-2026-125346: Use after free in XML.</li>
+	    <li>High CVE-2026-125350: Use after free in XML.</li>
+	    <li>Medium CVE-2026-125349: Uninitialized resource in GPU.</li>
+	    <li>Medium CVE-2026-125342: Uninitialized resource in GPU.</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-125345</cvename>
+      <cvename>CVE-2026-125347</cvename>
+      <cvename>CVE-2026-125343</cvename>
+      <cvename>CVE-2026-125348</cvename>
+      <cvename>CVE-2026-125344</cvename>
+      <cvename>CVE-2026-125346</cvename>
+      <cvename>CVE-2026-125350</cvename>
+      <cvename>CVE-2026-125349</cvename>
+      <cvename>CVE-2026-125342</cvename>
+      <url>https://chromereleases.googleblog.com/2026/11/stable-channel-update-for-desktop_018223192.html</url>
+    </references>
+    <dates>
+      <discovery>2026-11-09</discovery>
+      <entry>2026-11-10</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="24e1443d-dd3b-11f1-b094-bc2411e144f8">
     <topic>git -- multiple vulnerabilities</topic>
     <affects>
@@ -2816,12 +3203,6 @@
 	<name>sqlite3</name>
 	<range><lt>3.54.0,1</lt></range>
       </package>
-      <package>
-	<name>FreeBSD</name>
-	<range><ge>15.1</ge><lt>15.1_7</lt></range>
-	<range><ge>14.5</ge><lt>14.5_4</lt></range>
-	<range><ge>14.4</ge><lt>14.4_13</lt></range>
-      </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
@@ -2863,6 +3244,7 @@
     <dates>
       <discovery>2026-10-30</discovery>
       <entry>2026-10-30</entry>
+      <modified>2026-11-11</modified>
     </dates>
   </vuln>
 
