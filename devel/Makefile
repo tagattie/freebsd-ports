@@ -624,8 +624,8 @@
     SUBDIR += derelict-util
     SUBDIR += desed
     SUBDIR += desktop-file-utils
-    SUBDIR += dev86
     SUBDIR += detect-it-easy
+    SUBDIR += dev86
     SUBDIR += devtodo
     SUBDIR += dfuzzer
     SUBDIR += dia2code
@@ -7945,7 +7945,6 @@
     SUBDIR += rubygem-io-nonblock
     SUBDIR += rubygem-io-stream
     SUBDIR += rubygem-io-wait
-    SUBDIR += rubygem-io-wait01
     SUBDIR += rubygem-iobuffer
     SUBDIR += rubygem-iostruct
     SUBDIR += rubygem-ipynbdiff
