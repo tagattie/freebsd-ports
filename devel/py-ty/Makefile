@@ -12,6 +12,8 @@ WWW=		https://github.com/astral-sh/ty
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_i386=	rustc-LLVM ERROR: out of memory
+
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}maturin>=1.0<2.0:devel/py-maturin@${PY_FLAVOR}
 LIB_DEPENDS=	libzstd.so:archivers/zstd
 
@@ -30,12 +32,6 @@ MAKE_ENV=	${CARGO_ENV}
 PORTDOCS=	README.md
 
 OPTIONS_DEFINE=	DOCS
-
-.include <bsd.port.options.mk>
-
-.if ${ARCH} == i386
-CARGO_ENV+=	CARGO_PROFILE_RELEASE_LTO=false
-.endif
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
