@@ -31,6 +31,12 @@ PORTDOCS=	README.md
 
 OPTIONS_DEFINE=	DOCS
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == i386
+CARGO_ENV+=	CARGO_PROFILE_RELEASE_LTO=false
+.endif
+
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_MAN} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
